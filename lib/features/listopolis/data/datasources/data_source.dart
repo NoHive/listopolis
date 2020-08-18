@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:listopolis/features/listopolis/data/models/user_data.dart';
@@ -19,22 +21,22 @@ class LocalDataSourceImpl implements IUserDataSource{
       @required this.preferenceKey
     });
   
-  
-  
+
   @override
   Future<Option<UserData>> readUserData() {
-    //  final jsonString = sharedPreferences.getString(preferenceKey);
-    // if(jsonString != null){
-    //   return Future.value(NumberTriviaModel.fromJson(json.decode(jsonString)));
-    // }else{
-    //   throw CacheException();
-    // }
+
+    final jsonString = sharedPreferences.getString(preferenceKey);
+    if(jsonString != null){
+      return  Future.value(Some(UserData.fromJson(jsonDecode(jsonString))));
+    }else{
+      return  Future.value(None());
+    }
   }
 
   @override
   Future<void> writeUserData(UserData data) {
-    // TODO: implement writeUserData
-    throw UnimplementedError();
+      sharedPreferences.setString(preferenceKey, json.encode(data.toJson()));
+      return Future.value();
   }
 
 }
