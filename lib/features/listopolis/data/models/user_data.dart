@@ -3,12 +3,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 part 'user_data.freezed.dart';
+part 'user_data.g.dart'; 
 
 @freezed
-abstract class UserData with _$UserData{
+abstract class UserData implements _$UserData{
+  @JsonSerializable(nullable: false)  
+  const UserData._();
   const factory UserData(
     {
       @required String id,
@@ -32,7 +36,8 @@ abstract class UserData with _$UserData{
                                             name: template.name, 
                                             type: template.type, 
                                             position: aNewPosition, 
-                                            done: false);
+                                            done: false,
+                                            opened: false);
       
        
       aNewList.add(aNewListItem);
@@ -41,4 +46,5 @@ abstract class UserData with _$UserData{
 
       
   }
+  factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);
 }

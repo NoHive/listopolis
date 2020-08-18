@@ -8,6 +8,9 @@ part of 'user_data.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+UserData _$UserDataFromJson(Map<String, dynamic> json) {
+  return _UserData.fromJson(json);
+}
 
 class _$UserDataTearOff {
   const _$UserDataTearOff();
@@ -36,6 +39,7 @@ mixin _$UserData {
   List<ListTemplate> get templates;
   List<ActiveList> get activeLists;
 
+  Map<String, dynamic> toJson();
   $UserDataCopyWith<UserData> get copyWith;
 }
 
@@ -115,10 +119,15 @@ class __$UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
   }
 }
 
-class _$_UserData implements _UserData {
+@JsonSerializable()
+class _$_UserData extends _UserData {
   const _$_UserData(
       {@required this.id, this.name, this.templates, this.activeLists})
-      : assert(id != null);
+      : assert(id != null),
+        super._();
+
+  factory _$_UserData.fromJson(Map<String, dynamic> json) =>
+      _$_$_UserDataFromJson(json);
 
   @override
   final String id;
@@ -161,14 +170,22 @@ class _$_UserData implements _UserData {
   @override
   _$UserDataCopyWith<_UserData> get copyWith =>
       __$UserDataCopyWithImpl<_UserData>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_UserDataToJson(this);
+  }
 }
 
-abstract class _UserData implements UserData {
+abstract class _UserData extends UserData {
+  const _UserData._() : super._();
   const factory _UserData(
       {@required String id,
       String name,
       List<ListTemplate> templates,
       List<ActiveList> activeLists}) = _$_UserData;
+
+  factory _UserData.fromJson(Map<String, dynamic> json) = _$_UserData.fromJson;
 
   @override
   String get id;

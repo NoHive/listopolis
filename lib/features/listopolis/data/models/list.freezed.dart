@@ -8,23 +8,37 @@ part of 'list.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+ActiveList _$ActiveListFromJson(Map<String, dynamic> json) {
+  return _ActiveList.fromJson(json);
+}
 
 class _$ActiveListTearOff {
   const _$ActiveListTearOff();
 
 // ignore: unused_element
   _ActiveList call(
-      {@required String id,
-      @required String name,
-      @required ListType type,
-      @required int position,
-      @required bool done}) {
+      {@required
+          String id,
+      @required
+          String name,
+      @required
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      @required
+          int position,
+      @required
+          bool done,
+      @required
+          bool opened,
+      List<ActiveListPosition> listItems}) {
     return _ActiveList(
       id: id,
       name: name,
       type: type,
       position: position,
       done: done,
+      opened: opened,
+      listItems: listItems,
     );
   }
 }
@@ -35,10 +49,14 @@ const $ActiveList = _$ActiveListTearOff();
 mixin _$ActiveList {
   String get id;
   String get name;
+  @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   ListType get type;
   int get position;
   bool get done;
+  bool get opened;
+  List<ActiveListPosition> get listItems;
 
+  Map<String, dynamic> toJson();
   $ActiveListCopyWith<ActiveList> get copyWith;
 }
 
@@ -46,7 +64,15 @@ abstract class $ActiveListCopyWith<$Res> {
   factory $ActiveListCopyWith(
           ActiveList value, $Res Function(ActiveList) then) =
       _$ActiveListCopyWithImpl<$Res>;
-  $Res call({String id, String name, ListType type, int position, bool done});
+  $Res call(
+      {String id,
+      String name,
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      int position,
+      bool done,
+      bool opened,
+      List<ActiveListPosition> listItems});
 
   $ListTypeCopyWith<$Res> get type;
 }
@@ -65,6 +91,8 @@ class _$ActiveListCopyWithImpl<$Res> implements $ActiveListCopyWith<$Res> {
     Object type = freezed,
     Object position = freezed,
     Object done = freezed,
+    Object opened = freezed,
+    Object listItems = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
@@ -72,6 +100,10 @@ class _$ActiveListCopyWithImpl<$Res> implements $ActiveListCopyWith<$Res> {
       type: type == freezed ? _value.type : type as ListType,
       position: position == freezed ? _value.position : position as int,
       done: done == freezed ? _value.done : done as bool,
+      opened: opened == freezed ? _value.opened : opened as bool,
+      listItems: listItems == freezed
+          ? _value.listItems
+          : listItems as List<ActiveListPosition>,
     ));
   }
 
@@ -91,7 +123,15 @@ abstract class _$ActiveListCopyWith<$Res> implements $ActiveListCopyWith<$Res> {
           _ActiveList value, $Res Function(_ActiveList) then) =
       __$ActiveListCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name, ListType type, int position, bool done});
+  $Res call(
+      {String id,
+      String name,
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      int position,
+      bool done,
+      bool opened,
+      List<ActiveListPosition> listItems});
 
   @override
   $ListTypeCopyWith<$Res> get type;
@@ -113,6 +153,8 @@ class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
     Object type = freezed,
     Object position = freezed,
     Object done = freezed,
+    Object opened = freezed,
+    Object listItems = freezed,
   }) {
     return _then(_ActiveList(
       id: id == freezed ? _value.id : id as String,
@@ -120,37 +162,61 @@ class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
       type: type == freezed ? _value.type : type as ListType,
       position: position == freezed ? _value.position : position as int,
       done: done == freezed ? _value.done : done as bool,
+      opened: opened == freezed ? _value.opened : opened as bool,
+      listItems: listItems == freezed
+          ? _value.listItems
+          : listItems as List<ActiveListPosition>,
     ));
   }
 }
 
-class _$_ActiveList implements _ActiveList {
+@JsonSerializable()
+class _$_ActiveList extends _ActiveList {
   const _$_ActiveList(
-      {@required this.id,
-      @required this.name,
-      @required this.type,
-      @required this.position,
-      @required this.done})
+      {@required
+          this.id,
+      @required
+          this.name,
+      @required
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          this.type,
+      @required
+          this.position,
+      @required
+          this.done,
+      @required
+          this.opened,
+      this.listItems})
       : assert(id != null),
         assert(name != null),
         assert(type != null),
         assert(position != null),
-        assert(done != null);
+        assert(done != null),
+        assert(opened != null),
+        super._();
+
+  factory _$_ActiveList.fromJson(Map<String, dynamic> json) =>
+      _$_$_ActiveListFromJson(json);
 
   @override
   final String id;
   @override
   final String name;
   @override
+  @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   final ListType type;
   @override
   final int position;
   @override
   final bool done;
+  @override
+  final bool opened;
+  @override
+  final List<ActiveListPosition> listItems;
 
   @override
   String toString() {
-    return 'ActiveList(id: $id, name: $name, type: $type, position: $position, done: $done)';
+    return 'ActiveList(id: $id, name: $name, type: $type, position: $position, done: $done, opened: $opened, listItems: $listItems)';
   }
 
   @override
@@ -167,7 +233,12 @@ class _$_ActiveList implements _ActiveList {
                 const DeepCollectionEquality()
                     .equals(other.position, position)) &&
             (identical(other.done, done) ||
-                const DeepCollectionEquality().equals(other.done, done)));
+                const DeepCollectionEquality().equals(other.done, done)) &&
+            (identical(other.opened, opened) ||
+                const DeepCollectionEquality().equals(other.opened, opened)) &&
+            (identical(other.listItems, listItems) ||
+                const DeepCollectionEquality()
+                    .equals(other.listItems, listItems)));
   }
 
   @override
@@ -177,33 +248,62 @@ class _$_ActiveList implements _ActiveList {
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(position) ^
-      const DeepCollectionEquality().hash(done);
+      const DeepCollectionEquality().hash(done) ^
+      const DeepCollectionEquality().hash(opened) ^
+      const DeepCollectionEquality().hash(listItems);
 
   @override
   _$ActiveListCopyWith<_ActiveList> get copyWith =>
       __$ActiveListCopyWithImpl<_ActiveList>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ActiveListToJson(this);
+  }
 }
 
-abstract class _ActiveList implements ActiveList {
+abstract class _ActiveList extends ActiveList {
+  const _ActiveList._() : super._();
   const factory _ActiveList(
-      {@required String id,
-      @required String name,
-      @required ListType type,
-      @required int position,
-      @required bool done}) = _$_ActiveList;
+      {@required
+          String id,
+      @required
+          String name,
+      @required
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      @required
+          int position,
+      @required
+          bool done,
+      @required
+          bool opened,
+      List<ActiveListPosition> listItems}) = _$_ActiveList;
+
+  factory _ActiveList.fromJson(Map<String, dynamic> json) =
+      _$_ActiveList.fromJson;
 
   @override
   String get id;
   @override
   String get name;
   @override
+  @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   ListType get type;
   @override
   int get position;
   @override
   bool get done;
   @override
+  bool get opened;
+  @override
+  List<ActiveListPosition> get listItems;
+  @override
   _$ActiveListCopyWith<_ActiveList> get copyWith;
+}
+
+ActiveListPosition _$ActiveListPositionFromJson(Map<String, dynamic> json) {
+  return _ActiveListPosition.fromJson(json);
 }
 
 class _$ActiveListPositionTearOff {
@@ -228,6 +328,7 @@ mixin _$ActiveListPosition {
   int get position;
   bool get done;
 
+  Map<String, dynamic> toJson();
   $ActiveListPositionCopyWith<ActiveListPosition> get copyWith;
 }
 
@@ -293,12 +394,17 @@ class __$ActiveListPositionCopyWithImpl<$Res>
   }
 }
 
-class _$_ActiveListPosition implements _ActiveListPosition {
+@JsonSerializable()
+class _$_ActiveListPosition extends _ActiveListPosition {
   const _$_ActiveListPosition(
       {@required this.name, @required this.position, @required this.done})
       : assert(name != null),
         assert(position != null),
-        assert(done != null);
+        assert(done != null),
+        super._();
+
+  factory _$_ActiveListPosition.fromJson(Map<String, dynamic> json) =>
+      _$_$_ActiveListPositionFromJson(json);
 
   @override
   final String name;
@@ -335,13 +441,22 @@ class _$_ActiveListPosition implements _ActiveListPosition {
   @override
   _$ActiveListPositionCopyWith<_ActiveListPosition> get copyWith =>
       __$ActiveListPositionCopyWithImpl<_ActiveListPosition>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ActiveListPositionToJson(this);
+  }
 }
 
-abstract class _ActiveListPosition implements ActiveListPosition {
+abstract class _ActiveListPosition extends ActiveListPosition {
+  const _ActiveListPosition._() : super._();
   const factory _ActiveListPosition(
       {@required String name,
       @required int position,
       @required bool done}) = _$_ActiveListPosition;
+
+  factory _ActiveListPosition.fromJson(Map<String, dynamic> json) =
+      _$_ActiveListPosition.fromJson;
 
   @override
   String get name;

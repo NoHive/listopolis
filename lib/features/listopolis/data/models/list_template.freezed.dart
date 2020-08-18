@@ -8,17 +8,28 @@ part of 'list_template.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+ListTemplate _$ListTemplateFromJson(Map<String, dynamic> json) {
+  return _ListTemplate.fromJson(json);
+}
 
 class _$ListTemplateTearOff {
   const _$ListTemplateTearOff();
 
 // ignore: unused_element
   _ListTemplate call(
-      {@required String id, @required String name, @required ListType type}) {
+      {@required
+          String id,
+      @required
+          String name,
+      @required
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      List<ListTemplatePosition> templatePositions}) {
     return _ListTemplate(
       id: id,
       name: name,
       type: type,
+      templatePositions: templatePositions,
     );
   }
 }
@@ -29,8 +40,11 @@ const $ListTemplate = _$ListTemplateTearOff();
 mixin _$ListTemplate {
   String get id;
   String get name;
+  @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   ListType get type;
+  List<ListTemplatePosition> get templatePositions;
 
+  Map<String, dynamic> toJson();
   $ListTemplateCopyWith<ListTemplate> get copyWith;
 }
 
@@ -38,7 +52,12 @@ abstract class $ListTemplateCopyWith<$Res> {
   factory $ListTemplateCopyWith(
           ListTemplate value, $Res Function(ListTemplate) then) =
       _$ListTemplateCopyWithImpl<$Res>;
-  $Res call({String id, String name, ListType type});
+  $Res call(
+      {String id,
+      String name,
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      List<ListTemplatePosition> templatePositions});
 
   $ListTypeCopyWith<$Res> get type;
 }
@@ -55,11 +74,15 @@ class _$ListTemplateCopyWithImpl<$Res> implements $ListTemplateCopyWith<$Res> {
     Object id = freezed,
     Object name = freezed,
     Object type = freezed,
+    Object templatePositions = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as ListType,
+      templatePositions: templatePositions == freezed
+          ? _value.templatePositions
+          : templatePositions as List<ListTemplatePosition>,
     ));
   }
 
@@ -80,7 +103,12 @@ abstract class _$ListTemplateCopyWith<$Res>
           _ListTemplate value, $Res Function(_ListTemplate) then) =
       __$ListTemplateCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String name, ListType type});
+  $Res call(
+      {String id,
+      String name,
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      List<ListTemplatePosition> templatePositions});
 
   @override
   $ListTypeCopyWith<$Res> get type;
@@ -100,32 +128,51 @@ class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
     Object id = freezed,
     Object name = freezed,
     Object type = freezed,
+    Object templatePositions = freezed,
   }) {
     return _then(_ListTemplate(
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       type: type == freezed ? _value.type : type as ListType,
+      templatePositions: templatePositions == freezed
+          ? _value.templatePositions
+          : templatePositions as List<ListTemplatePosition>,
     ));
   }
 }
 
-class _$_ListTemplate implements _ListTemplate {
+@JsonSerializable()
+class _$_ListTemplate extends _ListTemplate {
   const _$_ListTemplate(
-      {@required this.id, @required this.name, @required this.type})
+      {@required
+          this.id,
+      @required
+          this.name,
+      @required
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          this.type,
+      this.templatePositions})
       : assert(id != null),
         assert(name != null),
-        assert(type != null);
+        assert(type != null),
+        super._();
+
+  factory _$_ListTemplate.fromJson(Map<String, dynamic> json) =>
+      _$_$_ListTemplateFromJson(json);
 
   @override
   final String id;
   @override
   final String name;
   @override
+  @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   final ListType type;
+  @override
+  final List<ListTemplatePosition> templatePositions;
 
   @override
   String toString() {
-    return 'ListTemplate(id: $id, name: $name, type: $type)';
+    return 'ListTemplate(id: $id, name: $name, type: $type, templatePositions: $templatePositions)';
   }
 
   @override
@@ -137,7 +184,10 @@ class _$_ListTemplate implements _ListTemplate {
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)));
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.templatePositions, templatePositions) ||
+                const DeepCollectionEquality()
+                    .equals(other.templatePositions, templatePositions)));
   }
 
   @override
@@ -145,27 +195,49 @@ class _$_ListTemplate implements _ListTemplate {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(type);
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(templatePositions);
 
   @override
   _$ListTemplateCopyWith<_ListTemplate> get copyWith =>
       __$ListTemplateCopyWithImpl<_ListTemplate>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ListTemplateToJson(this);
+  }
 }
 
-abstract class _ListTemplate implements ListTemplate {
+abstract class _ListTemplate extends ListTemplate {
+  const _ListTemplate._() : super._();
   const factory _ListTemplate(
-      {@required String id,
-      @required String name,
-      @required ListType type}) = _$_ListTemplate;
+      {@required
+          String id,
+      @required
+          String name,
+      @required
+      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+          ListType type,
+      List<ListTemplatePosition> templatePositions}) = _$_ListTemplate;
+
+  factory _ListTemplate.fromJson(Map<String, dynamic> json) =
+      _$_ListTemplate.fromJson;
 
   @override
   String get id;
   @override
   String get name;
   @override
+  @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   ListType get type;
   @override
+  List<ListTemplatePosition> get templatePositions;
+  @override
   _$ListTemplateCopyWith<_ListTemplate> get copyWith;
+}
+
+ListTemplatePosition _$ListTemplatePositionFromJson(Map<String, dynamic> json) {
+  return _ListTemplatePosition.fromJson(json);
 }
 
 class _$ListTemplatePositionTearOff {
@@ -187,6 +259,7 @@ mixin _$ListTemplatePosition {
   String get name;
   int get position;
 
+  Map<String, dynamic> toJson();
   $ListTemplatePositionCopyWith<ListTemplatePosition> get copyWith;
 }
 
@@ -248,10 +321,15 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
   }
 }
 
-class _$_ListTemplatePosition implements _ListTemplatePosition {
+@JsonSerializable()
+class _$_ListTemplatePosition extends _ListTemplatePosition {
   const _$_ListTemplatePosition({@required this.name, @required this.position})
       : assert(name != null),
-        assert(position != null);
+        assert(position != null),
+        super._();
+
+  factory _$_ListTemplatePosition.fromJson(Map<String, dynamic> json) =>
+      _$_$_ListTemplatePositionFromJson(json);
 
   @override
   final String name;
@@ -284,12 +362,21 @@ class _$_ListTemplatePosition implements _ListTemplatePosition {
   _$ListTemplatePositionCopyWith<_ListTemplatePosition> get copyWith =>
       __$ListTemplatePositionCopyWithImpl<_ListTemplatePosition>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ListTemplatePositionToJson(this);
+  }
 }
 
-abstract class _ListTemplatePosition implements ListTemplatePosition {
+abstract class _ListTemplatePosition extends ListTemplatePosition {
+  const _ListTemplatePosition._() : super._();
   const factory _ListTemplatePosition(
       {@required String name,
       @required int position}) = _$_ListTemplatePosition;
+
+  factory _ListTemplatePosition.fromJson(Map<String, dynamic> json) =
+      _$_ListTemplatePosition.fromJson;
 
   @override
   String get name;

@@ -30,8 +30,7 @@ dependencies:
   get_it: ^4.0.4
   uuid: ^2.2.0
   json_annotation: ^3.0.1
-  
-
+  shared_preferences: ^0.5.8
 
 dependency_overrides:
   analyzer: '0.39.14'
@@ -43,8 +42,8 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-  build_runner:
+
+  build_runner: null
   freezed: ^0.11.5
   json_serializable: ^3.4.0
 # For information on the generic Dart part of this file, see the

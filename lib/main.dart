@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 
 void main() {
   runApp(MyApp());
@@ -53,6 +55,25 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+
+    ActiveList l1 = ActiveList(done: false, 
+                                id: "sdsdfsdf", 
+                                name: "egal",
+                                type: ListType.remember(),
+                                position: 1,
+                                opened: false,
+                                listItems: 
+[
+    ActiveListPosition(position: 1,name: "mach mal", done: false),
+    ActiveListPosition(position: 2,name: "mach noch mal", done: false),
+   ActiveListPosition(position: 3,name: "mach noch mal", done: false)
+]
+                                );
+                            
+    final actListStr = l1.toJson();
+
+    print("active List = $actListStr");
+
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
