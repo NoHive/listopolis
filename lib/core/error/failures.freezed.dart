@@ -9,8 +9,8 @@ part of 'failures.dart';
 
 T _$identity<T>(T value) => value;
 
-class _$RepositoryFailureTearOff {
-  const _$RepositoryFailureTearOff();
+class _$FailureTearOff {
+  const _$FailureTearOff();
 
 // ignore: unused_element
   DeviceOffline deviceOffline() {
@@ -29,9 +29,9 @@ class _$RepositoryFailureTearOff {
 }
 
 // ignore: unused_element
-const $RepositoryFailure = _$RepositoryFailureTearOff();
+const $Failure = _$FailureTearOff();
 
-mixin _$RepositoryFailure {
+mixin _$Failure {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result deviceOffline(),
@@ -60,19 +60,17 @@ mixin _$RepositoryFailure {
   });
 }
 
-abstract class $RepositoryFailureCopyWith<$Res> {
-  factory $RepositoryFailureCopyWith(
-          RepositoryFailure value, $Res Function(RepositoryFailure) then) =
-      _$RepositoryFailureCopyWithImpl<$Res>;
+abstract class $FailureCopyWith<$Res> {
+  factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
+      _$FailureCopyWithImpl<$Res>;
 }
 
-class _$RepositoryFailureCopyWithImpl<$Res>
-    implements $RepositoryFailureCopyWith<$Res> {
-  _$RepositoryFailureCopyWithImpl(this._value, this._then);
+class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
+  _$FailureCopyWithImpl(this._value, this._then);
 
-  final RepositoryFailure _value;
+  final Failure _value;
   // ignore: unused_field
-  final $Res Function(RepositoryFailure) _then;
+  final $Res Function(Failure) _then;
 }
 
 abstract class $DeviceOfflineCopyWith<$Res> {
@@ -81,8 +79,7 @@ abstract class $DeviceOfflineCopyWith<$Res> {
       _$DeviceOfflineCopyWithImpl<$Res>;
 }
 
-class _$DeviceOfflineCopyWithImpl<$Res>
-    extends _$RepositoryFailureCopyWithImpl<$Res>
+class _$DeviceOfflineCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
     implements $DeviceOfflineCopyWith<$Res> {
   _$DeviceOfflineCopyWithImpl(
       DeviceOffline _value, $Res Function(DeviceOffline) _then)
@@ -97,7 +94,7 @@ class _$DeviceOffline implements DeviceOffline {
 
   @override
   String toString() {
-    return 'RepositoryFailure.deviceOffline()';
+    return 'Failure.deviceOffline()';
   }
 
   @override
@@ -165,7 +162,7 @@ class _$DeviceOffline implements DeviceOffline {
   }
 }
 
-abstract class DeviceOffline implements RepositoryFailure {
+abstract class DeviceOffline implements Failure {
   const factory DeviceOffline() = _$DeviceOffline;
 }
 
@@ -176,7 +173,7 @@ abstract class $ServerConnectFailedCopyWith<$Res> {
 }
 
 class _$ServerConnectFailedCopyWithImpl<$Res>
-    extends _$RepositoryFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res>
     implements $ServerConnectFailedCopyWith<$Res> {
   _$ServerConnectFailedCopyWithImpl(
       ServerConnectFailed _value, $Res Function(ServerConnectFailed) _then)
@@ -191,7 +188,7 @@ class _$ServerConnectFailed implements ServerConnectFailed {
 
   @override
   String toString() {
-    return 'RepositoryFailure.serverConnectFailed()';
+    return 'Failure.serverConnectFailed()';
   }
 
   @override
@@ -259,7 +256,7 @@ class _$ServerConnectFailed implements ServerConnectFailed {
   }
 }
 
-abstract class ServerConnectFailed implements RepositoryFailure {
+abstract class ServerConnectFailed implements Failure {
   const factory ServerConnectFailed() = _$ServerConnectFailed;
 }
 
@@ -269,8 +266,7 @@ abstract class $ServerAccessFailedCopyWith<$Res> {
       _$ServerAccessFailedCopyWithImpl<$Res>;
 }
 
-class _$ServerAccessFailedCopyWithImpl<$Res>
-    extends _$RepositoryFailureCopyWithImpl<$Res>
+class _$ServerAccessFailedCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
     implements $ServerAccessFailedCopyWith<$Res> {
   _$ServerAccessFailedCopyWithImpl(
       ServerAccessFailed _value, $Res Function(ServerAccessFailed) _then)
@@ -285,7 +281,7 @@ class _$ServerAccessFailed implements ServerAccessFailed {
 
   @override
   String toString() {
-    return 'RepositoryFailure.serviceAccessFailed()';
+    return 'Failure.serviceAccessFailed()';
   }
 
   @override
@@ -353,6 +349,6 @@ class _$ServerAccessFailed implements ServerAccessFailed {
   }
 }
 
-abstract class ServerAccessFailed implements RepositoryFailure {
+abstract class ServerAccessFailed implements Failure {
   const factory ServerAccessFailed() = _$ServerAccessFailed;
 }
