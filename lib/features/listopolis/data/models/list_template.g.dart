@@ -10,6 +10,7 @@ _$_ListTemplate _$_$_ListTemplateFromJson(Map<String, dynamic> json) {
   return _$_ListTemplate(
     id: json['id'] as String,
     name: json['name'] as String,
+    position: json['position'] as int,
     type: listTypeFromJson(json['type'] as String),
     templatePositions: (json['templatePositions'] as List)
         ?.map((e) => e == null
@@ -23,6 +24,7 @@ Map<String, dynamic> _$_$_ListTemplateToJson(_$_ListTemplate instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'position': instance.position,
       'type': listTypeToJson(instance.type),
       'templatePositions': instance.templatePositions,
     };

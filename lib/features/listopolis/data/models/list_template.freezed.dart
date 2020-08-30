@@ -22,12 +22,15 @@ class _$ListTemplateTearOff {
       @required
           String name,
       @required
+          int position,
+      @required
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           ListType type,
       List<ListTemplatePosition> templatePositions}) {
     return _ListTemplate(
       id: id,
       name: name,
+      position: position,
       type: type,
       templatePositions: templatePositions,
     );
@@ -40,6 +43,7 @@ const $ListTemplate = _$ListTemplateTearOff();
 mixin _$ListTemplate {
   String get id;
   String get name;
+  int get position;
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   ListType get type;
   List<ListTemplatePosition> get templatePositions;
@@ -55,6 +59,7 @@ abstract class $ListTemplateCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
+      int position,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           ListType type,
       List<ListTemplatePosition> templatePositions});
@@ -73,12 +78,14 @@ class _$ListTemplateCopyWithImpl<$Res> implements $ListTemplateCopyWith<$Res> {
   $Res call({
     Object id = freezed,
     Object name = freezed,
+    Object position = freezed,
     Object type = freezed,
     Object templatePositions = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
+      position: position == freezed ? _value.position : position as int,
       type: type == freezed ? _value.type : type as ListType,
       templatePositions: templatePositions == freezed
           ? _value.templatePositions
@@ -106,6 +113,7 @@ abstract class _$ListTemplateCopyWith<$Res>
   $Res call(
       {String id,
       String name,
+      int position,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           ListType type,
       List<ListTemplatePosition> templatePositions});
@@ -127,12 +135,14 @@ class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
   $Res call({
     Object id = freezed,
     Object name = freezed,
+    Object position = freezed,
     Object type = freezed,
     Object templatePositions = freezed,
   }) {
     return _then(_ListTemplate(
       id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
+      position: position == freezed ? _value.position : position as int,
       type: type == freezed ? _value.type : type as ListType,
       templatePositions: templatePositions == freezed
           ? _value.templatePositions
@@ -149,11 +159,14 @@ class _$_ListTemplate extends _ListTemplate {
       @required
           this.name,
       @required
+          this.position,
+      @required
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           this.type,
       this.templatePositions})
       : assert(id != null),
         assert(name != null),
+        assert(position != null),
         assert(type != null),
         super._();
 
@@ -165,6 +178,8 @@ class _$_ListTemplate extends _ListTemplate {
   @override
   final String name;
   @override
+  final int position;
+  @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   final ListType type;
   @override
@@ -172,7 +187,7 @@ class _$_ListTemplate extends _ListTemplate {
 
   @override
   String toString() {
-    return 'ListTemplate(id: $id, name: $name, type: $type, templatePositions: $templatePositions)';
+    return 'ListTemplate(id: $id, name: $name, position: $position, type: $type, templatePositions: $templatePositions)';
   }
 
   @override
@@ -183,6 +198,9 @@ class _$_ListTemplate extends _ListTemplate {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.position, position) ||
+                const DeepCollectionEquality()
+                    .equals(other.position, position)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.templatePositions, templatePositions) ||
@@ -195,6 +213,7 @@ class _$_ListTemplate extends _ListTemplate {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(position) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(templatePositions);
 
@@ -216,6 +235,8 @@ abstract class _ListTemplate extends ListTemplate {
       @required
           String name,
       @required
+          int position,
+      @required
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           ListType type,
       List<ListTemplatePosition> templatePositions}) = _$_ListTemplate;
@@ -227,6 +248,8 @@ abstract class _ListTemplate extends ListTemplate {
   String get id;
   @override
   String get name;
+  @override
+  int get position;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   ListType get type;

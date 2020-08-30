@@ -8,6 +8,6 @@ abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> getActiveLists();
   Future<Either<Failure, List<ListTemplate>>> getTemplates();
   bool isInitialized();
-  Future<Either<Failure, Option<UserData>>> initDataSource(String userID);
+  Future<Either<Failure, Option<UserData>>> initDataSource();
   Future<Either<Failure, Unit>> sendData();
 }

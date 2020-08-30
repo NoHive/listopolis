@@ -13,6 +13,7 @@ abstract class ListTemplate implements _$ListTemplate{
     {
       @required String id, 
       @required String name,
+      @required int position,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
       @required ListType type,
       List<ListTemplatePosition> templatePositions
