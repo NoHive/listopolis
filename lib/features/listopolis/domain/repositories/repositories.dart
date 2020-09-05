@@ -6,6 +6,7 @@ import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 
 abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> getActiveLists();
+  Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position);
   Future<Either<Failure, List<ListTemplate>>> getTemplates();
   bool isInitialized();
   Future<Either<Failure, Option<UserData>>> initDataSource();

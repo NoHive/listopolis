@@ -36,6 +36,7 @@ Map<String, dynamic> _$_$_ActiveListToJson(_$_ActiveList instance) =>
 _$_ActiveListPosition _$_$_ActiveListPositionFromJson(
     Map<String, dynamic> json) {
   return _$_ActiveListPosition(
+    id: json['id'] as String,
     name: json['name'] as String,
     position: json['position'] as int,
     done: json['done'] as bool,
@@ -45,6 +46,7 @@ _$_ActiveListPosition _$_$_ActiveListPositionFromJson(
 Map<String, dynamic> _$_$_ActiveListPositionToJson(
         _$_ActiveListPosition instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'position': instance.position,
       'done': instance.done,

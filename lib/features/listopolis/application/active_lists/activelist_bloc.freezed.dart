@@ -16,6 +16,15 @@ class _$ActivelistEventTearOff {
   _LoadLists load() {
     return const _LoadLists();
   }
+
+// ignore: unused_element
+  _DeleteActiveListPosition deleteActiveListPosition(
+      {@required ActiveList list, @required ActiveListPosition position}) {
+    return _DeleteActiveListPosition(
+      list: list,
+      position: position,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -25,19 +34,26 @@ mixin _$ActivelistEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result orElse(),
   });
 }
@@ -92,8 +108,12 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
   }) {
     assert(load != null);
+    assert(deleteActiveListPosition != null);
     return load();
   }
 
@@ -101,6 +121,8 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -114,8 +136,10 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
   }) {
     assert(load != null);
+    assert(deleteActiveListPosition != null);
     return load(this);
   }
 
@@ -123,6 +147,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -135,6 +160,163 @@ class _$_LoadLists implements _LoadLists {
 
 abstract class _LoadLists implements ActivelistEvent {
   const factory _LoadLists() = _$_LoadLists;
+}
+
+abstract class _$DeleteActiveListPositionCopyWith<$Res> {
+  factory _$DeleteActiveListPositionCopyWith(_DeleteActiveListPosition value,
+          $Res Function(_DeleteActiveListPosition) then) =
+      __$DeleteActiveListPositionCopyWithImpl<$Res>;
+  $Res call({ActiveList list, ActiveListPosition position});
+
+  $ActiveListCopyWith<$Res> get list;
+  $ActiveListPositionCopyWith<$Res> get position;
+}
+
+class __$DeleteActiveListPositionCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$DeleteActiveListPositionCopyWith<$Res> {
+  __$DeleteActiveListPositionCopyWithImpl(_DeleteActiveListPosition _value,
+      $Res Function(_DeleteActiveListPosition) _then)
+      : super(_value, (v) => _then(v as _DeleteActiveListPosition));
+
+  @override
+  _DeleteActiveListPosition get _value =>
+      super._value as _DeleteActiveListPosition;
+
+  @override
+  $Res call({
+    Object list = freezed,
+    Object position = freezed,
+  }) {
+    return _then(_DeleteActiveListPosition(
+      list: list == freezed ? _value.list : list as ActiveList,
+      position: position == freezed
+          ? _value.position
+          : position as ActiveListPosition,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    if (_value.list == null) {
+      return null;
+    }
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+
+  @override
+  $ActiveListPositionCopyWith<$Res> get position {
+    if (_value.position == null) {
+      return null;
+    }
+    return $ActiveListPositionCopyWith<$Res>(_value.position, (value) {
+      return _then(_value.copyWith(position: value));
+    });
+  }
+}
+
+class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
+  const _$_DeleteActiveListPosition(
+      {@required this.list, @required this.position})
+      : assert(list != null),
+        assert(position != null);
+
+  @override
+  final ActiveList list;
+  @override
+  final ActiveListPosition position;
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.deleteActiveListPosition(list: $list, position: $position)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteActiveListPosition &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)) &&
+            (identical(other.position, position) ||
+                const DeepCollectionEquality()
+                    .equals(other.position, position)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(list) ^
+      const DeepCollectionEquality().hash(position);
+
+  @override
+  _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith =>
+      __$DeleteActiveListPositionCopyWithImpl<_DeleteActiveListPosition>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+  }) {
+    assert(load != null);
+    assert(deleteActiveListPosition != null);
+    return deleteActiveListPosition(list, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteActiveListPosition != null) {
+      return deleteActiveListPosition(list, position);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+  }) {
+    assert(load != null);
+    assert(deleteActiveListPosition != null);
+    return deleteActiveListPosition(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteActiveListPosition != null) {
+      return deleteActiveListPosition(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteActiveListPosition implements ActivelistEvent {
+  const factory _DeleteActiveListPosition(
+      {@required ActiveList list,
+      @required ActiveListPosition position}) = _$_DeleteActiveListPosition;
+
+  ActiveList get list;
+  ActiveListPosition get position;
+  _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith;
 }
 
 class _$ActivelistStateTearOff {

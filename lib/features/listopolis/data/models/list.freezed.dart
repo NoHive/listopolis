@@ -311,8 +311,12 @@ class _$ActiveListPositionTearOff {
 
 // ignore: unused_element
   _ActiveListPosition call(
-      {@required String name, @required int position, @required bool done}) {
+      {@required String id,
+      @required String name,
+      @required int position,
+      @required bool done}) {
     return _ActiveListPosition(
+      id: id,
       name: name,
       position: position,
       done: done,
@@ -324,6 +328,7 @@ class _$ActiveListPositionTearOff {
 const $ActiveListPosition = _$ActiveListPositionTearOff();
 
 mixin _$ActiveListPosition {
+  String get id;
   String get name;
   int get position;
   bool get done;
@@ -336,7 +341,7 @@ abstract class $ActiveListPositionCopyWith<$Res> {
   factory $ActiveListPositionCopyWith(
           ActiveListPosition value, $Res Function(ActiveListPosition) then) =
       _$ActiveListPositionCopyWithImpl<$Res>;
-  $Res call({String name, int position, bool done});
+  $Res call({String id, String name, int position, bool done});
 }
 
 class _$ActiveListPositionCopyWithImpl<$Res>
@@ -349,11 +354,13 @@ class _$ActiveListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object id = freezed,
     Object name = freezed,
     Object position = freezed,
     Object done = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       position: position == freezed ? _value.position : position as int,
       done: done == freezed ? _value.done : done as bool,
@@ -367,7 +374,7 @@ abstract class _$ActiveListPositionCopyWith<$Res>
           _ActiveListPosition value, $Res Function(_ActiveListPosition) then) =
       __$ActiveListPositionCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int position, bool done});
+  $Res call({String id, String name, int position, bool done});
 }
 
 class __$ActiveListPositionCopyWithImpl<$Res>
@@ -382,11 +389,13 @@ class __$ActiveListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object id = freezed,
     Object name = freezed,
     Object position = freezed,
     Object done = freezed,
   }) {
     return _then(_ActiveListPosition(
+      id: id == freezed ? _value.id : id as String,
       name: name == freezed ? _value.name : name as String,
       position: position == freezed ? _value.position : position as int,
       done: done == freezed ? _value.done : done as bool,
@@ -397,8 +406,12 @@ class __$ActiveListPositionCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ActiveListPosition extends _ActiveListPosition {
   const _$_ActiveListPosition(
-      {@required this.name, @required this.position, @required this.done})
-      : assert(name != null),
+      {@required this.id,
+      @required this.name,
+      @required this.position,
+      @required this.done})
+      : assert(id != null),
+        assert(name != null),
         assert(position != null),
         assert(done != null),
         super._();
@@ -406,6 +419,8 @@ class _$_ActiveListPosition extends _ActiveListPosition {
   factory _$_ActiveListPosition.fromJson(Map<String, dynamic> json) =>
       _$_$_ActiveListPositionFromJson(json);
 
+  @override
+  final String id;
   @override
   final String name;
   @override
@@ -415,13 +430,15 @@ class _$_ActiveListPosition extends _ActiveListPosition {
 
   @override
   String toString() {
-    return 'ActiveListPosition(name: $name, position: $position, done: $done)';
+    return 'ActiveListPosition(id: $id, name: $name, position: $position, done: $done)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ActiveListPosition &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.position, position) ||
@@ -434,6 +451,7 @@ class _$_ActiveListPosition extends _ActiveListPosition {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(position) ^
       const DeepCollectionEquality().hash(done);
@@ -451,13 +469,16 @@ class _$_ActiveListPosition extends _ActiveListPosition {
 abstract class _ActiveListPosition extends ActiveListPosition {
   const _ActiveListPosition._() : super._();
   const factory _ActiveListPosition(
-      {@required String name,
+      {@required String id,
+      @required String name,
       @required int position,
       @required bool done}) = _$_ActiveListPosition;
 
   factory _ActiveListPosition.fromJson(Map<String, dynamic> json) =
       _$_ActiveListPosition.fromJson;
 
+  @override
+  String get id;
   @override
   String get name;
   @override

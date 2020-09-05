@@ -53,7 +53,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 child: ExpansionTile( 
                                                           title: _buildMainItemExpandableTitle(lists[i]),
                                                           initiallyExpanded: lists[i].opened,
-                                                          children: [ _buildSubElements(context, lists[i].listItems)],
+                                                          children: [ _buildSubElements(context,  lists[i], lists[i].listItems)],
                                                 )
                               );
 
@@ -66,7 +66,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   Widget _buildMainItemExpandableTitle(ActiveList list){
   return Text(list.name);
 }
-  Widget _buildSubElements(BuildContext ontext, List<ActiveListPosition> listItems){
+  Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){
     final int listCount = listItems.length;
     print("listcount = ${listItems.length}");
 
@@ -75,7 +75,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
      
      return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
-                                                child:_buildActiveListItem(listItems[i])
+                                                child:_buildActiveListItem(context, list, listItems[i])
                               );
 
                           },
@@ -86,9 +86,18 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     // return result;
   }
 
-  Widget _buildActiveListItem(ActiveListPosition listPosition){
+  Widget _buildActiveListItem(BuildContext context, ActiveList list, ActiveListPosition listPosition){
     print("constructing ${listPosition.name}");
-    return ListTile(title: Text(listPosition.name));
+    //return ListTile(title: Text(listPosition.name));
+    return Dismissible(key: new Key(listPosition.id),
+            onDismissed: (direction){
+              BlocProvider.of<ActivelistBloc>(context)..
+              add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
+            },
+            child: ListTile(title: Text(listPosition.name)),
+            background: new Container(color:Colors.green),
+    
+    );
   }
 }
 

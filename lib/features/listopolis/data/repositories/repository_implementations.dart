@@ -66,6 +66,12 @@ class RepositoryImpl implements IRepository{
     return uDataCache.isSome();
   }
 
+  @override
+  Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position) {
+    // TODO: implement deleteActiveListPosition
+    throw UnimplementedError();
+  }
+
 }
 class DemoRepositoryImpl implements IRepository{
 
@@ -95,12 +101,12 @@ class DemoRepositoryImpl implements IRepository{
                                 opened: true,
                                 listItems: 
                                     [
-                                      ActiveListPosition(position: 1,name: "3 Bier", done: false),
-                                      ActiveListPosition(position: 2,name: "2 Scheibenkäse", done: false),
-                                      ActiveListPosition(position: 3,name: "1 Milch", done: false),
-                                      ActiveListPosition(position: 4,name: "6 Äpfel", done: false),
-                                      ActiveListPosition(position: 5,name: "Antipasti", done: false),
-                                      ActiveListPosition(position: 6,name: "2 Quark", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 1,name: "3 Bier", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 2,name: "2 Scheibenkäse", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 3,name: "1 Milch", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 4,name: "6 Äpfel", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 5,name: "Antipasti", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 6,name: "2 Quark", done: false),
                                     ]
   );
   ActiveList l2 = ActiveList(done: false, 
@@ -111,11 +117,11 @@ class DemoRepositoryImpl implements IRepository{
                                 opened: false,
                                 listItems: 
                                     [
-                                      ActiveListPosition(position: 1,name: "Wasser", done: false),
-                                      ActiveListPosition(position: 2,name: "Sonnenbrille", done: false),
-                                      ActiveListPosition(position: 3,name: "Sonnencreme", done: false),
-                                      ActiveListPosition(position: 4,name: "Sitzunterlage", done: false),
-                                      ActiveListPosition(position: 5,name: "Energie-Riegel!", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 1,name: "Wasser", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 2,name: "Sonnenbrille", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 3,name: "Sonnencreme", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 4,name: "Sitzunterlage", done: false),
+                                      ActiveListPosition(id: Uuid().v1(), position: 5,name: "Energie-Riegel!", done: false),
                                     ]
   );
   ListTemplate lt1 = ListTemplate(
@@ -175,6 +181,16 @@ class DemoRepositoryImpl implements IRepository{
   @override
   bool isInitialized() {
     return uDataCache.isSome();
+  }
+
+  @override
+  Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position) {
+    // TODO: implement deleteActiveListPosition
+      UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromRemovedActiveListPosition(currentUserData, list, position));
+      }
+      return getActiveLists();
   }
 
 }

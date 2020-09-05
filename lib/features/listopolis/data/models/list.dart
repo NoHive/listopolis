@@ -25,6 +25,7 @@ abstract class ActiveList implements _$ActiveList{
   factory ActiveList.fromJson(Map<String, dynamic> json) => _$ActiveListFromJson(json);
 
  
+ 
 }
 
 
@@ -34,10 +35,12 @@ abstract class ActiveListPosition implements _$ActiveListPosition{
   const ActiveListPosition._();
   const factory ActiveListPosition(
      {
+      @required String id,
       @required String name,
       @required int position,
       @required bool done
     }
   ) = _ActiveListPosition;
+ 
   factory ActiveListPosition.fromJson(Map<String, dynamic> json) => _$ActiveListPositionFromJson(json);
 }

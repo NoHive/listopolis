@@ -46,5 +46,50 @@ abstract class UserData implements _$UserData{
 
       
   }
+  factory UserData.fromRemovedActiveListPosition(UserData data, ActiveList list, ActiveListPosition position){
+      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> aNewList = List();
+      
+      if(existingActiveLists != null){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+      }
+
+      final int positionOfDeleteList = list.position;
+      final int positionOfDeleteListPos = position.position;
+
+      // if so delete whole list
+      if(list.listItems.length <= 1){
+        for(ActiveList aList in existingActiveLists){
+            if(aList.position < positionOfDeleteList)
+              aNewList.add(aList.copyWith());
+            else if(aList.position > positionOfDeleteList)
+              aNewList.add(aList.copyWith(position:aList.position - 1));
+        }
+      }else{
+        List<ActiveListPosition> newListPositions = [];
+        for(ActiveListPosition aListPosition in list.listItems){
+            if(aListPosition.position < positionOfDeleteListPos)
+              newListPositions.add(aListPosition);
+            else if(aListPosition.position > positionOfDeleteList)
+              newListPositions.add(aListPosition.copyWith(position:aListPosition.position - 1));
+        }
+        for(ActiveList aList in existingActiveLists){
+            if(aList.position < positionOfDeleteList)
+              aNewList.add(aList);
+            else if(aList.position == positionOfDeleteList){
+              aNewList.add(aList.copyWith(listItems: newListPositions));
+            }
+            else if(aList.position > positionOfDeleteList)
+              aNewList.add(aList);
+        }
+      }
+
+      
+      
+
+      return data.copyWith(activeLists:aNewList);
+
+      
+  }
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);
 }

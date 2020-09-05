@@ -27,6 +27,15 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
       yield activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r));
-    });
+    },
+    deleteActiveListPosition: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.deleteActiveListPosition(e.list, e.position);
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r));
+    },
+    );
   }
 }
