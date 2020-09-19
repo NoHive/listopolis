@@ -24,7 +24,26 @@ abstract class ActiveList implements _$ActiveList{
   ) = _ActiveList;
   factory ActiveList.fromJson(Map<String, dynamic> json) => _$ActiveListFromJson(json);
 
- 
+  factory ActiveList.addListItemAtStart({@required ActiveList list, @required ActiveListPosition aPosition}){
+    List<ActiveListPosition> existingPositions = list.listItems;
+    existingPositions.sort((a,b) => a.position.compareTo(b.position));
+    ActiveListPosition newPosition = aPosition.copyWith(position:1);
+    List<ActiveListPosition> newListPositons = [];
+    newListPositons.add(newPosition);
+    existingPositions.forEach((element) {newListPositons.add(element.copyWith(position:element.position+1)); });
+
+    return list.copyWith(listItems:newListPositons);
+  }
+  factory ActiveList.addListItemAtEnd({@required ActiveList list, @required ActiveListPosition aPosition}){
+    List<ActiveListPosition> existingPositions = list.listItems;
+    existingPositions.sort((a,b) => a.position.compareTo(b.position));
+    ActiveListPosition lastPosition = existingPositions.last; 
+    ActiveListPosition newPosition = aPosition.copyWith(position:lastPosition.position+1);
+    existingPositions.add(newPosition);
+   
+
+    return list.copyWith(listItems:existingPositions);
+  }
  
 }
 

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 
 class ActiveListMainPage extends StatefulWidget {
@@ -35,13 +36,47 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
               initial: (s) => showInitial(), 
               loading: (s) => showLoadingIndicator(), 
               loaded: (s) => buildLoadedLists(context, s.userLists), 
-              error: (s) => showAppError(mapFailureToLocalizedString(s.failure)));
+              error: (s) => showAppError(mapFailureToLocalizedString(s.failure)),
+             // initCreateList: (s) => showLoadingIndicator()
+            );
           },
         ),
       ),
     )
     ,);
     
+  }
+   Widget _buildOverflowMenue(BuildContext context){
+    return PopupMenuButton<String>(
+      onSelected: _onSelectMenueItem,
+      itemBuilder: (BuildContext context){
+          return ActiveListPageMenueStrings.choises.map((menueOption) {
+            return PopupMenuItem<String>(value: menueOption,
+                                        child: Text(menueOption, style: TextStyle(fontSize: 10),),
+            );
+          }).toList();
+      }
+    
+    );
+
+  }
+   navigateToCreateListScreen(BuildContext context) {
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: BlocProvider.of<ActivelistBloc>(context),
+                  child: CreateListPage(),
+                ),
+              ),
+      );
+   }
+
+  _onSelectMenueItem(String choice){
+      if(choice == ActiveListPageMenueStrings.CREATE_NEW_LIST){
+        navigateToCreateListScreen(context);
+      }else{
+        print("not supported");
+      }
   }
 
   Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
@@ -106,4 +141,12 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
 
 class ActiveListStrings implements ListopolisString{
   static const APP_BAR_TITLE = "Deine Listen";
+}
+
+class ActiveListPageMenueStrings{
+  static const String CREATE_NEW_LIST = "Liste anlegen";
+  static const String EDIT_TEMPlATES = "Vorlagen verwalten";
+  static const String CREATE_NEW_LIST_FROM_TEMPLATE = "Liste aus Vorlage anlegen";
+
+  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES, CREATE_NEW_LIST_FROM_TEMPLATE];
 }
