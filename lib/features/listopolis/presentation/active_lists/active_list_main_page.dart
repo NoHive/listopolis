@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
@@ -24,7 +25,11 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   }
    @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text(ActiveListStrings.APP_BAR_TITLE),),
+    return Scaffold(
+    appBar: AppBar(
+        title: Text(ActiveListStrings.APP_BAR_TITLE),
+        actions: <Widget>[_buildOverflowMenue(context)],
+    ),
     body: Container(
       child: BlocListener<ActivelistBloc, ActivelistState>(
         listener: (context, state) {
@@ -64,7 +69,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
      Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => BlocProvider.value(
-                  value: BlocProvider.of<ActivelistBloc>(context),
+                  value: BlocProvider.of<CreatelistBloc>(context),
                   child: CreateListPage(),
                 ),
               ),

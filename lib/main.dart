@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/data/repositories/repository_implementations.dart';
@@ -17,11 +18,18 @@ class ListopolisRoot extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Listopolis",
-      home: BlocProvider(
-        create: (context) => ActivelistBloc(repository: DemoRepositoryImpl()),
-        child: ActiveListMainPage(),
-      ),
-    
+      home: MultiBlocProvider(
+            providers: [ 
+              BlocProvider<ActivelistBloc> (
+                create: (context) => ActivelistBloc(repository: DemoRepositoryImpl()),
+              ),
+              BlocProvider<CreatelistBloc> (
+                create: (context) => CreatelistBloc(repository: DemoRepositoryImpl()),
+              ),
+            ],
+            child: ActiveListMainPage(),
+          )
     );
   }
+
 }

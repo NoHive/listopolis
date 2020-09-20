@@ -18,6 +18,11 @@ class _$CreatelistEventTearOff {
   }
 
 // ignore: unused_element
+  _StartListCreation startListCreation() {
+    return const _StartListCreation();
+  }
+
+// ignore: unused_element
   _CreateList createNewList({@required CreateListParameter listInfo}) {
     return _CreateList(
       listInfo: listInfo,
@@ -40,12 +45,14 @@ mixin _$CreatelistEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result started(),
+    @required Result startListCreation(),
     @required Result createNewList(CreateListParameter listInfo),
     @required Result createNewListPosition(CreateListItemParameter listPos),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result started(),
+    Result startListCreation(),
     Result createNewList(CreateListParameter listInfo),
     Result createNewListPosition(CreateListItemParameter listPos),
     @required Result orElse(),
@@ -53,12 +60,14 @@ mixin _$CreatelistEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
     @required Result createNewList(_CreateList value),
     @required Result createNewListPosition(_CreateListItem value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
     Result createNewList(_CreateList value),
     Result createNewListPosition(_CreateListItem value),
     @required Result orElse(),
@@ -114,10 +123,12 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result started(),
+    @required Result startListCreation(),
     @required Result createNewList(CreateListParameter listInfo),
     @required Result createNewListPosition(CreateListItemParameter listPos),
   }) {
     assert(started != null);
+    assert(startListCreation != null);
     assert(createNewList != null);
     assert(createNewListPosition != null);
     return started();
@@ -127,6 +138,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result started(),
+    Result startListCreation(),
     Result createNewList(CreateListParameter listInfo),
     Result createNewListPosition(CreateListItemParameter listPos),
     @required Result orElse(),
@@ -142,10 +154,12 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
     @required Result createNewList(_CreateList value),
     @required Result createNewListPosition(_CreateListItem value),
   }) {
     assert(started != null);
+    assert(startListCreation != null);
     assert(createNewList != null);
     assert(createNewListPosition != null);
     return started(this);
@@ -155,6 +169,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
     Result createNewList(_CreateList value),
     Result createNewListPosition(_CreateListItem value),
     @required Result orElse(),
@@ -169,6 +184,106 @@ class _$_Started implements _Started {
 
 abstract class _Started implements CreatelistEvent {
   const factory _Started() = _$_Started;
+}
+
+abstract class _$StartListCreationCopyWith<$Res> {
+  factory _$StartListCreationCopyWith(
+          _StartListCreation value, $Res Function(_StartListCreation) then) =
+      __$StartListCreationCopyWithImpl<$Res>;
+}
+
+class __$StartListCreationCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$StartListCreationCopyWith<$Res> {
+  __$StartListCreationCopyWithImpl(
+      _StartListCreation _value, $Res Function(_StartListCreation) _then)
+      : super(_value, (v) => _then(v as _StartListCreation));
+
+  @override
+  _StartListCreation get _value => super._value as _StartListCreation;
+}
+
+class _$_StartListCreation implements _StartListCreation {
+  const _$_StartListCreation();
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.startListCreation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _StartListCreation);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result started(),
+    @required Result startListCreation(),
+    @required Result createNewList(CreateListParameter listInfo),
+    @required Result createNewListPosition(CreateListItemParameter listPos),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(createNewList != null);
+    assert(createNewListPosition != null);
+    return startListCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result started(),
+    Result startListCreation(),
+    Result createNewList(CreateListParameter listInfo),
+    Result createNewListPosition(CreateListItemParameter listPos),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (startListCreation != null) {
+      return startListCreation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
+    @required Result createNewList(_CreateList value),
+    @required Result createNewListPosition(_CreateListItem value),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(createNewList != null);
+    assert(createNewListPosition != null);
+    return startListCreation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
+    Result createNewList(_CreateList value),
+    Result createNewListPosition(_CreateListItem value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (startListCreation != null) {
+      return startListCreation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartListCreation implements CreatelistEvent {
+  const factory _StartListCreation() = _$_StartListCreation;
 }
 
 abstract class _$CreateListCopyWith<$Res> {
@@ -232,10 +347,12 @@ class _$_CreateList implements _CreateList {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result started(),
+    @required Result startListCreation(),
     @required Result createNewList(CreateListParameter listInfo),
     @required Result createNewListPosition(CreateListItemParameter listPos),
   }) {
     assert(started != null);
+    assert(startListCreation != null);
     assert(createNewList != null);
     assert(createNewListPosition != null);
     return createNewList(listInfo);
@@ -245,6 +362,7 @@ class _$_CreateList implements _CreateList {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result started(),
+    Result startListCreation(),
     Result createNewList(CreateListParameter listInfo),
     Result createNewListPosition(CreateListItemParameter listPos),
     @required Result orElse(),
@@ -260,10 +378,12 @@ class _$_CreateList implements _CreateList {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
     @required Result createNewList(_CreateList value),
     @required Result createNewListPosition(_CreateListItem value),
   }) {
     assert(started != null);
+    assert(startListCreation != null);
     assert(createNewList != null);
     assert(createNewListPosition != null);
     return createNewList(this);
@@ -273,6 +393,7 @@ class _$_CreateList implements _CreateList {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
     Result createNewList(_CreateList value),
     Result createNewListPosition(_CreateListItem value),
     @required Result orElse(),
@@ -353,10 +474,12 @@ class _$_CreateListItem implements _CreateListItem {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result started(),
+    @required Result startListCreation(),
     @required Result createNewList(CreateListParameter listInfo),
     @required Result createNewListPosition(CreateListItemParameter listPos),
   }) {
     assert(started != null);
+    assert(startListCreation != null);
     assert(createNewList != null);
     assert(createNewListPosition != null);
     return createNewListPosition(listPos);
@@ -366,6 +489,7 @@ class _$_CreateListItem implements _CreateListItem {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result started(),
+    Result startListCreation(),
     Result createNewList(CreateListParameter listInfo),
     Result createNewListPosition(CreateListItemParameter listPos),
     @required Result orElse(),
@@ -381,10 +505,12 @@ class _$_CreateListItem implements _CreateListItem {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
     @required Result createNewList(_CreateList value),
     @required Result createNewListPosition(_CreateListItem value),
   }) {
     assert(started != null);
+    assert(startListCreation != null);
     assert(createNewList != null);
     assert(createNewListPosition != null);
     return createNewListPosition(this);
@@ -394,6 +520,7 @@ class _$_CreateListItem implements _CreateListItem {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
     Result createNewList(_CreateList value),
     Result createNewListPosition(_CreateListItem value),
     @required Result orElse(),
@@ -428,6 +555,13 @@ class _$CreatelistStateTearOff {
       list: list,
     );
   }
+
+// ignore: unused_element
+  _ListCreated listCreated({@required ActiveList list}) {
+    return _ListCreated(
+      list: list,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -438,22 +572,26 @@ mixin _$CreatelistState {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result listUpdated(ActiveList list),
+    @required Result listCreated(ActiveList list),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result listUpdated(ActiveList list),
+    Result listCreated(ActiveList list),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result listUpdated(_ListUpdated value),
+    @required Result listCreated(_ListCreated value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result listUpdated(_ListUpdated value),
+    Result listCreated(_ListCreated value),
     @required Result orElse(),
   });
 }
@@ -508,9 +646,11 @@ class _$_Initial implements _Initial {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result listUpdated(ActiveList list),
+    @required Result listCreated(ActiveList list),
   }) {
     assert(initial != null);
     assert(listUpdated != null);
+    assert(listCreated != null);
     return initial();
   }
 
@@ -519,6 +659,7 @@ class _$_Initial implements _Initial {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result listUpdated(ActiveList list),
+    Result listCreated(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -533,9 +674,11 @@ class _$_Initial implements _Initial {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result listUpdated(_ListUpdated value),
+    @required Result listCreated(_ListCreated value),
   }) {
     assert(initial != null);
     assert(listUpdated != null);
+    assert(listCreated != null);
     return initial(this);
   }
 
@@ -544,6 +687,7 @@ class _$_Initial implements _Initial {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result listUpdated(_ListUpdated value),
+    Result listCreated(_ListCreated value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -629,9 +773,11 @@ class _$_ListUpdated implements _ListUpdated {
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result listUpdated(ActiveList list),
+    @required Result listCreated(ActiveList list),
   }) {
     assert(initial != null);
     assert(listUpdated != null);
+    assert(listCreated != null);
     return listUpdated(list);
   }
 
@@ -640,6 +786,7 @@ class _$_ListUpdated implements _ListUpdated {
   Result maybeWhen<Result extends Object>({
     Result initial(),
     Result listUpdated(ActiveList list),
+    Result listCreated(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -654,9 +801,11 @@ class _$_ListUpdated implements _ListUpdated {
   Result map<Result extends Object>({
     @required Result initial(_Initial value),
     @required Result listUpdated(_ListUpdated value),
+    @required Result listCreated(_ListCreated value),
   }) {
     assert(initial != null);
     assert(listUpdated != null);
+    assert(listCreated != null);
     return listUpdated(this);
   }
 
@@ -665,6 +814,7 @@ class _$_ListUpdated implements _ListUpdated {
   Result maybeMap<Result extends Object>({
     Result initial(_Initial value),
     Result listUpdated(_ListUpdated value),
+    Result listCreated(_ListCreated value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -680,4 +830,134 @@ abstract class _ListUpdated implements CreatelistState {
 
   ActiveList get list;
   _$ListUpdatedCopyWith<_ListUpdated> get copyWith;
+}
+
+abstract class _$ListCreatedCopyWith<$Res> {
+  factory _$ListCreatedCopyWith(
+          _ListCreated value, $Res Function(_ListCreated) then) =
+      __$ListCreatedCopyWithImpl<$Res>;
+  $Res call({ActiveList list});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+class __$ListCreatedCopyWithImpl<$Res>
+    extends _$CreatelistStateCopyWithImpl<$Res>
+    implements _$ListCreatedCopyWith<$Res> {
+  __$ListCreatedCopyWithImpl(
+      _ListCreated _value, $Res Function(_ListCreated) _then)
+      : super(_value, (v) => _then(v as _ListCreated));
+
+  @override
+  _ListCreated get _value => super._value as _ListCreated;
+
+  @override
+  $Res call({
+    Object list = freezed,
+  }) {
+    return _then(_ListCreated(
+      list: list == freezed ? _value.list : list as ActiveList,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    if (_value.list == null) {
+      return null;
+    }
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+class _$_ListCreated implements _ListCreated {
+  const _$_ListCreated({@required this.list}) : assert(list != null);
+
+  @override
+  final ActiveList list;
+
+  @override
+  String toString() {
+    return 'CreatelistState.listCreated(list: $list)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ListCreated &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+
+  @override
+  _$ListCreatedCopyWith<_ListCreated> get copyWith =>
+      __$ListCreatedCopyWithImpl<_ListCreated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result listUpdated(ActiveList list),
+    @required Result listCreated(ActiveList list),
+  }) {
+    assert(initial != null);
+    assert(listUpdated != null);
+    assert(listCreated != null);
+    return listCreated(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result listUpdated(ActiveList list),
+    Result listCreated(ActiveList list),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (listCreated != null) {
+      return listCreated(list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result listUpdated(_ListUpdated value),
+    @required Result listCreated(_ListCreated value),
+  }) {
+    assert(initial != null);
+    assert(listUpdated != null);
+    assert(listCreated != null);
+    return listCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result listUpdated(_ListUpdated value),
+    Result listCreated(_ListCreated value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (listCreated != null) {
+      return listCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ListCreated implements CreatelistState {
+  const factory _ListCreated({@required ActiveList list}) = _$_ListCreated;
+
+  ActiveList get list;
+  _$ListCreatedCopyWith<_ListCreated> get copyWith;
 }

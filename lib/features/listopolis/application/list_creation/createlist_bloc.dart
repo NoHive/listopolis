@@ -26,7 +26,8 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   Stream<CreatelistState> mapEventToState(
     CreatelistEvent event,
   ) async* {
-    yield* event.map(started : (e) async*{
+    yield* event.map(
+    started : (e) async*{
        createdList = null;
        Either<Failure, List<ActiveList>> lists = await repository.getActiveLists();
        List<ActiveList> activeLists = lists.getOrElse(() => null);
@@ -36,6 +37,16 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
 
         yield _Initial();
     },
+    startListCreation: (e) async*{
+
+      createdList = new ActiveList(id: Uuid().v1()
+                                  , name: "neue Liste"
+                                  , type: ListType.remember()
+                                  , position: 1
+                                  , done: false
+                                  , opened: false);
+      yield _ListCreated(list:  createdList);
+    }, 
     createNewListPosition: (e) async*{
         ActiveListPosition pos = ActiveListPosition(
           done: false,
@@ -47,6 +58,8 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
            createdList = ActiveList.addListItemAtEnd(list: createdList, aPosition: pos);
         else
            createdList = ActiveList.addListItemAtStart(list: createdList, aPosition: pos);
+        
+        yield _ListUpdated(list:  createdList);
     },
     createNewList: (e) async*{
 
