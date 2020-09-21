@@ -7,7 +7,14 @@ part 'list_type.freezed.dart';
 abstract class ListType with _$ListType{
   const factory ListType.remember() = Remember;
   const factory ListType.todo() = ToDoList;
+
+  static String buildLocalName(ListType type, String locale){
+    return type is Remember ? "Erinnerungsliste" : "Erledigung";
+  }
+
 }
+
+
 
 ListType listTypeFromJson(String str){
     if("T".compareTo(str) == 0)

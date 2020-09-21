@@ -19,6 +19,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   final IRepository repository;
   ActiveList createdList;
   int lastActiveListIndex;
+  CreateListParameter listCreation;
   
   CreatelistBloc({@required this.repository}) : super(_Initial());
 
@@ -39,42 +40,21 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
     },
     startListCreation: (e) async*{
 
-      createdList = new ActiveList(id: Uuid().v1()
-                                  , name: "neue Liste"
+      CreateListParameter initialValues = new CreateListParameter(
+                                    listName:  "neue Liste"
                                   , type: ListType.remember()
-                                  , position: 1
-                                  , done: false
-                                  , opened: false);
-      yield _ListCreated(list:  createdList);
+                                  , positioning: PositionType.start
+      );
+      yield _ListCreationValueChanged(creationParam:  initialValues);
     }, 
     createNewListPosition: (e) async*{
-        ActiveListPosition pos = ActiveListPosition(
-          done: false,
-          id: Uuid().v1(),
-          name: e.listPos.name,
-          position: 1
-        );
-        if(e.listPos.positioning == PositionType.end)
-           createdList = ActiveList.addListItemAtEnd(list: createdList, aPosition: pos);
-        else
-           createdList = ActiveList.addListItemAtStart(list: createdList, aPosition: pos);
-        
-        yield _ListUpdated(list:  createdList);
+        yield _ListItemCreationValueChanged(creationParam: e.listPos);
     },
     createNewList: (e) async*{
-
-      int insertIndex = 1;
-      if(e.listInfo.positioning == PositionType.end)
-        insertIndex = lastActiveListIndex;
-
-      createdList = new ActiveList(id: Uuid().v1()
-                                  , name: e.listInfo.listName
-                                  , type: e.listInfo.type
-                                  , position: insertIndex
-                                  , done: false
-                                  , opened: false);
-      yield _ListUpdated(list:  createdList);
-    });
+      yield _ListCreationValueChanged(creationParam:  e.listInfo);
+    },
+    
+    );
     
     // TODO: implement mapEventToState
   }

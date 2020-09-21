@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
@@ -18,6 +19,8 @@ class CreateListPage extends StatefulWidget  {
 class _CreateListPageState extends State<CreateListPage> with CommonPageFunctions{
 
   String listName;
+  ListType currentValue;
+  PositionType positionType;
   
    @override
   void didChangeDependencies() {
@@ -33,27 +36,29 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
           (builder: (context, state){
             return state.map(
               initial: (s) => showLoadingIndicator(),
-              listCreated: (s) => showEditList(context, s.list), 
-              listUpdated: (s) => showUpdatedList(context), 
+              listCreationValueChanged: (s) => showEditList(context, s.creationParam), 
+              listItemCreationValueChanged: (s) => showUpdatedList(context), 
             );
           }
           ,),
     ));
   }
 
-  Widget showEditList(BuildContext context, ActiveList list){
+  Widget showEditList(BuildContext context, CreateListParameter list){
    List<Widget> widgets = [
-                  _buildListName(context, list )
+                  _buildListName(context, list ),
+                  _buildListType(context, list),
+                  _buildAppendType(context, list)
                   
     ];
     return ListView(children: widgets);
   }
-  Widget _buildListName(BuildContext context, ActiveList list){
-      listName = list.name;
+  Widget _buildListName(BuildContext context, CreateListParameter list){
+      listName = list.listName;
        return Expanded(child: 
             Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0), child:
               TextField(
-                          onSubmitted: (value) => listName=value,
+                          onSubmitted: (value){ listName=value; _commitListChanges(context);},
                           textInputAction: TextInputAction.search,
                           controller: TextEditingController()..text = listName,
                           cursorColor: Colors.white,
@@ -71,12 +76,66 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
             );
 
   }
-  Widget _buildListType(BuildContext context){
-    List<ListType> typen =[ListType.remember(), ListType.todo()];
+  Widget _buildListType(BuildContext context,  CreateListParameter list){
+    List<ListType> listTypes =[ListType.remember(), ListType.todo()];
+    ListType currentShowValue =list.type;
+
+      return  DropdownButton(
+                  items:  listTypes.map((qpv){ 
+                            return DropdownMenuItem<ListType>(
+                                      child: Text(ListType.buildLocalName( qpv, "de"), 
+                                                  style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                                              ), 
+                                      value: qpv,
+                            );
+                          } ).toList(),
+                    onChanged: (value) {
+                    currentValue = value;
+                    _commitListChanges(context);
+                    // SampleBloc aBloc =  BlocProvider.of<SampleBloc>(context);
+                    // aBloc.add(SampleValueChanged(measureSample:sample, samplingElement:samplingElement, value: value));
+                  },
+                  value: currentShowValue,
+                  // hint: Text(ILMeasureDetailStrings.MESURE_QUALITATIVE_NO_VALUE, style: TextStyle(color: ILimsColors.TEXTCOLOR_ON_DARK_BG)),
+                  // dropdownColor: ILimsColors.BLUE_TRANSPARENT,
+      );
 
   }
-  Widget _buildAppendType(BuildContext context){
 
+  _commitListChanges(BuildContext context){
+
+    CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
+     aBloc.add(CreatelistEvent.createNewList(
+       listInfo: CreateListParameter(
+        listName: listName,
+        positioning: positionType,
+        type: currentValue
+     )));
+  }
+
+  Widget _buildAppendType(BuildContext context,  CreateListParameter list){
+    List<PositionType> listTypes =[PositionType.end, PositionType.start];
+    PositionType currentShowValue =list.positioning;
+
+      return  DropdownButton(
+                  items:  listTypes.map((qpv){ 
+                            return DropdownMenuItem<PositionType>(
+                                      child: Text(buildPositionTypeLocalString( qpv, "de"), 
+                                                  style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                                              ), 
+                                      value: qpv,
+                            );
+                          } ).toList(),
+                    onChanged: (value) {
+                    positionType = value;
+                    _commitListChanges(context);
+                    // SampleBloc aBloc =  BlocProvider.of<SampleBloc>(context);
+                    // aBloc.add(SampleValueChanged(measureSample:sample, samplingElement:samplingElement, value: value));
+                  },
+                  value: currentShowValue,
+                  // hint: Text(ILMeasureDetailStrings.MESURE_QUALITATIVE_NO_VALUE, style: TextStyle(color: ILimsColors.TEXTCOLOR_ON_DARK_BG)),
+                  // dropdownColor: ILimsColors.BLUE_TRANSPARENT,
+      );
   }
 
 

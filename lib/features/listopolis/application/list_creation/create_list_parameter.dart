@@ -3,6 +3,16 @@ import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 
 enum PositionType{start, end}
 
+String buildPositionTypeLocalString(PositionType pType, String locale){
+  String lString;
+  if(pType == PositionType.end)
+    lString = "Anfang";
+  else
+    lString = "Ende";
+
+    return lString;
+}
+
 class CreateListParameter{
   final String listName;
   final ListType type;
