@@ -21,6 +21,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   int lastActiveListIndex;
   CreateListParameter listCreation;
   
+  
   CreatelistBloc({@required this.repository}) : super(_Initial());
 
   @override
@@ -36,24 +37,26 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
        ActiveList lastList = activeLists.last;
        lastActiveListIndex = lastList.position;
 
+       
+
         yield _Initial();
     },
     startListCreation: (e) async*{
 
-      CreateListParameter initialValues = new CreateListParameter(
+       listCreation = CreateListParameter(
                                     listName:  "neue Liste"
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
       );
-      yield _ListCreationValueChanged(creationParam:  initialValues);
+      listCreation.listitems.add(CreateListItemParameter(name: "neue Position", position: 1));
+      yield _ListChanged(creationParam:  listCreation);
     }, 
-    createNewListPosition: (e) async*{
-        yield _ListItemCreationValueChanged(creationParam: e.listPos);
+    changeList: (e) async*{
+      yield _Initial();
+        listCreation = CreateListParameter.asCopy(listCreation);
+        yield _ListChanged(creationParam:  listCreation);
     },
-    createNewList: (e) async*{
-      yield _ListCreationValueChanged(creationParam:  e.listInfo);
-    },
-    
+   
     );
     
     // TODO: implement mapEventToState

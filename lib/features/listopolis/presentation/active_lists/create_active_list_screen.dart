@@ -18,9 +18,9 @@ class CreateListPage extends StatefulWidget  {
 
 class _CreateListPageState extends State<CreateListPage> with CommonPageFunctions{
 
-  String listName;
-  ListType currentValue;
-  PositionType positionType;
+  String currentlistName;
+  ListType currentListType;
+  PositionType currentPositionType;
   
    @override
   void didChangeDependencies() {
@@ -36,8 +36,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
           (builder: (context, state){
             return state.map(
               initial: (s) => showLoadingIndicator(),
-              listCreationValueChanged: (s) => showEditList(context, s.creationParam), 
-              listItemCreationValueChanged: (s) => showUpdatedList(context), 
+              listChanged: (s) => showEditList(context, s.creationParam), 
             );
           }
           ,),
@@ -46,21 +45,27 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 
   Widget showEditList(BuildContext context, CreateListParameter list){
    List<Widget> widgets = [
-                  _buildListName(context, list ),
-                  _buildListType(context, list),
-                  _buildAppendType(context, list)
+                 _buildListName(context, list ),
+                 _buildListType(context, list),
+                 _buildAppendType(context, list),
                   
     ];
+    widgets.add( Container(child: _buildListItems(context, list.listitems),));
     return ListView(children: widgets);
+    
   }
   Widget _buildListName(BuildContext context, CreateListParameter list){
-      listName = list.listName;
-       return Expanded(child: 
+      currentlistName = list.listName;
+       return// Expanded(child: 
             Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0), child:
               TextField(
-                          onSubmitted: (value){ listName=value; _commitListChanges(context);},
+                          onSubmitted: (value){ 
+                            currentlistName=value; 
+                            list.listName = value;
+                          _commitListChanges(context);
+                          },
                           textInputAction: TextInputAction.search,
-                          controller: TextEditingController()..text = listName,
+                          controller: TextEditingController()..text = currentlistName,
                           cursorColor: Colors.white,
                           style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
                           decoration: InputDecoration(
@@ -69,16 +74,15 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(2)),
                             labelText: CreateListPageStrings.LIST_NAME,
                             labelStyle: TextStyle(color:  ListColors.TEXTCOLOR_ON_LIGHT_BG),
-                            fillColor: Color(0x42000000),
-                            filled: true,
+                            
                           ),
-            ))
-            );
+            ));
+           // );
 
   }
   Widget _buildListType(BuildContext context,  CreateListParameter list){
     List<ListType> listTypes =[ListType.remember(), ListType.todo()];
-    ListType currentShowValue =list.type;
+    currentListType =list.type;
 
       return  DropdownButton(
                   items:  listTypes.map((qpv){ 
@@ -90,12 +94,14 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                             );
                           } ).toList(),
                     onChanged: (value) {
-                    currentValue = value;
+                    currentListType = value;
+                    list.type = value;
                     _commitListChanges(context);
+                    
                     // SampleBloc aBloc =  BlocProvider.of<SampleBloc>(context);
                     // aBloc.add(SampleValueChanged(measureSample:sample, samplingElement:samplingElement, value: value));
                   },
-                  value: currentShowValue,
+                  value: currentListType,
                   // hint: Text(ILMeasureDetailStrings.MESURE_QUALITATIVE_NO_VALUE, style: TextStyle(color: ILimsColors.TEXTCOLOR_ON_DARK_BG)),
                   // dropdownColor: ILimsColors.BLUE_TRANSPARENT,
       );
@@ -105,17 +111,12 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   _commitListChanges(BuildContext context){
 
     CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
-     aBloc.add(CreatelistEvent.createNewList(
-       listInfo: CreateListParameter(
-        listName: listName,
-        positioning: positionType,
-        type: currentValue
-     )));
+     aBloc.add(CreatelistEvent.changeList());
   }
 
   Widget _buildAppendType(BuildContext context,  CreateListParameter list){
     List<PositionType> listTypes =[PositionType.end, PositionType.start];
-    PositionType currentShowValue =list.positioning;
+    currentPositionType =list.positioning;
 
       return  DropdownButton(
                   items:  listTypes.map((qpv){ 
@@ -127,17 +128,55 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                             );
                           } ).toList(),
                     onChanged: (value) {
-                    positionType = value;
+                    currentPositionType = null;
+                    list.positioning = value;
                     _commitListChanges(context);
                     // SampleBloc aBloc =  BlocProvider.of<SampleBloc>(context);
                     // aBloc.add(SampleValueChanged(measureSample:sample, samplingElement:samplingElement, value: value));
                   },
-                  value: currentShowValue,
-                  // hint: Text(ILMeasureDetailStrings.MESURE_QUALITATIVE_NO_VALUE, style: TextStyle(color: ILimsColors.TEXTCOLOR_ON_DARK_BG)),
+                  value: currentPositionType,
+                  hint: Text(CreateListPageStrings.LIST_POSITIONING, style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG)),
+                  
                   // dropdownColor: ILimsColors.BLUE_TRANSPARENT,
       );
   }
 
+ Widget _buildListItems(BuildContext context,  List<CreateListItemParameter> listitems){
+     return ListView.builder(itemBuilder: (context, index){
+       return  _buildListItemInput(context, listitems[index]);
+    },
+    itemCount: listitems.length
+    ,shrinkWrap: true
+    ,physics: ClampingScrollPhysics());
+    
+
+ }
+ Widget _buildListItemInput(BuildContext context, CreateListItemParameter listItem){
+   currentlistName = listItem.name;
+            return ListTile(title: 
+              TextField(
+                          onSubmitted: (value){ currentlistName=value; listItem.name=value;},
+                          textInputAction: TextInputAction.search,
+                          controller: TextEditingController()..text = currentlistName,
+                          cursorColor: Colors.white,
+                          style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                          decoration: InputDecoration(
+                            hintText: CreateListPageStrings.LIST_POSITION,
+                            hintStyle: TextStyle(color: Colors.white),
+                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(2)),
+                            labelText: CreateListPageStrings.LIST_POSITION,
+                            labelStyle: TextStyle(color:  ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                            
+                          ),
+            ),
+            trailing: _buildCreatePosition(listItem, context),
+            );
+ }
+ Widget _buildCreatePosition(CreateListItemParameter listItem, BuildContext context){
+    return IconButton(icon: Icon(Icons.add),
+    onPressed: (){},
+    );
+ }
 
   Widget showUpdatedList(BuildContext context){
 
@@ -148,4 +187,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 class CreateListPageStrings implements ListopolisString{
   static const APP_BAR_TITLE = "eine neue Liste erstellen";
   static const LIST_NAME = "Listen-Name";
+  static const LIST_TYPE = "Listen-Typ";
+  static const LIST_POSITIONING = "Einfügen";
+  static const LIST_POSITION = "Listenposition";
 }

@@ -14,17 +14,28 @@ String buildPositionTypeLocalString(PositionType pType, String locale){
 }
 
 class CreateListParameter{
-  final String listName;
-  final ListType type;
-  final PositionType positioning;
+  String listName;
+  ListType type;
+  PositionType positioning;
 
-  CreateListParameter({@required this.listName, @required this.type, @required this.positioning});
+  List<CreateListItemParameter> listitems;
+
+  CreateListParameter({@required this.listName, @required this.type, @required this.positioning}){
+    listitems = [];
+  }
+  factory CreateListParameter.asCopy(CreateListParameter input){
+    CreateListParameter newList = CreateListParameter(listName: input.listName, positioning: input.positioning, type: input.type);
+    for(CreateListItemParameter item in input.listitems){
+      newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
+    }
+    return newList;
+  }
 
 }
 class CreateListItemParameter{
-  final String name;
-  final PositionType positioning;
+  String name;
+  int position;
 
-  CreateListItemParameter({@required this.name, @required this.positioning});
+  CreateListItemParameter({@required this.name, @required this.position});
 
 }
