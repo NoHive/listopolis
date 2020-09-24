@@ -30,6 +30,23 @@ class CreateListParameter{
     }
     return newList;
   }
+  void addListPositionAfterIndex(int index){
+    int insertIndex = index + 1;
+    if(listitems.length == 0){
+      listitems.add(CreateListItemParameter(position: 1, name: "neue Position"));
+    }else{
+      for(CreateListItemParameter item in listitems){
+        if(item.position >= insertIndex){
+          item.position = item.position + 1;
+        }
+      }
+      listitems.add(CreateListItemParameter(position: insertIndex, name: "neue Position"));
+    }
+  }
+  List<CreateListItemParameter> getSorted(){
+    listitems.sort((a,b) => a.position.compareTo(b.position));
+    return listitems;
+  }
 
 }
 class CreateListItemParameter{

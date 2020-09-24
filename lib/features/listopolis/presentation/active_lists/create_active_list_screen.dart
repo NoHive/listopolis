@@ -50,7 +50,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                  _buildAppendType(context, list),
                   
     ];
-    widgets.add( Container(child: _buildListItems(context, list.listitems),));
+    widgets.add( Container(child: _buildListItems(context, list.getSorted()),));
     return ListView(children: widgets);
     
   }
@@ -174,7 +174,10 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
  }
  Widget _buildCreatePosition(CreateListItemParameter listItem, BuildContext context){
     return IconButton(icon: Icon(Icons.add),
-    onPressed: (){},
+    onPressed: (){
+        CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
+        aBloc.add(CreatelistEvent.addListPositionAfter(index: listItem.position));
+     },
     );
  }
 

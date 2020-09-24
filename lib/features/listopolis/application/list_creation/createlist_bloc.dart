@@ -56,6 +56,12 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
         listCreation = CreateListParameter.asCopy(listCreation);
         yield _ListChanged(creationParam:  listCreation);
     },
+    addListPositionAfter: (e) async*{
+      yield _Initial();
+        listCreation = CreateListParameter.asCopy(listCreation);
+        listCreation.addListPositionAfterIndex(e.index);
+        yield _ListChanged(creationParam:  listCreation);
+    },
    
     );
     

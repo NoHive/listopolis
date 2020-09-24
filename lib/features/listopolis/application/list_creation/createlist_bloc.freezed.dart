@@ -26,6 +26,13 @@ class _$CreatelistEventTearOff {
   _ChangeList changeList() {
     return const _ChangeList();
   }
+
+// ignore: unused_element
+  _AddListPositionAfter addListPositionAfter({@required int index}) {
+    return _AddListPositionAfter(
+      index: index,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -37,12 +44,14 @@ mixin _$CreatelistEvent {
     @required Result started(),
     @required Result startListCreation(),
     @required Result changeList(),
+    @required Result addListPositionAfter(int index),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
     Result changeList(),
+    Result addListPositionAfter(int index),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -50,12 +59,14 @@ mixin _$CreatelistEvent {
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
     @required Result changeList(_ChangeList value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
     Result changeList(_ChangeList value),
+    Result addListPositionAfter(_AddListPositionAfter value),
     @required Result orElse(),
   });
 }
@@ -111,10 +122,12 @@ class _$_Started implements _Started {
     @required Result started(),
     @required Result startListCreation(),
     @required Result changeList(),
+    @required Result addListPositionAfter(int index),
   }) {
     assert(started != null);
     assert(startListCreation != null);
     assert(changeList != null);
+    assert(addListPositionAfter != null);
     return started();
   }
 
@@ -124,6 +137,7 @@ class _$_Started implements _Started {
     Result started(),
     Result startListCreation(),
     Result changeList(),
+    Result addListPositionAfter(int index),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -139,10 +153,12 @@ class _$_Started implements _Started {
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
     @required Result changeList(_ChangeList value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
     assert(changeList != null);
+    assert(addListPositionAfter != null);
     return started(this);
   }
 
@@ -152,6 +168,7 @@ class _$_Started implements _Started {
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
     Result changeList(_ChangeList value),
+    Result addListPositionAfter(_AddListPositionAfter value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -205,10 +222,12 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result started(),
     @required Result startListCreation(),
     @required Result changeList(),
+    @required Result addListPositionAfter(int index),
   }) {
     assert(started != null);
     assert(startListCreation != null);
     assert(changeList != null);
+    assert(addListPositionAfter != null);
     return startListCreation();
   }
 
@@ -218,6 +237,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result started(),
     Result startListCreation(),
     Result changeList(),
+    Result addListPositionAfter(int index),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -233,10 +253,12 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
     @required Result changeList(_ChangeList value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
     assert(changeList != null);
+    assert(addListPositionAfter != null);
     return startListCreation(this);
   }
 
@@ -246,6 +268,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
     Result changeList(_ChangeList value),
+    Result addListPositionAfter(_AddListPositionAfter value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -299,10 +322,12 @@ class _$_ChangeList implements _ChangeList {
     @required Result started(),
     @required Result startListCreation(),
     @required Result changeList(),
+    @required Result addListPositionAfter(int index),
   }) {
     assert(started != null);
     assert(startListCreation != null);
     assert(changeList != null);
+    assert(addListPositionAfter != null);
     return changeList();
   }
 
@@ -312,6 +337,7 @@ class _$_ChangeList implements _ChangeList {
     Result started(),
     Result startListCreation(),
     Result changeList(),
+    Result addListPositionAfter(int index),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -327,10 +353,12 @@ class _$_ChangeList implements _ChangeList {
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
     @required Result changeList(_ChangeList value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
     assert(changeList != null);
+    assert(addListPositionAfter != null);
     return changeList(this);
   }
 
@@ -340,6 +368,7 @@ class _$_ChangeList implements _ChangeList {
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
     Result changeList(_ChangeList value),
+    Result addListPositionAfter(_AddListPositionAfter value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -352,6 +381,132 @@ class _$_ChangeList implements _ChangeList {
 
 abstract class _ChangeList implements CreatelistEvent {
   const factory _ChangeList() = _$_ChangeList;
+}
+
+abstract class _$AddListPositionAfterCopyWith<$Res> {
+  factory _$AddListPositionAfterCopyWith(_AddListPositionAfter value,
+          $Res Function(_AddListPositionAfter) then) =
+      __$AddListPositionAfterCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+class __$AddListPositionAfterCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$AddListPositionAfterCopyWith<$Res> {
+  __$AddListPositionAfterCopyWithImpl(
+      _AddListPositionAfter _value, $Res Function(_AddListPositionAfter) _then)
+      : super(_value, (v) => _then(v as _AddListPositionAfter));
+
+  @override
+  _AddListPositionAfter get _value => super._value as _AddListPositionAfter;
+
+  @override
+  $Res call({
+    Object index = freezed,
+  }) {
+    return _then(_AddListPositionAfter(
+      index: index == freezed ? _value.index : index as int,
+    ));
+  }
+}
+
+class _$_AddListPositionAfter implements _AddListPositionAfter {
+  const _$_AddListPositionAfter({@required this.index}) : assert(index != null);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.addListPositionAfter(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AddListPositionAfter &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @override
+  _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith =>
+      __$AddListPositionAfterCopyWithImpl<_AddListPositionAfter>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result started(),
+    @required Result startListCreation(),
+    @required Result changeList(),
+    @required Result addListPositionAfter(int index),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(changeList != null);
+    assert(addListPositionAfter != null);
+    return addListPositionAfter(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result started(),
+    Result startListCreation(),
+    Result changeList(),
+    Result addListPositionAfter(int index),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addListPositionAfter != null) {
+      return addListPositionAfter(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
+    @required Result changeList(_ChangeList value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(changeList != null);
+    assert(addListPositionAfter != null);
+    return addListPositionAfter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
+    Result changeList(_ChangeList value),
+    Result addListPositionAfter(_AddListPositionAfter value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addListPositionAfter != null) {
+      return addListPositionAfter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddListPositionAfter implements CreatelistEvent {
+  const factory _AddListPositionAfter({@required int index}) =
+      _$_AddListPositionAfter;
+
+  int get index;
+  _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith;
 }
 
 class _$CreatelistStateTearOff {
