@@ -31,11 +31,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         actions: <Widget>[_buildOverflowMenue(context)],
     ),
     body: Container(
-      child: BlocListener<ActivelistBloc, ActivelistState>(
-        listener: (context, state) {
-          state.map(initial: null, loading: null, loaded: null, error: null);
-        },
-        child: BlocBuilder<ActivelistBloc, ActivelistState>(
+      child: BlocBuilder<ActivelistBloc, ActivelistState>(
           builder: (context, state){
             return state.map(
               initial: (s) => showInitial(), 
@@ -47,8 +43,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
           },
         ),
       ),
-    )
-    ,);
+    );
     
   }
    Widget _buildOverflowMenue(BuildContext context){

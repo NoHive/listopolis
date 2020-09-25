@@ -48,21 +48,44 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
       );
-      listCreation.listitems.add(CreateListItemParameter(name: "neue Position", position: 1));
+      listCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
       yield _ListChanged(creationParam:  listCreation);
     }, 
     changeList: (e) async*{
       yield _Initial();
-        listCreation = CreateListParameter.asCopy(listCreation);
+        //listCreation = CreateListParameter.asCopy(listCreation);
         yield _ListChanged(creationParam:  listCreation);
+    },
+    switchViewToCreation:  (e) async*{
+      yield _Initial();
+        //listCreation = CreateListParameter.asCopy(listCreation);
+        yield _SwitchedToCreate(creationParam:  listCreation);
+    },
+    switchViewToReorder:  (e) async*{
+      yield _Initial();
+        //listCreation = CreateListParameter.asCopy(listCreation);
+        yield _SwitchedToReorder(creationParam:  listCreation);
     },
     addListPositionAfter: (e) async*{
       yield _Initial();
-        listCreation = CreateListParameter.asCopy(listCreation);
+        //listCreation = CreateListParameter.asCopy(listCreation);
         listCreation.addListPositionAfterIndex(e.index);
         yield _ListChanged(creationParam:  listCreation);
     },
-   
+    changeListItemOrder:  (e) async*{
+      yield _Initial();
+        //listCreation = CreateListParameter.asCopy(listCreation);
+        listCreation.reorderListPosition(e.oldIndex, e.newIndex);
+        yield _SwitchedToReorder(creationParam:  listCreation);
+    },
+    removeListPosition:  (e) async*{
+      yield _Initial();
+        //listCreation = CreateListParameter.asCopy(listCreation);
+        if(listCreation.listitems.length > 1)
+          listCreation.reoveListPositionAtIndex(e.index);
+        yield _SwitchedToCreate(creationParam:  listCreation);
+    },
+
     );
     
     // TODO: implement mapEventToState

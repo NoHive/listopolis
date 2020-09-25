@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
+import 'package:uuid/uuid.dart';
 
 enum PositionType{start, end}
 
@@ -17,11 +18,13 @@ class CreateListParameter{
   String listName;
   ListType type;
   PositionType positioning;
+  String id;
 
   List<CreateListItemParameter> listitems;
 
   CreateListParameter({@required this.listName, @required this.type, @required this.positioning}){
     listitems = [];
+    id = Uuid().v1();
   }
   factory CreateListParameter.asCopy(CreateListParameter input){
     CreateListParameter newList = CreateListParameter(listName: input.listName, positioning: input.positioning, type: input.type);
@@ -33,15 +36,57 @@ class CreateListParameter{
   void addListPositionAfterIndex(int index){
     int insertIndex = index + 1;
     if(listitems.length == 0){
-      listitems.add(CreateListItemParameter(position: 1, name: "neue Position"));
+      listitems.add(CreateListItemParameter(position: 1, name: ""));
     }else{
       for(CreateListItemParameter item in listitems){
         if(item.position >= insertIndex){
           item.position = item.position + 1;
         }
       }
-      listitems.add(CreateListItemParameter(position: insertIndex, name: "neue Position"));
+      listitems.add(CreateListItemParameter(position: insertIndex, name: ""));
     }
+  }
+   void reoveListPositionAtIndex(int index){
+    
+      listitems.removeWhere((element) => element.position == index);
+      for(CreateListItemParameter item in listitems){
+        if(item.position > index){
+          item.position = item.position - 1;
+        }
+      }
+   }
+  
+  CreateListItemParameter _findAtPos(int idx){
+    return listitems[idx];
+  }
+  void reorderListPosition(int oldIndex, int newIndex){
+      
+      CreateListItemParameter changeOnItem = _findAtPos(oldIndex);
+      int oldPosition = changeOnItem.position;
+      int newPosition = newIndex+1;
+      if(newPosition < oldPosition){
+        for(CreateListItemParameter item in listitems){
+          
+            if(item.position >= newPosition && item.position < oldPosition){
+              item.position = item.position + 1;
+            }
+          
+        }
+      
+      }else{
+        newPosition = newIndex;
+        for(CreateListItemParameter item in listitems){
+          
+            if(item.position <= newPosition && item.position > oldPosition){
+              item.position = item.position -1;
+            }
+          
+        }
+      
+      }
+        changeOnItem.position = newPosition;
+      
+    
   }
   List<CreateListItemParameter> getSorted(){
     listitems.sort((a,b) => a.position.compareTo(b.position));
@@ -52,7 +97,9 @@ class CreateListParameter{
 class CreateListItemParameter{
   String name;
   int position;
-
-  CreateListItemParameter({@required this.name, @required this.position});
+  String id;
+  CreateListItemParameter({@required this.name, @required this.position}){
+    id = Uuid().v1();
+  }
 
 }
