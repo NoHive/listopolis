@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
+import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
@@ -10,8 +11,9 @@ import 'package:listopolis/features/listopolis/presentation/common_page_function
 
 
 class CreateListPage extends StatefulWidget  {
-  CreateListPage({Key key}) : super(key: key);
-
+  final ActivelistBloc activelistBloc;
+  CreateListPage(this.activelistBloc, {Key key}) : super(key: key);
+  
   @override
   _CreateListPageState createState() => _CreateListPageState();
 }
@@ -22,6 +24,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   ListType currentListType;
   PositionType currentPositionType;
   List<bool> selected = [false, true];
+  CreateListParameter currentCreatedList;
    @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -30,23 +33,30 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(CreateListPageStrings.APP_BAR_TITLE),
-        actions: [appBarToggles(context)],
-      ),
-    body: Container(
-       child: BlocBuilder<CreatelistBloc, CreatelistState>
-          (builder: (context, state){
-            return state.map(
-              initial: (s) => showLoadingIndicator(),
-              listChanged: (s) => showEditList(context, s.creationParam),
-              switchedToCreate: (s) => showEditList(context, s.creationParam),
-              switchedToReorder:  (s) => showReorderList(context, s.creationParam)
-            );
-          }
-          ,),
-    ));
+    return WillPopScope (
+          onWillPop: (){return Future.value(true);},
+          child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(
+                    icon: Icon(Icons.arrow_back), 
+                    onPressed: () => _returnToMainScreenAskSave(context)                    
+                  ),
+          title: Text(CreateListPageStrings.APP_BAR_TITLE),
+          actions: [appBarToggles(context)],
+        ),
+      body: Container(
+         child: BlocBuilder<CreatelistBloc, CreatelistState>
+            (builder: (context, state){
+              return state.map(
+                initial: (s) => showLoadingIndicator(),
+                listChanged: (s) => showEditList(context, s.creationParam),
+                switchedToCreate: (s) => showEditList(context, s.creationParam),
+                switchedToReorder:  (s) => showReorderList(context, s.creationParam)
+              );
+            }
+            ,),
+      )),
+    );
   }
 
   Widget appBarToggles(BuildContext context){
@@ -77,8 +87,30 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     );
   }
 
+  _returnToMainScreenAskSave(BuildContext context){
+    showDialog(context: context,
+    builder: (context) {
+      return AlertDialog(actions: [
+          MaterialButton(onPressed: (){
+              widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+          },
+              child: Text("übernehmen"),
+          ),
+          MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
+              child: Text("verwerfen"),
+          )
+      ],
+      content: Text("Soll die Liste übernommen werden?"),
+      );
+    },
+    );
+  }
+
   Widget showEditList(BuildContext context, CreateListParameter list){
    selected = [true, false];
+   currentCreatedList = list;
    List<Widget> widgets = [
                  _buildListName(context, list ),
                 // _buildListType(context, list),
@@ -92,6 +124,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   }
    Widget showReorderList(BuildContext context, CreateListParameter list){
      selected = [false, true];
+     currentCreatedList = list;
     return _buildReorderList(context, list.getSorted(), _buildListName(context, list ));
   }
   Widget _buildListName(BuildContext context, CreateListParameter list){
@@ -193,7 +226,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                                   } 
                               ).toList(),
                               onChanged: (value) {
-                                  currentPositionType = null;
+                                  currentPositionType = value;
                                   list.positioning = value;
                                   _commitListChanges(context);
                               },

@@ -65,7 +65,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
               MaterialPageRoute(
                 builder: (_) => BlocProvider.value(
                   value: BlocProvider.of<CreatelistBloc>(context),
-                  child: CreateListPage(),
+                  child: CreateListPage(BlocProvider.of<ActivelistBloc>(context)),
                 ),
               ),
       );
@@ -80,6 +80,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   }
 
   Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
+    lists.sort((l1, l2) => l1.position.compareTo(l2.position));
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 

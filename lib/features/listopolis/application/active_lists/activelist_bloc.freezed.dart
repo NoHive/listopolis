@@ -18,6 +18,13 @@ class _$ActivelistEventTearOff {
   }
 
 // ignore: unused_element
+  _InsertNewList insertNewList({@required CreateListParameter listParameter}) {
+    return _InsertNewList(
+      listParameter: listParameter,
+    );
+  }
+
+// ignore: unused_element
   _DeleteActiveListPosition deleteActiveListPosition(
       {@required ActiveList list, @required ActiveListPosition position}) {
     return _DeleteActiveListPosition(
@@ -34,6 +41,7 @@ mixin _$ActivelistEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
             ActiveList list, ActiveListPosition position),
@@ -41,6 +49,7 @@ mixin _$ActivelistEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
     @required Result orElse(),
@@ -48,11 +57,13 @@ mixin _$ActivelistEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result orElse(),
   });
@@ -108,11 +119,13 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
             ActiveList list, ActiveListPosition position),
   }) {
     assert(load != null);
+    assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     return load();
   }
@@ -121,6 +134,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
     @required Result orElse(),
@@ -136,9 +150,11 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
   }) {
     assert(load != null);
+    assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     return load(this);
   }
@@ -147,6 +163,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result orElse(),
   }) {
@@ -160,6 +177,132 @@ class _$_LoadLists implements _LoadLists {
 
 abstract class _LoadLists implements ActivelistEvent {
   const factory _LoadLists() = _$_LoadLists;
+}
+
+abstract class _$InsertNewListCopyWith<$Res> {
+  factory _$InsertNewListCopyWith(
+          _InsertNewList value, $Res Function(_InsertNewList) then) =
+      __$InsertNewListCopyWithImpl<$Res>;
+  $Res call({CreateListParameter listParameter});
+}
+
+class __$InsertNewListCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$InsertNewListCopyWith<$Res> {
+  __$InsertNewListCopyWithImpl(
+      _InsertNewList _value, $Res Function(_InsertNewList) _then)
+      : super(_value, (v) => _then(v as _InsertNewList));
+
+  @override
+  _InsertNewList get _value => super._value as _InsertNewList;
+
+  @override
+  $Res call({
+    Object listParameter = freezed,
+  }) {
+    return _then(_InsertNewList(
+      listParameter: listParameter == freezed
+          ? _value.listParameter
+          : listParameter as CreateListParameter,
+    ));
+  }
+}
+
+class _$_InsertNewList implements _InsertNewList {
+  const _$_InsertNewList({@required this.listParameter})
+      : assert(listParameter != null);
+
+  @override
+  final CreateListParameter listParameter;
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.insertNewList(listParameter: $listParameter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InsertNewList &&
+            (identical(other.listParameter, listParameter) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParameter, listParameter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParameter);
+
+  @override
+  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
+      __$InsertNewListCopyWithImpl<_InsertNewList>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+  }) {
+    assert(load != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    return insertNewList(listParameter);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (insertNewList != null) {
+      return insertNewList(listParameter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+  }) {
+    assert(load != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    return insertNewList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (insertNewList != null) {
+      return insertNewList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InsertNewList implements ActivelistEvent {
+  const factory _InsertNewList({@required CreateListParameter listParameter}) =
+      _$_InsertNewList;
+
+  CreateListParameter get listParameter;
+  _$InsertNewListCopyWith<_InsertNewList> get copyWith;
 }
 
 abstract class _$DeleteActiveListPositionCopyWith<$Res> {
@@ -259,11 +402,13 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
             ActiveList list, ActiveListPosition position),
   }) {
     assert(load != null);
+    assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     return deleteActiveListPosition(list, position);
   }
@@ -272,6 +417,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
     @required Result orElse(),
@@ -287,9 +433,11 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
   }) {
     assert(load != null);
+    assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     return deleteActiveListPosition(this);
   }
@@ -298,6 +446,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result orElse(),
   }) {

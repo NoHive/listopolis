@@ -7,9 +7,9 @@ enum PositionType{start, end}
 String buildPositionTypeLocalString(PositionType pType, String locale){
   String lString;
   if(pType == PositionType.end)
-    lString = "Anfang";
-  else
     lString = "Ende";
+  else
+    lString = "Anfang";
 
     return lString;
 }

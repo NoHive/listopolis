@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
@@ -70,6 +71,10 @@ class RepositoryImpl implements IRepository{
   Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position) {
     // TODO: implement deleteActiveListPosition
     throw UnimplementedError();
+  }
+  @override
+  Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter) {
+   return getActiveLists();
   }
 
 }
@@ -191,6 +196,15 @@ class DemoRepositoryImpl implements IRepository{
         uDataCache = Some(UserData.fromRemovedActiveListPosition(currentUserData, list, position));
       }
       return getActiveLists();
+  }
+
+  @override
+  Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.addListFromCreatedList(currentUserData, listParameter));
+      }
+   return getActiveLists();
   }
 
 }

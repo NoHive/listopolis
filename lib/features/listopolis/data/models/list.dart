@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:uuid/uuid.dart';
 
 part 'list.freezed.dart';
 part 'list.g.dart'; 
@@ -61,5 +63,13 @@ abstract class ActiveListPosition implements _$ActiveListPosition{
     }
   ) = _ActiveListPosition;
  
+  factory ActiveListPosition.fromCreateListItemParameter(CreateListItemParameter listItemParameter){
+    return ActiveListPosition(
+      id: Uuid().v1(),
+      done: false,
+      name: listItemParameter.name,
+      position: listItemParameter.position
+    );
+  }
   factory ActiveListPosition.fromJson(Map<String, dynamic> json) => _$ActiveListPositionFromJson(json);
 }

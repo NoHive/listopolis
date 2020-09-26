@@ -1,6 +1,7 @@
 
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -46,6 +47,47 @@ abstract class UserData implements _$UserData{
 
       
   }
+  
+
+   factory UserData.addListFromCreatedList(UserData data, CreateListParameter creationParameter){
+      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> aNewList = List();
+      int aNewPosition = 1;
+      if(existingActiveLists != null && existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+        
+        if(creationParameter.positioning == PositionType.start){
+          aNewList = existingActiveLists.map((e) => e.copyWith(position: e.position +1 )).toList();
+          aNewPosition = 1;
+        }else{
+          aNewList = existingActiveLists.toList();
+          aNewPosition = existingActiveLists.last.position+1;
+        }
+      }
+      
+
+      List<ActiveListPosition> newListPositions = [];
+
+      for(CreateListItemParameter listItemParam in creationParameter.listitems){
+        newListPositions.add(ActiveListPosition.fromCreateListItemParameter(listItemParam));
+      }
+
+      ActiveList aNewListItem = ActiveList( id: Uuid().v1(), 
+                                            name: creationParameter.listName, 
+                                            type: creationParameter.type, 
+                                            position: aNewPosition, 
+                                            done: false,
+                                            opened: false,
+                                            listItems: newListPositions
+                                            );
+      
+       
+      aNewList.add(aNewListItem);
+
+      return data.copyWith(activeLists:aNewList);
+
+      
+  }
   factory UserData.fromRemovedActiveListPosition(UserData data, ActiveList list, ActiveListPosition position){
       List<ActiveList> existingActiveLists = data.activeLists;
       List<ActiveList> aNewList = List();
@@ -70,7 +112,7 @@ abstract class UserData implements _$UserData{
         for(ActiveListPosition aListPosition in list.listItems){
             if(aListPosition.position < positionOfDeleteListPos)
               newListPositions.add(aListPosition);
-            else if(aListPosition.position > positionOfDeleteList)
+            else if(aListPosition.position > positionOfDeleteListPos)
               newListPositions.add(aListPosition.copyWith(position:aListPosition.position - 1));
         }
         for(ActiveList aList in existingActiveLists){
