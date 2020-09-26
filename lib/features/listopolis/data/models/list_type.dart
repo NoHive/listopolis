@@ -9,7 +9,7 @@ abstract class ListType with _$ListType{
   const factory ListType.todo() = ToDoList;
 
   static String buildLocalName(ListType type, String locale){
-    return type is Remember ? "Erinnerungsliste" : "Erledigung";
+    return type is Remember ? "Erinnerungsliste" : "To-Do-Liste";
   }
 
 }

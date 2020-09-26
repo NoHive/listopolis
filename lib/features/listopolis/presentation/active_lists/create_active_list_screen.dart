@@ -81,8 +81,9 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
    selected = [true, false];
    List<Widget> widgets = [
                  _buildListName(context, list ),
-                 _buildListType(context, list),
-                 _buildAppendType(context, list),
+                // _buildListType(context, list),
+                // _buildAppendType(context, list),
+                _buildListTypeAndPosType(context, list)
                   
     ];
     widgets.add( Container(child: _buildListItems(context, list.getSorted()),));
@@ -96,7 +97,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   Widget _buildListName(BuildContext context, CreateListParameter list){
       currentlistName = list.listName;
        return// Expanded(child: 
-            Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0), child:
+            Padding(padding: EdgeInsets.fromLTRB(5, 5, 5, 0), child:
               TextField(
                           onSubmitted: (value){ 
                             currentlistName=value; 
@@ -119,30 +120,49 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
            // );
 
   }
+
+  Widget _buildListTypeAndPosType(BuildContext context,  CreateListParameter list){
+    return SingleChildScrollView(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          _buildListType(context, list),
+          _buildAppendType(context, list)
+        ],
+      ) ,
+    );
+  }
+  
   Widget _buildListType(BuildContext context,  CreateListParameter list){
     List<ListType> listTypes =[ListType.remember(), ListType.todo()];
     currentListType =list.type;
 
-      return  DropdownButton(
-                  items:  listTypes.map((qpv){ 
-                            return DropdownMenuItem<ListType>(
-                                      child: Text(ListType.buildLocalName( qpv, "de"), 
-                                                  style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
-                                              ), 
-                                      value: qpv,
-                            );
-                          } ).toList(),
-                    onChanged: (value) {
-                    currentListType = value;
-                    list.type = value;
-                    _commitListChanges(context);
-                    
-                    // SampleBloc aBloc =  BlocProvider.of<SampleBloc>(context);
-                    // aBloc.add(SampleValueChanged(measureSample:sample, samplingElement:samplingElement, value: value));
-                  },
-                  value: currentListType,
-                  // hint: Text(ILMeasureDetailStrings.MESURE_QUALITATIVE_NO_VALUE, style: TextStyle(color: ILimsColors.TEXTCOLOR_ON_DARK_BG)),
-                  // dropdownColor: ILimsColors.BLUE_TRANSPARENT,
+      return  
+      Padding(padding: EdgeInsets.only(top: 10, left: 10),
+        child: 
+          Stack(
+                  children:[
+                    Text("Listen-Typ", style: TextStyle(fontSize: 10),),
+                    Container(
+                        child: DropdownButton(
+                                  items:  listTypes.map((qpv){ 
+                                    return DropdownMenuItem<ListType>(
+                                              child: Text(ListType.buildLocalName( qpv, "de"), 
+                                                          style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                                                      ), 
+                                              value: qpv,
+                                    );
+                                  } ).toList(),
+                                  onChanged: (value) {
+                                    currentListType = value;
+                                    list.type = value;
+                                    _commitListChanges(context);
+                                  },
+                                  value: currentListType,
+                              ),
+                    ),
+                ]
+          )
       );
 
   }
@@ -157,26 +177,32 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     List<PositionType> listTypes =[PositionType.end, PositionType.start];
     currentPositionType =list.positioning;
 
-      return  DropdownButton(
-                  items:  listTypes.map((qpv){ 
-                            return DropdownMenuItem<PositionType>(
-                                      child: Text(buildPositionTypeLocalString( qpv, "de"), 
-                                                  style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
-                                              ), 
-                                      value: qpv,
-                            );
-                          } ).toList(),
-                    onChanged: (value) {
-                    currentPositionType = null;
-                    list.positioning = value;
-                    _commitListChanges(context);
-                    // SampleBloc aBloc =  BlocProvider.of<SampleBloc>(context);
-                    // aBloc.add(SampleValueChanged(measureSample:sample, samplingElement:samplingElement, value: value));
-                  },
-                  value: currentPositionType,
-                  hint: Text(CreateListPageStrings.LIST_POSITIONING, style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG)),
-                  
-                  // dropdownColor: ILimsColors.BLUE_TRANSPARENT,
+      return  Padding(padding: EdgeInsets.only(top:10, left:20),
+              child: Stack(
+                children: [
+                  Text("Einfügeposition", style: TextStyle(fontSize: 10),), 
+                  Container(
+                    child: DropdownButton(
+                              items: listTypes.map((qpv){ 
+                                  return DropdownMenuItem<PositionType>(
+                                            child: Text(buildPositionTypeLocalString( qpv, "de"), 
+                                                        style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                                                    ), 
+                                            value: qpv,
+                                  );
+                                  } 
+                              ).toList(),
+                              onChanged: (value) {
+                                  currentPositionType = null;
+                                  list.positioning = value;
+                                  _commitListChanges(context);
+                              },
+                              value: currentPositionType,
+                              hint: Text(CreateListPageStrings.LIST_POSITIONING, style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG)),
+                          ),
+                  ),
+                ]
+                ),
       );
   }
 
