@@ -18,7 +18,7 @@ import 'package:uuid/uuid.dart';
 class RepositoryImpl implements IRepository{
 
   final IUserDataSource dataSource;
-  RepositoryImpl(this.dataSource);
+  RepositoryImpl({@required this.dataSource});
   Option<UserData> uDataCache = None();
 
   
@@ -36,20 +36,40 @@ class RepositoryImpl implements IRepository{
 
   @override
   Future<Either<Failure, Option<UserData>>> initDataSource() async {
-     UserData udata = UserData(id: Uuid().v1(), name: "no user name yet");
-     try{
-        await dataSource.writeUserData(udata);
-        uDataCache = Some(udata);
-        return Future.value(Right(Some(udata)));
-    }catch(e){ 
-      return Future.value(Left(Failure.serviceAccessFailed()));
-    } 
+
+    Option<UserData> existingUserDataOption = await dataSource.readUserData();
+    
+    UserData loadedUserData = existingUserDataOption.getOrElse(() => null);
+    if(loadedUserData == null){
+      UserData udata = UserData(id: Uuid().v1(), 
+                                name: "no user name yet",
+                                activeLists:List(),
+                                templates:List()
+                                );
+      try{
+          await dataSource.writeUserData(udata);
+          uDataCache = Some(udata);
+          return Future.value(Right(Some(udata)));
+      }catch(e){ 
+        return Future.value(Left(Failure.serviceAccessFailed()));
+      } 
+    }else{
+      if(loadedUserData.activeLists == null || loadedUserData.templates == null ){
+        loadedUserData = loadedUserData.copyWith(activeLists:List(), templates:List());
+      }
+      uDataCache = Some(loadedUserData);
+      return Future.value(Right(uDataCache));
+    }
   }
 
   @override
-  Future<Either<Failure, List<ActiveList>>> getActiveLists() {
+  Future<Either<Failure, List<ActiveList>>> getActiveLists() async{
     // TODO: implement getActiveLists
     
+     if(! isInitialized()){
+      await initDataSource();
+    }
+
     Option<List<ActiveList>> activeLists  = uDataCache.map((userdata) => userdata.activeLists);
     return Future.value(Right(activeLists.getOrElse(() => List())));
     
@@ -64,16 +84,48 @@ class RepositoryImpl implements IRepository{
 
   @override
   bool isInitialized() {
+    
     return uDataCache.isSome();
   }
 
-  @override
+ @override
   Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position) {
     // TODO: implement deleteActiveListPosition
-    throw UnimplementedError();
+      UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromRemovedActiveListPosition(currentUserData, list, position));
+        sendData();
+      }
+      return getActiveLists();
   }
+
   @override
   Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.addListFromCreatedList(currentUserData, listParameter));
+        sendData();
+      }
+   return getActiveLists();
+  }
+
+  @override
+  Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list) {
+    UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromRemovedActiveList(currentUserData, list));
+        sendData();
+      }
+      return getActiveLists();
+  }
+
+  @override
+  Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter) {
+    UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.replaceListFromCreatedList(currentUserData, list, listParameter));
+        sendData();
+      }
    return getActiveLists();
   }
 
@@ -207,37 +259,49 @@ class DemoRepositoryImpl implements IRepository{
    return getActiveLists();
   }
 
-}
-
-class LocalUserInfoImpl implements IUserInfoRepository{
-
-
-  final SharedPreferences sharedPreferences;
-  final String preferenceKey;
-  UserInfo cachedUserInfo;
-
-  LocalUserInfoImpl(
-    {
-      @required this.sharedPreferences, 
-      @required this.preferenceKey
-    });
-  
+  @override
+  Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list) {
+    // TODO: implement deleteActiveList
+    return getActiveLists();
+  }
 
   @override
-  Future<Either<Failure, UserInfo>> getUserInfo() {
-
-    if(cachedUserInfo != null){
-      return Future.value(Right(cachedUserInfo));
-    }
-    final jsonString = sharedPreferences.getString(preferenceKey);
-    if(jsonString != null){
-      cachedUserInfo = UserInfo.fromJson(jsonDecode(jsonString));
-      return  Future.value(Right(cachedUserInfo));
-    }else{
-     cachedUserInfo = new UserInfo(userID: Uuid().v1());
-      sharedPreferences.setString(preferenceKey, jsonEncode(cachedUserInfo.toJson()));
-      return  Future.value(Right(cachedUserInfo));
-    }
+  Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter) {
+    // TODO: implement replaceActiveList
+    return getActiveLists();
   }
 
 }
+
+// class LocalUserInfoImpl implements IUserInfoRepository{
+
+
+//   final SharedPreferences sharedPreferences;
+//   final String preferenceKey;
+//   UserInfo cachedUserInfo;
+
+//   LocalUserInfoImpl(
+//     {
+//       @required this.sharedPreferences, 
+//       @required this.preferenceKey
+//     });
+  
+
+//   @override
+//   Future<Either<Failure, UserInfo>> getUserInfo() {
+
+//     if(cachedUserInfo != null){
+//       return Future.value(Right(cachedUserInfo));
+//     }
+//     final jsonString = sharedPreferences.getString(preferenceKey);
+//     if(jsonString != null){
+//       cachedUserInfo = UserInfo.fromJson(jsonDecode(jsonString));
+//       return  Future.value(Right(cachedUserInfo));
+//     }else{
+//      cachedUserInfo = new UserInfo(userID: Uuid().v1());
+//       sharedPreferences.setString(preferenceKey, jsonEncode(cachedUserInfo.toJson()));
+//       return  Future.value(Right(cachedUserInfo));
+//     }
+//   }
+
+// }

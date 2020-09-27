@@ -59,6 +59,13 @@ class _$CreatelistEventTearOff {
       newIndex: newIndex,
     );
   }
+
+// ignore: unused_element
+  _EditActiveList editActiveList({@required ActiveList list}) {
+    return _EditActiveList(
+      list: list,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -75,6 +82,7 @@ mixin _$CreatelistEvent {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -86,6 +94,7 @@ mixin _$CreatelistEvent {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -98,6 +107,7 @@ mixin _$CreatelistEvent {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -109,6 +119,7 @@ mixin _$CreatelistEvent {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   });
 }
@@ -169,6 +180,7 @@ class _$_Started implements _Started {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -178,6 +190,7 @@ class _$_Started implements _Started {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return started();
   }
 
@@ -192,6 +205,7 @@ class _$_Started implements _Started {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -212,6 +226,7 @@ class _$_Started implements _Started {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -221,6 +236,7 @@ class _$_Started implements _Started {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return started(this);
   }
 
@@ -235,6 +251,7 @@ class _$_Started implements _Started {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -293,6 +310,7 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -302,6 +320,7 @@ class _$_StartListCreation implements _StartListCreation {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return startListCreation();
   }
 
@@ -316,6 +335,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -336,6 +356,7 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -345,6 +366,7 @@ class _$_StartListCreation implements _StartListCreation {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return startListCreation(this);
   }
 
@@ -359,6 +381,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -417,6 +440,7 @@ class _$_ChangeList implements _ChangeList {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -426,6 +450,7 @@ class _$_ChangeList implements _ChangeList {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return changeList();
   }
 
@@ -440,6 +465,7 @@ class _$_ChangeList implements _ChangeList {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -460,6 +486,7 @@ class _$_ChangeList implements _ChangeList {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -469,6 +496,7 @@ class _$_ChangeList implements _ChangeList {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return changeList(this);
   }
 
@@ -483,6 +511,7 @@ class _$_ChangeList implements _ChangeList {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -541,6 +570,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -550,6 +580,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return switchViewToCreation();
   }
 
@@ -564,6 +595,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -584,6 +616,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -593,6 +626,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return switchViewToCreation(this);
   }
 
@@ -607,6 +641,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -665,6 +700,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -674,6 +710,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return switchViewToReorder();
   }
 
@@ -688,6 +725,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -708,6 +746,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -717,6 +756,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return switchViewToReorder(this);
   }
 
@@ -731,6 +771,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -811,6 +852,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -820,6 +862,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return addListPositionAfter(index);
   }
 
@@ -834,6 +877,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -854,6 +898,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -863,6 +908,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return addListPositionAfter(this);
   }
 
@@ -877,6 +923,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -960,6 +1007,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -969,6 +1017,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return removeListPosition(index);
   }
 
@@ -983,6 +1032,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1003,6 +1053,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1012,6 +1063,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return removeListPosition(this);
   }
 
@@ -1026,6 +1078,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1121,6 +1174,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     @required Result addListPositionAfter(int index),
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1130,6 +1184,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return changeListItemOrder(oldIndex, newIndex);
   }
 
@@ -1144,6 +1199,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     Result addListPositionAfter(int index),
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1164,6 +1220,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     @required Result addListPositionAfter(_AddListPositionAfter value),
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1173,6 +1230,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     assert(addListPositionAfter != null);
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
+    assert(editActiveList != null);
     return changeListItemOrder(this);
   }
 
@@ -1187,6 +1245,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     Result addListPositionAfter(_AddListPositionAfter value),
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1204,6 +1263,173 @@ abstract class _ChangeItemOrder implements CreatelistEvent {
   int get oldIndex;
   int get newIndex;
   _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith;
+}
+
+abstract class _$EditActiveListCopyWith<$Res> {
+  factory _$EditActiveListCopyWith(
+          _EditActiveList value, $Res Function(_EditActiveList) then) =
+      __$EditActiveListCopyWithImpl<$Res>;
+  $Res call({ActiveList list});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+class __$EditActiveListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$EditActiveListCopyWith<$Res> {
+  __$EditActiveListCopyWithImpl(
+      _EditActiveList _value, $Res Function(_EditActiveList) _then)
+      : super(_value, (v) => _then(v as _EditActiveList));
+
+  @override
+  _EditActiveList get _value => super._value as _EditActiveList;
+
+  @override
+  $Res call({
+    Object list = freezed,
+  }) {
+    return _then(_EditActiveList(
+      list: list == freezed ? _value.list : list as ActiveList,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    if (_value.list == null) {
+      return null;
+    }
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+class _$_EditActiveList implements _EditActiveList {
+  const _$_EditActiveList({@required this.list}) : assert(list != null);
+
+  @override
+  final ActiveList list;
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.editActiveList(list: $list)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EditActiveList &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+
+  @override
+  _$EditActiveListCopyWith<_EditActiveList> get copyWith =>
+      __$EditActiveListCopyWithImpl<_EditActiveList>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result started(),
+    @required Result startListCreation(),
+    @required Result changeList(),
+    @required Result switchViewToCreation(),
+    @required Result switchViewToReorder(),
+    @required Result addListPositionAfter(int index),
+    @required Result removeListPosition(int index),
+    @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    return editActiveList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result started(),
+    Result startListCreation(),
+    Result changeList(),
+    Result switchViewToCreation(),
+    Result switchViewToReorder(),
+    Result addListPositionAfter(int index),
+    Result removeListPosition(int index),
+    Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (editActiveList != null) {
+      return editActiveList(list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
+    @required Result changeList(_ChangeList value),
+    @required Result switchViewToCreation(_SwitchToCreation value),
+    @required Result switchViewToReorder(_SwitchToReorder value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
+    @required Result removeListPosition(_RemoveListPosition value),
+    @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    return editActiveList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
+    Result changeList(_ChangeList value),
+    Result switchViewToCreation(_SwitchToCreation value),
+    Result switchViewToReorder(_SwitchToReorder value),
+    Result addListPositionAfter(_AddListPositionAfter value),
+    Result removeListPosition(_RemoveListPosition value),
+    Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (editActiveList != null) {
+      return editActiveList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditActiveList implements CreatelistEvent {
+  const factory _EditActiveList({@required ActiveList list}) =
+      _$_EditActiveList;
+
+  ActiveList get list;
+  _$EditActiveListCopyWith<_EditActiveList> get copyWith;
 }
 
 class _$CreatelistStateTearOff {

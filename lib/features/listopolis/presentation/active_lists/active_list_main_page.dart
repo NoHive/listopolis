@@ -6,6 +6,7 @@ import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 
@@ -87,21 +88,87 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 margin: EdgeInsets.all(1),
                                                
                                                 child: ExpansionTile( 
-                                                          title: _buildMainItemExpandableTitle(lists[i]),
+                                                          leading: _buildMainItemExpandableTrailing(lists[i], context),
+                                                          title: _buildMainItemExpandableTitle(lists[i], context),
                                                           initiallyExpanded: lists[i].opened,
                                                           children: [ _buildSubElements(context,  lists[i], lists[i].listItems)],
                                                 )
                               );
-
                           },
                            itemCount: listCount,
                            shrinkWrap: false,
                            );
   }
+
+  Widget _buildMainItemExpandableIcon(ActiveList list, BuildContext context){
+    Icon leadingIcon;
+    if(list.type == ListType.todo()){
+      leadingIcon = Icon(Icons.playlist_add_check);
+    }else{
+      leadingIcon = Icon(Icons.lightbulb_outline);
+    }
+    return  leadingIcon;
+  }
+
+  Widget _buildMainItemExpandableTitle(ActiveList list, BuildContext context){
     
-  Widget _buildMainItemExpandableTitle(ActiveList list){
-  return Text(list.name);
-}
+    return SingleChildScrollView(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          //leadingIcon,
+          Text(list.name)
+        ],
+      ),
+    );
+    
+    // return ListTile( 
+    //           leading: leadingIcon, 
+    //           title:  Text(list.name), 
+    //           dense: true,
+    //       );
+    // return Text(list.name);
+  }
+  _buildMainItemExpandableTrailing(ActiveList list, BuildContext context){
+    
+    const String locale = "de";
+    
+    return PopupMenuButton(
+                          child: _buildMainItemExpandableIcon(list, context),
+                          onSelected: (element){
+                            if(element == MainListItemMenueStr.DELETE){
+                              BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.deleteActiveList(list: list));
+                            }else if(element == MainListItemMenueStr.EDIT){
+                              BlocProvider.of<CreatelistBloc>(context)..add(CreatelistEvent.editActiveList(list: list));
+                              navigateToCreateListScreen(context);
+                            }
+                          },
+                          itemBuilder: (context) {
+                              return <PopupMenuItem>[
+                                          new PopupMenuItem(
+                                                value: MainListItemMenueStr.DELETE,
+                                                child: Row(
+                                                         children: <Widget>[
+                                                              Icon(Icons.delete),
+                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.DELETE, locale)}"),
+                                                        ],
+                                                      )
+                                          ),
+                                          new PopupMenuItem(
+                                                value: MainListItemMenueStr.EDIT,
+                                                child: Row(
+                                                         children: <Widget>[
+                                                              Icon(Icons.edit),
+                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}"),
+                                                        ],
+                                                      )
+                                          )
+                                      ];
+                          },
+                        );
+  }
+ 
+
   Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){
     final int listCount = listItems.length;
     print("listcount = ${listItems.length}");
@@ -125,15 +192,19 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   Widget _buildActiveListItem(BuildContext context, ActiveList list, ActiveListPosition listPosition){
     print("constructing ${listPosition.name}");
     //return ListTile(title: Text(listPosition.name));
-    return Dismissible(key: new Key(listPosition.id),
-            onDismissed: (direction){
-              BlocProvider.of<ActivelistBloc>(context)..
-              add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
-            },
-            child: ListTile(title: Text(listPosition.name)),
-            background: new Container(color:Colors.green),
-    
-    );
+    if(list.type == ListType.todo()){
+      return Dismissible(key: new Key(listPosition.id),
+              onDismissed: (direction){
+                BlocProvider.of<ActivelistBloc>(context)..
+                add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
+              },
+              child: ListTile(title: Text(listPosition.name)),
+              background: new Container(color:Colors.green),
+      
+      );
+    }else{
+      return ListTile(title: Text(listPosition.name));
+    }
   }
 }
 
@@ -150,4 +221,21 @@ class ActiveListPageMenueStrings{
   static const String CREATE_NEW_LIST_FROM_TEMPLATE = "Liste aus Vorlage anlegen";
 
   static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES, CREATE_NEW_LIST_FROM_TEMPLATE];
+}
+class MainListItemMenueStr{
+  static const String EDIT = "edit";
+  static const String DELETE = "delete";
+
+  static String buildLocalName(String str, String locale){
+    if(locale == "de"){
+      if(str == EDIT)
+        return "Bearbeiten";
+      else if(str == DELETE)
+        return "Löschen";
+    }else{
+      return str;
+    }
+    
+
+  }
 }

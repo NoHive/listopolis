@@ -10,5 +10,6 @@ abstract class CreatelistEvent with _$CreatelistEvent {
   const factory CreatelistEvent.addListPositionAfter({@required int index}) = _AddListPositionAfter;
   const factory CreatelistEvent.removeListPosition({@required int index}) = _RemoveListPosition;
   const factory CreatelistEvent.changeListItemOrder({@required int oldIndex, @required int newIndex}) = _ChangeItemOrder;
+  const factory CreatelistEvent.editActiveList({@required ActiveList list}) = _EditActiveList;
   
 }

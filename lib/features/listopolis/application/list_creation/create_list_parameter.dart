@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:uuid/uuid.dart';
 
@@ -33,6 +34,17 @@ class CreateListParameter{
     }
     return newList;
   }
+
+
+  factory CreateListParameter.asEditFromList(ActiveList input){
+    CreateListParameter newList = CreateListParameter(listName: input.name, positioning: PositionType.end, type: input.type);
+
+    for(ActiveListPosition item in input.listItems){
+      newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
+    }
+    return newList;
+  }
+
   void addListPositionAfterIndex(int index){
     int insertIndex = index + 1;
     if(listitems.length == 0){

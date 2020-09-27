@@ -28,8 +28,10 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
    @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    if(! BlocProvider.of<CreatelistBloc>(context).isListEditing){
     BlocProvider.of<CreatelistBloc>(context)
       ..add(CreatelistEvent.startListCreation());
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -88,18 +90,27 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   }
 
   _returnToMainScreenAskSave(BuildContext context){
+    CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     showDialog(context: context,
     builder: (context) {
       return AlertDialog(actions: [
           MaterialButton(onPressed: (){
-              widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+              
+              if(createListBloc.isListEditing){
+                  ActiveList actList = createListBloc.editList;
+                  createListBloc.isListEditing = false;
+                  createListBloc.editList = null;
+                  widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
+              }else{
+                widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+              }
               Navigator.of(context).pop();
               Navigator.of(context).pop();
           },
-              child: Text("übernehmen"),
+              child: Text("Übernehmen"),
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
-              child: Text("verwerfen"),
+              child: Text("Verwerfen"),
           )
       ],
       content: Text("Soll die Liste übernommen werden?"),

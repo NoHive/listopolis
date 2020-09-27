@@ -88,6 +88,41 @@ abstract class UserData implements _$UserData{
 
       
   }
+  factory UserData.replaceListFromCreatedList(UserData data, ActiveList list, CreateListParameter creationParameter){
+      List<ActiveList> existingActiveLists = data.activeLists;
+      
+      
+      if(existingActiveLists != null && existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+          
+      }else{
+        return data;
+      }
+      
+
+      List<ActiveListPosition> newListPositions = [];
+
+      for(CreateListItemParameter listItemParam in creationParameter.listitems){
+        newListPositions.add(ActiveListPosition.fromCreateListItemParameter(listItemParam));
+      }
+
+      ActiveList aNewListItem = ActiveList( id: Uuid().v1(), 
+                                            name: creationParameter.listName, 
+                                            type: creationParameter.type, 
+                                            position: list.position, 
+                                            done: false,
+                                            opened: false,
+                                            listItems: newListPositions
+                                            );
+      
+       
+      existingActiveLists.add(aNewListItem);
+      existingActiveLists.removeWhere((aList) => list.id == aList.id);
+
+      return data.copyWith(activeLists:existingActiveLists);
+
+      
+}
   factory UserData.fromRemovedActiveListPosition(UserData data, ActiveList list, ActiveListPosition position){
       List<ActiveList> existingActiveLists = data.activeLists;
       List<ActiveList> aNewList = List();
@@ -132,6 +167,32 @@ abstract class UserData implements _$UserData{
       return data.copyWith(activeLists:aNewList);
 
       
+  }
+  factory UserData.fromRemovedActiveList(UserData data, ActiveList list){
+      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> aNewActiveList = List();
+      
+      if(existingActiveLists != null){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+      }else{
+        return data;
+      }
+
+      final int positionOfDeleteList = list.position;
+      
+
+      // if so delete whole list
+      if(existingActiveLists.length > 1){  
+      
+        for(ActiveList aList in existingActiveLists){
+            if(aList.position < positionOfDeleteList)
+              aNewActiveList.add(aList);
+          
+            else if(aList.position > positionOfDeleteList)
+              aNewActiveList.add(aList.copyWith(position:aList.position -1));
+        }
+      }
+      return data.copyWith(activeLists:aNewActiveList);
   }
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);
 }
