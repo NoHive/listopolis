@@ -5,10 +5,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
+import 'package:listopolis/features/listopolis/presentation/templates/template_main_page.dart';
 
 class ActiveListMainPage extends StatefulWidget {
   ActiveListMainPage({Key key}) : super(key: key);
@@ -62,11 +64,22 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
 
   }
    navigateToCreateListScreen(BuildContext context) {
+      BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.startListCreation());
      Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => BlocProvider.value(
                   value: BlocProvider.of<CreatelistBloc>(context),
-                  child: CreateListPage(BlocProvider.of<ActivelistBloc>(context)),
+                  child: CreateListPage(BlocProvider.of<ActivelistBloc>(context), BlocProvider.of<TemplateBloc>(context)),
+                ),
+              ),
+      );
+   }
+      navigateToTemplateMainScreen(BuildContext context) {
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: BlocProvider.of<TemplateBloc>(context),
+                  child: TemplateMainPage(BlocProvider.of<ActivelistBloc>(context),  BlocProvider.of<CreatelistBloc>(context)),
                 ),
               ),
       );
@@ -75,7 +88,10 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   _onSelectMenueItem(String choice){
       if(choice == ActiveListPageMenueStrings.CREATE_NEW_LIST){
         navigateToCreateListScreen(context);
-      }else{
+      }else if(choice == ActiveListPageMenueStrings.EDIT_TEMPlATES){
+        navigateToTemplateMainScreen(context);
+      }
+      else{
         print("not supported");
       }
   }

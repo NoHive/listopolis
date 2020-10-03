@@ -4,6 +4,7 @@ part of 'createlist_bloc.dart';
 abstract class CreatelistEvent with _$CreatelistEvent {
   const factory CreatelistEvent.started() = _Started;
   const factory CreatelistEvent.startListCreation() = _StartListCreation;
+  const factory CreatelistEvent.startTemplateCreation() = _StartTemplateCreation;
   const factory CreatelistEvent.changeList() = _ChangeList;
   const factory CreatelistEvent.switchViewToCreation() = _SwitchToCreation;
   const factory CreatelistEvent.switchViewToReorder() = _SwitchToReorder;
@@ -11,5 +12,6 @@ abstract class CreatelistEvent with _$CreatelistEvent {
   const factory CreatelistEvent.removeListPosition({@required int index}) = _RemoveListPosition;
   const factory CreatelistEvent.changeListItemOrder({@required int oldIndex, @required int newIndex}) = _ChangeItemOrder;
   const factory CreatelistEvent.editActiveList({@required ActiveList list}) = _EditActiveList;
+  const factory CreatelistEvent.editTemplate({@required ListTemplate template}) = _EditTemplate;
   
 }

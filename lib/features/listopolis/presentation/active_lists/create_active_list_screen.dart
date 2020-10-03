@@ -4,6 +4,7 @@ import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
@@ -12,7 +13,8 @@ import 'package:listopolis/features/listopolis/presentation/common_page_function
 
 class CreateListPage extends StatefulWidget  {
   final ActivelistBloc activelistBloc;
-  CreateListPage(this.activelistBloc, {Key key}) : super(key: key);
+  final TemplateBloc templateBloc;
+  CreateListPage(this.activelistBloc, this.templateBloc, {Key key}) : super(key: key);
   
   @override
   _CreateListPageState createState() => _CreateListPageState();
@@ -25,14 +27,14 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   PositionType currentPositionType;
   List<bool> selected = [false, true];
   CreateListParameter currentCreatedList;
-   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if(! BlocProvider.of<CreatelistBloc>(context).isListEditing){
-    BlocProvider.of<CreatelistBloc>(context)
-      ..add(CreatelistEvent.startListCreation());
-    }
-  }
+  //  @override
+  // void didChangeDependencies() {
+  //   super.didChangeDependencies();
+  //   if(! BlocProvider.of<CreatelistBloc>(context).isListEditing){
+  //   BlocProvider.of<CreatelistBloc>(context)
+  //     ..add(CreatelistEvent.startListCreation());
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     return WillPopScope (
@@ -43,7 +45,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                     icon: Icon(Icons.arrow_back), 
                     onPressed: () => _returnToMainScreenAskSave(context)                    
                   ),
-          title: Text(CreateListPageStrings.APP_BAR_TITLE),
+          title: _buildAppBar(context),
           actions: [appBarToggles(context)],
         ),
       body: Container(
@@ -89,6 +91,16 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     );
   }
 
+  Widget _buildAppBar(BuildContext context){
+    String txt;
+    if(BlocProvider.of<CreatelistBloc>(context).isListCreation)
+      txt = CreateListPageStrings.APP_BAR_TITLE_LIST;
+    else
+      txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE;
+
+    return Text(txt);
+  }
+
   _returnToMainScreenAskSave(BuildContext context){
     CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     showDialog(context: context,
@@ -101,8 +113,12 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                   createListBloc.isListEditing = false;
                   createListBloc.editList = null;
                   widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
-              }else{
+              }else if(createListBloc.isListCreation){
                 widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+              }else if(createListBloc.isTemplateCreation){
+                widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList));
+              }else if(createListBloc.isTemplateEditing){
+                widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList, list: createListBloc.editTemplate));
               }
               Navigator.of(context).pop();
               Navigator.of(context).pop();
@@ -337,7 +353,8 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 }
 
 class CreateListPageStrings implements ListopolisString{
-  static const APP_BAR_TITLE = "Liste erstellen";
+  static const APP_BAR_TITLE_LIST = "Liste erstellen";
+  static const APP_BAR_TITLE_TEMPLATE = "Vorlage erstellen";
   static const LIST_NAME = "Listen-Name";
   static const LIST_TYPE = "Listen-Typ";
   static const LIST_POSITIONING = "Einfügen";

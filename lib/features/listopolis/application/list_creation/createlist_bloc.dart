@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/domain/repositories/repositories.dart';
 import 'package:uuid/uuid.dart';
@@ -21,7 +22,11 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   int lastActiveListIndex;
   CreateListParameter listCreation;
   ActiveList editList;
+  ListTemplate editTemplate;
   bool isListEditing=false;
+  bool isTemplateEditing=false;
+  bool isTemplateCreation=false;
+  bool isListCreation=false;
 
   CreatelistBloc({@required this.repository}) : super(_Initial());
 
@@ -43,8 +48,20 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
         yield _Initial();
     },
     startListCreation: (e) async*{
-
+      isTemplateCreation = false;
+      isListCreation=true;
        listCreation = CreateListParameter(
+                                    listName:  ""
+                                  , type: ListType.remember()
+                                  , positioning: PositionType.start
+      );
+      listCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
+      yield _ListChanged(creationParam:  listCreation);
+    }, 
+     startTemplateCreation: (e) async*{
+      isTemplateCreation = true;
+      isListCreation=false;
+      listCreation = CreateListParameter(
                                     listName:  ""
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
@@ -90,6 +107,16 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
       yield _Initial();
         editList = e.list;
         isListEditing = true;
+        
+        listCreation = CreateListParameter.asEditFromList(editList);
+        
+        yield _SwitchedToCreate(creationParam:  listCreation);
+    },
+    editTemplate:  (e) async*{
+      yield _Initial();
+        editTemplate = e.template;
+        isListEditing = false;
+        isTemplateEditing = true;
         
         listCreation = CreateListParameter.asEditFromList(editList);
         

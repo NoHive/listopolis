@@ -7,12 +7,15 @@ import 'package:listopolis/features/listopolis/application/active_lists/activeli
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 
 class TemplateMainPage extends StatefulWidget {
-  TemplateMainPage({Key key}) : super(key: key);
+  final CreatelistBloc createlistBloc;
+  final ActivelistBloc activelistBloc;
+  TemplateMainPage(this.activelistBloc, this.createlistBloc, {Key key}) : super(key: key);
 
   @override
   _TemplateMainPageState createState() => _TemplateMainPageState();
@@ -29,16 +32,16 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: Text(ActiveListStrings.APP_BAR_TITLE),
+        title: Text(TemplateStrings.APP_BAR_TITLE),
         actions: <Widget>[_buildOverflowMenue(context)],
     ),
     body: Container(
-      child: BlocBuilder<ActivelistBloc, ActivelistState>(
+      child: BlocBuilder<TemplateBloc, TemplateState>(
           builder: (context, state){
             return state.map(
               initial: (s) => showInitial(), 
               loading: (s) => showLoadingIndicator(), 
-              loaded: (s) => buildLoadedLists(context, s.userLists), 
+              loaded: (s) => buildLoadedLists(context, s.userTemplates),
               error: (s) => showAppError(mapFailureToLocalizedString(s.failure)),
              // initCreateList: (s) => showLoadingIndicator()
             );
@@ -52,7 +55,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     return PopupMenuButton<String>(
       onSelected: _onSelectMenueItem,
       itemBuilder: (BuildContext context){
-          return ActiveListPageMenueStrings.choises.map((menueOption) {
+          return TemplatePageMenueStrings.choises.map((menueOption) {
             return PopupMenuItem<String>(value: menueOption,
                                         child: Text(menueOption, style: TextStyle(fontSize: 10),),
             );
@@ -63,25 +66,27 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
 
   }
    navigateToCreateListScreen(BuildContext context) {
+     widget.createlistBloc.add(CreatelistEvent.startTemplateCreation());
      Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => BlocProvider.value(
-                  value: BlocProvider.of<CreatelistBloc>(context),
-                  child: CreateListPage(BlocProvider.of<ActivelistBloc>(context)),
+                  //value: BlocProvider.of<CreatelistBloc>(context),
+                  value:widget.createlistBloc,
+                  child: CreateListPage(widget.activelistBloc, BlocProvider.of<TemplateBloc>(context)),
                 ),
               ),
       );
    }
 
   _onSelectMenueItem(String choice){
-      if(choice == ActiveListPageMenueStrings.CREATE_NEW_LIST){
+      if(choice == TemplatePageMenueStrings.CREATE_NEW_TEMPLATE){
         navigateToCreateListScreen(context);
       }else{
         print("not supported");
       }
   }
 
-  Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
+  Widget buildLoadedLists(BuildContext context, List<ListTemplate> lists){
     lists.sort((l1, l2) => l1.position.compareTo(l2.position));
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){
@@ -91,8 +96,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                                                 child: ExpansionTile( 
                                                           leading: _buildMainItemExpandableTrailing(lists[i], context),
                                                           title: _buildMainItemExpandableTitle(lists[i], context),
-                                                          initiallyExpanded: lists[i].opened,
-                                                          children: [ _buildSubElements(context,  lists[i], lists[i].listItems)],
+                                                          children: [ _buildSubElements(context,  lists[i], lists[i].templatePositions)],
                                                 )
                               );
                           },
@@ -101,7 +105,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                            );
   }
 
-  Widget _buildMainItemExpandableIcon(ActiveList list, BuildContext context){
+  Widget _buildMainItemExpandableIcon(ListTemplate list, BuildContext context){
     Icon leadingIcon;
     if(list.type == ListType.todo()){
       leadingIcon = Icon(Icons.playlist_add_check);
@@ -111,7 +115,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     return  leadingIcon;
   }
 
-  Widget _buildMainItemExpandableTitle(ActiveList list, BuildContext context){
+  Widget _buildMainItemExpandableTitle(ListTemplate list, BuildContext context){
     
     return SingleChildScrollView(
       child: Row(
@@ -130,37 +134,37 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     //       );
     // return Text(list.name);
   }
-  _buildMainItemExpandableTrailing(ActiveList list, BuildContext context){
+  _buildMainItemExpandableTrailing(ListTemplate list, BuildContext context){
     
     const String locale = "de";
     
     return PopupMenuButton(
                           child: _buildMainItemExpandableIcon(list, context),
                           onSelected: (element){
-                            if(element == MainListItemMenueStr.DELETE){
-                              BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.deleteActiveList(list: list));
-                            }else if(element == MainListItemMenueStr.EDIT){
-                              BlocProvider.of<CreatelistBloc>(context)..add(CreatelistEvent.editActiveList(list: list));
+                            if(element == MainTemplateItemMenueStr.DELETE){
+                              BlocProvider.of<TemplateBloc>(context)..add(TemplateEvent.deleteTemplate(list: list));
+                            }else if(element == MainTemplateItemMenueStr.EDIT){
+                              BlocProvider.of<CreatelistBloc>(context)..add(CreatelistEvent.editTemplate(template: list));
                               navigateToCreateListScreen(context);
                             }
                           },
                           itemBuilder: (context) {
                               return <PopupMenuItem>[
                                           new PopupMenuItem(
-                                                value: MainListItemMenueStr.DELETE,
+                                                value: MainTemplateItemMenueStr.DELETE,
                                                 child: Row(
                                                          children: <Widget>[
                                                               Icon(Icons.delete),
-                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.DELETE, locale)}"),
+                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.DELETE, locale)}"),
                                                         ],
                                                       )
                                           ),
                                           new PopupMenuItem(
-                                                value: MainListItemMenueStr.EDIT,
+                                                value: MainTemplateItemMenueStr.EDIT,
                                                 child: Row(
                                                          children: <Widget>[
                                                               Icon(Icons.edit),
-                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}"),
+                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.EDIT, locale)}"),
                                                         ],
                                                       )
                                           )
@@ -170,7 +174,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
   }
  
 
-  Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){
+  Widget _buildSubElements(BuildContext ontext, ListTemplate list, List<ListTemplatePosition> listItems){
     final int listCount = listItems.length;
     print("listcount = ${listItems.length}");
 
@@ -190,40 +194,23 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     // return result;
   }
 
-  Widget _buildActiveListItem(BuildContext context, ActiveList list, ActiveListPosition listPosition){
-    print("constructing ${listPosition.name}");
-    //return ListTile(title: Text(listPosition.name));
-    if(list.type == ListType.todo()){
-      return Dismissible(key: new Key(listPosition.id),
-              onDismissed: (direction){
-                BlocProvider.of<ActivelistBloc>(context)..
-                add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
-              },
-              child: ListTile(title: Text(listPosition.name)),
-              background: new Container(color:Colors.green),
-      
-      );
-    }else{
-      return ListTile(title: Text(listPosition.name));
-    }
+  Widget _buildActiveListItem(BuildContext context, ListTemplate list, ListTemplatePosition listPosition){
+    return ListTile(title: Text(listPosition.name));
   }
 }
 
 
 
 
-class ActiveListStrings implements ListopolisString{
-  static const APP_BAR_TITLE = "Deine Listen";
+class TemplateStrings implements ListopolisString{
+  static const APP_BAR_TITLE = "Deine Listen-Vorlagen";
 }
 
-class ActiveListPageMenueStrings{
-  static const String CREATE_NEW_LIST = "Liste anlegen";
-  static const String EDIT_TEMPlATES = "Vorlagen verwalten";
-  static const String CREATE_NEW_LIST_FROM_TEMPLATE = "Liste aus Vorlage anlegen";
-
-  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES, CREATE_NEW_LIST_FROM_TEMPLATE];
+class TemplatePageMenueStrings{
+  static const String CREATE_NEW_TEMPLATE = "Vorlage anlegen";
+  static const List<String> choises = [CREATE_NEW_TEMPLATE];
 }
-class MainListItemMenueStr{
+class MainTemplateItemMenueStr{
   static const String EDIT = "edit";
   static const String DELETE = "delete";
 
@@ -233,10 +220,8 @@ class MainListItemMenueStr{
         return "Bearbeiten";
       else if(str == DELETE)
         return "Löschen";
-    }else{
-      return str;
     }
-    
+    return str;
 
   }
 }

@@ -23,6 +23,11 @@ class _$CreatelistEventTearOff {
   }
 
 // ignore: unused_element
+  _StartTemplateCreation startTemplateCreation() {
+    return const _StartTemplateCreation();
+  }
+
+// ignore: unused_element
   _ChangeList changeList() {
     return const _ChangeList();
   }
@@ -66,6 +71,13 @@ class _$CreatelistEventTearOff {
       list: list,
     );
   }
+
+// ignore: unused_element
+  _EditTemplate editTemplate({@required ListTemplate template}) {
+    return _EditTemplate(
+      template: template,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -76,6 +88,7 @@ mixin _$CreatelistEvent {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -83,11 +96,13 @@ mixin _$CreatelistEvent {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -95,12 +110,14 @@ mixin _$CreatelistEvent {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -108,11 +125,13 @@ mixin _$CreatelistEvent {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -120,6 +139,7 @@ mixin _$CreatelistEvent {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   });
 }
@@ -174,6 +194,7 @@ class _$_Started implements _Started {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -181,9 +202,11 @@ class _$_Started implements _Started {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -191,6 +214,7 @@ class _$_Started implements _Started {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return started();
   }
 
@@ -199,6 +223,7 @@ class _$_Started implements _Started {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -206,6 +231,7 @@ class _$_Started implements _Started {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -220,6 +246,7 @@ class _$_Started implements _Started {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -227,9 +254,11 @@ class _$_Started implements _Started {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -237,6 +266,7 @@ class _$_Started implements _Started {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return started(this);
   }
 
@@ -245,6 +275,7 @@ class _$_Started implements _Started {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -252,6 +283,7 @@ class _$_Started implements _Started {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -304,6 +336,7 @@ class _$_StartListCreation implements _StartListCreation {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -311,9 +344,11 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -321,6 +356,7 @@ class _$_StartListCreation implements _StartListCreation {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return startListCreation();
   }
 
@@ -329,6 +365,7 @@ class _$_StartListCreation implements _StartListCreation {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -336,6 +373,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -350,6 +388,7 @@ class _$_StartListCreation implements _StartListCreation {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -357,9 +396,11 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -367,6 +408,7 @@ class _$_StartListCreation implements _StartListCreation {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return startListCreation(this);
   }
 
@@ -375,6 +417,7 @@ class _$_StartListCreation implements _StartListCreation {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -382,6 +425,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -394,6 +438,148 @@ class _$_StartListCreation implements _StartListCreation {
 
 abstract class _StartListCreation implements CreatelistEvent {
   const factory _StartListCreation() = _$_StartListCreation;
+}
+
+abstract class _$StartTemplateCreationCopyWith<$Res> {
+  factory _$StartTemplateCreationCopyWith(_StartTemplateCreation value,
+          $Res Function(_StartTemplateCreation) then) =
+      __$StartTemplateCreationCopyWithImpl<$Res>;
+}
+
+class __$StartTemplateCreationCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$StartTemplateCreationCopyWith<$Res> {
+  __$StartTemplateCreationCopyWithImpl(_StartTemplateCreation _value,
+      $Res Function(_StartTemplateCreation) _then)
+      : super(_value, (v) => _then(v as _StartTemplateCreation));
+
+  @override
+  _StartTemplateCreation get _value => super._value as _StartTemplateCreation;
+}
+
+class _$_StartTemplateCreation implements _StartTemplateCreation {
+  const _$_StartTemplateCreation();
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.startTemplateCreation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _StartTemplateCreation);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result started(),
+    @required Result startListCreation(),
+    @required Result startTemplateCreation(),
+    @required Result changeList(),
+    @required Result switchViewToCreation(),
+    @required Result switchViewToReorder(),
+    @required Result addListPositionAfter(int index),
+    @required Result removeListPosition(int index),
+    @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(startTemplateCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    assert(editTemplate != null);
+    return startTemplateCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result started(),
+    Result startListCreation(),
+    Result startTemplateCreation(),
+    Result changeList(),
+    Result switchViewToCreation(),
+    Result switchViewToReorder(),
+    Result addListPositionAfter(int index),
+    Result removeListPosition(int index),
+    Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (startTemplateCreation != null) {
+      return startTemplateCreation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
+    @required Result changeList(_ChangeList value),
+    @required Result switchViewToCreation(_SwitchToCreation value),
+    @required Result switchViewToReorder(_SwitchToReorder value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
+    @required Result removeListPosition(_RemoveListPosition value),
+    @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(startTemplateCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    assert(editTemplate != null);
+    return startTemplateCreation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
+    Result changeList(_ChangeList value),
+    Result switchViewToCreation(_SwitchToCreation value),
+    Result switchViewToReorder(_SwitchToReorder value),
+    Result addListPositionAfter(_AddListPositionAfter value),
+    Result removeListPosition(_RemoveListPosition value),
+    Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (startTemplateCreation != null) {
+      return startTemplateCreation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _StartTemplateCreation implements CreatelistEvent {
+  const factory _StartTemplateCreation() = _$_StartTemplateCreation;
 }
 
 abstract class _$ChangeListCopyWith<$Res> {
@@ -434,6 +620,7 @@ class _$_ChangeList implements _ChangeList {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -441,9 +628,11 @@ class _$_ChangeList implements _ChangeList {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -451,6 +640,7 @@ class _$_ChangeList implements _ChangeList {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return changeList();
   }
 
@@ -459,6 +649,7 @@ class _$_ChangeList implements _ChangeList {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -466,6 +657,7 @@ class _$_ChangeList implements _ChangeList {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -480,6 +672,7 @@ class _$_ChangeList implements _ChangeList {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -487,9 +680,11 @@ class _$_ChangeList implements _ChangeList {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -497,6 +692,7 @@ class _$_ChangeList implements _ChangeList {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return changeList(this);
   }
 
@@ -505,6 +701,7 @@ class _$_ChangeList implements _ChangeList {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -512,6 +709,7 @@ class _$_ChangeList implements _ChangeList {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -564,6 +762,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -571,9 +770,11 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -581,6 +782,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return switchViewToCreation();
   }
 
@@ -589,6 +791,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -596,6 +799,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -610,6 +814,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -617,9 +822,11 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -627,6 +834,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return switchViewToCreation(this);
   }
 
@@ -635,6 +843,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -642,6 +851,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -694,6 +904,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -701,9 +912,11 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -711,6 +924,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return switchViewToReorder();
   }
 
@@ -719,6 +933,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -726,6 +941,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -740,6 +956,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -747,9 +964,11 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -757,6 +976,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return switchViewToReorder(this);
   }
 
@@ -765,6 +985,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -772,6 +993,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -846,6 +1068,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -853,9 +1076,11 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -863,6 +1088,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return addListPositionAfter(index);
   }
 
@@ -871,6 +1097,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -878,6 +1105,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -892,6 +1120,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -899,9 +1128,11 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -909,6 +1140,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return addListPositionAfter(this);
   }
 
@@ -917,6 +1149,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -924,6 +1157,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1001,6 +1235,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -1008,9 +1243,11 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -1018,6 +1255,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return removeListPosition(index);
   }
 
@@ -1026,6 +1264,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -1033,6 +1272,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1047,6 +1287,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -1054,9 +1295,11 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -1064,6 +1307,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return removeListPosition(this);
   }
 
@@ -1072,6 +1316,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -1079,6 +1324,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1168,6 +1414,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -1175,9 +1422,11 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -1185,6 +1434,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return changeListItemOrder(oldIndex, newIndex);
   }
 
@@ -1193,6 +1443,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -1200,6 +1451,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1214,6 +1466,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -1221,9 +1474,11 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -1231,6 +1486,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return changeListItemOrder(this);
   }
 
@@ -1239,6 +1495,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -1246,6 +1503,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1336,6 +1594,7 @@ class _$_EditActiveList implements _EditActiveList {
   Result when<Result extends Object>({
     @required Result started(),
     @required Result startListCreation(),
+    @required Result startTemplateCreation(),
     @required Result changeList(),
     @required Result switchViewToCreation(),
     @required Result switchViewToReorder(),
@@ -1343,9 +1602,11 @@ class _$_EditActiveList implements _EditActiveList {
     @required Result removeListPosition(int index),
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -1353,6 +1614,7 @@ class _$_EditActiveList implements _EditActiveList {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return editActiveList(list);
   }
 
@@ -1361,6 +1623,7 @@ class _$_EditActiveList implements _EditActiveList {
   Result maybeWhen<Result extends Object>({
     Result started(),
     Result startListCreation(),
+    Result startTemplateCreation(),
     Result changeList(),
     Result switchViewToCreation(),
     Result switchViewToReorder(),
@@ -1368,6 +1631,7 @@ class _$_EditActiveList implements _EditActiveList {
     Result removeListPosition(int index),
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1382,6 +1646,7 @@ class _$_EditActiveList implements _EditActiveList {
   Result map<Result extends Object>({
     @required Result started(_Started value),
     @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
     @required Result changeList(_ChangeList value),
     @required Result switchViewToCreation(_SwitchToCreation value),
     @required Result switchViewToReorder(_SwitchToReorder value),
@@ -1389,9 +1654,11 @@ class _$_EditActiveList implements _EditActiveList {
     @required Result removeListPosition(_RemoveListPosition value),
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
+    assert(startTemplateCreation != null);
     assert(changeList != null);
     assert(switchViewToCreation != null);
     assert(switchViewToReorder != null);
@@ -1399,6 +1666,7 @@ class _$_EditActiveList implements _EditActiveList {
     assert(removeListPosition != null);
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
+    assert(editTemplate != null);
     return editActiveList(this);
   }
 
@@ -1407,6 +1675,7 @@ class _$_EditActiveList implements _EditActiveList {
   Result maybeMap<Result extends Object>({
     Result started(_Started value),
     Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
     Result changeList(_ChangeList value),
     Result switchViewToCreation(_SwitchToCreation value),
     Result switchViewToReorder(_SwitchToReorder value),
@@ -1414,6 +1683,7 @@ class _$_EditActiveList implements _EditActiveList {
     Result removeListPosition(_RemoveListPosition value),
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1430,6 +1700,187 @@ abstract class _EditActiveList implements CreatelistEvent {
 
   ActiveList get list;
   _$EditActiveListCopyWith<_EditActiveList> get copyWith;
+}
+
+abstract class _$EditTemplateCopyWith<$Res> {
+  factory _$EditTemplateCopyWith(
+          _EditTemplate value, $Res Function(_EditTemplate) then) =
+      __$EditTemplateCopyWithImpl<$Res>;
+  $Res call({ListTemplate template});
+
+  $ListTemplateCopyWith<$Res> get template;
+}
+
+class __$EditTemplateCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$EditTemplateCopyWith<$Res> {
+  __$EditTemplateCopyWithImpl(
+      _EditTemplate _value, $Res Function(_EditTemplate) _then)
+      : super(_value, (v) => _then(v as _EditTemplate));
+
+  @override
+  _EditTemplate get _value => super._value as _EditTemplate;
+
+  @override
+  $Res call({
+    Object template = freezed,
+  }) {
+    return _then(_EditTemplate(
+      template:
+          template == freezed ? _value.template : template as ListTemplate,
+    ));
+  }
+
+  @override
+  $ListTemplateCopyWith<$Res> get template {
+    if (_value.template == null) {
+      return null;
+    }
+    return $ListTemplateCopyWith<$Res>(_value.template, (value) {
+      return _then(_value.copyWith(template: value));
+    });
+  }
+}
+
+class _$_EditTemplate implements _EditTemplate {
+  const _$_EditTemplate({@required this.template}) : assert(template != null);
+
+  @override
+  final ListTemplate template;
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.editTemplate(template: $template)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EditTemplate &&
+            (identical(other.template, template) ||
+                const DeepCollectionEquality()
+                    .equals(other.template, template)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(template);
+
+  @override
+  _$EditTemplateCopyWith<_EditTemplate> get copyWith =>
+      __$EditTemplateCopyWithImpl<_EditTemplate>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result started(),
+    @required Result startListCreation(),
+    @required Result startTemplateCreation(),
+    @required Result changeList(),
+    @required Result switchViewToCreation(),
+    @required Result switchViewToReorder(),
+    @required Result addListPositionAfter(int index),
+    @required Result removeListPosition(int index),
+    @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(startTemplateCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    assert(editTemplate != null);
+    return editTemplate(template);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result started(),
+    Result startListCreation(),
+    Result startTemplateCreation(),
+    Result changeList(),
+    Result switchViewToCreation(),
+    Result switchViewToReorder(),
+    Result addListPositionAfter(int index),
+    Result removeListPosition(int index),
+    Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (editTemplate != null) {
+      return editTemplate(template);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
+    @required Result changeList(_ChangeList value),
+    @required Result switchViewToCreation(_SwitchToCreation value),
+    @required Result switchViewToReorder(_SwitchToReorder value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
+    @required Result removeListPosition(_RemoveListPosition value),
+    @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(startTemplateCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    assert(editTemplate != null);
+    return editTemplate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
+    Result changeList(_ChangeList value),
+    Result switchViewToCreation(_SwitchToCreation value),
+    Result switchViewToReorder(_SwitchToReorder value),
+    Result addListPositionAfter(_AddListPositionAfter value),
+    Result removeListPosition(_RemoveListPosition value),
+    Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (editTemplate != null) {
+      return editTemplate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditTemplate implements CreatelistEvent {
+  const factory _EditTemplate({@required ListTemplate template}) =
+      _$_EditTemplate;
+
+  ListTemplate get template;
+  _$EditTemplateCopyWith<_EditTemplate> get copyWith;
 }
 
 class _$CreatelistStateTearOff {
