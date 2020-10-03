@@ -3,9 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/local_storage/shared_preferences_keys.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
-import 'package:listopolis/features/listopolis/data/models/list.dart';
-import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/data/repositories/repository_implementations.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/active_list_main_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -28,19 +27,23 @@ class ListopolisRoot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+     final RepositoryImpl userDateRepo= RepositoryImpl(
+                                          dataSource: LocalDataSourceImpl(
+                                                        preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
+                                                        sharedPreferences: preferences
+                                                      )
+                                        );
+
     return MaterialApp(
       title: "Listopolis",
       home: MultiBlocProvider(
             providers: [ 
               BlocProvider<ActivelistBloc> (
-                create: (context) => ActivelistBloc(
-                                        repository: RepositoryImpl(
-                                                        dataSource: LocalDataSourceImpl(
-                                                          preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
-                                                          sharedPreferences: preferences
-                                                    )
-                                        )
-                                      ),
+                create: (context) => ActivelistBloc( repository: userDateRepo ),
+              ),
+              BlocProvider<TemplateBloc> (
+                create: (context) => TemplateBloc( repository: userDateRepo ),
               ),
               BlocProvider<CreatelistBloc> (
                 create: (context) => CreatelistBloc(

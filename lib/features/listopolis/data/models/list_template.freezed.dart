@@ -267,9 +267,11 @@ class _$ListTemplatePositionTearOff {
   const _$ListTemplatePositionTearOff();
 
 // ignore: unused_element
-  _ListTemplatePosition call({@required String name, @required int position}) {
+  _ListTemplatePosition call(
+      {@required String name, @required String id, @required int position}) {
     return _ListTemplatePosition(
       name: name,
+      id: id,
       position: position,
     );
   }
@@ -280,6 +282,7 @@ const $ListTemplatePosition = _$ListTemplatePositionTearOff();
 
 mixin _$ListTemplatePosition {
   String get name;
+  String get id;
   int get position;
 
   Map<String, dynamic> toJson();
@@ -290,7 +293,7 @@ abstract class $ListTemplatePositionCopyWith<$Res> {
   factory $ListTemplatePositionCopyWith(ListTemplatePosition value,
           $Res Function(ListTemplatePosition) then) =
       _$ListTemplatePositionCopyWithImpl<$Res>;
-  $Res call({String name, int position});
+  $Res call({String name, String id, int position});
 }
 
 class _$ListTemplatePositionCopyWithImpl<$Res>
@@ -304,10 +307,12 @@ class _$ListTemplatePositionCopyWithImpl<$Res>
   @override
   $Res call({
     Object name = freezed,
+    Object id = freezed,
     Object position = freezed,
   }) {
     return _then(_value.copyWith(
       name: name == freezed ? _value.name : name as String,
+      id: id == freezed ? _value.id : id as String,
       position: position == freezed ? _value.position : position as int,
     ));
   }
@@ -319,7 +324,7 @@ abstract class _$ListTemplatePositionCopyWith<$Res>
           $Res Function(_ListTemplatePosition) then) =
       __$ListTemplatePositionCopyWithImpl<$Res>;
   @override
-  $Res call({String name, int position});
+  $Res call({String name, String id, int position});
 }
 
 class __$ListTemplatePositionCopyWithImpl<$Res>
@@ -335,10 +340,12 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
   @override
   $Res call({
     Object name = freezed,
+    Object id = freezed,
     Object position = freezed,
   }) {
     return _then(_ListTemplatePosition(
       name: name == freezed ? _value.name : name as String,
+      id: id == freezed ? _value.id : id as String,
       position: position == freezed ? _value.position : position as int,
     ));
   }
@@ -346,8 +353,10 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
 
 @JsonSerializable()
 class _$_ListTemplatePosition extends _ListTemplatePosition {
-  const _$_ListTemplatePosition({@required this.name, @required this.position})
+  const _$_ListTemplatePosition(
+      {@required this.name, @required this.id, @required this.position})
       : assert(name != null),
+        assert(id != null),
         assert(position != null),
         super._();
 
@@ -357,11 +366,13 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
   @override
   final String name;
   @override
+  final String id;
+  @override
   final int position;
 
   @override
   String toString() {
-    return 'ListTemplatePosition(name: $name, position: $position)';
+    return 'ListTemplatePosition(name: $name, id: $id, position: $position)';
   }
 
   @override
@@ -370,6 +381,8 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
         (other is _ListTemplatePosition &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.position, position) ||
                 const DeepCollectionEquality()
                     .equals(other.position, position)));
@@ -379,6 +392,7 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(position);
 
   @override
@@ -396,6 +410,7 @@ abstract class _ListTemplatePosition extends ListTemplatePosition {
   const _ListTemplatePosition._() : super._();
   const factory _ListTemplatePosition(
       {@required String name,
+      @required String id,
       @required int position}) = _$_ListTemplatePosition;
 
   factory _ListTemplatePosition.fromJson(Map<String, dynamic> json) =
@@ -403,6 +418,8 @@ abstract class _ListTemplatePosition extends ListTemplatePosition {
 
   @override
   String get name;
+  @override
+  String get id;
   @override
   int get position;
   @override

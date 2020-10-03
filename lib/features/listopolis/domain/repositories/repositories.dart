@@ -12,6 +12,12 @@ abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter);
   Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter);
   Future<Either<Failure, List<ListTemplate>>> getTemplates();
+  Future<Either<Failure, List<ListTemplate>>> deleteTemplatePosition(ListTemplate list, ListTemplatePosition position);
+  Future<Either<Failure, List<ListTemplate>>> deleteTemplate(ListTemplate list);
+  Future<Either<Failure, List<ListTemplate>>> insertTemplate(CreateListParameter listParameter);
+  Future<Either<Failure, List<ListTemplate>>> replaceTemplate(ListTemplate list, CreateListParameter listParameter);
+
+
   bool isInitialized();
   Future<Either<Failure, Option<UserData>>> initDataSource();
   Future<Either<Failure, Unit>> sendData();

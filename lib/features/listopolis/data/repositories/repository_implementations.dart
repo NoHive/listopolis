@@ -77,9 +77,13 @@ class RepositoryImpl implements IRepository{
   }
 
   @override
-  Future<Either<Failure, List<ListTemplate>>> getTemplates() {
-    Option<List<ListTemplate>> templateOption  = uDataCache.map((userdata) => userdata.templates);
-    return Future.value(Right(templateOption.getOrElse(() => List())));
+  Future<Either<Failure, List<ListTemplate>>> getTemplates() async{
+     if(! isInitialized()){
+      await initDataSource();
+    }
+
+    Option<List<ListTemplate>> templates  = uDataCache.map((userdata) => userdata.templates);
+    return Future.value(Right(templates.getOrElse(() => List())));
   }
 
   @override
@@ -127,6 +131,46 @@ class RepositoryImpl implements IRepository{
         sendData();
       }
    return getActiveLists();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> deleteTemplate(ListTemplate list) {
+   UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromRemovedTemplate(currentUserData, list));
+        sendData();
+      }
+      return getTemplates();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> deleteTemplatePosition(ListTemplate list, ListTemplatePosition position) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromRemovedTemplatePosition(currentUserData, list, position));
+        sendData();
+      }
+      return getTemplates();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> insertTemplate(CreateListParameter listParameter) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.addTemplateFromCreatedList(currentUserData, listParameter));
+        sendData();
+      }
+      return getTemplates();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> replaceTemplate(ListTemplate list, CreateListParameter listParameter) {
+    UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.replaceTemplateFromCreatedList(currentUserData, list, listParameter));
+        sendData();
+      }
+   return getTemplates();
   }
 
 }
@@ -188,12 +232,12 @@ class DemoRepositoryImpl implements IRepository{
                                 position: 1,
                                 templatePositions:  
                                     [
-                                      ListTemplatePosition(position: 1,name: "Wasser"),
-                                      ListTemplatePosition(position: 2,name: "Sitzunterlage"),
-                                      ListTemplatePosition(position: 3,name: "Zeckenzange"),
-                                      ListTemplatePosition(position: 4,name: "Energie-Riegel"),
-                                      ListTemplatePosition(position: 5,name: "Sonnencreme"),
-                                      ListTemplatePosition(position: 6,name: "Sonnenbrille"),
+                                      ListTemplatePosition(position: 1,name: "Wasser", id: Uuid().v1()),
+                                      ListTemplatePosition(position: 2,name: "Sitzunterlage", id: Uuid().v1()),
+                                      ListTemplatePosition(position: 3,name: "Zeckenzange", id: Uuid().v1()),
+                                      ListTemplatePosition(position: 4,name: "Energie-Riegel", id: Uuid().v1()),
+                                      ListTemplatePosition(position: 5,name: "Sonnencreme", id: Uuid().v1()),
+                                      ListTemplatePosition(position: 6,name: "Sonnenbrille", id: Uuid().v1()),
                                       
                                     ]
   );
@@ -269,6 +313,30 @@ class DemoRepositoryImpl implements IRepository{
   Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter) {
     // TODO: implement replaceActiveList
     return getActiveLists();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> deleteTemplate(ListTemplate list) {
+    // TODO: implement deleteTemplate
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> deleteTemplatePosition(ListTemplate list, ListTemplatePosition position) {
+    // TODO: implement deleteTemplatePosition
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> insertTemplate(CreateListParameter listParameter) {
+    // TODO: implement insertTemplate
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, List<ListTemplate>>> replaceTemplate(ListTemplate list, CreateListParameter listParameter) {
+    // TODO: implement replaceTemplate
+    throw UnimplementedError();
   }
 
 }

@@ -88,6 +88,45 @@ abstract class UserData implements _$UserData{
 
       
   }
+
+    factory UserData.addTemplateFromCreatedList(UserData data, CreateListParameter creationParameter){
+      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> aNewList = List();
+      int aNewPosition = 1;
+      if(existingActiveLists != null && existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+        
+        if(creationParameter.positioning == PositionType.start){
+          aNewList = existingActiveLists.map((e) => e.copyWith(position: e.position +1 )).toList();
+          aNewPosition = 1;
+        }else{
+          aNewList = existingActiveLists.toList();
+          aNewPosition = existingActiveLists.last.position+1;
+        }
+      }
+      
+
+      List<ListTemplatePosition> newListPositions = [];
+
+      for(CreateListItemParameter listItemParam in creationParameter.listitems){
+          newListPositions.add(ListTemplatePosition.fromCreateListItemParameter(listItemParam));
+      }
+
+      ListTemplate aNewListItem = ListTemplate( id: Uuid().v1(), 
+                                            name: creationParameter.listName, 
+                                            type: creationParameter.type, 
+                                            position: aNewPosition, 
+                                            templatePositions: newListPositions
+                                            );
+      
+       
+      aNewList.add(aNewListItem);
+
+      return data.copyWith(templates:aNewList);
+
+      
+  }
+
   factory UserData.replaceListFromCreatedList(UserData data, ActiveList list, CreateListParameter creationParameter){
       List<ActiveList> existingActiveLists = data.activeLists;
       
@@ -120,6 +159,39 @@ abstract class UserData implements _$UserData{
       existingActiveLists.removeWhere((aList) => list.id == aList.id);
 
       return data.copyWith(activeLists:existingActiveLists);
+
+      
+}
+factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list, CreateListParameter creationParameter){
+      List<ListTemplate> existingActiveLists = data.templates;
+      
+      
+      if(existingActiveLists != null && existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+          
+      }else{
+        return data;
+      }
+      
+
+      List<ListTemplatePosition> newListPositions = [];
+
+      for(CreateListItemParameter listItemParam in creationParameter.listitems){
+        newListPositions.add(ListTemplatePosition.fromCreateListItemParameter(listItemParam));
+      }
+
+      ListTemplate aNewListItem = ListTemplate( id: Uuid().v1(), 
+                                            name: creationParameter.listName, 
+                                            type: creationParameter.type, 
+                                            position: list.position, 
+                                            templatePositions: newListPositions
+                                            );
+      
+       
+      existingActiveLists.add(aNewListItem);
+      existingActiveLists.removeWhere((aList) => list.id == aList.id);
+
+      return data.copyWith(templates:existingActiveLists);
 
       
 }
@@ -161,10 +233,50 @@ abstract class UserData implements _$UserData{
         }
       }
 
+      return data.copyWith(activeLists:aNewList);
+  }
+    factory UserData.fromRemovedTemplatePosition(UserData data, ListTemplate list, ListTemplatePosition position){
+      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> aNewList = List();
+      
+      if(existingActiveLists != null){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+      }
+
+      final int positionOfDeleteList = list.position;
+      final int positionOfDeleteListPos = position.position;
+
+      // if so delete whole list
+      if(list.templatePositions.length <= 1){
+        for(ListTemplate aList in existingActiveLists){
+            if(aList.position < positionOfDeleteList)
+              aNewList.add(aList.copyWith());
+            else if(aList.position > positionOfDeleteList)
+              aNewList.add(aList.copyWith(position:aList.position - 1));
+        }
+      }else{
+        List<ListTemplatePosition> newListPositions = [];
+        for(ListTemplatePosition aListPosition in list.templatePositions){
+            if(aListPosition.position < positionOfDeleteListPos)
+              newListPositions.add(aListPosition);
+            else if(aListPosition.position > positionOfDeleteListPos)
+              newListPositions.add(aListPosition.copyWith(position:aListPosition.position - 1));
+        }
+        for(ListTemplate aList in existingActiveLists){
+            if(aList.position < positionOfDeleteList)
+              aNewList.add(aList);
+            else if(aList.position == positionOfDeleteList){
+              aNewList.add(aList.copyWith(templatePositions: newListPositions));
+            }
+            else if(aList.position > positionOfDeleteList)
+              aNewList.add(aList);
+        }
+      }
+
       
       
 
-      return data.copyWith(activeLists:aNewList);
+      return data.copyWith(templates:aNewList);
 
       
   }
@@ -193,6 +305,32 @@ abstract class UserData implements _$UserData{
         }
       }
       return data.copyWith(activeLists:aNewActiveList);
+  }
+   factory UserData.fromRemovedTemplate(UserData data, ListTemplate list){
+      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> aNewActiveList = List();
+      
+      if(existingActiveLists != null){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+      }else{
+        return data;
+      }
+
+      final int positionOfDeleteList = list.position;
+      
+
+      // if so delete whole list
+      if(existingActiveLists.length > 1){  
+      
+        for(ListTemplate aList in existingActiveLists){
+            if(aList.position < positionOfDeleteList)
+              aNewActiveList.add(aList);
+          
+            else if(aList.position > positionOfDeleteList)
+              aNewActiveList.add(aList.copyWith(position:aList.position -1));
+        }
+      }
+      return data.copyWith(templates:aNewActiveList);
   }
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);
 }

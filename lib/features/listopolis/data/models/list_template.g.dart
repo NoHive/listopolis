@@ -33,6 +33,7 @@ _$_ListTemplatePosition _$_$_ListTemplatePositionFromJson(
     Map<String, dynamic> json) {
   return _$_ListTemplatePosition(
     name: json['name'] as String,
+    id: json['id'] as String,
     position: json['position'] as int,
   );
 }
@@ -41,5 +42,6 @@ Map<String, dynamic> _$_$_ListTemplatePositionToJson(
         _$_ListTemplatePosition instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'id': instance.id,
       'position': instance.position,
     };
