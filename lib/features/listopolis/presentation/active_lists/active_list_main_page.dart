@@ -9,6 +9,7 @@ import 'package:listopolis/features/listopolis/application/templates/template_bl
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
+import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 import 'package:listopolis/features/listopolis/presentation/templates/template_main_page.dart';
 
@@ -215,7 +216,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                 add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
               },
               child: ListTile(title: Text(listPosition.name)),
-              background: new Container(color:Colors.green),
+              background: new Container(color:ListColors.DISSMISS_LIST_ITEM),
       
       );
     }else{

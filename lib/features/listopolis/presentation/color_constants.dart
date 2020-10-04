@@ -11,5 +11,6 @@ class ListColors{
   static const int MAIN_PAGE_BUTTON_ALPHA = 190;
 
   static const Color APP_BAR_COLOR = Color(0xFF002636);
+  static const Color DISSMISS_LIST_ITEM = Color(0xFF00ffeb);
   
 }

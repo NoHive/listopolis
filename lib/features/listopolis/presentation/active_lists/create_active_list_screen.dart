@@ -100,10 +100,19 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
       txt = CreateListPageStrings.APP_BAR_TITLE_LIST_EDIT;
     else if(listBloc.isTemplateCreation)
       txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE;
+    else if(listBloc.isTemplateEditing)
+      txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE_EDIT;
     else if(listBloc.isTemplateToList)
       txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE_TO_LIST;
+    else
+      txt = "something ist wrong!";
 
-    return SingleChildScrollView(child: Text(txt));
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, 
+                  children:<Widget>[ 
+                                SingleChildScrollView(scrollDirection: Axis.horizontal, child: Text(txt),)
+                  ]
+    );
+
   }
   _returnToPreviousScreen(BuildContext context){
               Navigator.of(context).pop();
