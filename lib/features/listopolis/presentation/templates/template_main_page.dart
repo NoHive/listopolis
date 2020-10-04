@@ -20,8 +20,12 @@ class TemplateMainPage extends StatefulWidget {
   @override
   _TemplateMainPageState createState() => _TemplateMainPageState();
 }
-
+enum PositionType{start, end}
 class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunctions {
+  
+  String lastEditedTemplateName;
+  PositionType posType;
+  
    @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -77,6 +81,33 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
               ),
       );
    }
+   navigateToEditListScreen(BuildContext context, ListTemplate templateForEdit) {
+     widget.createlistBloc.add(CreatelistEvent.editTemplate(template: templateForEdit));
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  //value: BlocProvider.of<CreatelistBloc>(context),
+                  value:widget.createlistBloc,
+                  child: CreateListPage(widget.activelistBloc, BlocProvider.of<TemplateBloc>(context)),
+                ),
+              ),
+      );
+   }
+
+   
+    useTemplateAsList(BuildContext context, ListTemplate templateForEdit) {
+      widget.createlistBloc.add(CreatelistEvent.useTemplateAsList(template: templateForEdit));
+      Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  //value: BlocProvider.of<CreatelistBloc>(context),
+                  value:widget.createlistBloc,
+                  child: CreateListPage(widget.activelistBloc, BlocProvider.of<TemplateBloc>(context)),
+                ),
+              ),
+      );
+   }
+ 
 
   _onSelectMenueItem(String choice){
       if(choice == TemplatePageMenueStrings.CREATE_NEW_TEMPLATE){
@@ -138,14 +169,16 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     
     const String locale = "de";
     
+    
     return PopupMenuButton(
                           child: _buildMainItemExpandableIcon(list, context),
                           onSelected: (element){
                             if(element == MainTemplateItemMenueStr.DELETE){
                               BlocProvider.of<TemplateBloc>(context)..add(TemplateEvent.deleteTemplate(list: list));
                             }else if(element == MainTemplateItemMenueStr.EDIT){
-                              BlocProvider.of<CreatelistBloc>(context)..add(CreatelistEvent.editTemplate(template: list));
-                              navigateToCreateListScreen(context);
+                              navigateToEditListScreen(context, list);
+                            }else if(element == MainTemplateItemMenueStr.CREATE_LIST){
+                              useTemplateAsList(context, list);
                             }
                           },
                           itemBuilder: (context) {
@@ -165,6 +198,15 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                                                          children: <Widget>[
                                                               Icon(Icons.edit),
                                                               Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.EDIT, locale)}"),
+                                                        ],
+                                                      )
+                                          ),
+                                          new PopupMenuItem(
+                                                value: MainTemplateItemMenueStr.CREATE_LIST,
+                                                child: Row(
+                                                         children: <Widget>[
+                                                              Icon(Icons.playlist_add),
+                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.CREATE_LIST, locale)}"),
                                                         ],
                                                       )
                                           )
@@ -213,6 +255,7 @@ class TemplatePageMenueStrings{
 class MainTemplateItemMenueStr{
   static const String EDIT = "edit";
   static const String DELETE = "delete";
+  static const String CREATE_LIST = "create_list";
 
   static String buildLocalName(String str, String locale){
     if(locale == "de"){
@@ -220,6 +263,8 @@ class MainTemplateItemMenueStr{
         return "Bearbeiten";
       else if(str == DELETE)
         return "Löschen";
+      else if(str == CREATE_LIST)
+        return "Als Liste übernehmen";
     }
     return str;
 

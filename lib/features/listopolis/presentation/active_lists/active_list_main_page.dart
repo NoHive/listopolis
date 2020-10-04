@@ -233,10 +233,10 @@ class ActiveListStrings implements ListopolisString{
 
 class ActiveListPageMenueStrings{
   static const String CREATE_NEW_LIST = "Liste anlegen";
-  static const String EDIT_TEMPlATES = "Vorlagen verwalten";
-  static const String CREATE_NEW_LIST_FROM_TEMPLATE = "Liste aus Vorlage anlegen";
+  static const String EDIT_TEMPlATES = "Vorlagen";
+  
 
-  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES, CREATE_NEW_LIST_FROM_TEMPLATE];
+  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES];
 }
 class MainListItemMenueStr{
   static const String EDIT = "edit";

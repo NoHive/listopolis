@@ -93,14 +93,27 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 
   Widget _buildAppBar(BuildContext context){
     String txt;
-    if(BlocProvider.of<CreatelistBloc>(context).isListCreation)
+    CreatelistBloc listBloc = BlocProvider.of<CreatelistBloc>(context);
+    if(listBloc.isListCreation)
       txt = CreateListPageStrings.APP_BAR_TITLE_LIST;
-    else
+    else if(listBloc.isListEditing)
+      txt = CreateListPageStrings.APP_BAR_TITLE_LIST_EDIT;
+    else if(listBloc.isTemplateCreation)
       txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE;
+    else if(listBloc.isTemplateToList)
+      txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE_TO_LIST;
 
-    return Text(txt);
+    return SingleChildScrollView(child: Text(txt));
   }
-
+  _returnToPreviousScreen(BuildContext context){
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+  }
+  _returnToListScreen(BuildContext context){
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+              Navigator.of(context).pop();
+  }
   _returnToMainScreenAskSave(BuildContext context){
     CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     showDialog(context: context,
@@ -113,15 +126,21 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                   createListBloc.isListEditing = false;
                   createListBloc.editList = null;
                   widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
+                  _returnToPreviousScreen(context);
               }else if(createListBloc.isListCreation){
                 widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+                _returnToPreviousScreen(context);
               }else if(createListBloc.isTemplateCreation){
                 widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList));
+                _returnToPreviousScreen(context);
               }else if(createListBloc.isTemplateEditing){
                 widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList, list: createListBloc.editTemplate));
+                _returnToPreviousScreen(context);
+              }else if(createListBloc.isTemplateToList){
+                widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+                _returnToListScreen(context)(context);
               }
-              Navigator.of(context).pop();
-              Navigator.of(context).pop();
+              
           },
               child: Text("Übernehmen"),
           ),
@@ -354,7 +373,10 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 
 class CreateListPageStrings implements ListopolisString{
   static const APP_BAR_TITLE_LIST = "Liste erstellen";
+  static const APP_BAR_TITLE_LIST_EDIT = "Liste bearbeiten";
   static const APP_BAR_TITLE_TEMPLATE = "Vorlage erstellen";
+  static const APP_BAR_TITLE_TEMPLATE_EDIT = "Vorlage bearbeiten";
+  static const APP_BAR_TITLE_TEMPLATE_TO_LIST = "als Liste übernehmen";
   static const LIST_NAME = "Listen-Name";
   static const LIST_TYPE = "Listen-Typ";
   static const LIST_POSITIONING = "Einfügen";

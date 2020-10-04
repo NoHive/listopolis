@@ -27,6 +27,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   bool isTemplateEditing=false;
   bool isTemplateCreation=false;
   bool isListCreation=false;
+  bool isTemplateToList=false;
 
   CreatelistBloc({@required this.repository}) : super(_Initial());
 
@@ -117,8 +118,20 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
         editTemplate = e.template;
         isListEditing = false;
         isTemplateEditing = true;
+        isTemplateCreation = false;
         
-        listCreation = CreateListParameter.asEditFromList(editList);
+        listCreation = CreateListParameter.asEditFromTemplate(editTemplate);
+        
+        yield _SwitchedToCreate(creationParam:  listCreation);
+    },
+    useTemplateAsList:  (e) async*{
+      yield _Initial();
+        editTemplate = e.template;
+        isListEditing = false;
+        isTemplateEditing = false;
+        isTemplateCreation = false;
+        isTemplateToList = true;
+        listCreation = CreateListParameter.asEditFromTemplate(editTemplate);
         
         yield _SwitchedToCreate(creationParam:  listCreation);
     },

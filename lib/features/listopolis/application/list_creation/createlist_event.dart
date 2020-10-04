@@ -13,5 +13,6 @@ abstract class CreatelistEvent with _$CreatelistEvent {
   const factory CreatelistEvent.changeListItemOrder({@required int oldIndex, @required int newIndex}) = _ChangeItemOrder;
   const factory CreatelistEvent.editActiveList({@required ActiveList list}) = _EditActiveList;
   const factory CreatelistEvent.editTemplate({@required ListTemplate template}) = _EditTemplate;
+  const factory CreatelistEvent.useTemplateAsList({@required ListTemplate template}) = _UseTemplateAsList;
   
 }

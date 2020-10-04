@@ -78,6 +78,13 @@ class _$CreatelistEventTearOff {
       template: template,
     );
   }
+
+// ignore: unused_element
+  _UseTemplateAsList useTemplateAsList({@required ListTemplate template}) {
+    return _UseTemplateAsList(
+      template: template,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -97,6 +104,7 @@ mixin _$CreatelistEvent {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -111,6 +119,7 @@ mixin _$CreatelistEvent {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -126,6 +135,7 @@ mixin _$CreatelistEvent {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -140,6 +150,7 @@ mixin _$CreatelistEvent {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   });
 }
@@ -203,6 +214,7 @@ class _$_Started implements _Started {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -215,6 +227,7 @@ class _$_Started implements _Started {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return started();
   }
 
@@ -232,6 +245,7 @@ class _$_Started implements _Started {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -255,6 +269,7 @@ class _$_Started implements _Started {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -267,6 +282,7 @@ class _$_Started implements _Started {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return started(this);
   }
 
@@ -284,6 +300,7 @@ class _$_Started implements _Started {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -345,6 +362,7 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -357,6 +375,7 @@ class _$_StartListCreation implements _StartListCreation {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return startListCreation();
   }
 
@@ -374,6 +393,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -397,6 +417,7 @@ class _$_StartListCreation implements _StartListCreation {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -409,6 +430,7 @@ class _$_StartListCreation implements _StartListCreation {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return startListCreation(this);
   }
 
@@ -426,6 +448,7 @@ class _$_StartListCreation implements _StartListCreation {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -487,6 +510,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -499,6 +523,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return startTemplateCreation();
   }
 
@@ -516,6 +541,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -539,6 +565,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -551,6 +578,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return startTemplateCreation(this);
   }
 
@@ -568,6 +596,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -629,6 +658,7 @@ class _$_ChangeList implements _ChangeList {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -641,6 +671,7 @@ class _$_ChangeList implements _ChangeList {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return changeList();
   }
 
@@ -658,6 +689,7 @@ class _$_ChangeList implements _ChangeList {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -681,6 +713,7 @@ class _$_ChangeList implements _ChangeList {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -693,6 +726,7 @@ class _$_ChangeList implements _ChangeList {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return changeList(this);
   }
 
@@ -710,6 +744,7 @@ class _$_ChangeList implements _ChangeList {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -771,6 +806,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -783,6 +819,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return switchViewToCreation();
   }
 
@@ -800,6 +837,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -823,6 +861,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -835,6 +874,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return switchViewToCreation(this);
   }
 
@@ -852,6 +892,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -913,6 +954,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -925,6 +967,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return switchViewToReorder();
   }
 
@@ -942,6 +985,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -965,6 +1009,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -977,6 +1022,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return switchViewToReorder(this);
   }
 
@@ -994,6 +1040,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1077,6 +1124,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1089,6 +1137,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return addListPositionAfter(index);
   }
 
@@ -1106,6 +1155,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1129,6 +1179,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1141,6 +1192,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return addListPositionAfter(this);
   }
 
@@ -1158,6 +1210,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1244,6 +1297,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1256,6 +1310,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return removeListPosition(index);
   }
 
@@ -1273,6 +1328,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1296,6 +1352,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1308,6 +1365,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return removeListPosition(this);
   }
 
@@ -1325,6 +1383,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1423,6 +1482,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1435,6 +1495,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return changeListItemOrder(oldIndex, newIndex);
   }
 
@@ -1452,6 +1513,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1475,6 +1537,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1487,6 +1550,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return changeListItemOrder(this);
   }
 
@@ -1504,6 +1568,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1603,6 +1668,7 @@ class _$_EditActiveList implements _EditActiveList {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1615,6 +1681,7 @@ class _$_EditActiveList implements _EditActiveList {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return editActiveList(list);
   }
 
@@ -1632,6 +1699,7 @@ class _$_EditActiveList implements _EditActiveList {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1655,6 +1723,7 @@ class _$_EditActiveList implements _EditActiveList {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1667,6 +1736,7 @@ class _$_EditActiveList implements _EditActiveList {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return editActiveList(this);
   }
 
@@ -1684,6 +1754,7 @@ class _$_EditActiveList implements _EditActiveList {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1784,6 +1855,7 @@ class _$_EditTemplate implements _EditTemplate {
     @required Result changeListItemOrder(int oldIndex, int newIndex),
     @required Result editActiveList(ActiveList list),
     @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1796,6 +1868,7 @@ class _$_EditTemplate implements _EditTemplate {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return editTemplate(template);
   }
 
@@ -1813,6 +1886,7 @@ class _$_EditTemplate implements _EditTemplate {
     Result changeListItemOrder(int oldIndex, int newIndex),
     Result editActiveList(ActiveList list),
     Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1836,6 +1910,7 @@ class _$_EditTemplate implements _EditTemplate {
     @required Result changeListItemOrder(_ChangeItemOrder value),
     @required Result editActiveList(_EditActiveList value),
     @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
   }) {
     assert(started != null);
     assert(startListCreation != null);
@@ -1848,6 +1923,7 @@ class _$_EditTemplate implements _EditTemplate {
     assert(changeListItemOrder != null);
     assert(editActiveList != null);
     assert(editTemplate != null);
+    assert(useTemplateAsList != null);
     return editTemplate(this);
   }
 
@@ -1865,6 +1941,7 @@ class _$_EditTemplate implements _EditTemplate {
     Result changeListItemOrder(_ChangeItemOrder value),
     Result editActiveList(_EditActiveList value),
     Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1881,6 +1958,194 @@ abstract class _EditTemplate implements CreatelistEvent {
 
   ListTemplate get template;
   _$EditTemplateCopyWith<_EditTemplate> get copyWith;
+}
+
+abstract class _$UseTemplateAsListCopyWith<$Res> {
+  factory _$UseTemplateAsListCopyWith(
+          _UseTemplateAsList value, $Res Function(_UseTemplateAsList) then) =
+      __$UseTemplateAsListCopyWithImpl<$Res>;
+  $Res call({ListTemplate template});
+
+  $ListTemplateCopyWith<$Res> get template;
+}
+
+class __$UseTemplateAsListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$UseTemplateAsListCopyWith<$Res> {
+  __$UseTemplateAsListCopyWithImpl(
+      _UseTemplateAsList _value, $Res Function(_UseTemplateAsList) _then)
+      : super(_value, (v) => _then(v as _UseTemplateAsList));
+
+  @override
+  _UseTemplateAsList get _value => super._value as _UseTemplateAsList;
+
+  @override
+  $Res call({
+    Object template = freezed,
+  }) {
+    return _then(_UseTemplateAsList(
+      template:
+          template == freezed ? _value.template : template as ListTemplate,
+    ));
+  }
+
+  @override
+  $ListTemplateCopyWith<$Res> get template {
+    if (_value.template == null) {
+      return null;
+    }
+    return $ListTemplateCopyWith<$Res>(_value.template, (value) {
+      return _then(_value.copyWith(template: value));
+    });
+  }
+}
+
+class _$_UseTemplateAsList implements _UseTemplateAsList {
+  const _$_UseTemplateAsList({@required this.template})
+      : assert(template != null);
+
+  @override
+  final ListTemplate template;
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.useTemplateAsList(template: $template)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UseTemplateAsList &&
+            (identical(other.template, template) ||
+                const DeepCollectionEquality()
+                    .equals(other.template, template)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(template);
+
+  @override
+  _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith =>
+      __$UseTemplateAsListCopyWithImpl<_UseTemplateAsList>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result started(),
+    @required Result startListCreation(),
+    @required Result startTemplateCreation(),
+    @required Result changeList(),
+    @required Result switchViewToCreation(),
+    @required Result switchViewToReorder(),
+    @required Result addListPositionAfter(int index),
+    @required Result removeListPosition(int index),
+    @required Result changeListItemOrder(int oldIndex, int newIndex),
+    @required Result editActiveList(ActiveList list),
+    @required Result editTemplate(ListTemplate template),
+    @required Result useTemplateAsList(ListTemplate template),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(startTemplateCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    assert(editTemplate != null);
+    assert(useTemplateAsList != null);
+    return useTemplateAsList(template);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result started(),
+    Result startListCreation(),
+    Result startTemplateCreation(),
+    Result changeList(),
+    Result switchViewToCreation(),
+    Result switchViewToReorder(),
+    Result addListPositionAfter(int index),
+    Result removeListPosition(int index),
+    Result changeListItemOrder(int oldIndex, int newIndex),
+    Result editActiveList(ActiveList list),
+    Result editTemplate(ListTemplate template),
+    Result useTemplateAsList(ListTemplate template),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (useTemplateAsList != null) {
+      return useTemplateAsList(template);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result started(_Started value),
+    @required Result startListCreation(_StartListCreation value),
+    @required Result startTemplateCreation(_StartTemplateCreation value),
+    @required Result changeList(_ChangeList value),
+    @required Result switchViewToCreation(_SwitchToCreation value),
+    @required Result switchViewToReorder(_SwitchToReorder value),
+    @required Result addListPositionAfter(_AddListPositionAfter value),
+    @required Result removeListPosition(_RemoveListPosition value),
+    @required Result changeListItemOrder(_ChangeItemOrder value),
+    @required Result editActiveList(_EditActiveList value),
+    @required Result editTemplate(_EditTemplate value),
+    @required Result useTemplateAsList(_UseTemplateAsList value),
+  }) {
+    assert(started != null);
+    assert(startListCreation != null);
+    assert(startTemplateCreation != null);
+    assert(changeList != null);
+    assert(switchViewToCreation != null);
+    assert(switchViewToReorder != null);
+    assert(addListPositionAfter != null);
+    assert(removeListPosition != null);
+    assert(changeListItemOrder != null);
+    assert(editActiveList != null);
+    assert(editTemplate != null);
+    assert(useTemplateAsList != null);
+    return useTemplateAsList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result started(_Started value),
+    Result startListCreation(_StartListCreation value),
+    Result startTemplateCreation(_StartTemplateCreation value),
+    Result changeList(_ChangeList value),
+    Result switchViewToCreation(_SwitchToCreation value),
+    Result switchViewToReorder(_SwitchToReorder value),
+    Result addListPositionAfter(_AddListPositionAfter value),
+    Result removeListPosition(_RemoveListPosition value),
+    Result changeListItemOrder(_ChangeItemOrder value),
+    Result editActiveList(_EditActiveList value),
+    Result editTemplate(_EditTemplate value),
+    Result useTemplateAsList(_UseTemplateAsList value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (useTemplateAsList != null) {
+      return useTemplateAsList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UseTemplateAsList implements CreatelistEvent {
+  const factory _UseTemplateAsList({@required ListTemplate template}) =
+      _$_UseTemplateAsList;
+
+  ListTemplate get template;
+  _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith;
 }
 
 class _$CreatelistStateTearOff {
