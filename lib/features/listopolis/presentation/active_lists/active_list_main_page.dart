@@ -94,7 +94,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
       }else if(choice == ActiveListPageMenueStrings.SAVE_CURRENT_USER_DATA){
         BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.backupData());
       }else if(choice == ActiveListPageMenueStrings.LOAD_EXTERN_DATA){
-        BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
+        _replaceDateWithBackup(context);
+        //BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
       }
       else{
         print("not supported");
@@ -188,15 +189,32 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                           },
                         );
   }
- 
+
+   _replaceDateWithBackup(BuildContext context){
+    ActivelistBloc listBloc = BlocProvider.of<ActivelistBloc>(context);
+    showDialog(context: context,
+    builder: (context) {
+      return AlertDialog(actions: [
+          MaterialButton(onPressed: (){
+            listBloc.add(ActivelistEvent.loadDataFromBackup());
+            Navigator.of(context).pop();
+          },
+              child: Text("Ja Daten überschreiben"),
+          ),
+          MaterialButton(onPressed: (){Navigator.pop(context);},
+              child: Text("Ups...nee bitte nicht!"),
+          )
+      ],
+      content: Text("Willst du die aktuellen Listen und Vorlagen durch die Sicherung ersetzen?"),
+      );
+    },
+    );
+  }
 
   Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){
     final int listCount = listItems.length;
-    print("listcount = ${listItems.length}");
-
-    //return Container(child:  Text("egal"));
-    // result.add(
-     
+    
+   
      return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
                                                 child:_buildActiveListItem(context, list, listItems[i])
@@ -211,8 +229,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   }
 
   Widget _buildActiveListItem(BuildContext context, ActiveList list, ActiveListPosition listPosition){
-    print("constructing ${listPosition.name}");
-    //return ListTile(title: Text(listPosition.name));
+    
     if(list.type == ListType.todo()){
       return Dismissible(key: new Key(listPosition.id),
               onDismissed: (direction){
@@ -220,13 +237,24 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                 add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
               },
               child: ListTile(title: Text(listPosition.name)),
-              background: new Container(color:ListColors.DISSMISS_LIST_ITEM),
+              background: _buildDismissBarItem(context, list, listPosition),
       
       );
     }else{
       return ListTile(title: Text(listPosition.name));
     }
   }
+}
+Widget _buildDismissBarItem(BuildContext context, ActiveList list, ActiveListPosition listPosition){
+  return new Container(
+              color:ListColors.DISSMISS_LIST_ITEM,
+              child: Align(
+                        alignment: Alignment.centerLeft, 
+                        child:  Padding(padding: EdgeInsets.only(left: 10),
+                                        child: Icon(Icons.check_circle_outline, color: Colors.blueAccent,)
+                                )
+                    ),
+  );
 }
 
 

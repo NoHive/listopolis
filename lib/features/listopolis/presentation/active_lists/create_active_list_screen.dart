@@ -77,7 +77,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
         color: Colors.lightBlue,
         highlightColor: Colors.cyanAccent,
         onPressed: (idx){
-          print(idx);
+          
           CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
           if(idx == 0){
             aBloc.add(CreatelistEvent.switchViewToReorder());
@@ -355,7 +355,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
             );
  }
  Widget _buildCreatePosition(CreateListItemParameter listItem, BuildContext context){
-    return IconButton(icon: Icon(Icons.add),
+    return IconButton(icon: Icon(Icons.add, color: Colors.green,),
     onPressed: (){
         CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
         aBloc.add(CreatelistEvent.addListPositionAfter(index: listItem.position));
@@ -363,7 +363,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     );
  }
   Widget _buildRemovePosition(CreateListItemParameter listItem, BuildContext context){
-    return IconButton(icon: Icon(Icons.delete),
+    return IconButton(icon: Icon(Icons.delete, color:Colors.red),
     
     onPressed: (){
         

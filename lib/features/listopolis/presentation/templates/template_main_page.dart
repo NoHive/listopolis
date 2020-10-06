@@ -218,7 +218,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
 
   Widget _buildSubElements(BuildContext ontext, ListTemplate list, List<ListTemplatePosition> listItems){
     final int listCount = listItems.length;
-    print("listcount = ${listItems.length}");
+    
 
     //return Container(child:  Text("egal"));
     // result.add(
