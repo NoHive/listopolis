@@ -5,6 +5,7 @@ import 'package:listopolis/features/listopolis/application/active_lists/activeli
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
+import 'package:listopolis/features/listopolis/data/datasources/local_storage.dart';
 import 'package:listopolis/features/listopolis/data/repositories/repository_implementations.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/active_list_main_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,7 +33,8 @@ class ListopolisRoot extends StatelessWidget {
                                           dataSource: LocalDataSourceImpl(
                                                         preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
                                                         sharedPreferences: preferences
-                                                      )
+                                                      ),
+                                          backupDataSource: BackupDataSource(),
                                         );
 
     return MaterialApp(
@@ -51,8 +53,10 @@ class ListopolisRoot extends StatelessWidget {
                                                         dataSource: LocalDataSourceImpl(
                                                           preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
                                                           sharedPreferences: preferences
-                                                    )
-                                        )
+                                                    ),
+                                                    backupDataSource: BackupDataSource(),
+                                        ),
+                                        
                                       )
               ),
               

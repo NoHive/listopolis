@@ -17,7 +17,7 @@ class ActiveListMainPage extends StatefulWidget {
   ActiveListMainPage({Key key}) : super(key: key);
 
   @override
-  _ActiveListMainPageState createState() => _ActiveListMainPageState();
+  _ActiveListMainPageState get createState => _ActiveListMainPageState();
 }
 
 class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPageFunctions {
@@ -91,6 +91,10 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         navigateToCreateListScreen(context);
       }else if(choice == ActiveListPageMenueStrings.EDIT_TEMPlATES){
         navigateToTemplateMainScreen(context);
+      }else if(choice == ActiveListPageMenueStrings.SAVE_CURRENT_USER_DATA){
+        BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.backupData());
+      }else if(choice == ActiveListPageMenueStrings.LOAD_EXTERN_DATA){
+        BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
       }
       else{
         print("not supported");
@@ -235,9 +239,11 @@ class ActiveListStrings implements ListopolisString{
 class ActiveListPageMenueStrings{
   static const String CREATE_NEW_LIST = "Liste anlegen";
   static const String EDIT_TEMPlATES = "Vorlagen";
+  static const String SAVE_CURRENT_USER_DATA = "Daten sichern";
+  static const String LOAD_EXTERN_DATA = "Daten aus Sicherung einlesen";
   
 
-  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES];
+  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA];
 }
 class MainListItemMenueStr{
   static const String EDIT = "edit";

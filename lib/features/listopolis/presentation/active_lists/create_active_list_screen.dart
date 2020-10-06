@@ -17,7 +17,7 @@ class CreateListPage extends StatefulWidget  {
   CreateListPage(this.activelistBloc, this.templateBloc, {Key key}) : super(key: key);
   
   @override
-  _CreateListPageState createState() => _CreateListPageState();
+  _CreateListPageState get createState => _CreateListPageState();
 }
 
 class _CreateListPageState extends State<CreateListPage> with CommonPageFunctions{

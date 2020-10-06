@@ -49,6 +49,16 @@ class _$ActivelistEventTearOff {
       list: list,
     );
   }
+
+// ignore: unused_element
+  _BackupData backupData() {
+    return const _BackupData();
+  }
+
+// ignore: unused_element
+  _LoadDataFromBackup loadDataFromBackup() {
+    return const _LoadDataFromBackup();
+  }
 }
 
 // ignore: unused_element
@@ -66,6 +76,8 @@ mixin _$ActivelistEvent {
     @required
         Result replaceActiveList(
             CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -76,6 +88,8 @@ mixin _$ActivelistEvent {
     Result deleteActiveList(ActiveList list),
     Result replaceActiveList(
         CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -85,6 +99,8 @@ mixin _$ActivelistEvent {
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
     @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -93,6 +109,8 @@ mixin _$ActivelistEvent {
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
     Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result orElse(),
   });
 }
@@ -155,12 +173,16 @@ class _$_LoadLists implements _LoadLists {
     @required
         Result replaceActiveList(
             CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return load();
   }
 
@@ -174,6 +196,8 @@ class _$_LoadLists implements _LoadLists {
     Result deleteActiveList(ActiveList list),
     Result replaceActiveList(
         CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -191,12 +215,16 @@ class _$_LoadLists implements _LoadLists {
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
     @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return load(this);
   }
 
@@ -208,6 +236,8 @@ class _$_LoadLists implements _LoadLists {
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
     Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -292,12 +322,16 @@ class _$_InsertNewList implements _InsertNewList {
     @required
         Result replaceActiveList(
             CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return insertNewList(listParameter);
   }
 
@@ -311,6 +345,8 @@ class _$_InsertNewList implements _InsertNewList {
     Result deleteActiveList(ActiveList list),
     Result replaceActiveList(
         CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -328,12 +364,16 @@ class _$_InsertNewList implements _InsertNewList {
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
     @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return insertNewList(this);
   }
 
@@ -345,6 +385,8 @@ class _$_InsertNewList implements _InsertNewList {
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
     Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -468,12 +510,16 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     @required
         Result replaceActiveList(
             CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return deleteActiveListPosition(list, position);
   }
 
@@ -487,6 +533,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     Result deleteActiveList(ActiveList list),
     Result replaceActiveList(
         CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -504,12 +552,16 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
     @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return deleteActiveListPosition(this);
   }
 
@@ -521,6 +573,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
     Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -619,12 +673,16 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     @required
         Result replaceActiveList(
             CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return deleteActiveList(list);
   }
 
@@ -638,6 +696,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     Result deleteActiveList(ActiveList list),
     Result replaceActiveList(
         CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -655,12 +715,16 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
     @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return deleteActiveList(this);
   }
 
@@ -672,6 +736,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
     Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -782,12 +848,16 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     @required
         Result replaceActiveList(
             CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return replaceActiveList(listParameter, list);
   }
 
@@ -801,6 +871,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     Result deleteActiveList(ActiveList list),
     Result replaceActiveList(
         CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -818,12 +890,16 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
     @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
   }) {
     assert(load != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
     assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
     return replaceActiveList(this);
   }
 
@@ -835,6 +911,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
     Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -853,6 +931,254 @@ abstract class _ReplaceActiveList implements ActivelistEvent {
   CreateListParameter get listParameter;
   ActiveList get list;
   _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith;
+}
+
+abstract class _$BackupDataCopyWith<$Res> {
+  factory _$BackupDataCopyWith(
+          _BackupData value, $Res Function(_BackupData) then) =
+      __$BackupDataCopyWithImpl<$Res>;
+}
+
+class __$BackupDataCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$BackupDataCopyWith<$Res> {
+  __$BackupDataCopyWithImpl(
+      _BackupData _value, $Res Function(_BackupData) _then)
+      : super(_value, (v) => _then(v as _BackupData));
+
+  @override
+  _BackupData get _value => super._value as _BackupData;
+}
+
+class _$_BackupData implements _BackupData {
+  const _$_BackupData();
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.backupData()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _BackupData);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+    @required Result deleteActiveList(ActiveList list),
+    @required
+        Result replaceActiveList(
+            CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
+  }) {
+    assert(load != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    return backupData();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    Result deleteActiveList(ActiveList list),
+    Result replaceActiveList(
+        CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (backupData != null) {
+      return backupData();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result deleteActiveList(_DeleteActiveList value),
+    @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
+  }) {
+    assert(load != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    return backupData(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    Result deleteActiveList(_DeleteActiveList value),
+    Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (backupData != null) {
+      return backupData(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _BackupData implements ActivelistEvent {
+  const factory _BackupData() = _$_BackupData;
+}
+
+abstract class _$LoadDataFromBackupCopyWith<$Res> {
+  factory _$LoadDataFromBackupCopyWith(
+          _LoadDataFromBackup value, $Res Function(_LoadDataFromBackup) then) =
+      __$LoadDataFromBackupCopyWithImpl<$Res>;
+}
+
+class __$LoadDataFromBackupCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$LoadDataFromBackupCopyWith<$Res> {
+  __$LoadDataFromBackupCopyWithImpl(
+      _LoadDataFromBackup _value, $Res Function(_LoadDataFromBackup) _then)
+      : super(_value, (v) => _then(v as _LoadDataFromBackup));
+
+  @override
+  _LoadDataFromBackup get _value => super._value as _LoadDataFromBackup;
+}
+
+class _$_LoadDataFromBackup implements _LoadDataFromBackup {
+  const _$_LoadDataFromBackup();
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.loadDataFromBackup()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadDataFromBackup);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+    @required Result deleteActiveList(ActiveList list),
+    @required
+        Result replaceActiveList(
+            CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
+  }) {
+    assert(load != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    return loadDataFromBackup();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    Result deleteActiveList(ActiveList list),
+    Result replaceActiveList(
+        CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadDataFromBackup != null) {
+      return loadDataFromBackup();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result deleteActiveList(_DeleteActiveList value),
+    @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
+  }) {
+    assert(load != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    return loadDataFromBackup(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    Result deleteActiveList(_DeleteActiveList value),
+    Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadDataFromBackup != null) {
+      return loadDataFromBackup(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadDataFromBackup implements ActivelistEvent {
+  const factory _LoadDataFromBackup() = _$_LoadDataFromBackup;
 }
 
 class _$ActivelistStateTearOff {

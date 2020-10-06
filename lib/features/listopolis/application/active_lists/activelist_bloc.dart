@@ -21,7 +21,8 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
     ActivelistEvent event,
   ) async* {
     // TODO: implement mapEventToState
-    yield* event.map(load: (e) async*{
+    yield* event.map(
+    load: (e) async*{
       yield ActivelistState.loading();
       Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
       
@@ -56,6 +57,22 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
     replaceActiveList: (e) async*{
       yield ActivelistState.loading();
       Either<Failure, List<ActiveList>> activeListsResult = await repository.replaceActiveList(e.list, e.listParameter);
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r));
+    },
+    loadDataFromBackup: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.loadUserDataFromBackup();
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r));
+    },
+    backupData: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.backupUserData();
       
       yield activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 

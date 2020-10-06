@@ -7,6 +7,8 @@ import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 
 abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> getActiveLists();
+  Future<Either<Failure, List<ActiveList>>> backupUserData();
+  Future<Either<Failure, List<ActiveList>>> loadUserDataFromBackup();
   Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position);
   Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list);
   Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter);
