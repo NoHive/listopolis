@@ -31,8 +31,9 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: Text(ActiveListStrings.APP_BAR_TITLE),
+        title: Text(ActiveListStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,),
         actions: <Widget>[_buildOverflowMenue(context)],
+        backgroundColor: ListColors.APP_BAR_COLOR,
     ),
     body: Container(
       child: BlocBuilder<ActivelistBloc, ActivelistState>(
@@ -46,6 +47,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             );
           },
         ),
+        color: ListColors.LIST_BACKGROUND,
       ),
     );
     
@@ -108,7 +110,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
                                                 margin: EdgeInsets.all(1),
-                                               
+                                                decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
                                                 child: ExpansionTile( 
                                                           leading: _buildMainItemExpandableTrailing(lists[i], context),
                                                           title: _buildMainItemExpandableTitle(lists[i], context),
@@ -139,7 +141,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           //leadingIcon,
-          Text(list.name)
+          Text(list.name, style: ListColors.DEF_TEXT_STYLE,)
         ],
       ),
     );
@@ -172,7 +174,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 child: Row(
                                                          children: <Widget>[
                                                               Icon(Icons.delete),
-                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.DELETE, locale)}"),
+                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.DELETE, locale)}", style: ListColors.DEF_TEXT_STYLE,),
                                                         ],
                                                       )
                                           ),
@@ -181,7 +183,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 child: Row(
                                                          children: <Widget>[
                                                               Icon(Icons.edit),
-                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}"),
+                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
                                           )
@@ -199,13 +201,13 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             listBloc.add(ActivelistEvent.loadDataFromBackup());
             Navigator.of(context).pop();
           },
-              child: Text("Ja Daten überschreiben"),
+              child: Text("Ja Daten überschreiben", style: ListColors.DEF_TEXT_STYLE),
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);},
-              child: Text("Ups...nee bitte nicht!"),
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
           )
       ],
-      content: Text("Willst du die aktuellen Listen und Vorlagen durch die Sicherung ersetzen?"),
+      content: Text("Willst du die aktuellen Listen und Vorlagen durch die Sicherung ersetzen?", style: ListColors.DEF_TEXT_STYLE),
       );
     },
     );
@@ -236,18 +238,31 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                 BlocProvider.of<ActivelistBloc>(context)..
                 add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
               },
-              child: ListTile(title: Text(listPosition.name)),
+              child: _buildListItemElement(listPosition),//ListTile(title: Text(listPosition.name, style: ListColors.DEF_TEXT_STYLE), ),
               background: _buildDismissBarItem(context, list, listPosition),
       
       );
     }else{
-      return ListTile(title: Text(listPosition.name));
+      return _buildListItemElement(listPosition);
     }
   }
 }
+Widget _buildListItemElement(ActiveListPosition listPosition){
+    return  
+           Container(
+            
+        decoration: BoxDecoration(
+                      gradient: ListColors.LIST_ITEM_GRADIENT,
+                      border: Border(top: BorderSide(width: 1))
+                    ),
+        child: ListTile(title: Text(listPosition.name, style: ListColors.DEF_TEXT_STYLE), ),
+      
+    );
+}
+
 Widget _buildDismissBarItem(BuildContext context, ActiveList list, ActiveListPosition listPosition){
   return new Container(
-              color:ListColors.DISSMISS_LIST_ITEM,
+              decoration: BoxDecoration(gradient: ListColors.DISMISS_ITEM_GRADIENT),
               child: Align(
                         alignment: Alignment.centerLeft, 
                         child:  Padding(padding: EdgeInsets.only(left: 10),
