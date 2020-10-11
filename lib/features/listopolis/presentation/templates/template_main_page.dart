@@ -10,6 +10,7 @@ import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
+import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 
 class TemplateMainPage extends StatefulWidget {
@@ -36,10 +37,12 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: Text(TemplateStrings.APP_BAR_TITLE),
+        backgroundColor: ListColors.APP_BAR_COLOR,
+        title: Text(TemplateStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,),
         actions: <Widget>[_buildOverflowMenue(context)],
     ),
     body: Container(
+      color: ListColors.LIST_BACKGROUND,
       child: BlocBuilder<TemplateBloc, TemplateState>(
           builder: (context, state){
             return state.map(
@@ -57,11 +60,12 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
   }
    Widget _buildOverflowMenue(BuildContext context){
     return PopupMenuButton<String>(
+      color: ListColors.DIALOG_BACKGROUND,
       onSelected: _onSelectMenueItem,
       itemBuilder: (BuildContext context){
           return TemplatePageMenueStrings.choises.map((menueOption) {
             return PopupMenuItem<String>(value: menueOption,
-                                        child: Text(menueOption, style: TextStyle(fontSize: 10),),
+                                        child: Text(menueOption, style: TextStyle(fontSize: 10, color: ListColors.TEXT),),
             );
           }).toList();
       }
@@ -123,7 +127,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
                                                 margin: EdgeInsets.all(1),
-                                               
+                                                decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
                                                 child: ExpansionTile( 
                                                           leading: _buildMainItemExpandableTrailing(lists[i], context),
                                                           title: _buildMainItemExpandableTitle(lists[i], context),
@@ -139,9 +143,9 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
   Widget _buildMainItemExpandableIcon(ListTemplate list, BuildContext context){
     Icon leadingIcon;
     if(list.type == ListType.todo()){
-      leadingIcon = Icon(Icons.playlist_add_check);
+      leadingIcon = Icon(Icons.playlist_add_check, color: ListColors.LIST_ICON_TODO,);
     }else{
-      leadingIcon = Icon(Icons.lightbulb_outline);
+      leadingIcon = Icon(Icons.lightbulb_outline, color: ListColors.LIST_ICON_REMEMBER);
     }
     return  leadingIcon;
   }
@@ -153,7 +157,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           //leadingIcon,
-          Text(list.name)
+          Text(list.name, style: ListColors.DEF_TEXT_STYLE)
         ],
       ),
     );
@@ -171,6 +175,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     
     
     return PopupMenuButton(
+                          color: ListColors.DIALOG_BACKGROUND,
                           child: _buildMainItemExpandableIcon(list, context),
                           onSelected: (element){
                             if(element == MainTemplateItemMenueStr.DELETE){
@@ -187,8 +192,8 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                                                 value: MainTemplateItemMenueStr.DELETE,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.delete),
-                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.DELETE, locale)}"),
+                                                              Icon(Icons.delete, color: ListColors.ICON_DELTE,),
+                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.DELETE, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
                                           ),
@@ -196,8 +201,8 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                                                 value: MainTemplateItemMenueStr.EDIT,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.edit),
-                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.EDIT, locale)}"),
+                                                              Icon(Icons.edit, color: ListColors.ICON_EDIT),
+                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.EDIT, locale)}",  style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
                                           ),
@@ -205,8 +210,8 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                                                 value: MainTemplateItemMenueStr.CREATE_LIST,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.playlist_add),
-                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.CREATE_LIST, locale)}"),
+                                                              Icon(Icons.playlist_add, color: ListColors.ICON_TAKE_LIST),
+                                                              Text("  ${MainTemplateItemMenueStr.buildLocalName(MainTemplateItemMenueStr.CREATE_LIST, locale)}",  style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
                                           )
@@ -224,7 +229,8 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     // result.add(
      
      return ListView.builder(itemBuilder: ( context, i){
-                              return  Container(alignment: Alignment.center, 
+                              return  Container(decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
+                                                alignment: Alignment.center, 
                                                 child:_buildActiveListItem(context, list, listItems[i])
                               );
 
@@ -237,8 +243,21 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
   }
 
   Widget _buildActiveListItem(BuildContext context, ListTemplate list, ListTemplatePosition listPosition){
-    return ListTile(title: Text(listPosition.name));
+    //return ListTile(title: Text(listPosition.name, style: ListColors.DEF_TEXT_STYLE));
+    return _buildListItemElement(listPosition);
   }
+  Widget _buildListItemElement(ListTemplatePosition listPosition){
+    return  
+           Container(
+            
+        decoration: BoxDecoration(
+                      gradient: ListColors.LIST_ITEM_GRADIENT,
+                      border: Border(top: BorderSide(width: 1))
+                    ),
+        child: ListTile(title: Text(listPosition.name, style: ListColors.DEF_TEXT_STYLE), ),
+      
+    );
+}
 }
 
 

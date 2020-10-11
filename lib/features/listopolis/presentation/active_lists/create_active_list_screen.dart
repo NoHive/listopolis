@@ -41,6 +41,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
           onWillPop: (){return Future.value(true);},
           child: Scaffold(
         appBar: AppBar(
+          backgroundColor: ListColors.APP_BAR_COLOR,
           leading: IconButton(
                     icon: Icon(Icons.arrow_back), 
                     onPressed: () => _returnToMainScreenAskSave(context)                    
@@ -49,6 +50,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
           actions: [appBarToggles(context)],
         ),
       body: Container(
+        color: ListColors.LIST_BACKGROUND,
          child: BlocBuilder<CreatelistBloc, CreatelistState>
             (builder: (context, state){
               return state.map(
@@ -109,7 +111,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 
     return Column(crossAxisAlignment: CrossAxisAlignment.start, 
                   children:<Widget>[ 
-                                SingleChildScrollView(scrollDirection: Axis.horizontal, child: Text(txt),)
+                                SingleChildScrollView(scrollDirection: Axis.horizontal, child: Text(txt, style: ListColors.DEF_TEXT_STYLE,),)
                   ]
     );
 
@@ -127,7 +129,9 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     showDialog(context: context,
     builder: (context) {
-      return AlertDialog(actions: [
+      return AlertDialog(
+        backgroundColor: ListColors.DIALOG_BACKGROUND,
+        actions: [
           MaterialButton(onPressed: (){
               
               if(createListBloc.isListEditing){
@@ -151,13 +155,15 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
               }
               
           },
-              child: Text("Übernehmen"),
+              child: Text("Übernehmen",style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
-              child: Text("Verwerfen"),
+              child: Text("Verwerfen", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
           )
       ],
-      content: Text("Soll die Liste übernommen werden?"),
+      content: Text("Soll die Liste übernommen werden?", style: ListColors.DEF_TEXT_STYLE),
       );
     },
     );
@@ -174,13 +180,17 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                   
     ];
     widgets.add( Container(child: _buildListItems(context, list.getSorted()),));
-    return ListView(children: widgets, physics: ClampingScrollPhysics(),);
+    return  Container(
+      decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
+      child: ListView(children: widgets, physics: ClampingScrollPhysics(),));
 
   }
    Widget showReorderList(BuildContext context, CreateListParameter list){
      selected = [false, true];
      currentCreatedList = list;
-    return _buildReorderList(context, list.getSorted(), _buildListName(context, list ));
+    return Container(
+      decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
+      child: _buildReorderList(context, list.getSorted(), _buildListName(context, list )));
   }
   Widget _buildListName(BuildContext context, CreateListParameter list){
       currentlistName = list.listName;
@@ -194,14 +204,14 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                           },
                           textInputAction: TextInputAction.search,
                           controller: TextEditingController()..text = currentlistName,
-                          cursorColor: Colors.white,
-                          style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                          cursorColor: ListColors.TEXT,
+                          style: TextStyle(color: ListColors.TEXT),
                           decoration: InputDecoration(
                             hintText: CreateListPageStrings.LIST_NAME,
-                            hintStyle: TextStyle(color: Colors.white),
+                            hintStyle: TextStyle(color: ListColors.TEXT),
                             border: OutlineInputBorder(borderRadius: BorderRadius.circular(2)),
                             labelText: CreateListPageStrings.LIST_NAME,
-                            labelStyle: TextStyle(color:  ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                            labelStyle: TextStyle(color:  ListColors.TEXT),
                             
                           ),
             ));
@@ -230,13 +240,14 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
         child: 
           Stack(
                   children:[
-                    Text("Listen-Typ", style: TextStyle(fontSize: 10),),
+                    Text("Listen-Typ", style: TextStyle(fontSize: 10, color: ListColors.TEXT),),
                     Container(
                         child: DropdownButton(
+                          dropdownColor: ListColors.DIALOG_BACKGROUND,
                                   items:  listTypes.map((qpv){ 
                                     return DropdownMenuItem<ListType>(
                                               child: Text(ListType.buildLocalName( qpv, "de"), 
-                                                          style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                                                          style: ListColors.DEF_TEXT_STYLE,
                                                       ), 
                                               value: qpv,
                                     );
@@ -268,13 +279,14 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
       return  Padding(padding: EdgeInsets.only(top:10, left:20),
               child: Stack(
                 children: [
-                  Text("Einfügeposition", style: TextStyle(fontSize: 10),), 
+                  Text("Einfügeposition", style: TextStyle(fontSize: 10, color: ListColors.TEXT),), 
                   Container(
                     child: DropdownButton(
+                      dropdownColor: ListColors.DIALOG_BACKGROUND,
                               items: listTypes.map((qpv){ 
                                   return DropdownMenuItem<PositionType>(
                                             child: Text(buildPositionTypeLocalString( qpv, "de"), 
-                                                        style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
+                                                        style: ListColors.DEF_TEXT_STYLE,
                                                     ), 
                                             value: qpv,
                                   );
@@ -308,14 +320,15 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     
     List<Widget> childrenWidgets = _buildReorderListItems(listitems, context);
     
-    return ReorderableListView(
+    return Theme(data: ThemeData(canvasColor: Colors.transparent), 
+    child: ReorderableListView(
              // header: headerWidget,
               children: childrenWidgets,
               onReorder: (oldIdx, newIdx){
                   CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
                   aBloc.add(CreatelistEvent.changeListItemOrder(oldIndex: oldIdx, newIndex: newIdx));
               },
-          );
+          ));
  }
  List<Widget> _buildReorderListItems(List<CreateListItemParameter> listitems, BuildContext context){
     List<Widget> erg = [];
@@ -327,35 +340,41 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
  }
   Widget _buildReorderListItem(BuildContext context, CreateListItemParameter listItem){
    currentlistName = listItem.name;
-            return ListTile(
+            return Container(
               key: ValueKey(listItem.id),
-              title: Text("${listItem.position} - ${currentlistName}")
-            
+              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)) ),
+              child: ListTile(
+                title: Text("${listItem.position} - ${currentlistName}", style: ListColors.DEF_TEXT_STYLE,)
+              
+              ),
             );
  }
  Widget _buildListItemInput(BuildContext context, CreateListItemParameter listItem){
    currentlistName = listItem.name;
-            return ListTile(
-              key: ValueKey(listItem.id),
-              leading: _buildRemovePosition(listItem, context),
-              title: TextField(
-                          onSubmitted: (value){ currentlistName=value; listItem.name=value;},
-                          textInputAction: TextInputAction.search,
-                          controller: TextEditingController()..text = currentlistName,
-                          cursorColor: Colors.white,
-                          style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG),
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(borderRadius: BorderRadius.circular(2)),
-                            labelText: "${CreateListPageStrings.LIST_POSITION} ${listItem.position}",
-                            labelStyle: TextStyle(color:  ListColors.TEXTCOLOR_ON_LIGHT_BG),
-                            
-                          ),
-            ),
-            trailing: _buildCreatePosition(listItem, context),
+            return Container(
+              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1))),
+              child: ListTile(
+                key: ValueKey(listItem.id),
+                leading: _buildRemovePosition(listItem, context),
+                title: TextField(
+                            onSubmitted: (value){ currentlistName=value; listItem.name=value;},
+                            textInputAction: TextInputAction.search,
+                            controller: TextEditingController()..text = currentlistName,
+                            cursorColor: ListColors.TEXT,
+                            style: TextStyle(color: ListColors.TEXT),
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(borderRadius: BorderRadius.circular(2)),
+                              labelText: "${CreateListPageStrings.LIST_POSITION} ${listItem.position}",
+                              labelStyle: TextStyle(color:  ListColors.TEXT),
+                              
+                            ),
+              ),
+              trailing: _buildCreatePosition(listItem, context),
+              ),
             );
  }
  Widget _buildCreatePosition(CreateListItemParameter listItem, BuildContext context){
-    return IconButton(icon: Icon(Icons.add, color: Colors.green,),
+    return IconButton(icon: Icon(Icons.add, color: ListColors.ICON_TAKE_LIST,),
     onPressed: (){
         CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
         aBloc.add(CreatelistEvent.addListPositionAfter(index: listItem.position));

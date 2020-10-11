@@ -54,11 +54,12 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   }
    Widget _buildOverflowMenue(BuildContext context){
     return PopupMenuButton<String>(
+      color: ListColors.DIALOG_BACKGROUND,
       onSelected: _onSelectMenueItem,
       itemBuilder: (BuildContext context){
           return ActiveListPageMenueStrings.choises.map((menueOption) {
             return PopupMenuItem<String>(value: menueOption,
-                                        child: Text(menueOption, style: TextStyle(fontSize: 10),),
+                                        child: Text(menueOption, style: TextStyle(fontSize: 10, color: ListColors.TEXT),),
             );
           }).toList();
       }
@@ -127,9 +128,9 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   Widget _buildMainItemExpandableIcon(ActiveList list, BuildContext context){
     Icon leadingIcon;
     if(list.type == ListType.todo()){
-      leadingIcon = Icon(Icons.playlist_add_check);
+      leadingIcon = Icon(Icons.playlist_add_check, color:ListColors.LIST_ICON_TODO);
     }else{
-      leadingIcon = Icon(Icons.lightbulb_outline);
+      leadingIcon = Icon(Icons.lightbulb_outline, color:ListColors.LIST_ICON_REMEMBER);
     }
     return  leadingIcon;
   }
@@ -157,7 +158,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     
     const String locale = "de";
     
-    return PopupMenuButton(
+    return PopupMenuButton(color: ListColors.DIALOG_BACKGROUND,
                           child: _buildMainItemExpandableIcon(list, context),
                           onSelected: (element){
                             if(element == MainListItemMenueStr.DELETE){
@@ -173,7 +174,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 value: MainListItemMenueStr.DELETE,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.delete),
+                                                              Icon(Icons.delete, color: Colors.red,),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.DELETE, locale)}", style: ListColors.DEF_TEXT_STYLE,),
                                                         ],
                                                       )
@@ -182,7 +183,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 value: MainListItemMenueStr.EDIT,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.edit),
+                                                              Icon(Icons.edit, color:Colors.blue),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
@@ -201,13 +202,16 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             listBloc.add(ActivelistEvent.loadDataFromBackup());
             Navigator.of(context).pop();
           },
-              child: Text("Ja Daten überschreiben", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ja, Daten überschreiben", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);},
               child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
           )
       ],
       content: Text("Willst du die aktuellen Listen und Vorlagen durch die Sicherung ersetzen?", style: ListColors.DEF_TEXT_STYLE),
+      backgroundColor: ListColors.DIALOG_BACKGROUND,
       );
     },
     );

@@ -4,7 +4,7 @@ class ListColors{
   
   static const int _TEXTCOLOR_ON_DARK_BG = 0xFF13fbff;
   static const int _TEXTCOLOR_ON_LIGHT_BG = 0xFF000000;
-  
+  static const int _LIGHT_BLUE_GREEN = 0xFF13fbff;
   static const Color TEXTCOLOR_ON_DARK_BG = Color(YELLOW_TEXT);
   static const Color TEXTCOLOR_ON_LIGHT_BG = Color(_TEXTCOLOR_ON_LIGHT_BG);
 
@@ -20,7 +20,16 @@ class ListColors{
   static const int YELLOW_TEXT = 0xFFffc410;
 
   static const Color APP_BAR_COLOR = BACKGROUND;
+  static const Color DIALOG_BACKGROUND = BACKGROUND_DARKER;
+  static const Color DIALOG_BUTTON = Color(0x5500AAFF);
   static const Color DISSMISS_LIST_ITEM = Color(_TEXTCOLOR_ON_DARK_BG);
+
+  static const Color LIST_ICON_REMEMBER = Color(YELLOW_TEXT);
+  static const Color LIST_ICON_TODO = Color(_TEXTCOLOR_ON_DARK_BG);
+
+  static const Color ICON_DELTE = Color(0xFFAA0000);
+  static const Color ICON_EDIT = Color(0xFF0055FF);
+  static const Color ICON_TAKE_LIST = Color(_LIGHT_BLUE_GREEN);
 
   static const TextStyle DEF_TEXT_STYLE = TextStyle(color: TEXT);
 
