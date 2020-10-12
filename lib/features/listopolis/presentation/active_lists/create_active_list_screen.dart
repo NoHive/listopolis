@@ -25,7 +25,6 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   String currentlistName;
   ListType currentListType;
   PositionType currentPositionType;
-  List<bool> selected = [false, true];
   CreateListParameter currentCreatedList;
   //  @override
   // void didChangeDependencies() {
@@ -65,19 +64,16 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
     );
   }
 
-  Widget appBarToggles(BuildContext context){
+  ToggleButtons buildToggleButtons(List<bool> selected, BuildContext context){
     List<Widget> toggleItems = [
       Icon(Icons.swap_vert),
       Icon(Icons.list)
     ];
-    
-
     return ToggleButtons(
         children: toggleItems,
         isSelected: selected,
-        selectedColor: Colors.black,
-        color: Colors.lightBlue,
-        highlightColor: Colors.cyanAccent,
+        selectedColor: ListColors.ICON_ACTIVE_LIST_CEATION_MODE,
+        //color: Colors.lightBlue,
         onPressed: (idx){
           
           CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
@@ -86,25 +82,40 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
           }else{
             aBloc.add(CreatelistEvent.switchViewToCreation());
           }
-          setState(() {
+          // setState(() {
             
-          });
+          // });
         },
     );
+  }
+
+  Widget appBarToggles(BuildContext context){
+    
+  return BlocBuilder<CreatelistBloc, CreatelistState>
+            (builder: (context, state){
+              return state.map(
+                initial: (s) => buildToggleButtons([false, true], context),
+                listChanged: (s) => buildToggleButtons([false, true], context),
+                switchedToCreate: (s) => buildToggleButtons([false, true], context),
+                switchedToReorder:  (s) => buildToggleButtons([true, false], context)
+              );
+            }
+            );
+   
   }
 
   Widget _buildAppBar(BuildContext context){
     String txt;
     CreatelistBloc listBloc = BlocProvider.of<CreatelistBloc>(context);
-    if(listBloc.isListCreation)
+    if(listBloc.isListCreation())
       txt = CreateListPageStrings.APP_BAR_TITLE_LIST;
-    else if(listBloc.isListEditing)
+    else if(listBloc.isListEdit())
       txt = CreateListPageStrings.APP_BAR_TITLE_LIST_EDIT;
-    else if(listBloc.isTemplateCreation)
+    else if( listBloc.isTemplateCreation())
       txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE;
-    else if(listBloc.isTemplateEditing)
+    else if(listBloc.isTemplateEdit())
       txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE_EDIT;
-    else if(listBloc.isTemplateToList)
+    else if(listBloc.isListTransfer())
       txt = CreateListPageStrings.APP_BAR_TITLE_TEMPLATE_TO_LIST;
     else
       txt = "something ist wrong!";
@@ -134,22 +145,22 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
         actions: [
           MaterialButton(onPressed: (){
               
-              if(createListBloc.isListEditing){
+              if(createListBloc.isListEdit()){
                   ActiveList actList = createListBloc.editList;
-                  createListBloc.isListEditing = false;
+                  // createListBloc.isListEditing = false;
                   createListBloc.editList = null;
                   widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
                   _returnToPreviousScreen(context);
-              }else if(createListBloc.isListCreation){
+              }else if(createListBloc.isListCreation()){
                 widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
                 _returnToPreviousScreen(context);
-              }else if(createListBloc.isTemplateCreation){
+              }else if(createListBloc.isTemplateCreation()){
                 widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList));
                 _returnToPreviousScreen(context);
-              }else if(createListBloc.isTemplateEditing){
+              }else if(createListBloc.isTemplateEdit()){
                 widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList, list: createListBloc.editTemplate));
                 _returnToPreviousScreen(context);
-              }else if(createListBloc.isTemplateToList){
+              }else if(createListBloc.isListTransfer()){
                 widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
                 _returnToListScreen(context)(context);
               }
@@ -170,7 +181,6 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   }
 
   Widget showEditList(BuildContext context, CreateListParameter list){
-   selected = [true, false];
    currentCreatedList = list;
    List<Widget> widgets = [
                  _buildListName(context, list ),
@@ -186,7 +196,6 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
 
   }
    Widget showReorderList(BuildContext context, CreateListParameter list){
-     selected = [false, true];
      currentCreatedList = list;
     return Container(
       decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),

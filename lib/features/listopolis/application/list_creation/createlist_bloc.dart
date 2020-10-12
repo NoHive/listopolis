@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/list_creation_mode.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
@@ -17,17 +18,31 @@ part 'createlist_bloc.freezed.dart';
 
 class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   
+
+
+  
+  
+
+
+  
+
   final IRepository repository;
   ActiveList createdList;
   int lastActiveListIndex;
   CreateListParameter listCreation;
   ActiveList editList;
   ListTemplate editTemplate;
-  bool isListEditing=false;
-  bool isTemplateEditing=false;
-  bool isTemplateCreation=false;
-  bool isListCreation=false;
-  bool isTemplateToList=false;
+  // bool isListEditing=false;
+  // bool isTemplateEditing=false;
+  // bool isTemplateCreation=false;
+  // bool isListCreation=false;
+  // bool isTemplateToList=false;
+  ListEditMode editMode;
+  bool isListCreation() => ListEditMode.listCreation() == editMode;
+  bool isListEdit() => ListEditMode.listEditing() == editMode;
+  bool isTemplateEdit() => ListEditMode.templateEditing() == editMode;
+  bool isTemplateCreation() => ListEditMode.templateCreation() == editMode;
+  bool isListTransfer() => ListEditMode.transferTemplateToList() == editMode;
 
   CreatelistBloc({@required this.repository}) : super(_Initial());
 
@@ -49,8 +64,8 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
         yield _Initial();
     },
     startListCreation: (e) async*{
-      isTemplateCreation = false;
-      isListCreation=true;
+      
+      editMode = ListEditMode.listCreation();
        listCreation = CreateListParameter(
                                     listName:  ""
                                   , type: ListType.remember()
@@ -60,8 +75,8 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
       yield _ListChanged(creationParam:  listCreation);
     }, 
      startTemplateCreation: (e) async*{
-      isTemplateCreation = true;
-      isListCreation=false;
+      editMode = ListEditMode.templateCreation();
+      
       listCreation = CreateListParameter(
                                     listName:  ""
                                   , type: ListType.remember()
@@ -106,31 +121,27 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
     },
     editActiveList: (e) async*{
       yield _Initial();
+        editMode = ListEditMode.listEditing();
         editList = e.list;
-        isListEditing = true;
         
+
         listCreation = CreateListParameter.asEditFromList(editList);
         
         yield _SwitchedToCreate(creationParam:  listCreation);
     },
     editTemplate:  (e) async*{
       yield _Initial();
+        editMode = ListEditMode.templateEditing();
         editTemplate = e.template;
-        isListEditing = false;
-        isTemplateEditing = true;
-        isTemplateCreation = false;
-        
         listCreation = CreateListParameter.asEditFromTemplate(editTemplate);
         
         yield _SwitchedToCreate(creationParam:  listCreation);
     },
     useTemplateAsList:  (e) async*{
       yield _Initial();
+        editMode = ListEditMode.transferTemplateToList();
         editTemplate = e.template;
-        isListEditing = false;
-        isTemplateEditing = false;
-        isTemplateCreation = false;
-        isTemplateToList = true;
+        
         listCreation = CreateListParameter.asEditFromTemplate(editTemplate);
         
         yield _SwitchedToCreate(creationParam:  listCreation);

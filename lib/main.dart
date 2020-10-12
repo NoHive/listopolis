@@ -8,6 +8,7 @@ import 'package:listopolis/features/listopolis/data/datasources/data_source.dart
 import 'package:listopolis/features/listopolis/data/datasources/local_storage.dart';
 import 'package:listopolis/features/listopolis/data/repositories/repository_implementations.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/active_list_main_page.dart';
+import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
@@ -39,6 +40,7 @@ class ListopolisRoot extends StatelessWidget {
 
     return MaterialApp(
       title: "Listopolis",
+      color: ListColors.APP_BAR_COLOR,
       home: MultiBlocProvider(
             providers: [ 
               BlocProvider<ActivelistBloc> (

@@ -30,6 +30,7 @@ class ListColors{
   static const Color ICON_DELTE = Color(0xFFAA0000);
   static const Color ICON_EDIT = Color(0xFF0055FF);
   static const Color ICON_TAKE_LIST = Color(_LIGHT_BLUE_GREEN);
+  static const Color ICON_ACTIVE_LIST_CEATION_MODE = Color(_LIGHT_BLUE_GREEN);
 
   static const TextStyle DEF_TEXT_STYLE = TextStyle(color: TEXT);
 

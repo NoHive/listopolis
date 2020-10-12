@@ -78,6 +78,17 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
               ),
       );
    }
+    navigateToEditListScreen(BuildContext context, ActiveList list) {
+      BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.editActiveList(list: list));
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: BlocProvider.of<CreatelistBloc>(context),
+                  child: CreateListPage(BlocProvider.of<ActivelistBloc>(context), BlocProvider.of<TemplateBloc>(context)),
+                ),
+              ),
+      );
+   }
       navigateToTemplateMainScreen(BuildContext context) {
      Navigator.of(context).push(
               MaterialPageRoute(
@@ -164,8 +175,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                             if(element == MainListItemMenueStr.DELETE){
                               BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.deleteActiveList(list: list));
                             }else if(element == MainListItemMenueStr.EDIT){
-                              BlocProvider.of<CreatelistBloc>(context)..add(CreatelistEvent.editActiveList(list: list));
-                              navigateToCreateListScreen(context);
+                              navigateToEditListScreen(context, list);
                             }
                           },
                           itemBuilder: (context) {
