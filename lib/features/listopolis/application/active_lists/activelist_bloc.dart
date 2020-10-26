@@ -78,6 +78,14 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r));
     },
+    useListAsTemplate: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.createTemlateFromList(e.list);
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r));
+    },
     );
   }
 }

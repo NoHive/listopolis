@@ -126,6 +126,38 @@ abstract class UserData implements _$UserData{
 
       
   }
+   factory UserData.addTemplateFromActiveList(UserData data, ActiveList creationParameter){
+      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> aNewList = List();
+      int aNewPosition = 1;
+      if(existingActiveLists != null && existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+        aNewList = existingActiveLists.toList();
+        aNewPosition = existingActiveLists.last.position+1;
+        
+      }
+      
+
+      List<ListTemplatePosition> newListPositions = [];
+
+      for(ActiveListPosition listItemParam in creationParameter.listItems){
+          newListPositions.add(ListTemplatePosition.fromActiveListPosition(listItemParam));
+      }
+
+      ListTemplate aNewListItem = ListTemplate( id: Uuid().v1(), 
+                                            name: creationParameter.name, 
+                                            type: creationParameter.type, 
+                                            position: aNewPosition, 
+                                            templatePositions: newListPositions
+                                            );
+      
+       
+      aNewList.add(aNewListItem);
+
+      return data.copyWith(templates:aNewList);
+
+      
+  }
 
   factory UserData.replaceListFromCreatedList(UserData data, ActiveList list, CreateListParameter creationParameter){
       List<ActiveList> existingActiveLists = data.activeLists;

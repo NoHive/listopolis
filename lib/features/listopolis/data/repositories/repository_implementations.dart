@@ -198,6 +198,16 @@ class RepositoryImpl implements IRepository{
     return getActiveLists();
   }
 
+  @override
+  Future<Either<Failure, List<ActiveList>>> createTemlateFromList(ActiveList list) {
+    UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.addTemplateFromActiveList(currentUserData, list));
+        sendData();
+      }
+      return getActiveLists();
+  }
+
 }
 
 

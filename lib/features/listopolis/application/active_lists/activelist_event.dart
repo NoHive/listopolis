@@ -9,4 +9,5 @@ abstract class ActivelistEvent with _$ActivelistEvent {
   const factory ActivelistEvent.replaceActiveList({@required CreateListParameter listParameter, @required ActiveList list}) = _ReplaceActiveList;
   const factory ActivelistEvent.backupData() = _BackupData;
   const factory ActivelistEvent.loadDataFromBackup() = _LoadDataFromBackup;
+  const factory ActivelistEvent.useListAsTemplate({@required ActiveList list}) = _UseListAsTemplate;
 }

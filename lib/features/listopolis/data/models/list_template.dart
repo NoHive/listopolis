@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
+import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
@@ -58,6 +59,13 @@ abstract class ListTemplatePosition implements _$ListTemplatePosition{
   ) = _ListTemplatePosition;
 
   factory ListTemplatePosition.fromCreateListItemParameter(CreateListItemParameter listItemParameter){
+    return ListTemplatePosition(
+      id: Uuid().v1(),
+      name: listItemParameter.name,
+      position: listItemParameter.position
+    );
+  }
+  factory ListTemplatePosition.fromActiveListPosition(ActiveListPosition listItemParameter){
     return ListTemplatePosition(
       id: Uuid().v1(),
       name: listItemParameter.name,

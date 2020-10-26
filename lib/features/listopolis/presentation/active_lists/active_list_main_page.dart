@@ -176,6 +176,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                               BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.deleteActiveList(list: list));
                             }else if(element == MainListItemMenueStr.EDIT){
                               navigateToEditListScreen(context, list);
+                            }else if(element == MainListItemMenueStr.USE_AS_TEMPLATE){
+                              BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.useListAsTemplate(list: list));
                             }
                           },
                           itemBuilder: (context) {
@@ -195,6 +197,15 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                          children: <Widget>[
                                                               Icon(Icons.edit, color:Colors.blue),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}", style: ListColors.DEF_TEXT_STYLE),
+                                                        ],
+                                                      )
+                                          ),
+                                           new PopupMenuItem(
+                                                value: MainListItemMenueStr.USE_AS_TEMPLATE,
+                                                child: Row(
+                                                         children: <Widget>[
+                                                              Icon(Icons.receipt, color:Colors.green),
+                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.USE_AS_TEMPLATE, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
                                           )
@@ -305,6 +316,7 @@ class ActiveListPageMenueStrings{
 class MainListItemMenueStr{
   static const String EDIT = "edit";
   static const String DELETE = "delete";
+  static const String USE_AS_TEMPLATE = "use_as_template";
 
   static String buildLocalName(String str, String locale){
     if(locale == "de"){
@@ -312,6 +324,8 @@ class MainListItemMenueStr{
         return "Bearbeiten";
       else if(str == DELETE)
         return "Löschen";
+        else if(str == USE_AS_TEMPLATE)
+        return "Vorlage erstellen";
     }else{
       return str;
     }
