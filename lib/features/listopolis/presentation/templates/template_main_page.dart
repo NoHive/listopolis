@@ -97,6 +97,29 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
               ),
       );
    }
+    _deleteTemplate(BuildContext context, ListTemplate template){
+    TemplateBloc templateBloc = BlocProvider.of<TemplateBloc>(context);
+    showDialog(context: context,
+    builder: (context) {
+      return AlertDialog(actions: [
+          MaterialButton(onPressed: (){
+            templateBloc.add(TemplateEvent.deleteTemplate(list: template));
+            Navigator.of(context).pop();
+          },
+              child: Text("Ja, Vorlage löschen", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          ),
+          MaterialButton(onPressed: (){Navigator.pop(context);},
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          )
+      ],
+      content: Text("Willst du die Vorlage wirklich löschen?", style: ListColors.DEF_TEXT_STYLE),
+      backgroundColor: ListColors.DIALOG_BACKGROUND,
+      );
+    },
+    );
+  }
 
    
     useTemplateAsList(BuildContext context, ListTemplate templateForEdit) {
@@ -179,7 +202,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
                           child: _buildMainItemExpandableIcon(list, context),
                           onSelected: (element){
                             if(element == MainTemplateItemMenueStr.DELETE){
-                              BlocProvider.of<TemplateBloc>(context)..add(TemplateEvent.deleteTemplate(list: list));
+                              _deleteTemplate(context, list);
                             }else if(element == MainTemplateItemMenueStr.EDIT){
                               navigateToEditListScreen(context, list);
                             }else if(element == MainTemplateItemMenueStr.CREATE_LIST){

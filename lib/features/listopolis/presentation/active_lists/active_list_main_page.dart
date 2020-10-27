@@ -173,7 +173,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                           child: _buildMainItemExpandableIcon(list, context),
                           onSelected: (element){
                             if(element == MainListItemMenueStr.DELETE){
-                              BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.deleteActiveList(list: list));
+                              _deleteList(context, list);
                             }else if(element == MainListItemMenueStr.EDIT){
                               navigateToEditListScreen(context, list);
                             }else if(element == MainListItemMenueStr.USE_AS_TEMPLATE){
@@ -186,7 +186,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 value: MainListItemMenueStr.DELETE,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.delete, color: Colors.red,),
+                                                              Icon(Icons.delete, color: ListColors.ICON_DELTE,),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.DELETE, locale)}", style: ListColors.DEF_TEXT_STYLE,),
                                                         ],
                                                       )
@@ -195,7 +195,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 value: MainListItemMenueStr.EDIT,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.edit, color:Colors.blue),
+                                                              Icon(Icons.edit, color:ListColors.ICON_EDIT),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.EDIT, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
@@ -204,7 +204,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                 value: MainListItemMenueStr.USE_AS_TEMPLATE,
                                                 child: Row(
                                                          children: <Widget>[
-                                                              Icon(Icons.receipt, color:Colors.green),
+                                                              Icon(Icons.receipt, color:ListColors.ICON_LIST_TO_TEMPLATE),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.USE_AS_TEMPLATE, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
@@ -232,6 +232,30 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
           )
       ],
       content: Text("Willst du die aktuellen Listen und Vorlagen durch die Sicherung ersetzen?", style: ListColors.DEF_TEXT_STYLE),
+      backgroundColor: ListColors.DIALOG_BACKGROUND,
+      );
+    },
+    );
+  }
+
+   _deleteList(BuildContext context, ActiveList list){
+    ActivelistBloc listBloc = BlocProvider.of<ActivelistBloc>(context);
+    showDialog(context: context,
+    builder: (context) {
+      return AlertDialog(actions: [
+          MaterialButton(onPressed: (){
+            listBloc.add(ActivelistEvent.deleteActiveList(list: list));
+            Navigator.of(context).pop();
+          },
+              child: Text("Ja, Liste löschen", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          ),
+          MaterialButton(onPressed: (){Navigator.pop(context);},
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          )
+      ],
+      content: Text("Willst du die Liste wirklich löschen?", style: ListColors.DEF_TEXT_STYLE),
       backgroundColor: ListColors.DIALOG_BACKGROUND,
       );
     },

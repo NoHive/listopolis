@@ -27,8 +27,9 @@ class ListColors{
   static const Color LIST_ICON_REMEMBER = Color(YELLOW_TEXT);
   static const Color LIST_ICON_TODO = Color(_TEXTCOLOR_ON_DARK_BG);
 
-  static const Color ICON_DELTE = Color(0xFFAA0000);
+  static const Color ICON_DELTE = Color(0xFFCC0000);
   static const Color ICON_EDIT = Color(0xFF0055FF);
+  static const Color ICON_LIST_TO_TEMPLATE = Color(0xFF00AA00);
   static const Color ICON_TAKE_LIST = Color(_LIGHT_BLUE_GREEN);
   static const Color ICON_ACTIVE_LIST_CEATION_MODE = Color(_LIGHT_BLUE_GREEN);
 
