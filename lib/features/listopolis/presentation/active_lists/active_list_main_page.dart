@@ -290,9 +290,11 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
              // header: headerWidget,
               children: childrenWidgets,
               onReorder: (oldIdx, newIdx){
+                  int realNewIdx = oldIdx < newIdx ? newIdx  : newIdx +1;
+                  int realOldIdx = oldIdx +1;
                   ActivelistBloc aBloc =  BlocProvider.of<ActivelistBloc>(context);
-                  ActiveList changedList = posToList[oldIdx+1];
-                  aBloc.add(ActivelistEvent.changeListPosition(list: changedList, oldIndex: oldIdx+1, newIndex: newIdx+1));
+                  ActiveList changedList = posToList[realOldIdx];
+                  aBloc.add(ActivelistEvent.changeListPosition(list: changedList, oldIndex: realOldIdx, newIndex: realNewIdx));
               },
           ));
  }
@@ -310,7 +312,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             return Container(
               key: ValueKey(listItem.id),
               decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)) ),
-              child: ListTile(
+              child: ListTile(tileColor: ListColors.APP_BAR_COLOR,
                 title: Text("${listItem.position} - ${listItem.name}", style: ListColors.DEF_TEXT_STYLE,)
               
               ),
