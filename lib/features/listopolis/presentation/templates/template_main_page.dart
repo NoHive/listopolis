@@ -149,7 +149,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
-                                                margin: EdgeInsets.all(1),
+                                                margin: EdgeInsets.only(top:1),
                                                 decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
                                                 child: ExpansionTile( 
                                                           leading: _buildMainItemExpandableTrailing(lists[i], context),

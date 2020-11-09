@@ -163,7 +163,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
-                                                margin: EdgeInsets.all(1),
+                                                margin: EdgeInsets.only(top:1),
                                                 decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
                                                 child: ExpansionTile( 
                                                           leading: _buildMainItemExpandableTrailing(lists[i], context),
@@ -311,8 +311,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
    
             return Container(
               key: ValueKey(listItem.id),
-              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)) ),
-              child: ListTile(tileColor: ListColors.APP_BAR_COLOR,
+              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)), gradient: ListColors.LIST_ITEM_GRADIENT ),
+              child: ListTile(
                 title: Text("${listItem.position} - ${listItem.name}", style: ListColors.DEF_TEXT_STYLE,)
               
               ),
