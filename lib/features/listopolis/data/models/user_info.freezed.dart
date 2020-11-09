@@ -12,6 +12,7 @@ UserInfo _$UserInfoFromJson(Map<String, dynamic> json) {
   return _UserInfo.fromJson(json);
 }
 
+/// @nodoc
 class _$UserInfoTearOff {
   const _$UserInfoTearOff();
 
@@ -21,11 +22,18 @@ class _$UserInfoTearOff {
       userID: userID,
     );
   }
+
+// ignore: unused_element
+  UserInfo fromJson(Map<String, Object> json) {
+    return UserInfo.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $UserInfo = _$UserInfoTearOff();
 
+/// @nodoc
 mixin _$UserInfo {
   String get userID;
 
@@ -33,12 +41,14 @@ mixin _$UserInfo {
   $UserInfoCopyWith<UserInfo> get copyWith;
 }
 
+/// @nodoc
 abstract class $UserInfoCopyWith<$Res> {
   factory $UserInfoCopyWith(UserInfo value, $Res Function(UserInfo) then) =
       _$UserInfoCopyWithImpl<$Res>;
   $Res call({String userID});
 }
 
+/// @nodoc
 class _$UserInfoCopyWithImpl<$Res> implements $UserInfoCopyWith<$Res> {
   _$UserInfoCopyWithImpl(this._value, this._then);
 
@@ -56,6 +66,7 @@ class _$UserInfoCopyWithImpl<$Res> implements $UserInfoCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$UserInfoCopyWith<$Res> implements $UserInfoCopyWith<$Res> {
   factory _$UserInfoCopyWith(_UserInfo value, $Res Function(_UserInfo) then) =
       __$UserInfoCopyWithImpl<$Res>;
@@ -63,6 +74,7 @@ abstract class _$UserInfoCopyWith<$Res> implements $UserInfoCopyWith<$Res> {
   $Res call({String userID});
 }
 
+/// @nodoc
 class __$UserInfoCopyWithImpl<$Res> extends _$UserInfoCopyWithImpl<$Res>
     implements _$UserInfoCopyWith<$Res> {
   __$UserInfoCopyWithImpl(_UserInfo _value, $Res Function(_UserInfo) _then)
@@ -82,6 +94,8 @@ class __$UserInfoCopyWithImpl<$Res> extends _$UserInfoCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_UserInfo extends _UserInfo {
   const _$_UserInfo({@required this.userID})
       : assert(userID != null),

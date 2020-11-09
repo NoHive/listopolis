@@ -11,13 +11,14 @@ import 'package:listopolis/features/listopolis/presentation/color_constants.dart
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 
 
+
 class CreateListPage extends StatefulWidget  {
   final ActivelistBloc activelistBloc;
   final TemplateBloc templateBloc;
   CreateListPage(this.activelistBloc, this.templateBloc, {Key key}) : super(key: key);
   
   @override
-  _CreateListPageState get createState => _CreateListPageState();
+  _CreateListPageState createState() => _CreateListPageState();
 }
 
 class _CreateListPageState extends State<CreateListPage> with CommonPageFunctions{

@@ -9,6 +9,7 @@ part of 'failures.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$FailureTearOff {
   const _$FailureTearOff();
 
@@ -28,9 +29,11 @@ class _$FailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Failure = _$FailureTearOff();
 
+/// @nodoc
 mixin _$Failure {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -60,11 +63,13 @@ mixin _$Failure {
   });
 }
 
+/// @nodoc
 abstract class $FailureCopyWith<$Res> {
   factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
       _$FailureCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
   _$FailureCopyWithImpl(this._value, this._then);
 
@@ -73,12 +78,14 @@ class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
   final $Res Function(Failure) _then;
 }
 
+/// @nodoc
 abstract class $DeviceOfflineCopyWith<$Res> {
   factory $DeviceOfflineCopyWith(
           DeviceOffline value, $Res Function(DeviceOffline) then) =
       _$DeviceOfflineCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$DeviceOfflineCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
     implements $DeviceOfflineCopyWith<$Res> {
   _$DeviceOfflineCopyWithImpl(
@@ -89,6 +96,7 @@ class _$DeviceOfflineCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
   DeviceOffline get _value => super._value as DeviceOffline;
 }
 
+/// @nodoc
 class _$DeviceOffline implements DeviceOffline {
   const _$DeviceOffline();
 
@@ -166,12 +174,14 @@ abstract class DeviceOffline implements Failure {
   const factory DeviceOffline() = _$DeviceOffline;
 }
 
+/// @nodoc
 abstract class $ServerConnectFailedCopyWith<$Res> {
   factory $ServerConnectFailedCopyWith(
           ServerConnectFailed value, $Res Function(ServerConnectFailed) then) =
       _$ServerConnectFailedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ServerConnectFailedCopyWithImpl<$Res>
     extends _$FailureCopyWithImpl<$Res>
     implements $ServerConnectFailedCopyWith<$Res> {
@@ -183,6 +193,7 @@ class _$ServerConnectFailedCopyWithImpl<$Res>
   ServerConnectFailed get _value => super._value as ServerConnectFailed;
 }
 
+/// @nodoc
 class _$ServerConnectFailed implements ServerConnectFailed {
   const _$ServerConnectFailed();
 
@@ -260,12 +271,14 @@ abstract class ServerConnectFailed implements Failure {
   const factory ServerConnectFailed() = _$ServerConnectFailed;
 }
 
+/// @nodoc
 abstract class $ServerAccessFailedCopyWith<$Res> {
   factory $ServerAccessFailedCopyWith(
           ServerAccessFailed value, $Res Function(ServerAccessFailed) then) =
       _$ServerAccessFailedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ServerAccessFailedCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
     implements $ServerAccessFailedCopyWith<$Res> {
   _$ServerAccessFailedCopyWithImpl(
@@ -276,6 +289,7 @@ class _$ServerAccessFailedCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
   ServerAccessFailed get _value => super._value as ServerAccessFailed;
 }
 
+/// @nodoc
 class _$ServerAccessFailed implements ServerAccessFailed {
   const _$ServerAccessFailed();
 

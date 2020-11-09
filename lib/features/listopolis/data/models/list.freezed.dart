@@ -12,6 +12,7 @@ ActiveList _$ActiveListFromJson(Map<String, dynamic> json) {
   return _ActiveList.fromJson(json);
 }
 
+/// @nodoc
 class _$ActiveListTearOff {
   const _$ActiveListTearOff();
 
@@ -41,11 +42,18 @@ class _$ActiveListTearOff {
       listItems: listItems,
     );
   }
+
+// ignore: unused_element
+  ActiveList fromJson(Map<String, Object> json) {
+    return ActiveList.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ActiveList = _$ActiveListTearOff();
 
+/// @nodoc
 mixin _$ActiveList {
   String get id;
   String get name;
@@ -60,6 +68,7 @@ mixin _$ActiveList {
   $ActiveListCopyWith<ActiveList> get copyWith;
 }
 
+/// @nodoc
 abstract class $ActiveListCopyWith<$Res> {
   factory $ActiveListCopyWith(
           ActiveList value, $Res Function(ActiveList) then) =
@@ -77,6 +86,7 @@ abstract class $ActiveListCopyWith<$Res> {
   $ListTypeCopyWith<$Res> get type;
 }
 
+/// @nodoc
 class _$ActiveListCopyWithImpl<$Res> implements $ActiveListCopyWith<$Res> {
   _$ActiveListCopyWithImpl(this._value, this._then);
 
@@ -118,6 +128,7 @@ class _$ActiveListCopyWithImpl<$Res> implements $ActiveListCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ActiveListCopyWith<$Res> implements $ActiveListCopyWith<$Res> {
   factory _$ActiveListCopyWith(
           _ActiveList value, $Res Function(_ActiveList) then) =
@@ -137,6 +148,7 @@ abstract class _$ActiveListCopyWith<$Res> implements $ActiveListCopyWith<$Res> {
   $ListTypeCopyWith<$Res> get type;
 }
 
+/// @nodoc
 class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
     implements _$ActiveListCopyWith<$Res> {
   __$ActiveListCopyWithImpl(
@@ -171,6 +183,8 @@ class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_ActiveList extends _ActiveList {
   const _$_ActiveList(
       {@required
@@ -306,6 +320,7 @@ ActiveListPosition _$ActiveListPositionFromJson(Map<String, dynamic> json) {
   return _ActiveListPosition.fromJson(json);
 }
 
+/// @nodoc
 class _$ActiveListPositionTearOff {
   const _$ActiveListPositionTearOff();
 
@@ -322,11 +337,18 @@ class _$ActiveListPositionTearOff {
       done: done,
     );
   }
+
+// ignore: unused_element
+  ActiveListPosition fromJson(Map<String, Object> json) {
+    return ActiveListPosition.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ActiveListPosition = _$ActiveListPositionTearOff();
 
+/// @nodoc
 mixin _$ActiveListPosition {
   String get id;
   String get name;
@@ -337,6 +359,7 @@ mixin _$ActiveListPosition {
   $ActiveListPositionCopyWith<ActiveListPosition> get copyWith;
 }
 
+/// @nodoc
 abstract class $ActiveListPositionCopyWith<$Res> {
   factory $ActiveListPositionCopyWith(
           ActiveListPosition value, $Res Function(ActiveListPosition) then) =
@@ -344,6 +367,7 @@ abstract class $ActiveListPositionCopyWith<$Res> {
   $Res call({String id, String name, int position, bool done});
 }
 
+/// @nodoc
 class _$ActiveListPositionCopyWithImpl<$Res>
     implements $ActiveListPositionCopyWith<$Res> {
   _$ActiveListPositionCopyWithImpl(this._value, this._then);
@@ -368,6 +392,7 @@ class _$ActiveListPositionCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$ActiveListPositionCopyWith<$Res>
     implements $ActiveListPositionCopyWith<$Res> {
   factory _$ActiveListPositionCopyWith(
@@ -377,6 +402,7 @@ abstract class _$ActiveListPositionCopyWith<$Res>
   $Res call({String id, String name, int position, bool done});
 }
 
+/// @nodoc
 class __$ActiveListPositionCopyWithImpl<$Res>
     extends _$ActiveListPositionCopyWithImpl<$Res>
     implements _$ActiveListPositionCopyWith<$Res> {
@@ -404,6 +430,8 @@ class __$ActiveListPositionCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_ActiveListPosition extends _ActiveListPosition {
   const _$_ActiveListPosition(
       {@required this.id,

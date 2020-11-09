@@ -12,6 +12,7 @@ ListTemplate _$ListTemplateFromJson(Map<String, dynamic> json) {
   return _ListTemplate.fromJson(json);
 }
 
+/// @nodoc
 class _$ListTemplateTearOff {
   const _$ListTemplateTearOff();
 
@@ -35,11 +36,18 @@ class _$ListTemplateTearOff {
       templatePositions: templatePositions,
     );
   }
+
+// ignore: unused_element
+  ListTemplate fromJson(Map<String, Object> json) {
+    return ListTemplate.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ListTemplate = _$ListTemplateTearOff();
 
+/// @nodoc
 mixin _$ListTemplate {
   String get id;
   String get name;
@@ -52,6 +60,7 @@ mixin _$ListTemplate {
   $ListTemplateCopyWith<ListTemplate> get copyWith;
 }
 
+/// @nodoc
 abstract class $ListTemplateCopyWith<$Res> {
   factory $ListTemplateCopyWith(
           ListTemplate value, $Res Function(ListTemplate) then) =
@@ -67,6 +76,7 @@ abstract class $ListTemplateCopyWith<$Res> {
   $ListTypeCopyWith<$Res> get type;
 }
 
+/// @nodoc
 class _$ListTemplateCopyWithImpl<$Res> implements $ListTemplateCopyWith<$Res> {
   _$ListTemplateCopyWithImpl(this._value, this._then);
 
@@ -104,6 +114,7 @@ class _$ListTemplateCopyWithImpl<$Res> implements $ListTemplateCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$ListTemplateCopyWith<$Res>
     implements $ListTemplateCopyWith<$Res> {
   factory _$ListTemplateCopyWith(
@@ -122,6 +133,7 @@ abstract class _$ListTemplateCopyWith<$Res>
   $ListTypeCopyWith<$Res> get type;
 }
 
+/// @nodoc
 class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
     implements _$ListTemplateCopyWith<$Res> {
   __$ListTemplateCopyWithImpl(
@@ -152,6 +164,8 @@ class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_ListTemplate extends _ListTemplate {
   const _$_ListTemplate(
       {@required
@@ -263,6 +277,7 @@ ListTemplatePosition _$ListTemplatePositionFromJson(Map<String, dynamic> json) {
   return _ListTemplatePosition.fromJson(json);
 }
 
+/// @nodoc
 class _$ListTemplatePositionTearOff {
   const _$ListTemplatePositionTearOff();
 
@@ -275,11 +290,18 @@ class _$ListTemplatePositionTearOff {
       position: position,
     );
   }
+
+// ignore: unused_element
+  ListTemplatePosition fromJson(Map<String, Object> json) {
+    return ListTemplatePosition.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ListTemplatePosition = _$ListTemplatePositionTearOff();
 
+/// @nodoc
 mixin _$ListTemplatePosition {
   String get name;
   String get id;
@@ -289,6 +311,7 @@ mixin _$ListTemplatePosition {
   $ListTemplatePositionCopyWith<ListTemplatePosition> get copyWith;
 }
 
+/// @nodoc
 abstract class $ListTemplatePositionCopyWith<$Res> {
   factory $ListTemplatePositionCopyWith(ListTemplatePosition value,
           $Res Function(ListTemplatePosition) then) =
@@ -296,6 +319,7 @@ abstract class $ListTemplatePositionCopyWith<$Res> {
   $Res call({String name, String id, int position});
 }
 
+/// @nodoc
 class _$ListTemplatePositionCopyWithImpl<$Res>
     implements $ListTemplatePositionCopyWith<$Res> {
   _$ListTemplatePositionCopyWithImpl(this._value, this._then);
@@ -318,6 +342,7 @@ class _$ListTemplatePositionCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$ListTemplatePositionCopyWith<$Res>
     implements $ListTemplatePositionCopyWith<$Res> {
   factory _$ListTemplatePositionCopyWith(_ListTemplatePosition value,
@@ -327,6 +352,7 @@ abstract class _$ListTemplatePositionCopyWith<$Res>
   $Res call({String name, String id, int position});
 }
 
+/// @nodoc
 class __$ListTemplatePositionCopyWithImpl<$Res>
     extends _$ListTemplatePositionCopyWithImpl<$Res>
     implements _$ListTemplatePositionCopyWith<$Res> {
@@ -352,6 +378,8 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_ListTemplatePosition extends _ListTemplatePosition {
   const _$_ListTemplatePosition(
       {@required this.name, @required this.id, @required this.position})

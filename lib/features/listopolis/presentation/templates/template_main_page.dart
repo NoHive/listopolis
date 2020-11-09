@@ -19,7 +19,7 @@ class TemplateMainPage extends StatefulWidget {
   TemplateMainPage(this.activelistBloc, this.createlistBloc, {Key key}) : super(key: key);
 
   @override
-  _TemplateMainPageState get createState => _TemplateMainPageState();
+  _TemplateMainPageState createState() => _TemplateMainPageState();
 }
 enum PositionType{start, end}
 class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunctions {

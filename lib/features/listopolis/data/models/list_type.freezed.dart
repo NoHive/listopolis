@@ -9,6 +9,7 @@ part of 'list_type.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ListTypeTearOff {
   const _$ListTypeTearOff();
 
@@ -23,9 +24,11 @@ class _$ListTypeTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ListType = _$ListTypeTearOff();
 
+/// @nodoc
 mixin _$ListType {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -51,11 +54,13 @@ mixin _$ListType {
   });
 }
 
+/// @nodoc
 abstract class $ListTypeCopyWith<$Res> {
   factory $ListTypeCopyWith(ListType value, $Res Function(ListType) then) =
       _$ListTypeCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ListTypeCopyWithImpl<$Res> implements $ListTypeCopyWith<$Res> {
   _$ListTypeCopyWithImpl(this._value, this._then);
 
@@ -64,11 +69,13 @@ class _$ListTypeCopyWithImpl<$Res> implements $ListTypeCopyWith<$Res> {
   final $Res Function(ListType) _then;
 }
 
+/// @nodoc
 abstract class $RememberCopyWith<$Res> {
   factory $RememberCopyWith(Remember value, $Res Function(Remember) then) =
       _$RememberCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$RememberCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
     implements $RememberCopyWith<$Res> {
   _$RememberCopyWithImpl(Remember _value, $Res Function(Remember) _then)
@@ -78,6 +85,7 @@ class _$RememberCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
   Remember get _value => super._value as Remember;
 }
 
+/// @nodoc
 class _$Remember implements Remember {
   const _$Remember();
 
@@ -149,11 +157,13 @@ abstract class Remember implements ListType {
   const factory Remember() = _$Remember;
 }
 
+/// @nodoc
 abstract class $ToDoListCopyWith<$Res> {
   factory $ToDoListCopyWith(ToDoList value, $Res Function(ToDoList) then) =
       _$ToDoListCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ToDoListCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
     implements $ToDoListCopyWith<$Res> {
   _$ToDoListCopyWithImpl(ToDoList _value, $Res Function(ToDoList) _then)
@@ -163,6 +173,7 @@ class _$ToDoListCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
   ToDoList get _value => super._value as ToDoList;
 }
 
+/// @nodoc
 class _$ToDoList implements ToDoList {
   const _$ToDoList();
 

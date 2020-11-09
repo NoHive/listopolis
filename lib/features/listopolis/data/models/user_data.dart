@@ -1,6 +1,7 @@
 
 
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:listopolis/core/list/list_tools.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
@@ -11,7 +12,7 @@ part 'user_data.freezed.dart';
 part 'user_data.g.dart'; 
 
 @freezed
-abstract class UserData implements _$UserData{
+abstract class UserData implements _$UserData {
   @JsonSerializable(nullable: false)  
   const UserData._();
   const factory UserData(
@@ -126,6 +127,13 @@ abstract class UserData implements _$UserData{
 
       
   }
+
+  Map<String, ActiveList> getListMap(){
+    Map<String, ActiveList> listMap = {};
+      activeLists.forEach((element) {listMap[element.id] = element;});
+    return listMap;
+  }
+
    factory UserData.addTemplateFromActiveList(UserData data, ActiveList creationParameter){
       List<ListTemplate> existingActiveLists = data.templates;
       List<ListTemplate> aNewList = List();
@@ -155,6 +163,29 @@ abstract class UserData implements _$UserData{
       aNewList.add(aNewListItem);
 
       return data.copyWith(templates:aNewList);
+
+      
+  }
+  factory UserData.fromChangedListPosition(UserData data, ActiveList aList, int oldPosition, int newPosition){
+     
+     
+     Map<String, ActiveList> idToList = Map.fromEntries(data.activeLists.map((list) => MapEntry(list.id, list)) );
+     List<String> listIds = idToList.keys.toList();
+
+     Map<String, int> listToPosition = ListOrder.reorder(oldPosition, newPosition, aList.id, listIds, 
+        (aListId) {
+          ActiveList aList = idToList[aListId];
+          return aList.position;
+        }
+     );
+     
+     List<ActiveList> newActiveLists = [];
+     for(ActiveList aList in data.activeLists){
+       int newPosForList = listToPosition[aList.id];
+       newActiveLists.add(aList.copyWith(position:newPosForList));
+     }
+
+    return data.copyWith(activeLists:newActiveLists);
 
       
   }

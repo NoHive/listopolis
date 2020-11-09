@@ -208,6 +208,16 @@ class RepositoryImpl implements IRepository{
       return getActiveLists();
   }
 
+  @override
+  Future<Either<Failure, List<ActiveList>>> changeListPosition(ActiveList list, int oldPosition, int newPosition) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromChangedListPosition(currentUserData, list, oldPosition, newPosition));
+        sendData();
+      }
+      return getActiveLists();
+  }
+
 }
 
 

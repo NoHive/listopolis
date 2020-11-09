@@ -86,6 +86,23 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r));
     },
+    changeListPosition: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.changeListPosition(e.list, e.oldIndex, e.newIndex);
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.listOrderChanged(userLists: r));
+    },
+    loadForReorder: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.listOrderChanged(userLists: r));
+    },
     );
+    
   }
 }

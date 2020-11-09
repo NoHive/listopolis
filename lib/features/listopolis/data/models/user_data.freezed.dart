@@ -12,6 +12,7 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) {
   return _UserData.fromJson(json);
 }
 
+/// @nodoc
 class _$UserDataTearOff {
   const _$UserDataTearOff();
 
@@ -28,11 +29,18 @@ class _$UserDataTearOff {
       activeLists: activeLists,
     );
   }
+
+// ignore: unused_element
+  UserData fromJson(Map<String, Object> json) {
+    return UserData.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $UserData = _$UserDataTearOff();
 
+/// @nodoc
 mixin _$UserData {
   String get id;
   String get name;
@@ -43,6 +51,7 @@ mixin _$UserData {
   $UserDataCopyWith<UserData> get copyWith;
 }
 
+/// @nodoc
 abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
       _$UserDataCopyWithImpl<$Res>;
@@ -53,6 +62,7 @@ abstract class $UserDataCopyWith<$Res> {
       List<ActiveList> activeLists});
 }
 
+/// @nodoc
 class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
   _$UserDataCopyWithImpl(this._value, this._then);
 
@@ -80,6 +90,7 @@ class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
   factory _$UserDataCopyWith(_UserData value, $Res Function(_UserData) then) =
       __$UserDataCopyWithImpl<$Res>;
@@ -91,6 +102,7 @@ abstract class _$UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
       List<ActiveList> activeLists});
 }
 
+/// @nodoc
 class __$UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
     implements _$UserDataCopyWith<$Res> {
   __$UserDataCopyWithImpl(_UserData _value, $Res Function(_UserData) _then)
@@ -120,6 +132,8 @@ class __$UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_UserData extends _UserData {
   const _$_UserData(
       {@required this.id, this.name, this.templates, this.activeLists})

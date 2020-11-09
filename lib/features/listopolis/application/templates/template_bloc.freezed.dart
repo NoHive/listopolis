@@ -9,6 +9,7 @@ part of 'template_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$TemplateEventTearOff {
   const _$TemplateEventTearOff();
 
@@ -52,9 +53,11 @@ class _$TemplateEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TemplateEvent = _$TemplateEventTearOff();
 
+/// @nodoc
 mixin _$TemplateEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -98,12 +101,14 @@ mixin _$TemplateEvent {
   });
 }
 
+/// @nodoc
 abstract class $TemplateEventCopyWith<$Res> {
   factory $TemplateEventCopyWith(
           TemplateEvent value, $Res Function(TemplateEvent) then) =
       _$TemplateEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TemplateEventCopyWithImpl<$Res>
     implements $TemplateEventCopyWith<$Res> {
   _$TemplateEventCopyWithImpl(this._value, this._then);
@@ -113,12 +118,14 @@ class _$TemplateEventCopyWithImpl<$Res>
   final $Res Function(TemplateEvent) _then;
 }
 
+/// @nodoc
 abstract class _$LoadTemplatesCopyWith<$Res> {
   factory _$LoadTemplatesCopyWith(
           _LoadTemplates value, $Res Function(_LoadTemplates) then) =
       __$LoadTemplatesCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadTemplatesCopyWithImpl<$Res>
     extends _$TemplateEventCopyWithImpl<$Res>
     implements _$LoadTemplatesCopyWith<$Res> {
@@ -130,6 +137,7 @@ class __$LoadTemplatesCopyWithImpl<$Res>
   _LoadTemplates get _value => super._value as _LoadTemplates;
 }
 
+/// @nodoc
 class _$_LoadTemplates implements _LoadTemplates {
   const _$_LoadTemplates();
 
@@ -225,6 +233,7 @@ abstract class _LoadTemplates implements TemplateEvent {
   const factory _LoadTemplates() = _$_LoadTemplates;
 }
 
+/// @nodoc
 abstract class _$InsertNewTemplateCopyWith<$Res> {
   factory _$InsertNewTemplateCopyWith(
           _InsertNewTemplate value, $Res Function(_InsertNewTemplate) then) =
@@ -232,6 +241,7 @@ abstract class _$InsertNewTemplateCopyWith<$Res> {
   $Res call({CreateListParameter listParameter});
 }
 
+/// @nodoc
 class __$InsertNewTemplateCopyWithImpl<$Res>
     extends _$TemplateEventCopyWithImpl<$Res>
     implements _$InsertNewTemplateCopyWith<$Res> {
@@ -254,6 +264,7 @@ class __$InsertNewTemplateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_InsertNewTemplate implements _InsertNewTemplate {
   const _$_InsertNewTemplate({@required this.listParameter})
       : assert(listParameter != null);
@@ -366,6 +377,7 @@ abstract class _InsertNewTemplate implements TemplateEvent {
   _$InsertNewTemplateCopyWith<_InsertNewTemplate> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DeleteTemplatePositionCopyWith<$Res> {
   factory _$DeleteTemplatePositionCopyWith(_DeleteTemplatePosition value,
           $Res Function(_DeleteTemplatePosition) then) =
@@ -376,6 +388,7 @@ abstract class _$DeleteTemplatePositionCopyWith<$Res> {
   $ListTemplatePositionCopyWith<$Res> get position;
 }
 
+/// @nodoc
 class __$DeleteTemplatePositionCopyWithImpl<$Res>
     extends _$TemplateEventCopyWithImpl<$Res>
     implements _$DeleteTemplatePositionCopyWith<$Res> {
@@ -420,6 +433,7 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   const _$_DeleteTemplatePosition(
       {@required this.list, @required this.position})
@@ -543,6 +557,7 @@ abstract class _DeleteTemplatePosition implements TemplateEvent {
   _$DeleteTemplatePositionCopyWith<_DeleteTemplatePosition> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DeleteTemplateCopyWith<$Res> {
   factory _$DeleteTemplateCopyWith(
           _DeleteTemplate value, $Res Function(_DeleteTemplate) then) =
@@ -552,6 +567,7 @@ abstract class _$DeleteTemplateCopyWith<$Res> {
   $ListTemplateCopyWith<$Res> get list;
 }
 
+/// @nodoc
 class __$DeleteTemplateCopyWithImpl<$Res>
     extends _$TemplateEventCopyWithImpl<$Res>
     implements _$DeleteTemplateCopyWith<$Res> {
@@ -582,6 +598,7 @@ class __$DeleteTemplateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DeleteTemplate implements _DeleteTemplate {
   const _$_DeleteTemplate({@required this.list}) : assert(list != null);
 
@@ -692,6 +709,7 @@ abstract class _DeleteTemplate implements TemplateEvent {
   _$DeleteTemplateCopyWith<_DeleteTemplate> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ReplaceTemplateCopyWith<$Res> {
   factory _$ReplaceTemplateCopyWith(
           _ReplaceTemplate value, $Res Function(_ReplaceTemplate) then) =
@@ -701,6 +719,7 @@ abstract class _$ReplaceTemplateCopyWith<$Res> {
   $ListTemplateCopyWith<$Res> get list;
 }
 
+/// @nodoc
 class __$ReplaceTemplateCopyWithImpl<$Res>
     extends _$TemplateEventCopyWithImpl<$Res>
     implements _$ReplaceTemplateCopyWith<$Res> {
@@ -735,6 +754,7 @@ class __$ReplaceTemplateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ReplaceTemplate implements _ReplaceTemplate {
   const _$_ReplaceTemplate({@required this.listParameter, @required this.list})
       : assert(listParameter != null),
@@ -856,6 +876,7 @@ abstract class _ReplaceTemplate implements TemplateEvent {
   _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith;
 }
 
+/// @nodoc
 class _$TemplateStateTearOff {
   const _$TemplateStateTearOff();
 
@@ -884,9 +905,11 @@ class _$TemplateStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $TemplateState = _$TemplateStateTearOff();
 
+/// @nodoc
 mixin _$TemplateState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -920,12 +943,14 @@ mixin _$TemplateState {
   });
 }
 
+/// @nodoc
 abstract class $TemplateStateCopyWith<$Res> {
   factory $TemplateStateCopyWith(
           TemplateState value, $Res Function(TemplateState) then) =
       _$TemplateStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$TemplateStateCopyWithImpl<$Res>
     implements $TemplateStateCopyWith<$Res> {
   _$TemplateStateCopyWithImpl(this._value, this._then);
@@ -935,11 +960,13 @@ class _$TemplateStateCopyWithImpl<$Res>
   final $Res Function(TemplateState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -949,6 +976,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -1032,11 +1060,13 @@ abstract class _Initial implements TemplateState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadingCopyWith<$Res> {
   factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
       __$LoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadingCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
@@ -1046,6 +1076,7 @@ class __$LoadingCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
   _Loading get _value => super._value as _Loading;
 }
 
+/// @nodoc
 class _$_Loading implements _Loading {
   const _$_Loading();
 
@@ -1129,12 +1160,14 @@ abstract class _Loading implements TemplateState {
   const factory _Loading() = _$_Loading;
 }
 
+/// @nodoc
 abstract class _$LoadedCopyWith<$Res> {
   factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
       __$LoadedCopyWithImpl<$Res>;
   $Res call({List<ListTemplate> userTemplates});
 }
 
+/// @nodoc
 class __$LoadedCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
     implements _$LoadedCopyWith<$Res> {
   __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
@@ -1155,6 +1188,7 @@ class __$LoadedCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Loaded implements _Loaded {
   const _$_Loaded({@required this.userTemplates})
       : assert(userTemplates != null);
@@ -1255,6 +1289,7 @@ abstract class _Loaded implements TemplateState {
   _$LoadedCopyWith<_Loaded> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ErrorCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
       __$ErrorCopyWithImpl<$Res>;
@@ -1263,6 +1298,7 @@ abstract class _$ErrorCopyWith<$Res> {
   $FailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
     implements _$ErrorCopyWith<$Res> {
   __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
@@ -1291,6 +1327,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Error implements _Error {
   const _$_Error({@required this.failure}) : assert(failure != null);
 

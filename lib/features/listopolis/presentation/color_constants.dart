@@ -35,17 +35,25 @@ class ListColors{
 
   static const TextStyle DEF_TEXT_STYLE = TextStyle(color: TEXT);
 
-  static const LinearGradient LIST_ITEM_GRADIENT = LinearGradient(colors: [
-                                                                            Color(MIDDLE_BG_COLOR_BLUEGREY), 
-                                                                            Color(END_BG_COLOR_BLUEGREY)
+  static LinearGradient LIST_ITEM_GRADIENT = LinearGradient(colors: [
+                                                                           const Color(MIDDLE_BG_COLOR_BLUEGREY), 
+                                                                           const Color(END_BG_COLOR_BLUEGREY)
                                                                           ],
-                                                                  stops: [0,1]
+                                                                    stops:[0,1]
+
+                                                                
                                                                   );
-  static const LinearGradient DISMISS_ITEM_GRADIENT = LinearGradient(colors: [
-                                                                            Color(END_BG_COLOR_BLUEGREY), 
-                                                                            Color(_TEXTCOLOR_ON_DARK_BG)
-                                                                          ],
-                                                                  stops: [0,1]
-                                                                  );
+
+  
+  static LinearGradient DISMISS_ITEM_GRADIENT = LinearGradient(colors:[
+                                                                            const Color(END_BG_COLOR_BLUEGREY), 
+                                                                            const Color(_TEXTCOLOR_ON_DARK_BG)
+                                                                          ], stops:[0,1]);
+                                                                  // LinearGradient(<Color>[
+                                                                  //           Color(END_BG_COLOR_BLUEGREY), 
+                                                                  //           Color(_TEXTCOLOR_ON_DARK_BG)
+                                                                  //         ],
+                                                                  //  [0,1]
+                                                                  // );
   
 }

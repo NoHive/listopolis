@@ -14,6 +14,8 @@ abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> createTemlateFromList(ActiveList list);
   Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter);
   Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter);
+  Future<Either<Failure, List<ActiveList>>> changeListPosition(ActiveList list, int oldPosition, int newPosition);
+
   Future<Either<Failure, List<ListTemplate>>> getTemplates();
   Future<Either<Failure, List<ListTemplate>>> deleteTemplatePosition(ListTemplate list, ListTemplatePosition position);
   Future<Either<Failure, List<ListTemplate>>> deleteTemplate(ListTemplate list);

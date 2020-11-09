@@ -9,12 +9,18 @@ part of 'activelist_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ActivelistEventTearOff {
   const _$ActivelistEventTearOff();
 
 // ignore: unused_element
   _LoadLists load() {
     return const _LoadLists();
+  }
+
+// ignore: unused_element
+  _LoadForReorder loadForReorder() {
+    return const _LoadForReorder();
   }
 
 // ignore: unused_element
@@ -66,15 +72,28 @@ class _$ActivelistEventTearOff {
       list: list,
     );
   }
+
+// ignore: unused_element
+  _ChangeListPosition changeListPosition(
+      {@required ActiveList list, int oldIndex, int newIndex}) {
+    return _ChangeListPosition(
+      list: list,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ActivelistEvent = _$ActivelistEventTearOff();
 
+/// @nodoc
 mixin _$ActivelistEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -86,10 +105,13 @@ mixin _$ActivelistEvent {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -99,11 +121,13 @@ mixin _$ActivelistEvent {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -111,10 +135,12 @@ mixin _$ActivelistEvent {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -122,16 +148,19 @@ mixin _$ActivelistEvent {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   });
 }
 
+/// @nodoc
 abstract class $ActivelistEventCopyWith<$Res> {
   factory $ActivelistEventCopyWith(
           ActivelistEvent value, $Res Function(ActivelistEvent) then) =
       _$ActivelistEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ActivelistEventCopyWithImpl<$Res>
     implements $ActivelistEventCopyWith<$Res> {
   _$ActivelistEventCopyWithImpl(this._value, this._then);
@@ -141,12 +170,14 @@ class _$ActivelistEventCopyWithImpl<$Res>
   final $Res Function(ActivelistEvent) _then;
 }
 
+/// @nodoc
 abstract class _$LoadListsCopyWith<$Res> {
   factory _$LoadListsCopyWith(
           _LoadLists value, $Res Function(_LoadLists) then) =
       __$LoadListsCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadListsCopyWithImpl<$Res> extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$LoadListsCopyWith<$Res> {
   __$LoadListsCopyWithImpl(_LoadLists _value, $Res Function(_LoadLists) _then)
@@ -156,6 +187,7 @@ class __$LoadListsCopyWithImpl<$Res> extends _$ActivelistEventCopyWithImpl<$Res>
   _LoadLists get _value => super._value as _LoadLists;
 }
 
+/// @nodoc
 class _$_LoadLists implements _LoadLists {
   const _$_LoadLists();
 
@@ -176,6 +208,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -187,8 +220,11 @@ class _$_LoadLists implements _LoadLists {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -196,6 +232,7 @@ class _$_LoadLists implements _LoadLists {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return load();
   }
 
@@ -203,6 +240,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -212,6 +250,7 @@ class _$_LoadLists implements _LoadLists {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -225,6 +264,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -232,8 +272,10 @@ class _$_LoadLists implements _LoadLists {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -241,6 +283,7 @@ class _$_LoadLists implements _LoadLists {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return load(this);
   }
 
@@ -248,6 +291,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -255,6 +299,7 @@ class _$_LoadLists implements _LoadLists {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -269,6 +314,153 @@ abstract class _LoadLists implements ActivelistEvent {
   const factory _LoadLists() = _$_LoadLists;
 }
 
+/// @nodoc
+abstract class _$LoadForReorderCopyWith<$Res> {
+  factory _$LoadForReorderCopyWith(
+          _LoadForReorder value, $Res Function(_LoadForReorder) then) =
+      __$LoadForReorderCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadForReorderCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$LoadForReorderCopyWith<$Res> {
+  __$LoadForReorderCopyWithImpl(
+      _LoadForReorder _value, $Res Function(_LoadForReorder) _then)
+      : super(_value, (v) => _then(v as _LoadForReorder));
+
+  @override
+  _LoadForReorder get _value => super._value as _LoadForReorder;
+}
+
+/// @nodoc
+class _$_LoadForReorder implements _LoadForReorder {
+  const _$_LoadForReorder();
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.loadForReorder()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadForReorder);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadForReorder(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+    @required Result deleteActiveList(ActiveList list),
+    @required
+        Result replaceActiveList(
+            CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
+    @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    return loadForReorder();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadForReorder(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    Result deleteActiveList(ActiveList list),
+    Result replaceActiveList(
+        CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
+    Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadForReorder != null) {
+      return loadForReorder();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result deleteActiveList(_DeleteActiveList value),
+    @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
+    @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    return loadForReorder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    Result deleteActiveList(_DeleteActiveList value),
+    Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
+    Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadForReorder != null) {
+      return loadForReorder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadForReorder implements ActivelistEvent {
+  const factory _LoadForReorder() = _$_LoadForReorder;
+}
+
+/// @nodoc
 abstract class _$InsertNewListCopyWith<$Res> {
   factory _$InsertNewListCopyWith(
           _InsertNewList value, $Res Function(_InsertNewList) then) =
@@ -276,6 +468,7 @@ abstract class _$InsertNewListCopyWith<$Res> {
   $Res call({CreateListParameter listParameter});
 }
 
+/// @nodoc
 class __$InsertNewListCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$InsertNewListCopyWith<$Res> {
@@ -298,6 +491,7 @@ class __$InsertNewListCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_InsertNewList implements _InsertNewList {
   const _$_InsertNewList({@required this.listParameter})
       : assert(listParameter != null);
@@ -331,6 +525,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -342,8 +537,11 @@ class _$_InsertNewList implements _InsertNewList {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -351,6 +549,7 @@ class _$_InsertNewList implements _InsertNewList {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return insertNewList(listParameter);
   }
 
@@ -358,6 +557,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -367,6 +567,7 @@ class _$_InsertNewList implements _InsertNewList {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -380,6 +581,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -387,8 +589,10 @@ class _$_InsertNewList implements _InsertNewList {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -396,6 +600,7 @@ class _$_InsertNewList implements _InsertNewList {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return insertNewList(this);
   }
 
@@ -403,6 +608,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -410,6 +616,7 @@ class _$_InsertNewList implements _InsertNewList {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -428,6 +635,7 @@ abstract class _InsertNewList implements ActivelistEvent {
   _$InsertNewListCopyWith<_InsertNewList> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DeleteActiveListPositionCopyWith<$Res> {
   factory _$DeleteActiveListPositionCopyWith(_DeleteActiveListPosition value,
           $Res Function(_DeleteActiveListPosition) then) =
@@ -438,6 +646,7 @@ abstract class _$DeleteActiveListPositionCopyWith<$Res> {
   $ActiveListPositionCopyWith<$Res> get position;
 }
 
+/// @nodoc
 class __$DeleteActiveListPositionCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$DeleteActiveListPositionCopyWith<$Res> {
@@ -483,6 +692,7 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   const _$_DeleteActiveListPosition(
       {@required this.list, @required this.position})
@@ -525,6 +735,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -536,8 +747,11 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -545,6 +759,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return deleteActiveListPosition(list, position);
   }
 
@@ -552,6 +767,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -561,6 +777,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -574,6 +791,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -581,8 +799,10 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -590,6 +810,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return deleteActiveListPosition(this);
   }
 
@@ -597,6 +818,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -604,6 +826,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -624,6 +847,7 @@ abstract class _DeleteActiveListPosition implements ActivelistEvent {
   _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith;
 }
 
+/// @nodoc
 abstract class _$DeleteActiveListCopyWith<$Res> {
   factory _$DeleteActiveListCopyWith(
           _DeleteActiveList value, $Res Function(_DeleteActiveList) then) =
@@ -633,6 +857,7 @@ abstract class _$DeleteActiveListCopyWith<$Res> {
   $ActiveListCopyWith<$Res> get list;
 }
 
+/// @nodoc
 class __$DeleteActiveListCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$DeleteActiveListCopyWith<$Res> {
@@ -663,6 +888,7 @@ class __$DeleteActiveListCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_DeleteActiveList implements _DeleteActiveList {
   const _$_DeleteActiveList({@required this.list}) : assert(list != null);
 
@@ -694,6 +920,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -705,8 +932,11 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -714,6 +944,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return deleteActiveList(list);
   }
 
@@ -721,6 +952,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -730,6 +962,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -743,6 +976,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -750,8 +984,10 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -759,6 +995,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return deleteActiveList(this);
   }
 
@@ -766,6 +1003,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -773,6 +1011,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -791,6 +1030,7 @@ abstract class _DeleteActiveList implements ActivelistEvent {
   _$DeleteActiveListCopyWith<_DeleteActiveList> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ReplaceActiveListCopyWith<$Res> {
   factory _$ReplaceActiveListCopyWith(
           _ReplaceActiveList value, $Res Function(_ReplaceActiveList) then) =
@@ -800,6 +1040,7 @@ abstract class _$ReplaceActiveListCopyWith<$Res> {
   $ActiveListCopyWith<$Res> get list;
 }
 
+/// @nodoc
 class __$ReplaceActiveListCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$ReplaceActiveListCopyWith<$Res> {
@@ -834,6 +1075,7 @@ class __$ReplaceActiveListCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ReplaceActiveList implements _ReplaceActiveList {
   const _$_ReplaceActiveList(
       {@required this.listParameter, @required this.list})
@@ -875,6 +1117,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -886,8 +1129,11 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -895,6 +1141,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return replaceActiveList(listParameter, list);
   }
 
@@ -902,6 +1149,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -911,6 +1159,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -924,6 +1173,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -931,8 +1181,10 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -940,6 +1192,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return replaceActiveList(this);
   }
 
@@ -947,6 +1200,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -954,6 +1208,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -974,12 +1229,14 @@ abstract class _ReplaceActiveList implements ActivelistEvent {
   _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith;
 }
 
+/// @nodoc
 abstract class _$BackupDataCopyWith<$Res> {
   factory _$BackupDataCopyWith(
           _BackupData value, $Res Function(_BackupData) then) =
       __$BackupDataCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$BackupDataCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$BackupDataCopyWith<$Res> {
@@ -991,6 +1248,7 @@ class __$BackupDataCopyWithImpl<$Res>
   _BackupData get _value => super._value as _BackupData;
 }
 
+/// @nodoc
 class _$_BackupData implements _BackupData {
   const _$_BackupData();
 
@@ -1011,6 +1269,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -1022,8 +1281,11 @@ class _$_BackupData implements _BackupData {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -1031,6 +1293,7 @@ class _$_BackupData implements _BackupData {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return backupData();
   }
 
@@ -1038,6 +1301,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -1047,6 +1311,7 @@ class _$_BackupData implements _BackupData {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1060,6 +1325,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -1067,8 +1333,10 @@ class _$_BackupData implements _BackupData {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -1076,6 +1344,7 @@ class _$_BackupData implements _BackupData {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return backupData(this);
   }
 
@@ -1083,6 +1352,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -1090,6 +1360,7 @@ class _$_BackupData implements _BackupData {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1104,12 +1375,14 @@ abstract class _BackupData implements ActivelistEvent {
   const factory _BackupData() = _$_BackupData;
 }
 
+/// @nodoc
 abstract class _$LoadDataFromBackupCopyWith<$Res> {
   factory _$LoadDataFromBackupCopyWith(
           _LoadDataFromBackup value, $Res Function(_LoadDataFromBackup) then) =
       __$LoadDataFromBackupCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadDataFromBackupCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$LoadDataFromBackupCopyWith<$Res> {
@@ -1121,6 +1394,7 @@ class __$LoadDataFromBackupCopyWithImpl<$Res>
   _LoadDataFromBackup get _value => super._value as _LoadDataFromBackup;
 }
 
+/// @nodoc
 class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   const _$_LoadDataFromBackup();
 
@@ -1141,6 +1415,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -1152,8 +1427,11 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -1161,6 +1439,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return loadDataFromBackup();
   }
 
@@ -1168,6 +1447,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -1177,6 +1457,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1190,6 +1471,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -1197,8 +1479,10 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -1206,6 +1490,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return loadDataFromBackup(this);
   }
 
@@ -1213,6 +1498,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -1220,6 +1506,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1234,6 +1521,7 @@ abstract class _LoadDataFromBackup implements ActivelistEvent {
   const factory _LoadDataFromBackup() = _$_LoadDataFromBackup;
 }
 
+/// @nodoc
 abstract class _$UseListAsTemplateCopyWith<$Res> {
   factory _$UseListAsTemplateCopyWith(
           _UseListAsTemplate value, $Res Function(_UseListAsTemplate) then) =
@@ -1243,6 +1531,7 @@ abstract class _$UseListAsTemplateCopyWith<$Res> {
   $ActiveListCopyWith<$Res> get list;
 }
 
+/// @nodoc
 class __$UseListAsTemplateCopyWithImpl<$Res>
     extends _$ActivelistEventCopyWithImpl<$Res>
     implements _$UseListAsTemplateCopyWith<$Res> {
@@ -1273,6 +1562,7 @@ class __$UseListAsTemplateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UseListAsTemplate implements _UseListAsTemplate {
   const _$_UseListAsTemplate({@required this.list}) : assert(list != null);
 
@@ -1304,6 +1594,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadForReorder(),
     @required Result insertNewList(CreateListParameter listParameter),
     @required
         Result deleteActiveListPosition(
@@ -1315,8 +1606,11 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     @required Result backupData(),
     @required Result loadDataFromBackup(),
     @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -1324,6 +1618,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return useListAsTemplate(list);
   }
 
@@ -1331,6 +1626,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadForReorder(),
     Result insertNewList(CreateListParameter listParameter),
     Result deleteActiveListPosition(
         ActiveList list, ActiveListPosition position),
@@ -1340,6 +1636,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     Result backupData(),
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1353,6 +1650,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
     @required Result insertNewList(_InsertNewList value),
     @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
     @required Result deleteActiveList(_DeleteActiveList value),
@@ -1360,8 +1658,10 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     @required Result backupData(_BackupData value),
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
   }) {
     assert(load != null);
+    assert(loadForReorder != null);
     assert(insertNewList != null);
     assert(deleteActiveListPosition != null);
     assert(deleteActiveList != null);
@@ -1369,6 +1669,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     assert(backupData != null);
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
     return useListAsTemplate(this);
   }
 
@@ -1376,6 +1677,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
     Result insertNewList(_InsertNewList value),
     Result deleteActiveListPosition(_DeleteActiveListPosition value),
     Result deleteActiveList(_DeleteActiveList value),
@@ -1383,6 +1685,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     Result backupData(_BackupData value),
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1401,6 +1704,213 @@ abstract class _UseListAsTemplate implements ActivelistEvent {
   _$UseListAsTemplateCopyWith<_UseListAsTemplate> get copyWith;
 }
 
+/// @nodoc
+abstract class _$ChangeListPositionCopyWith<$Res> {
+  factory _$ChangeListPositionCopyWith(
+          _ChangeListPosition value, $Res Function(_ChangeListPosition) then) =
+      __$ChangeListPositionCopyWithImpl<$Res>;
+  $Res call({ActiveList list, int oldIndex, int newIndex});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+/// @nodoc
+class __$ChangeListPositionCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$ChangeListPositionCopyWith<$Res> {
+  __$ChangeListPositionCopyWithImpl(
+      _ChangeListPosition _value, $Res Function(_ChangeListPosition) _then)
+      : super(_value, (v) => _then(v as _ChangeListPosition));
+
+  @override
+  _ChangeListPosition get _value => super._value as _ChangeListPosition;
+
+  @override
+  $Res call({
+    Object list = freezed,
+    Object oldIndex = freezed,
+    Object newIndex = freezed,
+  }) {
+    return _then(_ChangeListPosition(
+      list: list == freezed ? _value.list : list as ActiveList,
+      oldIndex: oldIndex == freezed ? _value.oldIndex : oldIndex as int,
+      newIndex: newIndex == freezed ? _value.newIndex : newIndex as int,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    if (_value.list == null) {
+      return null;
+    }
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_ChangeListPosition implements _ChangeListPosition {
+  const _$_ChangeListPosition(
+      {@required this.list, this.oldIndex, this.newIndex})
+      : assert(list != null);
+
+  @override
+  final ActiveList list;
+  @override
+  final int oldIndex;
+  @override
+  final int newIndex;
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.changeListPosition(list: $list, oldIndex: $oldIndex, newIndex: $newIndex)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChangeListPosition &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)) &&
+            (identical(other.oldIndex, oldIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.oldIndex, oldIndex)) &&
+            (identical(other.newIndex, newIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.newIndex, newIndex)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(list) ^
+      const DeepCollectionEquality().hash(oldIndex) ^
+      const DeepCollectionEquality().hash(newIndex);
+
+  @override
+  _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith =>
+      __$ChangeListPositionCopyWithImpl<_ChangeListPosition>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadForReorder(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+    @required Result deleteActiveList(ActiveList list),
+    @required
+        Result replaceActiveList(
+            CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
+    @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    return changeListPosition(list, oldIndex, newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadForReorder(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    Result deleteActiveList(ActiveList list),
+    Result replaceActiveList(
+        CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
+    Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeListPosition != null) {
+      return changeListPosition(list, oldIndex, newIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result deleteActiveList(_DeleteActiveList value),
+    @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
+    @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    return changeListPosition(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    Result deleteActiveList(_DeleteActiveList value),
+    Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
+    Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeListPosition != null) {
+      return changeListPosition(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeListPosition implements ActivelistEvent {
+  const factory _ChangeListPosition(
+      {@required ActiveList list,
+      int oldIndex,
+      int newIndex}) = _$_ChangeListPosition;
+
+  ActiveList get list;
+  int get oldIndex;
+  int get newIndex;
+  _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith;
+}
+
+/// @nodoc
 class _$ActivelistStateTearOff {
   const _$ActivelistStateTearOff();
 
@@ -1422,6 +1932,13 @@ class _$ActivelistStateTearOff {
   }
 
 // ignore: unused_element
+  _ListOrderChanged listOrderChanged({@required List<ActiveList> userLists}) {
+    return _ListOrderChanged(
+      userLists: userLists,
+    );
+  }
+
+// ignore: unused_element
   _Error error({@required Failure failure}) {
     return _Error(
       failure: failure,
@@ -1429,15 +1946,18 @@ class _$ActivelistStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ActivelistState = _$ActivelistStateTearOff();
 
+/// @nodoc
 mixin _$ActivelistState {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ActiveList> userLists),
+    @required Result listOrderChanged(List<ActiveList> userLists),
     @required Result error(Failure failure),
   });
   @optionalTypeArgs
@@ -1445,6 +1965,7 @@ mixin _$ActivelistState {
     Result initial(),
     Result loading(),
     Result loaded(List<ActiveList> userLists),
+    Result listOrderChanged(List<ActiveList> userLists),
     Result error(Failure failure),
     @required Result orElse(),
   });
@@ -1453,6 +1974,7 @@ mixin _$ActivelistState {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result listOrderChanged(_ListOrderChanged value),
     @required Result error(_Error value),
   });
   @optionalTypeArgs
@@ -1460,17 +1982,20 @@ mixin _$ActivelistState {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result listOrderChanged(_ListOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   });
 }
 
+/// @nodoc
 abstract class $ActivelistStateCopyWith<$Res> {
   factory $ActivelistStateCopyWith(
           ActivelistState value, $Res Function(ActivelistState) then) =
       _$ActivelistStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ActivelistStateCopyWithImpl<$Res>
     implements $ActivelistStateCopyWith<$Res> {
   _$ActivelistStateCopyWithImpl(this._value, this._then);
@@ -1480,11 +2005,13 @@ class _$ActivelistStateCopyWithImpl<$Res>
   final $Res Function(ActivelistState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -1494,6 +2021,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -1516,11 +2044,13 @@ class _$_Initial implements _Initial {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ActiveList> userLists),
+    @required Result listOrderChanged(List<ActiveList> userLists),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return initial();
   }
@@ -1531,6 +2061,7 @@ class _$_Initial implements _Initial {
     Result initial(),
     Result loading(),
     Result loaded(List<ActiveList> userLists),
+    Result listOrderChanged(List<ActiveList> userLists),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1547,11 +2078,13 @@ class _$_Initial implements _Initial {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result listOrderChanged(_ListOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return initial(this);
   }
@@ -1562,6 +2095,7 @@ class _$_Initial implements _Initial {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result listOrderChanged(_ListOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {
@@ -1577,11 +2111,13 @@ abstract class _Initial implements ActivelistState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$LoadingCopyWith<$Res> {
   factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
       __$LoadingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$LoadingCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
     implements _$LoadingCopyWith<$Res> {
   __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
@@ -1591,6 +2127,7 @@ class __$LoadingCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
   _Loading get _value => super._value as _Loading;
 }
 
+/// @nodoc
 class _$_Loading implements _Loading {
   const _$_Loading();
 
@@ -1613,11 +2150,13 @@ class _$_Loading implements _Loading {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ActiveList> userLists),
+    @required Result listOrderChanged(List<ActiveList> userLists),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return loading();
   }
@@ -1628,6 +2167,7 @@ class _$_Loading implements _Loading {
     Result initial(),
     Result loading(),
     Result loaded(List<ActiveList> userLists),
+    Result listOrderChanged(List<ActiveList> userLists),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1644,11 +2184,13 @@ class _$_Loading implements _Loading {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result listOrderChanged(_ListOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return loading(this);
   }
@@ -1659,6 +2201,7 @@ class _$_Loading implements _Loading {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result listOrderChanged(_ListOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {
@@ -1674,12 +2217,14 @@ abstract class _Loading implements ActivelistState {
   const factory _Loading() = _$_Loading;
 }
 
+/// @nodoc
 abstract class _$LoadedCopyWith<$Res> {
   factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
       __$LoadedCopyWithImpl<$Res>;
   $Res call({List<ActiveList> userLists});
 }
 
+/// @nodoc
 class __$LoadedCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
     implements _$LoadedCopyWith<$Res> {
   __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
@@ -1700,6 +2245,7 @@ class __$LoadedCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Loaded implements _Loaded {
   const _$_Loaded({@required this.userLists}) : assert(userLists != null);
 
@@ -1734,11 +2280,13 @@ class _$_Loaded implements _Loaded {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ActiveList> userLists),
+    @required Result listOrderChanged(List<ActiveList> userLists),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return loaded(userLists);
   }
@@ -1749,6 +2297,7 @@ class _$_Loaded implements _Loaded {
     Result initial(),
     Result loading(),
     Result loaded(List<ActiveList> userLists),
+    Result listOrderChanged(List<ActiveList> userLists),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1765,11 +2314,13 @@ class _$_Loaded implements _Loaded {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result listOrderChanged(_ListOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return loaded(this);
   }
@@ -1780,6 +2331,7 @@ class _$_Loaded implements _Loaded {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result listOrderChanged(_ListOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {
@@ -1798,6 +2350,145 @@ abstract class _Loaded implements ActivelistState {
   _$LoadedCopyWith<_Loaded> get copyWith;
 }
 
+/// @nodoc
+abstract class _$ListOrderChangedCopyWith<$Res> {
+  factory _$ListOrderChangedCopyWith(
+          _ListOrderChanged value, $Res Function(_ListOrderChanged) then) =
+      __$ListOrderChangedCopyWithImpl<$Res>;
+  $Res call({List<ActiveList> userLists});
+}
+
+/// @nodoc
+class __$ListOrderChangedCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res>
+    implements _$ListOrderChangedCopyWith<$Res> {
+  __$ListOrderChangedCopyWithImpl(
+      _ListOrderChanged _value, $Res Function(_ListOrderChanged) _then)
+      : super(_value, (v) => _then(v as _ListOrderChanged));
+
+  @override
+  _ListOrderChanged get _value => super._value as _ListOrderChanged;
+
+  @override
+  $Res call({
+    Object userLists = freezed,
+  }) {
+    return _then(_ListOrderChanged(
+      userLists: userLists == freezed
+          ? _value.userLists
+          : userLists as List<ActiveList>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ListOrderChanged implements _ListOrderChanged {
+  const _$_ListOrderChanged({@required this.userLists})
+      : assert(userLists != null);
+
+  @override
+  final List<ActiveList> userLists;
+
+  @override
+  String toString() {
+    return 'ActivelistState.listOrderChanged(userLists: $userLists)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ListOrderChanged &&
+            (identical(other.userLists, userLists) ||
+                const DeepCollectionEquality()
+                    .equals(other.userLists, userLists)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userLists);
+
+  @override
+  _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith =>
+      __$ListOrderChangedCopyWithImpl<_ListOrderChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result loading(),
+    @required Result loaded(List<ActiveList> userLists),
+    @required Result listOrderChanged(List<ActiveList> userLists),
+    @required Result error(Failure failure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loaded != null);
+    assert(listOrderChanged != null);
+    assert(error != null);
+    return listOrderChanged(userLists);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result loading(),
+    Result loaded(List<ActiveList> userLists),
+    Result listOrderChanged(List<ActiveList> userLists),
+    Result error(Failure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (listOrderChanged != null) {
+      return listOrderChanged(userLists);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result loading(_Loading value),
+    @required Result loaded(_Loaded value),
+    @required Result listOrderChanged(_ListOrderChanged value),
+    @required Result error(_Error value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loaded != null);
+    assert(listOrderChanged != null);
+    assert(error != null);
+    return listOrderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result loading(_Loading value),
+    Result loaded(_Loaded value),
+    Result listOrderChanged(_ListOrderChanged value),
+    Result error(_Error value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (listOrderChanged != null) {
+      return listOrderChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ListOrderChanged implements ActivelistState {
+  const factory _ListOrderChanged({@required List<ActiveList> userLists}) =
+      _$_ListOrderChanged;
+
+  List<ActiveList> get userLists;
+  _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith;
+}
+
+/// @nodoc
 abstract class _$ErrorCopyWith<$Res> {
   factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
       __$ErrorCopyWithImpl<$Res>;
@@ -1806,6 +2497,7 @@ abstract class _$ErrorCopyWith<$Res> {
   $FailureCopyWith<$Res> get failure;
 }
 
+/// @nodoc
 class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
     implements _$ErrorCopyWith<$Res> {
   __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
@@ -1834,6 +2526,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_Error implements _Error {
   const _$_Error({@required this.failure}) : assert(failure != null);
 
@@ -1867,11 +2560,13 @@ class _$_Error implements _Error {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ActiveList> userLists),
+    @required Result listOrderChanged(List<ActiveList> userLists),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return error(failure);
   }
@@ -1882,6 +2577,7 @@ class _$_Error implements _Error {
     Result initial(),
     Result loading(),
     Result loaded(List<ActiveList> userLists),
+    Result listOrderChanged(List<ActiveList> userLists),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1898,11 +2594,13 @@ class _$_Error implements _Error {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result listOrderChanged(_ListOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(listOrderChanged != null);
     assert(error != null);
     return error(this);
   }
@@ -1913,6 +2611,7 @@ class _$_Error implements _Error {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result listOrderChanged(_ListOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {

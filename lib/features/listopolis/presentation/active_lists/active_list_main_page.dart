@@ -17,7 +17,7 @@ class ActiveListMainPage extends StatefulWidget {
   ActiveListMainPage({Key key}) : super(key: key);
 
   @override
-  _ActiveListMainPageState get createState => _ActiveListMainPageState();
+  _ActiveListMainPageState createState() => _ActiveListMainPageState();
 }
 
 class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPageFunctions {
@@ -32,7 +32,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     return Scaffold(
     appBar: AppBar(
         title: Text(ActiveListStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,),
-        actions: <Widget>[_buildOverflowMenue(context)],
+        actions: <Widget>[appBarToggles(context), _buildOverflowMenue(context)],
         backgroundColor: ListColors.APP_BAR_COLOR,
     ),
     body: Container(
@@ -42,6 +42,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
               initial: (s) => showInitial(), 
               loading: (s) => showLoadingIndicator(), 
               loaded: (s) => buildLoadedLists(context, s.userLists), 
+              listOrderChanged: (s) => buildReorderList(context, s.userLists),
               error: (s) => showAppError(mapFailureToLocalizedString(s.failure)),
              // initCreateList: (s) => showLoadingIndicator()
             );
@@ -66,6 +67,47 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     
     );
 
+  }
+
+  Widget appBarToggles(BuildContext context){
+    
+  return BlocBuilder<ActivelistBloc, ActivelistState>
+            (builder: (context, state){
+              return state.map(
+                initial: (s) => buildToggleButtons([false, true], context),
+                loading: (s) => buildToggleButtons([false, true], context),
+                loaded: (s) => buildToggleButtons([false, true], context),
+                listOrderChanged:  (s) => buildToggleButtons([true, false], context),
+                error: (s) => buildToggleButtons([false, true], context),
+              );
+            }
+            );
+   
+  }
+
+   ToggleButtons buildToggleButtons(List<bool> selected, BuildContext context){
+    List<Widget> toggleItems = [
+      Icon(Icons.swap_vert),
+      Icon(Icons.list)
+    ];
+    return ToggleButtons(
+        children: toggleItems,
+        isSelected: selected,
+        selectedColor: ListColors.ICON_ACTIVE_LIST_CEATION_MODE,
+        //color: Colors.lightBlue,
+        onPressed: (idx){
+          
+          ActivelistBloc aBloc =  BlocProvider.of<ActivelistBloc>(context);
+          if(idx == 0){
+            aBloc.add(ActivelistEvent.loadForReorder());
+          }else{
+            aBloc.add(ActivelistEvent.load());
+          }
+          // setState(() {
+            
+          // });
+        },
+    );
   }
    navigateToCreateListScreen(BuildContext context) {
       BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.startListCreation());
@@ -237,6 +279,43 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     },
     );
   }
+
+   Widget buildReorderList(BuildContext context,  List<ActiveList> listitems){
+    
+    List<Widget> childrenWidgets = _buildReorderListItems(listitems, context);
+    Map<int, ActiveList> posToList = Map.fromEntries(listitems.map((e) => MapEntry(e.position, e)));
+    
+    return Theme(data: ThemeData(canvasColor: Colors.transparent), 
+    child: ReorderableListView(
+             // header: headerWidget,
+              children: childrenWidgets,
+              onReorder: (oldIdx, newIdx){
+                  ActivelistBloc aBloc =  BlocProvider.of<ActivelistBloc>(context);
+                  ActiveList changedList = posToList[oldIdx+1];
+                  aBloc.add(ActivelistEvent.changeListPosition(list: changedList, oldIndex: oldIdx+1, newIndex: newIdx+1));
+              },
+          ));
+ }
+ List<Widget> _buildReorderListItems(List<ActiveList> listitems, BuildContext context){
+   listitems.sort((l1, l2) => l1.position.compareTo(l2.position));
+    List<Widget> erg = [];
+    for(ActiveList lItem in listitems){
+      erg.add(_buildReorderListItem(context, lItem));
+    }
+     //listitems.map((e){_buildListItemInput(context, e);}).toList();
+    return erg;
+ }
+  Widget _buildReorderListItem(BuildContext context, ActiveList listItem){
+   
+            return Container(
+              key: ValueKey(listItem.id),
+              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)) ),
+              child: ListTile(
+                title: Text("${listItem.position} - ${listItem.name}", style: ListColors.DEF_TEXT_STYLE,)
+              
+              ),
+            );
+ }
 
    _deleteList(BuildContext context, ActiveList list){
     ActivelistBloc listBloc = BlocProvider.of<ActivelistBloc>(context);

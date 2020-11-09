@@ -9,6 +9,7 @@ part of 'list_creation_mode.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ListEditModeTearOff {
   const _$ListEditModeTearOff();
 
@@ -38,9 +39,11 @@ class _$ListEditModeTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ListEditMode = _$ListEditModeTearOff();
 
+/// @nodoc
 mixin _$ListEditMode {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -78,12 +81,14 @@ mixin _$ListEditMode {
   });
 }
 
+/// @nodoc
 abstract class $ListEditModeCopyWith<$Res> {
   factory $ListEditModeCopyWith(
           ListEditMode value, $Res Function(ListEditMode) then) =
       _$ListEditModeCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ListEditModeCopyWithImpl<$Res> implements $ListEditModeCopyWith<$Res> {
   _$ListEditModeCopyWithImpl(this._value, this._then);
 
@@ -92,12 +97,14 @@ class _$ListEditModeCopyWithImpl<$Res> implements $ListEditModeCopyWith<$Res> {
   final $Res Function(ListEditMode) _then;
 }
 
+/// @nodoc
 abstract class _$EditListCreationCopyWith<$Res> {
   factory _$EditListCreationCopyWith(
           _EditListCreation value, $Res Function(_EditListCreation) then) =
       __$EditListCreationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$EditListCreationCopyWithImpl<$Res>
     extends _$ListEditModeCopyWithImpl<$Res>
     implements _$EditListCreationCopyWith<$Res> {
@@ -109,6 +116,7 @@ class __$EditListCreationCopyWithImpl<$Res>
   _EditListCreation get _value => super._value as _EditListCreation;
 }
 
+/// @nodoc
 class _$_EditListCreation implements _EditListCreation {
   const _$_EditListCreation();
 
@@ -198,12 +206,14 @@ abstract class _EditListCreation implements ListEditMode {
   const factory _EditListCreation() = _$_EditListCreation;
 }
 
+/// @nodoc
 abstract class _$EditListEditingCopyWith<$Res> {
   factory _$EditListEditingCopyWith(
           _EditListEditing value, $Res Function(_EditListEditing) then) =
       __$EditListEditingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$EditListEditingCopyWithImpl<$Res>
     extends _$ListEditModeCopyWithImpl<$Res>
     implements _$EditListEditingCopyWith<$Res> {
@@ -215,6 +225,7 @@ class __$EditListEditingCopyWithImpl<$Res>
   _EditListEditing get _value => super._value as _EditListEditing;
 }
 
+/// @nodoc
 class _$_EditListEditing implements _EditListEditing {
   const _$_EditListEditing();
 
@@ -304,12 +315,14 @@ abstract class _EditListEditing implements ListEditMode {
   const factory _EditListEditing() = _$_EditListEditing;
 }
 
+/// @nodoc
 abstract class _$EditTemplateCreationCopyWith<$Res> {
   factory _$EditTemplateCreationCopyWith(_EditTemplateCreation value,
           $Res Function(_EditTemplateCreation) then) =
       __$EditTemplateCreationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$EditTemplateCreationCopyWithImpl<$Res>
     extends _$ListEditModeCopyWithImpl<$Res>
     implements _$EditTemplateCreationCopyWith<$Res> {
@@ -321,6 +334,7 @@ class __$EditTemplateCreationCopyWithImpl<$Res>
   _EditTemplateCreation get _value => super._value as _EditTemplateCreation;
 }
 
+/// @nodoc
 class _$_EditTemplateCreation implements _EditTemplateCreation {
   const _$_EditTemplateCreation();
 
@@ -410,12 +424,14 @@ abstract class _EditTemplateCreation implements ListEditMode {
   const factory _EditTemplateCreation() = _$_EditTemplateCreation;
 }
 
+/// @nodoc
 abstract class _$EditTemplateEditingCopyWith<$Res> {
   factory _$EditTemplateEditingCopyWith(_EditTemplateEditing value,
           $Res Function(_EditTemplateEditing) then) =
       __$EditTemplateEditingCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$EditTemplateEditingCopyWithImpl<$Res>
     extends _$ListEditModeCopyWithImpl<$Res>
     implements _$EditTemplateEditingCopyWith<$Res> {
@@ -427,6 +443,7 @@ class __$EditTemplateEditingCopyWithImpl<$Res>
   _EditTemplateEditing get _value => super._value as _EditTemplateEditing;
 }
 
+/// @nodoc
 class _$_EditTemplateEditing implements _EditTemplateEditing {
   const _$_EditTemplateEditing();
 
@@ -516,6 +533,7 @@ abstract class _EditTemplateEditing implements ListEditMode {
   const factory _EditTemplateEditing() = _$_EditTemplateEditing;
 }
 
+/// @nodoc
 abstract class _$EditTransferTemplateToListCopyWith<$Res> {
   factory _$EditTransferTemplateToListCopyWith(
           _EditTransferTemplateToList value,
@@ -523,6 +541,7 @@ abstract class _$EditTransferTemplateToListCopyWith<$Res> {
       __$EditTransferTemplateToListCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$EditTransferTemplateToListCopyWithImpl<$Res>
     extends _$ListEditModeCopyWithImpl<$Res>
     implements _$EditTransferTemplateToListCopyWith<$Res> {
@@ -535,6 +554,7 @@ class __$EditTransferTemplateToListCopyWithImpl<$Res>
       super._value as _EditTransferTemplateToList;
 }
 
+/// @nodoc
 class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
   const _$_EditTransferTemplateToList();
 

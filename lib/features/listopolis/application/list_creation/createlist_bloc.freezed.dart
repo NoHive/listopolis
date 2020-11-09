@@ -9,6 +9,7 @@ part of 'createlist_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CreatelistEventTearOff {
   const _$CreatelistEventTearOff();
 
@@ -87,9 +88,11 @@ class _$CreatelistEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CreatelistEvent = _$CreatelistEventTearOff();
 
+/// @nodoc
 mixin _$CreatelistEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -155,12 +158,14 @@ mixin _$CreatelistEvent {
   });
 }
 
+/// @nodoc
 abstract class $CreatelistEventCopyWith<$Res> {
   factory $CreatelistEventCopyWith(
           CreatelistEvent value, $Res Function(CreatelistEvent) then) =
       _$CreatelistEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CreatelistEventCopyWithImpl<$Res>
     implements $CreatelistEventCopyWith<$Res> {
   _$CreatelistEventCopyWithImpl(this._value, this._then);
@@ -170,11 +175,13 @@ class _$CreatelistEventCopyWithImpl<$Res>
   final $Res Function(CreatelistEvent) _then;
 }
 
+/// @nodoc
 abstract class _$StartedCopyWith<$Res> {
   factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
       __$StartedCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartedCopyWithImpl<$Res> extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$StartedCopyWith<$Res> {
   __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
@@ -184,6 +191,7 @@ class __$StartedCopyWithImpl<$Res> extends _$CreatelistEventCopyWithImpl<$Res>
   _Started get _value => super._value as _Started;
 }
 
+/// @nodoc
 class _$_Started implements _Started {
   const _$_Started();
 
@@ -315,12 +323,14 @@ abstract class _Started implements CreatelistEvent {
   const factory _Started() = _$_Started;
 }
 
+/// @nodoc
 abstract class _$StartListCreationCopyWith<$Res> {
   factory _$StartListCreationCopyWith(
           _StartListCreation value, $Res Function(_StartListCreation) then) =
       __$StartListCreationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartListCreationCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$StartListCreationCopyWith<$Res> {
@@ -332,6 +342,7 @@ class __$StartListCreationCopyWithImpl<$Res>
   _StartListCreation get _value => super._value as _StartListCreation;
 }
 
+/// @nodoc
 class _$_StartListCreation implements _StartListCreation {
   const _$_StartListCreation();
 
@@ -463,12 +474,14 @@ abstract class _StartListCreation implements CreatelistEvent {
   const factory _StartListCreation() = _$_StartListCreation;
 }
 
+/// @nodoc
 abstract class _$StartTemplateCreationCopyWith<$Res> {
   factory _$StartTemplateCreationCopyWith(_StartTemplateCreation value,
           $Res Function(_StartTemplateCreation) then) =
       __$StartTemplateCreationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$StartTemplateCreationCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$StartTemplateCreationCopyWith<$Res> {
@@ -480,6 +493,7 @@ class __$StartTemplateCreationCopyWithImpl<$Res>
   _StartTemplateCreation get _value => super._value as _StartTemplateCreation;
 }
 
+/// @nodoc
 class _$_StartTemplateCreation implements _StartTemplateCreation {
   const _$_StartTemplateCreation();
 
@@ -611,12 +625,14 @@ abstract class _StartTemplateCreation implements CreatelistEvent {
   const factory _StartTemplateCreation() = _$_StartTemplateCreation;
 }
 
+/// @nodoc
 abstract class _$ChangeListCopyWith<$Res> {
   factory _$ChangeListCopyWith(
           _ChangeList value, $Res Function(_ChangeList) then) =
       __$ChangeListCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$ChangeListCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$ChangeListCopyWith<$Res> {
@@ -628,6 +644,7 @@ class __$ChangeListCopyWithImpl<$Res>
   _ChangeList get _value => super._value as _ChangeList;
 }
 
+/// @nodoc
 class _$_ChangeList implements _ChangeList {
   const _$_ChangeList();
 
@@ -759,12 +776,14 @@ abstract class _ChangeList implements CreatelistEvent {
   const factory _ChangeList() = _$_ChangeList;
 }
 
+/// @nodoc
 abstract class _$SwitchToCreationCopyWith<$Res> {
   factory _$SwitchToCreationCopyWith(
           _SwitchToCreation value, $Res Function(_SwitchToCreation) then) =
       __$SwitchToCreationCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SwitchToCreationCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$SwitchToCreationCopyWith<$Res> {
@@ -776,6 +795,7 @@ class __$SwitchToCreationCopyWithImpl<$Res>
   _SwitchToCreation get _value => super._value as _SwitchToCreation;
 }
 
+/// @nodoc
 class _$_SwitchToCreation implements _SwitchToCreation {
   const _$_SwitchToCreation();
 
@@ -907,12 +927,14 @@ abstract class _SwitchToCreation implements CreatelistEvent {
   const factory _SwitchToCreation() = _$_SwitchToCreation;
 }
 
+/// @nodoc
 abstract class _$SwitchToReorderCopyWith<$Res> {
   factory _$SwitchToReorderCopyWith(
           _SwitchToReorder value, $Res Function(_SwitchToReorder) then) =
       __$SwitchToReorderCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$SwitchToReorderCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$SwitchToReorderCopyWith<$Res> {
@@ -924,6 +946,7 @@ class __$SwitchToReorderCopyWithImpl<$Res>
   _SwitchToReorder get _value => super._value as _SwitchToReorder;
 }
 
+/// @nodoc
 class _$_SwitchToReorder implements _SwitchToReorder {
   const _$_SwitchToReorder();
 
@@ -1055,6 +1078,7 @@ abstract class _SwitchToReorder implements CreatelistEvent {
   const factory _SwitchToReorder() = _$_SwitchToReorder;
 }
 
+/// @nodoc
 abstract class _$AddListPositionAfterCopyWith<$Res> {
   factory _$AddListPositionAfterCopyWith(_AddListPositionAfter value,
           $Res Function(_AddListPositionAfter) then) =
@@ -1062,6 +1086,7 @@ abstract class _$AddListPositionAfterCopyWith<$Res> {
   $Res call({int index});
 }
 
+/// @nodoc
 class __$AddListPositionAfterCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$AddListPositionAfterCopyWith<$Res> {
@@ -1082,6 +1107,7 @@ class __$AddListPositionAfterCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_AddListPositionAfter implements _AddListPositionAfter {
   const _$_AddListPositionAfter({@required this.index}) : assert(index != null);
 
@@ -1229,6 +1255,7 @@ abstract class _AddListPositionAfter implements CreatelistEvent {
   _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith;
 }
 
+/// @nodoc
 abstract class _$RemoveListPositionCopyWith<$Res> {
   factory _$RemoveListPositionCopyWith(
           _RemoveListPosition value, $Res Function(_RemoveListPosition) then) =
@@ -1236,6 +1263,7 @@ abstract class _$RemoveListPositionCopyWith<$Res> {
   $Res call({int index});
 }
 
+/// @nodoc
 class __$RemoveListPositionCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$RemoveListPositionCopyWith<$Res> {
@@ -1256,6 +1284,7 @@ class __$RemoveListPositionCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_RemoveListPosition implements _RemoveListPosition {
   const _$_RemoveListPosition({@required this.index}) : assert(index != null);
 
@@ -1402,6 +1431,7 @@ abstract class _RemoveListPosition implements CreatelistEvent {
   _$RemoveListPositionCopyWith<_RemoveListPosition> get copyWith;
 }
 
+/// @nodoc
 abstract class _$ChangeItemOrderCopyWith<$Res> {
   factory _$ChangeItemOrderCopyWith(
           _ChangeItemOrder value, $Res Function(_ChangeItemOrder) then) =
@@ -1409,6 +1439,7 @@ abstract class _$ChangeItemOrderCopyWith<$Res> {
   $Res call({int oldIndex, int newIndex});
 }
 
+/// @nodoc
 class __$ChangeItemOrderCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$ChangeItemOrderCopyWith<$Res> {
@@ -1431,6 +1462,7 @@ class __$ChangeItemOrderCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ChangeItemOrder implements _ChangeItemOrder {
   const _$_ChangeItemOrder({@required this.oldIndex, @required this.newIndex})
       : assert(oldIndex != null),
@@ -1588,6 +1620,7 @@ abstract class _ChangeItemOrder implements CreatelistEvent {
   _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith;
 }
 
+/// @nodoc
 abstract class _$EditActiveListCopyWith<$Res> {
   factory _$EditActiveListCopyWith(
           _EditActiveList value, $Res Function(_EditActiveList) then) =
@@ -1597,6 +1630,7 @@ abstract class _$EditActiveListCopyWith<$Res> {
   $ActiveListCopyWith<$Res> get list;
 }
 
+/// @nodoc
 class __$EditActiveListCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$EditActiveListCopyWith<$Res> {
@@ -1627,6 +1661,7 @@ class __$EditActiveListCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EditActiveList implements _EditActiveList {
   const _$_EditActiveList({@required this.list}) : assert(list != null);
 
@@ -1773,6 +1808,7 @@ abstract class _EditActiveList implements CreatelistEvent {
   _$EditActiveListCopyWith<_EditActiveList> get copyWith;
 }
 
+/// @nodoc
 abstract class _$EditTemplateCopyWith<$Res> {
   factory _$EditTemplateCopyWith(
           _EditTemplate value, $Res Function(_EditTemplate) then) =
@@ -1782,6 +1818,7 @@ abstract class _$EditTemplateCopyWith<$Res> {
   $ListTemplateCopyWith<$Res> get template;
 }
 
+/// @nodoc
 class __$EditTemplateCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$EditTemplateCopyWith<$Res> {
@@ -1813,6 +1850,7 @@ class __$EditTemplateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_EditTemplate implements _EditTemplate {
   const _$_EditTemplate({@required this.template}) : assert(template != null);
 
@@ -1960,6 +1998,7 @@ abstract class _EditTemplate implements CreatelistEvent {
   _$EditTemplateCopyWith<_EditTemplate> get copyWith;
 }
 
+/// @nodoc
 abstract class _$UseTemplateAsListCopyWith<$Res> {
   factory _$UseTemplateAsListCopyWith(
           _UseTemplateAsList value, $Res Function(_UseTemplateAsList) then) =
@@ -1969,6 +2008,7 @@ abstract class _$UseTemplateAsListCopyWith<$Res> {
   $ListTemplateCopyWith<$Res> get template;
 }
 
+/// @nodoc
 class __$UseTemplateAsListCopyWithImpl<$Res>
     extends _$CreatelistEventCopyWithImpl<$Res>
     implements _$UseTemplateAsListCopyWith<$Res> {
@@ -2000,6 +2040,7 @@ class __$UseTemplateAsListCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_UseTemplateAsList implements _UseTemplateAsList {
   const _$_UseTemplateAsList({@required this.template})
       : assert(template != null);
@@ -2148,6 +2189,7 @@ abstract class _UseTemplateAsList implements CreatelistEvent {
   _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith;
 }
 
+/// @nodoc
 class _$CreatelistStateTearOff {
   const _$CreatelistStateTearOff();
 
@@ -2180,9 +2222,11 @@ class _$CreatelistStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CreatelistState = _$CreatelistStateTearOff();
 
+/// @nodoc
 mixin _$CreatelistState {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -2216,12 +2260,14 @@ mixin _$CreatelistState {
   });
 }
 
+/// @nodoc
 abstract class $CreatelistStateCopyWith<$Res> {
   factory $CreatelistStateCopyWith(
           CreatelistState value, $Res Function(CreatelistState) then) =
       _$CreatelistStateCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CreatelistStateCopyWithImpl<$Res>
     implements $CreatelistStateCopyWith<$Res> {
   _$CreatelistStateCopyWithImpl(this._value, this._then);
@@ -2231,11 +2277,13 @@ class _$CreatelistStateCopyWithImpl<$Res>
   final $Res Function(CreatelistState) _then;
 }
 
+/// @nodoc
 abstract class _$InitialCopyWith<$Res> {
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class __$InitialCopyWithImpl<$Res> extends _$CreatelistStateCopyWithImpl<$Res>
     implements _$InitialCopyWith<$Res> {
   __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
@@ -2245,6 +2293,7 @@ class __$InitialCopyWithImpl<$Res> extends _$CreatelistStateCopyWithImpl<$Res>
   _Initial get _value => super._value as _Initial;
 }
 
+/// @nodoc
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -2328,6 +2377,7 @@ abstract class _Initial implements CreatelistState {
   const factory _Initial() = _$_Initial;
 }
 
+/// @nodoc
 abstract class _$ListChangedCopyWith<$Res> {
   factory _$ListChangedCopyWith(
           _ListChanged value, $Res Function(_ListChanged) then) =
@@ -2335,6 +2385,7 @@ abstract class _$ListChangedCopyWith<$Res> {
   $Res call({CreateListParameter creationParam});
 }
 
+/// @nodoc
 class __$ListChangedCopyWithImpl<$Res>
     extends _$CreatelistStateCopyWithImpl<$Res>
     implements _$ListChangedCopyWith<$Res> {
@@ -2357,6 +2408,7 @@ class __$ListChangedCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_ListChanged implements _ListChanged {
   const _$_ListChanged({@required this.creationParam})
       : assert(creationParam != null);
@@ -2457,6 +2509,7 @@ abstract class _ListChanged implements CreatelistState {
   _$ListChangedCopyWith<_ListChanged> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SwitchedToCreateCopyWith<$Res> {
   factory _$SwitchedToCreateCopyWith(
           _SwitchedToCreate value, $Res Function(_SwitchedToCreate) then) =
@@ -2464,6 +2517,7 @@ abstract class _$SwitchedToCreateCopyWith<$Res> {
   $Res call({CreateListParameter creationParam});
 }
 
+/// @nodoc
 class __$SwitchedToCreateCopyWithImpl<$Res>
     extends _$CreatelistStateCopyWithImpl<$Res>
     implements _$SwitchedToCreateCopyWith<$Res> {
@@ -2486,6 +2540,7 @@ class __$SwitchedToCreateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SwitchedToCreate implements _SwitchedToCreate {
   const _$_SwitchedToCreate({@required this.creationParam})
       : assert(creationParam != null);
@@ -2586,6 +2641,7 @@ abstract class _SwitchedToCreate implements CreatelistState {
   _$SwitchedToCreateCopyWith<_SwitchedToCreate> get copyWith;
 }
 
+/// @nodoc
 abstract class _$SwitchedToReorderCopyWith<$Res> {
   factory _$SwitchedToReorderCopyWith(
           _SwitchedToReorder value, $Res Function(_SwitchedToReorder) then) =
@@ -2593,6 +2649,7 @@ abstract class _$SwitchedToReorderCopyWith<$Res> {
   $Res call({CreateListParameter creationParam});
 }
 
+/// @nodoc
 class __$SwitchedToReorderCopyWithImpl<$Res>
     extends _$CreatelistStateCopyWithImpl<$Res>
     implements _$SwitchedToReorderCopyWith<$Res> {
@@ -2615,6 +2672,7 @@ class __$SwitchedToReorderCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SwitchedToReorder implements _SwitchedToReorder {
   const _$_SwitchedToReorder({@required this.creationParam})
       : assert(creationParam != null);
