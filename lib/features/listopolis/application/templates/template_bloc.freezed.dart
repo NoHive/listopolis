@@ -19,6 +19,11 @@ class _$TemplateEventTearOff {
   }
 
 // ignore: unused_element
+  _LoadTemplatesForReorder loadTemplatesForReorder() {
+    return const _LoadTemplatesForReorder();
+  }
+
+// ignore: unused_element
   _InsertNewTemplate insertNewTemplate(
       {@required CreateListParameter listParameter}) {
     return _InsertNewTemplate(
@@ -51,6 +56,16 @@ class _$TemplateEventTearOff {
       list: list,
     );
   }
+
+// ignore: unused_element
+  _ChangeTemplatePosition changeTemplatePosition(
+      {@required ListTemplate template, int oldIndex, int newIndex}) {
+    return _ChangeTemplatePosition(
+      template: template,
+      oldIndex: oldIndex,
+      newIndex: newIndex,
+    );
+  }
 }
 
 /// @nodoc
@@ -62,6 +77,7 @@ mixin _$TemplateEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadTemplatesForReorder(),
     @required Result insertNewTemplate(CreateListParameter listParameter),
     @required
         Result deleteTemplatePosition(
@@ -70,33 +86,43 @@ mixin _$TemplateEvent {
     @required
         Result replaceTemplate(
             CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadTemplatesForReorder(),
     Result insertNewTemplate(CreateListParameter listParameter),
     Result deleteTemplatePosition(
         ListTemplate list, ListTemplatePosition position),
     Result deleteTemplate(ListTemplate list),
     Result replaceTemplate(
         CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     @required Result insertNewTemplate(_InsertNewTemplate value),
     @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
     @required Result deleteTemplate(_DeleteTemplate value),
     @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     Result insertNewTemplate(_InsertNewTemplate value),
     Result deleteTemplatePosition(_DeleteTemplatePosition value),
     Result deleteTemplate(_DeleteTemplate value),
     Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
     @required Result orElse(),
   });
 }
@@ -158,6 +184,7 @@ class _$_LoadTemplates implements _LoadTemplates {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadTemplatesForReorder(),
     @required Result insertNewTemplate(CreateListParameter listParameter),
     @required
         Result deleteTemplatePosition(
@@ -166,12 +193,17 @@ class _$_LoadTemplates implements _LoadTemplates {
     @required
         Result replaceTemplate(
             CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return load();
   }
 
@@ -179,12 +211,15 @@ class _$_LoadTemplates implements _LoadTemplates {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadTemplatesForReorder(),
     Result insertNewTemplate(CreateListParameter listParameter),
     Result deleteTemplatePosition(
         ListTemplate list, ListTemplatePosition position),
     Result deleteTemplate(ListTemplate list),
     Result replaceTemplate(
         CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -198,16 +233,20 @@ class _$_LoadTemplates implements _LoadTemplates {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     @required Result insertNewTemplate(_InsertNewTemplate value),
     @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
     @required Result deleteTemplate(_DeleteTemplate value),
     @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return load(this);
   }
 
@@ -215,10 +254,12 @@ class _$_LoadTemplates implements _LoadTemplates {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     Result insertNewTemplate(_InsertNewTemplate value),
     Result deleteTemplatePosition(_DeleteTemplatePosition value),
     Result deleteTemplate(_DeleteTemplate value),
     Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -231,6 +272,137 @@ class _$_LoadTemplates implements _LoadTemplates {
 
 abstract class _LoadTemplates implements TemplateEvent {
   const factory _LoadTemplates() = _$_LoadTemplates;
+}
+
+/// @nodoc
+abstract class _$LoadTemplatesForReorderCopyWith<$Res> {
+  factory _$LoadTemplatesForReorderCopyWith(_LoadTemplatesForReorder value,
+          $Res Function(_LoadTemplatesForReorder) then) =
+      __$LoadTemplatesForReorderCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LoadTemplatesForReorderCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res>
+    implements _$LoadTemplatesForReorderCopyWith<$Res> {
+  __$LoadTemplatesForReorderCopyWithImpl(_LoadTemplatesForReorder _value,
+      $Res Function(_LoadTemplatesForReorder) _then)
+      : super(_value, (v) => _then(v as _LoadTemplatesForReorder));
+
+  @override
+  _LoadTemplatesForReorder get _value =>
+      super._value as _LoadTemplatesForReorder;
+}
+
+/// @nodoc
+class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
+  const _$_LoadTemplatesForReorder();
+
+  @override
+  String toString() {
+    return 'TemplateEvent.loadTemplatesForReorder()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LoadTemplatesForReorder);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadTemplatesForReorder(),
+    @required Result insertNewTemplate(CreateListParameter listParameter),
+    @required
+        Result deleteTemplatePosition(
+            ListTemplate list, ListTemplatePosition position),
+    @required Result deleteTemplate(ListTemplate list),
+    @required
+        Result replaceTemplate(
+            CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
+  }) {
+    assert(load != null);
+    assert(loadTemplatesForReorder != null);
+    assert(insertNewTemplate != null);
+    assert(deleteTemplatePosition != null);
+    assert(deleteTemplate != null);
+    assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
+    return loadTemplatesForReorder();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadTemplatesForReorder(),
+    Result insertNewTemplate(CreateListParameter listParameter),
+    Result deleteTemplatePosition(
+        ListTemplate list, ListTemplatePosition position),
+    Result deleteTemplate(ListTemplate list),
+    Result replaceTemplate(
+        CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadTemplatesForReorder != null) {
+      return loadTemplatesForReorder();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
+    @required Result insertNewTemplate(_InsertNewTemplate value),
+    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
+    @required Result deleteTemplate(_DeleteTemplate value),
+    @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  }) {
+    assert(load != null);
+    assert(loadTemplatesForReorder != null);
+    assert(insertNewTemplate != null);
+    assert(deleteTemplatePosition != null);
+    assert(deleteTemplate != null);
+    assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
+    return loadTemplatesForReorder(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
+    Result insertNewTemplate(_InsertNewTemplate value),
+    Result deleteTemplatePosition(_DeleteTemplatePosition value),
+    Result deleteTemplate(_DeleteTemplate value),
+    Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadTemplatesForReorder != null) {
+      return loadTemplatesForReorder(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadTemplatesForReorder implements TemplateEvent {
+  const factory _LoadTemplatesForReorder() = _$_LoadTemplatesForReorder;
 }
 
 /// @nodoc
@@ -298,6 +470,7 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadTemplatesForReorder(),
     @required Result insertNewTemplate(CreateListParameter listParameter),
     @required
         Result deleteTemplatePosition(
@@ -306,12 +479,17 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
     @required
         Result replaceTemplate(
             CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return insertNewTemplate(listParameter);
   }
 
@@ -319,12 +497,15 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadTemplatesForReorder(),
     Result insertNewTemplate(CreateListParameter listParameter),
     Result deleteTemplatePosition(
         ListTemplate list, ListTemplatePosition position),
     Result deleteTemplate(ListTemplate list),
     Result replaceTemplate(
         CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -338,16 +519,20 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     @required Result insertNewTemplate(_InsertNewTemplate value),
     @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
     @required Result deleteTemplate(_DeleteTemplate value),
     @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return insertNewTemplate(this);
   }
 
@@ -355,10 +540,12 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     Result insertNewTemplate(_InsertNewTemplate value),
     Result deleteTemplatePosition(_DeleteTemplatePosition value),
     Result deleteTemplate(_DeleteTemplate value),
     Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -476,6 +663,7 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadTemplatesForReorder(),
     @required Result insertNewTemplate(CreateListParameter listParameter),
     @required
         Result deleteTemplatePosition(
@@ -484,12 +672,17 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
     @required
         Result replaceTemplate(
             CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return deleteTemplatePosition(list, position);
   }
 
@@ -497,12 +690,15 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadTemplatesForReorder(),
     Result insertNewTemplate(CreateListParameter listParameter),
     Result deleteTemplatePosition(
         ListTemplate list, ListTemplatePosition position),
     Result deleteTemplate(ListTemplate list),
     Result replaceTemplate(
         CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -516,16 +712,20 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     @required Result insertNewTemplate(_InsertNewTemplate value),
     @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
     @required Result deleteTemplate(_DeleteTemplate value),
     @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return deleteTemplatePosition(this);
   }
 
@@ -533,10 +733,12 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     Result insertNewTemplate(_InsertNewTemplate value),
     Result deleteTemplatePosition(_DeleteTemplatePosition value),
     Result deleteTemplate(_DeleteTemplate value),
     Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -630,6 +832,7 @@ class _$_DeleteTemplate implements _DeleteTemplate {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadTemplatesForReorder(),
     @required Result insertNewTemplate(CreateListParameter listParameter),
     @required
         Result deleteTemplatePosition(
@@ -638,12 +841,17 @@ class _$_DeleteTemplate implements _DeleteTemplate {
     @required
         Result replaceTemplate(
             CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return deleteTemplate(list);
   }
 
@@ -651,12 +859,15 @@ class _$_DeleteTemplate implements _DeleteTemplate {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadTemplatesForReorder(),
     Result insertNewTemplate(CreateListParameter listParameter),
     Result deleteTemplatePosition(
         ListTemplate list, ListTemplatePosition position),
     Result deleteTemplate(ListTemplate list),
     Result replaceTemplate(
         CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -670,16 +881,20 @@ class _$_DeleteTemplate implements _DeleteTemplate {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     @required Result insertNewTemplate(_InsertNewTemplate value),
     @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
     @required Result deleteTemplate(_DeleteTemplate value),
     @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return deleteTemplate(this);
   }
 
@@ -687,10 +902,12 @@ class _$_DeleteTemplate implements _DeleteTemplate {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     Result insertNewTemplate(_InsertNewTemplate value),
     Result deleteTemplatePosition(_DeleteTemplatePosition value),
     Result deleteTemplate(_DeleteTemplate value),
     Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -795,6 +1012,7 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result load(),
+    @required Result loadTemplatesForReorder(),
     @required Result insertNewTemplate(CreateListParameter listParameter),
     @required
         Result deleteTemplatePosition(
@@ -803,12 +1021,17 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
     @required
         Result replaceTemplate(
             CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return replaceTemplate(listParameter, list);
   }
 
@@ -816,12 +1039,15 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result load(),
+    Result loadTemplatesForReorder(),
     Result insertNewTemplate(CreateListParameter listParameter),
     Result deleteTemplatePosition(
         ListTemplate list, ListTemplatePosition position),
     Result deleteTemplate(ListTemplate list),
     Result replaceTemplate(
         CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -835,16 +1061,20 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     @required Result insertNewTemplate(_InsertNewTemplate value),
     @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
     @required Result deleteTemplate(_DeleteTemplate value),
     @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
   }) {
     assert(load != null);
+    assert(loadTemplatesForReorder != null);
     assert(insertNewTemplate != null);
     assert(deleteTemplatePosition != null);
     assert(deleteTemplate != null);
     assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
     return replaceTemplate(this);
   }
 
@@ -852,10 +1082,12 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
     Result insertNewTemplate(_InsertNewTemplate value),
     Result deleteTemplatePosition(_DeleteTemplatePosition value),
     Result deleteTemplate(_DeleteTemplate value),
     Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -874,6 +1106,199 @@ abstract class _ReplaceTemplate implements TemplateEvent {
   CreateListParameter get listParameter;
   ListTemplate get list;
   _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ChangeTemplatePositionCopyWith<$Res> {
+  factory _$ChangeTemplatePositionCopyWith(_ChangeTemplatePosition value,
+          $Res Function(_ChangeTemplatePosition) then) =
+      __$ChangeTemplatePositionCopyWithImpl<$Res>;
+  $Res call({ListTemplate template, int oldIndex, int newIndex});
+
+  $ListTemplateCopyWith<$Res> get template;
+}
+
+/// @nodoc
+class __$ChangeTemplatePositionCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res>
+    implements _$ChangeTemplatePositionCopyWith<$Res> {
+  __$ChangeTemplatePositionCopyWithImpl(_ChangeTemplatePosition _value,
+      $Res Function(_ChangeTemplatePosition) _then)
+      : super(_value, (v) => _then(v as _ChangeTemplatePosition));
+
+  @override
+  _ChangeTemplatePosition get _value => super._value as _ChangeTemplatePosition;
+
+  @override
+  $Res call({
+    Object template = freezed,
+    Object oldIndex = freezed,
+    Object newIndex = freezed,
+  }) {
+    return _then(_ChangeTemplatePosition(
+      template:
+          template == freezed ? _value.template : template as ListTemplate,
+      oldIndex: oldIndex == freezed ? _value.oldIndex : oldIndex as int,
+      newIndex: newIndex == freezed ? _value.newIndex : newIndex as int,
+    ));
+  }
+
+  @override
+  $ListTemplateCopyWith<$Res> get template {
+    if (_value.template == null) {
+      return null;
+    }
+    return $ListTemplateCopyWith<$Res>(_value.template, (value) {
+      return _then(_value.copyWith(template: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
+  const _$_ChangeTemplatePosition(
+      {@required this.template, this.oldIndex, this.newIndex})
+      : assert(template != null);
+
+  @override
+  final ListTemplate template;
+  @override
+  final int oldIndex;
+  @override
+  final int newIndex;
+
+  @override
+  String toString() {
+    return 'TemplateEvent.changeTemplatePosition(template: $template, oldIndex: $oldIndex, newIndex: $newIndex)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChangeTemplatePosition &&
+            (identical(other.template, template) ||
+                const DeepCollectionEquality()
+                    .equals(other.template, template)) &&
+            (identical(other.oldIndex, oldIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.oldIndex, oldIndex)) &&
+            (identical(other.newIndex, newIndex) ||
+                const DeepCollectionEquality()
+                    .equals(other.newIndex, newIndex)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(template) ^
+      const DeepCollectionEquality().hash(oldIndex) ^
+      const DeepCollectionEquality().hash(newIndex);
+
+  @override
+  _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith =>
+      __$ChangeTemplatePositionCopyWithImpl<_ChangeTemplatePosition>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadTemplatesForReorder(),
+    @required Result insertNewTemplate(CreateListParameter listParameter),
+    @required
+        Result deleteTemplatePosition(
+            ListTemplate list, ListTemplatePosition position),
+    @required Result deleteTemplate(ListTemplate list),
+    @required
+        Result replaceTemplate(
+            CreateListParameter listParameter, ListTemplate list),
+    @required
+        Result changeTemplatePosition(
+            ListTemplate template, int oldIndex, int newIndex),
+  }) {
+    assert(load != null);
+    assert(loadTemplatesForReorder != null);
+    assert(insertNewTemplate != null);
+    assert(deleteTemplatePosition != null);
+    assert(deleteTemplate != null);
+    assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
+    return changeTemplatePosition(template, oldIndex, newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadTemplatesForReorder(),
+    Result insertNewTemplate(CreateListParameter listParameter),
+    Result deleteTemplatePosition(
+        ListTemplate list, ListTemplatePosition position),
+    Result deleteTemplate(ListTemplate list),
+    Result replaceTemplate(
+        CreateListParameter listParameter, ListTemplate list),
+    Result changeTemplatePosition(
+        ListTemplate template, int oldIndex, int newIndex),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTemplatePosition != null) {
+      return changeTemplatePosition(template, oldIndex, newIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadTemplates value),
+    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
+    @required Result insertNewTemplate(_InsertNewTemplate value),
+    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
+    @required Result deleteTemplate(_DeleteTemplate value),
+    @required Result replaceTemplate(_ReplaceTemplate value),
+    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  }) {
+    assert(load != null);
+    assert(loadTemplatesForReorder != null);
+    assert(insertNewTemplate != null);
+    assert(deleteTemplatePosition != null);
+    assert(deleteTemplate != null);
+    assert(replaceTemplate != null);
+    assert(changeTemplatePosition != null);
+    return changeTemplatePosition(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadTemplates value),
+    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
+    Result insertNewTemplate(_InsertNewTemplate value),
+    Result deleteTemplatePosition(_DeleteTemplatePosition value),
+    Result deleteTemplate(_DeleteTemplate value),
+    Result replaceTemplate(_ReplaceTemplate value),
+    Result changeTemplatePosition(_ChangeTemplatePosition value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (changeTemplatePosition != null) {
+      return changeTemplatePosition(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChangeTemplatePosition implements TemplateEvent {
+  const factory _ChangeTemplatePosition(
+      {@required ListTemplate template,
+      int oldIndex,
+      int newIndex}) = _$_ChangeTemplatePosition;
+
+  ListTemplate get template;
+  int get oldIndex;
+  int get newIndex;
+  _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith;
 }
 
 /// @nodoc
@@ -898,6 +1323,14 @@ class _$TemplateStateTearOff {
   }
 
 // ignore: unused_element
+  _TemplateOrderChanged templateOrderChanged(
+      {@required List<ListTemplate> userTemplates}) {
+    return _TemplateOrderChanged(
+      userTemplates: userTemplates,
+    );
+  }
+
+// ignore: unused_element
   _Error error({@required Failure failure}) {
     return _Error(
       failure: failure,
@@ -916,6 +1349,7 @@ mixin _$TemplateState {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ListTemplate> userTemplates),
+    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
     @required Result error(Failure failure),
   });
   @optionalTypeArgs
@@ -923,6 +1357,7 @@ mixin _$TemplateState {
     Result initial(),
     Result loading(),
     Result loaded(List<ListTemplate> userTemplates),
+    Result templateOrderChanged(List<ListTemplate> userTemplates),
     Result error(Failure failure),
     @required Result orElse(),
   });
@@ -931,6 +1366,7 @@ mixin _$TemplateState {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result templateOrderChanged(_TemplateOrderChanged value),
     @required Result error(_Error value),
   });
   @optionalTypeArgs
@@ -938,6 +1374,7 @@ mixin _$TemplateState {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result templateOrderChanged(_TemplateOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   });
@@ -999,11 +1436,13 @@ class _$_Initial implements _Initial {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ListTemplate> userTemplates),
+    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return initial();
   }
@@ -1014,6 +1453,7 @@ class _$_Initial implements _Initial {
     Result initial(),
     Result loading(),
     Result loaded(List<ListTemplate> userTemplates),
+    Result templateOrderChanged(List<ListTemplate> userTemplates),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1030,11 +1470,13 @@ class _$_Initial implements _Initial {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result templateOrderChanged(_TemplateOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return initial(this);
   }
@@ -1045,6 +1487,7 @@ class _$_Initial implements _Initial {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result templateOrderChanged(_TemplateOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {
@@ -1099,11 +1542,13 @@ class _$_Loading implements _Loading {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ListTemplate> userTemplates),
+    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return loading();
   }
@@ -1114,6 +1559,7 @@ class _$_Loading implements _Loading {
     Result initial(),
     Result loading(),
     Result loaded(List<ListTemplate> userTemplates),
+    Result templateOrderChanged(List<ListTemplate> userTemplates),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1130,11 +1576,13 @@ class _$_Loading implements _Loading {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result templateOrderChanged(_TemplateOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return loading(this);
   }
@@ -1145,6 +1593,7 @@ class _$_Loading implements _Loading {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result templateOrderChanged(_TemplateOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {
@@ -1224,11 +1673,13 @@ class _$_Loaded implements _Loaded {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ListTemplate> userTemplates),
+    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return loaded(userTemplates);
   }
@@ -1239,6 +1690,7 @@ class _$_Loaded implements _Loaded {
     Result initial(),
     Result loading(),
     Result loaded(List<ListTemplate> userTemplates),
+    Result templateOrderChanged(List<ListTemplate> userTemplates),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1255,11 +1707,13 @@ class _$_Loaded implements _Loaded {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result templateOrderChanged(_TemplateOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return loaded(this);
   }
@@ -1270,6 +1724,7 @@ class _$_Loaded implements _Loaded {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result templateOrderChanged(_TemplateOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {
@@ -1287,6 +1742,145 @@ abstract class _Loaded implements TemplateState {
 
   List<ListTemplate> get userTemplates;
   _$LoadedCopyWith<_Loaded> get copyWith;
+}
+
+/// @nodoc
+abstract class _$TemplateOrderChangedCopyWith<$Res> {
+  factory _$TemplateOrderChangedCopyWith(_TemplateOrderChanged value,
+          $Res Function(_TemplateOrderChanged) then) =
+      __$TemplateOrderChangedCopyWithImpl<$Res>;
+  $Res call({List<ListTemplate> userTemplates});
+}
+
+/// @nodoc
+class __$TemplateOrderChangedCopyWithImpl<$Res>
+    extends _$TemplateStateCopyWithImpl<$Res>
+    implements _$TemplateOrderChangedCopyWith<$Res> {
+  __$TemplateOrderChangedCopyWithImpl(
+      _TemplateOrderChanged _value, $Res Function(_TemplateOrderChanged) _then)
+      : super(_value, (v) => _then(v as _TemplateOrderChanged));
+
+  @override
+  _TemplateOrderChanged get _value => super._value as _TemplateOrderChanged;
+
+  @override
+  $Res call({
+    Object userTemplates = freezed,
+  }) {
+    return _then(_TemplateOrderChanged(
+      userTemplates: userTemplates == freezed
+          ? _value.userTemplates
+          : userTemplates as List<ListTemplate>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_TemplateOrderChanged implements _TemplateOrderChanged {
+  const _$_TemplateOrderChanged({@required this.userTemplates})
+      : assert(userTemplates != null);
+
+  @override
+  final List<ListTemplate> userTemplates;
+
+  @override
+  String toString() {
+    return 'TemplateState.templateOrderChanged(userTemplates: $userTemplates)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _TemplateOrderChanged &&
+            (identical(other.userTemplates, userTemplates) ||
+                const DeepCollectionEquality()
+                    .equals(other.userTemplates, userTemplates)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userTemplates);
+
+  @override
+  _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith =>
+      __$TemplateOrderChangedCopyWithImpl<_TemplateOrderChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initial(),
+    @required Result loading(),
+    @required Result loaded(List<ListTemplate> userTemplates),
+    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
+    @required Result error(Failure failure),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loaded != null);
+    assert(templateOrderChanged != null);
+    assert(error != null);
+    return templateOrderChanged(userTemplates);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initial(),
+    Result loading(),
+    Result loaded(List<ListTemplate> userTemplates),
+    Result templateOrderChanged(List<ListTemplate> userTemplates),
+    Result error(Failure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (templateOrderChanged != null) {
+      return templateOrderChanged(userTemplates);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initial(_Initial value),
+    @required Result loading(_Loading value),
+    @required Result loaded(_Loaded value),
+    @required Result templateOrderChanged(_TemplateOrderChanged value),
+    @required Result error(_Error value),
+  }) {
+    assert(initial != null);
+    assert(loading != null);
+    assert(loaded != null);
+    assert(templateOrderChanged != null);
+    assert(error != null);
+    return templateOrderChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initial(_Initial value),
+    Result loading(_Loading value),
+    Result loaded(_Loaded value),
+    Result templateOrderChanged(_TemplateOrderChanged value),
+    Result error(_Error value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (templateOrderChanged != null) {
+      return templateOrderChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TemplateOrderChanged implements TemplateState {
+  const factory _TemplateOrderChanged(
+      {@required List<ListTemplate> userTemplates}) = _$_TemplateOrderChanged;
+
+  List<ListTemplate> get userTemplates;
+  _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith;
 }
 
 /// @nodoc
@@ -1361,11 +1955,13 @@ class _$_Error implements _Error {
     @required Result initial(),
     @required Result loading(),
     @required Result loaded(List<ListTemplate> userTemplates),
+    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
     @required Result error(Failure failure),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return error(failure);
   }
@@ -1376,6 +1972,7 @@ class _$_Error implements _Error {
     Result initial(),
     Result loading(),
     Result loaded(List<ListTemplate> userTemplates),
+    Result templateOrderChanged(List<ListTemplate> userTemplates),
     Result error(Failure failure),
     @required Result orElse(),
   }) {
@@ -1392,11 +1989,13 @@ class _$_Error implements _Error {
     @required Result initial(_Initial value),
     @required Result loading(_Loading value),
     @required Result loaded(_Loaded value),
+    @required Result templateOrderChanged(_TemplateOrderChanged value),
     @required Result error(_Error value),
   }) {
     assert(initial != null);
     assert(loading != null);
     assert(loaded != null);
+    assert(templateOrderChanged != null);
     assert(error != null);
     return error(this);
   }
@@ -1407,6 +2006,7 @@ class _$_Error implements _Error {
     Result initial(_Initial value),
     Result loading(_Loading value),
     Result loaded(_Loaded value),
+    Result templateOrderChanged(_TemplateOrderChanged value),
     Result error(_Error value),
     @required Result orElse(),
   }) {

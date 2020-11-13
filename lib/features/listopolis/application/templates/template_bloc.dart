@@ -61,6 +61,22 @@ class TemplateBloc extends Bloc<TemplateEvent, TemplateState> {
         (l) => TemplateState.error(failure: l), 
         (r) => TemplateState.loaded(userTemplates: r));
     },
+    changeTemplatePosition: (e) async*{
+      yield TemplateState.loading();
+      Either<Failure, List<ListTemplate>> activeListsResult = await repository.changeTemplatePosition(e.template, e.oldIndex, e.newIndex);
+      
+      yield activeListsResult.fold(
+        (l) => TemplateState.error(failure: l), 
+        (r) => TemplateState.templateOrderChanged(userTemplates: r));
+    },
+    loadTemplatesForReorder: (e) async*{
+      yield TemplateState.loading();
+      Either<Failure, List<ListTemplate>> activeListsResult = await repository.getTemplates();
+      
+      yield activeListsResult.fold(
+        (l) => TemplateState.error(failure: l), 
+        (r) => TemplateState.templateOrderChanged(userTemplates: r));
+    },
     );
   }
 }

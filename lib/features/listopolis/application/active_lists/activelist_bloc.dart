@@ -1,6 +1,8 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:clipboard/clipboard.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/core/error/failures.dart';
@@ -101,6 +103,29 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
       yield activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.listOrderChanged(userLists: r));
+    },
+    copyListToClipBoard: (e) async*{
+      yield ActivelistState.loading();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
+      
+      ActiveList listToCopy = e.list;
+      String encodedString = json.encode(listToCopy.toJson());
+      await FlutterClipboard.copy(encodedString);
+      
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r));
+    },
+    createListFromClipBoard:  (e) async*{
+      yield ActivelistState.loading();
+      String encodedString = await FlutterClipboard.paste();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.createListFromExternalJson(encodedString);
+
+      await FlutterClipboard.copy(" ");
+
+      yield activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r));
     },
     );
     

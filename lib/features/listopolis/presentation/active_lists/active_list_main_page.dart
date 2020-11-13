@@ -31,7 +31,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   Widget build(BuildContext context) {
     return Scaffold(
     appBar: AppBar(
-        title: Text(ActiveListStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,),
+        title: SingleChildScrollView(scrollDirection: Axis.horizontal, child:  Text(ActiveListStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,)),
         actions: <Widget>[appBarToggles(context), _buildOverflowMenue(context)],
         backgroundColor: ListColors.APP_BAR_COLOR,
     ),
@@ -152,6 +152,9 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
       }else if(choice == ActiveListPageMenueStrings.LOAD_EXTERN_DATA){
         _replaceDateWithBackup(context);
         //BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
+      }else if(choice == ActiveListPageMenueStrings.CREATE_LIST_CLIPBOARD){
+        BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.createListFromClipBoard());
+        //BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
       }
       else{
         print("not supported");
@@ -220,6 +223,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                               navigateToEditListScreen(context, list);
                             }else if(element == MainListItemMenueStr.USE_AS_TEMPLATE){
                               BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.useListAsTemplate(list: list));
+                            }else if(element == MainListItemMenueStr.COPY_LIST_TO_CLIPOARD){
+                              BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.copyListToClipBoard(list: list));
                             }
                           },
                           itemBuilder: (context) {
@@ -248,6 +253,15 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                                                          children: <Widget>[
                                                               Icon(Icons.receipt, color:ListColors.ICON_LIST_TO_TEMPLATE),
                                                               Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.USE_AS_TEMPLATE, locale)}", style: ListColors.DEF_TEXT_STYLE),
+                                                        ],
+                                                      )
+                                          ),
+                                          new PopupMenuItem(
+                                                value: MainListItemMenueStr.COPY_LIST_TO_CLIPOARD,
+                                                child: Row(
+                                                         children: <Widget>[
+                                                              Icon(Icons.copy, color:ListColors.ICON_COPY_LIST_TO_CLIPBOARD),
+                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.COPY_LIST_TO_CLIPOARD, locale)}", style: ListColors.DEF_TEXT_STYLE),
                                                         ],
                                                       )
                                           )
@@ -406,22 +420,24 @@ Widget _buildDismissBarItem(BuildContext context, ActiveList list, ActiveListPos
 
 
 class ActiveListStrings implements ListopolisString{
-  static const APP_BAR_TITLE = "Deine Listen";
+  static const APP_BAR_TITLE = "Listen";
 }
 
 class ActiveListPageMenueStrings{
   static const String CREATE_NEW_LIST = "Liste anlegen";
+  static const String CREATE_LIST_CLIPBOARD = "Liste empfangen";
   static const String EDIT_TEMPlATES = "Vorlagen";
   static const String SAVE_CURRENT_USER_DATA = "Daten sichern";
   static const String LOAD_EXTERN_DATA = "Daten aus Sicherung einlesen";
   
 
-  static const List<String> choises = [CREATE_NEW_LIST,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA];
+  static const List<String> choises = [CREATE_NEW_LIST,CREATE_LIST_CLIPBOARD,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA];
 }
 class MainListItemMenueStr{
   static const String EDIT = "edit";
   static const String DELETE = "delete";
   static const String USE_AS_TEMPLATE = "use_as_template";
+  static const String COPY_LIST_TO_CLIPOARD = "copy_list_to_clipboard";
 
   static String buildLocalName(String str, String locale){
     if(locale == "de"){
@@ -429,8 +445,10 @@ class MainListItemMenueStr{
         return "Bearbeiten";
       else if(str == DELETE)
         return "Löschen";
-        else if(str == USE_AS_TEMPLATE)
+      else if(str == USE_AS_TEMPLATE)
         return "Vorlage erstellen";
+      else if(str == COPY_LIST_TO_CLIPOARD)
+        return "Liste teilen";
     }else{
       return str;
     }

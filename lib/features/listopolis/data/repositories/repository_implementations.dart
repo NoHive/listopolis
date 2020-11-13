@@ -218,6 +218,26 @@ class RepositoryImpl implements IRepository{
       return getActiveLists();
   }
 
+  @override
+  Future<Either<Failure, List<ListTemplate>>> changeTemplatePosition(ListTemplate template, int oldPosition, int newPosition) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromChangedTemplatePosition(currentUserData, template, oldPosition, newPosition));
+        sendData();
+      }
+      return getTemplates();
+  }
+
+  @override
+  Future<Either<Failure, List<ActiveList>>> createListFromExternalJson(String jsonString) {
+     UserData currentUserData = uDataCache.getOrElse(() => null);
+      if(currentUserData != null){
+        uDataCache = Some(UserData.fromAddedExternalList(currentUserData, jsonString));
+        sendData();
+      }
+      return getActiveLists();
+  }
+
 }
 
 

@@ -12,4 +12,6 @@ abstract class ActivelistEvent with _$ActivelistEvent {
   const factory ActivelistEvent.loadDataFromBackup() = _LoadDataFromBackup;
   const factory ActivelistEvent.useListAsTemplate({@required ActiveList list}) = _UseListAsTemplate;
   const factory ActivelistEvent.changeListPosition({@required ActiveList list, int oldIndex, int newIndex}) = _ChangeListPosition;
+  const factory ActivelistEvent.copyListToClipBoard({@required ActiveList list}) = _CopyListToClipBoard;
+  const factory ActivelistEvent.createListFromClipBoard() = _CreateListFromClipBoard;
 }

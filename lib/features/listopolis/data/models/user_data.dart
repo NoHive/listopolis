@@ -1,5 +1,7 @@
 
 
+import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/core/list/list_tools.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
@@ -166,6 +168,36 @@ abstract class UserData implements _$UserData {
 
       
   }
+
+   factory UserData.fromAddedExternalList(UserData data, String jsonData){
+     ActiveList listFromJson;
+     try{
+        listFromJson = ActiveList.fromJson(json.decode(jsonData));
+     }on FormatException {
+       return data;
+     }
+
+
+       
+     
+      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> aNewActiveLists = [];
+      int aNewPosition = 1;
+      if(existingActiveLists != null && existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+        aNewPosition = existingActiveLists.last.position+1;
+      }
+
+      for(ActiveList existingList in existingActiveLists){
+        aNewActiveLists.add(existingList);
+      }
+      aNewActiveLists.add(listFromJson.copyWith(id:Uuid().v1(), position: aNewPosition));
+
+    return data.copyWith(activeLists:aNewActiveLists);
+
+      
+  }
+
   factory UserData.fromChangedListPosition(UserData data, ActiveList aList, int oldPosition, int newPosition){
      
      
@@ -186,6 +218,29 @@ abstract class UserData implements _$UserData {
      }
 
     return data.copyWith(activeLists:newActiveLists);
+
+      
+  }
+  factory UserData.fromChangedTemplatePosition(UserData data, ListTemplate aList, int oldPosition, int newPosition){
+     
+     
+     Map<String, ListTemplate> idToList = Map.fromEntries(data.templates.map((list) => MapEntry(list.id, list)) );
+     List<String> listIds = idToList.keys.toList();
+
+     Map<String, int> listToPosition = ListOrder.reorder(oldPosition, newPosition, aList.id, listIds, 
+        (aListId) {
+          ListTemplate aList = idToList[aListId];
+          return aList.position;
+        }
+     );
+     
+     List<ListTemplate> newTemplates = [];
+     for(ListTemplate aList in data.templates){
+       int newPosForList = listToPosition[aList.id];
+       newTemplates.add(aList.copyWith(position:newPosForList));
+     }
+
+    return data.copyWith(templates:newTemplates);
 
       
   }

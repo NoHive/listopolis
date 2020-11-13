@@ -1,12 +1,12 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
-import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
@@ -38,8 +38,8 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     return Scaffold(
     appBar: AppBar(
         backgroundColor: ListColors.APP_BAR_COLOR,
-        title: Text(TemplateStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,),
-        actions: <Widget>[_buildOverflowMenue(context)],
+        title: SingleChildScrollView(scrollDirection:Axis.horizontal, child:  Text(TemplateStrings.APP_BAR_TITLE, style: ListColors.DEF_TEXT_STYLE,)),
+        actions: <Widget>[appBarToggles(context), _buildOverflowMenue(context)],
     ),
     body: Container(
       color: ListColors.LIST_BACKGROUND,
@@ -49,6 +49,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
               initial: (s) => showInitial(), 
               loading: (s) => showLoadingIndicator(), 
               loaded: (s) => buildLoadedLists(context, s.userTemplates),
+              templateOrderChanged: (s) =>  buildReorderList(context, s.userTemplates), 
               error: (s) => showAppError(mapFailureToLocalizedString(s.failure)),
              // initCreateList: (s) => showLoadingIndicator()
             );
@@ -58,6 +59,35 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     );
     
   }
+  Widget buildReorderListForTest(BuildContext context){
+
+      List<String> items =[
+        "erster Eintrag",
+        "zweiter Eintrag",
+        "dritter Eintrag"
+      ];
+
+      List<Widget> reorderItems = [];
+      for(String item in items){
+        reorderItems.add(Container(
+              key: ValueKey(item),
+              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)), gradient: ListColors.LIST_ITEM_GRADIENT ),
+              child: ListTile(
+                title: Text("$item", style: ListColors.DEF_TEXT_STYLE,)
+              ),
+            ));
+      }
+    return ReorderableListView(
+             // header: headerWidget,
+              children: reorderItems,
+              onReorder: (oldIdx, newIdx){
+                  int realNewIdx = oldIdx < newIdx ? newIdx  : newIdx +1;
+                  int realOldIdx = oldIdx +1;
+                  print("oldIndex = $realOldIdx newIndex= $realNewIdx");
+              },
+          );
+
+   }
    Widget _buildOverflowMenue(BuildContext context){
     return PopupMenuButton<String>(
       color: ListColors.DIALOG_BACKGROUND,
@@ -73,6 +103,86 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
     );
 
   }
+
+Widget appBarToggles(BuildContext context){
+    
+  return BlocBuilder<TemplateBloc, TemplateState>
+            (builder: (context, state){
+              return state.map(
+                initial: (s) => buildToggleButtons([false, true], context),
+                loading: (s) => buildToggleButtons([false, true], context),
+                loaded: (s) => buildToggleButtons([false, true], context),
+                templateOrderChanged:  (s) => buildToggleButtons([true, false], context),
+                error: (s) => buildToggleButtons([false, true], context),
+              );
+            }
+            );
+   
+  }
+
+   ToggleButtons buildToggleButtons(List<bool> selected, BuildContext context){
+    List<Widget> toggleItems = [
+      Icon(Icons.swap_vert),
+      Icon(Icons.list)
+    ];
+    return ToggleButtons(
+        children: toggleItems,
+        isSelected: selected,
+        selectedColor: ListColors.ICON_ACTIVE_LIST_CEATION_MODE,
+        //color: Colors.lightBlue,
+        onPressed: (idx){
+          
+          TemplateBloc aBloc =  BlocProvider.of<TemplateBloc>(context);
+          if(idx == 0){
+            aBloc.add(TemplateEvent.loadTemplatesForReorder());
+          }else{
+            aBloc.add(TemplateEvent.load());
+          }
+          // setState(() {
+            
+          // });
+        },
+    );
+  }
+   Widget buildReorderList(BuildContext context,  List<ListTemplate> listitems){
+    
+    List<Widget> childrenWidgets = _buildReorderListItems(listitems, context);
+    Map<int, ListTemplate> posToList = Map.fromEntries(listitems.map((e) => MapEntry(e.position, e)));
+    
+    return Theme(data: ThemeData(canvasColor: Colors.transparent), 
+    child: ReorderableListView(
+             // header: headerWidget,
+              children: childrenWidgets,
+              onReorder: (oldIdx, newIdx){
+                  int realNewIdx = oldIdx < newIdx ? newIdx  : newIdx +1;
+                  int realOldIdx = oldIdx +1;
+                  TemplateBloc aBloc =  BlocProvider.of<TemplateBloc>(context);
+                  ListTemplate changedList = posToList[realOldIdx];
+                  aBloc.add(TemplateEvent.changeTemplatePosition(template: changedList, oldIndex: realOldIdx, newIndex: realNewIdx));
+              },
+          ));
+ }
+ List<Widget> _buildReorderListItems(List<ListTemplate> listitems, BuildContext context){
+   listitems.sort((l1, l2) => l1.position.compareTo(l2.position));
+    List<Widget> erg = [];
+    for(ListTemplate lItem in listitems){
+      erg.add(_buildReorderListItem(context, lItem));
+    }
+     //listitems.map((e){_buildListItemInput(context, e);}).toList();
+    return erg;
+ }
+  Widget _buildReorderListItem(BuildContext context, ListTemplate listItem){
+   
+            return Container(
+              key: ValueKey(listItem.id),
+              decoration: BoxDecoration(border: Border(top: BorderSide(width: 1)), gradient: ListColors.LIST_ITEM_GRADIENT ),
+              child: ListTile(
+                title: Text("${listItem.position} - ${listItem.name}", style: ListColors.DEF_TEXT_STYLE,)
+              
+              ),
+            );
+ }
+
    navigateToCreateListScreen(BuildContext context) {
      widget.createlistBloc.add(CreatelistEvent.startTemplateCreation());
      Navigator.of(context).push(
@@ -287,7 +397,7 @@ class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunc
 
 
 class TemplateStrings implements ListopolisString{
-  static const APP_BAR_TITLE = "Deine Listen-Vorlagen";
+  static const APP_BAR_TITLE = "Vorlagen";
 }
 
 class TemplatePageMenueStrings{

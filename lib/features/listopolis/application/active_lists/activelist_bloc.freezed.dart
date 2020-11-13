@@ -82,6 +82,18 @@ class _$ActivelistEventTearOff {
       newIndex: newIndex,
     );
   }
+
+// ignore: unused_element
+  _CopyListToClipBoard copyListToClipBoard({@required ActiveList list}) {
+    return _CopyListToClipBoard(
+      list: list,
+    );
+  }
+
+// ignore: unused_element
+  _CreateListFromClipBoard createListFromClipBoard() {
+    return const _CreateListFromClipBoard();
+  }
 }
 
 /// @nodoc
@@ -107,6 +119,8 @@ mixin _$ActivelistEvent {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -122,6 +136,8 @@ mixin _$ActivelistEvent {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -136,6 +152,8 @@ mixin _$ActivelistEvent {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -149,6 +167,8 @@ mixin _$ActivelistEvent {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   });
 }
@@ -222,6 +242,8 @@ class _$_LoadLists implements _LoadLists {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -233,6 +255,8 @@ class _$_LoadLists implements _LoadLists {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return load();
   }
 
@@ -251,6 +275,8 @@ class _$_LoadLists implements _LoadLists {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -273,6 +299,8 @@ class _$_LoadLists implements _LoadLists {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -284,6 +312,8 @@ class _$_LoadLists implements _LoadLists {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return load(this);
   }
 
@@ -300,6 +330,8 @@ class _$_LoadLists implements _LoadLists {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -368,6 +400,8 @@ class _$_LoadForReorder implements _LoadForReorder {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -379,6 +413,8 @@ class _$_LoadForReorder implements _LoadForReorder {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return loadForReorder();
   }
 
@@ -397,6 +433,8 @@ class _$_LoadForReorder implements _LoadForReorder {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -419,6 +457,8 @@ class _$_LoadForReorder implements _LoadForReorder {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -430,6 +470,8 @@ class _$_LoadForReorder implements _LoadForReorder {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return loadForReorder(this);
   }
 
@@ -446,6 +488,8 @@ class _$_LoadForReorder implements _LoadForReorder {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -539,6 +583,8 @@ class _$_InsertNewList implements _InsertNewList {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -550,6 +596,8 @@ class _$_InsertNewList implements _InsertNewList {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return insertNewList(listParameter);
   }
 
@@ -568,6 +616,8 @@ class _$_InsertNewList implements _InsertNewList {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -590,6 +640,8 @@ class _$_InsertNewList implements _InsertNewList {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -601,6 +653,8 @@ class _$_InsertNewList implements _InsertNewList {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return insertNewList(this);
   }
 
@@ -617,6 +671,8 @@ class _$_InsertNewList implements _InsertNewList {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -749,6 +805,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -760,6 +818,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return deleteActiveListPosition(list, position);
   }
 
@@ -778,6 +838,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -800,6 +862,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -811,6 +875,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return deleteActiveListPosition(this);
   }
 
@@ -827,6 +893,8 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -934,6 +1002,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -945,6 +1015,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return deleteActiveList(list);
   }
 
@@ -963,6 +1035,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -985,6 +1059,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -996,6 +1072,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return deleteActiveList(this);
   }
 
@@ -1012,6 +1090,8 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1131,6 +1211,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1142,6 +1224,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return replaceActiveList(listParameter, list);
   }
 
@@ -1160,6 +1244,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1182,6 +1268,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1193,6 +1281,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return replaceActiveList(this);
   }
 
@@ -1209,6 +1299,8 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1283,6 +1375,8 @@ class _$_BackupData implements _BackupData {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1294,6 +1388,8 @@ class _$_BackupData implements _BackupData {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return backupData();
   }
 
@@ -1312,6 +1408,8 @@ class _$_BackupData implements _BackupData {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1334,6 +1432,8 @@ class _$_BackupData implements _BackupData {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1345,6 +1445,8 @@ class _$_BackupData implements _BackupData {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return backupData(this);
   }
 
@@ -1361,6 +1463,8 @@ class _$_BackupData implements _BackupData {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1429,6 +1533,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1440,6 +1546,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return loadDataFromBackup();
   }
 
@@ -1458,6 +1566,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1480,6 +1590,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1491,6 +1603,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return loadDataFromBackup(this);
   }
 
@@ -1507,6 +1621,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1608,6 +1724,8 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1619,6 +1737,8 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return useListAsTemplate(list);
   }
 
@@ -1637,6 +1757,8 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1659,6 +1781,8 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1670,6 +1794,8 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return useListAsTemplate(this);
   }
 
@@ -1686,6 +1812,8 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1810,6 +1938,8 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     @required Result useListAsTemplate(ActiveList list),
     @required
         Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1821,6 +1951,8 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return changeListPosition(list, oldIndex, newIndex);
   }
 
@@ -1839,6 +1971,8 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     Result loadDataFromBackup(),
     Result useListAsTemplate(ActiveList list),
     Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1861,6 +1995,8 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     @required Result loadDataFromBackup(_LoadDataFromBackup value),
     @required Result useListAsTemplate(_UseListAsTemplate value),
     @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
   }) {
     assert(load != null);
     assert(loadForReorder != null);
@@ -1872,6 +2008,8 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     assert(loadDataFromBackup != null);
     assert(useListAsTemplate != null);
     assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
     return changeListPosition(this);
   }
 
@@ -1888,6 +2026,8 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     Result loadDataFromBackup(_LoadDataFromBackup value),
     Result useListAsTemplate(_UseListAsTemplate value),
     Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1908,6 +2048,361 @@ abstract class _ChangeListPosition implements ActivelistEvent {
   int get oldIndex;
   int get newIndex;
   _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith;
+}
+
+/// @nodoc
+abstract class _$CopyListToClipBoardCopyWith<$Res> {
+  factory _$CopyListToClipBoardCopyWith(_CopyListToClipBoard value,
+          $Res Function(_CopyListToClipBoard) then) =
+      __$CopyListToClipBoardCopyWithImpl<$Res>;
+  $Res call({ActiveList list});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+/// @nodoc
+class __$CopyListToClipBoardCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$CopyListToClipBoardCopyWith<$Res> {
+  __$CopyListToClipBoardCopyWithImpl(
+      _CopyListToClipBoard _value, $Res Function(_CopyListToClipBoard) _then)
+      : super(_value, (v) => _then(v as _CopyListToClipBoard));
+
+  @override
+  _CopyListToClipBoard get _value => super._value as _CopyListToClipBoard;
+
+  @override
+  $Res call({
+    Object list = freezed,
+  }) {
+    return _then(_CopyListToClipBoard(
+      list: list == freezed ? _value.list : list as ActiveList,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    if (_value.list == null) {
+      return null;
+    }
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_CopyListToClipBoard implements _CopyListToClipBoard {
+  const _$_CopyListToClipBoard({@required this.list}) : assert(list != null);
+
+  @override
+  final ActiveList list;
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.copyListToClipBoard(list: $list)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _CopyListToClipBoard &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+
+  @override
+  _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith =>
+      __$CopyListToClipBoardCopyWithImpl<_CopyListToClipBoard>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadForReorder(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+    @required Result deleteActiveList(ActiveList list),
+    @required
+        Result replaceActiveList(
+            CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
+    @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
+    return copyListToClipBoard(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadForReorder(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    Result deleteActiveList(ActiveList list),
+    Result replaceActiveList(
+        CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
+    Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (copyListToClipBoard != null) {
+      return copyListToClipBoard(list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result deleteActiveList(_DeleteActiveList value),
+    @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
+    @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
+    return copyListToClipBoard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    Result deleteActiveList(_DeleteActiveList value),
+    Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
+    Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (copyListToClipBoard != null) {
+      return copyListToClipBoard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CopyListToClipBoard implements ActivelistEvent {
+  const factory _CopyListToClipBoard({@required ActiveList list}) =
+      _$_CopyListToClipBoard;
+
+  ActiveList get list;
+  _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith;
+}
+
+/// @nodoc
+abstract class _$CreateListFromClipBoardCopyWith<$Res> {
+  factory _$CreateListFromClipBoardCopyWith(_CreateListFromClipBoard value,
+          $Res Function(_CreateListFromClipBoard) then) =
+      __$CreateListFromClipBoardCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CreateListFromClipBoardCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res>
+    implements _$CreateListFromClipBoardCopyWith<$Res> {
+  __$CreateListFromClipBoardCopyWithImpl(_CreateListFromClipBoard _value,
+      $Res Function(_CreateListFromClipBoard) _then)
+      : super(_value, (v) => _then(v as _CreateListFromClipBoard));
+
+  @override
+  _CreateListFromClipBoard get _value =>
+      super._value as _CreateListFromClipBoard;
+}
+
+/// @nodoc
+class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
+  const _$_CreateListFromClipBoard();
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.createListFromClipBoard()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _CreateListFromClipBoard);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result load(),
+    @required Result loadForReorder(),
+    @required Result insertNewList(CreateListParameter listParameter),
+    @required
+        Result deleteActiveListPosition(
+            ActiveList list, ActiveListPosition position),
+    @required Result deleteActiveList(ActiveList list),
+    @required
+        Result replaceActiveList(
+            CreateListParameter listParameter, ActiveList list),
+    @required Result backupData(),
+    @required Result loadDataFromBackup(),
+    @required Result useListAsTemplate(ActiveList list),
+    @required
+        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    @required Result copyListToClipBoard(ActiveList list),
+    @required Result createListFromClipBoard(),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
+    return createListFromClipBoard();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result load(),
+    Result loadForReorder(),
+    Result insertNewList(CreateListParameter listParameter),
+    Result deleteActiveListPosition(
+        ActiveList list, ActiveListPosition position),
+    Result deleteActiveList(ActiveList list),
+    Result replaceActiveList(
+        CreateListParameter listParameter, ActiveList list),
+    Result backupData(),
+    Result loadDataFromBackup(),
+    Result useListAsTemplate(ActiveList list),
+    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
+    Result copyListToClipBoard(ActiveList list),
+    Result createListFromClipBoard(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (createListFromClipBoard != null) {
+      return createListFromClipBoard();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result load(_LoadLists value),
+    @required Result loadForReorder(_LoadForReorder value),
+    @required Result insertNewList(_InsertNewList value),
+    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    @required Result deleteActiveList(_DeleteActiveList value),
+    @required Result replaceActiveList(_ReplaceActiveList value),
+    @required Result backupData(_BackupData value),
+    @required Result loadDataFromBackup(_LoadDataFromBackup value),
+    @required Result useListAsTemplate(_UseListAsTemplate value),
+    @required Result changeListPosition(_ChangeListPosition value),
+    @required Result copyListToClipBoard(_CopyListToClipBoard value),
+    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  }) {
+    assert(load != null);
+    assert(loadForReorder != null);
+    assert(insertNewList != null);
+    assert(deleteActiveListPosition != null);
+    assert(deleteActiveList != null);
+    assert(replaceActiveList != null);
+    assert(backupData != null);
+    assert(loadDataFromBackup != null);
+    assert(useListAsTemplate != null);
+    assert(changeListPosition != null);
+    assert(copyListToClipBoard != null);
+    assert(createListFromClipBoard != null);
+    return createListFromClipBoard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result load(_LoadLists value),
+    Result loadForReorder(_LoadForReorder value),
+    Result insertNewList(_InsertNewList value),
+    Result deleteActiveListPosition(_DeleteActiveListPosition value),
+    Result deleteActiveList(_DeleteActiveList value),
+    Result replaceActiveList(_ReplaceActiveList value),
+    Result backupData(_BackupData value),
+    Result loadDataFromBackup(_LoadDataFromBackup value),
+    Result useListAsTemplate(_UseListAsTemplate value),
+    Result changeListPosition(_ChangeListPosition value),
+    Result copyListToClipBoard(_CopyListToClipBoard value),
+    Result createListFromClipBoard(_CreateListFromClipBoard value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (createListFromClipBoard != null) {
+      return createListFromClipBoard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateListFromClipBoard implements ActivelistEvent {
+  const factory _CreateListFromClipBoard() = _$_CreateListFromClipBoard;
 }
 
 /// @nodoc
