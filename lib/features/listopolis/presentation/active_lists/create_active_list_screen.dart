@@ -21,12 +21,13 @@ class CreateListPage extends StatefulWidget  {
   _CreateListPageState createState() => _CreateListPageState();
 }
 
-class _CreateListPageState extends State<CreateListPage> with CommonPageFunctions{
+class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObserver, CommonPageFunctions{
 
   String currentlistName;
   ListType currentListType;
   PositionType currentPositionType;
   CreateListParameter currentCreatedList;
+  BuildContext ctxLastBuild;
   //  @override
   // void didChangeDependencies() {
   //   super.didChangeDependencies();
@@ -35,10 +36,56 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   //     ..add(CreatelistEvent.startListCreation());
   //   }
   // }
+
+
+  String currentListNameChanges = "";
+
+  TextEditingController listNameController = TextEditingController(
+    text: "egal",
+
+  );
+ 
+  List<TextEditingController> controllerList = [];
+
+  bool canReturn = false;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }  
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    listNameController.dispose();
+    controllerList.forEach((controller) { controller.dispose(); });
+    WidgetsBinding.instance.removeObserver(this);
+    print("Create List-Screen disposed");
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    // TODO: implement didChangeAppLifecycleState
+    print("Create List-Screen State changed to $state");
+    if(state == AppLifecycleState.paused ){
+      if(ctxLastBuild != null)
+        _acceptListChanges(ctxLastBuild);
+        canReturn = true;
+        Navigator.of(ctxLastBuild).pop();
+    }
+    
+    super.didChangeAppLifecycleState(state);
+  }
+  
+
   @override
   Widget build(BuildContext context) {
+    ctxLastBuild = context;
     return WillPopScope (
-          onWillPop: (){return Future.value(true);},
+          onWillPop: (){return Future.value(canReturn);},
           child: Scaffold(
         appBar: AppBar(
           backgroundColor: ListColors.APP_BAR_COLOR,
@@ -138,34 +185,26 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
               Navigator.of(context).pop();
   }
   _returnToMainScreenAskSave(BuildContext context){
-    CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
+      canReturn = true;
+     CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     showDialog(context: context,
-    builder: (context) {
+    builder: (ctx) {
       return AlertDialog(
         backgroundColor: ListColors.DIALOG_BACKGROUND,
         actions: [
           MaterialButton(onPressed: (){
-              
-              if(createListBloc.isListEdit()){
-                  ActiveList actList = createListBloc.editList;
-                  // createListBloc.isListEditing = false;
-                  createListBloc.editList = null;
-                  widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
-                  _returnToPreviousScreen(context);
-              }else if(createListBloc.isListCreation()){
-                widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
-                _returnToPreviousScreen(context);
-              }else if(createListBloc.isTemplateCreation()){
-                widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList));
-                _returnToPreviousScreen(context);
-              }else if(createListBloc.isTemplateEdit()){
-                widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList, list: createListBloc.editTemplate));
-                _returnToPreviousScreen(context);
-              }else if(createListBloc.isListTransfer()){
-                widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
-                _returnToListScreen(context)(context);
-              }
-              
+            _acceptListChanges(context);
+
+             if(createListBloc.isListEdit())
+              _returnToPreviousScreen(context);
+            else if(createListBloc.isListCreation())
+              _returnToPreviousScreen(context);
+           else if(createListBloc.isTemplateCreation())
+            _returnToPreviousScreen(context);
+          else if(createListBloc.isTemplateEdit())
+            _returnToPreviousScreen(context);
+          else if(createListBloc.isListTransfer())
+            _returnToListScreen(context)(context);
           },
               child: Text("Übernehmen",style: ListColors.DEF_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
@@ -179,6 +218,25 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
       );
     },
     );
+  }
+
+  void _acceptListChanges(BuildContext context){
+
+    CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
+    if(createListBloc.isListEdit()){
+        ActiveList actList = createListBloc.editList;
+        createListBloc.editList = null;
+        widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
+        
+    }else if(createListBloc.isListCreation()){
+      widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+    }else if(createListBloc.isTemplateCreation()){
+      widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList));
+    }else if(createListBloc.isTemplateEdit()){
+      widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList, list: createListBloc.editTemplate));
+    }else if(createListBloc.isListTransfer()){
+      widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+    }
   }
 
   Widget showEditList(BuildContext context, CreateListParameter list){
@@ -204,6 +262,8 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   }
   Widget _buildListName(BuildContext context, CreateListParameter list){
       currentlistName = list.listName;
+      listNameController.addListener(() { list.listName = listNameController.text;});
+
        return// Expanded(child: 
             Padding(padding: EdgeInsets.fromLTRB(5, 5, 5, 0), child:
               TextField(
@@ -213,7 +273,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                           _commitListChanges(context);
                           },
                           textInputAction: TextInputAction.search,
-                          controller: TextEditingController()..text = currentlistName,
+                          controller: listNameController..text = currentlistName,
                           cursorColor: ListColors.TEXT,
                           style: TextStyle(color: ListColors.TEXT),
                           decoration: InputDecoration(
@@ -277,7 +337,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
   }
 
   _commitListChanges(BuildContext context){
-
+    currentListNameChanges = null;
     CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
      aBloc.add(CreatelistEvent.changeList());
   }
@@ -360,6 +420,9 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
             );
  }
  Widget _buildListItemInput(BuildContext context, CreateListItemParameter listItem){
+   TextEditingController listItemTextController = TextEditingController();
+   listItemTextController.addListener(() { listItem.name = listItemTextController.text;});
+   controllerList.add(listItemTextController);
    currentlistName = listItem.name;
             return Container(
               decoration: BoxDecoration(border: Border(top: BorderSide(width: 1))),
@@ -369,7 +432,7 @@ class _CreateListPageState extends State<CreateListPage> with CommonPageFunction
                 title: TextField(
                             onSubmitted: (value){ currentlistName=value; listItem.name=value;},
                             textInputAction: TextInputAction.search,
-                            controller: TextEditingController()..text = currentlistName,
+                            controller: listItemTextController..text = currentlistName,
                             cursorColor: ListColors.TEXT,
                             style: TextStyle(color: ListColors.TEXT),
                             decoration: InputDecoration(
