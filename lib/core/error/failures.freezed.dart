@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'failures.dart';
 
@@ -9,58 +9,61 @@ part of 'failures.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$FailureTearOff {
   const _$FailureTearOff();
 
-// ignore: unused_element
   DeviceOffline deviceOffline() {
     return const DeviceOffline();
   }
 
-// ignore: unused_element
   ServerConnectFailed serverConnectFailed() {
     return const ServerConnectFailed();
   }
 
-// ignore: unused_element
   ServerAccessFailed serviceAccessFailed() {
     return const ServerAccessFailed();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Failure = _$FailureTearOff();
 
 /// @nodoc
 mixin _$Failure {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deviceOffline(),
-    @required Result serverConnectFailed(),
-    @required Result serviceAccessFailed(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() deviceOffline,
+    required TResult Function() serverConnectFailed,
+    required TResult Function() serviceAccessFailed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deviceOffline(),
-    Result serverConnectFailed(),
-    Result serviceAccessFailed(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? deviceOffline,
+    TResult Function()? serverConnectFailed,
+    TResult Function()? serviceAccessFailed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deviceOffline(DeviceOffline value),
-    @required Result serverConnectFailed(ServerConnectFailed value),
-    @required Result serviceAccessFailed(ServerAccessFailed value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeviceOffline value) deviceOffline,
+    required TResult Function(ServerConnectFailed value) serverConnectFailed,
+    required TResult Function(ServerAccessFailed value) serviceAccessFailed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deviceOffline(DeviceOffline value),
-    Result serverConnectFailed(ServerConnectFailed value),
-    Result serviceAccessFailed(ServerAccessFailed value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeviceOffline value)? deviceOffline,
+    TResult Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -115,26 +118,22 @@ class _$DeviceOffline implements DeviceOffline {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deviceOffline(),
-    @required Result serverConnectFailed(),
-    @required Result serviceAccessFailed(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() deviceOffline,
+    required TResult Function() serverConnectFailed,
+    required TResult Function() serviceAccessFailed,
   }) {
-    assert(deviceOffline != null);
-    assert(serverConnectFailed != null);
-    assert(serviceAccessFailed != null);
     return deviceOffline();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deviceOffline(),
-    Result serverConnectFailed(),
-    Result serviceAccessFailed(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? deviceOffline,
+    TResult Function()? serverConnectFailed,
+    TResult Function()? serviceAccessFailed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deviceOffline != null) {
       return deviceOffline();
     }
@@ -143,26 +142,22 @@ class _$DeviceOffline implements DeviceOffline {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deviceOffline(DeviceOffline value),
-    @required Result serverConnectFailed(ServerConnectFailed value),
-    @required Result serviceAccessFailed(ServerAccessFailed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeviceOffline value) deviceOffline,
+    required TResult Function(ServerConnectFailed value) serverConnectFailed,
+    required TResult Function(ServerAccessFailed value) serviceAccessFailed,
   }) {
-    assert(deviceOffline != null);
-    assert(serverConnectFailed != null);
-    assert(serviceAccessFailed != null);
     return deviceOffline(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deviceOffline(DeviceOffline value),
-    Result serverConnectFailed(ServerConnectFailed value),
-    Result serviceAccessFailed(ServerAccessFailed value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeviceOffline value)? deviceOffline,
+    TResult Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deviceOffline != null) {
       return deviceOffline(this);
     }
@@ -212,26 +207,22 @@ class _$ServerConnectFailed implements ServerConnectFailed {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deviceOffline(),
-    @required Result serverConnectFailed(),
-    @required Result serviceAccessFailed(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() deviceOffline,
+    required TResult Function() serverConnectFailed,
+    required TResult Function() serviceAccessFailed,
   }) {
-    assert(deviceOffline != null);
-    assert(serverConnectFailed != null);
-    assert(serviceAccessFailed != null);
     return serverConnectFailed();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deviceOffline(),
-    Result serverConnectFailed(),
-    Result serviceAccessFailed(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? deviceOffline,
+    TResult Function()? serverConnectFailed,
+    TResult Function()? serviceAccessFailed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serverConnectFailed != null) {
       return serverConnectFailed();
     }
@@ -240,26 +231,22 @@ class _$ServerConnectFailed implements ServerConnectFailed {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deviceOffline(DeviceOffline value),
-    @required Result serverConnectFailed(ServerConnectFailed value),
-    @required Result serviceAccessFailed(ServerAccessFailed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeviceOffline value) deviceOffline,
+    required TResult Function(ServerConnectFailed value) serverConnectFailed,
+    required TResult Function(ServerAccessFailed value) serviceAccessFailed,
   }) {
-    assert(deviceOffline != null);
-    assert(serverConnectFailed != null);
-    assert(serviceAccessFailed != null);
     return serverConnectFailed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deviceOffline(DeviceOffline value),
-    Result serverConnectFailed(ServerConnectFailed value),
-    Result serviceAccessFailed(ServerAccessFailed value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeviceOffline value)? deviceOffline,
+    TResult Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serverConnectFailed != null) {
       return serverConnectFailed(this);
     }
@@ -308,26 +295,22 @@ class _$ServerAccessFailed implements ServerAccessFailed {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result deviceOffline(),
-    @required Result serverConnectFailed(),
-    @required Result serviceAccessFailed(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() deviceOffline,
+    required TResult Function() serverConnectFailed,
+    required TResult Function() serviceAccessFailed,
   }) {
-    assert(deviceOffline != null);
-    assert(serverConnectFailed != null);
-    assert(serviceAccessFailed != null);
     return serviceAccessFailed();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result deviceOffline(),
-    Result serverConnectFailed(),
-    Result serviceAccessFailed(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? deviceOffline,
+    TResult Function()? serverConnectFailed,
+    TResult Function()? serviceAccessFailed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serviceAccessFailed != null) {
       return serviceAccessFailed();
     }
@@ -336,26 +319,22 @@ class _$ServerAccessFailed implements ServerAccessFailed {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result deviceOffline(DeviceOffline value),
-    @required Result serverConnectFailed(ServerConnectFailed value),
-    @required Result serviceAccessFailed(ServerAccessFailed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeviceOffline value) deviceOffline,
+    required TResult Function(ServerConnectFailed value) serverConnectFailed,
+    required TResult Function(ServerAccessFailed value) serviceAccessFailed,
   }) {
-    assert(deviceOffline != null);
-    assert(serverConnectFailed != null);
-    assert(serviceAccessFailed != null);
     return serviceAccessFailed(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result deviceOffline(DeviceOffline value),
-    Result serverConnectFailed(ServerConnectFailed value),
-    Result serviceAccessFailed(ServerAccessFailed value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeviceOffline value)? deviceOffline,
+    TResult Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (serviceAccessFailed != null) {
       return serviceAccessFailed(this);
     }

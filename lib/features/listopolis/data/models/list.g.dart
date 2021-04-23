@@ -8,17 +8,16 @@ part of 'list.dart';
 
 _$_ActiveList _$_$_ActiveListFromJson(Map<String, dynamic> json) {
   return _$_ActiveList(
-    id: json['id'] as String,
-    name: json['name'] as String,
+    id: json['id'] as String? ?? '0815',
+    name: json['name'] as String? ?? 'list name',
     type: listTypeFromJson(json['type'] as String),
-    position: json['position'] as int,
-    done: json['done'] as bool,
-    opened: json['opened'] as bool,
-    listItems: (json['listItems'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ActiveListPosition.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    position: json['position'] as int? ?? 1,
+    done: json['done'] as bool? ?? false,
+    opened: json['opened'] as bool? ?? false,
+    listItems: (json['listItems'] as List<dynamic>?)
+            ?.map((e) => ActiveListPosition.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
   );
 }
 
@@ -36,10 +35,10 @@ Map<String, dynamic> _$_$_ActiveListToJson(_$_ActiveList instance) =>
 _$_ActiveListPosition _$_$_ActiveListPositionFromJson(
     Map<String, dynamic> json) {
   return _$_ActiveListPosition(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    position: json['position'] as int,
-    done: json['done'] as bool,
+    id: json['id'] as String? ?? '0815',
+    name: json['name'] as String? ?? 'new Position',
+    position: json['position'] as int? ?? 1,
+    done: json['done'] as bool? ?? false,
   );
 }
 

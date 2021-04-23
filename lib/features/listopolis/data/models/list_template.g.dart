@@ -8,15 +8,15 @@ part of 'list_template.dart';
 
 _$_ListTemplate _$_$_ListTemplateFromJson(Map<String, dynamic> json) {
   return _$_ListTemplate(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    position: json['position'] as int,
+    id: json['id'] as String? ?? '0815',
+    name: json['name'] as String? ?? 'a template',
+    position: json['position'] as int? ?? 1,
     type: listTypeFromJson(json['type'] as String),
-    templatePositions: (json['templatePositions'] as List)
-        ?.map((e) => e == null
-            ? null
-            : ListTemplatePosition.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    templatePositions: (json['templatePositions'] as List<dynamic>?)
+            ?.map(
+                (e) => ListTemplatePosition.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
   );
 }
 
@@ -32,9 +32,9 @@ Map<String, dynamic> _$_$_ListTemplateToJson(_$_ListTemplate instance) =>
 _$_ListTemplatePosition _$_$_ListTemplatePositionFromJson(
     Map<String, dynamic> json) {
   return _$_ListTemplatePosition(
-    name: json['name'] as String,
-    id: json['id'] as String,
-    position: json['position'] as int,
+    name: json['name'] as String? ?? 'a Name',
+    id: json['id'] as String? ?? '0815',
+    position: json['position'] as int? ?? 1,
   );
 }
 

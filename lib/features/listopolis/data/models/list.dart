@@ -10,23 +10,23 @@ part 'list.g.dart';
 @freezed
 abstract class ActiveList implements _$ActiveList{
   
-  @JsonSerializable(nullable: false)
+  @JsonSerializable()
   const ActiveList._();
   const factory ActiveList(
     {
-      @required String id, 
-      @required String name,
+      @Default('0815') String id, 
+      @Default('list name') String name,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-      @required ListType type,
-      @required int position,
-      @required bool done,
-      @required bool opened,
-      List<ActiveListPosition> listItems
+      @Default(ListType.todo()) ListType type,
+      @Default(1) int position,
+      @Default(false) bool done,
+      @Default(false) bool opened,
+      @Default([]) List<ActiveListPosition> listItems
     }
   ) = _ActiveList;
   factory ActiveList.fromJson(Map<String, dynamic> json) => _$ActiveListFromJson(json);
 
-  factory ActiveList.addListItemAtStart({@required ActiveList list, @required ActiveListPosition aPosition}){
+  factory ActiveList.addListItemAtStart({required ActiveList list, required ActiveListPosition aPosition}){
     List<ActiveListPosition> existingPositions = list.listItems;
     existingPositions.sort((a,b) => a.position.compareTo(b.position));
     ActiveListPosition newPosition = aPosition.copyWith(position:1);
@@ -36,7 +36,7 @@ abstract class ActiveList implements _$ActiveList{
 
     return list.copyWith(listItems:newListPositons);
   }
-  factory ActiveList.addListItemAtEnd({@required ActiveList list, @required ActiveListPosition aPosition}){
+  factory ActiveList.addListItemAtEnd({required ActiveList list, required ActiveListPosition aPosition}){
     List<ActiveListPosition> existingPositions = list.listItems;
     existingPositions.sort((a,b) => a.position.compareTo(b.position));
     ActiveListPosition lastPosition = existingPositions.last; 
@@ -52,14 +52,14 @@ abstract class ActiveList implements _$ActiveList{
 
 @freezed
 abstract class ActiveListPosition implements _$ActiveListPosition{
-  @JsonSerializable(nullable: false)
+  @JsonSerializable()
   const ActiveListPosition._();
   const factory ActiveListPosition(
      {
-      @required String id,
-      @required String name,
-      @required int position,
-      @required bool done
+      @Default('0815') String id,
+      @Default('new Position') String name,
+      @Default(1) int position,
+      @Default(false) bool done
     }
   ) = _ActiveListPosition;
  

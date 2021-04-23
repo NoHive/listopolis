@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'list.dart';
 
@@ -8,6 +8,10 @@ part of 'list.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ActiveList _$ActiveListFromJson(Map<String, dynamic> json) {
   return _ActiveList.fromJson(json);
 }
@@ -16,22 +20,15 @@ ActiveList _$ActiveListFromJson(Map<String, dynamic> json) {
 class _$ActiveListTearOff {
   const _$ActiveListTearOff();
 
-// ignore: unused_element
   _ActiveList call(
-      {@required
-          String id,
-      @required
-          String name,
-      @required
+      {String id = '0815',
+      String name = 'list name',
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-          ListType type,
-      @required
-          int position,
-      @required
-          bool done,
-      @required
-          bool opened,
-      List<ActiveListPosition> listItems}) {
+          ListType type = const ListType.todo(),
+      int position = 1,
+      bool done = false,
+      bool opened = false,
+      List<ActiveListPosition> listItems = const []}) {
     return _ActiveList(
       id: id,
       name: name,
@@ -43,29 +40,29 @@ class _$ActiveListTearOff {
     );
   }
 
-// ignore: unused_element
   ActiveList fromJson(Map<String, Object> json) {
     return ActiveList.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ActiveList = _$ActiveListTearOff();
 
 /// @nodoc
 mixin _$ActiveList {
-  String get id;
-  String get name;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-  ListType get type;
-  int get position;
-  bool get done;
-  bool get opened;
-  List<ActiveListPosition> get listItems;
+  ListType get type => throw _privateConstructorUsedError;
+  int get position => throw _privateConstructorUsedError;
+  bool get done => throw _privateConstructorUsedError;
+  bool get opened => throw _privateConstructorUsedError;
+  List<ActiveListPosition> get listItems => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $ActiveListCopyWith<ActiveList> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActiveListCopyWith<ActiveList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -96,32 +93,48 @@ class _$ActiveListCopyWithImpl<$Res> implements $ActiveListCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object type = freezed,
-    Object position = freezed,
-    Object done = freezed,
-    Object opened = freezed,
-    Object listItems = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? position = freezed,
+    Object? done = freezed,
+    Object? opened = freezed,
+    Object? listItems = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      type: type == freezed ? _value.type : type as ListType,
-      position: position == freezed ? _value.position : position as int,
-      done: done == freezed ? _value.done : done as bool,
-      opened: opened == freezed ? _value.opened : opened as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ListType,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+      done: done == freezed
+          ? _value.done
+          : done // ignore: cast_nullable_to_non_nullable
+              as bool,
+      opened: opened == freezed
+          ? _value.opened
+          : opened // ignore: cast_nullable_to_non_nullable
+              as bool,
       listItems: listItems == freezed
           ? _value.listItems
-          : listItems as List<ActiveListPosition>,
+          : listItems // ignore: cast_nullable_to_non_nullable
+              as List<ActiveListPosition>,
     ));
   }
 
   @override
   $ListTypeCopyWith<$Res> get type {
-    if (_value.type == null) {
-      return null;
-    }
     return $ListTypeCopyWith<$Res>(_value.type, (value) {
       return _then(_value.copyWith(type: value));
     });
@@ -160,24 +173,43 @@ class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object type = freezed,
-    Object position = freezed,
-    Object done = freezed,
-    Object opened = freezed,
-    Object listItems = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? type = freezed,
+    Object? position = freezed,
+    Object? done = freezed,
+    Object? opened = freezed,
+    Object? listItems = freezed,
   }) {
     return _then(_ActiveList(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      type: type == freezed ? _value.type : type as ListType,
-      position: position == freezed ? _value.position : position as int,
-      done: done == freezed ? _value.done : done as bool,
-      opened: opened == freezed ? _value.opened : opened as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ListType,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+      done: done == freezed
+          ? _value.done
+          : done // ignore: cast_nullable_to_non_nullable
+              as bool,
+      opened: opened == freezed
+          ? _value.opened
+          : opened // ignore: cast_nullable_to_non_nullable
+              as bool,
       listItems: listItems == freezed
           ? _value.listItems
-          : listItems as List<ActiveListPosition>,
+          : listItems // ignore: cast_nullable_to_non_nullable
+              as List<ActiveListPosition>,
     ));
   }
 }
@@ -187,44 +219,38 @@ class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
 /// @nodoc
 class _$_ActiveList extends _ActiveList {
   const _$_ActiveList(
-      {@required
-          this.id,
-      @required
-          this.name,
-      @required
+      {this.id = '0815',
+      this.name = 'list name',
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-          this.type,
-      @required
-          this.position,
-      @required
-          this.done,
-      @required
-          this.opened,
-      this.listItems})
-      : assert(id != null),
-        assert(name != null),
-        assert(type != null),
-        assert(position != null),
-        assert(done != null),
-        assert(opened != null),
-        super._();
+          this.type = const ListType.todo(),
+      this.position = 1,
+      this.done = false,
+      this.opened = false,
+      this.listItems = const []})
+      : super._();
 
   factory _$_ActiveList.fromJson(Map<String, dynamic> json) =>
       _$_$_ActiveListFromJson(json);
 
+  @JsonKey(defaultValue: '0815')
   @override
   final String id;
+  @JsonKey(defaultValue: 'list name')
   @override
   final String name;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   final ListType type;
+  @JsonKey(defaultValue: 1)
   @override
   final int position;
+  @JsonKey(defaultValue: false)
   @override
   final bool done;
+  @JsonKey(defaultValue: false)
   @override
   final bool opened;
+  @JsonKey(defaultValue: const [])
   @override
   final List<ActiveListPosition> listItems;
 
@@ -266,6 +292,7 @@ class _$_ActiveList extends _ActiveList {
       const DeepCollectionEquality().hash(opened) ^
       const DeepCollectionEquality().hash(listItems);
 
+  @JsonKey(ignore: true)
   @override
   _$ActiveListCopyWith<_ActiveList> get copyWith =>
       __$ActiveListCopyWithImpl<_ActiveList>(this, _$identity);
@@ -277,43 +304,39 @@ class _$_ActiveList extends _ActiveList {
 }
 
 abstract class _ActiveList extends ActiveList {
-  const _ActiveList._() : super._();
   const factory _ActiveList(
-      {@required
-          String id,
-      @required
-          String name,
-      @required
+      {String id,
+      String name,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           ListType type,
-      @required
-          int position,
-      @required
-          bool done,
-      @required
-          bool opened,
+      int position,
+      bool done,
+      bool opened,
       List<ActiveListPosition> listItems}) = _$_ActiveList;
+  const _ActiveList._() : super._();
 
   factory _ActiveList.fromJson(Map<String, dynamic> json) =
       _$_ActiveList.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-  ListType get type;
+  ListType get type => throw _privateConstructorUsedError;
   @override
-  int get position;
+  int get position => throw _privateConstructorUsedError;
   @override
-  bool get done;
+  bool get done => throw _privateConstructorUsedError;
   @override
-  bool get opened;
+  bool get opened => throw _privateConstructorUsedError;
   @override
-  List<ActiveListPosition> get listItems;
+  List<ActiveListPosition> get listItems => throw _privateConstructorUsedError;
   @override
-  _$ActiveListCopyWith<_ActiveList> get copyWith;
+  @JsonKey(ignore: true)
+  _$ActiveListCopyWith<_ActiveList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ActiveListPosition _$ActiveListPositionFromJson(Map<String, dynamic> json) {
@@ -324,12 +347,11 @@ ActiveListPosition _$ActiveListPositionFromJson(Map<String, dynamic> json) {
 class _$ActiveListPositionTearOff {
   const _$ActiveListPositionTearOff();
 
-// ignore: unused_element
   _ActiveListPosition call(
-      {@required String id,
-      @required String name,
-      @required int position,
-      @required bool done}) {
+      {String id = '0815',
+      String name = 'new Position',
+      int position = 1,
+      bool done = false}) {
     return _ActiveListPosition(
       id: id,
       name: name,
@@ -338,25 +360,25 @@ class _$ActiveListPositionTearOff {
     );
   }
 
-// ignore: unused_element
   ActiveListPosition fromJson(Map<String, Object> json) {
     return ActiveListPosition.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ActiveListPosition = _$ActiveListPositionTearOff();
 
 /// @nodoc
 mixin _$ActiveListPosition {
-  String get id;
-  String get name;
-  int get position;
-  bool get done;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get position => throw _privateConstructorUsedError;
+  bool get done => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $ActiveListPositionCopyWith<ActiveListPosition> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActiveListPositionCopyWith<ActiveListPosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -378,16 +400,28 @@ class _$ActiveListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object position = freezed,
-    Object done = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
+    Object? done = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      position: position == freezed ? _value.position : position as int,
-      done: done == freezed ? _value.done : done as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+      done: done == freezed
+          ? _value.done
+          : done // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -415,16 +449,28 @@ class __$ActiveListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object position = freezed,
-    Object done = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
+    Object? done = freezed,
   }) {
     return _then(_ActiveListPosition(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      position: position == freezed ? _value.position : position as int,
-      done: done == freezed ? _value.done : done as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+      done: done == freezed
+          ? _value.done
+          : done // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -434,25 +480,25 @@ class __$ActiveListPositionCopyWithImpl<$Res>
 /// @nodoc
 class _$_ActiveListPosition extends _ActiveListPosition {
   const _$_ActiveListPosition(
-      {@required this.id,
-      @required this.name,
-      @required this.position,
-      @required this.done})
-      : assert(id != null),
-        assert(name != null),
-        assert(position != null),
-        assert(done != null),
-        super._();
+      {this.id = '0815',
+      this.name = 'new Position',
+      this.position = 1,
+      this.done = false})
+      : super._();
 
   factory _$_ActiveListPosition.fromJson(Map<String, dynamic> json) =>
       _$_$_ActiveListPositionFromJson(json);
 
+  @JsonKey(defaultValue: '0815')
   @override
   final String id;
+  @JsonKey(defaultValue: 'new Position')
   @override
   final String name;
+  @JsonKey(defaultValue: 1)
   @override
   final int position;
+  @JsonKey(defaultValue: false)
   @override
   final bool done;
 
@@ -484,6 +530,7 @@ class _$_ActiveListPosition extends _ActiveListPosition {
       const DeepCollectionEquality().hash(position) ^
       const DeepCollectionEquality().hash(done);
 
+  @JsonKey(ignore: true)
   @override
   _$ActiveListPositionCopyWith<_ActiveListPosition> get copyWith =>
       __$ActiveListPositionCopyWithImpl<_ActiveListPosition>(this, _$identity);
@@ -495,24 +542,26 @@ class _$_ActiveListPosition extends _ActiveListPosition {
 }
 
 abstract class _ActiveListPosition extends ActiveListPosition {
-  const _ActiveListPosition._() : super._();
   const factory _ActiveListPosition(
-      {@required String id,
-      @required String name,
-      @required int position,
-      @required bool done}) = _$_ActiveListPosition;
+      {String id,
+      String name,
+      int position,
+      bool done}) = _$_ActiveListPosition;
+  const _ActiveListPosition._() : super._();
 
   factory _ActiveListPosition.fromJson(Map<String, dynamic> json) =
       _$_ActiveListPosition.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  int get position;
+  int get position => throw _privateConstructorUsedError;
   @override
-  bool get done;
+  bool get done => throw _privateConstructorUsedError;
   @override
-  _$ActiveListPositionCopyWith<_ActiveListPosition> get copyWith;
+  @JsonKey(ignore: true)
+  _$ActiveListPositionCopyWith<_ActiveListPosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }

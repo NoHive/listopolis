@@ -8,16 +8,16 @@ part of 'user_data.dart';
 
 _$_UserData _$_$_UserDataFromJson(Map<String, dynamic> json) {
   return _$_UserData(
-    id: json['id'] as String,
-    name: json['name'] as String,
-    templates: (json['templates'] as List)
-        ?.map((e) =>
-            e == null ? null : ListTemplate.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
-    activeLists: (json['activeLists'] as List)
-        ?.map((e) =>
-            e == null ? null : ActiveList.fromJson(e as Map<String, dynamic>))
-        ?.toList(),
+    id: json['id'] as String? ?? '0815',
+    name: json['name'] as String? ?? 'some User',
+    templates: (json['templates'] as List<dynamic>?)
+            ?.map((e) => ListTemplate.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
+    activeLists: (json['activeLists'] as List<dynamic>?)
+            ?.map((e) => ActiveList.fromJson(e as Map<String, dynamic>))
+            .toList() ??
+        [],
   );
 }
 

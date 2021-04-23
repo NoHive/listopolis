@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'list_type.dart';
 
@@ -9,49 +9,53 @@ part of 'list_type.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ListTypeTearOff {
   const _$ListTypeTearOff();
 
-// ignore: unused_element
   Remember remember() {
     return const Remember();
   }
 
-// ignore: unused_element
   ToDoList todo() {
     return const ToDoList();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ListType = _$ListTypeTearOff();
 
 /// @nodoc
 mixin _$ListType {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result remember(),
-    @required Result todo(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() remember,
+    required TResult Function() todo,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result remember(),
-    Result todo(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? remember,
+    TResult Function()? todo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result remember(Remember value),
-    @required Result todo(ToDoList value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(Remember value) remember,
+    required TResult Function(ToDoList value) todo,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result remember(Remember value),
-    Result todo(ToDoList value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Remember value)? remember,
+    TResult Function(ToDoList value)? todo,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -104,23 +108,20 @@ class _$Remember implements Remember {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result remember(),
-    @required Result todo(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() remember,
+    required TResult Function() todo,
   }) {
-    assert(remember != null);
-    assert(todo != null);
     return remember();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result remember(),
-    Result todo(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? remember,
+    TResult Function()? todo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (remember != null) {
       return remember();
     }
@@ -129,23 +130,20 @@ class _$Remember implements Remember {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result remember(Remember value),
-    @required Result todo(ToDoList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Remember value) remember,
+    required TResult Function(ToDoList value) todo,
   }) {
-    assert(remember != null);
-    assert(todo != null);
     return remember(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result remember(Remember value),
-    Result todo(ToDoList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Remember value)? remember,
+    TResult Function(ToDoList value)? todo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (remember != null) {
       return remember(this);
     }
@@ -192,23 +190,20 @@ class _$ToDoList implements ToDoList {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result remember(),
-    @required Result todo(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() remember,
+    required TResult Function() todo,
   }) {
-    assert(remember != null);
-    assert(todo != null);
     return todo();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result remember(),
-    Result todo(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? remember,
+    TResult Function()? todo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (todo != null) {
       return todo();
     }
@@ -217,23 +212,20 @@ class _$ToDoList implements ToDoList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result remember(Remember value),
-    @required Result todo(ToDoList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(Remember value) remember,
+    required TResult Function(ToDoList value) todo,
   }) {
-    assert(remember != null);
-    assert(todo != null);
     return todo(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result remember(Remember value),
-    Result todo(ToDoList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Remember value)? remember,
+    TResult Function(ToDoList value)? todo,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (todo != null) {
       return todo(this);
     }

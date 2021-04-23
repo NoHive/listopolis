@@ -25,8 +25,8 @@ void main() async{
 
 class ListopolisRoot extends StatelessWidget {
   final SharedPreferences preferences;
-  const ListopolisRoot(this.preferences, {Key key}) : super(key: key);
-
+  const ListopolisRoot(this.preferences, {Key? key}) : super(key: key);
+  
   @override
   Widget build(BuildContext context) {
     

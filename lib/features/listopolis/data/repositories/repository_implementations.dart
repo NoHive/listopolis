@@ -19,7 +19,7 @@ class RepositoryImpl implements IRepository{
 
   final IUserDataSource dataSource;
   final IUserDataSource backupDataSource;
-  RepositoryImpl({@required this.dataSource, @required this.backupDataSource});
+  RepositoryImpl({required this.dataSource, required this.backupDataSource});
   Option<UserData> uDataCache = None();
 
   
@@ -34,33 +34,35 @@ class RepositoryImpl implements IRepository{
       return Future.value(Left(Failure.serviceAccessFailed()));
     }  
   }
+  UserData createEmptyUserData(){
+     return UserData(id: Uuid().v1(), 
+                                name: "no user name yet",
+                                activeLists:[],
+                                templates:[]
+                                );
+  }
 
   @override
   Future<Either<Failure, Option<UserData>>> initDataSource() async {
-
     Option<UserData> existingUserDataOption = await dataSource.readUserData();
     
-    UserData loadedUserData = existingUserDataOption.getOrElse(() => null);
-    if(loadedUserData == null){
-      UserData udata = UserData(id: Uuid().v1(), 
-                                name: "no user name yet",
-                                activeLists:List(),
-                                templates:List()
-                                );
-      try{
-          await dataSource.writeUserData(udata);
-          uDataCache = Some(udata);
-          return Future.value(Right(Some(udata)));
-      }catch(e){ 
-        return Future.value(Left(Failure.serviceAccessFailed()));
-      } 
-    }else{
-      if(loadedUserData.activeLists == null || loadedUserData.templates == null ){
-        loadedUserData = loadedUserData.copyWith(activeLists:List(), templates:List());
+    return existingUserDataOption.fold(
+      () async { 
+        UserData udata = createEmptyUserData();
+        try{
+            await dataSource.writeUserData(udata);
+            uDataCache = Some(udata);
+            return Future.value(Right(Some(udata)));
+        }catch(e){ 
+          return Future.value(Left(Failure.serviceAccessFailed()));
+        } 
+      }, 
+      (loadedUserData) {
+        uDataCache = Some(loadedUserData);
+        return Future.value(Right(uDataCache));
       }
-      uDataCache = Some(loadedUserData);
-      return Future.value(Right(uDataCache));
-    }
+    );
+  
   }
 
   @override
@@ -72,7 +74,7 @@ class RepositoryImpl implements IRepository{
     }
 
     Option<List<ActiveList>> activeLists  = uDataCache.map((userdata) => userdata.activeLists);
-    return Future.value(Right(activeLists.getOrElse(() => List())));
+    return Future.value(Right(activeLists.getOrElse(() => [])));
     
     
   }
@@ -84,7 +86,7 @@ class RepositoryImpl implements IRepository{
     }
 
     Option<List<ListTemplate>> templates  = uDataCache.map((userdata) => userdata.templates);
-    return Future.value(Right(templates.getOrElse(() => List())));
+    return Future.value(Right(templates.getOrElse(() => [])));
   }
 
   @override
@@ -96,82 +98,102 @@ class RepositoryImpl implements IRepository{
  @override
   Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position) {
     // TODO: implement deleteActiveListPosition
-      UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+    
+    uDataCache.fold(
+      () {}, 
+      (currentUserData) {
         uDataCache = Some(UserData.fromRemovedActiveListPosition(currentUserData, list, position));
         sendData();
       }
-      return getActiveLists();
+    );
+    return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter) {
-     UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
-        uDataCache = Some(UserData.addListFromCreatedList(currentUserData, listParameter));
-        sendData();
-      }
-   return getActiveLists();
+     
+     uDataCache.fold(
+       () {}, 
+       (currentUserData) {
+          uDataCache = Some(UserData.addListFromCreatedList(currentUserData, listParameter));
+          sendData();
+       }
+    ); 
+    return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list) {
-    UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
-        uDataCache = Some(UserData.fromRemovedActiveList(currentUserData, list));
-        sendData();
-      }
-      return getActiveLists();
+    
+    uDataCache.fold(
+        () {}, 
+        (currentUserData) {
+          uDataCache = Some(UserData.fromRemovedActiveList(currentUserData, list));
+          sendData();
+        }
+    );
+    return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter) {
-    UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+    uDataCache.fold(
+      (){}, 
+      (currentUserData){
         uDataCache = Some(UserData.replaceListFromCreatedList(currentUserData, list, listParameter));
         sendData();
       }
-   return getActiveLists();
+    );
+    return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ListTemplate>>> deleteTemplate(ListTemplate list) {
-   UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
-        uDataCache = Some(UserData.fromRemovedTemplate(currentUserData, list));
+   uDataCache.fold(
+     (){}, 
+     (currentUserData){
+       uDataCache = Some(UserData.fromRemovedTemplate(currentUserData, list));
         sendData();
-      }
-      return getTemplates();
+     }
+   );
+   return getTemplates();
   }
 
   @override
   Future<Either<Failure, List<ListTemplate>>> deleteTemplatePosition(ListTemplate list, ListTemplatePosition position) {
-     UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+    
+    uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.fromRemovedTemplatePosition(currentUserData, list, position));
         sendData();
-      }
-      return getTemplates();
+     }
+    );
+    return getTemplates();
   }
 
   @override
   Future<Either<Failure, List<ListTemplate>>> insertTemplate(CreateListParameter listParameter) {
-     UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+    uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.addTemplateFromCreatedList(currentUserData, listParameter));
         sendData();
-      }
-      return getTemplates();
+     }
+    );
+    return getTemplates();
   }
 
   @override
   Future<Either<Failure, List<ListTemplate>>> replaceTemplate(ListTemplate list, CreateListParameter listParameter) {
-    UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+    uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.replaceTemplateFromCreatedList(currentUserData, list, listParameter));
         sendData();
-      }
-   return getTemplates();
+     }
+    );
+    return getTemplates();
   }
 
   @override
@@ -188,54 +210,63 @@ class RepositoryImpl implements IRepository{
   @override
   Future<Either<Failure, List<ActiveList>>> loadUserDataFromBackup() async {
     Option<UserData> existingUserDataOption = await backupDataSource.readUserData();
-    if(existingUserDataOption.isNone())
-      return getActiveLists();
-    UserData loadedUserData = existingUserDataOption.getOrElse(() => null);
-    if(loadedUserData != null){
+   
+    existingUserDataOption.fold(
+     (){}, 
+     (loadedUserData) async{
         uDataCache = Some(loadedUserData);
         await sendData();
-    }
+     }
+    );
     return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ActiveList>>> createTemlateFromList(ActiveList list) {
-    UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+    uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.addTemplateFromActiveList(currentUserData, list));
         sendData();
-      }
-      return getActiveLists();
+     }
+    );
+    return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ActiveList>>> changeListPosition(ActiveList list, int oldPosition, int newPosition) {
-     UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+     uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.fromChangedListPosition(currentUserData, list, oldPosition, newPosition));
         sendData();
-      }
-      return getActiveLists();
+     }
+    );
+    return getActiveLists();
   }
 
   @override
   Future<Either<Failure, List<ListTemplate>>> changeTemplatePosition(ListTemplate template, int oldPosition, int newPosition) {
-     UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+     uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.fromChangedTemplatePosition(currentUserData, template, oldPosition, newPosition));
         sendData();
-      }
-      return getTemplates();
+     }
+    );
+    return getTemplates();
   }
 
   @override
   Future<Either<Failure, List<ActiveList>>> createListFromExternalJson(String jsonString) {
-     UserData currentUserData = uDataCache.getOrElse(() => null);
-      if(currentUserData != null){
+     uDataCache.fold(
+     (){}, 
+     (currentUserData){
         uDataCache = Some(UserData.fromAddedExternalList(currentUserData, jsonString));
         sendData();
-      }
-      return getActiveLists();
+     }
+    ); 
+    return getActiveLists();
   }
 
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'list_template.dart';
 
@@ -8,6 +8,10 @@ part of 'list_template.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 ListTemplate _$ListTemplateFromJson(Map<String, dynamic> json) {
   return _ListTemplate.fromJson(json);
 }
@@ -16,18 +20,13 @@ ListTemplate _$ListTemplateFromJson(Map<String, dynamic> json) {
 class _$ListTemplateTearOff {
   const _$ListTemplateTearOff();
 
-// ignore: unused_element
   _ListTemplate call(
-      {@required
-          String id,
-      @required
-          String name,
-      @required
-          int position,
-      @required
+      {String id = '0815',
+      String name = 'a template',
+      int position = 1,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-          ListType type,
-      List<ListTemplatePosition> templatePositions}) {
+          ListType type = const ListType.todo(),
+      List<ListTemplatePosition> templatePositions = const []}) {
     return _ListTemplate(
       id: id,
       name: name,
@@ -37,27 +36,28 @@ class _$ListTemplateTearOff {
     );
   }
 
-// ignore: unused_element
   ListTemplate fromJson(Map<String, Object> json) {
     return ListTemplate.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ListTemplate = _$ListTemplateTearOff();
 
 /// @nodoc
 mixin _$ListTemplate {
-  String get id;
-  String get name;
-  int get position;
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get position => throw _privateConstructorUsedError;
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-  ListType get type;
-  List<ListTemplatePosition> get templatePositions;
+  ListType get type => throw _privateConstructorUsedError;
+  List<ListTemplatePosition> get templatePositions =>
+      throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $ListTemplateCopyWith<ListTemplate> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ListTemplateCopyWith<ListTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -86,28 +86,38 @@ class _$ListTemplateCopyWithImpl<$Res> implements $ListTemplateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object position = freezed,
-    Object type = freezed,
-    Object templatePositions = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
+    Object? type = freezed,
+    Object? templatePositions = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      position: position == freezed ? _value.position : position as int,
-      type: type == freezed ? _value.type : type as ListType,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ListType,
       templatePositions: templatePositions == freezed
           ? _value.templatePositions
-          : templatePositions as List<ListTemplatePosition>,
+          : templatePositions // ignore: cast_nullable_to_non_nullable
+              as List<ListTemplatePosition>,
     ));
   }
 
   @override
   $ListTypeCopyWith<$Res> get type {
-    if (_value.type == null) {
-      return null;
-    }
     return $ListTypeCopyWith<$Res>(_value.type, (value) {
       return _then(_value.copyWith(type: value));
     });
@@ -145,20 +155,33 @@ class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object id = freezed,
-    Object name = freezed,
-    Object position = freezed,
-    Object type = freezed,
-    Object templatePositions = freezed,
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? position = freezed,
+    Object? type = freezed,
+    Object? templatePositions = freezed,
   }) {
     return _then(_ListTemplate(
-      id: id == freezed ? _value.id : id as String,
-      name: name == freezed ? _value.name : name as String,
-      position: position == freezed ? _value.position : position as int,
-      type: type == freezed ? _value.type : type as ListType,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ListType,
       templatePositions: templatePositions == freezed
           ? _value.templatePositions
-          : templatePositions as List<ListTemplatePosition>,
+          : templatePositions // ignore: cast_nullable_to_non_nullable
+              as List<ListTemplatePosition>,
     ));
   }
 }
@@ -168,34 +191,30 @@ class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
 /// @nodoc
 class _$_ListTemplate extends _ListTemplate {
   const _$_ListTemplate(
-      {@required
-          this.id,
-      @required
-          this.name,
-      @required
-          this.position,
-      @required
+      {this.id = '0815',
+      this.name = 'a template',
+      this.position = 1,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-          this.type,
-      this.templatePositions})
-      : assert(id != null),
-        assert(name != null),
-        assert(position != null),
-        assert(type != null),
-        super._();
+          this.type = const ListType.todo(),
+      this.templatePositions = const []})
+      : super._();
 
   factory _$_ListTemplate.fromJson(Map<String, dynamic> json) =>
       _$_$_ListTemplateFromJson(json);
 
+  @JsonKey(defaultValue: '0815')
   @override
   final String id;
+  @JsonKey(defaultValue: 'a template')
   @override
   final String name;
+  @JsonKey(defaultValue: 1)
   @override
   final int position;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   final ListType type;
+  @JsonKey(defaultValue: const [])
   @override
   final List<ListTemplatePosition> templatePositions;
 
@@ -231,6 +250,7 @@ class _$_ListTemplate extends _ListTemplate {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(templatePositions);
 
+  @JsonKey(ignore: true)
   @override
   _$ListTemplateCopyWith<_ListTemplate> get copyWith =>
       __$ListTemplateCopyWithImpl<_ListTemplate>(this, _$identity);
@@ -242,35 +262,34 @@ class _$_ListTemplate extends _ListTemplate {
 }
 
 abstract class _ListTemplate extends ListTemplate {
-  const _ListTemplate._() : super._();
   const factory _ListTemplate(
-      {@required
-          String id,
-      @required
-          String name,
-      @required
-          int position,
-      @required
+      {String id,
+      String name,
+      int position,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           ListType type,
       List<ListTemplatePosition> templatePositions}) = _$_ListTemplate;
+  const _ListTemplate._() : super._();
 
   factory _ListTemplate.fromJson(Map<String, dynamic> json) =
       _$_ListTemplate.fromJson;
 
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  int get position;
+  int get position => throw _privateConstructorUsedError;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-  ListType get type;
+  ListType get type => throw _privateConstructorUsedError;
   @override
-  List<ListTemplatePosition> get templatePositions;
+  List<ListTemplatePosition> get templatePositions =>
+      throw _privateConstructorUsedError;
   @override
-  _$ListTemplateCopyWith<_ListTemplate> get copyWith;
+  @JsonKey(ignore: true)
+  _$ListTemplateCopyWith<_ListTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ListTemplatePosition _$ListTemplatePositionFromJson(Map<String, dynamic> json) {
@@ -281,9 +300,8 @@ ListTemplatePosition _$ListTemplatePositionFromJson(Map<String, dynamic> json) {
 class _$ListTemplatePositionTearOff {
   const _$ListTemplatePositionTearOff();
 
-// ignore: unused_element
   _ListTemplatePosition call(
-      {@required String name, @required String id, @required int position}) {
+      {String name = 'a Name', String id = '0815', int position = 1}) {
     return _ListTemplatePosition(
       name: name,
       id: id,
@@ -291,24 +309,24 @@ class _$ListTemplatePositionTearOff {
     );
   }
 
-// ignore: unused_element
   ListTemplatePosition fromJson(Map<String, Object> json) {
     return ListTemplatePosition.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ListTemplatePosition = _$ListTemplatePositionTearOff();
 
 /// @nodoc
 mixin _$ListTemplatePosition {
-  String get name;
-  String get id;
-  int get position;
+  String get name => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
+  int get position => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $ListTemplatePositionCopyWith<ListTemplatePosition> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ListTemplatePositionCopyWith<ListTemplatePosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -330,14 +348,23 @@ class _$ListTemplatePositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object name = freezed,
-    Object id = freezed,
-    Object position = freezed,
+    Object? name = freezed,
+    Object? id = freezed,
+    Object? position = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed ? _value.name : name as String,
-      id: id == freezed ? _value.id : id as String,
-      position: position == freezed ? _value.position : position as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -365,14 +392,23 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object name = freezed,
-    Object id = freezed,
-    Object position = freezed,
+    Object? name = freezed,
+    Object? id = freezed,
+    Object? position = freezed,
   }) {
     return _then(_ListTemplatePosition(
-      name: name == freezed ? _value.name : name as String,
-      id: id == freezed ? _value.id : id as String,
-      position: position == freezed ? _value.position : position as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: position == freezed
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -382,19 +418,19 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
 /// @nodoc
 class _$_ListTemplatePosition extends _ListTemplatePosition {
   const _$_ListTemplatePosition(
-      {@required this.name, @required this.id, @required this.position})
-      : assert(name != null),
-        assert(id != null),
-        assert(position != null),
-        super._();
+      {this.name = 'a Name', this.id = '0815', this.position = 1})
+      : super._();
 
   factory _$_ListTemplatePosition.fromJson(Map<String, dynamic> json) =>
       _$_$_ListTemplatePositionFromJson(json);
 
+  @JsonKey(defaultValue: 'a Name')
   @override
   final String name;
+  @JsonKey(defaultValue: '0815')
   @override
   final String id;
+  @JsonKey(defaultValue: 1)
   @override
   final int position;
 
@@ -423,6 +459,7 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(position);
 
+  @JsonKey(ignore: true)
   @override
   _$ListTemplatePositionCopyWith<_ListTemplatePosition> get copyWith =>
       __$ListTemplatePositionCopyWithImpl<_ListTemplatePosition>(
@@ -435,21 +472,21 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
 }
 
 abstract class _ListTemplatePosition extends ListTemplatePosition {
+  const factory _ListTemplatePosition({String name, String id, int position}) =
+      _$_ListTemplatePosition;
   const _ListTemplatePosition._() : super._();
-  const factory _ListTemplatePosition(
-      {@required String name,
-      @required String id,
-      @required int position}) = _$_ListTemplatePosition;
 
   factory _ListTemplatePosition.fromJson(Map<String, dynamic> json) =
       _$_ListTemplatePosition.fromJson;
 
   @override
-  String get name;
+  String get name => throw _privateConstructorUsedError;
   @override
-  String get id;
+  String get id => throw _privateConstructorUsedError;
   @override
-  int get position;
+  int get position => throw _privateConstructorUsedError;
   @override
-  _$ListTemplatePositionCopyWith<_ListTemplatePosition> get copyWith;
+  @JsonKey(ignore: true)
+  _$ListTemplatePositionCopyWith<_ListTemplatePosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'template_bloc.dart';
 
@@ -9,57 +9,55 @@ part of 'template_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$TemplateEventTearOff {
   const _$TemplateEventTearOff();
 
-// ignore: unused_element
   _LoadTemplates load() {
     return const _LoadTemplates();
   }
 
-// ignore: unused_element
   _LoadTemplatesForReorder loadTemplatesForReorder() {
     return const _LoadTemplatesForReorder();
   }
 
-// ignore: unused_element
   _InsertNewTemplate insertNewTemplate(
-      {@required CreateListParameter listParameter}) {
+      {required CreateListParameter listParameter}) {
     return _InsertNewTemplate(
       listParameter: listParameter,
     );
   }
 
-// ignore: unused_element
   _DeleteTemplatePosition deleteTemplatePosition(
-      {@required ListTemplate list, @required ListTemplatePosition position}) {
+      {required ListTemplate list, required ListTemplatePosition position}) {
     return _DeleteTemplatePosition(
       list: list,
       position: position,
     );
   }
 
-// ignore: unused_element
-  _DeleteTemplate deleteTemplate({@required ListTemplate list}) {
+  _DeleteTemplate deleteTemplate({required ListTemplate list}) {
     return _DeleteTemplate(
       list: list,
     );
   }
 
-// ignore: unused_element
   _ReplaceTemplate replaceTemplate(
-      {@required CreateListParameter listParameter,
-      @required ListTemplate list}) {
+      {required CreateListParameter listParameter,
+      required ListTemplate list}) {
     return _ReplaceTemplate(
       listParameter: listParameter,
       list: list,
     );
   }
 
-// ignore: unused_element
   _ChangeTemplatePosition changeTemplatePosition(
-      {@required ListTemplate template, int oldIndex, int newIndex}) {
+      {required ListTemplate template,
+      required int oldIndex,
+      required int newIndex}) {
     return _ChangeTemplatePosition(
       template: template,
       oldIndex: oldIndex,
@@ -69,62 +67,67 @@ class _$TemplateEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TemplateEvent = _$TemplateEventTearOff();
 
 /// @nodoc
 mixin _$TemplateEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -182,47 +185,38 @@ class _$_LoadTemplates implements _LoadTemplates {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return load();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load();
     }
@@ -231,38 +225,33 @@ class _$_LoadTemplates implements _LoadTemplates {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -313,47 +302,38 @@ class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return loadTemplatesForReorder();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadTemplatesForReorder != null) {
       return loadTemplatesForReorder();
     }
@@ -362,38 +342,33 @@ class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return loadTemplatesForReorder(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadTemplatesForReorder != null) {
       return loadTemplatesForReorder(this);
     }
@@ -426,20 +401,20 @@ class __$InsertNewTemplateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object listParameter = freezed,
+    Object? listParameter = freezed,
   }) {
     return _then(_InsertNewTemplate(
       listParameter: listParameter == freezed
           ? _value.listParameter
-          : listParameter as CreateListParameter,
+          : listParameter // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
     ));
   }
 }
 
 /// @nodoc
 class _$_InsertNewTemplate implements _InsertNewTemplate {
-  const _$_InsertNewTemplate({@required this.listParameter})
-      : assert(listParameter != null);
+  const _$_InsertNewTemplate({required this.listParameter});
 
   @override
   final CreateListParameter listParameter;
@@ -462,53 +437,45 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParameter);
 
+  @JsonKey(ignore: true)
   @override
   _$InsertNewTemplateCopyWith<_InsertNewTemplate> get copyWith =>
       __$InsertNewTemplateCopyWithImpl<_InsertNewTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return insertNewTemplate(listParameter);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insertNewTemplate != null) {
       return insertNewTemplate(listParameter);
     }
@@ -517,38 +484,33 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return insertNewTemplate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insertNewTemplate != null) {
       return insertNewTemplate(this);
     }
@@ -558,10 +520,12 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
 
 abstract class _InsertNewTemplate implements TemplateEvent {
   const factory _InsertNewTemplate(
-      {@required CreateListParameter listParameter}) = _$_InsertNewTemplate;
+      {required CreateListParameter listParameter}) = _$_InsertNewTemplate;
 
-  CreateListParameter get listParameter;
-  _$InsertNewTemplateCopyWith<_InsertNewTemplate> get copyWith;
+  CreateListParameter get listParameter => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InsertNewTemplateCopyWith<_InsertNewTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -588,22 +552,23 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
-    Object position = freezed,
+    Object? list = freezed,
+    Object? position = freezed,
   }) {
     return _then(_DeleteTemplatePosition(
-      list: list == freezed ? _value.list : list as ListTemplate,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ListTemplate,
       position: position == freezed
           ? _value.position
-          : position as ListTemplatePosition,
+          : position // ignore: cast_nullable_to_non_nullable
+              as ListTemplatePosition,
     ));
   }
 
   @override
   $ListTemplateCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ListTemplateCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -611,9 +576,6 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
 
   @override
   $ListTemplatePositionCopyWith<$Res> get position {
-    if (_value.position == null) {
-      return null;
-    }
     return $ListTemplatePositionCopyWith<$Res>(_value.position, (value) {
       return _then(_value.copyWith(position: value));
     });
@@ -622,10 +584,7 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
-  const _$_DeleteTemplatePosition(
-      {@required this.list, @required this.position})
-      : assert(list != null),
-        assert(position != null);
+  const _$_DeleteTemplatePosition({required this.list, required this.position});
 
   @override
   final ListTemplate list;
@@ -654,6 +613,7 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
       const DeepCollectionEquality().hash(list) ^
       const DeepCollectionEquality().hash(position);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteTemplatePositionCopyWith<_DeleteTemplatePosition> get copyWith =>
       __$DeleteTemplatePositionCopyWithImpl<_DeleteTemplatePosition>(
@@ -661,47 +621,38 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return deleteTemplatePosition(list, position);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteTemplatePosition != null) {
       return deleteTemplatePosition(list, position);
     }
@@ -710,38 +661,33 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return deleteTemplatePosition(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteTemplatePosition != null) {
       return deleteTemplatePosition(this);
     }
@@ -751,12 +697,14 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
 
 abstract class _DeleteTemplatePosition implements TemplateEvent {
   const factory _DeleteTemplatePosition(
-      {@required ListTemplate list,
-      @required ListTemplatePosition position}) = _$_DeleteTemplatePosition;
+      {required ListTemplate list,
+      required ListTemplatePosition position}) = _$_DeleteTemplatePosition;
 
-  ListTemplate get list;
-  ListTemplatePosition get position;
-  _$DeleteTemplatePositionCopyWith<_DeleteTemplatePosition> get copyWith;
+  ListTemplate get list => throw _privateConstructorUsedError;
+  ListTemplatePosition get position => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteTemplatePositionCopyWith<_DeleteTemplatePosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -782,18 +730,18 @@ class __$DeleteTemplateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
+    Object? list = freezed,
   }) {
     return _then(_DeleteTemplate(
-      list: list == freezed ? _value.list : list as ListTemplate,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ListTemplate,
     ));
   }
 
   @override
   $ListTemplateCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ListTemplateCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -802,7 +750,7 @@ class __$DeleteTemplateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_DeleteTemplate implements _DeleteTemplate {
-  const _$_DeleteTemplate({@required this.list}) : assert(list != null);
+  const _$_DeleteTemplate({required this.list});
 
   @override
   final ListTemplate list;
@@ -824,53 +772,45 @@ class _$_DeleteTemplate implements _DeleteTemplate {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteTemplateCopyWith<_DeleteTemplate> get copyWith =>
       __$DeleteTemplateCopyWithImpl<_DeleteTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return deleteTemplate(list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteTemplate != null) {
       return deleteTemplate(list);
     }
@@ -879,38 +819,33 @@ class _$_DeleteTemplate implements _DeleteTemplate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return deleteTemplate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteTemplate != null) {
       return deleteTemplate(this);
     }
@@ -919,11 +854,13 @@ class _$_DeleteTemplate implements _DeleteTemplate {
 }
 
 abstract class _DeleteTemplate implements TemplateEvent {
-  const factory _DeleteTemplate({@required ListTemplate list}) =
+  const factory _DeleteTemplate({required ListTemplate list}) =
       _$_DeleteTemplate;
 
-  ListTemplate get list;
-  _$DeleteTemplateCopyWith<_DeleteTemplate> get copyWith;
+  ListTemplate get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteTemplateCopyWith<_DeleteTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -949,22 +886,23 @@ class __$ReplaceTemplateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object listParameter = freezed,
-    Object list = freezed,
+    Object? listParameter = freezed,
+    Object? list = freezed,
   }) {
     return _then(_ReplaceTemplate(
       listParameter: listParameter == freezed
           ? _value.listParameter
-          : listParameter as CreateListParameter,
-      list: list == freezed ? _value.list : list as ListTemplate,
+          : listParameter // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ListTemplate,
     ));
   }
 
   @override
   $ListTemplateCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ListTemplateCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -973,9 +911,7 @@ class __$ReplaceTemplateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_ReplaceTemplate implements _ReplaceTemplate {
-  const _$_ReplaceTemplate({@required this.listParameter, @required this.list})
-      : assert(listParameter != null),
-        assert(list != null);
+  const _$_ReplaceTemplate({required this.listParameter, required this.list});
 
   @override
   final CreateListParameter listParameter;
@@ -1004,53 +940,45 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
       const DeepCollectionEquality().hash(listParameter) ^
       const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith =>
       __$ReplaceTemplateCopyWithImpl<_ReplaceTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return replaceTemplate(listParameter, list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (replaceTemplate != null) {
       return replaceTemplate(listParameter, list);
     }
@@ -1059,38 +987,33 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return replaceTemplate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (replaceTemplate != null) {
       return replaceTemplate(this);
     }
@@ -1100,12 +1023,14 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
 
 abstract class _ReplaceTemplate implements TemplateEvent {
   const factory _ReplaceTemplate(
-      {@required CreateListParameter listParameter,
-      @required ListTemplate list}) = _$_ReplaceTemplate;
+      {required CreateListParameter listParameter,
+      required ListTemplate list}) = _$_ReplaceTemplate;
 
-  CreateListParameter get listParameter;
-  ListTemplate get list;
-  _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith;
+  CreateListParameter get listParameter => throw _privateConstructorUsedError;
+  ListTemplate get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1131,23 +1056,28 @@ class __$ChangeTemplatePositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object template = freezed,
-    Object oldIndex = freezed,
-    Object newIndex = freezed,
+    Object? template = freezed,
+    Object? oldIndex = freezed,
+    Object? newIndex = freezed,
   }) {
     return _then(_ChangeTemplatePosition(
-      template:
-          template == freezed ? _value.template : template as ListTemplate,
-      oldIndex: oldIndex == freezed ? _value.oldIndex : oldIndex as int,
-      newIndex: newIndex == freezed ? _value.newIndex : newIndex as int,
+      template: template == freezed
+          ? _value.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as ListTemplate,
+      oldIndex: oldIndex == freezed
+          ? _value.oldIndex
+          : oldIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      newIndex: newIndex == freezed
+          ? _value.newIndex
+          : newIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
   $ListTemplateCopyWith<$Res> get template {
-    if (_value.template == null) {
-      return null;
-    }
     return $ListTemplateCopyWith<$Res>(_value.template, (value) {
       return _then(_value.copyWith(template: value));
     });
@@ -1157,8 +1087,7 @@ class __$ChangeTemplatePositionCopyWithImpl<$Res>
 /// @nodoc
 class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
   const _$_ChangeTemplatePosition(
-      {@required this.template, this.oldIndex, this.newIndex})
-      : assert(template != null);
+      {required this.template, required this.oldIndex, required this.newIndex});
 
   @override
   final ListTemplate template;
@@ -1194,6 +1123,7 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
       const DeepCollectionEquality().hash(oldIndex) ^
       const DeepCollectionEquality().hash(newIndex);
 
+  @JsonKey(ignore: true)
   @override
   _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith =>
       __$ChangeTemplatePositionCopyWithImpl<_ChangeTemplatePosition>(
@@ -1201,47 +1131,38 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadTemplatesForReorder(),
-    @required Result insertNewTemplate(CreateListParameter listParameter),
-    @required
-        Result deleteTemplatePosition(
-            ListTemplate list, ListTemplatePosition position),
-    @required Result deleteTemplate(ListTemplate list),
-    @required
-        Result replaceTemplate(
-            CreateListParameter listParameter, ListTemplate list),
-    @required
-        Result changeTemplatePosition(
-            ListTemplate template, int oldIndex, int newIndex),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadTemplatesForReorder,
+    required TResult Function(CreateListParameter listParameter)
+        insertNewTemplate,
+    required TResult Function(ListTemplate list, ListTemplatePosition position)
+        deleteTemplatePosition,
+    required TResult Function(ListTemplate list) deleteTemplate,
+    required TResult Function(
+            CreateListParameter listParameter, ListTemplate list)
+        replaceTemplate,
+    required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return changeTemplatePosition(template, oldIndex, newIndex);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadTemplatesForReorder(),
-    Result insertNewTemplate(CreateListParameter listParameter),
-    Result deleteTemplatePosition(
-        ListTemplate list, ListTemplatePosition position),
-    Result deleteTemplate(ListTemplate list),
-    Result replaceTemplate(
-        CreateListParameter listParameter, ListTemplate list),
-    Result changeTemplatePosition(
-        ListTemplate template, int oldIndex, int newIndex),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadTemplatesForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult Function(ListTemplate list)? deleteTemplate,
+    TResult Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeTemplatePosition != null) {
       return changeTemplatePosition(template, oldIndex, newIndex);
     }
@@ -1250,38 +1171,33 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadTemplates value),
-    @required Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    @required Result insertNewTemplate(_InsertNewTemplate value),
-    @required Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    @required Result deleteTemplate(_DeleteTemplate value),
-    @required Result replaceTemplate(_ReplaceTemplate value),
-    @required Result changeTemplatePosition(_ChangeTemplatePosition value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadTemplates value) load,
+    required TResult Function(_LoadTemplatesForReorder value)
+        loadTemplatesForReorder,
+    required TResult Function(_InsertNewTemplate value) insertNewTemplate,
+    required TResult Function(_DeleteTemplatePosition value)
+        deleteTemplatePosition,
+    required TResult Function(_DeleteTemplate value) deleteTemplate,
+    required TResult Function(_ReplaceTemplate value) replaceTemplate,
+    required TResult Function(_ChangeTemplatePosition value)
+        changeTemplatePosition,
   }) {
-    assert(load != null);
-    assert(loadTemplatesForReorder != null);
-    assert(insertNewTemplate != null);
-    assert(deleteTemplatePosition != null);
-    assert(deleteTemplate != null);
-    assert(replaceTemplate != null);
-    assert(changeTemplatePosition != null);
     return changeTemplatePosition(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadTemplates value),
-    Result loadTemplatesForReorder(_LoadTemplatesForReorder value),
-    Result insertNewTemplate(_InsertNewTemplate value),
-    Result deleteTemplatePosition(_DeleteTemplatePosition value),
-    Result deleteTemplate(_DeleteTemplate value),
-    Result replaceTemplate(_ReplaceTemplate value),
-    Result changeTemplatePosition(_ChangeTemplatePosition value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadTemplates value)? load,
+    TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult Function(_DeleteTemplate value)? deleteTemplate,
+    TResult Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeTemplatePosition != null) {
       return changeTemplatePosition(this);
     }
@@ -1291,47 +1207,44 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
 
 abstract class _ChangeTemplatePosition implements TemplateEvent {
   const factory _ChangeTemplatePosition(
-      {@required ListTemplate template,
-      int oldIndex,
-      int newIndex}) = _$_ChangeTemplatePosition;
+      {required ListTemplate template,
+      required int oldIndex,
+      required int newIndex}) = _$_ChangeTemplatePosition;
 
-  ListTemplate get template;
-  int get oldIndex;
-  int get newIndex;
-  _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith;
+  ListTemplate get template => throw _privateConstructorUsedError;
+  int get oldIndex => throw _privateConstructorUsedError;
+  int get newIndex => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$TemplateStateTearOff {
   const _$TemplateStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
 
-// ignore: unused_element
-  _Loaded loaded({@required List<ListTemplate> userTemplates}) {
+  _Loaded loaded({List<ListTemplate> userTemplates = const []}) {
     return _Loaded(
       userTemplates: userTemplates,
     );
   }
 
-// ignore: unused_element
   _TemplateOrderChanged templateOrderChanged(
-      {@required List<ListTemplate> userTemplates}) {
+      {List<ListTemplate> userTemplates = const []}) {
     return _TemplateOrderChanged(
       userTemplates: userTemplates,
     );
   }
 
-// ignore: unused_element
-  _Error error({@required Failure failure}) {
+  _Error error({Failure failure = const Failure.serviceAccessFailed()}) {
     return _Error(
       failure: failure,
     );
@@ -1339,45 +1252,49 @@ class _$TemplateStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $TemplateState = _$TemplateStateTearOff();
 
 /// @nodoc
 mixin _$TemplateState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ListTemplate> userTemplates),
-    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
-    @required Result error(Failure failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListTemplate> userTemplates) loaded,
+    required TResult Function(List<ListTemplate> userTemplates)
+        templateOrderChanged,
+    required TResult Function(Failure failure) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ListTemplate> userTemplates),
-    Result templateOrderChanged(List<ListTemplate> userTemplates),
-    Result error(Failure failure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListTemplate> userTemplates)? loaded,
+    TResult Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result templateOrderChanged(_TemplateOrderChanged value),
-    @required Result error(_Error value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_TemplateOrderChanged value) templateOrderChanged,
+    required TResult Function(_Error value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result templateOrderChanged(_TemplateOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1432,32 +1349,27 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ListTemplate> userTemplates),
-    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListTemplate> userTemplates) loaded,
+    required TResult Function(List<ListTemplate> userTemplates)
+        templateOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ListTemplate> userTemplates),
-    Result templateOrderChanged(List<ListTemplate> userTemplates),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListTemplate> userTemplates)? loaded,
+    TResult Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -1466,32 +1378,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result templateOrderChanged(_TemplateOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_TemplateOrderChanged value) templateOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result templateOrderChanged(_TemplateOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -1538,32 +1444,27 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ListTemplate> userTemplates),
-    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListTemplate> userTemplates) loaded,
+    required TResult Function(List<ListTemplate> userTemplates)
+        templateOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ListTemplate> userTemplates),
-    Result templateOrderChanged(List<ListTemplate> userTemplates),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListTemplate> userTemplates)? loaded,
+    TResult Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -1572,32 +1473,26 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result templateOrderChanged(_TemplateOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_TemplateOrderChanged value) templateOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result templateOrderChanged(_TemplateOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -1627,21 +1522,22 @@ class __$LoadedCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userTemplates = freezed,
+    Object? userTemplates = freezed,
   }) {
     return _then(_Loaded(
       userTemplates: userTemplates == freezed
           ? _value.userTemplates
-          : userTemplates as List<ListTemplate>,
+          : userTemplates // ignore: cast_nullable_to_non_nullable
+              as List<ListTemplate>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Loaded implements _Loaded {
-  const _$_Loaded({@required this.userTemplates})
-      : assert(userTemplates != null);
+  const _$_Loaded({this.userTemplates = const []});
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<ListTemplate> userTemplates;
 
@@ -1663,38 +1559,34 @@ class _$_Loaded implements _Loaded {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userTemplates);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadedCopyWith<_Loaded> get copyWith =>
       __$LoadedCopyWithImpl<_Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ListTemplate> userTemplates),
-    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListTemplate> userTemplates) loaded,
+    required TResult Function(List<ListTemplate> userTemplates)
+        templateOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return loaded(userTemplates);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ListTemplate> userTemplates),
-    Result templateOrderChanged(List<ListTemplate> userTemplates),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListTemplate> userTemplates)? loaded,
+    TResult Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(userTemplates);
     }
@@ -1703,32 +1595,26 @@ class _$_Loaded implements _Loaded {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result templateOrderChanged(_TemplateOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_TemplateOrderChanged value) templateOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result templateOrderChanged(_TemplateOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -1737,11 +1623,11 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements TemplateState {
-  const factory _Loaded({@required List<ListTemplate> userTemplates}) =
-      _$_Loaded;
+  const factory _Loaded({List<ListTemplate> userTemplates}) = _$_Loaded;
 
-  List<ListTemplate> get userTemplates;
-  _$LoadedCopyWith<_Loaded> get copyWith;
+  List<ListTemplate> get userTemplates => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1765,21 +1651,22 @@ class __$TemplateOrderChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userTemplates = freezed,
+    Object? userTemplates = freezed,
   }) {
     return _then(_TemplateOrderChanged(
       userTemplates: userTemplates == freezed
           ? _value.userTemplates
-          : userTemplates as List<ListTemplate>,
+          : userTemplates // ignore: cast_nullable_to_non_nullable
+              as List<ListTemplate>,
     ));
   }
 }
 
 /// @nodoc
 class _$_TemplateOrderChanged implements _TemplateOrderChanged {
-  const _$_TemplateOrderChanged({@required this.userTemplates})
-      : assert(userTemplates != null);
+  const _$_TemplateOrderChanged({this.userTemplates = const []});
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<ListTemplate> userTemplates;
 
@@ -1801,6 +1688,7 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userTemplates);
 
+  @JsonKey(ignore: true)
   @override
   _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith =>
       __$TemplateOrderChangedCopyWithImpl<_TemplateOrderChanged>(
@@ -1808,32 +1696,27 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ListTemplate> userTemplates),
-    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListTemplate> userTemplates) loaded,
+    required TResult Function(List<ListTemplate> userTemplates)
+        templateOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return templateOrderChanged(userTemplates);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ListTemplate> userTemplates),
-    Result templateOrderChanged(List<ListTemplate> userTemplates),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListTemplate> userTemplates)? loaded,
+    TResult Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (templateOrderChanged != null) {
       return templateOrderChanged(userTemplates);
     }
@@ -1842,32 +1725,26 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result templateOrderChanged(_TemplateOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_TemplateOrderChanged value) templateOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return templateOrderChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result templateOrderChanged(_TemplateOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (templateOrderChanged != null) {
       return templateOrderChanged(this);
     }
@@ -1876,11 +1753,13 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
 }
 
 abstract class _TemplateOrderChanged implements TemplateState {
-  const factory _TemplateOrderChanged(
-      {@required List<ListTemplate> userTemplates}) = _$_TemplateOrderChanged;
+  const factory _TemplateOrderChanged({List<ListTemplate> userTemplates}) =
+      _$_TemplateOrderChanged;
 
-  List<ListTemplate> get userTemplates;
-  _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith;
+  List<ListTemplate> get userTemplates => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1903,18 +1782,18 @@ class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_Error(
-      failure: failure == freezed ? _value.failure : failure as Failure,
+      failure: failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
     ));
   }
 
   @override
   $FailureCopyWith<$Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -1923,8 +1802,9 @@ class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Error implements _Error {
-  const _$_Error({@required this.failure}) : assert(failure != null);
+  const _$_Error({this.failure = const Failure.serviceAccessFailed()});
 
+  @JsonKey(defaultValue: const Failure.serviceAccessFailed())
   @override
   final Failure failure;
 
@@ -1945,38 +1825,34 @@ class _$_Error implements _Error {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$ErrorCopyWith<_Error> get copyWith =>
       __$ErrorCopyWithImpl<_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ListTemplate> userTemplates),
-    @required Result templateOrderChanged(List<ListTemplate> userTemplates),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ListTemplate> userTemplates) loaded,
+    required TResult Function(List<ListTemplate> userTemplates)
+        templateOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return error(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ListTemplate> userTemplates),
-    Result templateOrderChanged(List<ListTemplate> userTemplates),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ListTemplate> userTemplates)? loaded,
+    TResult Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(failure);
     }
@@ -1985,32 +1861,26 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result templateOrderChanged(_TemplateOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_TemplateOrderChanged value) templateOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(templateOrderChanged != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result templateOrderChanged(_TemplateOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -2019,8 +1889,9 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements TemplateState {
-  const factory _Error({@required Failure failure}) = _$_Error;
+  const factory _Error({Failure failure}) = _$_Error;
 
-  Failure get failure;
-  _$ErrorCopyWith<_Error> get copyWith;
+  Failure get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }

@@ -10,21 +10,21 @@ part 'list_template.g.dart';
 
 @freezed
 abstract class ListTemplate implements _$ListTemplate{
-  @JsonSerializable(nullable: false)
+  @JsonSerializable()
   const ListTemplate._();
   const factory ListTemplate(
     {
-      @required String id, 
-      @required String name,
-      @required int position,
+      @Default('0815') String id, 
+      @Default('a template') String name,
+      @Default(1) int position,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-      @required ListType type,
-      List<ListTemplatePosition> templatePositions
+      @Default(ListType.todo()) ListType type,
+      @Default([]) List<ListTemplatePosition> templatePositions
     }
     ) = _ListTemplate;
     factory ListTemplate.fromJson(Map<String, dynamic> json) => _$ListTemplateFromJson(json);
 
-     factory ListTemplate.addListItemAtStart({@required ListTemplate list, @required ListTemplatePosition aPosition}){
+     factory ListTemplate.addListItemAtStart({required ListTemplate list, required ListTemplatePosition aPosition}){
     List<ListTemplatePosition> existingPositions = list.templatePositions;
     existingPositions.sort((a,b) => a.position.compareTo(b.position));
     ListTemplatePosition newPosition = aPosition.copyWith(position:1);
@@ -34,7 +34,7 @@ abstract class ListTemplate implements _$ListTemplate{
 
     return list.copyWith(templatePositions:newListPositons);
   }
-  factory ListTemplate.addListItemAtEnd({@required ListTemplate list, @required ListTemplatePosition aPosition}){
+  factory ListTemplate.addListItemAtEnd({required ListTemplate list, required ListTemplatePosition aPosition}){
     List<ListTemplatePosition> existingPositions = list.templatePositions;
     existingPositions.sort((a,b) => a.position.compareTo(b.position));
     ListTemplatePosition lastPosition = existingPositions.last; 
@@ -48,13 +48,13 @@ abstract class ListTemplate implements _$ListTemplate{
 
 @freezed
 abstract class ListTemplatePosition implements _$ListTemplatePosition{
-  @JsonSerializable(nullable: false)
+  @JsonSerializable()
   const ListTemplatePosition._();
   const factory ListTemplatePosition(
     {
-      @required String name,
-      @required String id,
-      @required int position,
+      @Default('a Name') String name,
+      @Default('0815') String id,
+      @Default(1) int position,
     }
   ) = _ListTemplatePosition;
 

@@ -14,7 +14,7 @@ import 'package:listopolis/features/listopolis/presentation/common_page_function
 import 'package:listopolis/features/listopolis/presentation/templates/template_main_page.dart';
 
 class ActiveListMainPage extends StatefulWidget {
-  ActiveListMainPage({Key key}) : super(key: key);
+  ActiveListMainPage({Key? key}) : super(key: key);
 
   @override
   _ActiveListMainPageState createState() => _ActiveListMainPageState();
@@ -113,7 +113,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
       BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.startListCreation());
      Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => BlocProvider.value(
+                builder: (_) => BlocProvider.value( 
                   value: BlocProvider.of<CreatelistBloc>(context),
                   child: CreateListPage(BlocProvider.of<ActivelistBloc>(context), BlocProvider.of<TemplateBloc>(context)),
                 ),
@@ -307,8 +307,9 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                   int realNewIdx = oldIdx < newIdx ? newIdx  : newIdx +1;
                   int realOldIdx = oldIdx +1;
                   ActivelistBloc aBloc =  BlocProvider.of<ActivelistBloc>(context);
-                  ActiveList changedList = posToList[realOldIdx];
-                  aBloc.add(ActivelistEvent.changeListPosition(list: changedList, oldIndex: realOldIdx, newIndex: realNewIdx));
+                  ActiveList? changedList = posToList[realOldIdx];
+                  if(changedList != null)
+                    aBloc.add(ActivelistEvent.changeListPosition(list: changedList, oldIndex: realOldIdx, newIndex: realNewIdx));
               },
           ));
  }
@@ -439,7 +440,7 @@ class MainListItemMenueStr{
   static const String USE_AS_TEMPLATE = "use_as_template";
   static const String COPY_LIST_TO_CLIPOARD = "copy_list_to_clipboard";
 
-  static String buildLocalName(String str, String locale){
+  static String buildLocalName( String str, String locale){
     if(locale == "de"){
       if(str == EDIT)
         return "Bearbeiten";
@@ -449,6 +450,8 @@ class MainListItemMenueStr{
         return "Vorlage erstellen";
       else if(str == COPY_LIST_TO_CLIPOARD)
         return "Liste teilen";
+      else
+        return "error";
     }else{
       return str;
     }

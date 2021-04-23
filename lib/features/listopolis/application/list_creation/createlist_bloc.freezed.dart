@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'createlist_bloc.dart';
 
@@ -9,79 +9,85 @@ part of 'createlist_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$CreatelistEventTearOff {
   const _$CreatelistEventTearOff();
 
-// ignore: unused_element
   _Started started() {
     return const _Started();
   }
 
-// ignore: unused_element
   _StartListCreation startListCreation() {
     return const _StartListCreation();
   }
 
-// ignore: unused_element
   _StartTemplateCreation startTemplateCreation() {
     return const _StartTemplateCreation();
   }
 
-// ignore: unused_element
-  _ChangeList changeList() {
-    return const _ChangeList();
+  _ChangeList changeList({required CreateListParameter listParam}) {
+    return _ChangeList(
+      listParam: listParam,
+    );
   }
 
-// ignore: unused_element
-  _SwitchToCreation switchViewToCreation() {
-    return const _SwitchToCreation();
+  _SwitchToCreation switchViewToCreation(
+      {required CreateListParameter listParam}) {
+    return _SwitchToCreation(
+      listParam: listParam,
+    );
   }
 
-// ignore: unused_element
-  _SwitchToReorder switchViewToReorder() {
-    return const _SwitchToReorder();
+  _SwitchToReorder switchViewToReorder(
+      {required CreateListParameter listParam}) {
+    return _SwitchToReorder(
+      listParam: listParam,
+    );
   }
 
-// ignore: unused_element
-  _AddListPositionAfter addListPositionAfter({@required int index}) {
+  _AddListPositionAfter addListPositionAfter(
+      {required CreateListParameter listParam, int index = 1}) {
     return _AddListPositionAfter(
+      listParam: listParam,
       index: index,
     );
   }
 
-// ignore: unused_element
-  _RemoveListPosition removeListPosition({@required int index}) {
+  _RemoveListPosition removeListPosition(
+      {required CreateListParameter listParam, int index = 1}) {
     return _RemoveListPosition(
+      listParam: listParam,
       index: index,
     );
   }
 
-// ignore: unused_element
   _ChangeItemOrder changeListItemOrder(
-      {@required int oldIndex, @required int newIndex}) {
+      {required CreateListParameter listParam,
+      int oldIndex = 1,
+      int newIndex = 1}) {
     return _ChangeItemOrder(
+      listParam: listParam,
       oldIndex: oldIndex,
       newIndex: newIndex,
     );
   }
 
-// ignore: unused_element
-  _EditActiveList editActiveList({@required ActiveList list}) {
+  _EditActiveList editActiveList({required ActiveList list}) {
     return _EditActiveList(
       list: list,
     );
   }
 
-// ignore: unused_element
-  _EditTemplate editTemplate({@required ListTemplate template}) {
+  _EditTemplate editTemplate({required ListTemplate template}) {
     return _EditTemplate(
       template: template,
     );
   }
 
-// ignore: unused_element
-  _UseTemplateAsList useTemplateAsList({@required ListTemplate template}) {
+  _UseTemplateAsList useTemplateAsList({required ListTemplate template}) {
     return _UseTemplateAsList(
       template: template,
     );
@@ -89,73 +95,86 @@ class _$CreatelistEventTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CreatelistEvent = _$CreatelistEventTearOff();
 
 /// @nodoc
 mixin _$CreatelistEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -210,53 +229,49 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return started();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started();
     }
@@ -265,53 +280,41 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return started(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (started != null) {
       return started(this);
     }
@@ -361,53 +364,49 @@ class _$_StartListCreation implements _StartListCreation {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return startListCreation();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (startListCreation != null) {
       return startListCreation();
     }
@@ -416,53 +415,41 @@ class _$_StartListCreation implements _StartListCreation {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return startListCreation(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (startListCreation != null) {
       return startListCreation(this);
     }
@@ -512,53 +499,49 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return startTemplateCreation();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (startTemplateCreation != null) {
       return startTemplateCreation();
     }
@@ -567,53 +550,41 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return startTemplateCreation(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (startTemplateCreation != null) {
       return startTemplateCreation(this);
     }
@@ -630,6 +601,7 @@ abstract class _$ChangeListCopyWith<$Res> {
   factory _$ChangeListCopyWith(
           _ChangeList value, $Res Function(_ChangeList) then) =
       __$ChangeListCopyWithImpl<$Res>;
+  $Res call({CreateListParameter listParam});
 }
 
 /// @nodoc
@@ -642,129 +614,138 @@ class __$ChangeListCopyWithImpl<$Res>
 
   @override
   _ChangeList get _value => super._value as _ChangeList;
+
+  @override
+  $Res call({
+    Object? listParam = freezed,
+  }) {
+    return _then(_ChangeList(
+      listParam: listParam == freezed
+          ? _value.listParam
+          : listParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_ChangeList implements _ChangeList {
-  const _$_ChangeList();
+  const _$_ChangeList({required this.listParam});
+
+  @override
+  final CreateListParameter listParam;
 
   @override
   String toString() {
-    return 'CreatelistEvent.changeList()';
+    return 'CreatelistEvent.changeList(listParam: $listParam)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _ChangeList);
+    return identical(this, other) ||
+        (other is _ChangeList &&
+            (identical(other.listParam, listParam) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParam, listParam)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParam);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ChangeListCopyWith<_ChangeList> get copyWith =>
+      __$ChangeListCopyWithImpl<_ChangeList>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
-    return changeList();
+    return changeList(listParam);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeList != null) {
-      return changeList();
+      return changeList(listParam);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return changeList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeList != null) {
       return changeList(this);
     }
@@ -773,7 +754,13 @@ class _$_ChangeList implements _ChangeList {
 }
 
 abstract class _ChangeList implements CreatelistEvent {
-  const factory _ChangeList() = _$_ChangeList;
+  const factory _ChangeList({required CreateListParameter listParam}) =
+      _$_ChangeList;
+
+  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ChangeListCopyWith<_ChangeList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -781,6 +768,7 @@ abstract class _$SwitchToCreationCopyWith<$Res> {
   factory _$SwitchToCreationCopyWith(
           _SwitchToCreation value, $Res Function(_SwitchToCreation) then) =
       __$SwitchToCreationCopyWithImpl<$Res>;
+  $Res call({CreateListParameter listParam});
 }
 
 /// @nodoc
@@ -793,129 +781,138 @@ class __$SwitchToCreationCopyWithImpl<$Res>
 
   @override
   _SwitchToCreation get _value => super._value as _SwitchToCreation;
+
+  @override
+  $Res call({
+    Object? listParam = freezed,
+  }) {
+    return _then(_SwitchToCreation(
+      listParam: listParam == freezed
+          ? _value.listParam
+          : listParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_SwitchToCreation implements _SwitchToCreation {
-  const _$_SwitchToCreation();
+  const _$_SwitchToCreation({required this.listParam});
+
+  @override
+  final CreateListParameter listParam;
 
   @override
   String toString() {
-    return 'CreatelistEvent.switchViewToCreation()';
+    return 'CreatelistEvent.switchViewToCreation(listParam: $listParam)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SwitchToCreation);
+    return identical(this, other) ||
+        (other is _SwitchToCreation &&
+            (identical(other.listParam, listParam) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParam, listParam)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParam);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SwitchToCreationCopyWith<_SwitchToCreation> get copyWith =>
+      __$SwitchToCreationCopyWithImpl<_SwitchToCreation>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
-    return switchViewToCreation();
+    return switchViewToCreation(listParam);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchViewToCreation != null) {
-      return switchViewToCreation();
+      return switchViewToCreation(listParam);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return switchViewToCreation(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchViewToCreation != null) {
       return switchViewToCreation(this);
     }
@@ -924,7 +921,13 @@ class _$_SwitchToCreation implements _SwitchToCreation {
 }
 
 abstract class _SwitchToCreation implements CreatelistEvent {
-  const factory _SwitchToCreation() = _$_SwitchToCreation;
+  const factory _SwitchToCreation({required CreateListParameter listParam}) =
+      _$_SwitchToCreation;
+
+  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SwitchToCreationCopyWith<_SwitchToCreation> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -932,6 +935,7 @@ abstract class _$SwitchToReorderCopyWith<$Res> {
   factory _$SwitchToReorderCopyWith(
           _SwitchToReorder value, $Res Function(_SwitchToReorder) then) =
       __$SwitchToReorderCopyWithImpl<$Res>;
+  $Res call({CreateListParameter listParam});
 }
 
 /// @nodoc
@@ -944,129 +948,138 @@ class __$SwitchToReorderCopyWithImpl<$Res>
 
   @override
   _SwitchToReorder get _value => super._value as _SwitchToReorder;
+
+  @override
+  $Res call({
+    Object? listParam = freezed,
+  }) {
+    return _then(_SwitchToReorder(
+      listParam: listParam == freezed
+          ? _value.listParam
+          : listParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_SwitchToReorder implements _SwitchToReorder {
-  const _$_SwitchToReorder();
+  const _$_SwitchToReorder({required this.listParam});
+
+  @override
+  final CreateListParameter listParam;
 
   @override
   String toString() {
-    return 'CreatelistEvent.switchViewToReorder()';
+    return 'CreatelistEvent.switchViewToReorder(listParam: $listParam)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SwitchToReorder);
+    return identical(this, other) ||
+        (other is _SwitchToReorder &&
+            (identical(other.listParam, listParam) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParam, listParam)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParam);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SwitchToReorderCopyWith<_SwitchToReorder> get copyWith =>
+      __$SwitchToReorderCopyWithImpl<_SwitchToReorder>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
-    return switchViewToReorder();
+    return switchViewToReorder(listParam);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchViewToReorder != null) {
-      return switchViewToReorder();
+      return switchViewToReorder(listParam);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return switchViewToReorder(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchViewToReorder != null) {
       return switchViewToReorder(this);
     }
@@ -1075,7 +1088,13 @@ class _$_SwitchToReorder implements _SwitchToReorder {
 }
 
 abstract class _SwitchToReorder implements CreatelistEvent {
-  const factory _SwitchToReorder() = _$_SwitchToReorder;
+  const factory _SwitchToReorder({required CreateListParameter listParam}) =
+      _$_SwitchToReorder;
+
+  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SwitchToReorderCopyWith<_SwitchToReorder> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1083,7 +1102,7 @@ abstract class _$AddListPositionAfterCopyWith<$Res> {
   factory _$AddListPositionAfterCopyWith(_AddListPositionAfter value,
           $Res Function(_AddListPositionAfter) then) =
       __$AddListPositionAfterCopyWithImpl<$Res>;
-  $Res call({int index});
+  $Res call({CreateListParameter listParam, int index});
 }
 
 /// @nodoc
@@ -1099,38 +1118,55 @@ class __$AddListPositionAfterCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object index = freezed,
+    Object? listParam = freezed,
+    Object? index = freezed,
   }) {
     return _then(_AddListPositionAfter(
-      index: index == freezed ? _value.index : index as int,
+      listParam: listParam == freezed
+          ? _value.listParam
+          : listParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_AddListPositionAfter implements _AddListPositionAfter {
-  const _$_AddListPositionAfter({@required this.index}) : assert(index != null);
+  const _$_AddListPositionAfter({required this.listParam, this.index = 1});
 
+  @override
+  final CreateListParameter listParam;
+  @JsonKey(defaultValue: 1)
   @override
   final int index;
 
   @override
   String toString() {
-    return 'CreatelistEvent.addListPositionAfter(index: $index)';
+    return 'CreatelistEvent.addListPositionAfter(listParam: $listParam, index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AddListPositionAfter &&
+            (identical(other.listParam, listParam) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParam, listParam)) &&
             (identical(other.index, index) ||
                 const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(listParam) ^
+      const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith =>
       __$AddListPositionAfterCopyWithImpl<_AddListPositionAfter>(
@@ -1138,108 +1174,92 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
-    return addListPositionAfter(index);
+    return addListPositionAfter(listParam, index);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (addListPositionAfter != null) {
-      return addListPositionAfter(index);
+      return addListPositionAfter(listParam, index);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return addListPositionAfter(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (addListPositionAfter != null) {
       return addListPositionAfter(this);
     }
@@ -1248,11 +1268,15 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
 }
 
 abstract class _AddListPositionAfter implements CreatelistEvent {
-  const factory _AddListPositionAfter({@required int index}) =
-      _$_AddListPositionAfter;
+  const factory _AddListPositionAfter(
+      {required CreateListParameter listParam,
+      int index}) = _$_AddListPositionAfter;
 
-  int get index;
-  _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith;
+  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1260,7 +1284,7 @@ abstract class _$RemoveListPositionCopyWith<$Res> {
   factory _$RemoveListPositionCopyWith(
           _RemoveListPosition value, $Res Function(_RemoveListPosition) then) =
       __$RemoveListPositionCopyWithImpl<$Res>;
-  $Res call({int index});
+  $Res call({CreateListParameter listParam, int index});
 }
 
 /// @nodoc
@@ -1276,146 +1300,147 @@ class __$RemoveListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object index = freezed,
+    Object? listParam = freezed,
+    Object? index = freezed,
   }) {
     return _then(_RemoveListPosition(
-      index: index == freezed ? _value.index : index as int,
+      listParam: listParam == freezed
+          ? _value.listParam
+          : listParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+      index: index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_RemoveListPosition implements _RemoveListPosition {
-  const _$_RemoveListPosition({@required this.index}) : assert(index != null);
+  const _$_RemoveListPosition({required this.listParam, this.index = 1});
 
+  @override
+  final CreateListParameter listParam;
+  @JsonKey(defaultValue: 1)
   @override
   final int index;
 
   @override
   String toString() {
-    return 'CreatelistEvent.removeListPosition(index: $index)';
+    return 'CreatelistEvent.removeListPosition(listParam: $listParam, index: $index)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RemoveListPosition &&
+            (identical(other.listParam, listParam) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParam, listParam)) &&
             (identical(other.index, index) ||
                 const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(listParam) ^
+      const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   _$RemoveListPositionCopyWith<_RemoveListPosition> get copyWith =>
       __$RemoveListPositionCopyWithImpl<_RemoveListPosition>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
-    return removeListPosition(index);
+    return removeListPosition(listParam, index);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (removeListPosition != null) {
-      return removeListPosition(index);
+      return removeListPosition(listParam, index);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return removeListPosition(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (removeListPosition != null) {
       return removeListPosition(this);
     }
@@ -1424,11 +1449,15 @@ class _$_RemoveListPosition implements _RemoveListPosition {
 }
 
 abstract class _RemoveListPosition implements CreatelistEvent {
-  const factory _RemoveListPosition({@required int index}) =
-      _$_RemoveListPosition;
+  const factory _RemoveListPosition(
+      {required CreateListParameter listParam,
+      int index}) = _$_RemoveListPosition;
 
-  int get index;
-  _$RemoveListPositionCopyWith<_RemoveListPosition> get copyWith;
+  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$RemoveListPositionCopyWith<_RemoveListPosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1436,7 +1465,7 @@ abstract class _$ChangeItemOrderCopyWith<$Res> {
   factory _$ChangeItemOrderCopyWith(
           _ChangeItemOrder value, $Res Function(_ChangeItemOrder) then) =
       __$ChangeItemOrderCopyWithImpl<$Res>;
-  $Res call({int oldIndex, int newIndex});
+  $Res call({CreateListParameter listParam, int oldIndex, int newIndex});
 }
 
 /// @nodoc
@@ -1452,36 +1481,53 @@ class __$ChangeItemOrderCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object oldIndex = freezed,
-    Object newIndex = freezed,
+    Object? listParam = freezed,
+    Object? oldIndex = freezed,
+    Object? newIndex = freezed,
   }) {
     return _then(_ChangeItemOrder(
-      oldIndex: oldIndex == freezed ? _value.oldIndex : oldIndex as int,
-      newIndex: newIndex == freezed ? _value.newIndex : newIndex as int,
+      listParam: listParam == freezed
+          ? _value.listParam
+          : listParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+      oldIndex: oldIndex == freezed
+          ? _value.oldIndex
+          : oldIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      newIndex: newIndex == freezed
+          ? _value.newIndex
+          : newIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 class _$_ChangeItemOrder implements _ChangeItemOrder {
-  const _$_ChangeItemOrder({@required this.oldIndex, @required this.newIndex})
-      : assert(oldIndex != null),
-        assert(newIndex != null);
+  const _$_ChangeItemOrder(
+      {required this.listParam, this.oldIndex = 1, this.newIndex = 1});
 
   @override
+  final CreateListParameter listParam;
+  @JsonKey(defaultValue: 1)
+  @override
   final int oldIndex;
+  @JsonKey(defaultValue: 1)
   @override
   final int newIndex;
 
   @override
   String toString() {
-    return 'CreatelistEvent.changeListItemOrder(oldIndex: $oldIndex, newIndex: $newIndex)';
+    return 'CreatelistEvent.changeListItemOrder(listParam: $listParam, oldIndex: $oldIndex, newIndex: $newIndex)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ChangeItemOrder &&
+            (identical(other.listParam, listParam) ||
+                const DeepCollectionEquality()
+                    .equals(other.listParam, listParam)) &&
             (identical(other.oldIndex, oldIndex) ||
                 const DeepCollectionEquality()
                     .equals(other.oldIndex, oldIndex)) &&
@@ -1493,117 +1539,103 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(listParam) ^
       const DeepCollectionEquality().hash(oldIndex) ^
       const DeepCollectionEquality().hash(newIndex);
 
+  @JsonKey(ignore: true)
   @override
   _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith =>
       __$ChangeItemOrderCopyWithImpl<_ChangeItemOrder>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
-    return changeListItemOrder(oldIndex, newIndex);
+    return changeListItemOrder(listParam, oldIndex, newIndex);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeListItemOrder != null) {
-      return changeListItemOrder(oldIndex, newIndex);
+      return changeListItemOrder(listParam, oldIndex, newIndex);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return changeListItemOrder(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeListItemOrder != null) {
       return changeListItemOrder(this);
     }
@@ -1613,11 +1645,16 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
 
 abstract class _ChangeItemOrder implements CreatelistEvent {
   const factory _ChangeItemOrder(
-      {@required int oldIndex, @required int newIndex}) = _$_ChangeItemOrder;
+      {required CreateListParameter listParam,
+      int oldIndex,
+      int newIndex}) = _$_ChangeItemOrder;
 
-  int get oldIndex;
-  int get newIndex;
-  _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith;
+  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  int get oldIndex => throw _privateConstructorUsedError;
+  int get newIndex => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1643,18 +1680,18 @@ class __$EditActiveListCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
+    Object? list = freezed,
   }) {
     return _then(_EditActiveList(
-      list: list == freezed ? _value.list : list as ActiveList,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -1663,7 +1700,7 @@ class __$EditActiveListCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_EditActiveList implements _EditActiveList {
-  const _$_EditActiveList({@required this.list}) : assert(list != null);
+  const _$_EditActiveList({required this.list});
 
   @override
   final ActiveList list;
@@ -1685,59 +1722,56 @@ class _$_EditActiveList implements _EditActiveList {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$EditActiveListCopyWith<_EditActiveList> get copyWith =>
       __$EditActiveListCopyWithImpl<_EditActiveList>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return editActiveList(list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (editActiveList != null) {
       return editActiveList(list);
     }
@@ -1746,53 +1780,41 @@ class _$_EditActiveList implements _EditActiveList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return editActiveList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (editActiveList != null) {
       return editActiveList(this);
     }
@@ -1801,11 +1823,12 @@ class _$_EditActiveList implements _EditActiveList {
 }
 
 abstract class _EditActiveList implements CreatelistEvent {
-  const factory _EditActiveList({@required ActiveList list}) =
-      _$_EditActiveList;
+  const factory _EditActiveList({required ActiveList list}) = _$_EditActiveList;
 
-  ActiveList get list;
-  _$EditActiveListCopyWith<_EditActiveList> get copyWith;
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EditActiveListCopyWith<_EditActiveList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1831,19 +1854,18 @@ class __$EditTemplateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object template = freezed,
+    Object? template = freezed,
   }) {
     return _then(_EditTemplate(
-      template:
-          template == freezed ? _value.template : template as ListTemplate,
+      template: template == freezed
+          ? _value.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as ListTemplate,
     ));
   }
 
   @override
   $ListTemplateCopyWith<$Res> get template {
-    if (_value.template == null) {
-      return null;
-    }
     return $ListTemplateCopyWith<$Res>(_value.template, (value) {
       return _then(_value.copyWith(template: value));
     });
@@ -1852,7 +1874,7 @@ class __$EditTemplateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_EditTemplate implements _EditTemplate {
-  const _$_EditTemplate({@required this.template}) : assert(template != null);
+  const _$_EditTemplate({required this.template});
 
   @override
   final ListTemplate template;
@@ -1875,59 +1897,56 @@ class _$_EditTemplate implements _EditTemplate {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(template);
 
+  @JsonKey(ignore: true)
   @override
   _$EditTemplateCopyWith<_EditTemplate> get copyWith =>
       __$EditTemplateCopyWithImpl<_EditTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return editTemplate(template);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (editTemplate != null) {
       return editTemplate(template);
     }
@@ -1936,53 +1955,41 @@ class _$_EditTemplate implements _EditTemplate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return editTemplate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (editTemplate != null) {
       return editTemplate(this);
     }
@@ -1991,11 +1998,13 @@ class _$_EditTemplate implements _EditTemplate {
 }
 
 abstract class _EditTemplate implements CreatelistEvent {
-  const factory _EditTemplate({@required ListTemplate template}) =
+  const factory _EditTemplate({required ListTemplate template}) =
       _$_EditTemplate;
 
-  ListTemplate get template;
-  _$EditTemplateCopyWith<_EditTemplate> get copyWith;
+  ListTemplate get template => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EditTemplateCopyWith<_EditTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2021,19 +2030,18 @@ class __$UseTemplateAsListCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object template = freezed,
+    Object? template = freezed,
   }) {
     return _then(_UseTemplateAsList(
-      template:
-          template == freezed ? _value.template : template as ListTemplate,
+      template: template == freezed
+          ? _value.template
+          : template // ignore: cast_nullable_to_non_nullable
+              as ListTemplate,
     ));
   }
 
   @override
   $ListTemplateCopyWith<$Res> get template {
-    if (_value.template == null) {
-      return null;
-    }
     return $ListTemplateCopyWith<$Res>(_value.template, (value) {
       return _then(_value.copyWith(template: value));
     });
@@ -2042,8 +2050,7 @@ class __$UseTemplateAsListCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_UseTemplateAsList implements _UseTemplateAsList {
-  const _$_UseTemplateAsList({@required this.template})
-      : assert(template != null);
+  const _$_UseTemplateAsList({required this.template});
 
   @override
   final ListTemplate template;
@@ -2066,59 +2073,56 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(template);
 
+  @JsonKey(ignore: true)
   @override
   _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith =>
       __$UseTemplateAsListCopyWithImpl<_UseTemplateAsList>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result started(),
-    @required Result startListCreation(),
-    @required Result startTemplateCreation(),
-    @required Result changeList(),
-    @required Result switchViewToCreation(),
-    @required Result switchViewToReorder(),
-    @required Result addListPositionAfter(int index),
-    @required Result removeListPosition(int index),
-    @required Result changeListItemOrder(int oldIndex, int newIndex),
-    @required Result editActiveList(ActiveList list),
-    @required Result editTemplate(ListTemplate template),
-    @required Result useTemplateAsList(ListTemplate template),
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return useTemplateAsList(template);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result started(),
-    Result startListCreation(),
-    Result startTemplateCreation(),
-    Result changeList(),
-    Result switchViewToCreation(),
-    Result switchViewToReorder(),
-    Result addListPositionAfter(int index),
-    Result removeListPosition(int index),
-    Result changeListItemOrder(int oldIndex, int newIndex),
-    Result editActiveList(ActiveList list),
-    Result editTemplate(ListTemplate template),
-    Result useTemplateAsList(ListTemplate template),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (useTemplateAsList != null) {
       return useTemplateAsList(template);
     }
@@ -2127,53 +2131,41 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result started(_Started value),
-    @required Result startListCreation(_StartListCreation value),
-    @required Result startTemplateCreation(_StartTemplateCreation value),
-    @required Result changeList(_ChangeList value),
-    @required Result switchViewToCreation(_SwitchToCreation value),
-    @required Result switchViewToReorder(_SwitchToReorder value),
-    @required Result addListPositionAfter(_AddListPositionAfter value),
-    @required Result removeListPosition(_RemoveListPosition value),
-    @required Result changeListItemOrder(_ChangeItemOrder value),
-    @required Result editActiveList(_EditActiveList value),
-    @required Result editTemplate(_EditTemplate value),
-    @required Result useTemplateAsList(_UseTemplateAsList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
-    assert(started != null);
-    assert(startListCreation != null);
-    assert(startTemplateCreation != null);
-    assert(changeList != null);
-    assert(switchViewToCreation != null);
-    assert(switchViewToReorder != null);
-    assert(addListPositionAfter != null);
-    assert(removeListPosition != null);
-    assert(changeListItemOrder != null);
-    assert(editActiveList != null);
-    assert(editTemplate != null);
-    assert(useTemplateAsList != null);
     return useTemplateAsList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result started(_Started value),
-    Result startListCreation(_StartListCreation value),
-    Result startTemplateCreation(_StartTemplateCreation value),
-    Result changeList(_ChangeList value),
-    Result switchViewToCreation(_SwitchToCreation value),
-    Result switchViewToReorder(_SwitchToReorder value),
-    Result addListPositionAfter(_AddListPositionAfter value),
-    Result removeListPosition(_RemoveListPosition value),
-    Result changeListItemOrder(_ChangeItemOrder value),
-    Result editActiveList(_EditActiveList value),
-    Result editTemplate(_EditTemplate value),
-    Result useTemplateAsList(_UseTemplateAsList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (useTemplateAsList != null) {
       return useTemplateAsList(this);
     }
@@ -2182,40 +2174,38 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
 }
 
 abstract class _UseTemplateAsList implements CreatelistEvent {
-  const factory _UseTemplateAsList({@required ListTemplate template}) =
+  const factory _UseTemplateAsList({required ListTemplate template}) =
       _$_UseTemplateAsList;
 
-  ListTemplate get template;
-  _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith;
+  ListTemplate get template => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 class _$CreatelistStateTearOff {
   const _$CreatelistStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
-  _ListChanged listChanged({@required CreateListParameter creationParam}) {
+  _ListChanged listChanged({required CreateListParameter creationParam}) {
     return _ListChanged(
       creationParam: creationParam,
     );
   }
 
-// ignore: unused_element
   _SwitchedToCreate switchedToCreate(
-      {@required CreateListParameter creationParam}) {
+      {required CreateListParameter creationParam}) {
     return _SwitchedToCreate(
       creationParam: creationParam,
     );
   }
 
-// ignore: unused_element
   _SwitchedToReorder switchedToReorder(
-      {@required CreateListParameter creationParam}) {
+      {required CreateListParameter creationParam}) {
     return _SwitchedToReorder(
       creationParam: creationParam,
     );
@@ -2223,41 +2213,46 @@ class _$CreatelistStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $CreatelistState = _$CreatelistStateTearOff();
 
 /// @nodoc
 mixin _$CreatelistState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result listChanged(CreateListParameter creationParam),
-    @required Result switchedToCreate(CreateListParameter creationParam),
-    @required Result switchedToReorder(CreateListParameter creationParam),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CreateListParameter creationParam) listChanged,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToCreate,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToReorder,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result listChanged(CreateListParameter creationParam),
-    Result switchedToCreate(CreateListParameter creationParam),
-    Result switchedToReorder(CreateListParameter creationParam),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CreateListParameter creationParam)? listChanged,
+    TResult Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult Function(CreateListParameter creationParam)? switchedToReorder,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result listChanged(_ListChanged value),
-    @required Result switchedToCreate(_SwitchedToCreate value),
-    @required Result switchedToReorder(_SwitchedToReorder value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ListChanged value) listChanged,
+    required TResult Function(_SwitchedToCreate value) switchedToCreate,
+    required TResult Function(_SwitchedToReorder value) switchedToReorder,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result listChanged(_ListChanged value),
-    Result switchedToCreate(_SwitchedToCreate value),
-    Result switchedToReorder(_SwitchedToReorder value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ListChanged value)? listChanged,
+    TResult Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult Function(_SwitchedToReorder value)? switchedToReorder,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2312,29 +2307,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result listChanged(CreateListParameter creationParam),
-    @required Result switchedToCreate(CreateListParameter creationParam),
-    @required Result switchedToReorder(CreateListParameter creationParam),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CreateListParameter creationParam) listChanged,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToCreate,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result listChanged(CreateListParameter creationParam),
-    Result switchedToCreate(CreateListParameter creationParam),
-    Result switchedToReorder(CreateListParameter creationParam),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CreateListParameter creationParam)? listChanged,
+    TResult Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult Function(CreateListParameter creationParam)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -2343,29 +2335,24 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result listChanged(_ListChanged value),
-    @required Result switchedToCreate(_SwitchedToCreate value),
-    @required Result switchedToReorder(_SwitchedToReorder value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ListChanged value) listChanged,
+    required TResult Function(_SwitchedToCreate value) switchedToCreate,
+    required TResult Function(_SwitchedToReorder value) switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result listChanged(_ListChanged value),
-    Result switchedToCreate(_SwitchedToCreate value),
-    Result switchedToReorder(_SwitchedToReorder value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ListChanged value)? listChanged,
+    TResult Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult Function(_SwitchedToReorder value)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -2398,20 +2385,20 @@ class __$ListChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object creationParam = freezed,
+    Object? creationParam = freezed,
   }) {
     return _then(_ListChanged(
       creationParam: creationParam == freezed
           ? _value.creationParam
-          : creationParam as CreateListParameter,
+          : creationParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
     ));
   }
 }
 
 /// @nodoc
 class _$_ListChanged implements _ListChanged {
-  const _$_ListChanged({@required this.creationParam})
-      : assert(creationParam != null);
+  const _$_ListChanged({required this.creationParam});
 
   @override
   final CreateListParameter creationParam;
@@ -2434,35 +2421,33 @@ class _$_ListChanged implements _ListChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(creationParam);
 
+  @JsonKey(ignore: true)
   @override
   _$ListChangedCopyWith<_ListChanged> get copyWith =>
       __$ListChangedCopyWithImpl<_ListChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result listChanged(CreateListParameter creationParam),
-    @required Result switchedToCreate(CreateListParameter creationParam),
-    @required Result switchedToReorder(CreateListParameter creationParam),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CreateListParameter creationParam) listChanged,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToCreate,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return listChanged(creationParam);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result listChanged(CreateListParameter creationParam),
-    Result switchedToCreate(CreateListParameter creationParam),
-    Result switchedToReorder(CreateListParameter creationParam),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CreateListParameter creationParam)? listChanged,
+    TResult Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult Function(CreateListParameter creationParam)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listChanged != null) {
       return listChanged(creationParam);
     }
@@ -2471,29 +2456,24 @@ class _$_ListChanged implements _ListChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result listChanged(_ListChanged value),
-    @required Result switchedToCreate(_SwitchedToCreate value),
-    @required Result switchedToReorder(_SwitchedToReorder value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ListChanged value) listChanged,
+    required TResult Function(_SwitchedToCreate value) switchedToCreate,
+    required TResult Function(_SwitchedToReorder value) switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return listChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result listChanged(_ListChanged value),
-    Result switchedToCreate(_SwitchedToCreate value),
-    Result switchedToReorder(_SwitchedToReorder value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ListChanged value)? listChanged,
+    TResult Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult Function(_SwitchedToReorder value)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listChanged != null) {
       return listChanged(this);
     }
@@ -2502,11 +2482,13 @@ class _$_ListChanged implements _ListChanged {
 }
 
 abstract class _ListChanged implements CreatelistState {
-  const factory _ListChanged({@required CreateListParameter creationParam}) =
+  const factory _ListChanged({required CreateListParameter creationParam}) =
       _$_ListChanged;
 
-  CreateListParameter get creationParam;
-  _$ListChangedCopyWith<_ListChanged> get copyWith;
+  CreateListParameter get creationParam => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ListChangedCopyWith<_ListChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2530,20 +2512,20 @@ class __$SwitchedToCreateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object creationParam = freezed,
+    Object? creationParam = freezed,
   }) {
     return _then(_SwitchedToCreate(
       creationParam: creationParam == freezed
           ? _value.creationParam
-          : creationParam as CreateListParameter,
+          : creationParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
     ));
   }
 }
 
 /// @nodoc
 class _$_SwitchedToCreate implements _SwitchedToCreate {
-  const _$_SwitchedToCreate({@required this.creationParam})
-      : assert(creationParam != null);
+  const _$_SwitchedToCreate({required this.creationParam});
 
   @override
   final CreateListParameter creationParam;
@@ -2566,35 +2548,33 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(creationParam);
 
+  @JsonKey(ignore: true)
   @override
   _$SwitchedToCreateCopyWith<_SwitchedToCreate> get copyWith =>
       __$SwitchedToCreateCopyWithImpl<_SwitchedToCreate>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result listChanged(CreateListParameter creationParam),
-    @required Result switchedToCreate(CreateListParameter creationParam),
-    @required Result switchedToReorder(CreateListParameter creationParam),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CreateListParameter creationParam) listChanged,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToCreate,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return switchedToCreate(creationParam);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result listChanged(CreateListParameter creationParam),
-    Result switchedToCreate(CreateListParameter creationParam),
-    Result switchedToReorder(CreateListParameter creationParam),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CreateListParameter creationParam)? listChanged,
+    TResult Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult Function(CreateListParameter creationParam)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchedToCreate != null) {
       return switchedToCreate(creationParam);
     }
@@ -2603,29 +2583,24 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result listChanged(_ListChanged value),
-    @required Result switchedToCreate(_SwitchedToCreate value),
-    @required Result switchedToReorder(_SwitchedToReorder value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ListChanged value) listChanged,
+    required TResult Function(_SwitchedToCreate value) switchedToCreate,
+    required TResult Function(_SwitchedToReorder value) switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return switchedToCreate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result listChanged(_ListChanged value),
-    Result switchedToCreate(_SwitchedToCreate value),
-    Result switchedToReorder(_SwitchedToReorder value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ListChanged value)? listChanged,
+    TResult Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult Function(_SwitchedToReorder value)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchedToCreate != null) {
       return switchedToCreate(this);
     }
@@ -2635,10 +2610,12 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
 
 abstract class _SwitchedToCreate implements CreatelistState {
   const factory _SwitchedToCreate(
-      {@required CreateListParameter creationParam}) = _$_SwitchedToCreate;
+      {required CreateListParameter creationParam}) = _$_SwitchedToCreate;
 
-  CreateListParameter get creationParam;
-  _$SwitchedToCreateCopyWith<_SwitchedToCreate> get copyWith;
+  CreateListParameter get creationParam => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SwitchedToCreateCopyWith<_SwitchedToCreate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2662,20 +2639,20 @@ class __$SwitchedToReorderCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object creationParam = freezed,
+    Object? creationParam = freezed,
   }) {
     return _then(_SwitchedToReorder(
       creationParam: creationParam == freezed
           ? _value.creationParam
-          : creationParam as CreateListParameter,
+          : creationParam // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
     ));
   }
 }
 
 /// @nodoc
 class _$_SwitchedToReorder implements _SwitchedToReorder {
-  const _$_SwitchedToReorder({@required this.creationParam})
-      : assert(creationParam != null);
+  const _$_SwitchedToReorder({required this.creationParam});
 
   @override
   final CreateListParameter creationParam;
@@ -2698,35 +2675,33 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(creationParam);
 
+  @JsonKey(ignore: true)
   @override
   _$SwitchedToReorderCopyWith<_SwitchedToReorder> get copyWith =>
       __$SwitchedToReorderCopyWithImpl<_SwitchedToReorder>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result listChanged(CreateListParameter creationParam),
-    @required Result switchedToCreate(CreateListParameter creationParam),
-    @required Result switchedToReorder(CreateListParameter creationParam),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(CreateListParameter creationParam) listChanged,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToCreate,
+    required TResult Function(CreateListParameter creationParam)
+        switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return switchedToReorder(creationParam);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result listChanged(CreateListParameter creationParam),
-    Result switchedToCreate(CreateListParameter creationParam),
-    Result switchedToReorder(CreateListParameter creationParam),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(CreateListParameter creationParam)? listChanged,
+    TResult Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult Function(CreateListParameter creationParam)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchedToReorder != null) {
       return switchedToReorder(creationParam);
     }
@@ -2735,29 +2710,24 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result listChanged(_ListChanged value),
-    @required Result switchedToCreate(_SwitchedToCreate value),
-    @required Result switchedToReorder(_SwitchedToReorder value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_ListChanged value) listChanged,
+    required TResult Function(_SwitchedToCreate value) switchedToCreate,
+    required TResult Function(_SwitchedToReorder value) switchedToReorder,
   }) {
-    assert(initial != null);
-    assert(listChanged != null);
-    assert(switchedToCreate != null);
-    assert(switchedToReorder != null);
     return switchedToReorder(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result listChanged(_ListChanged value),
-    Result switchedToCreate(_SwitchedToCreate value),
-    Result switchedToReorder(_SwitchedToReorder value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_ListChanged value)? listChanged,
+    TResult Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult Function(_SwitchedToReorder value)? switchedToReorder,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (switchedToReorder != null) {
       return switchedToReorder(this);
     }
@@ -2767,8 +2737,10 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
 
 abstract class _SwitchedToReorder implements CreatelistState {
   const factory _SwitchedToReorder(
-      {@required CreateListParameter creationParam}) = _$_SwitchedToReorder;
+      {required CreateListParameter creationParam}) = _$_SwitchedToReorder;
 
-  CreateListParameter get creationParam;
-  _$SwitchedToReorderCopyWith<_SwitchedToReorder> get copyWith;
+  CreateListParameter get creationParam => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$SwitchedToReorderCopyWith<_SwitchedToReorder> get copyWith =>
+      throw _privateConstructorUsedError;
 }

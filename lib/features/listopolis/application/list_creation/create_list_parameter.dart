@@ -20,11 +20,11 @@ class CreateListParameter{
   String listName;
   ListType type;
   PositionType positioning;
-  String id;
+  late String id;
 
-  List<CreateListItemParameter> listitems;
+  late List<CreateListItemParameter> listitems=[];
 
-  CreateListParameter({@required this.listName, @required this.type, @required this.positioning}){
+  CreateListParameter({required this.listName, required this.type, required this.positioning}){
     listitems = [];
     id = Uuid().v1();
   }
@@ -118,8 +118,8 @@ class CreateListParameter{
 class CreateListItemParameter{
   String name;
   int position;
-  String id;
-  CreateListItemParameter({@required this.name, @required this.position}){
+  late String id;
+  CreateListItemParameter({required this.name, required this.position}){
     id = Uuid().v1();
   }
 

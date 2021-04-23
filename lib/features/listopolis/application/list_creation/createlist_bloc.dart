@@ -18,33 +18,25 @@ part 'createlist_bloc.freezed.dart';
 
 class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   
-
-
-  
-  
-
-
-  
-
   final IRepository repository;
-  ActiveList createdList;
-  int lastActiveListIndex;
-  CreateListParameter listCreation;
-  ActiveList editList;
-  ListTemplate editTemplate;
+  ActiveList? createdList;
+  int? lastActiveListIndex;
+  CreateListParameter? listCreation;
+  ActiveList? editList;
+  ListTemplate? editTemplate;
   // bool isListEditing=false;
   // bool isTemplateEditing=false;
   // bool isTemplateCreation=false;
   // bool isListCreation=false;
   // bool isTemplateToList=false;
-  ListEditMode editMode;
+  ListEditMode? editMode;
   bool isListCreation() => ListEditMode.listCreation() == editMode;
   bool isListEdit() => ListEditMode.listEditing() == editMode;
   bool isTemplateEdit() => ListEditMode.templateEditing() == editMode;
   bool isTemplateCreation() => ListEditMode.templateCreation() == editMode;
   bool isListTransfer() => ListEditMode.transferTemplateToList() == editMode;
 
-  CreatelistBloc({@required this.repository}) : super(_Initial());
+  CreatelistBloc({required this.repository}) : super(_Initial());
 
   @override
   Stream<CreatelistState> mapEventToState(
@@ -54,97 +46,113 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
     started : (e) async*{
        createdList = null;
        Either<Failure, List<ActiveList>> lists = await repository.getActiveLists();
-       List<ActiveList> activeLists = lists.getOrElse(() => null);
-       activeLists.sort((a, b) => a.position.compareTo(b.position));
-       ActiveList lastList = activeLists.last;
-       lastActiveListIndex = lastList.position;
-
+       lists.fold(
+         (failure) {}, 
+         (activeLists) {
+            activeLists.sort((a, b) => a.position.compareTo(b.position));
+            ActiveList lastList = activeLists.last;
+            lastActiveListIndex = lastList.position;
+         }
+       );
        
-
         yield _Initial();
     },
     startListCreation: (e) async*{
       
       editMode = ListEditMode.listCreation();
-       listCreation = CreateListParameter(
+      CreateListParameter alistCreation = CreateListParameter(
                                     listName:  ""
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
       );
-      listCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
-      yield _ListChanged(creationParam:  listCreation);
+      
+        alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
+        listCreation = alistCreation;
+        yield _ListChanged(creationParam:  alistCreation);
     }, 
      startTemplateCreation: (e) async*{
       editMode = ListEditMode.templateCreation();
       
-      listCreation = CreateListParameter(
+      CreateListParameter alistCreation = CreateListParameter(
                                     listName:  ""
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
       );
-      listCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
-      yield _ListChanged(creationParam:  listCreation);
+      alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
+      listCreation = alistCreation;
+      yield _ListChanged(creationParam:  alistCreation);
     }, 
     changeList: (e) async*{
       yield _Initial();
-        //listCreation = CreateListParameter.asCopy(listCreation);
-        yield _ListChanged(creationParam:  listCreation);
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+        yield _ListChanged(creationParam:  alistCreation);
     },
     switchViewToCreation:  (e) async*{
       yield _Initial();
-        //listCreation = CreateListParameter.asCopy(listCreation);
-        yield _SwitchedToCreate(creationParam:  listCreation);
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+        
+        yield _SwitchedToCreate(creationParam:  alistCreation);
     },
     switchViewToReorder:  (e) async*{
       yield _Initial();
-        //listCreation = CreateListParameter.asCopy(listCreation);
-        yield _SwitchedToReorder(creationParam:  listCreation);
+         CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+        yield _SwitchedToReorder(creationParam:  alistCreation);
     },
     addListPositionAfter: (e) async*{
       yield _Initial();
-        //listCreation = CreateListParameter.asCopy(listCreation);
-        listCreation.addListPositionAfterIndex(e.index);
-        yield _ListChanged(creationParam:  listCreation);
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+
+        alistCreation.addListPositionAfterIndex(e.index);
+        yield _ListChanged(creationParam:  alistCreation);
     },
     changeListItemOrder:  (e) async*{
       yield _Initial();
-        //listCreation = CreateListParameter.asCopy(listCreation);
-        listCreation.reorderListPosition(e.oldIndex, e.newIndex);
-        yield _SwitchedToReorder(creationParam:  listCreation);
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+
+        alistCreation.reorderListPosition(e.oldIndex, e.newIndex);
+        yield _SwitchedToReorder(creationParam:  alistCreation);
     },
     removeListPosition:  (e) async*{
       yield _Initial();
-        //listCreation = CreateListParameter.asCopy(listCreation);
-        if(listCreation.listitems.length > 1)
-          listCreation.reoveListPositionAtIndex(e.index);
-        yield _SwitchedToCreate(creationParam:  listCreation);
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+        if(alistCreation.listitems.length > 1)
+          alistCreation.reoveListPositionAtIndex(e.index);
+        yield _SwitchedToCreate(creationParam:  alistCreation);
     },
     editActiveList: (e) async*{
       yield _Initial();
-        editMode = ListEditMode.listEditing();
-        editList = e.list;
-        
+       ListEditMode aEditMode = ListEditMode.listEditing();
+        ActiveList aEditList = e.list;
+        editMode = aEditMode;
 
-        listCreation = CreateListParameter.asEditFromList(editList);
-        
-        yield _SwitchedToCreate(creationParam:  listCreation);
+        CreateListParameter alistCreation = CreateListParameter.asEditFromList(aEditList);
+        listCreation = alistCreation;
+        yield _SwitchedToCreate(creationParam:  alistCreation);
     },
     editTemplate:  (e) async*{
       yield _Initial();
-        editMode = ListEditMode.templateEditing();
-        editTemplate = e.template;
-        listCreation = CreateListParameter.asEditFromTemplate(editTemplate);
-        
-        yield _SwitchedToCreate(creationParam:  listCreation);
+        ListEditMode aEditMode = ListEditMode.templateEditing();
+        editMode = aEditMode;
+        ListTemplate aEditTemplate = e.template;
+        CreateListParameter aListCreation = CreateListParameter.asEditFromTemplate(aEditTemplate);
+        listCreation = aListCreation;
+        yield _SwitchedToCreate(creationParam:  aListCreation);
     },
     useTemplateAsList:  (e) async*{
       yield _Initial();
-        editMode = ListEditMode.transferTemplateToList();
-        editTemplate = e.template;
+        ListEditMode aEditMode = ListEditMode.transferTemplateToList();
+        editMode = aEditMode;
+        ListTemplate aEditTemplate = e.template;
         
-        listCreation = CreateListParameter.asEditFromTemplate(editTemplate);
-        
-        yield _SwitchedToCreate(creationParam:  listCreation);
+        CreateListParameter aListCreation = CreateListParameter.asEditFromTemplate(aEditTemplate);
+        listCreation = aListCreation;
+        yield _SwitchedToCreate(creationParam:  aListCreation);
     },
     );
     

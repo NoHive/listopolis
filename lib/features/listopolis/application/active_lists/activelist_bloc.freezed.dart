@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'activelist_bloc.dart';
 
@@ -9,73 +9,67 @@ part of 'activelist_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ActivelistEventTearOff {
   const _$ActivelistEventTearOff();
 
-// ignore: unused_element
   _LoadLists load() {
     return const _LoadLists();
   }
 
-// ignore: unused_element
   _LoadForReorder loadForReorder() {
     return const _LoadForReorder();
   }
 
-// ignore: unused_element
-  _InsertNewList insertNewList({@required CreateListParameter listParameter}) {
+  _InsertNewList insertNewList({required CreateListParameter listParameter}) {
     return _InsertNewList(
       listParameter: listParameter,
     );
   }
 
-// ignore: unused_element
   _DeleteActiveListPosition deleteActiveListPosition(
-      {@required ActiveList list, @required ActiveListPosition position}) {
+      {required ActiveList list, required ActiveListPosition position}) {
     return _DeleteActiveListPosition(
       list: list,
       position: position,
     );
   }
 
-// ignore: unused_element
-  _DeleteActiveList deleteActiveList({@required ActiveList list}) {
+  _DeleteActiveList deleteActiveList({required ActiveList list}) {
     return _DeleteActiveList(
       list: list,
     );
   }
 
-// ignore: unused_element
   _ReplaceActiveList replaceActiveList(
-      {@required CreateListParameter listParameter,
-      @required ActiveList list}) {
+      {required CreateListParameter listParameter, required ActiveList list}) {
     return _ReplaceActiveList(
       listParameter: listParameter,
       list: list,
     );
   }
 
-// ignore: unused_element
   _BackupData backupData() {
     return const _BackupData();
   }
 
-// ignore: unused_element
   _LoadDataFromBackup loadDataFromBackup() {
     return const _LoadDataFromBackup();
   }
 
-// ignore: unused_element
-  _UseListAsTemplate useListAsTemplate({@required ActiveList list}) {
+  _UseListAsTemplate useListAsTemplate({required ActiveList list}) {
     return _UseListAsTemplate(
       list: list,
     );
   }
 
-// ignore: unused_element
   _ChangeListPosition changeListPosition(
-      {@required ActiveList list, int oldIndex, int newIndex}) {
+      {required ActiveList list,
+      required int oldIndex,
+      required int newIndex}) {
     return _ChangeListPosition(
       list: list,
       oldIndex: oldIndex,
@@ -83,94 +77,97 @@ class _$ActivelistEventTearOff {
     );
   }
 
-// ignore: unused_element
-  _CopyListToClipBoard copyListToClipBoard({@required ActiveList list}) {
+  _CopyListToClipBoard copyListToClipBoard({required ActiveList list}) {
     return _CopyListToClipBoard(
       list: list,
     );
   }
 
-// ignore: unused_element
   _CreateListFromClipBoard createListFromClipBoard() {
     return const _CreateListFromClipBoard();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ActivelistEvent = _$ActivelistEventTearOff();
 
 /// @nodoc
 mixin _$ActivelistEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -226,60 +223,47 @@ class _$_LoadLists implements _LoadLists {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return load();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load();
     }
@@ -288,53 +272,42 @@ class _$_LoadLists implements _LoadLists {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return load(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (load != null) {
       return load(this);
     }
@@ -384,60 +357,47 @@ class _$_LoadForReorder implements _LoadForReorder {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return loadForReorder();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadForReorder != null) {
       return loadForReorder();
     }
@@ -446,53 +406,42 @@ class _$_LoadForReorder implements _LoadForReorder {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return loadForReorder(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadForReorder != null) {
       return loadForReorder(this);
     }
@@ -525,20 +474,20 @@ class __$InsertNewListCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object listParameter = freezed,
+    Object? listParameter = freezed,
   }) {
     return _then(_InsertNewList(
       listParameter: listParameter == freezed
           ? _value.listParameter
-          : listParameter as CreateListParameter,
+          : listParameter // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
     ));
   }
 }
 
 /// @nodoc
 class _$_InsertNewList implements _InsertNewList {
-  const _$_InsertNewList({@required this.listParameter})
-      : assert(listParameter != null);
+  const _$_InsertNewList({required this.listParameter});
 
   @override
   final CreateListParameter listParameter;
@@ -561,66 +510,54 @@ class _$_InsertNewList implements _InsertNewList {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParameter);
 
+  @JsonKey(ignore: true)
   @override
   _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
       __$InsertNewListCopyWithImpl<_InsertNewList>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return insertNewList(listParameter);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insertNewList != null) {
       return insertNewList(listParameter);
     }
@@ -629,53 +566,42 @@ class _$_InsertNewList implements _InsertNewList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return insertNewList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (insertNewList != null) {
       return insertNewList(this);
     }
@@ -684,11 +610,13 @@ class _$_InsertNewList implements _InsertNewList {
 }
 
 abstract class _InsertNewList implements ActivelistEvent {
-  const factory _InsertNewList({@required CreateListParameter listParameter}) =
+  const factory _InsertNewList({required CreateListParameter listParameter}) =
       _$_InsertNewList;
 
-  CreateListParameter get listParameter;
-  _$InsertNewListCopyWith<_InsertNewList> get copyWith;
+  CreateListParameter get listParameter => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -716,22 +644,23 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
-    Object position = freezed,
+    Object? list = freezed,
+    Object? position = freezed,
   }) {
     return _then(_DeleteActiveListPosition(
-      list: list == freezed ? _value.list : list as ActiveList,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
       position: position == freezed
           ? _value.position
-          : position as ActiveListPosition,
+          : position // ignore: cast_nullable_to_non_nullable
+              as ActiveListPosition,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -739,9 +668,6 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
 
   @override
   $ActiveListPositionCopyWith<$Res> get position {
-    if (_value.position == null) {
-      return null;
-    }
     return $ActiveListPositionCopyWith<$Res>(_value.position, (value) {
       return _then(_value.copyWith(position: value));
     });
@@ -751,9 +677,7 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
 /// @nodoc
 class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   const _$_DeleteActiveListPosition(
-      {@required this.list, @required this.position})
-      : assert(list != null),
-        assert(position != null);
+      {required this.list, required this.position});
 
   @override
   final ActiveList list;
@@ -782,6 +706,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
       const DeepCollectionEquality().hash(list) ^
       const DeepCollectionEquality().hash(position);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith =>
       __$DeleteActiveListPositionCopyWithImpl<_DeleteActiveListPosition>(
@@ -789,60 +714,47 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return deleteActiveListPosition(list, position);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteActiveListPosition != null) {
       return deleteActiveListPosition(list, position);
     }
@@ -851,53 +763,42 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return deleteActiveListPosition(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteActiveListPosition != null) {
       return deleteActiveListPosition(this);
     }
@@ -907,12 +808,14 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
 
 abstract class _DeleteActiveListPosition implements ActivelistEvent {
   const factory _DeleteActiveListPosition(
-      {@required ActiveList list,
-      @required ActiveListPosition position}) = _$_DeleteActiveListPosition;
+      {required ActiveList list,
+      required ActiveListPosition position}) = _$_DeleteActiveListPosition;
 
-  ActiveList get list;
-  ActiveListPosition get position;
-  _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith;
+  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveListPosition get position => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -938,18 +841,18 @@ class __$DeleteActiveListCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
+    Object? list = freezed,
   }) {
     return _then(_DeleteActiveList(
-      list: list == freezed ? _value.list : list as ActiveList,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -958,7 +861,7 @@ class __$DeleteActiveListCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_DeleteActiveList implements _DeleteActiveList {
-  const _$_DeleteActiveList({@required this.list}) : assert(list != null);
+  const _$_DeleteActiveList({required this.list});
 
   @override
   final ActiveList list;
@@ -980,66 +883,54 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$DeleteActiveListCopyWith<_DeleteActiveList> get copyWith =>
       __$DeleteActiveListCopyWithImpl<_DeleteActiveList>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return deleteActiveList(list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteActiveList != null) {
       return deleteActiveList(list);
     }
@@ -1048,53 +939,42 @@ class _$_DeleteActiveList implements _DeleteActiveList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return deleteActiveList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (deleteActiveList != null) {
       return deleteActiveList(this);
     }
@@ -1103,11 +983,13 @@ class _$_DeleteActiveList implements _DeleteActiveList {
 }
 
 abstract class _DeleteActiveList implements ActivelistEvent {
-  const factory _DeleteActiveList({@required ActiveList list}) =
+  const factory _DeleteActiveList({required ActiveList list}) =
       _$_DeleteActiveList;
 
-  ActiveList get list;
-  _$DeleteActiveListCopyWith<_DeleteActiveList> get copyWith;
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteActiveListCopyWith<_DeleteActiveList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1133,22 +1015,23 @@ class __$ReplaceActiveListCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object listParameter = freezed,
-    Object list = freezed,
+    Object? listParameter = freezed,
+    Object? list = freezed,
   }) {
     return _then(_ReplaceActiveList(
       listParameter: listParameter == freezed
           ? _value.listParameter
-          : listParameter as CreateListParameter,
-      list: list == freezed ? _value.list : list as ActiveList,
+          : listParameter // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -1157,10 +1040,7 @@ class __$ReplaceActiveListCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_ReplaceActiveList implements _ReplaceActiveList {
-  const _$_ReplaceActiveList(
-      {@required this.listParameter, @required this.list})
-      : assert(listParameter != null),
-        assert(list != null);
+  const _$_ReplaceActiveList({required this.listParameter, required this.list});
 
   @override
   final CreateListParameter listParameter;
@@ -1189,66 +1069,54 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
       const DeepCollectionEquality().hash(listParameter) ^
       const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith =>
       __$ReplaceActiveListCopyWithImpl<_ReplaceActiveList>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return replaceActiveList(listParameter, list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (replaceActiveList != null) {
       return replaceActiveList(listParameter, list);
     }
@@ -1257,53 +1125,42 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return replaceActiveList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (replaceActiveList != null) {
       return replaceActiveList(this);
     }
@@ -1313,12 +1170,14 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
 
 abstract class _ReplaceActiveList implements ActivelistEvent {
   const factory _ReplaceActiveList(
-      {@required CreateListParameter listParameter,
-      @required ActiveList list}) = _$_ReplaceActiveList;
+      {required CreateListParameter listParameter,
+      required ActiveList list}) = _$_ReplaceActiveList;
 
-  CreateListParameter get listParameter;
-  ActiveList get list;
-  _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith;
+  CreateListParameter get listParameter => throw _privateConstructorUsedError;
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1359,60 +1218,47 @@ class _$_BackupData implements _BackupData {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return backupData();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (backupData != null) {
       return backupData();
     }
@@ -1421,53 +1267,42 @@ class _$_BackupData implements _BackupData {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return backupData(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (backupData != null) {
       return backupData(this);
     }
@@ -1517,60 +1352,47 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return loadDataFromBackup();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadDataFromBackup != null) {
       return loadDataFromBackup();
     }
@@ -1579,53 +1401,42 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return loadDataFromBackup(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loadDataFromBackup != null) {
       return loadDataFromBackup(this);
     }
@@ -1660,18 +1471,18 @@ class __$UseListAsTemplateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
+    Object? list = freezed,
   }) {
     return _then(_UseListAsTemplate(
-      list: list == freezed ? _value.list : list as ActiveList,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -1680,7 +1491,7 @@ class __$UseListAsTemplateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_UseListAsTemplate implements _UseListAsTemplate {
-  const _$_UseListAsTemplate({@required this.list}) : assert(list != null);
+  const _$_UseListAsTemplate({required this.list});
 
   @override
   final ActiveList list;
@@ -1702,66 +1513,54 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$UseListAsTemplateCopyWith<_UseListAsTemplate> get copyWith =>
       __$UseListAsTemplateCopyWithImpl<_UseListAsTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return useListAsTemplate(list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (useListAsTemplate != null) {
       return useListAsTemplate(list);
     }
@@ -1770,53 +1569,42 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return useListAsTemplate(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (useListAsTemplate != null) {
       return useListAsTemplate(this);
     }
@@ -1825,11 +1613,13 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
 }
 
 abstract class _UseListAsTemplate implements ActivelistEvent {
-  const factory _UseListAsTemplate({@required ActiveList list}) =
+  const factory _UseListAsTemplate({required ActiveList list}) =
       _$_UseListAsTemplate;
 
-  ActiveList get list;
-  _$UseListAsTemplateCopyWith<_UseListAsTemplate> get copyWith;
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$UseListAsTemplateCopyWith<_UseListAsTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1855,22 +1645,28 @@ class __$ChangeListPositionCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
-    Object oldIndex = freezed,
-    Object newIndex = freezed,
+    Object? list = freezed,
+    Object? oldIndex = freezed,
+    Object? newIndex = freezed,
   }) {
     return _then(_ChangeListPosition(
-      list: list == freezed ? _value.list : list as ActiveList,
-      oldIndex: oldIndex == freezed ? _value.oldIndex : oldIndex as int,
-      newIndex: newIndex == freezed ? _value.newIndex : newIndex as int,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
+      oldIndex: oldIndex == freezed
+          ? _value.oldIndex
+          : oldIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      newIndex: newIndex == freezed
+          ? _value.newIndex
+          : newIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -1880,8 +1676,7 @@ class __$ChangeListPositionCopyWithImpl<$Res>
 /// @nodoc
 class _$_ChangeListPosition implements _ChangeListPosition {
   const _$_ChangeListPosition(
-      {@required this.list, this.oldIndex, this.newIndex})
-      : assert(list != null);
+      {required this.list, required this.oldIndex, required this.newIndex});
 
   @override
   final ActiveList list;
@@ -1916,66 +1711,54 @@ class _$_ChangeListPosition implements _ChangeListPosition {
       const DeepCollectionEquality().hash(oldIndex) ^
       const DeepCollectionEquality().hash(newIndex);
 
+  @JsonKey(ignore: true)
   @override
   _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith =>
       __$ChangeListPositionCopyWithImpl<_ChangeListPosition>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return changeListPosition(list, oldIndex, newIndex);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeListPosition != null) {
       return changeListPosition(list, oldIndex, newIndex);
     }
@@ -1984,53 +1767,42 @@ class _$_ChangeListPosition implements _ChangeListPosition {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return changeListPosition(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (changeListPosition != null) {
       return changeListPosition(this);
     }
@@ -2040,14 +1812,16 @@ class _$_ChangeListPosition implements _ChangeListPosition {
 
 abstract class _ChangeListPosition implements ActivelistEvent {
   const factory _ChangeListPosition(
-      {@required ActiveList list,
-      int oldIndex,
-      int newIndex}) = _$_ChangeListPosition;
+      {required ActiveList list,
+      required int oldIndex,
+      required int newIndex}) = _$_ChangeListPosition;
 
-  ActiveList get list;
-  int get oldIndex;
-  int get newIndex;
-  _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith;
+  ActiveList get list => throw _privateConstructorUsedError;
+  int get oldIndex => throw _privateConstructorUsedError;
+  int get newIndex => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2073,18 +1847,18 @@ class __$CopyListToClipBoardCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object list = freezed,
+    Object? list = freezed,
   }) {
     return _then(_CopyListToClipBoard(
-      list: list == freezed ? _value.list : list as ActiveList,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
     ));
   }
 
   @override
   $ActiveListCopyWith<$Res> get list {
-    if (_value.list == null) {
-      return null;
-    }
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
     });
@@ -2093,7 +1867,7 @@ class __$CopyListToClipBoardCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_CopyListToClipBoard implements _CopyListToClipBoard {
-  const _$_CopyListToClipBoard({@required this.list}) : assert(list != null);
+  const _$_CopyListToClipBoard({required this.list});
 
   @override
   final ActiveList list;
@@ -2115,6 +1889,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
 
+  @JsonKey(ignore: true)
   @override
   _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith =>
       __$CopyListToClipBoardCopyWithImpl<_CopyListToClipBoard>(
@@ -2122,60 +1897,47 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return copyListToClipBoard(list);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (copyListToClipBoard != null) {
       return copyListToClipBoard(list);
     }
@@ -2184,53 +1946,42 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return copyListToClipBoard(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (copyListToClipBoard != null) {
       return copyListToClipBoard(this);
     }
@@ -2239,11 +1990,13 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
 }
 
 abstract class _CopyListToClipBoard implements ActivelistEvent {
-  const factory _CopyListToClipBoard({@required ActiveList list}) =
+  const factory _CopyListToClipBoard({required ActiveList list}) =
       _$_CopyListToClipBoard;
 
-  ActiveList get list;
-  _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith;
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2285,60 +2038,47 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result load(),
-    @required Result loadForReorder(),
-    @required Result insertNewList(CreateListParameter listParameter),
-    @required
-        Result deleteActiveListPosition(
-            ActiveList list, ActiveListPosition position),
-    @required Result deleteActiveList(ActiveList list),
-    @required
-        Result replaceActiveList(
-            CreateListParameter listParameter, ActiveList list),
-    @required Result backupData(),
-    @required Result loadDataFromBackup(),
-    @required Result useListAsTemplate(ActiveList list),
-    @required
-        Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    @required Result copyListToClipBoard(ActiveList list),
-    @required Result createListFromClipBoard(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return createListFromClipBoard();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result load(),
-    Result loadForReorder(),
-    Result insertNewList(CreateListParameter listParameter),
-    Result deleteActiveListPosition(
-        ActiveList list, ActiveListPosition position),
-    Result deleteActiveList(ActiveList list),
-    Result replaceActiveList(
-        CreateListParameter listParameter, ActiveList list),
-    Result backupData(),
-    Result loadDataFromBackup(),
-    Result useListAsTemplate(ActiveList list),
-    Result changeListPosition(ActiveList list, int oldIndex, int newIndex),
-    Result copyListToClipBoard(ActiveList list),
-    Result createListFromClipBoard(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (createListFromClipBoard != null) {
       return createListFromClipBoard();
     }
@@ -2347,53 +2087,42 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result load(_LoadLists value),
-    @required Result loadForReorder(_LoadForReorder value),
-    @required Result insertNewList(_InsertNewList value),
-    @required Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    @required Result deleteActiveList(_DeleteActiveList value),
-    @required Result replaceActiveList(_ReplaceActiveList value),
-    @required Result backupData(_BackupData value),
-    @required Result loadDataFromBackup(_LoadDataFromBackup value),
-    @required Result useListAsTemplate(_UseListAsTemplate value),
-    @required Result changeListPosition(_ChangeListPosition value),
-    @required Result copyListToClipBoard(_CopyListToClipBoard value),
-    @required Result createListFromClipBoard(_CreateListFromClipBoard value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
   }) {
-    assert(load != null);
-    assert(loadForReorder != null);
-    assert(insertNewList != null);
-    assert(deleteActiveListPosition != null);
-    assert(deleteActiveList != null);
-    assert(replaceActiveList != null);
-    assert(backupData != null);
-    assert(loadDataFromBackup != null);
-    assert(useListAsTemplate != null);
-    assert(changeListPosition != null);
-    assert(copyListToClipBoard != null);
-    assert(createListFromClipBoard != null);
     return createListFromClipBoard(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result load(_LoadLists value),
-    Result loadForReorder(_LoadForReorder value),
-    Result insertNewList(_InsertNewList value),
-    Result deleteActiveListPosition(_DeleteActiveListPosition value),
-    Result deleteActiveList(_DeleteActiveList value),
-    Result replaceActiveList(_ReplaceActiveList value),
-    Result backupData(_BackupData value),
-    Result loadDataFromBackup(_LoadDataFromBackup value),
-    Result useListAsTemplate(_UseListAsTemplate value),
-    Result changeListPosition(_ChangeListPosition value),
-    Result copyListToClipBoard(_CopyListToClipBoard value),
-    Result createListFromClipBoard(_CreateListFromClipBoard value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (createListFromClipBoard != null) {
       return createListFromClipBoard(this);
     }
@@ -2409,32 +2138,27 @@ abstract class _CreateListFromClipBoard implements ActivelistEvent {
 class _$ActivelistStateTearOff {
   const _$ActivelistStateTearOff();
 
-// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
 
-// ignore: unused_element
   _Loading loading() {
     return const _Loading();
   }
 
-// ignore: unused_element
-  _Loaded loaded({@required List<ActiveList> userLists}) {
+  _Loaded loaded({List<ActiveList> userLists = const []}) {
     return _Loaded(
       userLists: userLists,
     );
   }
 
-// ignore: unused_element
-  _ListOrderChanged listOrderChanged({@required List<ActiveList> userLists}) {
+  _ListOrderChanged listOrderChanged({List<ActiveList> userLists = const []}) {
     return _ListOrderChanged(
       userLists: userLists,
     );
   }
 
-// ignore: unused_element
-  _Error error({@required Failure failure}) {
+  _Error error({required Failure failure}) {
     return _Error(
       failure: failure,
     );
@@ -2442,45 +2166,48 @@ class _$ActivelistStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ActivelistState = _$ActivelistStateTearOff();
 
 /// @nodoc
 mixin _$ActivelistState {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ActiveList> userLists),
-    @required Result listOrderChanged(List<ActiveList> userLists),
-    @required Result error(Failure failure),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ActiveList> userLists),
-    Result listOrderChanged(List<ActiveList> userLists),
-    Result error(Failure failure),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result listOrderChanged(_ListOrderChanged value),
-    @required Result error(_Error value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result listOrderChanged(_ListOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2535,32 +2262,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ActiveList> userLists),
-    @required Result listOrderChanged(List<ActiveList> userLists),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ActiveList> userLists),
-    Result listOrderChanged(List<ActiveList> userLists),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial();
     }
@@ -2569,32 +2290,26 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result listOrderChanged(_ListOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result listOrderChanged(_ListOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (initial != null) {
       return initial(this);
     }
@@ -2641,32 +2356,26 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ActiveList> userLists),
-    @required Result listOrderChanged(List<ActiveList> userLists),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return loading();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ActiveList> userLists),
-    Result listOrderChanged(List<ActiveList> userLists),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading();
     }
@@ -2675,32 +2384,26 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result listOrderChanged(_ListOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return loading(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result listOrderChanged(_ListOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loading != null) {
       return loading(this);
     }
@@ -2730,20 +2433,22 @@ class __$LoadedCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userLists = freezed,
+    Object? userLists = freezed,
   }) {
     return _then(_Loaded(
       userLists: userLists == freezed
           ? _value.userLists
-          : userLists as List<ActiveList>,
+          : userLists // ignore: cast_nullable_to_non_nullable
+              as List<ActiveList>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Loaded implements _Loaded {
-  const _$_Loaded({@required this.userLists}) : assert(userLists != null);
+  const _$_Loaded({this.userLists = const []});
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<ActiveList> userLists;
 
@@ -2765,38 +2470,33 @@ class _$_Loaded implements _Loaded {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userLists);
 
+  @JsonKey(ignore: true)
   @override
   _$LoadedCopyWith<_Loaded> get copyWith =>
       __$LoadedCopyWithImpl<_Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ActiveList> userLists),
-    @required Result listOrderChanged(List<ActiveList> userLists),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return loaded(userLists);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ActiveList> userLists),
-    Result listOrderChanged(List<ActiveList> userLists),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(userLists);
     }
@@ -2805,32 +2505,26 @@ class _$_Loaded implements _Loaded {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result listOrderChanged(_ListOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return loaded(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result listOrderChanged(_ListOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (loaded != null) {
       return loaded(this);
     }
@@ -2839,10 +2533,11 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements ActivelistState {
-  const factory _Loaded({@required List<ActiveList> userLists}) = _$_Loaded;
+  const factory _Loaded({List<ActiveList> userLists}) = _$_Loaded;
 
-  List<ActiveList> get userLists;
-  _$LoadedCopyWith<_Loaded> get copyWith;
+  List<ActiveList> get userLists => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2866,21 +2561,22 @@ class __$ListOrderChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userLists = freezed,
+    Object? userLists = freezed,
   }) {
     return _then(_ListOrderChanged(
       userLists: userLists == freezed
           ? _value.userLists
-          : userLists as List<ActiveList>,
+          : userLists // ignore: cast_nullable_to_non_nullable
+              as List<ActiveList>,
     ));
   }
 }
 
 /// @nodoc
 class _$_ListOrderChanged implements _ListOrderChanged {
-  const _$_ListOrderChanged({@required this.userLists})
-      : assert(userLists != null);
+  const _$_ListOrderChanged({this.userLists = const []});
 
+  @JsonKey(defaultValue: const [])
   @override
   final List<ActiveList> userLists;
 
@@ -2902,38 +2598,33 @@ class _$_ListOrderChanged implements _ListOrderChanged {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userLists);
 
+  @JsonKey(ignore: true)
   @override
   _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith =>
       __$ListOrderChangedCopyWithImpl<_ListOrderChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ActiveList> userLists),
-    @required Result listOrderChanged(List<ActiveList> userLists),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return listOrderChanged(userLists);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ActiveList> userLists),
-    Result listOrderChanged(List<ActiveList> userLists),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listOrderChanged != null) {
       return listOrderChanged(userLists);
     }
@@ -2942,32 +2633,26 @@ class _$_ListOrderChanged implements _ListOrderChanged {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result listOrderChanged(_ListOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return listOrderChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result listOrderChanged(_ListOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listOrderChanged != null) {
       return listOrderChanged(this);
     }
@@ -2976,11 +2661,13 @@ class _$_ListOrderChanged implements _ListOrderChanged {
 }
 
 abstract class _ListOrderChanged implements ActivelistState {
-  const factory _ListOrderChanged({@required List<ActiveList> userLists}) =
+  const factory _ListOrderChanged({List<ActiveList> userLists}) =
       _$_ListOrderChanged;
 
-  List<ActiveList> get userLists;
-  _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith;
+  List<ActiveList> get userLists => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -3003,18 +2690,18 @@ class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object failure = freezed,
+    Object? failure = freezed,
   }) {
     return _then(_Error(
-      failure: failure == freezed ? _value.failure : failure as Failure,
+      failure: failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
     ));
   }
 
   @override
   $FailureCopyWith<$Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
     return $FailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
     });
@@ -3023,7 +2710,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_Error implements _Error {
-  const _$_Error({@required this.failure}) : assert(failure != null);
+  const _$_Error({required this.failure});
 
   @override
   final Failure failure;
@@ -3045,38 +2732,33 @@ class _$_Error implements _Error {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
+  @JsonKey(ignore: true)
   @override
   _$ErrorCopyWith<_Error> get copyWith =>
       __$ErrorCopyWithImpl<_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result initial(),
-    @required Result loading(),
-    @required Result loaded(List<ActiveList> userLists),
-    @required Result listOrderChanged(List<ActiveList> userLists),
-    @required Result error(Failure failure),
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return error(failure);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result initial(),
-    Result loading(),
-    Result loaded(List<ActiveList> userLists),
-    Result listOrderChanged(List<ActiveList> userLists),
-    Result error(Failure failure),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(failure);
     }
@@ -3085,32 +2767,26 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result initial(_Initial value),
-    @required Result loading(_Loading value),
-    @required Result loaded(_Loaded value),
-    @required Result listOrderChanged(_ListOrderChanged value),
-    @required Result error(_Error value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
   }) {
-    assert(initial != null);
-    assert(loading != null);
-    assert(loaded != null);
-    assert(listOrderChanged != null);
-    assert(error != null);
     return error(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result initial(_Initial value),
-    Result loading(_Loading value),
-    Result loaded(_Loaded value),
-    Result listOrderChanged(_ListOrderChanged value),
-    Result error(_Error value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (error != null) {
       return error(this);
     }
@@ -3119,8 +2795,9 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements ActivelistState {
-  const factory _Error({@required Failure failure}) = _$_Error;
+  const factory _Error({required Failure failure}) = _$_Error;
 
-  Failure get failure;
-  _$ErrorCopyWith<_Error> get copyWith;
+  Failure get failure => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
 }

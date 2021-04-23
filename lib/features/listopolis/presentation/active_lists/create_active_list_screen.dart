@@ -6,6 +6,7 @@ import 'package:listopolis/features/listopolis/application/list_creation/create_
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
@@ -15,7 +16,7 @@ import 'package:listopolis/features/listopolis/presentation/common_page_function
 class CreateListPage extends StatefulWidget  {
   final ActivelistBloc activelistBloc;
   final TemplateBloc templateBloc;
-  CreateListPage(this.activelistBloc, this.templateBloc, {Key key}) : super(key: key);
+  CreateListPage(this.activelistBloc, this.templateBloc, {Key? key}) : super(key: key);
   
   @override
   _CreateListPageState createState() => _CreateListPageState();
@@ -23,11 +24,11 @@ class CreateListPage extends StatefulWidget  {
 
 class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObserver, CommonPageFunctions{
 
-  String currentlistName;
-  ListType currentListType;
-  PositionType currentPositionType;
-  CreateListParameter currentCreatedList;
-  BuildContext ctxLastBuild;
+  String? currentlistName;
+  ListType? currentListType;
+  PositionType? currentPositionType;
+  CreateListParameter? currentCreatedList;
+  BuildContext? ctxLastBuild;
   //  @override
   // void didChangeDependencies() {
   //   super.didChangeDependencies();
@@ -53,7 +54,8 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
   void initState() {
     // TODO: implement initState
     super.initState();
-    WidgetsBinding.instance.addObserver(this);
+    
+     WidgetsBinding.instance?.addObserver(this);
   }  
 
   @override
@@ -61,7 +63,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     // TODO: implement dispose
     listNameController.dispose();
     controllerList.forEach((controller) { controller.dispose(); });
-    WidgetsBinding.instance.removeObserver(this);
+    WidgetsBinding.instance?.removeObserver(this);
     print("Create List-Screen disposed");
     super.dispose();
   }
@@ -71,10 +73,12 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     // TODO: implement didChangeAppLifecycleState
     print("Create List-Screen State changed to $state");
     if(state == AppLifecycleState.paused ){
-      if(ctxLastBuild != null)
-        _acceptListChanges(ctxLastBuild);
+      if(ctxLastBuild != null){
+        BuildContext ctxLokal = ctxLastBuild!;
+         _acceptListChanges(ctxLokal);
         canReturn = true;
-        Navigator.of(ctxLastBuild).pop();
+        Navigator.of(ctxLokal).pop();
+      }
     }
     
     super.didChangeAppLifecycleState(state);
@@ -112,7 +116,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     );
   }
 
-  ToggleButtons buildToggleButtons(List<bool> selected, BuildContext context){
+  ToggleButtons buildToggleButtons(CreateListParameter? createListParam, List<bool> selected, BuildContext context){
     List<Widget> toggleItems = [
       Icon(Icons.swap_vert),
       Icon(Icons.list)
@@ -125,10 +129,12 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
         onPressed: (idx){
           
           CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
-          if(idx == 0){
-            aBloc.add(CreatelistEvent.switchViewToReorder());
-          }else{
-            aBloc.add(CreatelistEvent.switchViewToCreation());
+          if(createListParam != null){
+            if(idx == 0){
+              aBloc.add(CreatelistEvent.switchViewToReorder(listParam: createListParam));
+            }else{
+              aBloc.add(CreatelistEvent.switchViewToCreation(listParam: createListParam));
+            }
           }
           // setState(() {
             
@@ -142,10 +148,10 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
   return BlocBuilder<CreatelistBloc, CreatelistState>
             (builder: (context, state){
               return state.map(
-                initial: (s) => buildToggleButtons([false, true], context),
-                listChanged: (s) => buildToggleButtons([false, true], context),
-                switchedToCreate: (s) => buildToggleButtons([false, true], context),
-                switchedToReorder:  (s) => buildToggleButtons([true, false], context)
+                initial: (s) => buildToggleButtons(null, [false, true], context),
+                listChanged: (s) => buildToggleButtons(s.creationParam, [false, true], context),
+                switchedToCreate: (s) => buildToggleButtons(s.creationParam, [false, true], context),
+                switchedToReorder:  (s) => buildToggleButtons(s.creationParam, [true, false], context)
               );
             }
             );
@@ -224,18 +230,21 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
 
     CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     if(createListBloc.isListEdit()){
-        ActiveList actList = createListBloc.editList;
+        ActiveList? actList = createListBloc.editList;
         createListBloc.editList = null;
-        widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList, list: actList));
+        if(actList != null)
+          widget.activelistBloc.add(ActivelistEvent.replaceActiveList(listParameter: currentCreatedList!, list: actList));
         
     }else if(createListBloc.isListCreation()){
-      widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+      widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList!));
     }else if(createListBloc.isTemplateCreation()){
-      widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList));
+      widget.templateBloc.add(TemplateEvent.insertNewTemplate(listParameter: currentCreatedList!));
     }else if(createListBloc.isTemplateEdit()){
-      widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList, list: createListBloc.editTemplate));
+      ListTemplate? aListTemplate = createListBloc.editTemplate;
+      if(aListTemplate != null)
+        widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList!, list: aListTemplate));
     }else if(createListBloc.isListTransfer()){
-      widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList));
+      widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList!));
     }
   }
 
@@ -248,7 +257,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
                 _buildListTypeAndPosType(context, list)
                   
     ];
-    widgets.add( Container(child: _buildListItems(context, list.getSorted()),));
+    widgets.add( Container(child: _buildListItems(context, list, list.getSorted()),));
     return  Container(
       decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
       child: ListView(children: widgets, physics: ClampingScrollPhysics(),));
@@ -258,7 +267,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
      currentCreatedList = list;
     return Container(
       decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
-      child: _buildReorderList(context, list.getSorted(), _buildListName(context, list )));
+      child: _buildReorderList(context, list, list.getSorted(), _buildListName(context, list )));
   }
   Widget _buildListName(BuildContext context, CreateListParameter list){
       currentlistName = list.listName;
@@ -270,10 +279,10 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
                           onSubmitted: (value){ 
                             currentlistName=value; 
                             list.listName = value;
-                          _commitListChanges(context);
+                          _commitListChanges(context, list);
                           },
                           textInputAction: TextInputAction.search,
-                          controller: listNameController..text = currentlistName,
+                          controller: listNameController..text = currentlistName!,
                           cursorColor: ListColors.TEXT,
                           style: TextStyle(color: ListColors.TEXT),
                           decoration: InputDecoration(
@@ -323,9 +332,11 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
                                     );
                                   } ).toList(),
                                   onChanged: (value) {
-                                    currentListType = value;
-                                    list.type = value;
-                                    _commitListChanges(context);
+                                    if(value is ListType?){
+                                      currentListType = value;
+                                      list.type = value!;
+                                      _commitListChanges(context, list);
+                                    }
                                   },
                                   value: currentListType,
                               ),
@@ -336,10 +347,10 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
 
   }
 
-  _commitListChanges(BuildContext context){
-    currentListNameChanges = null;
+  _commitListChanges(BuildContext context, CreateListParameter param){
+    currentListNameChanges = "";
     CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
-     aBloc.add(CreatelistEvent.changeList());
+     aBloc.add(CreatelistEvent.changeList(listParam: param));
   }
 
   Widget _buildAppendType(BuildContext context,  CreateListParameter list){
@@ -363,9 +374,11 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
                                   } 
                               ).toList(),
                               onChanged: (value) {
+                                if(value is PositionType?){
                                   currentPositionType = value;
-                                  list.positioning = value;
-                                  _commitListChanges(context);
+                                  list.positioning = value!;
+                                  _commitListChanges(context, list);
+                                }
                               },
                               value: currentPositionType,
                               hint: Text(CreateListPageStrings.LIST_POSITIONING, style: TextStyle(color: ListColors.TEXTCOLOR_ON_LIGHT_BG)),
@@ -376,9 +389,9 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
       );
   }
 
- Widget _buildListItems(BuildContext context,  List<CreateListItemParameter> listitems){
+ Widget _buildListItems(BuildContext context, CreateListParameter list, List<CreateListItemParameter> listitems){
      return ListView.builder(itemBuilder: (context, index){
-       return  _buildListItemInput(context, listitems[index]);
+       return  _buildListItemInput(context, list, listitems[index]);
     },
     itemCount: listitems.length
     ,shrinkWrap: true
@@ -386,7 +399,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     
 
  }
-  Widget _buildReorderList(BuildContext context,  List<CreateListItemParameter> listitems, Widget headerWidget){
+  Widget _buildReorderList(BuildContext context, CreateListParameter list, List<CreateListItemParameter> listitems, Widget headerWidget){
     
     List<Widget> childrenWidgets = _buildReorderListItems(listitems, context);
     
@@ -396,7 +409,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               children: childrenWidgets,
               onReorder: (oldIdx, newIdx){
                   CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
-                  aBloc.add(CreatelistEvent.changeListItemOrder(oldIndex: oldIdx, newIndex: newIdx));
+                  aBloc.add(CreatelistEvent.changeListItemOrder(listParam: list, oldIndex: oldIdx, newIndex: newIdx));
               },
           ));
  }
@@ -419,7 +432,13 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               ),
             );
  }
- Widget _buildListItemInput(BuildContext context, CreateListItemParameter listItem){
+ String _stringOrEmpty(String? inhalt){
+   if(inhalt != null)
+      return inhalt;
+  else
+    return "";
+ }
+ Widget _buildListItemInput(BuildContext context, CreateListParameter list, CreateListItemParameter listItem){
    TextEditingController listItemTextController = TextEditingController();
    listItemTextController.addListener(() { listItem.name = listItemTextController.text;});
    controllerList.add(listItemTextController);
@@ -428,11 +447,11 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               decoration: BoxDecoration(border: Border(top: BorderSide(width: 1))),
               child: ListTile(
                 key: ValueKey(listItem.id),
-                leading: _buildRemovePosition(listItem, context),
+                leading: _buildRemovePosition(list, listItem, context),
                 title: TextField(
                             onSubmitted: (value){ currentlistName=value; listItem.name=value;},
                             textInputAction: TextInputAction.search,
-                            controller: listItemTextController..text = currentlistName,
+                            controller: listItemTextController..text = _stringOrEmpty(currentlistName) ,
                             cursorColor: ListColors.TEXT,
                             style: TextStyle(color: ListColors.TEXT),
                             decoration: InputDecoration(
@@ -442,33 +461,29 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
                               
                             ),
               ),
-              trailing: _buildCreatePosition(listItem, context),
+              trailing: _buildCreatePosition(list, listItem, context),
               ),
             );
  }
- Widget _buildCreatePosition(CreateListItemParameter listItem, BuildContext context){
+ Widget _buildCreatePosition(CreateListParameter list, CreateListItemParameter listItem, BuildContext context){
     return IconButton(icon: Icon(Icons.add, color: ListColors.ICON_TAKE_LIST,),
     onPressed: (){
         CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
-        aBloc.add(CreatelistEvent.addListPositionAfter(index: listItem.position));
+        aBloc.add(CreatelistEvent.addListPositionAfter(listParam: list, index: listItem.position));
      },
     );
  }
-  Widget _buildRemovePosition(CreateListItemParameter listItem, BuildContext context){
+  Widget _buildRemovePosition(CreateListParameter list, CreateListItemParameter listItem, BuildContext context){
     return IconButton(icon: Icon(Icons.delete, color:Colors.red),
     
     onPressed: (){
         
           CreatelistBloc aBloc =  BlocProvider.of<CreatelistBloc>(context);
-          aBloc.add(CreatelistEvent.removeListPosition(index: listItem.position));
+          aBloc.add(CreatelistEvent.removeListPosition(listParam: list, index: listItem.position));
         
      },
     );
  }
-
-  Widget showUpdatedList(BuildContext context){
-
-  }
 
 }
 

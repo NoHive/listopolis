@@ -7,7 +7,9 @@ import 'dart:io';
 class FileUtils{
   static Future<String> get getFilePath async{
     final directory = await getExternalStorageDirectory();
-    return directory.path;
+    if(directory != null)
+      return directory.path;
+    else throw Error();
   }
   static Future<File> get getBackupFile async{
     final path = await getFilePath;

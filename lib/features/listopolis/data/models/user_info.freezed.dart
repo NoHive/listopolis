@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user_info.dart';
 
@@ -8,6 +8,10 @@ part of 'user_info.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 UserInfo _$UserInfoFromJson(Map<String, dynamic> json) {
   return _UserInfo.fromJson(json);
 }
@@ -16,29 +20,28 @@ UserInfo _$UserInfoFromJson(Map<String, dynamic> json) {
 class _$UserInfoTearOff {
   const _$UserInfoTearOff();
 
-// ignore: unused_element
-  _UserInfo call({@required String userID}) {
+  _UserInfo call({required String userID}) {
     return _UserInfo(
       userID: userID,
     );
   }
 
-// ignore: unused_element
   UserInfo fromJson(Map<String, Object> json) {
     return UserInfo.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $UserInfo = _$UserInfoTearOff();
 
 /// @nodoc
 mixin _$UserInfo {
-  String get userID;
+  String get userID => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $UserInfoCopyWith<UserInfo> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserInfoCopyWith<UserInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -58,10 +61,13 @@ class _$UserInfoCopyWithImpl<$Res> implements $UserInfoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object userID = freezed,
+    Object? userID = freezed,
   }) {
     return _then(_value.copyWith(
-      userID: userID == freezed ? _value.userID : userID as String,
+      userID: userID == freezed
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -85,10 +91,13 @@ class __$UserInfoCopyWithImpl<$Res> extends _$UserInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userID = freezed,
+    Object? userID = freezed,
   }) {
     return _then(_UserInfo(
-      userID: userID == freezed ? _value.userID : userID as String,
+      userID: userID == freezed
+          ? _value.userID
+          : userID // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -97,9 +106,7 @@ class __$UserInfoCopyWithImpl<$Res> extends _$UserInfoCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_UserInfo extends _UserInfo {
-  const _$_UserInfo({@required this.userID})
-      : assert(userID != null),
-        super._();
+  const _$_UserInfo({required this.userID}) : super._();
 
   factory _$_UserInfo.fromJson(Map<String, dynamic> json) =>
       _$_$_UserInfoFromJson(json);
@@ -124,6 +131,7 @@ class _$_UserInfo extends _UserInfo {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(userID);
 
+  @JsonKey(ignore: true)
   @override
   _$UserInfoCopyWith<_UserInfo> get copyWith =>
       __$UserInfoCopyWithImpl<_UserInfo>(this, _$identity);
@@ -135,13 +143,15 @@ class _$_UserInfo extends _UserInfo {
 }
 
 abstract class _UserInfo extends UserInfo {
+  const factory _UserInfo({required String userID}) = _$_UserInfo;
   const _UserInfo._() : super._();
-  const factory _UserInfo({@required String userID}) = _$_UserInfo;
 
   factory _UserInfo.fromJson(Map<String, dynamic> json) = _$_UserInfo.fromJson;
 
   @override
-  String get userID;
+  String get userID => throw _privateConstructorUsedError;
   @override
-  _$UserInfoCopyWith<_UserInfo> get copyWith;
+  @JsonKey(ignore: true)
+  _$UserInfoCopyWith<_UserInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }

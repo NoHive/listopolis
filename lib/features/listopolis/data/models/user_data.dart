@@ -15,20 +15,20 @@ part 'user_data.g.dart';
 
 @freezed
 abstract class UserData implements _$UserData {
-  @JsonSerializable(nullable: false)  
+  @JsonSerializable()  
   const UserData._();
   const factory UserData(
     {
-      @required String id,
-      String name,
-      List<ListTemplate> templates,
-      List<ActiveList> activeLists
+      @Default('0815') String id,
+      @Default('some User') String name,
+      @Default([]) List<ListTemplate> templates,
+      @Default([]) List<ActiveList> activeLists
     }
   ) = _UserData;
 
   factory UserData.addListFromTemplate(UserData data, ListTemplate template){
       List<ActiveList> existingActiveLists = data.activeLists;
-      List<ActiveList> aNewList = List();
+      List<ActiveList> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -54,7 +54,7 @@ abstract class UserData implements _$UserData {
 
    factory UserData.addListFromCreatedList(UserData data, CreateListParameter creationParameter){
       List<ActiveList> existingActiveLists = data.activeLists;
-      List<ActiveList> aNewList = List();
+      List<ActiveList> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -94,7 +94,7 @@ abstract class UserData implements _$UserData {
 
     factory UserData.addTemplateFromCreatedList(UserData data, CreateListParameter creationParameter){
       List<ListTemplate> existingActiveLists = data.templates;
-      List<ListTemplate> aNewList = List();
+      List<ListTemplate> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -138,7 +138,7 @@ abstract class UserData implements _$UserData {
 
    factory UserData.addTemplateFromActiveList(UserData data, ActiveList creationParameter){
       List<ListTemplate> existingActiveLists = data.templates;
-      List<ListTemplate> aNewList = List();
+      List<ListTemplate> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -206,15 +206,20 @@ abstract class UserData implements _$UserData {
 
      Map<String, int> listToPosition = ListOrder.reorder(oldPosition, newPosition, aList.id, listIds, 
         (aListId) {
-          ActiveList aList = idToList[aListId];
-          return aList.position;
+          
+            ActiveList? aList = idToList[aListId];
+            if(aList != null)
+              return aList.position;
+            else return 1;
+          
         }
      );
      
      List<ActiveList> newActiveLists = [];
      for(ActiveList aList in data.activeLists){
-       int newPosForList = listToPosition[aList.id];
-       newActiveLists.add(aList.copyWith(position:newPosForList));
+       int? newPosForList = listToPosition[aList.id];
+       if(newPosForList != null)
+          newActiveLists.add(aList.copyWith(position:newPosForList));
      }
 
     return data.copyWith(activeLists:newActiveLists);
@@ -229,15 +234,17 @@ abstract class UserData implements _$UserData {
 
      Map<String, int> listToPosition = ListOrder.reorder(oldPosition, newPosition, aList.id, listIds, 
         (aListId) {
-          ListTemplate aList = idToList[aListId];
-          return aList.position;
+          ListTemplate? aList = idToList[aListId];
+          if(aList != null)
+            return aList.position;
         }
      );
      
      List<ListTemplate> newTemplates = [];
      for(ListTemplate aList in data.templates){
-       int newPosForList = listToPosition[aList.id];
-       newTemplates.add(aList.copyWith(position:newPosForList));
+       int? newPosForList = listToPosition[aList.id];
+       if(newPosForList != null)
+        newTemplates.add(aList.copyWith(position:newPosForList));
      }
 
     return data.copyWith(templates:newTemplates);
@@ -249,7 +256,7 @@ abstract class UserData implements _$UserData {
       List<ActiveList> existingActiveLists = data.activeLists;
       
       
-      if(existingActiveLists != null && existingActiveLists.length > 0){
+      if( existingActiveLists.length > 0){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
           
       }else{
@@ -284,7 +291,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       List<ListTemplate> existingActiveLists = data.templates;
       
       
-      if(existingActiveLists != null && existingActiveLists.length > 0){
+      if(existingActiveLists.length > 0){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
           
       }else{
@@ -315,7 +322,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
 }
   factory UserData.fromRemovedActiveListPosition(UserData data, ActiveList list, ActiveListPosition position){
       List<ActiveList> existingActiveLists = data.activeLists;
-      List<ActiveList> aNewList = List();
+      List<ActiveList> aNewList =[];
       
       if(existingActiveLists != null){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -355,7 +362,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
   }
     factory UserData.fromRemovedTemplatePosition(UserData data, ListTemplate list, ListTemplatePosition position){
       List<ListTemplate> existingActiveLists = data.templates;
-      List<ListTemplate> aNewList = List();
+      List<ListTemplate> aNewList = [];
       
       if(existingActiveLists != null){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -400,7 +407,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
   }
   factory UserData.fromRemovedActiveList(UserData data, ActiveList list){
       List<ActiveList> existingActiveLists = data.activeLists;
-      List<ActiveList> aNewActiveList = List();
+      List<ActiveList> aNewActiveList = [];
       
       if(existingActiveLists != null){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
@@ -426,7 +433,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
   }
    factory UserData.fromRemovedTemplate(UserData data, ListTemplate list){
       List<ListTemplate> existingActiveLists = data.templates;
-      List<ListTemplate> aNewActiveList = List();
+      List<ListTemplate> aNewActiveList =[];
       
       if(existingActiveLists != null){
         existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));

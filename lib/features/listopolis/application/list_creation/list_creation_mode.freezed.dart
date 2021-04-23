@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'list_creation_mode.dart';
 
@@ -9,76 +9,78 @@ part of 'list_creation_mode.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ListEditModeTearOff {
   const _$ListEditModeTearOff();
 
-// ignore: unused_element
   _EditListCreation listCreation() {
     return const _EditListCreation();
   }
 
-// ignore: unused_element
   _EditListEditing listEditing() {
     return const _EditListEditing();
   }
 
-// ignore: unused_element
   _EditTemplateCreation templateCreation() {
     return const _EditTemplateCreation();
   }
 
-// ignore: unused_element
   _EditTemplateEditing templateEditing() {
     return const _EditTemplateEditing();
   }
 
-// ignore: unused_element
   _EditTransferTemplateToList transferTemplateToList() {
     return const _EditTransferTemplateToList();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ListEditMode = _$ListEditModeTearOff();
 
 /// @nodoc
 mixin _$ListEditMode {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result listCreation(),
-    @required Result listEditing(),
-    @required Result templateCreation(),
-    @required Result templateEditing(),
-    @required Result transferTemplateToList(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result listCreation(),
-    Result listEditing(),
-    Result templateCreation(),
-    Result templateEditing(),
-    Result transferTemplateToList(),
-    @required Result orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result listCreation(_EditListCreation value),
-    @required Result listEditing(_EditListEditing value),
-    @required Result templateCreation(_EditTemplateCreation value),
-    @required Result templateEditing(_EditTemplateEditing value),
-    @required Result transferTemplateToList(_EditTransferTemplateToList value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result listCreation(_EditListCreation value),
-    Result listEditing(_EditListEditing value),
-    Result templateCreation(_EditTemplateCreation value),
-    Result templateEditing(_EditTemplateEditing value),
-    Result transferTemplateToList(_EditTransferTemplateToList value),
-    @required Result orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -135,32 +137,26 @@ class _$_EditListCreation implements _EditListCreation {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result listCreation(),
-    @required Result listEditing(),
-    @required Result templateCreation(),
-    @required Result templateEditing(),
-    @required Result transferTemplateToList(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return listCreation();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result listCreation(),
-    Result listEditing(),
-    Result templateCreation(),
-    Result templateEditing(),
-    Result transferTemplateToList(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listCreation != null) {
       return listCreation();
     }
@@ -169,32 +165,27 @@ class _$_EditListCreation implements _EditListCreation {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result listCreation(_EditListCreation value),
-    @required Result listEditing(_EditListEditing value),
-    @required Result templateCreation(_EditTemplateCreation value),
-    @required Result templateEditing(_EditTemplateEditing value),
-    @required Result transferTemplateToList(_EditTransferTemplateToList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return listCreation(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result listCreation(_EditListCreation value),
-    Result listEditing(_EditListEditing value),
-    Result templateCreation(_EditTemplateCreation value),
-    Result templateEditing(_EditTemplateEditing value),
-    Result transferTemplateToList(_EditTransferTemplateToList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listCreation != null) {
       return listCreation(this);
     }
@@ -244,32 +235,26 @@ class _$_EditListEditing implements _EditListEditing {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result listCreation(),
-    @required Result listEditing(),
-    @required Result templateCreation(),
-    @required Result templateEditing(),
-    @required Result transferTemplateToList(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return listEditing();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result listCreation(),
-    Result listEditing(),
-    Result templateCreation(),
-    Result templateEditing(),
-    Result transferTemplateToList(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listEditing != null) {
       return listEditing();
     }
@@ -278,32 +263,27 @@ class _$_EditListEditing implements _EditListEditing {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result listCreation(_EditListCreation value),
-    @required Result listEditing(_EditListEditing value),
-    @required Result templateCreation(_EditTemplateCreation value),
-    @required Result templateEditing(_EditTemplateEditing value),
-    @required Result transferTemplateToList(_EditTransferTemplateToList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return listEditing(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result listCreation(_EditListCreation value),
-    Result listEditing(_EditListEditing value),
-    Result templateCreation(_EditTemplateCreation value),
-    Result templateEditing(_EditTemplateEditing value),
-    Result transferTemplateToList(_EditTransferTemplateToList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (listEditing != null) {
       return listEditing(this);
     }
@@ -353,32 +333,26 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result listCreation(),
-    @required Result listEditing(),
-    @required Result templateCreation(),
-    @required Result templateEditing(),
-    @required Result transferTemplateToList(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return templateCreation();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result listCreation(),
-    Result listEditing(),
-    Result templateCreation(),
-    Result templateEditing(),
-    Result transferTemplateToList(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (templateCreation != null) {
       return templateCreation();
     }
@@ -387,32 +361,27 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result listCreation(_EditListCreation value),
-    @required Result listEditing(_EditListEditing value),
-    @required Result templateCreation(_EditTemplateCreation value),
-    @required Result templateEditing(_EditTemplateEditing value),
-    @required Result transferTemplateToList(_EditTransferTemplateToList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return templateCreation(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result listCreation(_EditListCreation value),
-    Result listEditing(_EditListEditing value),
-    Result templateCreation(_EditTemplateCreation value),
-    Result templateEditing(_EditTemplateEditing value),
-    Result transferTemplateToList(_EditTransferTemplateToList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (templateCreation != null) {
       return templateCreation(this);
     }
@@ -462,32 +431,26 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result listCreation(),
-    @required Result listEditing(),
-    @required Result templateCreation(),
-    @required Result templateEditing(),
-    @required Result transferTemplateToList(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return templateEditing();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result listCreation(),
-    Result listEditing(),
-    Result templateCreation(),
-    Result templateEditing(),
-    Result transferTemplateToList(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (templateEditing != null) {
       return templateEditing();
     }
@@ -496,32 +459,27 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result listCreation(_EditListCreation value),
-    @required Result listEditing(_EditListEditing value),
-    @required Result templateCreation(_EditTemplateCreation value),
-    @required Result templateEditing(_EditTemplateEditing value),
-    @required Result transferTemplateToList(_EditTransferTemplateToList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return templateEditing(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result listCreation(_EditListCreation value),
-    Result listEditing(_EditListEditing value),
-    Result templateCreation(_EditTemplateCreation value),
-    Result templateEditing(_EditTemplateEditing value),
-    Result transferTemplateToList(_EditTransferTemplateToList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (templateEditing != null) {
       return templateEditing(this);
     }
@@ -573,32 +531,26 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result listCreation(),
-    @required Result listEditing(),
-    @required Result templateCreation(),
-    @required Result templateEditing(),
-    @required Result transferTemplateToList(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return transferTemplateToList();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result listCreation(),
-    Result listEditing(),
-    Result templateCreation(),
-    Result templateEditing(),
-    Result transferTemplateToList(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (transferTemplateToList != null) {
       return transferTemplateToList();
     }
@@ -607,32 +559,27 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result listCreation(_EditListCreation value),
-    @required Result listEditing(_EditListEditing value),
-    @required Result templateCreation(_EditTemplateCreation value),
-    @required Result templateEditing(_EditTemplateEditing value),
-    @required Result transferTemplateToList(_EditTransferTemplateToList value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
   }) {
-    assert(listCreation != null);
-    assert(listEditing != null);
-    assert(templateCreation != null);
-    assert(templateEditing != null);
-    assert(transferTemplateToList != null);
     return transferTemplateToList(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result listCreation(_EditListCreation value),
-    Result listEditing(_EditListEditing value),
-    Result templateCreation(_EditTemplateCreation value),
-    Result templateEditing(_EditTemplateEditing value),
-    Result transferTemplateToList(_EditTransferTemplateToList value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (transferTemplateToList != null) {
       return transferTemplateToList(this);
     }

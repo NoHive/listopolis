@@ -16,7 +16,7 @@ import 'package:listopolis/features/listopolis/presentation/common_page_function
 class TemplateMainPage extends StatefulWidget {
   final CreatelistBloc createlistBloc;
   final ActivelistBloc activelistBloc;
-  TemplateMainPage(this.activelistBloc, this.createlistBloc, {Key key}) : super(key: key);
+  TemplateMainPage(this.activelistBloc, this.createlistBloc, {Key? key}) : super(key: key);
 
   @override
   _TemplateMainPageState createState() => _TemplateMainPageState();
@@ -24,8 +24,8 @@ class TemplateMainPage extends StatefulWidget {
 enum PositionType{start, end}
 class _TemplateMainPageState extends State<TemplateMainPage> with CommonPageFunctions {
   
-  String lastEditedTemplateName;
-  PositionType posType;
+  //String lastEditedTemplateName;
+  //PositionType posType;
   
    @override
   void didChangeDependencies() {
@@ -157,8 +157,9 @@ Widget appBarToggles(BuildContext context){
                   int realNewIdx = oldIdx < newIdx ? newIdx  : newIdx +1;
                   int realOldIdx = oldIdx +1;
                   TemplateBloc aBloc =  BlocProvider.of<TemplateBloc>(context);
-                  ListTemplate changedList = posToList[realOldIdx];
-                  aBloc.add(TemplateEvent.changeTemplatePosition(template: changedList, oldIndex: realOldIdx, newIndex: realNewIdx));
+                  ListTemplate? changedList = posToList[realOldIdx];
+                  if(changedList != null)
+                    aBloc.add(TemplateEvent.changeTemplatePosition(template: changedList, oldIndex: realOldIdx, newIndex: realNewIdx));
               },
           ));
  }

@@ -17,8 +17,8 @@ class LocalDataSourceImpl implements IUserDataSource{
 
   LocalDataSourceImpl(
     {
-      @required this.sharedPreferences, 
-      @required this.preferenceKey
+      required this.sharedPreferences, 
+      required this.preferenceKey
     });
   
 

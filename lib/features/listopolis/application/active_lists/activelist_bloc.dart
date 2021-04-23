@@ -16,7 +16,7 @@ part 'activelist_bloc.freezed.dart';
 
 class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   final IRepository repository;
-  ActivelistBloc({this.repository} ) : super(_Initial());
+  ActivelistBloc({required this.repository} ) : super(_Initial());
 
   @override
   Stream<ActivelistState> mapEventToState(

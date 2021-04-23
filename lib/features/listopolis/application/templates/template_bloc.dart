@@ -14,7 +14,7 @@ part 'template_bloc.freezed.dart';
 
 class TemplateBloc extends Bloc<TemplateEvent, TemplateState> {
   final IRepository repository;
-  TemplateBloc({@required this.repository}) : super(_Initial());
+  TemplateBloc({required this.repository}) : super(_Initial());
 
   @override
   Stream<TemplateState> mapEventToState(
