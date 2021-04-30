@@ -205,6 +205,7 @@ class __$LoadListsCopyWithImpl<$Res> extends _$ActivelistEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadLists implements _LoadLists {
   const _$_LoadLists();
 
@@ -339,6 +340,7 @@ class __$LoadForReorderCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadForReorder implements _LoadForReorder {
   const _$_LoadForReorder();
 
@@ -486,6 +488,7 @@ class __$InsertNewListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InsertNewList implements _InsertNewList {
   const _$_InsertNewList({required this.listParameter});
 
@@ -675,6 +678,7 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   const _$_DeleteActiveListPosition(
       {required this.list, required this.position});
@@ -860,6 +864,7 @@ class __$DeleteActiveListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteActiveList implements _DeleteActiveList {
   const _$_DeleteActiveList({required this.list});
 
@@ -1039,6 +1044,7 @@ class __$ReplaceActiveListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ReplaceActiveList implements _ReplaceActiveList {
   const _$_ReplaceActiveList({required this.listParameter, required this.list});
 
@@ -1200,6 +1206,7 @@ class __$BackupDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BackupData implements _BackupData {
   const _$_BackupData();
 
@@ -1334,6 +1341,7 @@ class __$LoadDataFromBackupCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   const _$_LoadDataFromBackup();
 
@@ -1490,6 +1498,7 @@ class __$UseListAsTemplateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UseListAsTemplate implements _UseListAsTemplate {
   const _$_UseListAsTemplate({required this.list});
 
@@ -1674,6 +1683,7 @@ class __$ChangeListPositionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ChangeListPosition implements _ChangeListPosition {
   const _$_ChangeListPosition(
       {required this.list, required this.oldIndex, required this.newIndex});
@@ -1866,6 +1876,7 @@ class __$CopyListToClipBoardCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   const _$_CopyListToClipBoard({required this.list});
 
@@ -2020,6 +2031,7 @@ class __$CreateListFromClipBoardCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   const _$_CreateListFromClipBoard();
 
@@ -2244,6 +2256,7 @@ class __$InitialCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -2338,6 +2351,7 @@ class __$LoadingCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Loading implements _Loading {
   const _$_Loading();
 
@@ -2445,6 +2459,7 @@ class __$LoadedCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Loaded implements _Loaded {
   const _$_Loaded({this.userLists = const []});
 
@@ -2573,6 +2588,7 @@ class __$ListOrderChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ListOrderChanged implements _ListOrderChanged {
   const _$_ListOrderChanged({this.userLists = const []});
 
@@ -2709,6 +2725,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Error implements _Error {
   const _$_Error({required this.failure});
 

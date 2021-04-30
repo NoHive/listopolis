@@ -90,6 +90,7 @@ class _$RememberCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$Remember implements Remember {
   const _$Remember();
 
@@ -172,6 +173,7 @@ class _$ToDoListCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ToDoList implements ToDoList {
   const _$ToDoList();
 

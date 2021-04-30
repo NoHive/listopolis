@@ -214,9 +214,8 @@ class __$ActiveListCopyWithImpl<$Res> extends _$ActiveListCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ActiveList extends _ActiveList {
   const _$_ActiveList(
       {this.id = '0815',
@@ -475,9 +474,8 @@ class __$ActiveListPositionCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ActiveListPosition extends _ActiveListPosition {
   const _$_ActiveListPosition(
       {this.id = '0815',

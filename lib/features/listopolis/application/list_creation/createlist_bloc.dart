@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/list_creation_mode.dart';
@@ -16,6 +17,7 @@ part 'createlist_event.dart';
 part 'createlist_state.dart';
 part 'createlist_bloc.freezed.dart';
 
+@injectable
 class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   
   final IRepository repository;

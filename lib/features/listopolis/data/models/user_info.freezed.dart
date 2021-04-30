@@ -102,9 +102,8 @@ class __$UserInfoCopyWithImpl<$Res> extends _$UserInfoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_UserInfo extends _UserInfo {
   const _$_UserInfo({required this.userID}) : super._();
 

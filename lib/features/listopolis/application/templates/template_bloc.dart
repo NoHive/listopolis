@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
@@ -12,6 +13,7 @@ part 'template_event.dart';
 part 'template_state.dart';
 part 'template_bloc.freezed.dart';
 
+@injectable
 class TemplateBloc extends Bloc<TemplateEvent, TemplateState> {
   final IRepository repository;
   TemplateBloc({required this.repository}) : super(_Initial());

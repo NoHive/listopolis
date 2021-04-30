@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
@@ -15,11 +16,12 @@ import 'package:listopolis/features/listopolis/domain/repositories/user_info.dar
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
+@LazySingleton(as: IRepository)
 class RepositoryImpl implements IRepository{
 
   final IUserDataSource dataSource;
   final IUserDataSource backupDataSource;
-  RepositoryImpl({required this.dataSource, required this.backupDataSource});
+  RepositoryImpl({@Named('UserData') required this.dataSource, @Named('BackupData') required this.backupDataSource});
   Option<UserData> uDataCache = None();
 
   

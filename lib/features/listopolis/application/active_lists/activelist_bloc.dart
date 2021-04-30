@@ -5,6 +5,7 @@ import 'package:bloc/bloc.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
@@ -14,6 +15,7 @@ part 'activelist_event.dart';
 part 'activelist_state.dart';
 part 'activelist_bloc.freezed.dart';
 
+@injectable
 class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   final IRepository repository;
   ActivelistBloc({required this.repository} ) : super(_Initial());

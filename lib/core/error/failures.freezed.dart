@@ -100,6 +100,7 @@ class _$DeviceOfflineCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$DeviceOffline implements DeviceOffline {
   const _$DeviceOffline();
 
@@ -189,6 +190,7 @@ class _$ServerConnectFailedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ServerConnectFailed implements ServerConnectFailed {
   const _$ServerConnectFailed();
 
@@ -277,6 +279,7 @@ class _$ServerAccessFailedCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ServerAccessFailed implements ServerAccessFailed {
   const _$ServerAccessFailed();
 

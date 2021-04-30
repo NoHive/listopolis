@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:listopolis/configure_injection.dart';
 import 'package:listopolis/core/local_storage/shared_preferences_keys.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
@@ -12,31 +13,33 @@ import 'package:listopolis/features/listopolis/presentation/color_constants.dart
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-Future<SharedPreferences> init() async {
+// Future<SharedPreferences> init() async {
   
-  return Future.value(await SharedPreferences.getInstance());
-}
+//   return Future.value(await SharedPreferences.getInstance());
+// }
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences prefs = await init();
-  runApp(ListopolisRoot(prefs));
+ // SharedPreferences prefs = await init();
+  //runApp(ListopolisRoot(prefs));
+  await configureInjection("std");
+  runApp(ListopolisRoot());
 }
 
 class ListopolisRoot extends StatelessWidget {
-  final SharedPreferences preferences;
-  const ListopolisRoot(this.preferences, {Key? key}) : super(key: key);
+ // final SharedPreferences preferences;
+  const ListopolisRoot( {Key? key}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
     
-     final RepositoryImpl userDateRepo= RepositoryImpl(
-                                          dataSource: LocalDataSourceImpl(
-                                                        preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
-                                                        sharedPreferences: preferences
-                                                      ),
-                                          backupDataSource: BackupDataSource(),
-                                        );
+    //  final RepositoryImpl userDateRepo= RepositoryImpl(
+    //                                       dataSource: LocalDataSourceImpl(
+    //                                                     preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
+    //                                                     sharedPreferences: preferences
+    //                                                   ),
+    //                                       backupDataSource: BackupDataSource(),
+    //                                     );
 
     return MaterialApp(
       title: "Listopolis",
@@ -44,22 +47,15 @@ class ListopolisRoot extends StatelessWidget {
       home: MultiBlocProvider(
             providers: [ 
               BlocProvider<ActivelistBloc> (
-                create: (context) => ActivelistBloc( repository: userDateRepo ),
+                create: (context) => getIt<ActivelistBloc>(),
               ),
               BlocProvider<TemplateBloc> (
-                create: (context) => TemplateBloc( repository: userDateRepo ),
+                create: (context) => getIt<TemplateBloc>(),
               ),
               BlocProvider<CreatelistBloc> (
-                create: (context) => CreatelistBloc(
-                                        repository: RepositoryImpl(
-                                                        dataSource: LocalDataSourceImpl(
-                                                          preferenceKey: SharedPreferencesKey.USER_DATA_KEY,
-                                                          sharedPreferences: preferences
-                                                    ),
-                                                    backupDataSource: BackupDataSource(),
-                                        ),
+                create: (context) => getIt<CreatelistBloc>(),
                                         
-                                      )
+                                      
               ),
               
             ],

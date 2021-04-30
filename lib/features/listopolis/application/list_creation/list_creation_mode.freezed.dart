@@ -119,6 +119,7 @@ class __$EditListCreationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditListCreation implements _EditListCreation {
   const _$_EditListCreation();
 
@@ -217,6 +218,7 @@ class __$EditListEditingCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditListEditing implements _EditListEditing {
   const _$_EditListEditing();
 
@@ -315,6 +317,7 @@ class __$EditTemplateCreationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditTemplateCreation implements _EditTemplateCreation {
   const _$_EditTemplateCreation();
 
@@ -413,6 +416,7 @@ class __$EditTemplateEditingCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditTemplateEditing implements _EditTemplateEditing {
   const _$_EditTemplateEditing();
 
@@ -513,6 +517,7 @@ class __$EditTransferTemplateToListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
   const _$_EditTransferTemplateToList();
 

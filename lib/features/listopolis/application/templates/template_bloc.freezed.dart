@@ -167,6 +167,7 @@ class __$LoadTemplatesCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadTemplates implements _LoadTemplates {
   const _$_LoadTemplates();
 
@@ -284,6 +285,7 @@ class __$LoadTemplatesForReorderCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
   const _$_LoadTemplatesForReorder();
 
@@ -413,6 +415,7 @@ class __$InsertNewTemplateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_InsertNewTemplate implements _InsertNewTemplate {
   const _$_InsertNewTemplate({required this.listParameter});
 
@@ -583,6 +586,7 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   const _$_DeleteTemplatePosition({required this.list, required this.position});
 
@@ -749,6 +753,7 @@ class __$DeleteTemplateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_DeleteTemplate implements _DeleteTemplate {
   const _$_DeleteTemplate({required this.list});
 
@@ -910,6 +915,7 @@ class __$ReplaceTemplateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ReplaceTemplate implements _ReplaceTemplate {
   const _$_ReplaceTemplate({required this.listParameter, required this.list});
 
@@ -1085,6 +1091,7 @@ class __$ChangeTemplatePositionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
   const _$_ChangeTemplatePosition(
       {required this.template, required this.oldIndex, required this.newIndex});
@@ -1331,6 +1338,7 @@ class __$InitialCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -1426,6 +1434,7 @@ class __$LoadingCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Loading implements _Loading {
   const _$_Loading();
 
@@ -1534,6 +1543,7 @@ class __$LoadedCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Loaded implements _Loaded {
   const _$_Loaded({this.userTemplates = const []});
 
@@ -1663,6 +1673,7 @@ class __$TemplateOrderChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_TemplateOrderChanged implements _TemplateOrderChanged {
   const _$_TemplateOrderChanged({this.userTemplates = const []});
 
@@ -1801,6 +1812,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Error implements _Error {
   const _$_Error({this.failure = const Failure.serviceAccessFailed()});
 

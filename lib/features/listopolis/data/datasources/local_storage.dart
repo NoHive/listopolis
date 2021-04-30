@@ -1,13 +1,15 @@
 
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/data/core/file_utils.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
 import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 
 
 
-
+@Named('BackupData')
+@LazySingleton(as: IUserDataSource)
 class BackupDataSource extends IUserDataSource{
   BackupDataSource();
   

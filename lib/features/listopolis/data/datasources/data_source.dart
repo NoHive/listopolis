@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -9,7 +10,8 @@ abstract class IUserDataSource{
   Future<Option<UserData>> readUserData();
   Future<void> writeUserData(UserData data);
 }
-
+@Named('UserData')
+@LazySingleton(as: IUserDataSource)
 class LocalDataSourceImpl implements IUserDataSource{
   
   final SharedPreferences sharedPreferences;
@@ -18,7 +20,7 @@ class LocalDataSourceImpl implements IUserDataSource{
   LocalDataSourceImpl(
     {
       required this.sharedPreferences, 
-      required this.preferenceKey
+      @Named('PreferenceKey') required this.preferenceKey
     });
   
 

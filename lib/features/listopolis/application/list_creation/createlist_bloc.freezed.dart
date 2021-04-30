@@ -211,6 +211,7 @@ class __$StartedCopyWithImpl<$Res> extends _$CreatelistEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Started implements _Started {
   const _$_Started();
 
@@ -346,6 +347,7 @@ class __$StartListCreationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_StartListCreation implements _StartListCreation {
   const _$_StartListCreation();
 
@@ -481,6 +483,7 @@ class __$StartTemplateCreationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_StartTemplateCreation implements _StartTemplateCreation {
   const _$_StartTemplateCreation();
 
@@ -629,6 +632,7 @@ class __$ChangeListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ChangeList implements _ChangeList {
   const _$_ChangeList({required this.listParam});
 
@@ -796,6 +800,7 @@ class __$SwitchToCreationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SwitchToCreation implements _SwitchToCreation {
   const _$_SwitchToCreation({required this.listParam});
 
@@ -963,6 +968,7 @@ class __$SwitchToReorderCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SwitchToReorder implements _SwitchToReorder {
   const _$_SwitchToReorder({required this.listParam});
 
@@ -1135,6 +1141,7 @@ class __$AddListPositionAfterCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AddListPositionAfter implements _AddListPositionAfter {
   const _$_AddListPositionAfter({required this.listParam, this.index = 1});
 
@@ -1317,6 +1324,7 @@ class __$RemoveListPositionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_RemoveListPosition implements _RemoveListPosition {
   const _$_RemoveListPosition({required this.listParam, this.index = 1});
 
@@ -1503,6 +1511,7 @@ class __$ChangeItemOrderCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ChangeItemOrder implements _ChangeItemOrder {
   const _$_ChangeItemOrder(
       {required this.listParam, this.oldIndex = 1, this.newIndex = 1});
@@ -1699,6 +1708,7 @@ class __$EditActiveListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditActiveList implements _EditActiveList {
   const _$_EditActiveList({required this.list});
 
@@ -1873,6 +1883,7 @@ class __$EditTemplateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_EditTemplate implements _EditTemplate {
   const _$_EditTemplate({required this.template});
 
@@ -2049,6 +2060,7 @@ class __$UseTemplateAsListCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_UseTemplateAsList implements _UseTemplateAsList {
   const _$_UseTemplateAsList({required this.template});
 
@@ -2289,6 +2301,7 @@ class __$InitialCopyWithImpl<$Res> extends _$CreatelistStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -2397,6 +2410,7 @@ class __$ListChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ListChanged implements _ListChanged {
   const _$_ListChanged({required this.creationParam});
 
@@ -2524,6 +2538,7 @@ class __$SwitchedToCreateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SwitchedToCreate implements _SwitchedToCreate {
   const _$_SwitchedToCreate({required this.creationParam});
 
@@ -2651,6 +2666,7 @@ class __$SwitchedToReorderCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_SwitchedToReorder implements _SwitchedToReorder {
   const _$_SwitchedToReorder({required this.creationParam});
 

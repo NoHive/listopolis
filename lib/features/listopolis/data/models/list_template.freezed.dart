@@ -186,9 +186,8 @@ class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ListTemplate extends _ListTemplate {
   const _$_ListTemplate(
       {this.id = '0815',
@@ -413,9 +412,8 @@ class __$ListTemplatePositionCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_ListTemplatePosition extends _ListTemplatePosition {
   const _$_ListTemplatePosition(
       {this.name = 'a Name', this.id = '0815', this.position = 1})
