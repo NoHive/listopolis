@@ -29,3 +29,16 @@ abstract class IRepository{
   Future<Either<Failure, Option<UserData>>> initDataSource();
   Future<Either<Failure, Unit>> sendData();
 }
+
+abstract class IStreamRepository{
+  Stream<Either<Failure, List<ActiveList>>> getActiveLists();
+  Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position);
+  Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list);
+  Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter);
+  Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter);
+  Future<Either<Failure, List<ActiveList>>> changeListPosition(ActiveList list, int oldPosition, int newPosition);
+
+  
+  bool isInitialized();
+  Future<Either<Failure, Option<UserData>>> initDataSource();
+}
