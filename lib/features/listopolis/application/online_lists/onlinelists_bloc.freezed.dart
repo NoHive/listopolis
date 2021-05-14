@@ -418,9 +418,9 @@ class _$OnlinelistsStateTearOff {
     );
   }
 
-  Error error({required String message}) {
+  Error error({required Failure failure}) {
     return Error(
-      message: message,
+      failure: failure,
     );
   }
 }
@@ -435,7 +435,7 @@ mixin _$OnlinelistsState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> onlineLists) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -443,7 +443,7 @@ mixin _$OnlinelistsState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> onlineLists)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -523,7 +523,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> onlineLists) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
     return initial();
   }
@@ -534,7 +534,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> onlineLists)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -614,7 +614,7 @@ class _$Loading implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> onlineLists) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
     return loading();
   }
@@ -625,7 +625,7 @@ class _$Loading implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> onlineLists)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -731,7 +731,7 @@ class _$Loaded implements Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> onlineLists) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
     return loaded(onlineLists);
   }
@@ -742,7 +742,7 @@ class _$Loaded implements Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> onlineLists)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -790,7 +790,9 @@ abstract class Loaded implements OnlinelistsState {
 abstract class $ErrorCopyWith<$Res> {
   factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
       _$ErrorCopyWithImpl<$Res>;
-  $Res call({String message});
+  $Res call({Failure failure});
+
+  $FailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
@@ -804,41 +806,48 @@ class _$ErrorCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? message = freezed,
+    Object? failure = freezed,
   }) {
     return _then(Error(
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      failure: failure == freezed
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as Failure,
     ));
+  }
+
+  @override
+  $FailureCopyWith<$Res> get failure {
+    return $FailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$Error implements Error {
-  const _$Error({required this.message});
+  const _$Error({required this.failure});
 
   @override
-  final String message;
+  final Failure failure;
 
   @override
   String toString() {
-    return 'OnlinelistsState.error(message: $message)';
+    return 'OnlinelistsState.error(failure: $failure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Error &&
-            (identical(other.message, message) ||
-                const DeepCollectionEquality().equals(other.message, message)));
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(message);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
 
   @JsonKey(ignore: true)
   @override
@@ -851,9 +860,9 @@ class _$Error implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> onlineLists) loaded,
-    required TResult Function(String message) error,
+    required TResult Function(Failure failure) error,
   }) {
-    return error(message);
+    return error(failure);
   }
 
   @override
@@ -862,11 +871,11 @@ class _$Error implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> onlineLists)? loaded,
-    TResult Function(String message)? error,
+    TResult Function(Failure failure)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(message);
+      return error(failure);
     }
     return orElse();
   }
@@ -899,9 +908,9 @@ class _$Error implements Error {
 }
 
 abstract class Error implements OnlinelistsState {
-  const factory Error({required String message}) = _$Error;
+  const factory Error({required Failure failure}) = _$Error;
 
-  String get message => throw _privateConstructorUsedError;
+  Failure get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ErrorCopyWith<Error> get copyWith => throw _privateConstructorUsedError;
 }

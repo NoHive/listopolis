@@ -38,7 +38,7 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
       listViewReceived: (e) async* { 
             yield Loading();
             yield e.serverListContend.fold(
-                      (failure) => Error(message: "Server Problem!"), 
+                      (failure) => Error(failure: failure), 
                       (activeLists) => Loaded(onlineLists: activeLists ) 
             );
       },

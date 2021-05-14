@@ -34,8 +34,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   final firebaseFirestoreModule = _$FirebaseFirestoreModule();
   final sharedPreferencesModule = _$SharedPreferencesModule();
   final localDataSourceModule = _$LocalDataSourceModule();
-  gh.factory<_i3.FirebaseFirestore>(
-      () => firebaseFirestoreModule.cloudFireStore);
+  await gh.factoryAsync<_i3.FirebaseFirestore>(
+      () => firebaseFirestoreModule.cloudFireStore,
+      preResolve: true);
   gh.lazySingleton<_i4.IStreamRepository>(
       () => _i5.FireStorePublicListsRepository(get<_i3.FirebaseFirestore>()));
   gh.lazySingleton<_i6.IUserDataSource>(() => _i7.BackupDataSource(),
