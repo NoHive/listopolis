@@ -30,6 +30,21 @@ class _$OnlinelistsEventTearOff {
       serverListContend: serverListContend,
     );
   }
+
+  _InsertNewList insertNewList({required CreateListParameter aNewList}) {
+    return _InsertNewList(
+      aNewList: aNewList,
+    );
+  }
+
+  _InsertNewListIntoExisting insertNewListIntoExisting(
+      {required Either<Failure, List<ActiveList>> serverListContend,
+      required CreateListParameter aNewList}) {
+    return _InsertNewListIntoExisting(
+      serverListContend: serverListContend,
+      aNewList: aNewList,
+    );
+  }
 }
 
 /// @nodoc
@@ -44,6 +59,11 @@ mixin _$OnlinelistsEvent {
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend)
         listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +72,10 @@ mixin _$OnlinelistsEvent {
     TResult Function()? listViewRequested,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
         listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +84,9 @@ mixin _$OnlinelistsEvent {
     required TResult Function(_Started value) started,
     required TResult Function(ListViewRequested value) listViewRequested,
     required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +94,9 @@ mixin _$OnlinelistsEvent {
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
     TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,6 +161,11 @@ class _$_Started implements _Started {
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend)
         listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
   }) {
     return started();
   }
@@ -142,6 +177,10 @@ class _$_Started implements _Started {
     TResult Function()? listViewRequested,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
         listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -156,6 +195,9 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(ListViewRequested value) listViewRequested,
     required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
   }) {
     return started(this);
   }
@@ -166,6 +208,9 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
     TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -224,6 +269,11 @@ class _$ListViewRequested implements ListViewRequested {
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend)
         listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
   }) {
     return listViewRequested();
   }
@@ -235,6 +285,10 @@ class _$ListViewRequested implements ListViewRequested {
     TResult Function()? listViewRequested,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
         listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) {
     if (listViewRequested != null) {
@@ -249,6 +303,9 @@ class _$ListViewRequested implements ListViewRequested {
     required TResult Function(_Started value) started,
     required TResult Function(ListViewRequested value) listViewRequested,
     required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
   }) {
     return listViewRequested(this);
   }
@@ -259,6 +316,9 @@ class _$ListViewRequested implements ListViewRequested {
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
     TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) {
     if (listViewRequested != null) {
@@ -344,6 +404,11 @@ class _$ListViewReceived implements ListViewReceived {
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend)
         listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
   }) {
     return listViewReceived(serverListContend);
   }
@@ -355,6 +420,10 @@ class _$ListViewReceived implements ListViewReceived {
     TResult Function()? listViewRequested,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
         listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) {
     if (listViewReceived != null) {
@@ -369,6 +438,9 @@ class _$ListViewReceived implements ListViewReceived {
     required TResult Function(_Started value) started,
     required TResult Function(ListViewRequested value) listViewRequested,
     required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
   }) {
     return listViewReceived(this);
   }
@@ -379,6 +451,9 @@ class _$ListViewReceived implements ListViewReceived {
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
     TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
     required TResult orElse(),
   }) {
     if (listViewReceived != null) {
@@ -398,6 +473,307 @@ abstract class ListViewReceived implements OnlinelistsEvent {
   @JsonKey(ignore: true)
   $ListViewReceivedCopyWith<ListViewReceived> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$InsertNewListCopyWith<$Res> {
+  factory _$InsertNewListCopyWith(
+          _InsertNewList value, $Res Function(_InsertNewList) then) =
+      __$InsertNewListCopyWithImpl<$Res>;
+  $Res call({CreateListParameter aNewList});
+}
+
+/// @nodoc
+class __$InsertNewListCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res>
+    implements _$InsertNewListCopyWith<$Res> {
+  __$InsertNewListCopyWithImpl(
+      _InsertNewList _value, $Res Function(_InsertNewList) _then)
+      : super(_value, (v) => _then(v as _InsertNewList));
+
+  @override
+  _InsertNewList get _value => super._value as _InsertNewList;
+
+  @override
+  $Res call({
+    Object? aNewList = freezed,
+  }) {
+    return _then(_InsertNewList(
+      aNewList: aNewList == freezed
+          ? _value.aNewList
+          : aNewList // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_InsertNewList implements _InsertNewList {
+  const _$_InsertNewList({required this.aNewList});
+
+  @override
+  final CreateListParameter aNewList;
+
+  @override
+  String toString() {
+    return 'OnlinelistsEvent.insertNewList(aNewList: $aNewList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InsertNewList &&
+            (identical(other.aNewList, aNewList) ||
+                const DeepCollectionEquality()
+                    .equals(other.aNewList, aNewList)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(aNewList);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
+      __$InsertNewListCopyWithImpl<_InsertNewList>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() listViewRequested,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend)
+        listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
+  }) {
+    return insertNewList(aNewList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? listViewRequested,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    required TResult orElse(),
+  }) {
+    if (insertNewList != null) {
+      return insertNewList(aNewList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ListViewRequested value) listViewRequested,
+    required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
+  }) {
+    return insertNewList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ListViewRequested value)? listViewRequested,
+    TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    required TResult orElse(),
+  }) {
+    if (insertNewList != null) {
+      return insertNewList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InsertNewList implements OnlinelistsEvent {
+  const factory _InsertNewList({required CreateListParameter aNewList}) =
+      _$_InsertNewList;
+
+  CreateListParameter get aNewList => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$InsertNewListIntoExistingCopyWith<$Res> {
+  factory _$InsertNewListIntoExistingCopyWith(_InsertNewListIntoExisting value,
+          $Res Function(_InsertNewListIntoExisting) then) =
+      __$InsertNewListIntoExistingCopyWithImpl<$Res>;
+  $Res call(
+      {Either<Failure, List<ActiveList>> serverListContend,
+      CreateListParameter aNewList});
+}
+
+/// @nodoc
+class __$InsertNewListIntoExistingCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res>
+    implements _$InsertNewListIntoExistingCopyWith<$Res> {
+  __$InsertNewListIntoExistingCopyWithImpl(_InsertNewListIntoExisting _value,
+      $Res Function(_InsertNewListIntoExisting) _then)
+      : super(_value, (v) => _then(v as _InsertNewListIntoExisting));
+
+  @override
+  _InsertNewListIntoExisting get _value =>
+      super._value as _InsertNewListIntoExisting;
+
+  @override
+  $Res call({
+    Object? serverListContend = freezed,
+    Object? aNewList = freezed,
+  }) {
+    return _then(_InsertNewListIntoExisting(
+      serverListContend: serverListContend == freezed
+          ? _value.serverListContend
+          : serverListContend // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, List<ActiveList>>,
+      aNewList: aNewList == freezed
+          ? _value.aNewList
+          : aNewList // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
+  const _$_InsertNewListIntoExisting(
+      {required this.serverListContend, required this.aNewList});
+
+  @override
+  final Either<Failure, List<ActiveList>> serverListContend;
+  @override
+  final CreateListParameter aNewList;
+
+  @override
+  String toString() {
+    return 'OnlinelistsEvent.insertNewListIntoExisting(serverListContend: $serverListContend, aNewList: $aNewList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _InsertNewListIntoExisting &&
+            (identical(other.serverListContend, serverListContend) ||
+                const DeepCollectionEquality()
+                    .equals(other.serverListContend, serverListContend)) &&
+            (identical(other.aNewList, aNewList) ||
+                const DeepCollectionEquality()
+                    .equals(other.aNewList, aNewList)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(serverListContend) ^
+      const DeepCollectionEquality().hash(aNewList);
+
+  @JsonKey(ignore: true)
+  @override
+  _$InsertNewListIntoExistingCopyWith<_InsertNewListIntoExisting>
+      get copyWith =>
+          __$InsertNewListIntoExistingCopyWithImpl<_InsertNewListIntoExisting>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() listViewRequested,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend)
+        listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
+  }) {
+    return insertNewListIntoExisting(serverListContend, aNewList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? listViewRequested,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    required TResult orElse(),
+  }) {
+    if (insertNewListIntoExisting != null) {
+      return insertNewListIntoExisting(serverListContend, aNewList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ListViewRequested value) listViewRequested,
+    required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
+  }) {
+    return insertNewListIntoExisting(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ListViewRequested value)? listViewRequested,
+    TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    required TResult orElse(),
+  }) {
+    if (insertNewListIntoExisting != null) {
+      return insertNewListIntoExisting(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InsertNewListIntoExisting implements OnlinelistsEvent {
+  const factory _InsertNewListIntoExisting(
+      {required Either<Failure, List<ActiveList>> serverListContend,
+      required CreateListParameter aNewList}) = _$_InsertNewListIntoExisting;
+
+  Either<Failure, List<ActiveList>> get serverListContend =>
+      throw _privateConstructorUsedError;
+  CreateListParameter get aNewList => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$InsertNewListIntoExistingCopyWith<_InsertNewListIntoExisting>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

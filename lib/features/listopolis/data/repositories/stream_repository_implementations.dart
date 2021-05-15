@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
@@ -56,9 +59,22 @@ class FireStorePublicListsRepository implements IStreamRepository{
     }
   
     @override
-    Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter) {
-      // TODO: implement insertActiveList
-      throw UnimplementedError();
+    Future<Either<Failure, Unit>> insertActiveList(List<ActiveList> existingLists, CreateListParameter listParameter) async {
+      ListInsertResult insertResult = listParameter.createNeededUpdateOnInsert(existingActiveLists: existingLists);
+      //insertResult
+      final kAndBLists = await _firebaseFirestore.publicLists();
+      try{
+        // Position changed because of insert at start -> update to Firestore
+        for(ActiveList aList in insertResult.updatedLists){
+           await kAndBLists.activeListCollection.doc(aList.id).update(aList.toJson());
+        }
+        // insert new List
+        await kAndBLists.activeListCollection.doc(insertResult.newList.id).set(insertResult.newList.toJson());
+        
+        return right(unit);
+      }on PlatformException catch (e){
+        return left(Failure.serviceAccessFailed());
+      }
     }
   
     @override

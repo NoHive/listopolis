@@ -114,6 +114,40 @@ class CreateListParameter{
     return listitems;
   }
 
+   ListInsertResult createNeededUpdateOnInsert({required List<ActiveList> existingActiveLists}){
+      List<ActiveList> neededUpates = [];
+          
+      int aNewPosition = 1;
+      if(existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+        
+        if(positioning == PositionType.start){
+          neededUpates = existingActiveLists.map((e) => e.copyWith(position: e.position +1 )).toList();
+          aNewPosition = 1;
+        }else{
+          aNewPosition = existingActiveLists.last.position+1;
+        }
+      }
+      
+      List<ActiveListPosition> newListPositions = [];
+
+      for(CreateListItemParameter listItemParam in listitems){
+        newListPositions.add(ActiveListPosition.fromCreateListItemParameter(listItemParam));
+      }
+
+      ActiveList aNewList = ActiveList( id: Uuid().v1(), 
+                                            name: listName, 
+                                            type: type, 
+                                            position: aNewPosition, 
+                                            done: false,
+                                            opened: false,
+                                            listItems: newListPositions
+                                            );
+      
+       
+    return ListInsertResult(updatedLists:neededUpates, newList:aNewList);
+  }
+
 }
 class CreateListItemParameter{
   String name;
@@ -123,4 +157,11 @@ class CreateListItemParameter{
     id = Uuid().v1();
   }
 
+}
+
+class ListInsertResult{
+  final List<ActiveList> updatedLists;
+  final ActiveList newList;
+
+  ListInsertResult({required this.updatedLists, required this.newList});
 }

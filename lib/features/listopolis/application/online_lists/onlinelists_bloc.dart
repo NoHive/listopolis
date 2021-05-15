@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/error/failures.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/domain/repositories/repositories.dart';
 
@@ -41,6 +42,24 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
                       (failure) => Error(failure: failure), 
                       (activeLists) => Loaded(onlineLists: activeLists ) 
             );
+      },
+      insertNewList: (e) async* { 
+         yield Loading();
+        await streamSubscription?.cancel();
+        streamSubscription = onlineRepository.getActiveLists().listen(
+            (listsOrFailure) { 
+                  add(OnlinelistsEvent.insertNewListIntoExisting(serverListContend: listsOrFailure, aNewList: e.aNewList));
+          }
+        );
+      },
+      insertNewListIntoExisting: (e) async* { 
+        yield e.serverListContend.fold(
+          (aFailure) => OnlinelistsState.error(failure: aFailure), 
+          (lists) {
+            onlineRepository.insertActiveList(lists, e.aNewList);
+            add(OnlinelistsEvent.listViewRequested());
+            return OnlinelistsState.loading();
+          });
       },
       );
   }
