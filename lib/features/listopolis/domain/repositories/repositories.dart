@@ -32,13 +32,7 @@ abstract class IRepository{
 
 abstract class IStreamRepository{
   Stream<Either<Failure, List<ActiveList>>> getActiveLists();
-  Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position);
-  Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list);
+  Future<Either<Failure, Unit>> deleteActiveListPosition(List<ActiveList> existingLists, ActiveList list, ActiveListPosition position);
+  Future<Either<Failure, Unit>> deleteActiveList(List<ActiveList> existingLists, ActiveList list);
   Future<Either<Failure, Unit>> insertActiveList(List<ActiveList> existingLists, CreateListParameter listParameter);
-  Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter);
-  Future<Either<Failure, List<ActiveList>>> changeListPosition(ActiveList list, int oldPosition, int newPosition);
-
-  
-  bool isInitialized();
-  Future<Either<Failure, Option<UserData>>> initDataSource();
 }
