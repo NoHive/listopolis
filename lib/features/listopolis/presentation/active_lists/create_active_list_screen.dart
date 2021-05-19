@@ -4,12 +4,14 @@ import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
+import 'package:listopolis/features/listopolis/presentation/online_lists/online_list_screen.dart';
 
 
 
@@ -215,16 +217,38 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               child: Text("Übernehmen",style: ListColors.DEF_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
+           MaterialButton(
+             onPressed: (){
+              _acceptOnlineListChanges(context);
+              Navigator.pop(context);
+              //Navigator.of(context).pop();
+              _navigateToOnlineListScreen(context);
+              },
+              child: Text("Als Online Liste Übernehmen", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          ),
           MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
               child: Text("Verwerfen", style: ListColors.DEF_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
-          )
+          ),
+         
       ],
       content: Text("Soll die Liste übernommen werden?", style: ListColors.DEF_TEXT_STYLE),
       );
     },
     );
   }
+  _navigateToOnlineListScreen(BuildContext context) {
+      //BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.startListCreation());
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value( 
+                  value: BlocProvider.of<OnlinelistsBloc>(context),
+                  child: OnlineListScreen(),
+                ),
+              ),
+      );
+   }
 
   void _acceptListChanges(BuildContext context){
 
@@ -245,6 +269,17 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
         widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList!, list: aListTemplate));
     }else if(createListBloc.isListTransfer()){
       widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList!));
+    }
+  }
+  void _acceptOnlineListChanges(BuildContext context){
+
+    CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
+    OnlinelistsBloc onlinelistsBloc = BlocProvider.of<OnlinelistsBloc>(context);
+
+    if(createListBloc.isListCreation()){
+      onlinelistsBloc.add(OnlinelistsEvent.insertNewList(aNewList: currentCreatedList!));
+    }else if(createListBloc.isListTransfer()){
+      onlinelistsBloc.add(OnlinelistsEvent.insertNewList(aNewList: currentCreatedList!));
     }
   }
 

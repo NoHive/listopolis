@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dartz/dartz.dart';
 
 mixin ListOrder{
@@ -64,6 +66,10 @@ mixin ListOrder{
       result[aId] = idsPos;
     }
     return result;
+  }
+
+  static Map<String, dynamic> toStdTypeJson(Map<String, dynamic> richTypeJson){
+    return jsonDecode(jsonEncode(richTypeJson));
   }
 
 }

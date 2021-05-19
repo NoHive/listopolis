@@ -45,6 +45,34 @@ class _$OnlinelistsEventTearOff {
       aNewList: aNewList,
     );
   }
+
+  _DeleteListItem deleteListItem(
+      {required ActiveList list, required ActiveListPosition listItem}) {
+    return _DeleteListItem(
+      list: list,
+      listItem: listItem,
+    );
+  }
+
+  _DeleteListItemFromExisting deleteListItemFromExisting(
+      {required Either<Failure, List<ActiveList>> serverListContend,
+      required ActiveList list,
+      required ActiveListPosition listItem}) {
+    return _DeleteListItemFromExisting(
+      serverListContend: serverListContend,
+      list: list,
+      listItem: listItem,
+    );
+  }
+
+  _DeleteListFromExisting deleteListFromExisting(
+      {required Either<Failure, List<ActiveList>> serverListContend,
+      required ActiveList list}) {
+    return _DeleteListFromExisting(
+      serverListContend: serverListContend,
+      list: list,
+    );
+  }
 }
 
 /// @nodoc
@@ -64,6 +92,17 @@ mixin _$OnlinelistsEvent {
             Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)
         insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -76,6 +115,14 @@ mixin _$OnlinelistsEvent {
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)?
         insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -87,6 +134,11 @@ mixin _$OnlinelistsEvent {
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_InsertNewListIntoExisting value)
         insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -97,6 +149,10 @@ mixin _$OnlinelistsEvent {
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_InsertNewListIntoExisting value)?
         insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -166,6 +222,17 @@ class _$_Started implements _Started {
             Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)
         insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
   }) {
     return started();
   }
@@ -181,6 +248,14 @@ class _$_Started implements _Started {
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)?
         insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -198,6 +273,11 @@ class _$_Started implements _Started {
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_InsertNewListIntoExisting value)
         insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
   }) {
     return started(this);
   }
@@ -211,6 +291,10 @@ class _$_Started implements _Started {
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_InsertNewListIntoExisting value)?
         insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -274,6 +358,17 @@ class _$ListViewRequested implements ListViewRequested {
             Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)
         insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
   }) {
     return listViewRequested();
   }
@@ -289,6 +384,14 @@ class _$ListViewRequested implements ListViewRequested {
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)?
         insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (listViewRequested != null) {
@@ -306,6 +409,11 @@ class _$ListViewRequested implements ListViewRequested {
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_InsertNewListIntoExisting value)
         insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
   }) {
     return listViewRequested(this);
   }
@@ -319,6 +427,10 @@ class _$ListViewRequested implements ListViewRequested {
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_InsertNewListIntoExisting value)?
         insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (listViewRequested != null) {
@@ -409,6 +521,17 @@ class _$ListViewReceived implements ListViewReceived {
             Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)
         insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
   }) {
     return listViewReceived(serverListContend);
   }
@@ -424,6 +547,14 @@ class _$ListViewReceived implements ListViewReceived {
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)?
         insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (listViewReceived != null) {
@@ -441,6 +572,11 @@ class _$ListViewReceived implements ListViewReceived {
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_InsertNewListIntoExisting value)
         insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
   }) {
     return listViewReceived(this);
   }
@@ -454,6 +590,10 @@ class _$ListViewReceived implements ListViewReceived {
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_InsertNewListIntoExisting value)?
         insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (listViewReceived != null) {
@@ -551,6 +691,17 @@ class _$_InsertNewList implements _InsertNewList {
             Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)
         insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
   }) {
     return insertNewList(aNewList);
   }
@@ -566,6 +717,14 @@ class _$_InsertNewList implements _InsertNewList {
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)?
         insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (insertNewList != null) {
@@ -583,6 +742,11 @@ class _$_InsertNewList implements _InsertNewList {
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_InsertNewListIntoExisting value)
         insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
   }) {
     return insertNewList(this);
   }
@@ -596,6 +760,10 @@ class _$_InsertNewList implements _InsertNewList {
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_InsertNewListIntoExisting value)?
         insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (insertNewList != null) {
@@ -709,6 +877,17 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
             Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)
         insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
   }) {
     return insertNewListIntoExisting(serverListContend, aNewList);
   }
@@ -724,6 +903,14 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             CreateListParameter aNewList)?
         insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (insertNewListIntoExisting != null) {
@@ -741,6 +928,11 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_InsertNewListIntoExisting value)
         insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
   }) {
     return insertNewListIntoExisting(this);
   }
@@ -754,6 +946,10 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_InsertNewListIntoExisting value)?
         insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
     if (insertNewListIntoExisting != null) {
@@ -774,6 +970,619 @@ abstract class _InsertNewListIntoExisting implements OnlinelistsEvent {
   @JsonKey(ignore: true)
   _$InsertNewListIntoExistingCopyWith<_InsertNewListIntoExisting>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DeleteListItemCopyWith<$Res> {
+  factory _$DeleteListItemCopyWith(
+          _DeleteListItem value, $Res Function(_DeleteListItem) then) =
+      __$DeleteListItemCopyWithImpl<$Res>;
+  $Res call({ActiveList list, ActiveListPosition listItem});
+
+  $ActiveListCopyWith<$Res> get list;
+  $ActiveListPositionCopyWith<$Res> get listItem;
+}
+
+/// @nodoc
+class __$DeleteListItemCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res>
+    implements _$DeleteListItemCopyWith<$Res> {
+  __$DeleteListItemCopyWithImpl(
+      _DeleteListItem _value, $Res Function(_DeleteListItem) _then)
+      : super(_value, (v) => _then(v as _DeleteListItem));
+
+  @override
+  _DeleteListItem get _value => super._value as _DeleteListItem;
+
+  @override
+  $Res call({
+    Object? list = freezed,
+    Object? listItem = freezed,
+  }) {
+    return _then(_DeleteListItem(
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
+      listItem: listItem == freezed
+          ? _value.listItem
+          : listItem // ignore: cast_nullable_to_non_nullable
+              as ActiveListPosition,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+
+  @override
+  $ActiveListPositionCopyWith<$Res> get listItem {
+    return $ActiveListPositionCopyWith<$Res>(_value.listItem, (value) {
+      return _then(_value.copyWith(listItem: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteListItem implements _DeleteListItem {
+  const _$_DeleteListItem({required this.list, required this.listItem});
+
+  @override
+  final ActiveList list;
+  @override
+  final ActiveListPosition listItem;
+
+  @override
+  String toString() {
+    return 'OnlinelistsEvent.deleteListItem(list: $list, listItem: $listItem)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteListItem &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)) &&
+            (identical(other.listItem, listItem) ||
+                const DeepCollectionEquality()
+                    .equals(other.listItem, listItem)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(list) ^
+      const DeepCollectionEquality().hash(listItem);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeleteListItemCopyWith<_DeleteListItem> get copyWith =>
+      __$DeleteListItemCopyWithImpl<_DeleteListItem>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() listViewRequested,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend)
+        listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
+  }) {
+    return deleteListItem(list, listItem);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? listViewRequested,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (deleteListItem != null) {
+      return deleteListItem(list, listItem);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ListViewRequested value) listViewRequested,
+    required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
+  }) {
+    return deleteListItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ListViewRequested value)? listViewRequested,
+    TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (deleteListItem != null) {
+      return deleteListItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteListItem implements OnlinelistsEvent {
+  const factory _DeleteListItem(
+      {required ActiveList list,
+      required ActiveListPosition listItem}) = _$_DeleteListItem;
+
+  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveListPosition get listItem => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteListItemCopyWith<_DeleteListItem> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DeleteListItemFromExistingCopyWith<$Res> {
+  factory _$DeleteListItemFromExistingCopyWith(
+          _DeleteListItemFromExisting value,
+          $Res Function(_DeleteListItemFromExisting) then) =
+      __$DeleteListItemFromExistingCopyWithImpl<$Res>;
+  $Res call(
+      {Either<Failure, List<ActiveList>> serverListContend,
+      ActiveList list,
+      ActiveListPosition listItem});
+
+  $ActiveListCopyWith<$Res> get list;
+  $ActiveListPositionCopyWith<$Res> get listItem;
+}
+
+/// @nodoc
+class __$DeleteListItemFromExistingCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res>
+    implements _$DeleteListItemFromExistingCopyWith<$Res> {
+  __$DeleteListItemFromExistingCopyWithImpl(_DeleteListItemFromExisting _value,
+      $Res Function(_DeleteListItemFromExisting) _then)
+      : super(_value, (v) => _then(v as _DeleteListItemFromExisting));
+
+  @override
+  _DeleteListItemFromExisting get _value =>
+      super._value as _DeleteListItemFromExisting;
+
+  @override
+  $Res call({
+    Object? serverListContend = freezed,
+    Object? list = freezed,
+    Object? listItem = freezed,
+  }) {
+    return _then(_DeleteListItemFromExisting(
+      serverListContend: serverListContend == freezed
+          ? _value.serverListContend
+          : serverListContend // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, List<ActiveList>>,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
+      listItem: listItem == freezed
+          ? _value.listItem
+          : listItem // ignore: cast_nullable_to_non_nullable
+              as ActiveListPosition,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+
+  @override
+  $ActiveListPositionCopyWith<$Res> get listItem {
+    return $ActiveListPositionCopyWith<$Res>(_value.listItem, (value) {
+      return _then(_value.copyWith(listItem: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
+  const _$_DeleteListItemFromExisting(
+      {required this.serverListContend,
+      required this.list,
+      required this.listItem});
+
+  @override
+  final Either<Failure, List<ActiveList>> serverListContend;
+  @override
+  final ActiveList list;
+  @override
+  final ActiveListPosition listItem;
+
+  @override
+  String toString() {
+    return 'OnlinelistsEvent.deleteListItemFromExisting(serverListContend: $serverListContend, list: $list, listItem: $listItem)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteListItemFromExisting &&
+            (identical(other.serverListContend, serverListContend) ||
+                const DeepCollectionEquality()
+                    .equals(other.serverListContend, serverListContend)) &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)) &&
+            (identical(other.listItem, listItem) ||
+                const DeepCollectionEquality()
+                    .equals(other.listItem, listItem)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(serverListContend) ^
+      const DeepCollectionEquality().hash(list) ^
+      const DeepCollectionEquality().hash(listItem);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeleteListItemFromExistingCopyWith<_DeleteListItemFromExisting>
+      get copyWith => __$DeleteListItemFromExistingCopyWithImpl<
+          _DeleteListItemFromExisting>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() listViewRequested,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend)
+        listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
+  }) {
+    return deleteListItemFromExisting(serverListContend, list, listItem);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? listViewRequested,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (deleteListItemFromExisting != null) {
+      return deleteListItemFromExisting(serverListContend, list, listItem);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ListViewRequested value) listViewRequested,
+    required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
+  }) {
+    return deleteListItemFromExisting(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ListViewRequested value)? listViewRequested,
+    TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (deleteListItemFromExisting != null) {
+      return deleteListItemFromExisting(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteListItemFromExisting implements OnlinelistsEvent {
+  const factory _DeleteListItemFromExisting(
+      {required Either<Failure, List<ActiveList>> serverListContend,
+      required ActiveList list,
+      required ActiveListPosition listItem}) = _$_DeleteListItemFromExisting;
+
+  Either<Failure, List<ActiveList>> get serverListContend =>
+      throw _privateConstructorUsedError;
+  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveListPosition get listItem => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteListItemFromExistingCopyWith<_DeleteListItemFromExisting>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$DeleteListFromExistingCopyWith<$Res> {
+  factory _$DeleteListFromExistingCopyWith(_DeleteListFromExisting value,
+          $Res Function(_DeleteListFromExisting) then) =
+      __$DeleteListFromExistingCopyWithImpl<$Res>;
+  $Res call(
+      {Either<Failure, List<ActiveList>> serverListContend, ActiveList list});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+/// @nodoc
+class __$DeleteListFromExistingCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res>
+    implements _$DeleteListFromExistingCopyWith<$Res> {
+  __$DeleteListFromExistingCopyWithImpl(_DeleteListFromExisting _value,
+      $Res Function(_DeleteListFromExisting) _then)
+      : super(_value, (v) => _then(v as _DeleteListFromExisting));
+
+  @override
+  _DeleteListFromExisting get _value => super._value as _DeleteListFromExisting;
+
+  @override
+  $Res call({
+    Object? serverListContend = freezed,
+    Object? list = freezed,
+  }) {
+    return _then(_DeleteListFromExisting(
+      serverListContend: serverListContend == freezed
+          ? _value.serverListContend
+          : serverListContend // ignore: cast_nullable_to_non_nullable
+              as Either<Failure, List<ActiveList>>,
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_DeleteListFromExisting implements _DeleteListFromExisting {
+  const _$_DeleteListFromExisting(
+      {required this.serverListContend, required this.list});
+
+  @override
+  final Either<Failure, List<ActiveList>> serverListContend;
+  @override
+  final ActiveList list;
+
+  @override
+  String toString() {
+    return 'OnlinelistsEvent.deleteListFromExisting(serverListContend: $serverListContend, list: $list)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DeleteListFromExisting &&
+            (identical(other.serverListContend, serverListContend) ||
+                const DeepCollectionEquality()
+                    .equals(other.serverListContend, serverListContend)) &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(serverListContend) ^
+      const DeepCollectionEquality().hash(list);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DeleteListFromExistingCopyWith<_DeleteListFromExisting> get copyWith =>
+      __$DeleteListFromExistingCopyWithImpl<_DeleteListFromExisting>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() listViewRequested,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend)
+        listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
+  }) {
+    return deleteListFromExisting(serverListContend, list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? listViewRequested,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (deleteListFromExisting != null) {
+      return deleteListFromExisting(serverListContend, list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ListViewRequested value) listViewRequested,
+    required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
+  }) {
+    return deleteListFromExisting(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ListViewRequested value)? listViewRequested,
+    TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (deleteListFromExisting != null) {
+      return deleteListFromExisting(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteListFromExisting implements OnlinelistsEvent {
+  const factory _DeleteListFromExisting(
+      {required Either<Failure, List<ActiveList>> serverListContend,
+      required ActiveList list}) = _$_DeleteListFromExisting;
+
+  Either<Failure, List<ActiveList>> get serverListContend =>
+      throw _privateConstructorUsedError;
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$DeleteListFromExistingCopyWith<_DeleteListFromExisting> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

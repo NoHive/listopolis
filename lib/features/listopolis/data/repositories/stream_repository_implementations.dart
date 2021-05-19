@@ -1,10 +1,10 @@
-import 'dart:html';
+
+import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/list/list_tools.dart';
-import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/core/error/failures.dart';
@@ -62,7 +62,7 @@ class FireStorePublicListsRepository with ListOrder implements IStreamRepository
         ActiveList updatedList = _changedListAfterDelete(list, position);
         final kAndBLists = await _firebaseFirestore.publicLists();
         try{
-          await kAndBLists.activeListCollection.doc(updatedList.id).update(updatedList.toJson());
+          await kAndBLists.activeListCollection.doc(updatedList.id).update(ListOrder.toStdTypeJson(updatedList.toJson()));
           return right(unit);
         }on PlatformException catch (e){
           return left(Failure.serviceAccessFailed());
@@ -97,10 +97,10 @@ class FireStorePublicListsRepository with ListOrder implements IStreamRepository
       try{
         // Position changed because of insert at start -> update to Firestore
         for(ActiveList aList in insertResult.updatedLists){
-           await kAndBLists.activeListCollection.doc(aList.id).update(aList.toJson());
+            await kAndBLists.activeListCollection.doc(aList.id).update(ListOrder.toStdTypeJson(aList.toJson()));            
         }
         // insert new List
-        await kAndBLists.activeListCollection.doc(insertResult.newList.id).set(insertResult.newList.toJson());
+        await kAndBLists.activeListCollection.doc(insertResult.newList.id).set(ListOrder.toStdTypeJson(insertResult.newList.toJson()));
         
         return right(unit);
       }on PlatformException catch (e){

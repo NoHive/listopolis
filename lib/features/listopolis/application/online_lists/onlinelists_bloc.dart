@@ -61,6 +61,26 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
             return OnlinelistsState.loading();
           });
       },
+      deleteListItem: (e) async* {
+           yield Loading();
+        await streamSubscription?.cancel();
+        streamSubscription = onlineRepository.getActiveLists().listen(
+            (listsOrFailure) { 
+                  add(OnlinelistsEvent.deleteListItemFromExisting(serverListContend: listsOrFailure, list: e.list, listItem: e.listItem));
+          }
+        );
+      },
+      deleteListItemFromExisting: (e) async* {
+        yield e.serverListContend.fold(
+          (aFailure) => OnlinelistsState.error(failure: aFailure), 
+          (lists) {
+            onlineRepository.deleteActiveListPosition(lists, e.list, e.listItem);
+            add(OnlinelistsEvent.listViewRequested());
+            return OnlinelistsState.loading();
+          });
+      },
+      deleteListFromExisting: (e) async* {
+      }
       );
   }
   @override

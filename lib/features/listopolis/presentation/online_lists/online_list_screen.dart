@@ -203,6 +203,7 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
               onDismissed: (direction){
                 //BlocProvider.of<ActivelistBloc>(context)..
                 //add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
+                BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.deleteListItem(list: list, listItem: listPosition));
               },
               child: _buildListItemElement(listPosition),//ListTile(title: Text(listPosition.name, style: ListColors.DEF_TEXT_STYLE), ),
               background: _buildDismissBarItem(context, list, listPosition),
