@@ -27,6 +27,10 @@ class _$FailureTearOff {
   ServerAccessFailed serviceAccessFailed() {
     return const ServerAccessFailed();
   }
+
+  UserAuthentificationFailed userAuthentificationFailed() {
+    return const UserAuthentificationFailed();
+  }
 }
 
 /// @nodoc
@@ -39,6 +43,7 @@ mixin _$Failure {
     required TResult Function() deviceOffline,
     required TResult Function() serverConnectFailed,
     required TResult Function() serviceAccessFailed,
+    required TResult Function() userAuthentificationFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +51,7 @@ mixin _$Failure {
     TResult Function()? deviceOffline,
     TResult Function()? serverConnectFailed,
     TResult Function()? serviceAccessFailed,
+    TResult Function()? userAuthentificationFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +60,8 @@ mixin _$Failure {
     required TResult Function(DeviceOffline value) deviceOffline,
     required TResult Function(ServerConnectFailed value) serverConnectFailed,
     required TResult Function(ServerAccessFailed value) serviceAccessFailed,
+    required TResult Function(UserAuthentificationFailed value)
+        userAuthentificationFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +69,8 @@ mixin _$Failure {
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
     TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,6 +133,7 @@ class _$DeviceOffline implements DeviceOffline {
     required TResult Function() deviceOffline,
     required TResult Function() serverConnectFailed,
     required TResult Function() serviceAccessFailed,
+    required TResult Function() userAuthentificationFailed,
   }) {
     return deviceOffline();
   }
@@ -133,6 +144,7 @@ class _$DeviceOffline implements DeviceOffline {
     TResult Function()? deviceOffline,
     TResult Function()? serverConnectFailed,
     TResult Function()? serviceAccessFailed,
+    TResult Function()? userAuthentificationFailed,
     required TResult orElse(),
   }) {
     if (deviceOffline != null) {
@@ -147,6 +159,8 @@ class _$DeviceOffline implements DeviceOffline {
     required TResult Function(DeviceOffline value) deviceOffline,
     required TResult Function(ServerConnectFailed value) serverConnectFailed,
     required TResult Function(ServerAccessFailed value) serviceAccessFailed,
+    required TResult Function(UserAuthentificationFailed value)
+        userAuthentificationFailed,
   }) {
     return deviceOffline(this);
   }
@@ -157,6 +171,8 @@ class _$DeviceOffline implements DeviceOffline {
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
     TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
     required TResult orElse(),
   }) {
     if (deviceOffline != null) {
@@ -213,6 +229,7 @@ class _$ServerConnectFailed implements ServerConnectFailed {
     required TResult Function() deviceOffline,
     required TResult Function() serverConnectFailed,
     required TResult Function() serviceAccessFailed,
+    required TResult Function() userAuthentificationFailed,
   }) {
     return serverConnectFailed();
   }
@@ -223,6 +240,7 @@ class _$ServerConnectFailed implements ServerConnectFailed {
     TResult Function()? deviceOffline,
     TResult Function()? serverConnectFailed,
     TResult Function()? serviceAccessFailed,
+    TResult Function()? userAuthentificationFailed,
     required TResult orElse(),
   }) {
     if (serverConnectFailed != null) {
@@ -237,6 +255,8 @@ class _$ServerConnectFailed implements ServerConnectFailed {
     required TResult Function(DeviceOffline value) deviceOffline,
     required TResult Function(ServerConnectFailed value) serverConnectFailed,
     required TResult Function(ServerAccessFailed value) serviceAccessFailed,
+    required TResult Function(UserAuthentificationFailed value)
+        userAuthentificationFailed,
   }) {
     return serverConnectFailed(this);
   }
@@ -247,6 +267,8 @@ class _$ServerConnectFailed implements ServerConnectFailed {
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
     TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
     required TResult orElse(),
   }) {
     if (serverConnectFailed != null) {
@@ -302,6 +324,7 @@ class _$ServerAccessFailed implements ServerAccessFailed {
     required TResult Function() deviceOffline,
     required TResult Function() serverConnectFailed,
     required TResult Function() serviceAccessFailed,
+    required TResult Function() userAuthentificationFailed,
   }) {
     return serviceAccessFailed();
   }
@@ -312,6 +335,7 @@ class _$ServerAccessFailed implements ServerAccessFailed {
     TResult Function()? deviceOffline,
     TResult Function()? serverConnectFailed,
     TResult Function()? serviceAccessFailed,
+    TResult Function()? userAuthentificationFailed,
     required TResult orElse(),
   }) {
     if (serviceAccessFailed != null) {
@@ -326,6 +350,8 @@ class _$ServerAccessFailed implements ServerAccessFailed {
     required TResult Function(DeviceOffline value) deviceOffline,
     required TResult Function(ServerConnectFailed value) serverConnectFailed,
     required TResult Function(ServerAccessFailed value) serviceAccessFailed,
+    required TResult Function(UserAuthentificationFailed value)
+        userAuthentificationFailed,
   }) {
     return serviceAccessFailed(this);
   }
@@ -336,6 +362,8 @@ class _$ServerAccessFailed implements ServerAccessFailed {
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
     TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
     required TResult orElse(),
   }) {
     if (serviceAccessFailed != null) {
@@ -347,4 +375,101 @@ class _$ServerAccessFailed implements ServerAccessFailed {
 
 abstract class ServerAccessFailed implements Failure {
   const factory ServerAccessFailed() = _$ServerAccessFailed;
+}
+
+/// @nodoc
+abstract class $UserAuthentificationFailedCopyWith<$Res> {
+  factory $UserAuthentificationFailedCopyWith(UserAuthentificationFailed value,
+          $Res Function(UserAuthentificationFailed) then) =
+      _$UserAuthentificationFailedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UserAuthentificationFailedCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res>
+    implements $UserAuthentificationFailedCopyWith<$Res> {
+  _$UserAuthentificationFailedCopyWithImpl(UserAuthentificationFailed _value,
+      $Res Function(UserAuthentificationFailed) _then)
+      : super(_value, (v) => _then(v as UserAuthentificationFailed));
+
+  @override
+  UserAuthentificationFailed get _value =>
+      super._value as UserAuthentificationFailed;
+}
+
+/// @nodoc
+
+class _$UserAuthentificationFailed implements UserAuthentificationFailed {
+  const _$UserAuthentificationFailed();
+
+  @override
+  String toString() {
+    return 'Failure.userAuthentificationFailed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is UserAuthentificationFailed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() deviceOffline,
+    required TResult Function() serverConnectFailed,
+    required TResult Function() serviceAccessFailed,
+    required TResult Function() userAuthentificationFailed,
+  }) {
+    return userAuthentificationFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? deviceOffline,
+    TResult Function()? serverConnectFailed,
+    TResult Function()? serviceAccessFailed,
+    TResult Function()? userAuthentificationFailed,
+    required TResult orElse(),
+  }) {
+    if (userAuthentificationFailed != null) {
+      return userAuthentificationFailed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DeviceOffline value) deviceOffline,
+    required TResult Function(ServerConnectFailed value) serverConnectFailed,
+    required TResult Function(ServerAccessFailed value) serviceAccessFailed,
+    required TResult Function(UserAuthentificationFailed value)
+        userAuthentificationFailed,
+  }) {
+    return userAuthentificationFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DeviceOffline value)? deviceOffline,
+    TResult Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
+    required TResult orElse(),
+  }) {
+    if (userAuthentificationFailed != null) {
+      return userAuthentificationFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserAuthentificationFailed implements Failure {
+  const factory UserAuthentificationFailed() = _$UserAuthentificationFailed;
 }

@@ -17,6 +17,7 @@ part 'onlinelists_bloc.freezed.dart';
 class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
   final IStreamRepository onlineRepository;
   
+  
   OnlinelistsBloc(this.onlineRepository) : super(_Initial());
   StreamSubscription<Either<Failure, List<ActiveList>>>? streamSubscription;
 
@@ -26,15 +27,19 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
   ) async* {
     // TODO: implement mapEventToState
     yield* event.map(
-      started: (e) async* { yield Loading();}, 
+      started: (e) async* { 
+          yield Loading();
+      }, 
       listViewRequested: (e) async* { 
         yield Loading();
+        
         await streamSubscription?.cancel();
         streamSubscription = onlineRepository.getActiveLists().listen(
             (listsOrFailure) { 
                   add(ListViewReceived(serverListContend: listsOrFailure));
           }
         );
+        
       },
       listViewReceived: (e) async* { 
             yield Loading();
@@ -45,14 +50,17 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
       },
       insertNewList: (e) async* { 
          yield Loading();
-        await streamSubscription?.cancel();
-        streamSubscription = onlineRepository.getActiveLists().listen(
-            (listsOrFailure) { 
-                  add(OnlinelistsEvent.insertNewListIntoExisting(serverListContend: listsOrFailure, aNewList: e.aNewList));
-          }
-        );
+         Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
+         add(OnlinelistsEvent.insertNewListIntoExisting(serverListContend: currentLists, aNewList: e.aNewList));
+        // await streamSubscription?.cancel();
+        // streamSubscription = onlineRepository.getActiveLists().listen(
+        //     (listsOrFailure) { 
+        //           add(OnlinelistsEvent.insertNewListIntoExisting(serverListContend: listsOrFailure, aNewList: e.aNewList));
+        //   }
+        // );
       },
       insertNewListIntoExisting: (e) async* { 
+        yield Loading();
         yield e.serverListContend.fold(
           (aFailure) => OnlinelistsState.error(failure: aFailure), 
           (lists) {
@@ -63,23 +71,37 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
       },
       deleteListItem: (e) async* {
            yield Loading();
-        await streamSubscription?.cancel();
-        streamSubscription = onlineRepository.getActiveLists().listen(
-            (listsOrFailure) { 
-                  add(OnlinelistsEvent.deleteListItemFromExisting(serverListContend: listsOrFailure, list: e.list, listItem: e.listItem));
-          }
-        );
+        // await streamSubscription?.cancel();
+        // streamSubscription = onlineRepository.getActiveLists().listen(
+        //     (listsOrFailure) { 
+        //           add(OnlinelistsEvent.deleteListItemFromExisting(serverListContend: listsOrFailure, list: e.list, listItem: e.listItem));
+        //   }
+        // );
       },
       deleteListItemFromExisting: (e) async* {
+        yield Loading();
+        // yield e.serverListContend.fold(
+        //   (aFailure) => OnlinelistsState.error(failure: aFailure), 
+        //   (lists) {
+        //     onlineRepository.deleteActiveListPosition(lists, e.list, e.listItem);
+        //     add(OnlinelistsEvent.listViewRequested());
+        //     return OnlinelistsState.loading();
+        //   });
+      },
+      deleteList: (e) async* {
+        yield Loading();
+        Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
+         add(OnlinelistsEvent.deleteListFromExisting(serverListContend: currentLists, list: e.list));
+      },
+      deleteListFromExisting: (e) async* {
+        yield Loading();
         yield e.serverListContend.fold(
           (aFailure) => OnlinelistsState.error(failure: aFailure), 
           (lists) {
-            onlineRepository.deleteActiveListPosition(lists, e.list, e.listItem);
+            onlineRepository.deleteActiveList(lists, e.list);
             add(OnlinelistsEvent.listViewRequested());
             return OnlinelistsState.loading();
           });
-      },
-      deleteListFromExisting: (e) async* {
       }
       );
   }

@@ -79,7 +79,7 @@ class FireStorePublicListsRepository with ListOrder implements IStreamRepository
       final kAndBLists = await _firebaseFirestore.publicLists();
 
       
-      yield* kAndBLists.activeListCollection.snapshots()
+      yield* kAndBLists.activeListCollection.where("position", isNotEqualTo: -1).snapshots()
       .map((snapshot) => right<Failure, List<ActiveList>>(
             snapshot.docs.map((doc) => ActiveList.fromJson(doc.data())).toList()
         ),
@@ -107,5 +107,18 @@ class FireStorePublicListsRepository with ListOrder implements IStreamRepository
         return left(Failure.serviceAccessFailed());
       }
     }
+
+  @override
+  Future<Either<Failure, List<ActiveList>>> getCurrentActiveLists() async {
+    // TODO: implement getCurrentActiveLists
+       final kAndBLists = await _firebaseFirestore.publicLists();
+        
+      try{
+        QuerySnapshot<Map<String, dynamic>> listQueryObjs = await kAndBLists.activeListCollection.currentLists;
+        return Future.value(right<Failure, List<ActiveList>>(listQueryObjs.docs.map((doc) => ActiveList.fromJson(doc.data())).toList()));
+      }on PlatformException catch(_){
+        return left(Failure.serviceAccessFailed());
+      }
+  }
   
 }

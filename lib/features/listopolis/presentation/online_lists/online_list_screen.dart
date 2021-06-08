@@ -156,27 +156,27 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
   
 
    _deleteList(BuildContext context, ActiveList list){
-    // ActivelistBloc listBloc = BlocProvider.of<ActivelistBloc>(context);
-    // showDialog(context: context,
-    // builder: (context) {
-    //   return AlertDialog(actions: [
-    //       MaterialButton(onPressed: (){
-    //         listBloc.add(ActivelistEvent.deleteActiveList(list: list));
-    //         Navigator.of(context).pop();
-    //       },
-    //           child: Text("Ja, Liste löschen", style: ListColors.DEF_TEXT_STYLE),
-    //           color: ListColors.DIALOG_BUTTON,
-    //       ),
-    //       MaterialButton(onPressed: (){Navigator.pop(context);},
-    //           child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
-    //           color: ListColors.DIALOG_BUTTON,
-    //       )
-    //   ],
-    //   content: Text("Willst du die Liste wirklich löschen?", style: ListColors.DEF_TEXT_STYLE),
-    //   backgroundColor: ListColors.DIALOG_BACKGROUND,
-    //   );
-    // },
-    // );
+    OnlinelistsBloc listBloc = BlocProvider.of<OnlinelistsBloc>(context);
+    showDialog(context: context,
+    builder: (context) {
+      return AlertDialog(actions: [
+          MaterialButton(onPressed: (){
+            listBloc.add(OnlinelistsEvent.deleteList(list: list));
+            Navigator.of(context).pop();
+          },
+              child: Text("Ja, Liste löschen", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          ),
+          MaterialButton(onPressed: (){Navigator.pop(context);},
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          )
+      ],
+      content: Text("Willst du die Liste wirklich löschen?", style: ListColors.DEF_TEXT_STYLE),
+      backgroundColor: ListColors.DIALOG_BACKGROUND,
+      );
+    },
+    );
   }
 
   Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){

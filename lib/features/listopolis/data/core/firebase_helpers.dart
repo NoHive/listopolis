@@ -14,5 +14,10 @@ extension FirebaseExt on FirebaseFirestore{
 }
 
 extension DocumentReferenceExt on DocumentReference{
+  // kAndBLists.activeListCollection.where("position",isNotEqualTo: -1).orderBy("position").get();
   CollectionReference<Map<String, dynamic>> get activeListCollection => collection(ACTIVE_LISTS);
+}
+
+extension CollectionRefEct on CollectionReference<Map<String, dynamic>>{
+  Future<QuerySnapshot<Map<String, dynamic>>> get currentLists => where("position", isNotEqualTo: -1).orderBy("position").get();
 }

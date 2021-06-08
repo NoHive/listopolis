@@ -3,6 +3,8 @@ import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/local_storage/shared_preferences_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 @module
 abstract class SharedPreferencesModule{
@@ -24,4 +26,20 @@ abstract class FirebaseFirestoreModule{
     await Firebase.initializeApp();
     return FirebaseFirestore.instance;
   }
+}
+
+@module
+abstract class GoogleSignInModule{
+  GoogleSignIn get gSignIn {
+    return GoogleSignIn(
+      scopes: <String>[
+        'email'
+      ]
+    );
+  }
+}
+
+@module
+abstract class FirebaseAuthModule{
+  FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
 }

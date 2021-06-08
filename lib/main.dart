@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/configure_injection.dart';
 import 'package:listopolis/core/local_storage/shared_preferences_keys.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/authentication/authentication_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
@@ -46,6 +47,9 @@ class ListopolisRoot extends StatelessWidget {
               ),
               BlocProvider<OnlinelistsBloc>(
                 create: (context) => getIt<OnlinelistsBloc>(),
+              ),
+              BlocProvider<AuthenticationBloc>(
+                create: (context) => getIt<AuthenticationBloc>(),
               ),
             ],
       child: MaterialApp(

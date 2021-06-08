@@ -21,7 +21,9 @@ mixin CommonPageFunctions{
     return fail.map(
       deviceOffline: (f) => "Gerät hat keine Internetverbindung", 
       serverConnectFailed: (f) => "Der Service ist nicht erreichbar", 
-      serviceAccessFailed: (f) => "Beim Zugriff auf den Service ist ein Fehler aufgetreten");
-
+      serviceAccessFailed: (f) => "Beim Zugriff auf den Service ist ein Fehler aufgetreten",
+      userAuthentificationFailed: (f) => "Die Authentifizierung des Benutzers ist fehlgeschlagen!",
+      );
+      
   }
 }

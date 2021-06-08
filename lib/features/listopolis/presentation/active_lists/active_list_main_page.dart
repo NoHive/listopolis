@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/authentication/authentication_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
+import 'package:listopolis/features/listopolis/presentation/authentication/authentication_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 import 'package:listopolis/features/listopolis/presentation/online_lists/online_list_screen.dart';
@@ -144,12 +146,25 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
       );
    }
    navigateToOnlineListsScreen(BuildContext context) {
+     
      BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.listViewRequested());
      Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) => BlocProvider.value(
                   value: BlocProvider.of<OnlinelistsBloc>(context),
                   child: OnlineListScreen(),
+                ),
+              ),
+      );
+   }
+   navigateToAuthenticationScreen(BuildContext context) {
+     //BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.authenticateUser());
+     //BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.listViewRequested());
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: BlocProvider.of<AuthenticationBloc>(context),
+                  child: AuthenticationScreen(),
                 ),
               ),
       );
@@ -170,6 +185,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         //BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
       }else if(choice == ActiveListPageMenueStrings.ONLINE_LISTS){
         navigateToOnlineListsScreen(context);
+      }else if(choice == ActiveListPageMenueStrings.SIGN_IN){
+        navigateToAuthenticationScreen(context);
       }else{
         print("not supported");
       }
@@ -443,11 +460,12 @@ class ActiveListPageMenueStrings{
   static const String CREATE_LIST_CLIPBOARD = "Liste empfangen";
   static const String EDIT_TEMPlATES = "Vorlagen";
   static const String ONLINE_LISTS = "Online Listen";
+  static const String SIGN_IN = "Anmelden";
   static const String SAVE_CURRENT_USER_DATA = "Daten sichern";
   static const String LOAD_EXTERN_DATA = "Daten aus Sicherung einlesen";
   
 
-  static const List<String> choises = [CREATE_NEW_LIST,CREATE_LIST_CLIPBOARD,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA,ONLINE_LISTS];
+  static const List<String> choises = [CREATE_NEW_LIST,CREATE_LIST_CLIPBOARD,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA, SIGN_IN, ONLINE_LISTS];
 }
 class MainListItemMenueStr{
   static const String EDIT = "edit";
