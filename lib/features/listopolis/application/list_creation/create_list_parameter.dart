@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
@@ -28,6 +29,7 @@ class CreateListParameter{
     listitems = [];
     id = Uuid().v1();
   }
+   
   factory CreateListParameter.asCopy(CreateListParameter input){
     CreateListParameter newList = CreateListParameter(listName: input.listName, positioning: input.positioning, type: input.type);
     for(CreateListItemParameter item in input.listitems){
@@ -42,6 +44,16 @@ class CreateListParameter{
 
     for(ActiveListPosition item in input.listItems){
       newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
+    }
+    return newList;
+  }
+  factory CreateListParameter.asCloneFromList(ActiveList input){
+    CreateListParameter newList = CreateListParameter(listName: input.name, positioning: PositionType.end, type: input.type);
+    newList.id = input.id;
+    for(ActiveListPosition item in input.listItems){
+      CreateListItemParameter listItemParameter = CreateListItemParameter(position: item.position, name: item.name);
+      listItemParameter.id = item.id;
+      newList.listitems.add(listItemParameter);
     }
     return newList;
   }
@@ -146,6 +158,15 @@ class CreateListParameter{
       
        
     return ListInsertResult(updatedLists:neededUpates, newList:aNewList);
+  }
+
+  ActiveList convertToPreviousList(ActiveList existingList){
+    List<ActiveListPosition> actListPos = [];
+    for(CreateListItemParameter currItem in listitems){
+      actListPos.add(ActiveListPosition(done: false, id: currItem.id, name: currItem.name, position: currItem.position));
+    }
+    ActiveList newList = existingList.copyWith(name:listName, type:type, listItems:actListPos);
+    return newList;
   }
 
 }

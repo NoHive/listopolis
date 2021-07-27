@@ -71,6 +71,14 @@ class _$OnlinelistsEventTearOff {
     );
   }
 
+  _OverwriteList overwriteList(
+      {required ActiveList list, required CreateListParameter changedList}) {
+    return _OverwriteList(
+      list: list,
+      changedList: changedList,
+    );
+  }
+
   _DeleteListFromExisting deleteListFromExisting(
       {required Either<Failure, List<ActiveList>> serverListContend,
       required ActiveList list}) {
@@ -106,6 +114,8 @@ mixin _$OnlinelistsEvent {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -128,6 +138,8 @@ mixin _$OnlinelistsEvent {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -146,6 +158,7 @@ mixin _$OnlinelistsEvent {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) =>
@@ -162,6 +175,7 @@ mixin _$OnlinelistsEvent {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) =>
@@ -240,6 +254,8 @@ class _$_Started implements _Started {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -265,6 +281,8 @@ class _$_Started implements _Started {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -289,6 +307,7 @@ class _$_Started implements _Started {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -308,6 +327,7 @@ class _$_Started implements _Started {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -380,6 +400,8 @@ class _$ListViewRequested implements ListViewRequested {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -405,6 +427,8 @@ class _$ListViewRequested implements ListViewRequested {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -429,6 +453,7 @@ class _$ListViewRequested implements ListViewRequested {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -448,6 +473,7 @@ class _$ListViewRequested implements ListViewRequested {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -547,6 +573,8 @@ class _$ListViewReceived implements ListViewReceived {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -572,6 +600,8 @@ class _$ListViewReceived implements ListViewReceived {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -596,6 +626,7 @@ class _$ListViewReceived implements ListViewReceived {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -615,6 +646,7 @@ class _$ListViewReceived implements ListViewReceived {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -721,6 +753,8 @@ class _$_InsertNewList implements _InsertNewList {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -746,6 +780,8 @@ class _$_InsertNewList implements _InsertNewList {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -770,6 +806,7 @@ class _$_InsertNewList implements _InsertNewList {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -789,6 +826,7 @@ class _$_InsertNewList implements _InsertNewList {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -911,6 +949,8 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -936,6 +976,8 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -960,6 +1002,7 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -979,6 +1022,7 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -1114,6 +1158,8 @@ class _$_DeleteListItem implements _DeleteListItem {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -1139,6 +1185,8 @@ class _$_DeleteListItem implements _DeleteListItem {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -1163,6 +1211,7 @@ class _$_DeleteListItem implements _DeleteListItem {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -1182,6 +1231,7 @@ class _$_DeleteListItem implements _DeleteListItem {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -1336,6 +1386,8 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -1361,6 +1413,8 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -1385,6 +1439,7 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -1404,6 +1459,7 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -1521,6 +1577,8 @@ class _$_DeleteList implements _DeleteList {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -1546,6 +1604,8 @@ class _$_DeleteList implements _DeleteList {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -1570,6 +1630,7 @@ class _$_DeleteList implements _DeleteList {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -1589,6 +1650,7 @@ class _$_DeleteList implements _DeleteList {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {
@@ -1605,6 +1667,206 @@ abstract class _DeleteList implements OnlinelistsEvent {
   ActiveList get list => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$DeleteListCopyWith<_DeleteList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$OverwriteListCopyWith<$Res> {
+  factory _$OverwriteListCopyWith(
+          _OverwriteList value, $Res Function(_OverwriteList) then) =
+      __$OverwriteListCopyWithImpl<$Res>;
+  $Res call({ActiveList list, CreateListParameter changedList});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+/// @nodoc
+class __$OverwriteListCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res>
+    implements _$OverwriteListCopyWith<$Res> {
+  __$OverwriteListCopyWithImpl(
+      _OverwriteList _value, $Res Function(_OverwriteList) _then)
+      : super(_value, (v) => _then(v as _OverwriteList));
+
+  @override
+  _OverwriteList get _value => super._value as _OverwriteList;
+
+  @override
+  $Res call({
+    Object? list = freezed,
+    Object? changedList = freezed,
+  }) {
+    return _then(_OverwriteList(
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
+      changedList: changedList == freezed
+          ? _value.changedList
+          : changedList // ignore: cast_nullable_to_non_nullable
+              as CreateListParameter,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_OverwriteList implements _OverwriteList {
+  const _$_OverwriteList({required this.list, required this.changedList});
+
+  @override
+  final ActiveList list;
+  @override
+  final CreateListParameter changedList;
+
+  @override
+  String toString() {
+    return 'OnlinelistsEvent.overwriteList(list: $list, changedList: $changedList)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _OverwriteList &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)) &&
+            (identical(other.changedList, changedList) ||
+                const DeepCollectionEquality()
+                    .equals(other.changedList, changedList)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(list) ^
+      const DeepCollectionEquality().hash(changedList);
+
+  @JsonKey(ignore: true)
+  @override
+  _$OverwriteListCopyWith<_OverwriteList> get copyWith =>
+      __$OverwriteListCopyWithImpl<_OverwriteList>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() listViewRequested,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend)
+        listViewReceived,
+    required TResult Function(CreateListParameter aNewList) insertNewList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)
+        insertNewListIntoExisting,
+    required TResult Function(ActiveList list, ActiveListPosition listItem)
+        deleteListItem,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list,
+            ActiveListPosition listItem)
+        deleteListItemFromExisting,
+    required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
+    required TResult Function(
+            Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)
+        deleteListFromExisting,
+  }) {
+    return overwriteList(list, changedList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? listViewRequested,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult Function(CreateListParameter aNewList)? insertNewList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (overwriteList != null) {
+      return overwriteList(list, changedList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(ListViewRequested value) listViewRequested,
+    required TResult Function(ListViewReceived value) listViewReceived,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_InsertNewListIntoExisting value)
+        insertNewListIntoExisting,
+    required TResult Function(_DeleteListItem value) deleteListItem,
+    required TResult Function(_DeleteListItemFromExisting value)
+        deleteListItemFromExisting,
+    required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
+    required TResult Function(_DeleteListFromExisting value)
+        deleteListFromExisting,
+  }) {
+    return overwriteList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(ListViewRequested value)? listViewRequested,
+    TResult Function(ListViewReceived value)? listViewReceived,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult Function(_DeleteListItem value)? deleteListItem,
+    TResult Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
+    TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
+    required TResult orElse(),
+  }) {
+    if (overwriteList != null) {
+      return overwriteList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OverwriteList implements OnlinelistsEvent {
+  const factory _OverwriteList(
+      {required ActiveList list,
+      required CreateListParameter changedList}) = _$_OverwriteList;
+
+  ActiveList get list => throw _privateConstructorUsedError;
+  CreateListParameter get changedList => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$OverwriteListCopyWith<_OverwriteList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1715,6 +1977,8 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
             ActiveListPosition listItem)
         deleteListItemFromExisting,
     required TResult Function(ActiveList list) deleteList,
+    required TResult Function(ActiveList list, CreateListParameter changedList)
+        overwriteList,
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
@@ -1740,6 +2004,8 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
             ActiveList list, ActiveListPosition listItem)?
         deleteListItemFromExisting,
     TResult Function(ActiveList list)? deleteList,
+    TResult Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
     TResult Function(Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)?
         deleteListFromExisting,
@@ -1764,6 +2030,7 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
     required TResult Function(_DeleteListItemFromExisting value)
         deleteListItemFromExisting,
     required TResult Function(_DeleteList value) deleteList,
+    required TResult Function(_OverwriteList value) overwriteList,
     required TResult Function(_DeleteListFromExisting value)
         deleteListFromExisting,
   }) {
@@ -1783,6 +2050,7 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
     TResult Function(_DeleteListItemFromExisting value)?
         deleteListItemFromExisting,
     TResult Function(_DeleteList value)? deleteList,
+    TResult Function(_OverwriteList value)? overwriteList,
     TResult Function(_DeleteListFromExisting value)? deleteListFromExisting,
     required TResult orElse(),
   }) {

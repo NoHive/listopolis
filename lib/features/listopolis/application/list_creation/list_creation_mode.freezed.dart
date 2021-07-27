@@ -24,6 +24,10 @@ class _$ListEditModeTearOff {
     return const _EditListEditing();
   }
 
+  _OnlineListEditing onlinelistEditing() {
+    return const _OnlineListEditing();
+  }
+
   _EditTemplateCreation templateCreation() {
     return const _EditTemplateCreation();
   }
@@ -46,6 +50,7 @@ mixin _$ListEditMode {
   TResult when<TResult extends Object?>({
     required TResult Function() listCreation,
     required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
@@ -55,6 +60,7 @@ mixin _$ListEditMode {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listCreation,
     TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
     TResult Function()? templateCreation,
     TResult Function()? templateEditing,
     TResult Function()? transferTemplateToList,
@@ -65,6 +71,7 @@ mixin _$ListEditMode {
   TResult map<TResult extends Object?>({
     required TResult Function(_EditListCreation value) listCreation,
     required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
     required TResult Function(_EditTemplateCreation value) templateCreation,
     required TResult Function(_EditTemplateEditing value) templateEditing,
     required TResult Function(_EditTransferTemplateToList value)
@@ -75,6 +82,7 @@ mixin _$ListEditMode {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
     TResult Function(_EditTemplateCreation value)? templateCreation,
     TResult Function(_EditTemplateEditing value)? templateEditing,
     TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
@@ -141,6 +149,7 @@ class _$_EditListCreation implements _EditListCreation {
   TResult when<TResult extends Object?>({
     required TResult Function() listCreation,
     required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
@@ -153,6 +162,7 @@ class _$_EditListCreation implements _EditListCreation {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listCreation,
     TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
     TResult Function()? templateCreation,
     TResult Function()? templateEditing,
     TResult Function()? transferTemplateToList,
@@ -169,6 +179,7 @@ class _$_EditListCreation implements _EditListCreation {
   TResult map<TResult extends Object?>({
     required TResult Function(_EditListCreation value) listCreation,
     required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
     required TResult Function(_EditTemplateCreation value) templateCreation,
     required TResult Function(_EditTemplateEditing value) templateEditing,
     required TResult Function(_EditTransferTemplateToList value)
@@ -182,6 +193,7 @@ class _$_EditListCreation implements _EditListCreation {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
     TResult Function(_EditTemplateCreation value)? templateCreation,
     TResult Function(_EditTemplateEditing value)? templateEditing,
     TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
@@ -240,6 +252,7 @@ class _$_EditListEditing implements _EditListEditing {
   TResult when<TResult extends Object?>({
     required TResult Function() listCreation,
     required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
@@ -252,6 +265,7 @@ class _$_EditListEditing implements _EditListEditing {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listCreation,
     TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
     TResult Function()? templateCreation,
     TResult Function()? templateEditing,
     TResult Function()? transferTemplateToList,
@@ -268,6 +282,7 @@ class _$_EditListEditing implements _EditListEditing {
   TResult map<TResult extends Object?>({
     required TResult Function(_EditListCreation value) listCreation,
     required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
     required TResult Function(_EditTemplateCreation value) templateCreation,
     required TResult Function(_EditTemplateEditing value) templateEditing,
     required TResult Function(_EditTransferTemplateToList value)
@@ -281,6 +296,7 @@ class _$_EditListEditing implements _EditListEditing {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
     TResult Function(_EditTemplateCreation value)? templateCreation,
     TResult Function(_EditTemplateEditing value)? templateEditing,
     TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
@@ -295,6 +311,109 @@ class _$_EditListEditing implements _EditListEditing {
 
 abstract class _EditListEditing implements ListEditMode {
   const factory _EditListEditing() = _$_EditListEditing;
+}
+
+/// @nodoc
+abstract class _$OnlineListEditingCopyWith<$Res> {
+  factory _$OnlineListEditingCopyWith(
+          _OnlineListEditing value, $Res Function(_OnlineListEditing) then) =
+      __$OnlineListEditingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$OnlineListEditingCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res>
+    implements _$OnlineListEditingCopyWith<$Res> {
+  __$OnlineListEditingCopyWithImpl(
+      _OnlineListEditing _value, $Res Function(_OnlineListEditing) _then)
+      : super(_value, (v) => _then(v as _OnlineListEditing));
+
+  @override
+  _OnlineListEditing get _value => super._value as _OnlineListEditing;
+}
+
+/// @nodoc
+
+class _$_OnlineListEditing implements _OnlineListEditing {
+  const _$_OnlineListEditing();
+
+  @override
+  String toString() {
+    return 'ListEditMode.onlinelistEditing()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _OnlineListEditing);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() listCreation,
+    required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
+    required TResult Function() templateCreation,
+    required TResult Function() templateEditing,
+    required TResult Function() transferTemplateToList,
+  }) {
+    return onlinelistEditing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? listCreation,
+    TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
+    TResult Function()? templateCreation,
+    TResult Function()? templateEditing,
+    TResult Function()? transferTemplateToList,
+    required TResult orElse(),
+  }) {
+    if (onlinelistEditing != null) {
+      return onlinelistEditing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EditListCreation value) listCreation,
+    required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
+    required TResult Function(_EditTemplateCreation value) templateCreation,
+    required TResult Function(_EditTemplateEditing value) templateEditing,
+    required TResult Function(_EditTransferTemplateToList value)
+        transferTemplateToList,
+  }) {
+    return onlinelistEditing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EditListCreation value)? listCreation,
+    TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult Function(_EditTemplateCreation value)? templateCreation,
+    TResult Function(_EditTemplateEditing value)? templateEditing,
+    TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
+    required TResult orElse(),
+  }) {
+    if (onlinelistEditing != null) {
+      return onlinelistEditing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OnlineListEditing implements ListEditMode {
+  const factory _OnlineListEditing() = _$_OnlineListEditing;
 }
 
 /// @nodoc
@@ -339,6 +458,7 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
   TResult when<TResult extends Object?>({
     required TResult Function() listCreation,
     required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
@@ -351,6 +471,7 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listCreation,
     TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
     TResult Function()? templateCreation,
     TResult Function()? templateEditing,
     TResult Function()? transferTemplateToList,
@@ -367,6 +488,7 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
   TResult map<TResult extends Object?>({
     required TResult Function(_EditListCreation value) listCreation,
     required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
     required TResult Function(_EditTemplateCreation value) templateCreation,
     required TResult Function(_EditTemplateEditing value) templateEditing,
     required TResult Function(_EditTransferTemplateToList value)
@@ -380,6 +502,7 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
     TResult Function(_EditTemplateCreation value)? templateCreation,
     TResult Function(_EditTemplateEditing value)? templateEditing,
     TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
@@ -438,6 +561,7 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
   TResult when<TResult extends Object?>({
     required TResult Function() listCreation,
     required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
@@ -450,6 +574,7 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listCreation,
     TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
     TResult Function()? templateCreation,
     TResult Function()? templateEditing,
     TResult Function()? transferTemplateToList,
@@ -466,6 +591,7 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
   TResult map<TResult extends Object?>({
     required TResult Function(_EditListCreation value) listCreation,
     required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
     required TResult Function(_EditTemplateCreation value) templateCreation,
     required TResult Function(_EditTemplateEditing value) templateEditing,
     required TResult Function(_EditTransferTemplateToList value)
@@ -479,6 +605,7 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
     TResult Function(_EditTemplateCreation value)? templateCreation,
     TResult Function(_EditTemplateEditing value)? templateEditing,
     TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,
@@ -539,6 +666,7 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
   TResult when<TResult extends Object?>({
     required TResult Function() listCreation,
     required TResult Function() listEditing,
+    required TResult Function() onlinelistEditing,
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
@@ -551,6 +679,7 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? listCreation,
     TResult Function()? listEditing,
+    TResult Function()? onlinelistEditing,
     TResult Function()? templateCreation,
     TResult Function()? templateEditing,
     TResult Function()? transferTemplateToList,
@@ -567,6 +696,7 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
   TResult map<TResult extends Object?>({
     required TResult Function(_EditListCreation value) listCreation,
     required TResult Function(_EditListEditing value) listEditing,
+    required TResult Function(_OnlineListEditing value) onlinelistEditing,
     required TResult Function(_EditTemplateCreation value) templateCreation,
     required TResult Function(_EditTemplateEditing value) templateEditing,
     required TResult Function(_EditTransferTemplateToList value)
@@ -580,6 +710,7 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
+    TResult Function(_OnlineListEditing value)? onlinelistEditing,
     TResult Function(_EditTemplateCreation value)? templateCreation,
     TResult Function(_EditTemplateEditing value)? templateEditing,
     TResult Function(_EditTransferTemplateToList value)? transferTemplateToList,

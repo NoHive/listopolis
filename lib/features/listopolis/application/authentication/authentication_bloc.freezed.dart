@@ -27,6 +27,10 @@ class _$AuthenticationEventTearOff {
   _SignOutStarted signOutStarted() {
     return const _SignOutStarted();
   }
+
+  _RequestedSignInStatus requestedSignInStatus() {
+    return const _RequestedSignInStatus();
+  }
 }
 
 /// @nodoc
@@ -39,6 +43,7 @@ mixin _$AuthenticationEvent {
     required TResult Function() started,
     required TResult Function() signInStarted,
     required TResult Function() signOutStarted,
+    required TResult Function() requestedSignInStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +51,7 @@ mixin _$AuthenticationEvent {
     TResult Function()? started,
     TResult Function()? signInStarted,
     TResult Function()? signOutStarted,
+    TResult Function()? requestedSignInStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +60,8 @@ mixin _$AuthenticationEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_SignInStarted value) signInStarted,
     required TResult Function(_SignOutStarted value) signOutStarted,
+    required TResult Function(_RequestedSignInStatus value)
+        requestedSignInStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +69,7 @@ mixin _$AuthenticationEvent {
     TResult Function(_Started value)? started,
     TResult Function(_SignInStarted value)? signInStarted,
     TResult Function(_SignOutStarted value)? signOutStarted,
+    TResult Function(_RequestedSignInStatus value)? requestedSignInStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -124,6 +133,7 @@ class _$_Started implements _Started {
     required TResult Function() started,
     required TResult Function() signInStarted,
     required TResult Function() signOutStarted,
+    required TResult Function() requestedSignInStatus,
   }) {
     return started();
   }
@@ -134,6 +144,7 @@ class _$_Started implements _Started {
     TResult Function()? started,
     TResult Function()? signInStarted,
     TResult Function()? signOutStarted,
+    TResult Function()? requestedSignInStatus,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -148,6 +159,8 @@ class _$_Started implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_SignInStarted value) signInStarted,
     required TResult Function(_SignOutStarted value) signOutStarted,
+    required TResult Function(_RequestedSignInStatus value)
+        requestedSignInStatus,
   }) {
     return started(this);
   }
@@ -158,6 +171,7 @@ class _$_Started implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_SignInStarted value)? signInStarted,
     TResult Function(_SignOutStarted value)? signOutStarted,
+    TResult Function(_RequestedSignInStatus value)? requestedSignInStatus,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -214,6 +228,7 @@ class _$_SignInStarted implements _SignInStarted {
     required TResult Function() started,
     required TResult Function() signInStarted,
     required TResult Function() signOutStarted,
+    required TResult Function() requestedSignInStatus,
   }) {
     return signInStarted();
   }
@@ -224,6 +239,7 @@ class _$_SignInStarted implements _SignInStarted {
     TResult Function()? started,
     TResult Function()? signInStarted,
     TResult Function()? signOutStarted,
+    TResult Function()? requestedSignInStatus,
     required TResult orElse(),
   }) {
     if (signInStarted != null) {
@@ -238,6 +254,8 @@ class _$_SignInStarted implements _SignInStarted {
     required TResult Function(_Started value) started,
     required TResult Function(_SignInStarted value) signInStarted,
     required TResult Function(_SignOutStarted value) signOutStarted,
+    required TResult Function(_RequestedSignInStatus value)
+        requestedSignInStatus,
   }) {
     return signInStarted(this);
   }
@@ -248,6 +266,7 @@ class _$_SignInStarted implements _SignInStarted {
     TResult Function(_Started value)? started,
     TResult Function(_SignInStarted value)? signInStarted,
     TResult Function(_SignOutStarted value)? signOutStarted,
+    TResult Function(_RequestedSignInStatus value)? requestedSignInStatus,
     required TResult orElse(),
   }) {
     if (signInStarted != null) {
@@ -304,6 +323,7 @@ class _$_SignOutStarted implements _SignOutStarted {
     required TResult Function() started,
     required TResult Function() signInStarted,
     required TResult Function() signOutStarted,
+    required TResult Function() requestedSignInStatus,
   }) {
     return signOutStarted();
   }
@@ -314,6 +334,7 @@ class _$_SignOutStarted implements _SignOutStarted {
     TResult Function()? started,
     TResult Function()? signInStarted,
     TResult Function()? signOutStarted,
+    TResult Function()? requestedSignInStatus,
     required TResult orElse(),
   }) {
     if (signOutStarted != null) {
@@ -328,6 +349,8 @@ class _$_SignOutStarted implements _SignOutStarted {
     required TResult Function(_Started value) started,
     required TResult Function(_SignInStarted value) signInStarted,
     required TResult Function(_SignOutStarted value) signOutStarted,
+    required TResult Function(_RequestedSignInStatus value)
+        requestedSignInStatus,
   }) {
     return signOutStarted(this);
   }
@@ -338,6 +361,7 @@ class _$_SignOutStarted implements _SignOutStarted {
     TResult Function(_Started value)? started,
     TResult Function(_SignInStarted value)? signInStarted,
     TResult Function(_SignOutStarted value)? signOutStarted,
+    TResult Function(_RequestedSignInStatus value)? requestedSignInStatus,
     required TResult orElse(),
   }) {
     if (signOutStarted != null) {
@@ -349,6 +373,101 @@ class _$_SignOutStarted implements _SignOutStarted {
 
 abstract class _SignOutStarted implements AuthenticationEvent {
   const factory _SignOutStarted() = _$_SignOutStarted;
+}
+
+/// @nodoc
+abstract class _$RequestedSignInStatusCopyWith<$Res> {
+  factory _$RequestedSignInStatusCopyWith(_RequestedSignInStatus value,
+          $Res Function(_RequestedSignInStatus) then) =
+      __$RequestedSignInStatusCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$RequestedSignInStatusCopyWithImpl<$Res>
+    extends _$AuthenticationEventCopyWithImpl<$Res>
+    implements _$RequestedSignInStatusCopyWith<$Res> {
+  __$RequestedSignInStatusCopyWithImpl(_RequestedSignInStatus _value,
+      $Res Function(_RequestedSignInStatus) _then)
+      : super(_value, (v) => _then(v as _RequestedSignInStatus));
+
+  @override
+  _RequestedSignInStatus get _value => super._value as _RequestedSignInStatus;
+}
+
+/// @nodoc
+
+class _$_RequestedSignInStatus implements _RequestedSignInStatus {
+  const _$_RequestedSignInStatus();
+
+  @override
+  String toString() {
+    return 'AuthenticationEvent.requestedSignInStatus()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _RequestedSignInStatus);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() signInStarted,
+    required TResult Function() signOutStarted,
+    required TResult Function() requestedSignInStatus,
+  }) {
+    return requestedSignInStatus();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? signInStarted,
+    TResult Function()? signOutStarted,
+    TResult Function()? requestedSignInStatus,
+    required TResult orElse(),
+  }) {
+    if (requestedSignInStatus != null) {
+      return requestedSignInStatus();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_SignInStarted value) signInStarted,
+    required TResult Function(_SignOutStarted value) signOutStarted,
+    required TResult Function(_RequestedSignInStatus value)
+        requestedSignInStatus,
+  }) {
+    return requestedSignInStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_SignInStarted value)? signInStarted,
+    TResult Function(_SignOutStarted value)? signOutStarted,
+    TResult Function(_RequestedSignInStatus value)? requestedSignInStatus,
+    required TResult orElse(),
+  }) {
+    if (requestedSignInStatus != null) {
+      return requestedSignInStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RequestedSignInStatus implements AuthenticationEvent {
+  const factory _RequestedSignInStatus() = _$_RequestedSignInStatus;
 }
 
 /// @nodoc

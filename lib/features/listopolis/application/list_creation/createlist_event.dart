@@ -12,6 +12,7 @@ abstract class CreatelistEvent with _$CreatelistEvent {
   const factory CreatelistEvent.removeListPosition({required CreateListParameter listParam, @Default(1) int index}) = _RemoveListPosition;
   const factory CreatelistEvent.changeListItemOrder({required CreateListParameter listParam, @Default(1) int oldIndex, @Default(1) int newIndex}) = _ChangeItemOrder;
   const factory CreatelistEvent.editActiveList({required ActiveList list}) = _EditActiveList;
+  const factory CreatelistEvent.editOnlineList({required ActiveList list}) = _EditOnlineList;
   const factory CreatelistEvent.editTemplate({required ListTemplate template}) = _EditTemplate;
   const factory CreatelistEvent.useTemplateAsList({required ListTemplate template}) = _UseTemplateAsList;
   

@@ -132,11 +132,21 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
        ListEditMode aEditMode = ListEditMode.listEditing();
         ActiveList aEditList = e.list;
         editMode = aEditMode;
-
+        editList = aEditList;
         CreateListParameter alistCreation = CreateListParameter.asEditFromList(aEditList);
         listCreation = alistCreation;
         yield _SwitchedToCreate(creationParam:  alistCreation);
     },
+    editOnlineList: (e) async*{
+      yield _Initial();
+       ListEditMode aEditMode = ListEditMode.onlinelistEditing();
+        ActiveList aEditList = e.list;
+        editMode = aEditMode;
+        editList = aEditList;
+        CreateListParameter alistCreation = CreateListParameter.asEditFromList(aEditList);
+        listCreation = alistCreation;
+        yield _SwitchedToCreate(creationParam:  alistCreation);
+    } ,
     editTemplate:  (e) async*{
       yield _Initial();
         ListEditMode aEditMode = ListEditMode.templateEditing();

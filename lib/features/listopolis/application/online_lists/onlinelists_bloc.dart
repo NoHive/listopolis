@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/error/failures.dart';
@@ -34,6 +36,7 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
         yield Loading();
         
         await streamSubscription?.cancel();
+        
         streamSubscription = onlineRepository.getActiveLists().listen(
             (listsOrFailure) { 
                   add(ListViewReceived(serverListContend: listsOrFailure));
@@ -70,7 +73,9 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
           });
       },
       deleteListItem: (e) async* {
-           yield Loading();
+          yield Loading();
+          Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
+          add(OnlinelistsEvent.deleteListItemFromExisting(serverListContend: currentLists, list: e.list, listItem: e.listItem));
         // await streamSubscription?.cancel();
         // streamSubscription = onlineRepository.getActiveLists().listen(
         //     (listsOrFailure) { 
@@ -80,13 +85,13 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
       },
       deleteListItemFromExisting: (e) async* {
         yield Loading();
-        // yield e.serverListContend.fold(
-        //   (aFailure) => OnlinelistsState.error(failure: aFailure), 
-        //   (lists) {
-        //     onlineRepository.deleteActiveListPosition(lists, e.list, e.listItem);
-        //     add(OnlinelistsEvent.listViewRequested());
-        //     return OnlinelistsState.loading();
-        //   });
+        yield e.serverListContend.fold(
+          (aFailure) => OnlinelistsState.error(failure: aFailure), 
+          (lists) {
+            onlineRepository.deleteActiveListPosition(lists, e.list, e.listItem);
+            add(OnlinelistsEvent.listViewRequested());
+            return OnlinelistsState.loading();
+          });
       },
       deleteList: (e) async* {
         yield Loading();
@@ -102,7 +107,31 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
             add(OnlinelistsEvent.listViewRequested());
             return OnlinelistsState.loading();
           });
-      }
+      },
+      overwriteList: (e) async* {
+        yield Loading();
+        Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
+        print("currentLists read");
+        if(currentLists.isLeft()){
+           currentLists.leftMap((fail) async* {yield OnlinelistsState.error(failure: fail);});
+        }else{
+          List<ActiveList> listsOnServer = currentLists.getOrElse(() { throw Exception();});
+          Either<Failure, Unit> replaceResult = await onlineRepository.replaceActiveList(listsOnServer,  e.list, e.changedList);
+              yield replaceResult.fold(
+                (fail) => OnlinelistsState.error(failure: fail), 
+                (r) => OnlinelistsState.loading()
+              );
+          //  currentLists.map((lists) async* {
+          //     Either<Failure, Unit> replaceResult = await onlineRepository.replaceActiveList(lists,  e.list, e.changedList);
+          //     yield replaceResult.fold(
+          //       (fail) => OnlinelistsState.error(failure: fail), 
+          //       (r) => OnlinelistsState.loading()
+          //     );
+              add(OnlinelistsEvent.listViewRequested());
+              
+          
+        }
+      },
       );
   }
   @override

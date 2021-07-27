@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/authentication/authentication_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/list_creation_mode.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
+import 'package:listopolis/features/listopolis/presentation/authentication/authentication_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 import 'package:listopolis/features/listopolis/presentation/online_lists/online_list_screen.dart';
@@ -74,18 +77,24 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // TODO: implement didChangeAppLifecycleState
     print("Create List-Screen State changed to $state");
-    if(state == AppLifecycleState.paused ){
-      if(ctxLastBuild != null){
-        BuildContext ctxLokal = ctxLastBuild!;
-         _acceptListChanges(ctxLokal);
-        canReturn = true;
-        Navigator.of(ctxLokal).pop();
-      }
-    }
+    // if(state == AppLifecycleState.paused ){
+    //   if(ctxLastBuild != null){
+    //     BuildContext ctxLokal = ctxLastBuild!;
+    //      _acceptListChanges(ctxLokal);
+    //     canReturn = true;
+    //     Navigator.of(ctxLokal).pop();
+    //   }
+    // }
     
     super.didChangeAppLifecycleState(state);
   }
   
+   void didChangeDependencies() {
+    super.didChangeDependencies();
+ 
+    BlocProvider.of<AuthenticationBloc>(context)
+      ..add(AuthenticationEvent.requestedSignInStatus());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -197,7 +206,9 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
      CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
     showDialog(context: context,
     builder: (ctx) {
-      return AlertDialog(
+
+      if(createListBloc.isListCreation() || createListBloc.editMode == ListEditMode.transferTemplateToList()){
+        return AlertDialog(
         backgroundColor: ListColors.DIALOG_BACKGROUND,
         actions: [
           MaterialButton(onPressed: (){
@@ -213,16 +224,27 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
             _returnToPreviousScreen(context);
           else if(createListBloc.isListTransfer())
             _returnToListScreen(context)(context);
+          else if(createListBloc.editMode == ListEditMode.onlinelistEditing())
+            _returnToPreviousScreen(context);
           },
-              child: Text("Übernehmen",style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Als Liste Übernehmen",style: ListColors.DEF_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
            MaterialButton(
              onPressed: (){
-              _acceptOnlineListChanges(context);
-              Navigator.pop(context);
+               AuthenticationBloc authBloc = BlocProvider.of<AuthenticationBloc>(context);
+               if(authBloc.state == AuthenticationState.signedIn()){
+                _acceptOnlineListChanges(context);
+                Navigator.pop(context);
+                _navigateToOnlineListScreen(context);
+               }
+              else{
+                Navigator.pop(context);
+                _navigateToAuthenticationScreen(context);
+              }
+              
               //Navigator.of(context).pop();
-              _navigateToOnlineListScreen(context);
+              
               },
               child: Text("Als Online Liste Übernehmen", style: ListColors.DEF_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
@@ -235,9 +257,56 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
       ],
       content: Text("Soll die Liste übernommen werden?", style: ListColors.DEF_TEXT_STYLE),
       );
+      }else{
+        return AlertDialog(
+        backgroundColor: ListColors.DIALOG_BACKGROUND,
+        actions: [
+          MaterialButton(onPressed: (){
+            _acceptListChanges(context);
+
+             if(createListBloc.isListEdit())
+              _returnToPreviousScreen(context);
+            else if(createListBloc.isListCreation())
+              _returnToPreviousScreen(context);
+           else if(createListBloc.isTemplateCreation())
+            _returnToPreviousScreen(context);
+          else if(createListBloc.isTemplateEdit())
+            _returnToPreviousScreen(context);
+          else if(createListBloc.isListTransfer())
+            _returnToListScreen(context)(context);
+          else if(createListBloc.editMode == ListEditMode.onlinelistEditing())
+            _returnToPreviousScreen(context);
+          },
+              child: Text("Übernehmen",style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          ),
+           
+          MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
+              child: Text("Verwerfen", style: ListColors.DEF_TEXT_STYLE),
+              color: ListColors.DIALOG_BUTTON,
+          ),
+         
+      ],
+      content: Text("Soll die Liste übernommen werden?", style: ListColors.DEF_TEXT_STYLE),
+      );
+      }
     },
     );
   }
+
+ _navigateToAuthenticationScreen(BuildContext context) {
+     //BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.authenticateUser());
+     //BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.listViewRequested());
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: BlocProvider.of<AuthenticationBloc>(context),
+                  child: AuthenticationScreen(),
+                ),
+              ),
+      );
+   }
+
   _navigateToOnlineListScreen(BuildContext context) {
       //BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.startListCreation());
      Navigator.of(context).push(
@@ -269,6 +338,12 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
         widget.templateBloc.add(TemplateEvent.replaceTemplate(listParameter: currentCreatedList!, list: aListTemplate));
     }else if(createListBloc.isListTransfer()){
       widget.activelistBloc.add(ActivelistEvent.insertNewList(listParameter: currentCreatedList!));
+    }else if(createListBloc.editMode == ListEditMode.onlinelistEditing()){
+         ActiveList? actList = createListBloc.editList;
+        createListBloc.editList = null;
+      OnlinelistsBloc onlinelistsBloc = BlocProvider.of<OnlinelistsBloc>(context);
+      if(actList != null)
+        onlinelistsBloc..add(OnlinelistsEvent.overwriteList(list: actList, changedList: currentCreatedList! ));
     }
   }
   void _acceptOnlineListChanges(BuildContext context){

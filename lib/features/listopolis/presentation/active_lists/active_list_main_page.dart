@@ -30,6 +30,9 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     super.didChangeDependencies();
     BlocProvider.of<ActivelistBloc>(context)
       ..add(ActivelistEvent.load());
+
+    BlocProvider.of<AuthenticationBloc>(context)
+      ..add(AuthenticationEvent.requestedSignInStatus());
   }
    @override
   Widget build(BuildContext context) {
@@ -184,7 +187,13 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.createListFromClipBoard());
         //BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadDataFromBackup());
       }else if(choice == ActiveListPageMenueStrings.ONLINE_LISTS){
-        navigateToOnlineListsScreen(context);
+        AuthenticationBloc authBloc = BlocProvider.of<AuthenticationBloc>(context);
+        //authBloc.add(AuthenticationEvent.requestedSignInStatus());
+        if(authBloc.state == AuthenticationState.signedIn()){
+          navigateToOnlineListsScreen(context);
+        }else{
+          navigateToAuthenticationScreen(context);
+        }
       }else if(choice == ActiveListPageMenueStrings.SIGN_IN){
         navigateToAuthenticationScreen(context);
       }else{

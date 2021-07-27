@@ -41,6 +41,13 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
           yield AuthenticationState.signedIn();
         }
       }, 
+      requestedSignInStatus: (e) async* { 
+        Either<Failure, bool> authInfo = await authRepository.isSignedIn();
+        yield authInfo.fold(
+          (failure) => AuthenticationState.error(failure: failure), 
+          (isSignedIn) => isSignedIn ? AuthenticationState.signedIn() : AuthenticationState.signedOut()
+        );
+      },
       signOutStarted: (e) async* { 
            if(state != AuthenticationState.signedOut()){
               yield AuthenticationState.waitingForService();
@@ -58,5 +65,12 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         }
       }, 
     );
+  }
+   @override
+  Future<void> close() async {
+    // TODO: implement close
+    await authRepository.signOut();
+    return super.close();
+
   }
 }

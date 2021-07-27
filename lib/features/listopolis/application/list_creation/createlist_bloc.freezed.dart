@@ -81,6 +81,12 @@ class _$CreatelistEventTearOff {
     );
   }
 
+  _EditOnlineList editOnlineList({required ActiveList list}) {
+    return _EditOnlineList(
+      list: list,
+    );
+  }
+
   _EditTemplate editTemplate({required ListTemplate template}) {
     return _EditTemplate(
       template: template,
@@ -117,6 +123,7 @@ mixin _$CreatelistEvent {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) =>
@@ -136,6 +143,7 @@ mixin _$CreatelistEvent {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -154,6 +162,7 @@ mixin _$CreatelistEvent {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) =>
@@ -170,6 +179,7 @@ mixin _$CreatelistEvent {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -247,6 +257,7 @@ class _$_Started implements _Started {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -269,6 +280,7 @@ class _$_Started implements _Started {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -293,6 +305,7 @@ class _$_Started implements _Started {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -312,6 +325,7 @@ class _$_Started implements _Started {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -383,6 +397,7 @@ class _$_StartListCreation implements _StartListCreation {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -405,6 +420,7 @@ class _$_StartListCreation implements _StartListCreation {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -429,6 +445,7 @@ class _$_StartListCreation implements _StartListCreation {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -448,6 +465,7 @@ class _$_StartListCreation implements _StartListCreation {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -519,6 +537,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -541,6 +560,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -565,6 +585,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -584,6 +605,7 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -681,6 +703,7 @@ class _$_ChangeList implements _ChangeList {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -703,6 +726,7 @@ class _$_ChangeList implements _ChangeList {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -727,6 +751,7 @@ class _$_ChangeList implements _ChangeList {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -746,6 +771,7 @@ class _$_ChangeList implements _ChangeList {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -849,6 +875,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -871,6 +898,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -895,6 +923,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -914,6 +943,7 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -1017,6 +1047,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -1039,6 +1070,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -1063,6 +1095,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -1082,6 +1115,7 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -1198,6 +1232,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -1220,6 +1255,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -1244,6 +1280,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -1263,6 +1300,7 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -1380,6 +1418,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -1402,6 +1441,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -1426,6 +1466,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -1445,6 +1486,7 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -1576,6 +1618,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -1598,6 +1641,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -1622,6 +1666,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -1641,6 +1686,7 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -1756,6 +1802,7 @@ class _$_EditActiveList implements _EditActiveList {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -1778,6 +1825,7 @@ class _$_EditActiveList implements _EditActiveList {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -1802,6 +1850,7 @@ class _$_EditActiveList implements _EditActiveList {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -1821,6 +1870,7 @@ class _$_EditActiveList implements _EditActiveList {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -1838,6 +1888,185 @@ abstract class _EditActiveList implements CreatelistEvent {
   ActiveList get list => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$EditActiveListCopyWith<_EditActiveList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$EditOnlineListCopyWith<$Res> {
+  factory _$EditOnlineListCopyWith(
+          _EditOnlineList value, $Res Function(_EditOnlineList) then) =
+      __$EditOnlineListCopyWithImpl<$Res>;
+  $Res call({ActiveList list});
+
+  $ActiveListCopyWith<$Res> get list;
+}
+
+/// @nodoc
+class __$EditOnlineListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res>
+    implements _$EditOnlineListCopyWith<$Res> {
+  __$EditOnlineListCopyWithImpl(
+      _EditOnlineList _value, $Res Function(_EditOnlineList) _then)
+      : super(_value, (v) => _then(v as _EditOnlineList));
+
+  @override
+  _EditOnlineList get _value => super._value as _EditOnlineList;
+
+  @override
+  $Res call({
+    Object? list = freezed,
+  }) {
+    return _then(_EditOnlineList(
+      list: list == freezed
+          ? _value.list
+          : list // ignore: cast_nullable_to_non_nullable
+              as ActiveList,
+    ));
+  }
+
+  @override
+  $ActiveListCopyWith<$Res> get list {
+    return $ActiveListCopyWith<$Res>(_value.list, (value) {
+      return _then(_value.copyWith(list: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_EditOnlineList implements _EditOnlineList {
+  const _$_EditOnlineList({required this.list});
+
+  @override
+  final ActiveList list;
+
+  @override
+  String toString() {
+    return 'CreatelistEvent.editOnlineList(list: $list)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _EditOnlineList &&
+            (identical(other.list, list) ||
+                const DeepCollectionEquality().equals(other.list, list)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+
+  @JsonKey(ignore: true)
+  @override
+  _$EditOnlineListCopyWith<_EditOnlineList> get copyWith =>
+      __$EditOnlineListCopyWithImpl<_EditOnlineList>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() startListCreation,
+    required TResult Function() startTemplateCreation,
+    required TResult Function(CreateListParameter listParam) changeList,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToCreation,
+    required TResult Function(CreateListParameter listParam)
+        switchViewToReorder,
+    required TResult Function(CreateListParameter listParam, int index)
+        addListPositionAfter,
+    required TResult Function(CreateListParameter listParam, int index)
+        removeListPosition,
+    required TResult Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)
+        changeListItemOrder,
+    required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
+    required TResult Function(ListTemplate template) editTemplate,
+    required TResult Function(ListTemplate template) useTemplateAsList,
+  }) {
+    return editOnlineList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? startListCreation,
+    TResult Function()? startTemplateCreation,
+    TResult Function(CreateListParameter listParam)? changeList,
+    TResult Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
+    TResult Function(ListTemplate template)? editTemplate,
+    TResult Function(ListTemplate template)? useTemplateAsList,
+    required TResult orElse(),
+  }) {
+    if (editOnlineList != null) {
+      return editOnlineList(list);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_StartListCreation value) startListCreation,
+    required TResult Function(_StartTemplateCreation value)
+        startTemplateCreation,
+    required TResult Function(_ChangeList value) changeList,
+    required TResult Function(_SwitchToCreation value) switchViewToCreation,
+    required TResult Function(_SwitchToReorder value) switchViewToReorder,
+    required TResult Function(_AddListPositionAfter value) addListPositionAfter,
+    required TResult Function(_RemoveListPosition value) removeListPosition,
+    required TResult Function(_ChangeItemOrder value) changeListItemOrder,
+    required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
+    required TResult Function(_EditTemplate value) editTemplate,
+    required TResult Function(_UseTemplateAsList value) useTemplateAsList,
+  }) {
+    return editOnlineList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_StartListCreation value)? startListCreation,
+    TResult Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult Function(_ChangeList value)? changeList,
+    TResult Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult Function(_RemoveListPosition value)? removeListPosition,
+    TResult Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
+    TResult Function(_EditTemplate value)? editTemplate,
+    TResult Function(_UseTemplateAsList value)? useTemplateAsList,
+    required TResult orElse(),
+  }) {
+    if (editOnlineList != null) {
+      return editOnlineList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EditOnlineList implements CreatelistEvent {
+  const factory _EditOnlineList({required ActiveList list}) = _$_EditOnlineList;
+
+  ActiveList get list => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$EditOnlineListCopyWith<_EditOnlineList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1932,6 +2161,7 @@ class _$_EditTemplate implements _EditTemplate {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -1954,6 +2184,7 @@ class _$_EditTemplate implements _EditTemplate {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -1978,6 +2209,7 @@ class _$_EditTemplate implements _EditTemplate {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -1997,6 +2229,7 @@ class _$_EditTemplate implements _EditTemplate {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),
@@ -2109,6 +2342,7 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
             CreateListParameter listParam, int oldIndex, int newIndex)
         changeListItemOrder,
     required TResult Function(ActiveList list) editActiveList,
+    required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
@@ -2131,6 +2365,7 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
     TResult Function(CreateListParameter listParam, int oldIndex, int newIndex)?
         changeListItemOrder,
     TResult Function(ActiveList list)? editActiveList,
+    TResult Function(ActiveList list)? editOnlineList,
     TResult Function(ListTemplate template)? editTemplate,
     TResult Function(ListTemplate template)? useTemplateAsList,
     required TResult orElse(),
@@ -2155,6 +2390,7 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
     required TResult Function(_RemoveListPosition value) removeListPosition,
     required TResult Function(_ChangeItemOrder value) changeListItemOrder,
     required TResult Function(_EditActiveList value) editActiveList,
+    required TResult Function(_EditOnlineList value) editOnlineList,
     required TResult Function(_EditTemplate value) editTemplate,
     required TResult Function(_UseTemplateAsList value) useTemplateAsList,
   }) {
@@ -2174,6 +2410,7 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
     TResult Function(_RemoveListPosition value)? removeListPosition,
     TResult Function(_ChangeItemOrder value)? changeListItemOrder,
     TResult Function(_EditActiveList value)? editActiveList,
+    TResult Function(_EditOnlineList value)? editOnlineList,
     TResult Function(_EditTemplate value)? editTemplate,
     TResult Function(_UseTemplateAsList value)? useTemplateAsList,
     required TResult orElse(),

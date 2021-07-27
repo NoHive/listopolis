@@ -52,4 +52,18 @@ class FirebaseAuthRespository implements IAuthRepository{
     }
   }
 
+  @override
+  Future<Either<Failure, bool>> isSignedIn() async{
+   try{
+     User? uOption = firebaseAuth.currentUser;
+      if( await gSignIn.isSignedIn()){
+          
+          return right(true);
+      }else
+        return right(false);
+    }catch(e){
+      return left(Failure.userAuthentificationFailed());
+    }
+  }
+
 }

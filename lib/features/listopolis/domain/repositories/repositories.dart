@@ -35,10 +35,12 @@ abstract class IStreamRepository{
   Future<Either<Failure, List<ActiveList>>> getCurrentActiveLists();
   Future<Either<Failure, Unit>> deleteActiveListPosition(List<ActiveList> existingLists, ActiveList list, ActiveListPosition position);
   Future<Either<Failure, Unit>> deleteActiveList(List<ActiveList> existingLists, ActiveList list);
+  Future<Either<Failure, Unit>> replaceActiveList(List<ActiveList> existingLists, ActiveList list, CreateListParameter changedList);
   Future<Either<Failure, Unit>> insertActiveList(List<ActiveList> existingLists, CreateListParameter listParameter);
 }
 
 abstract class IAuthRepository{
+  Future<Either<Failure, bool>> isSignedIn();
   Future<Either<Failure, Unit>> signIn();
   Future<Either<Failure, Unit>> signOut();
 }

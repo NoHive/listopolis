@@ -5,4 +5,5 @@ class AuthenticationEvent with _$AuthenticationEvent {
   const factory AuthenticationEvent.started() = _Started;
   const factory AuthenticationEvent.signInStarted() = _SignInStarted;
   const factory AuthenticationEvent.signOutStarted() = _SignOutStarted;
+  const factory AuthenticationEvent.requestedSignInStatus() = _RequestedSignInStatus;
 }

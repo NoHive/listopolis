@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
+import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
+import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/active_list_main_page.dart';
+import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 
@@ -20,6 +24,10 @@ class _OnlineListScreenState extends State<OnlineListScreen> with CommonPageFunc
     appBar: AppBar(
         title: SingleChildScrollView(scrollDirection: Axis.horizontal, child:  Text("Online - Listen", style: ListColors.DEF_TEXT_STYLE,)),
         backgroundColor: ListColors.APP_BAR_COLOR,
+        leading: IconButton(
+                    icon: Icon(Icons.arrow_back), 
+                    onPressed: () => _returnToHomeScreen(context)                    
+                  ),
     ),
     body: Container(
       child: BlocBuilder<OnlinelistsBloc, OnlinelistsState>(
@@ -36,7 +44,10 @@ class _OnlineListScreenState extends State<OnlineListScreen> with CommonPageFunc
         color: ListColors.LIST_BACKGROUND,
       ),
     );
-  }
+}
+_returnToHomeScreen(BuildContext context){
+    Navigator.popUntil(context,ModalRoute.withName('/')); 
+}
 
 
 
@@ -99,11 +110,7 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
                             if(element == MainListItemMenueStr.DELETE){
                               _deleteList(context, list);
                             }else if(element == MainListItemMenueStr.EDIT){
-                              //navigateToEditListScreen(context, list);
-                            }else if(element == MainListItemMenueStr.USE_AS_TEMPLATE){
-                              //BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.useListAsTemplate(list: list));
-                            }else if(element == MainListItemMenueStr.COPY_LIST_TO_CLIPOARD){
-                              //BlocProvider.of<ActivelistBloc>(context)..add(ActivelistEvent.copyListToClipBoard(list: list));
+                              navigateToEditListScreen(context, list);
                             }
                           },
                           itemBuilder: (context) {
@@ -126,24 +133,6 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
                                                         ],
                                                       )
                                           ),
-                                           new PopupMenuItem(
-                                                value: MainListItemMenueStr.USE_AS_TEMPLATE,
-                                                child: Row(
-                                                         children: <Widget>[
-                                                              Icon(Icons.receipt, color:ListColors.ICON_LIST_TO_TEMPLATE),
-                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.USE_AS_TEMPLATE, locale)}", style: ListColors.DEF_TEXT_STYLE),
-                                                        ],
-                                                      )
-                                          ),
-                                          new PopupMenuItem(
-                                                value: MainListItemMenueStr.COPY_LIST_TO_CLIPOARD,
-                                                child: Row(
-                                                         children: <Widget>[
-                                                              Icon(Icons.copy, color:ListColors.ICON_COPY_LIST_TO_CLIPBOARD),
-                                                              Text("  ${MainListItemMenueStr.buildLocalName(MainListItemMenueStr.COPY_LIST_TO_CLIPOARD, locale)}", style: ListColors.DEF_TEXT_STYLE),
-                                                        ],
-                                                      )
-                                          )
                                       ];
                           },
                         );
@@ -152,7 +141,17 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
   
 
   
- 
+ navigateToEditListScreen(BuildContext context, ActiveList list) {
+      BlocProvider.of<CreatelistBloc>(context).add(CreatelistEvent.editOnlineList(list: list));
+     Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => BlocProvider.value(
+                  value: BlocProvider.of<CreatelistBloc>(context),
+                  child: CreateListPage(BlocProvider.of<ActivelistBloc>(context), BlocProvider.of<TemplateBloc>(context)),
+                ),
+              ),
+      );
+   }
   
 
    _deleteList(BuildContext context, ActiveList list){
@@ -182,7 +181,8 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
   Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){
     final int listCount = listItems.length;
     
-   
+    listItems.sort((lp1, lp2) => lp1.position.compareTo(lp2.position));
+
      return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
                                                 child:_buildActiveListItem(context, list, listItems[i])
@@ -203,7 +203,8 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
               onDismissed: (direction){
                 //BlocProvider.of<ActivelistBloc>(context)..
                 //add(ActivelistEvent.deleteActiveListPosition(list: list, position: listPosition));
-                BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.deleteListItem(list: list, listItem: listPosition));
+                ActiveList opendList = list.copyWith(opened:true);
+                BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.deleteListItem(list: opendList, listItem: listPosition));
               },
               child: _buildListItemElement(listPosition),//ListTile(title: Text(listPosition.name, style: ListColors.DEF_TEXT_STYLE), ),
               background: _buildDismissBarItem(context, list, listPosition),

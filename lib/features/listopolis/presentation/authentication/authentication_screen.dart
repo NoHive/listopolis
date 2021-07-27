@@ -22,11 +22,11 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> with Common
       child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
           builder: (context, state){
             return state.map(
-              initial: (s) => _buildSimpleAuthGui(context, "Du bist noch nicht angemeldet"), 
+              initial: (s) => _buildSignInGui(context, "Du bist abgemeldet"), 
               waitingForService: (s) => showLoadingIndicator(), 
-              signedIn: (s) => _buildSimpleAuthGui(context, "Du wurdest erfolgreich angemeldet"),
-              signedOut: (s) => _buildSimpleAuthGui(context, "Du wurdest erfolgreich abgemeldet"),
-              error: (s) =>  _buildSimpleAuthGui(context, mapFailureToLocalizedString(s.failure)),
+              signedIn: (s) => _buildSignOutGui(context, "Du bist angemeldet"),
+              signedOut: (s) => _buildSignInGui(context, "Du bist abgemeldet"),
+              error: (s) =>  showAppError( mapFailureToLocalizedString(s.failure)),
             );
           },
         ),
@@ -34,42 +34,77 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> with Common
       ),
     );
   }
+
+  Widget _buildAppBar(BuildContext context){
+    return SingleChildScrollView(scrollDirection: Axis.horizontal, child:  Text("Anmelden", style: ListColors.DEF_TEXT_STYLE,));
+  }
   
   Widget _buildSignStatusTxt(BuildContext context, String msg){
     return SingleChildScrollView(scrollDirection: Axis.horizontal, child:  Text(msg, style: ListColors.DEF_TEXT_STYLE,));
   }
   Widget _buildSignInBtn(BuildContext context){
-      return MaterialButton(
-        onPressed: (){
-        BlocProvider.of<AuthenticationBloc>(context)..add(AuthenticationEvent.signInStarted());
-        },
-        child: Text("Mit Google Konto anmeldem", style: ListColors.DEF_TEXT_STYLE),
-        color: ListColors.DIALOG_BUTTON,
-      );
+    return IconButton(icon: Icon(Icons.login_rounded), 
+                      onPressed: () {
+                        BlocProvider.of<AuthenticationBloc>(context)..add(AuthenticationEvent.signInStarted());
+                      },
+                      color: ListColors.ICON_ACTIVE_LIST_CEATION_MODE,
+    );
+      // return MaterialButton(
+      //   onPressed: (){
+      //   BlocProvider.of<AuthenticationBloc>(context)..add(AuthenticationEvent.signInStarted());
+      //   },
+      //   child: Text("Mit Google Konto anmeldem", style: ListColors.DEF_TEXT_STYLE),
+      //   color: ListColors.DIALOG_BUTTON,
+      // );
   }
   Widget _buildSignOutBtn(BuildContext context){
-      return MaterialButton(
-        onPressed: (){
-        BlocProvider.of<AuthenticationBloc>(context)..add(AuthenticationEvent.signOutStarted());
-        },
-        child: Text("Google Konto abmeldem", style: ListColors.DEF_TEXT_STYLE),
-        color: ListColors.DIALOG_BUTTON,
-      );
+    return IconButton(icon: Icon(Icons.logout), 
+                      onPressed: () {
+                        BlocProvider.of<AuthenticationBloc>(context)..add(AuthenticationEvent.signOutStarted());
+                      }
+    );
+      // return MaterialButton(
+      //   onPressed: (){
+      //   BlocProvider.of<AuthenticationBloc>(context)..add(AuthenticationEvent.signOutStarted());
+      //   },
+      //   child: Text("Google Konto abmeldem", style: ListColors.DEF_TEXT_STYLE),
+      //   color: ListColors.DIALOG_BUTTON,
+      // );
   }
   
  
-  Widget _buildSimpleAuthGui(BuildContext context, String msg){
+  Widget _buildSignInGui(BuildContext context, String msg){
     return //Expanded(
       //flex: 1,
       //child:  
       Container(
-        color: Colors.red,
+        color: ListColors.BACKGROUND_DARKER,
         child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 
                 children: [
                   _buildSignInBtn(context),
+                  _buildSignStatusTxt(context, msg)
+                ],
+             ),
+         width: double.maxFinite,
+      
+      
+      
+    );
+  }
+   Widget _buildSignOutGui(BuildContext context, String msg){
+    return //Expanded(
+      //flex: 1,
+      //child:  
+      Container(
+        color: ListColors.BACKGROUND_DARKER,
+        child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                
+                children: [
                   _buildSignOutBtn(context),
                   _buildSignStatusTxt(context, msg)
                 ],

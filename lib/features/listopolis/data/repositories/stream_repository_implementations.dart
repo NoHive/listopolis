@@ -120,5 +120,18 @@ class FireStorePublicListsRepository with ListOrder implements IStreamRepository
         return left(Failure.serviceAccessFailed());
       }
   }
+
+  @override
+  Future<Either<Failure, Unit>> replaceActiveList(List<ActiveList> existingLists, ActiveList list, CreateListParameter changedList) async {
+     final kAndBLists = await _firebaseFirestore.publicLists();
+        
+      try{
+        ActiveList updatedList = changedList.convertToPreviousList(list);
+        await kAndBLists.activeListCollection.doc(list.id).update(ListOrder.toStdTypeJson(updatedList.toJson()));            
+        return Future.value(right(unit));
+      }on PlatformException catch(_){
+        return left(Failure.serviceAccessFailed());
+      }
+  }
   
 }
