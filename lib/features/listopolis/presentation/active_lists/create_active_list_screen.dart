@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/authentication/authentication_bloc.dart';
+import 'package:listopolis/features/listopolis/application/connectivity/connectivity_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/list_creation_mode.dart';
@@ -233,15 +234,20 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
            MaterialButton(
              onPressed: (){
                AuthenticationBloc authBloc = BlocProvider.of<AuthenticationBloc>(context);
-               if(authBloc.state == AuthenticationState.signedIn()){
-                _acceptOnlineListChanges(context);
-                Navigator.pop(context);
-                _navigateToOnlineListScreen(context);
+               ConnectivityBloc connectivityBloc = BlocProvider.of<ConnectivityBloc>(context);
+               if(connectivityBloc.state == ConnectivityState.online()){
+                  if(authBloc.state == AuthenticationState.signedIn()){
+                    _acceptOnlineListChanges(context);
+                    Navigator.pop(context);
+                    _navigateToOnlineListScreen(context);
+                  }
+                  else{
+                    Navigator.pop(context);
+                    _navigateToAuthenticationScreen(context);
+                  }
+               }else{
+                 showOfflineDialog(context);
                }
-              else{
-                Navigator.pop(context);
-                _navigateToAuthenticationScreen(context);
-              }
               
               //Navigator.of(context).pop();
               

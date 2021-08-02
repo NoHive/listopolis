@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
 import 'package:listopolis/features/listopolis/application/active_lists/activelist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/authentication/authentication_bloc.dart';
+import 'package:listopolis/features/listopolis/application/connectivity/connectivity_bloc.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
@@ -150,27 +151,40 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
    }
    navigateToOnlineListsScreen(BuildContext context) {
      
-     BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.listViewRequested());
-     Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => BlocProvider.value(
-                  value: BlocProvider.of<OnlinelistsBloc>(context),
-                  child: OnlineListScreen(),
+     ConnectivityBloc connectionCheck = BlocProvider.of<ConnectivityBloc>(context);
+
+      if(connectionCheck.state == ConnectivityState.online()){
+
+      BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.listViewRequested());
+      Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => BlocProvider.value(
+                    value: BlocProvider.of<OnlinelistsBloc>(context),
+                    child: OnlineListScreen(),
+                  ),
                 ),
-              ),
-      );
+        );
+     }else{
+       showOfflineDialog(context);
+     }
    }
    navigateToAuthenticationScreen(BuildContext context) {
      //BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.authenticateUser());
      //BlocProvider.of<OnlinelistsBloc>(context)..add(OnlinelistsEvent.listViewRequested());
-     Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => BlocProvider.value(
-                  value: BlocProvider.of<AuthenticationBloc>(context),
-                  child: AuthenticationScreen(),
-                ),
-              ),
-      );
+      ConnectivityBloc connectionCheck = BlocProvider.of<ConnectivityBloc>(context);
+
+      if(connectionCheck.state == ConnectivityState.online()){
+        Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => BlocProvider.value(
+                      value: BlocProvider.of<AuthenticationBloc>(context),
+                      child: AuthenticationScreen(),
+                    ),
+                  ),
+        );
+      }else{
+        showOfflineDialog(context);
+      }
    }
 
   _onSelectMenueItem(String choice){
@@ -200,6 +214,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         print("not supported");
       }
   }
+
+  
 
   Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
     lists.sort((l1, l2) => l1.position.compareTo(l2.position));

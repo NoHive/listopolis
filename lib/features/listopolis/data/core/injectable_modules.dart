@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:connectivity/connectivity.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/local_storage/shared_preferences_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -42,4 +43,9 @@ abstract class GoogleSignInModule{
 @module
 abstract class FirebaseAuthModule{
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
+}
+
+@module
+abstract class ConnectivityModule{
+  Connectivity get connectivity => Connectivity();
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
@@ -43,4 +45,8 @@ abstract class IAuthRepository{
   Future<Either<Failure, bool>> isSignedIn();
   Future<Either<Failure, Unit>> signIn();
   Future<Either<Failure, Unit>> signOut();
+}
+
+abstract class IConnectivityChecker{
+  StreamSubscription registerForConnectivityUpdate(Function _callWhenNoConnection, Function _callWhenConnection);
 }

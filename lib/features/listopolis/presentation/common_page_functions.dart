@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:listopolis/core/error/failures.dart';
+import 'package:listopolis/features/listopolis/presentation/color_constants.dart';
 
 mixin CommonPageFunctions{
   Widget showAppError(String showMessage){
@@ -25,5 +26,16 @@ mixin CommonPageFunctions{
       userAuthentificationFailed: (f) => "Die Authentifizierung des Benutzers ist fehlgeschlagen!",
       );
       
+  }
+
+   showOfflineDialog(BuildContext context){    
+    showDialog(context: context,
+    builder: (context) {
+      return AlertDialog(
+      content: Text("Dein Smartphone ist nicht mit dem Internet verbunden!", style: ListColors.DEF_TEXT_STYLE),
+      backgroundColor: ListColors.DIALOG_BACKGROUND,
+      );
+    },
+    );
   }
 }
