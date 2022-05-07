@@ -18,118 +18,123 @@ part 'activelist_bloc.freezed.dart';
 @injectable
 class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   final IRepository repository;
-  ActivelistBloc({required this.repository} ) : super(_Initial());
-
-  @override
-  Stream<ActivelistState> mapEventToState(
-    ActivelistEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
-    yield* event.map(
-    load: (e) async*{
-      yield ActivelistState.loading();
+  ActivelistBloc({required this.repository} ) : super(_Initial()){
+    on<_LoadLists>((event, emit) => _emit_LoadList(event, emit));
+    on<_LoadForReorder>((event, emit) => _emit_LoadForReorder(event, emit));
+    on<_InsertNewList>((event, emit) => _emit_InsertNewList(event, emit));
+    on<_DeleteActiveListPosition>((event, emit) => _emit_DeleteActiveListPosition(event, emit));
+    on<_DeleteActiveList>((event, emit) => _emit_DeleteActiveList(event, emit));
+    on<_ReplaceActiveList>((event, emit) => _emit_ReplaceActiveList(event, emit));
+    on<_BackupData>((event, emit) => _emit_BackupData(event, emit));
+    on<_LoadDataFromBackup>((event, emit) => _emit_LoadDataFromBackup(event, emit));
+    on<_UseListAsTemplate>((event, emit) => _emit_UseListAsTemplate(event, emit));
+    on<_ChangeListPosition>((event, emit) => _emit_ChangeListPosition(event, emit));
+    on<_CopyListToClipBoard>((event, emit) => _emit_CopyListToClipBoard(event, emit));
+    on<_CreateListFromClipBoard>((event, emit) => _emit_CreateListFromClipBoard(event, emit));
+  }
+  _emit_LoadList(_LoadLists e, Emitter<ActivelistState> emit) async{
+     emit(ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    deleteActiveListPosition: (e) async*{
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_LoadForReorder(_LoadForReorder e, Emitter<ActivelistState> emit) async{
+       emit(ActivelistState.loading());
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
+      
+      emit(activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.listOrderChanged(userLists: r)));
+  }
+  _emit_InsertNewList(_InsertNewList e, Emitter<ActivelistState> emit) async{
+      emit(ActivelistState.loading());
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.insertActiveList(e.listParameter);
+      
+      emit( activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_DeleteActiveListPosition(_DeleteActiveListPosition e, Emitter<ActivelistState> emit) async{
      // yield ActivelistState.loading();
       Either<Failure, List<ActiveList>> activeListsResult = await repository.deleteActiveListPosition(e.list, e.position);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    insertNewList: (e) async*{
-      yield ActivelistState.loading();
-      Either<Failure, List<ActiveList>> activeListsResult = await repository.insertActiveList(e.listParameter);
-      
-      yield activeListsResult.fold(
-        (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    deleteActiveList: (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_DeleteActiveList(_DeleteActiveList e, Emitter<ActivelistState> emit) async{
+     emit( ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.deleteActiveList(e.list);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    replaceActiveList: (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_ReplaceActiveList(_ReplaceActiveList e, Emitter<ActivelistState> emit) async{
+     emit( ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.replaceActiveList(e.list, e.listParameter);
       
-      yield activeListsResult.fold(
+      emit(activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    loadDataFromBackup: (e) async*{
-      yield ActivelistState.loading();
-      Either<Failure, List<ActiveList>> activeListsResult = await repository.loadUserDataFromBackup();
-      
-      yield activeListsResult.fold(
-        (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    backupData: (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_BackupData(_BackupData e, Emitter<ActivelistState> emit) async{
+     emit( ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.backupUserData();
       
-      yield activeListsResult.fold(
+      emit(activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    useListAsTemplate: (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_LoadDataFromBackup(_LoadDataFromBackup e, Emitter<ActivelistState> emit) async{
+      emit( ActivelistState.loading());
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.loadUserDataFromBackup();
+      
+      emit( activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_UseListAsTemplate(_UseListAsTemplate e, Emitter<ActivelistState> emit) async{
+       emit(ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.createTemlateFromList(e.list);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    changeListPosition: (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_ChangeListPosition(_ChangeListPosition e, Emitter<ActivelistState> emit) async{
+       emit(ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.changeListPosition(e.list, e.oldIndex, e.newIndex);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.listOrderChanged(userLists: r));
-    },
-    loadForReorder: (e) async*{
-      yield ActivelistState.loading();
-      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
-      
-      yield activeListsResult.fold(
-        (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.listOrderChanged(userLists: r));
-    },
-    copyListToClipBoard: (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.listOrderChanged(userLists: r)));
+  }
+  _emit_CopyListToClipBoard(_CopyListToClipBoard e, Emitter<ActivelistState> emit) async{
+        emit(ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
       
       ActiveList listToCopy = e.list;
       String encodedString = json.encode(listToCopy.toJson());
       await FlutterClipboard.copy(encodedString);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    createListFromClipBoard:  (e) async*{
-      yield ActivelistState.loading();
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  _emit_CreateListFromClipBoard(_CreateListFromClipBoard e, Emitter<ActivelistState> emit) async{
+      emit( ActivelistState.loading());
       String encodedString = await FlutterClipboard.paste();
       Either<Failure, List<ActiveList>> activeListsResult = await repository.createListFromExternalJson(encodedString);
 
       await FlutterClipboard.copy(" ");
 
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
-        (r) => ActivelistState.loaded(userLists: r));
-    },
-    );
-    
+        (r) => ActivelistState.loaded(userLists: r)));
   }
+
+  
 }

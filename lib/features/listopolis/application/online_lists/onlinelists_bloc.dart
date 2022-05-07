@@ -18,22 +18,25 @@ part 'onlinelists_bloc.freezed.dart';
 @injectable
 class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
   final IStreamRepository onlineRepository;
-  
-  
-  OnlinelistsBloc(this.onlineRepository) : super(_Initial());
   StreamSubscription<Either<Failure, List<ActiveList>>>? streamSubscription;
-
-  @override
-  Stream<OnlinelistsState> mapEventToState(
-    OnlinelistsEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
-    yield* event.map(
-      started: (e) async* { 
-          yield Loading();
-      }, 
-      listViewRequested: (e) async* { 
-        yield Loading();
+  
+  OnlinelistsBloc(this.onlineRepository) : super(_Initial()){
+    on<_Started>((event, emit) => _emit_Started(event, emit));
+    on<ListViewRequested>((event, emit) => _emitListViewRequested(event, emit));
+    on<ListViewReceived>((event, emit) => _emitListViewReceived(event, emit));
+    on<_InsertNewList>((event, emit) => _emit_InsertNewList(event, emit));
+    on<_InsertNewListIntoExisting>((event, emit) => _emit_InsertNewListIntoExisting(event, emit));
+    on<_DeleteListItem>((event, emit) => _emit_DeleteListItem(event, emit));
+    on<_DeleteListItemFromExisting>((event, emit) => _emit_DeleteListItemFromExisting(event, emit));
+    on<_DeleteList>((event, emit) => _emit_DeleteList(event, emit));
+    on<_OverwriteList>((event, emit) => _emit_OverwriteList(event, emit));
+    on<_DeleteListFromExisting>((event, emit) => _emit_DeleteListFromExisting(event, emit));
+  }
+  _emit_Started(_Started e, Emitter<OnlinelistsState> emit) async{
+      emit( Loading());
+  }
+  _emitListViewRequested(ListViewRequested e, Emitter<OnlinelistsState> emit) async{
+       emit( Loading());
         
         await streamSubscription?.cancel();
         
@@ -42,98 +45,76 @@ class OnlinelistsBloc extends Bloc<OnlinelistsEvent, OnlinelistsState> {
                   add(ListViewReceived(serverListContend: listsOrFailure));
           }
         );
-        
-      },
-      listViewReceived: (e) async* { 
-            yield Loading();
-            yield e.serverListContend.fold(
+  }
+  _emitListViewReceived(ListViewReceived e, Emitter<OnlinelistsState> emit) async{
+        emit( Loading());
+            e.serverListContend.fold(
                       (failure) => Error(failure: failure), 
                       (activeLists) => Loaded(onlineLists: activeLists ) 
             );
-      },
-      insertNewList: (e) async* { 
-         yield Loading();
+  }
+  _emit_InsertNewList(_InsertNewList e, Emitter<OnlinelistsState> emit) async{
+        emit(Loading());
          Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
          add(OnlinelistsEvent.insertNewListIntoExisting(serverListContend: currentLists, aNewList: e.aNewList));
-        // await streamSubscription?.cancel();
-        // streamSubscription = onlineRepository.getActiveLists().listen(
-        //     (listsOrFailure) { 
-        //           add(OnlinelistsEvent.insertNewListIntoExisting(serverListContend: listsOrFailure, aNewList: e.aNewList));
-        //   }
-        // );
-      },
-      insertNewListIntoExisting: (e) async* { 
-        yield Loading();
-        yield e.serverListContend.fold(
+  }
+  _emit_InsertNewListIntoExisting(_InsertNewListIntoExisting e, Emitter<OnlinelistsState> emit) async{
+      emit(Loading());
+        emit( e.serverListContend.fold(
           (aFailure) => OnlinelistsState.error(failure: aFailure), 
           (lists) {
             onlineRepository.insertActiveList(lists, e.aNewList);
             add(OnlinelistsEvent.listViewRequested());
             return OnlinelistsState.loading();
-          });
-      },
-      deleteListItem: (e) async* {
-          yield Loading();
+          }));
+  }
+  _emit_DeleteListItem(_DeleteListItem e, Emitter<OnlinelistsState> emit) async{
+      emit(Loading());
           Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
           add(OnlinelistsEvent.deleteListItemFromExisting(serverListContend: currentLists, list: e.list, listItem: e.listItem));
-        // await streamSubscription?.cancel();
-        // streamSubscription = onlineRepository.getActiveLists().listen(
-        //     (listsOrFailure) { 
-        //           add(OnlinelistsEvent.deleteListItemFromExisting(serverListContend: listsOrFailure, list: e.list, listItem: e.listItem));
-        //   }
-        // );
-      },
-      deleteListItemFromExisting: (e) async* {
-        yield Loading();
-        yield e.serverListContend.fold(
+  }
+  _emit_DeleteListItemFromExisting(_DeleteListItemFromExisting e, Emitter<OnlinelistsState> emit) async{
+        emit(Loading());
+        emit( e.serverListContend.fold(
           (aFailure) => OnlinelistsState.error(failure: aFailure), 
           (lists) {
             onlineRepository.deleteActiveListPosition(lists, e.list, e.listItem);
             add(OnlinelistsEvent.listViewRequested());
             return OnlinelistsState.loading();
-          });
-      },
-      deleteList: (e) async* {
-        yield Loading();
+          }));
+  }
+  _emit_DeleteList(_DeleteList e, Emitter<OnlinelistsState> emit) async{
+     emit(Loading());
         Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
          add(OnlinelistsEvent.deleteListFromExisting(serverListContend: currentLists, list: e.list));
-      },
-      deleteListFromExisting: (e) async* {
-        yield Loading();
-        yield e.serverListContend.fold(
+  }
+  _emit_OverwriteList(_OverwriteList e, Emitter<OnlinelistsState> emit) async{
+         emit(Loading());
+        Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
+        print("currentLists read");
+        if(currentLists.isLeft()){
+           currentLists.leftMap((fail) async* {emit( OnlinelistsState.error(failure: fail));});
+        }else{
+          List<ActiveList> listsOnServer = currentLists.getOrElse(() { throw Exception();});
+          Either<Failure, Unit> replaceResult = await onlineRepository.replaceActiveList(listsOnServer,  e.list, e.changedList);
+              emit( replaceResult.fold(
+                (fail) => OnlinelistsState.error(failure: fail), 
+                (r) => OnlinelistsState.loading()
+              ));
+              add(OnlinelistsEvent.listViewRequested());
+        }
+  }
+  _emit_DeleteListFromExisting(_DeleteListFromExisting e, Emitter<OnlinelistsState> emit) async{
+       emit(Loading());
+        emit( e.serverListContend.fold(
           (aFailure) => OnlinelistsState.error(failure: aFailure), 
           (lists) {
             onlineRepository.deleteActiveList(lists, e.list);
             add(OnlinelistsEvent.listViewRequested());
             return OnlinelistsState.loading();
-          });
-      },
-      overwriteList: (e) async* {
-        yield Loading();
-        Either<Failure, List<ActiveList>> currentLists = await onlineRepository.getCurrentActiveLists();
-        print("currentLists read");
-        if(currentLists.isLeft()){
-           currentLists.leftMap((fail) async* {yield OnlinelistsState.error(failure: fail);});
-        }else{
-          List<ActiveList> listsOnServer = currentLists.getOrElse(() { throw Exception();});
-          Either<Failure, Unit> replaceResult = await onlineRepository.replaceActiveList(listsOnServer,  e.list, e.changedList);
-              yield replaceResult.fold(
-                (fail) => OnlinelistsState.error(failure: fail), 
-                (r) => OnlinelistsState.loading()
-              );
-          //  currentLists.map((lists) async* {
-          //     Either<Failure, Unit> replaceResult = await onlineRepository.replaceActiveList(lists,  e.list, e.changedList);
-          //     yield replaceResult.fold(
-          //       (fail) => OnlinelistsState.error(failure: fail), 
-          //       (r) => OnlinelistsState.loading()
-          //     );
-              add(OnlinelistsEvent.listViewRequested());
-              
-          
-        }
-      },
-      );
+          }));
   }
+
   @override
   Future<void> close() async {
     // TODO: implement close

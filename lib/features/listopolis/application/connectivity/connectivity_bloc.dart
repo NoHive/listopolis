@@ -14,33 +14,27 @@ class ConnectivityBloc extends Bloc<ConnectivityEvent, ConnectivityState> {
   final IConnectivityChecker _connectivityChecker;
   StreamSubscription? checkerSubscription;
   ConnectivityBloc(IConnectivityChecker aConnectivityChecker):  _connectivityChecker=aConnectivityChecker, super(_Initial()){
+   
    checkerSubscription = _connectivityChecker.registerForConnectivityUpdate(_callWhenNoConnection, _callWhenConnection);
+    on<ConnectivityEvent>(_onEvent);
   }
   
+  void _onEvent(ConnectivityEvent e, Emitter<ConnectivityState> emit){
+    e.when(
+          started: () => emit(ConnectivityState.initial()), 
+          goOnline: () => emit(ConnectivityState.online()), 
+          goOffline: () => emit(ConnectivityState.offline())
+    );
+  }
+
   _callWhenNoConnection() {
+    
     add(ConnectivityEvent.goOffline());
   }
   _callWhenConnection(){
     add(ConnectivityEvent.goOnline());
   }
 
-  @override
-  Stream<ConnectivityState> mapEventToState(
-    ConnectivityEvent event,
-  ) async* {
-    // TODO: implement mapEventToState
-     yield* event.map(
-      started: (e) async* { 
-          yield ConnectivityState.initial();
-      }, 
-      goOffline:  (e) async* { 
-          yield ConnectivityState.offline();
-      }, 
-      goOnline:  (e) async* { 
-          yield ConnectivityState.online();
-      }, 
-     );
-  }
   @override
   Future<void> close() async {
     // TODO: implement close

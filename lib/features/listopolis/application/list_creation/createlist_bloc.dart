@@ -38,15 +38,24 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
   bool isTemplateCreation() => ListEditMode.templateCreation() == editMode;
   bool isListTransfer() => ListEditMode.transferTemplateToList() == editMode;
 
-  CreatelistBloc({required this.repository}) : super(_Initial());
+  CreatelistBloc({required this.repository}) : super(_Initial()){
+    on<_Started>((event, emit) => _emitWhenStarted(event, emit));
+    on<_StartListCreation>((event, emit) => _emitListCreation(event, emit));
+    on<_ChangeList>((event, emit) => _emitChangeList(event, emit));
+    on<_StartTemplateCreation>((event, emit) => _emitStartTemplateCreation(event, emit));
+    on<_SwitchToCreation>((event, emit) => _emitSwitchViewToCreation(event, emit));
+    on<_SwitchToReorder>((event, emit) => _emitSwitchViewToReorder(event, emit));
+    on<_AddListPositionAfter>((event, emit) => _emitAddListPositionAfter(event, emit));
+    on<_RemoveListPosition>((event, emit) => _emitRemoveListPosition(event, emit));
+    on<_ChangeItemOrder>((event, emit) => _emitchangeItemOrder(event, emit));
+    on<_EditActiveList>((event, emit) => _emitEditActiveList(event, emit));
+    on<_EditOnlineList>((event, emit) => _emitEditOnlineList(event, emit));
+    on<_EditTemplate>((event, emit) => _emitEditTemplate(event, emit));
+    on<_UseTemplateAsList>((event, emit) => _emitUseTemplateAsList(event, emit));
+  }
 
-  @override
-  Stream<CreatelistState> mapEventToState(
-    CreatelistEvent event,
-  ) async* {
-    yield* event.map(
-    started : (e) async*{
-       createdList = null;
+  _emitWhenStarted(_Started e, Emitter<CreatelistState> emit) async{
+      createdList = null;
        Either<Failure, List<ActiveList>> lists = await repository.getActiveLists();
        lists.fold(
          (failure) {}, 
@@ -57,11 +66,10 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
          }
        );
        
-        yield _Initial();
-    },
-    startListCreation: (e) async*{
-      
-      editMode = ListEditMode.listCreation();
+        emit(_Initial());
+  }
+  _emitListCreation(_StartListCreation event, Emitter<CreatelistState> emit) async {
+     editMode = ListEditMode.listCreation();
       CreateListParameter alistCreation = CreateListParameter(
                                     listName:  ""
                                   , type: ListType.remember()
@@ -70,9 +78,17 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
       
         alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
         listCreation = alistCreation;
-        yield _ListChanged(creationParam:  alistCreation);
-    }, 
-     startTemplateCreation: (e) async*{
+        emit( _ListChanged(creationParam:  alistCreation));
+  }
+
+   _emitChangeList(_ChangeList e, Emitter<CreatelistState> emit) async {
+      emit( _Initial());
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+        emit( _ListChanged(creationParam:  alistCreation));
+   }
+
+  _emitStartTemplateCreation(_StartTemplateCreation e, Emitter<CreatelistState> emit) async* {
       editMode = ListEditMode.templateCreation();
       
       CreateListParameter alistCreation = CreateListParameter(
@@ -83,92 +99,95 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
       alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
       listCreation = alistCreation;
       yield _ListChanged(creationParam:  alistCreation);
-    }, 
-    changeList: (e) async*{
-      yield _Initial();
-        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
-        listCreation = alistCreation;
-        yield _ListChanged(creationParam:  alistCreation);
-    },
-    switchViewToCreation:  (e) async*{
-      yield _Initial();
+  }
+
+   _emitSwitchViewToCreation(_SwitchToCreation e, Emitter<CreatelistState> emit) async{
+      emit( _Initial());
         CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
         listCreation = alistCreation;
         
-        yield _SwitchedToCreate(creationParam:  alistCreation);
-    },
-    switchViewToReorder:  (e) async*{
-      yield _Initial();
+        emit(_SwitchedToCreate(creationParam:  alistCreation));
+  }
+
+   _emitSwitchViewToReorder(_SwitchToReorder e, Emitter<CreatelistState> emit) async {
+     emit( _Initial());
          CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
         listCreation = alistCreation;
-        yield _SwitchedToReorder(creationParam:  alistCreation);
-    },
-    addListPositionAfter: (e) async*{
-      yield _Initial();
+        emit( _SwitchedToReorder(creationParam:  alistCreation));
+  }
+
+  _emitAddListPositionAfter(_AddListPositionAfter e, Emitter<CreatelistState> emit) async{
+     emit( _Initial());
         CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
         listCreation = alistCreation;
 
         alistCreation.addListPositionAfterIndex(e.index);
-        yield _ListChanged(creationParam:  alistCreation);
-    },
-    changeListItemOrder:  (e) async*{
-      yield _Initial();
-        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
-        listCreation = alistCreation;
+        emit( _ListChanged(creationParam:  alistCreation));
+  }
 
-        alistCreation.reorderListPosition(e.oldIndex, e.newIndex);
-        yield _SwitchedToReorder(creationParam:  alistCreation);
-    },
-    removeListPosition:  (e) async*{
-      yield _Initial();
+   _emitRemoveListPosition(_RemoveListPosition e, Emitter<CreatelistState> emit) async {
+     emit( _Initial());
         CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
         listCreation = alistCreation;
         if(alistCreation.listitems.length > 1)
           alistCreation.reoveListPositionAtIndex(e.index);
-        yield _SwitchedToCreate(creationParam:  alistCreation);
-    },
-    editActiveList: (e) async*{
-      yield _Initial();
+        emit( _SwitchedToCreate(creationParam:  alistCreation));
+  }
+
+   _emitchangeItemOrder(_ChangeItemOrder e, Emitter<CreatelistState> emit) async {
+     emit(_Initial());
+        CreateListParameter alistCreation = CreateListParameter.asCopy(e.listParam);
+        listCreation = alistCreation;
+
+        alistCreation.reorderListPosition(e.oldIndex, e.newIndex);
+        emit( _SwitchedToReorder(creationParam:  alistCreation));
+  }
+
+   _emitEditActiveList(_EditActiveList e, Emitter<CreatelistState> emit) async{
+     emit( _Initial());
        ListEditMode aEditMode = ListEditMode.listEditing();
         ActiveList aEditList = e.list;
         editMode = aEditMode;
         editList = aEditList;
         CreateListParameter alistCreation = CreateListParameter.asEditFromList(aEditList);
         listCreation = alistCreation;
-        yield _SwitchedToCreate(creationParam:  alistCreation);
-    },
-    editOnlineList: (e) async*{
-      yield _Initial();
+        emit(_SwitchedToCreate(creationParam:  alistCreation));
+  }
+
+   _emitEditOnlineList(_EditOnlineList e, Emitter<CreatelistState> emit) async{
+    emit(_Initial());
        ListEditMode aEditMode = ListEditMode.onlinelistEditing();
         ActiveList aEditList = e.list;
         editMode = aEditMode;
         editList = aEditList;
         CreateListParameter alistCreation = CreateListParameter.asEditFromList(aEditList);
         listCreation = alistCreation;
-        yield _SwitchedToCreate(creationParam:  alistCreation);
-    } ,
-    editTemplate:  (e) async*{
-      yield _Initial();
+        emit( _SwitchedToCreate(creationParam:  alistCreation));
+  }
+
+   _emitEditTemplate(_EditTemplate e, Emitter<CreatelistState> emit) async{
+    emit(_Initial());
         ListEditMode aEditMode = ListEditMode.templateEditing();
         editMode = aEditMode;
         ListTemplate aEditTemplate = e.template;
         editTemplate = aEditTemplate;
         CreateListParameter aListCreation = CreateListParameter.asEditFromTemplate(aEditTemplate);
         listCreation = aListCreation;
-        yield _SwitchedToCreate(creationParam:  aListCreation);
-    },
-    useTemplateAsList:  (e) async*{
-      yield _Initial();
+        emit( _SwitchedToCreate(creationParam:  aListCreation));
+  }
+
+   _emitUseTemplateAsList(_UseTemplateAsList e, Emitter<CreatelistState> emit) async{
+     emit( _Initial());
         ListEditMode aEditMode = ListEditMode.transferTemplateToList();
         editMode = aEditMode;
         ListTemplate aEditTemplate = e.template;
         
         CreateListParameter aListCreation = CreateListParameter.asEditFromTemplate(aEditTemplate);
         listCreation = aListCreation;
-        yield _SwitchedToCreate(creationParam:  aListCreation);
-    },
-    );
-    
-    // TODO: implement mapEventToState
+        emit( _SwitchedToCreate(creationParam:  aListCreation));
   }
+
+  
 }
+
+

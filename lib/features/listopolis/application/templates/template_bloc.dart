@@ -16,69 +16,73 @@ part 'template_bloc.freezed.dart';
 @injectable
 class TemplateBloc extends Bloc<TemplateEvent, TemplateState> {
   final IRepository repository;
-  TemplateBloc({required this.repository}) : super(_Initial());
+  TemplateBloc({required this.repository}) : super(_Initial()){
+    on<_LoadTemplates>((event, emit) => _emit_LoadTemplates(event, emit));
+    on<_LoadTemplatesForReorder>((event, emit) => _emit_LoadTemplatesForReorder(event, emit));
+    on<_InsertNewTemplate>((event, emit) => _emit_InsertNewTemplate(event, emit));
+    on<_DeleteTemplatePosition>((event, emit) => _emit_DeleteTemplatePosition(event, emit));
+    on<_DeleteTemplate>((event, emit) => _emit_DeleteTemplate(event, emit));
+    on<_ReplaceTemplate>((event, emit) => _emit_ReplaceTemplate(event, emit));
+    on<_ChangeTemplatePosition>((event, emit) => _emit_ChangeTemplatePosition(event, emit));
+  }
 
-  @override
-  Stream<TemplateState> mapEventToState(
-    TemplateEvent event,
-  ) async*{ 
-    yield* event.map(
-    load: (e) async*{
-      yield TemplateState.loading();
+  
+
+  _emit_LoadTemplates(_LoadTemplates e, Emitter<TemplateState> emit) async{
+     emit( TemplateState.loading());
       Either<Failure, List<ListTemplate>> activeListsResult = await repository.getTemplates();
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.loaded(userTemplates: r));
-    },
-    deleteTemplatePosition: (e) async*{
-     // yield ActivelistState.loading();
-      Either<Failure, List<ListTemplate>> activeListsResult = await repository.deleteTemplatePosition(e.list, e.position);
+        (r) => TemplateState.loaded(userTemplates: r)));
+  }
+  _emit_LoadTemplatesForReorder(_LoadTemplatesForReorder e, Emitter<TemplateState> emit) async{
+     emit( TemplateState.loading());
+      Either<Failure, List<ListTemplate>> activeListsResult = await repository.getTemplates();
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.loaded(userTemplates: r));
-    },
-    insertNewTemplate: (e) async*{
-      yield TemplateState.loading();
+        (r) => TemplateState.templateOrderChanged(userTemplates: r)));
+  }
+  _emit_InsertNewTemplate(_InsertNewTemplate e, Emitter<TemplateState> emit) async{
+     emit(TemplateState.loading());
       Either<Failure, List<ListTemplate>> activeListsResult = await repository.insertTemplate(e.listParameter);
       
-      yield activeListsResult.fold(
+     emit(activeListsResult.fold(
         (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.loaded(userTemplates: r));
-    },
-    deleteTemplate: (e) async*{
-      yield TemplateState.loading();
+        (r) => TemplateState.loaded(userTemplates: r)));
+  }
+  _emit_DeleteTemplatePosition(_DeleteTemplatePosition e, Emitter<TemplateState> emit) async{
+      Either<Failure, List<ListTemplate>> activeListsResult = await repository.deleteTemplatePosition(e.list, e.position);
+      
+      emit(activeListsResult.fold(
+        (l) => TemplateState.error(failure: l), 
+        (r) => TemplateState.loaded(userTemplates: r)));
+  }
+  _emit_DeleteTemplate(_DeleteTemplate e, Emitter<TemplateState> emit) async*{
+     emit(TemplateState.loading());
       Either<Failure, List<ListTemplate>> activeListsResult = await repository.deleteTemplate(e.list);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.loaded(userTemplates: r));
-    },
-    replaceTemplate: (e) async*{
-      yield TemplateState.loading();
+        (r) => TemplateState.loaded(userTemplates: r)));
+  }
+  _emit_ReplaceTemplate(_ReplaceTemplate e, Emitter<TemplateState> emit) async{
+      emit(TemplateState.loading());
       Either<Failure, List<ListTemplate>> activeListsResult = await repository.replaceTemplate(e.list, e.listParameter);
       
-      yield activeListsResult.fold(
+      emit( activeListsResult.fold(
         (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.loaded(userTemplates: r));
-    },
-    changeTemplatePosition: (e) async*{
-      yield TemplateState.loading();
+        (r) => TemplateState.loaded(userTemplates: r)));
+  }
+  _emit_ChangeTemplatePosition(_ChangeTemplatePosition e, Emitter<TemplateState> emit) async{
+     emit(TemplateState.loading());
       Either<Failure, List<ListTemplate>> activeListsResult = await repository.changeTemplatePosition(e.template, e.oldIndex, e.newIndex);
       
-      yield activeListsResult.fold(
+      emit(activeListsResult.fold(
         (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.templateOrderChanged(userTemplates: r));
-    },
-    loadTemplatesForReorder: (e) async*{
-      yield TemplateState.loading();
-      Either<Failure, List<ListTemplate>> activeListsResult = await repository.getTemplates();
-      
-      yield activeListsResult.fold(
-        (l) => TemplateState.error(failure: l), 
-        (r) => TemplateState.templateOrderChanged(userTemplates: r));
-    },
-    );
+        (r) => TemplateState.templateOrderChanged(userTemplates: r)));
   }
+
+
 }
