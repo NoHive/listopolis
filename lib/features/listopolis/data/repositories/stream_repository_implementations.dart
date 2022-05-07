@@ -83,7 +83,7 @@ class FireStorePublicListsRepository with ListOrder implements IStreamRepository
       .map((snapshot) => right<Failure, List<ActiveList>>(
             snapshot.docs.map((doc) => ActiveList.fromJson(doc.data())).toList()
         ),
-      ).onErrorReturnWith((error) => left(Failure.serviceAccessFailed()));
+      ).onErrorReturnWith((obj, error) => left(Failure.serviceAccessFailed()));
 
       // TODO: implement getActiveLists
       //throw UnimplementedError();
