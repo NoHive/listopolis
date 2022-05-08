@@ -224,7 +224,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
           else if(createListBloc.isTemplateEdit())
             _returnToPreviousScreen(context);
           else if(createListBloc.isListTransfer())
-            _returnToListScreen(context)(context);
+            _returnToListScreen(context);
           else if(createListBloc.editMode == ListEditMode.onlinelistEditing())
             _returnToPreviousScreen(context);
           },
@@ -612,5 +612,5 @@ class CreateListPageStrings implements ListopolisString{
   static const LIST_NAME = "Listen-Name";
   static const LIST_TYPE = "Listen-Typ";
   static const LIST_POSITIONING = "Einfügen";
-  static const LIST_POSITION = "Listenposition";
+  static const LIST_POSITION = "LP";
 }

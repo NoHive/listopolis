@@ -59,7 +59,7 @@ class TemplateBloc extends Bloc<TemplateEvent, TemplateState> {
         (l) => TemplateState.error(failure: l), 
         (r) => TemplateState.loaded(userTemplates: r)));
   }
-  _emit_DeleteTemplate(_DeleteTemplate e, Emitter<TemplateState> emit) async*{
+  _emit_DeleteTemplate(_DeleteTemplate e, Emitter<TemplateState> emit) async{
      emit(TemplateState.loading());
       Either<Failure, List<ListTemplate>> activeListsResult = await repository.deleteTemplate(e.list);
       

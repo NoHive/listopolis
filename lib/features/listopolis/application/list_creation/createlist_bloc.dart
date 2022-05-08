@@ -88,7 +88,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
         emit( _ListChanged(creationParam:  alistCreation));
    }
 
-  _emitStartTemplateCreation(_StartTemplateCreation e, Emitter<CreatelistState> emit) async* {
+  _emitStartTemplateCreation(_StartTemplateCreation e, Emitter<CreatelistState> emit) async {
       editMode = ListEditMode.templateCreation();
       
       CreateListParameter alistCreation = CreateListParameter(
@@ -98,7 +98,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
       );
       alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
       listCreation = alistCreation;
-      yield _ListChanged(creationParam:  alistCreation);
+      emit(_ListChanged(creationParam:  alistCreation));
   }
 
    _emitSwitchViewToCreation(_SwitchToCreation e, Emitter<CreatelistState> emit) async{
