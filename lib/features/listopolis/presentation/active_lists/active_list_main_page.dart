@@ -335,11 +335,11 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             listBloc.add(ActivelistEvent.loadDataFromBackup());
             Navigator.of(context).pop();
           },
-              child: Text("Ja, Daten überschreiben", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ja, Daten überschreiben", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);},
-              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           )
       ],
@@ -399,11 +399,11 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             listBloc.add(ActivelistEvent.deleteActiveList(list: list));
             Navigator.of(context).pop();
           },
-              child: Text("Ja, Liste löschen", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ja, Liste löschen", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);},
-              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           )
       ],

@@ -217,11 +217,11 @@ Widget appBarToggles(BuildContext context){
             templateBloc.add(TemplateEvent.deleteTemplate(list: template));
             Navigator.of(context).pop();
           },
-              child: Text("Ja, Vorlage löschen", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ja, Vorlage löschen", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);},
-              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           )
       ],

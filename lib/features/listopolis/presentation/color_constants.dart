@@ -21,7 +21,8 @@ class ListColors{
 
   static const Color APP_BAR_COLOR = Color(MIDDLE_BG_COLOR_BLUEGREY);
   static const Color DIALOG_BACKGROUND = BACKGROUND_DARKER;
-  static const Color DIALOG_BUTTON = Color(0xFF454545);
+  static const Color DIALOG_BUTTON = Color(0xFF8BB4F4);
+  static const Color DIALOG_TEXT = BACKGROUND_DARKER;
   static const Color DISSMISS_LIST_ITEM = Color(_TEXTCOLOR_ON_DARK_BG);
 
   static const Color LIST_ICON_REMEMBER = Color(YELLOW_TEXT);
@@ -35,6 +36,7 @@ class ListColors{
   static const Color ICON_ACTIVE_LIST_CEATION_MODE = Color(_LIGHT_BLUE_GREEN);
 
   static const TextStyle DEF_TEXT_STYLE = TextStyle(color: TEXT);
+  static const TextStyle DEF_DIALOG_TEXT_STYLE = TextStyle(color: DIALOG_TEXT);
 
   static LinearGradient LIST_ITEM_GRADIENT = LinearGradient(colors: [
                                                                            const Color(MIDDLE_BG_COLOR_BLUEGREY), 

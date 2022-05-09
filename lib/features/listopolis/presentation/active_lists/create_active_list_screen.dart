@@ -228,7 +228,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
           else if(createListBloc.editMode == ListEditMode.onlinelistEditing())
             _returnToPreviousScreen(context);
           },
-              child: Text("Als Liste Übernehmen",style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Als Liste Übernehmen",style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
            MaterialButton(
@@ -252,11 +252,11 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               //Navigator.of(context).pop();
               
               },
-              child: Text("Als Online Liste Übernehmen", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Als Online Liste Übernehmen", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
-              child: Text("Verwerfen", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Verwerfen", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
          
@@ -283,12 +283,12 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
           else if(createListBloc.editMode == ListEditMode.onlinelistEditing())
             _returnToPreviousScreen(context);
           },
-              child: Text("Übernehmen",style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Übernehmen",style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
            
           MaterialButton(onPressed: (){Navigator.pop(context);Navigator.of(context).pop();},
-              child: Text("Verwerfen", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Verwerfen", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
          

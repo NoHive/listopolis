@@ -163,11 +163,11 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
             listBloc.add(OnlinelistsEvent.deleteList(list: list));
             Navigator.of(context).pop();
           },
-              child: Text("Ja, Liste löschen", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ja, Liste löschen", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           ),
           MaterialButton(onPressed: (){Navigator.pop(context);},
-              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_TEXT_STYLE),
+              child: Text("Ups...nee bitte nicht!", style: ListColors.DEF_DIALOG_TEXT_STYLE),
               color: ListColors.DIALOG_BUTTON,
           )
       ],
