@@ -14,7 +14,7 @@ class ListColors{
   static const Color LIST_BACKGROUND = Color(0xFF101010);
 
   static const int MAIN_PAGE_BUTTON_ALPHA = 190;
-  static const int START_BG_COLOR_GREY = 0xFF222222;
+  static const int START_BG_COLOR_GREY = 0xFF292A2E;
   static const int END_BG_COLOR_BLUEGREY = 0xFF454545;
   static const int MIDDLE_BG_COLOR_BLUEGREY = 0xFF373737;
   static const int YELLOW_TEXT = 0xFFffc410;
