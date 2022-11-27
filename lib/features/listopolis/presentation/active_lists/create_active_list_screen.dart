@@ -61,7 +61,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     // TODO: implement initState
     super.initState();
     
-     WidgetsBinding.instance?.addObserver(this);
+     WidgetsBinding.instance.addObserver(this);
   }  
 
   @override
@@ -69,7 +69,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     // TODO: implement dispose
     listNameController.dispose();
     controllerList.forEach((controller) { controller.dispose(); });
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
     print("Create List-Screen disposed");
     super.dispose();
   }
