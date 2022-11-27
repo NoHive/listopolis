@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'list_type.dart';
 
@@ -10,23 +12,7 @@ part of 'list_type.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ListTypeTearOff {
-  const _$ListTypeTearOff();
-
-  Remember remember() {
-    return const Remember();
-  }
-
-  ToDoList todo() {
-    return const ToDoList();
-  }
-}
-
-/// @nodoc
-const $ListType = _$ListTypeTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ListType {
@@ -34,6 +20,12 @@ mixin _$ListType {
   TResult when<TResult extends Object?>({
     required TResult Function() remember,
     required TResult Function() todo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? remember,
+    TResult? Function()? todo,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +42,12 @@ mixin _$ListType {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Remember value)? remember,
+    TResult? Function(ToDoList value)? todo,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Remember value)? remember,
     TResult Function(ToDoList value)? todo,
@@ -61,32 +59,33 @@ mixin _$ListType {
 /// @nodoc
 abstract class $ListTypeCopyWith<$Res> {
   factory $ListTypeCopyWith(ListType value, $Res Function(ListType) then) =
-      _$ListTypeCopyWithImpl<$Res>;
+      _$ListTypeCopyWithImpl<$Res, ListType>;
 }
 
 /// @nodoc
-class _$ListTypeCopyWithImpl<$Res> implements $ListTypeCopyWith<$Res> {
+class _$ListTypeCopyWithImpl<$Res, $Val extends ListType>
+    implements $ListTypeCopyWith<$Res> {
   _$ListTypeCopyWithImpl(this._value, this._then);
 
-  final ListType _value;
   // ignore: unused_field
-  final $Res Function(ListType) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $RememberCopyWith<$Res> {
-  factory $RememberCopyWith(Remember value, $Res Function(Remember) then) =
-      _$RememberCopyWithImpl<$Res>;
+abstract class _$$RememberCopyWith<$Res> {
+  factory _$$RememberCopyWith(
+          _$Remember value, $Res Function(_$Remember) then) =
+      __$$RememberCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$RememberCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
-    implements $RememberCopyWith<$Res> {
-  _$RememberCopyWithImpl(Remember _value, $Res Function(Remember) _then)
-      : super(_value, (v) => _then(v as Remember));
-
-  @override
-  Remember get _value => super._value as Remember;
+class __$$RememberCopyWithImpl<$Res>
+    extends _$ListTypeCopyWithImpl<$Res, _$Remember>
+    implements _$$RememberCopyWith<$Res> {
+  __$$RememberCopyWithImpl(_$Remember _value, $Res Function(_$Remember) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -101,7 +100,8 @@ class _$Remember implements Remember {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Remember);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Remember);
   }
 
   @override
@@ -114,6 +114,15 @@ class _$Remember implements Remember {
     required TResult Function() todo,
   }) {
     return remember();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? remember,
+    TResult? Function()? todo,
+  }) {
+    return remember?.call();
   }
 
   @override
@@ -140,6 +149,15 @@ class _$Remember implements Remember {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Remember value)? remember,
+    TResult? Function(ToDoList value)? todo,
+  }) {
+    return remember?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Remember value)? remember,
     TResult Function(ToDoList value)? todo,
@@ -157,19 +175,18 @@ abstract class Remember implements ListType {
 }
 
 /// @nodoc
-abstract class $ToDoListCopyWith<$Res> {
-  factory $ToDoListCopyWith(ToDoList value, $Res Function(ToDoList) then) =
-      _$ToDoListCopyWithImpl<$Res>;
+abstract class _$$ToDoListCopyWith<$Res> {
+  factory _$$ToDoListCopyWith(
+          _$ToDoList value, $Res Function(_$ToDoList) then) =
+      __$$ToDoListCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ToDoListCopyWithImpl<$Res> extends _$ListTypeCopyWithImpl<$Res>
-    implements $ToDoListCopyWith<$Res> {
-  _$ToDoListCopyWithImpl(ToDoList _value, $Res Function(ToDoList) _then)
-      : super(_value, (v) => _then(v as ToDoList));
-
-  @override
-  ToDoList get _value => super._value as ToDoList;
+class __$$ToDoListCopyWithImpl<$Res>
+    extends _$ListTypeCopyWithImpl<$Res, _$ToDoList>
+    implements _$$ToDoListCopyWith<$Res> {
+  __$$ToDoListCopyWithImpl(_$ToDoList _value, $Res Function(_$ToDoList) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -184,7 +201,8 @@ class _$ToDoList implements ToDoList {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ToDoList);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ToDoList);
   }
 
   @override
@@ -197,6 +215,15 @@ class _$ToDoList implements ToDoList {
     required TResult Function() todo,
   }) {
     return todo();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? remember,
+    TResult? Function()? todo,
+  }) {
+    return todo?.call();
   }
 
   @override
@@ -219,6 +246,15 @@ class _$ToDoList implements ToDoList {
     required TResult Function(ToDoList value) todo,
   }) {
     return todo(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Remember value)? remember,
+    TResult? Function(ToDoList value)? todo,
+  }) {
+    return todo?.call(this);
   }
 
   @override

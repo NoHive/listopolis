@@ -1,7 +1,7 @@
 part of 'template_bloc.dart';
 
 @freezed
-abstract class TemplateState with _$TemplateState {
+class TemplateState with _$TemplateState {
     const factory TemplateState.initial() = _Initial;
   const factory TemplateState.loading() = _Loading;
   const factory TemplateState.loaded({@Default([]) List<ListTemplate> userTemplates}) = _Loaded;

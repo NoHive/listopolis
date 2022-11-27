@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'template_bloc.dart';
 
@@ -10,64 +12,7 @@ part of 'template_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TemplateEventTearOff {
-  const _$TemplateEventTearOff();
-
-  _LoadTemplates load() {
-    return const _LoadTemplates();
-  }
-
-  _LoadTemplatesForReorder loadTemplatesForReorder() {
-    return const _LoadTemplatesForReorder();
-  }
-
-  _InsertNewTemplate insertNewTemplate(
-      {required CreateListParameter listParameter}) {
-    return _InsertNewTemplate(
-      listParameter: listParameter,
-    );
-  }
-
-  _DeleteTemplatePosition deleteTemplatePosition(
-      {required ListTemplate list, required ListTemplatePosition position}) {
-    return _DeleteTemplatePosition(
-      list: list,
-      position: position,
-    );
-  }
-
-  _DeleteTemplate deleteTemplate({required ListTemplate list}) {
-    return _DeleteTemplate(
-      list: list,
-    );
-  }
-
-  _ReplaceTemplate replaceTemplate(
-      {required CreateListParameter listParameter,
-      required ListTemplate list}) {
-    return _ReplaceTemplate(
-      listParameter: listParameter,
-      list: list,
-    );
-  }
-
-  _ChangeTemplatePosition changeTemplatePosition(
-      {required ListTemplate template,
-      required int oldIndex,
-      required int newIndex}) {
-    return _ChangeTemplatePosition(
-      template: template,
-      oldIndex: oldIndex,
-      newIndex: newIndex,
-    );
-  }
-}
-
-/// @nodoc
-const $TemplateEvent = _$TemplateEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TemplateEvent {
@@ -84,6 +29,20 @@ mixin _$TemplateEvent {
             CreateListParameter listParameter, ListTemplate list)
         replaceTemplate,
     required TResult Function(ListTemplate template, int oldIndex, int newIndex)
+        changeTemplatePosition,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
         changeTemplatePosition,
   }) =>
       throw _privateConstructorUsedError;
@@ -117,6 +76,17 @@ mixin _$TemplateEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -134,36 +104,34 @@ mixin _$TemplateEvent {
 abstract class $TemplateEventCopyWith<$Res> {
   factory $TemplateEventCopyWith(
           TemplateEvent value, $Res Function(TemplateEvent) then) =
-      _$TemplateEventCopyWithImpl<$Res>;
+      _$TemplateEventCopyWithImpl<$Res, TemplateEvent>;
 }
 
 /// @nodoc
-class _$TemplateEventCopyWithImpl<$Res>
+class _$TemplateEventCopyWithImpl<$Res, $Val extends TemplateEvent>
     implements $TemplateEventCopyWith<$Res> {
   _$TemplateEventCopyWithImpl(this._value, this._then);
 
-  final TemplateEvent _value;
   // ignore: unused_field
-  final $Res Function(TemplateEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$LoadTemplatesCopyWith<$Res> {
-  factory _$LoadTemplatesCopyWith(
-          _LoadTemplates value, $Res Function(_LoadTemplates) then) =
-      __$LoadTemplatesCopyWithImpl<$Res>;
+abstract class _$$_LoadTemplatesCopyWith<$Res> {
+  factory _$$_LoadTemplatesCopyWith(
+          _$_LoadTemplates value, $Res Function(_$_LoadTemplates) then) =
+      __$$_LoadTemplatesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadTemplatesCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$LoadTemplatesCopyWith<$Res> {
-  __$LoadTemplatesCopyWithImpl(
-      _LoadTemplates _value, $Res Function(_LoadTemplates) _then)
-      : super(_value, (v) => _then(v as _LoadTemplates));
-
-  @override
-  _LoadTemplates get _value => super._value as _LoadTemplates;
+class __$$_LoadTemplatesCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_LoadTemplates>
+    implements _$$_LoadTemplatesCopyWith<$Res> {
+  __$$_LoadTemplatesCopyWithImpl(
+      _$_LoadTemplates _value, $Res Function(_$_LoadTemplates) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -178,7 +146,8 @@ class _$_LoadTemplates implements _LoadTemplates {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadTemplates);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadTemplates);
   }
 
   @override
@@ -201,6 +170,23 @@ class _$_LoadTemplates implements _LoadTemplates {
         changeTemplatePosition,
   }) {
     return load();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return load?.call();
   }
 
   @override
@@ -243,6 +229,20 @@ class _$_LoadTemplates implements _LoadTemplates {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return load?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -265,23 +265,19 @@ abstract class _LoadTemplates implements TemplateEvent {
 }
 
 /// @nodoc
-abstract class _$LoadTemplatesForReorderCopyWith<$Res> {
-  factory _$LoadTemplatesForReorderCopyWith(_LoadTemplatesForReorder value,
-          $Res Function(_LoadTemplatesForReorder) then) =
-      __$LoadTemplatesForReorderCopyWithImpl<$Res>;
+abstract class _$$_LoadTemplatesForReorderCopyWith<$Res> {
+  factory _$$_LoadTemplatesForReorderCopyWith(_$_LoadTemplatesForReorder value,
+          $Res Function(_$_LoadTemplatesForReorder) then) =
+      __$$_LoadTemplatesForReorderCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadTemplatesForReorderCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$LoadTemplatesForReorderCopyWith<$Res> {
-  __$LoadTemplatesForReorderCopyWithImpl(_LoadTemplatesForReorder _value,
-      $Res Function(_LoadTemplatesForReorder) _then)
-      : super(_value, (v) => _then(v as _LoadTemplatesForReorder));
-
-  @override
-  _LoadTemplatesForReorder get _value =>
-      super._value as _LoadTemplatesForReorder;
+class __$$_LoadTemplatesForReorderCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_LoadTemplatesForReorder>
+    implements _$$_LoadTemplatesForReorderCopyWith<$Res> {
+  __$$_LoadTemplatesForReorderCopyWithImpl(_$_LoadTemplatesForReorder _value,
+      $Res Function(_$_LoadTemplatesForReorder) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -296,7 +292,9 @@ class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadTemplatesForReorder);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadTemplatesForReorder);
   }
 
   @override
@@ -319,6 +317,23 @@ class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
         changeTemplatePosition,
   }) {
     return loadTemplatesForReorder();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return loadTemplatesForReorder?.call();
   }
 
   @override
@@ -361,6 +376,20 @@ class _$_LoadTemplatesForReorder implements _LoadTemplatesForReorder {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return loadTemplatesForReorder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -383,30 +412,29 @@ abstract class _LoadTemplatesForReorder implements TemplateEvent {
 }
 
 /// @nodoc
-abstract class _$InsertNewTemplateCopyWith<$Res> {
-  factory _$InsertNewTemplateCopyWith(
-          _InsertNewTemplate value, $Res Function(_InsertNewTemplate) then) =
-      __$InsertNewTemplateCopyWithImpl<$Res>;
+abstract class _$$_InsertNewTemplateCopyWith<$Res> {
+  factory _$$_InsertNewTemplateCopyWith(_$_InsertNewTemplate value,
+          $Res Function(_$_InsertNewTemplate) then) =
+      __$$_InsertNewTemplateCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParameter});
 }
 
 /// @nodoc
-class __$InsertNewTemplateCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$InsertNewTemplateCopyWith<$Res> {
-  __$InsertNewTemplateCopyWithImpl(
-      _InsertNewTemplate _value, $Res Function(_InsertNewTemplate) _then)
-      : super(_value, (v) => _then(v as _InsertNewTemplate));
+class __$$_InsertNewTemplateCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_InsertNewTemplate>
+    implements _$$_InsertNewTemplateCopyWith<$Res> {
+  __$$_InsertNewTemplateCopyWithImpl(
+      _$_InsertNewTemplate _value, $Res Function(_$_InsertNewTemplate) _then)
+      : super(_value, _then);
 
-  @override
-  _InsertNewTemplate get _value => super._value as _InsertNewTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParameter = freezed,
+    Object? listParameter = null,
   }) {
-    return _then(_InsertNewTemplate(
-      listParameter: listParameter == freezed
+    return _then(_$_InsertNewTemplate(
+      listParameter: null == listParameter
           ? _value.listParameter
           : listParameter // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -430,20 +458,21 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InsertNewTemplate &&
+        (other.runtimeType == runtimeType &&
+            other is _$_InsertNewTemplate &&
             (identical(other.listParameter, listParameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParameter, listParameter)));
+                other.listParameter == listParameter));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParameter);
+  int get hashCode => Object.hash(runtimeType, listParameter);
 
   @JsonKey(ignore: true)
   @override
-  _$InsertNewTemplateCopyWith<_InsertNewTemplate> get copyWith =>
-      __$InsertNewTemplateCopyWithImpl<_InsertNewTemplate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InsertNewTemplateCopyWith<_$_InsertNewTemplate> get copyWith =>
+      __$$_InsertNewTemplateCopyWithImpl<_$_InsertNewTemplate>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -462,6 +491,23 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
         changeTemplatePosition,
   }) {
     return insertNewTemplate(listParameter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return insertNewTemplate?.call(listParameter);
   }
 
   @override
@@ -504,6 +550,20 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return insertNewTemplate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -523,19 +583,21 @@ class _$_InsertNewTemplate implements _InsertNewTemplate {
 
 abstract class _InsertNewTemplate implements TemplateEvent {
   const factory _InsertNewTemplate(
-      {required CreateListParameter listParameter}) = _$_InsertNewTemplate;
+          {required final CreateListParameter listParameter}) =
+      _$_InsertNewTemplate;
 
-  CreateListParameter get listParameter => throw _privateConstructorUsedError;
+  CreateListParameter get listParameter;
   @JsonKey(ignore: true)
-  _$InsertNewTemplateCopyWith<_InsertNewTemplate> get copyWith =>
+  _$$_InsertNewTemplateCopyWith<_$_InsertNewTemplate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteTemplatePositionCopyWith<$Res> {
-  factory _$DeleteTemplatePositionCopyWith(_DeleteTemplatePosition value,
-          $Res Function(_DeleteTemplatePosition) then) =
-      __$DeleteTemplatePositionCopyWithImpl<$Res>;
+abstract class _$$_DeleteTemplatePositionCopyWith<$Res> {
+  factory _$$_DeleteTemplatePositionCopyWith(_$_DeleteTemplatePosition value,
+          $Res Function(_$_DeleteTemplatePosition) then) =
+      __$$_DeleteTemplatePositionCopyWithImpl<$Res>;
+  @useResult
   $Res call({ListTemplate list, ListTemplatePosition position});
 
   $ListTemplateCopyWith<$Res> get list;
@@ -543,27 +605,25 @@ abstract class _$DeleteTemplatePositionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeleteTemplatePositionCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$DeleteTemplatePositionCopyWith<$Res> {
-  __$DeleteTemplatePositionCopyWithImpl(_DeleteTemplatePosition _value,
-      $Res Function(_DeleteTemplatePosition) _then)
-      : super(_value, (v) => _then(v as _DeleteTemplatePosition));
+class __$$_DeleteTemplatePositionCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_DeleteTemplatePosition>
+    implements _$$_DeleteTemplatePositionCopyWith<$Res> {
+  __$$_DeleteTemplatePositionCopyWithImpl(_$_DeleteTemplatePosition _value,
+      $Res Function(_$_DeleteTemplatePosition) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteTemplatePosition get _value => super._value as _DeleteTemplatePosition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
-    Object? position = freezed,
+    Object? list = null,
+    Object? position = null,
   }) {
-    return _then(_DeleteTemplatePosition(
-      list: list == freezed
+    return _then(_$_DeleteTemplatePosition(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ListTemplate,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as ListTemplatePosition,
@@ -571,6 +631,7 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplateCopyWith<$Res> get list {
     return $ListTemplateCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -578,6 +639,7 @@ class __$DeleteTemplatePositionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplatePositionCopyWith<$Res> get position {
     return $ListTemplatePositionCopyWith<$Res>(_value.position, (value) {
       return _then(_value.copyWith(position: value));
@@ -603,24 +665,21 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteTemplatePosition &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteTemplatePosition &&
+            (identical(other.list, list) || other.list == list) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, list, position);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteTemplatePositionCopyWith<_DeleteTemplatePosition> get copyWith =>
-      __$DeleteTemplatePositionCopyWithImpl<_DeleteTemplatePosition>(
+  @pragma('vm:prefer-inline')
+  _$$_DeleteTemplatePositionCopyWith<_$_DeleteTemplatePosition> get copyWith =>
+      __$$_DeleteTemplatePositionCopyWithImpl<_$_DeleteTemplatePosition>(
           this, _$identity);
 
   @override
@@ -640,6 +699,23 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
         changeTemplatePosition,
   }) {
     return deleteTemplatePosition(list, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return deleteTemplatePosition?.call(list, position);
   }
 
   @override
@@ -682,6 +758,20 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return deleteTemplatePosition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -701,43 +791,43 @@ class _$_DeleteTemplatePosition implements _DeleteTemplatePosition {
 
 abstract class _DeleteTemplatePosition implements TemplateEvent {
   const factory _DeleteTemplatePosition(
-      {required ListTemplate list,
-      required ListTemplatePosition position}) = _$_DeleteTemplatePosition;
+          {required final ListTemplate list,
+          required final ListTemplatePosition position}) =
+      _$_DeleteTemplatePosition;
 
-  ListTemplate get list => throw _privateConstructorUsedError;
-  ListTemplatePosition get position => throw _privateConstructorUsedError;
+  ListTemplate get list;
+  ListTemplatePosition get position;
   @JsonKey(ignore: true)
-  _$DeleteTemplatePositionCopyWith<_DeleteTemplatePosition> get copyWith =>
+  _$$_DeleteTemplatePositionCopyWith<_$_DeleteTemplatePosition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteTemplateCopyWith<$Res> {
-  factory _$DeleteTemplateCopyWith(
-          _DeleteTemplate value, $Res Function(_DeleteTemplate) then) =
-      __$DeleteTemplateCopyWithImpl<$Res>;
+abstract class _$$_DeleteTemplateCopyWith<$Res> {
+  factory _$$_DeleteTemplateCopyWith(
+          _$_DeleteTemplate value, $Res Function(_$_DeleteTemplate) then) =
+      __$$_DeleteTemplateCopyWithImpl<$Res>;
+  @useResult
   $Res call({ListTemplate list});
 
   $ListTemplateCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$DeleteTemplateCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$DeleteTemplateCopyWith<$Res> {
-  __$DeleteTemplateCopyWithImpl(
-      _DeleteTemplate _value, $Res Function(_DeleteTemplate) _then)
-      : super(_value, (v) => _then(v as _DeleteTemplate));
+class __$$_DeleteTemplateCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_DeleteTemplate>
+    implements _$$_DeleteTemplateCopyWith<$Res> {
+  __$$_DeleteTemplateCopyWithImpl(
+      _$_DeleteTemplate _value, $Res Function(_$_DeleteTemplate) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteTemplate get _value => super._value as _DeleteTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_DeleteTemplate(
-      list: list == freezed
+    return _then(_$_DeleteTemplate(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ListTemplate,
@@ -745,6 +835,7 @@ class __$DeleteTemplateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplateCopyWith<$Res> get list {
     return $ListTemplateCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -768,19 +859,19 @@ class _$_DeleteTemplate implements _DeleteTemplate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteTemplate &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteTemplate &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteTemplateCopyWith<_DeleteTemplate> get copyWith =>
-      __$DeleteTemplateCopyWithImpl<_DeleteTemplate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteTemplateCopyWith<_$_DeleteTemplate> get copyWith =>
+      __$$_DeleteTemplateCopyWithImpl<_$_DeleteTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -799,6 +890,23 @@ class _$_DeleteTemplate implements _DeleteTemplate {
         changeTemplatePosition,
   }) {
     return deleteTemplate(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return deleteTemplate?.call(list);
   }
 
   @override
@@ -841,6 +949,20 @@ class _$_DeleteTemplate implements _DeleteTemplate {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return deleteTemplate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -859,47 +981,46 @@ class _$_DeleteTemplate implements _DeleteTemplate {
 }
 
 abstract class _DeleteTemplate implements TemplateEvent {
-  const factory _DeleteTemplate({required ListTemplate list}) =
+  const factory _DeleteTemplate({required final ListTemplate list}) =
       _$_DeleteTemplate;
 
-  ListTemplate get list => throw _privateConstructorUsedError;
+  ListTemplate get list;
   @JsonKey(ignore: true)
-  _$DeleteTemplateCopyWith<_DeleteTemplate> get copyWith =>
+  _$$_DeleteTemplateCopyWith<_$_DeleteTemplate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ReplaceTemplateCopyWith<$Res> {
-  factory _$ReplaceTemplateCopyWith(
-          _ReplaceTemplate value, $Res Function(_ReplaceTemplate) then) =
-      __$ReplaceTemplateCopyWithImpl<$Res>;
+abstract class _$$_ReplaceTemplateCopyWith<$Res> {
+  factory _$$_ReplaceTemplateCopyWith(
+          _$_ReplaceTemplate value, $Res Function(_$_ReplaceTemplate) then) =
+      __$$_ReplaceTemplateCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParameter, ListTemplate list});
 
   $ListTemplateCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$ReplaceTemplateCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$ReplaceTemplateCopyWith<$Res> {
-  __$ReplaceTemplateCopyWithImpl(
-      _ReplaceTemplate _value, $Res Function(_ReplaceTemplate) _then)
-      : super(_value, (v) => _then(v as _ReplaceTemplate));
+class __$$_ReplaceTemplateCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_ReplaceTemplate>
+    implements _$$_ReplaceTemplateCopyWith<$Res> {
+  __$$_ReplaceTemplateCopyWithImpl(
+      _$_ReplaceTemplate _value, $Res Function(_$_ReplaceTemplate) _then)
+      : super(_value, _then);
 
-  @override
-  _ReplaceTemplate get _value => super._value as _ReplaceTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParameter = freezed,
-    Object? list = freezed,
+    Object? listParameter = null,
+    Object? list = null,
   }) {
-    return _then(_ReplaceTemplate(
-      listParameter: listParameter == freezed
+    return _then(_$_ReplaceTemplate(
+      listParameter: null == listParameter
           ? _value.listParameter
           : listParameter // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
-      list: list == freezed
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ListTemplate,
@@ -907,6 +1028,7 @@ class __$ReplaceTemplateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplateCopyWith<$Res> get list {
     return $ListTemplateCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -932,24 +1054,21 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ReplaceTemplate &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ReplaceTemplate &&
             (identical(other.listParameter, listParameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParameter, listParameter)) &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+                other.listParameter == listParameter) &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(listParameter) ^
-      const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, listParameter, list);
 
   @JsonKey(ignore: true)
   @override
-  _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith =>
-      __$ReplaceTemplateCopyWithImpl<_ReplaceTemplate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ReplaceTemplateCopyWith<_$_ReplaceTemplate> get copyWith =>
+      __$$_ReplaceTemplateCopyWithImpl<_$_ReplaceTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -968,6 +1087,23 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
         changeTemplatePosition,
   }) {
     return replaceTemplate(listParameter, list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return replaceTemplate?.call(listParameter, list);
   }
 
   @override
@@ -1010,6 +1146,20 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return replaceTemplate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -1029,53 +1179,52 @@ class _$_ReplaceTemplate implements _ReplaceTemplate {
 
 abstract class _ReplaceTemplate implements TemplateEvent {
   const factory _ReplaceTemplate(
-      {required CreateListParameter listParameter,
-      required ListTemplate list}) = _$_ReplaceTemplate;
+      {required final CreateListParameter listParameter,
+      required final ListTemplate list}) = _$_ReplaceTemplate;
 
-  CreateListParameter get listParameter => throw _privateConstructorUsedError;
-  ListTemplate get list => throw _privateConstructorUsedError;
+  CreateListParameter get listParameter;
+  ListTemplate get list;
   @JsonKey(ignore: true)
-  _$ReplaceTemplateCopyWith<_ReplaceTemplate> get copyWith =>
+  _$$_ReplaceTemplateCopyWith<_$_ReplaceTemplate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeTemplatePositionCopyWith<$Res> {
-  factory _$ChangeTemplatePositionCopyWith(_ChangeTemplatePosition value,
-          $Res Function(_ChangeTemplatePosition) then) =
-      __$ChangeTemplatePositionCopyWithImpl<$Res>;
+abstract class _$$_ChangeTemplatePositionCopyWith<$Res> {
+  factory _$$_ChangeTemplatePositionCopyWith(_$_ChangeTemplatePosition value,
+          $Res Function(_$_ChangeTemplatePosition) then) =
+      __$$_ChangeTemplatePositionCopyWithImpl<$Res>;
+  @useResult
   $Res call({ListTemplate template, int oldIndex, int newIndex});
 
   $ListTemplateCopyWith<$Res> get template;
 }
 
 /// @nodoc
-class __$ChangeTemplatePositionCopyWithImpl<$Res>
-    extends _$TemplateEventCopyWithImpl<$Res>
-    implements _$ChangeTemplatePositionCopyWith<$Res> {
-  __$ChangeTemplatePositionCopyWithImpl(_ChangeTemplatePosition _value,
-      $Res Function(_ChangeTemplatePosition) _then)
-      : super(_value, (v) => _then(v as _ChangeTemplatePosition));
+class __$$_ChangeTemplatePositionCopyWithImpl<$Res>
+    extends _$TemplateEventCopyWithImpl<$Res, _$_ChangeTemplatePosition>
+    implements _$$_ChangeTemplatePositionCopyWith<$Res> {
+  __$$_ChangeTemplatePositionCopyWithImpl(_$_ChangeTemplatePosition _value,
+      $Res Function(_$_ChangeTemplatePosition) _then)
+      : super(_value, _then);
 
-  @override
-  _ChangeTemplatePosition get _value => super._value as _ChangeTemplatePosition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? template = freezed,
-    Object? oldIndex = freezed,
-    Object? newIndex = freezed,
+    Object? template = null,
+    Object? oldIndex = null,
+    Object? newIndex = null,
   }) {
-    return _then(_ChangeTemplatePosition(
-      template: template == freezed
+    return _then(_$_ChangeTemplatePosition(
+      template: null == template
           ? _value.template
           : template // ignore: cast_nullable_to_non_nullable
               as ListTemplate,
-      oldIndex: oldIndex == freezed
+      oldIndex: null == oldIndex
           ? _value.oldIndex
           : oldIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      newIndex: newIndex == freezed
+      newIndex: null == newIndex
           ? _value.newIndex
           : newIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1083,6 +1232,7 @@ class __$ChangeTemplatePositionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplateCopyWith<$Res> get template {
     return $ListTemplateCopyWith<$Res>(_value.template, (value) {
       return _then(_value.copyWith(template: value));
@@ -1111,29 +1261,24 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeTemplatePosition &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeTemplatePosition &&
             (identical(other.template, template) ||
-                const DeepCollectionEquality()
-                    .equals(other.template, template)) &&
+                other.template == template) &&
             (identical(other.oldIndex, oldIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.oldIndex, oldIndex)) &&
+                other.oldIndex == oldIndex) &&
             (identical(other.newIndex, newIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.newIndex, newIndex)));
+                other.newIndex == newIndex));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(template) ^
-      const DeepCollectionEquality().hash(oldIndex) ^
-      const DeepCollectionEquality().hash(newIndex);
+  int get hashCode => Object.hash(runtimeType, template, oldIndex, newIndex);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith =>
-      __$ChangeTemplatePositionCopyWithImpl<_ChangeTemplatePosition>(
+  @pragma('vm:prefer-inline')
+  _$$_ChangeTemplatePositionCopyWith<_$_ChangeTemplatePosition> get copyWith =>
+      __$$_ChangeTemplatePositionCopyWithImpl<_$_ChangeTemplatePosition>(
           this, _$identity);
 
   @override
@@ -1153,6 +1298,23 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
         changeTemplatePosition,
   }) {
     return changeTemplatePosition(template, oldIndex, newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadTemplatesForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewTemplate,
+    TResult? Function(ListTemplate list, ListTemplatePosition position)?
+        deleteTemplatePosition,
+    TResult? Function(ListTemplate list)? deleteTemplate,
+    TResult? Function(CreateListParameter listParameter, ListTemplate list)?
+        replaceTemplate,
+    TResult? Function(ListTemplate template, int oldIndex, int newIndex)?
+        changeTemplatePosition,
+  }) {
+    return changeTemplatePosition?.call(template, oldIndex, newIndex);
   }
 
   @override
@@ -1195,6 +1357,20 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadTemplates value)? load,
+    TResult? Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
+    TResult? Function(_InsertNewTemplate value)? insertNewTemplate,
+    TResult? Function(_DeleteTemplatePosition value)? deleteTemplatePosition,
+    TResult? Function(_DeleteTemplate value)? deleteTemplate,
+    TResult? Function(_ReplaceTemplate value)? replaceTemplate,
+    TResult? Function(_ChangeTemplatePosition value)? changeTemplatePosition,
+  }) {
+    return changeTemplatePosition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadTemplates value)? load,
     TResult Function(_LoadTemplatesForReorder value)? loadTemplatesForReorder,
@@ -1214,52 +1390,17 @@ class _$_ChangeTemplatePosition implements _ChangeTemplatePosition {
 
 abstract class _ChangeTemplatePosition implements TemplateEvent {
   const factory _ChangeTemplatePosition(
-      {required ListTemplate template,
-      required int oldIndex,
-      required int newIndex}) = _$_ChangeTemplatePosition;
+      {required final ListTemplate template,
+      required final int oldIndex,
+      required final int newIndex}) = _$_ChangeTemplatePosition;
 
-  ListTemplate get template => throw _privateConstructorUsedError;
-  int get oldIndex => throw _privateConstructorUsedError;
-  int get newIndex => throw _privateConstructorUsedError;
+  ListTemplate get template;
+  int get oldIndex;
+  int get newIndex;
   @JsonKey(ignore: true)
-  _$ChangeTemplatePositionCopyWith<_ChangeTemplatePosition> get copyWith =>
+  _$$_ChangeTemplatePositionCopyWith<_$_ChangeTemplatePosition> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$TemplateStateTearOff {
-  const _$TemplateStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Loading loading() {
-    return const _Loading();
-  }
-
-  _Loaded loaded({List<ListTemplate> userTemplates = const []}) {
-    return _Loaded(
-      userTemplates: userTemplates,
-    );
-  }
-
-  _TemplateOrderChanged templateOrderChanged(
-      {List<ListTemplate> userTemplates = const []}) {
-    return _TemplateOrderChanged(
-      userTemplates: userTemplates,
-    );
-  }
-
-  _Error error({Failure failure = const Failure.serviceAccessFailed()}) {
-    return _Error(
-      failure: failure,
-    );
-  }
-}
-
-/// @nodoc
-const $TemplateState = _$TemplateStateTearOff();
 
 /// @nodoc
 mixin _$TemplateState {
@@ -1271,6 +1412,15 @@ mixin _$TemplateState {
     required TResult Function(List<ListTemplate> userTemplates)
         templateOrderChanged,
     required TResult Function(Failure failure) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListTemplate> userTemplates)? loaded,
+    TResult? Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult? Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1293,6 +1443,15 @@ mixin _$TemplateState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -1308,33 +1467,33 @@ mixin _$TemplateState {
 abstract class $TemplateStateCopyWith<$Res> {
   factory $TemplateStateCopyWith(
           TemplateState value, $Res Function(TemplateState) then) =
-      _$TemplateStateCopyWithImpl<$Res>;
+      _$TemplateStateCopyWithImpl<$Res, TemplateState>;
 }
 
 /// @nodoc
-class _$TemplateStateCopyWithImpl<$Res>
+class _$TemplateStateCopyWithImpl<$Res, $Val extends TemplateState>
     implements $TemplateStateCopyWith<$Res> {
   _$TemplateStateCopyWithImpl(this._value, this._then);
 
-  final TemplateState _value;
   // ignore: unused_field
-  final $Res Function(TemplateState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$TemplateStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1349,7 +1508,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -1366,6 +1526,18 @@ class _$_Initial implements _Initial {
     required TResult Function(Failure failure) error,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListTemplate> userTemplates)? loaded,
+    TResult? Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -1398,6 +1570,18 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -1418,19 +1602,18 @@ abstract class _Initial implements TemplateState {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
-
-  @override
-  _Loading get _value => super._value as _Loading;
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$TemplateStateCopyWithImpl<$Res, _$_Loading>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1445,7 +1628,8 @@ class _$_Loading implements _Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -1462,6 +1646,18 @@ class _$_Loading implements _Loading {
     required TResult Function(Failure failure) error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListTemplate> userTemplates)? loaded,
+    TResult? Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -1494,6 +1690,18 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -1514,28 +1722,28 @@ abstract class _Loading implements TemplateState {
 }
 
 /// @nodoc
-abstract class _$LoadedCopyWith<$Res> {
-  factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
-      __$LoadedCopyWithImpl<$Res>;
+abstract class _$$_LoadedCopyWith<$Res> {
+  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
+      __$$_LoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ListTemplate> userTemplates});
 }
 
 /// @nodoc
-class __$LoadedCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
-    implements _$LoadedCopyWith<$Res> {
-  __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
-      : super(_value, (v) => _then(v as _Loaded));
+class __$$_LoadedCopyWithImpl<$Res>
+    extends _$TemplateStateCopyWithImpl<$Res, _$_Loaded>
+    implements _$$_LoadedCopyWith<$Res> {
+  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+      : super(_value, _then);
 
-  @override
-  _Loaded get _value => super._value as _Loaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userTemplates = freezed,
+    Object? userTemplates = null,
   }) {
-    return _then(_Loaded(
-      userTemplates: userTemplates == freezed
-          ? _value.userTemplates
+    return _then(_$_Loaded(
+      userTemplates: null == userTemplates
+          ? _value._userTemplates
           : userTemplates // ignore: cast_nullable_to_non_nullable
               as List<ListTemplate>,
     ));
@@ -1545,11 +1753,16 @@ class __$LoadedCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded({this.userTemplates = const []});
+  const _$_Loaded({final List<ListTemplate> userTemplates = const []})
+      : _userTemplates = userTemplates;
 
-  @JsonKey(defaultValue: const [])
+  final List<ListTemplate> _userTemplates;
   @override
-  final List<ListTemplate> userTemplates;
+  @JsonKey()
+  List<ListTemplate> get userTemplates {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userTemplates);
+  }
 
   @override
   String toString() {
@@ -1559,20 +1772,21 @@ class _$_Loaded implements _Loaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Loaded &&
-            (identical(other.userTemplates, userTemplates) ||
-                const DeepCollectionEquality()
-                    .equals(other.userTemplates, userTemplates)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Loaded &&
+            const DeepCollectionEquality()
+                .equals(other._userTemplates, _userTemplates));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userTemplates);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_userTemplates));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadedCopyWith<_Loaded> get copyWith =>
-      __$LoadedCopyWithImpl<_Loaded>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1585,6 +1799,18 @@ class _$_Loaded implements _Loaded {
     required TResult Function(Failure failure) error,
   }) {
     return loaded(userTemplates);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListTemplate> userTemplates)? loaded,
+    TResult? Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loaded?.call(userTemplates);
   }
 
   @override
@@ -1617,6 +1843,18 @@ class _$_Loaded implements _Loaded {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -1633,39 +1871,39 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements TemplateState {
-  const factory _Loaded({List<ListTemplate> userTemplates}) = _$_Loaded;
+  const factory _Loaded({final List<ListTemplate> userTemplates}) = _$_Loaded;
 
-  List<ListTemplate> get userTemplates => throw _privateConstructorUsedError;
+  List<ListTemplate> get userTemplates;
   @JsonKey(ignore: true)
-  _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;
+  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$TemplateOrderChangedCopyWith<$Res> {
-  factory _$TemplateOrderChangedCopyWith(_TemplateOrderChanged value,
-          $Res Function(_TemplateOrderChanged) then) =
-      __$TemplateOrderChangedCopyWithImpl<$Res>;
+abstract class _$$_TemplateOrderChangedCopyWith<$Res> {
+  factory _$$_TemplateOrderChangedCopyWith(_$_TemplateOrderChanged value,
+          $Res Function(_$_TemplateOrderChanged) then) =
+      __$$_TemplateOrderChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ListTemplate> userTemplates});
 }
 
 /// @nodoc
-class __$TemplateOrderChangedCopyWithImpl<$Res>
-    extends _$TemplateStateCopyWithImpl<$Res>
-    implements _$TemplateOrderChangedCopyWith<$Res> {
-  __$TemplateOrderChangedCopyWithImpl(
-      _TemplateOrderChanged _value, $Res Function(_TemplateOrderChanged) _then)
-      : super(_value, (v) => _then(v as _TemplateOrderChanged));
+class __$$_TemplateOrderChangedCopyWithImpl<$Res>
+    extends _$TemplateStateCopyWithImpl<$Res, _$_TemplateOrderChanged>
+    implements _$$_TemplateOrderChangedCopyWith<$Res> {
+  __$$_TemplateOrderChangedCopyWithImpl(_$_TemplateOrderChanged _value,
+      $Res Function(_$_TemplateOrderChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _TemplateOrderChanged get _value => super._value as _TemplateOrderChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userTemplates = freezed,
+    Object? userTemplates = null,
   }) {
-    return _then(_TemplateOrderChanged(
-      userTemplates: userTemplates == freezed
-          ? _value.userTemplates
+    return _then(_$_TemplateOrderChanged(
+      userTemplates: null == userTemplates
+          ? _value._userTemplates
           : userTemplates // ignore: cast_nullable_to_non_nullable
               as List<ListTemplate>,
     ));
@@ -1675,11 +1913,17 @@ class __$TemplateOrderChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TemplateOrderChanged implements _TemplateOrderChanged {
-  const _$_TemplateOrderChanged({this.userTemplates = const []});
+  const _$_TemplateOrderChanged(
+      {final List<ListTemplate> userTemplates = const []})
+      : _userTemplates = userTemplates;
 
-  @JsonKey(defaultValue: const [])
+  final List<ListTemplate> _userTemplates;
   @override
-  final List<ListTemplate> userTemplates;
+  @JsonKey()
+  List<ListTemplate> get userTemplates {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userTemplates);
+  }
 
   @override
   String toString() {
@@ -1689,20 +1933,21 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TemplateOrderChanged &&
-            (identical(other.userTemplates, userTemplates) ||
-                const DeepCollectionEquality()
-                    .equals(other.userTemplates, userTemplates)));
+        (other.runtimeType == runtimeType &&
+            other is _$_TemplateOrderChanged &&
+            const DeepCollectionEquality()
+                .equals(other._userTemplates, _userTemplates));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userTemplates);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_userTemplates));
 
   @JsonKey(ignore: true)
   @override
-  _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith =>
-      __$TemplateOrderChangedCopyWithImpl<_TemplateOrderChanged>(
+  @pragma('vm:prefer-inline')
+  _$$_TemplateOrderChangedCopyWith<_$_TemplateOrderChanged> get copyWith =>
+      __$$_TemplateOrderChangedCopyWithImpl<_$_TemplateOrderChanged>(
           this, _$identity);
 
   @override
@@ -1716,6 +1961,18 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
     required TResult Function(Failure failure) error,
   }) {
     return templateOrderChanged(userTemplates);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListTemplate> userTemplates)? loaded,
+    TResult? Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return templateOrderChanged?.call(userTemplates);
   }
 
   @override
@@ -1748,6 +2005,18 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return templateOrderChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -1764,39 +2033,39 @@ class _$_TemplateOrderChanged implements _TemplateOrderChanged {
 }
 
 abstract class _TemplateOrderChanged implements TemplateState {
-  const factory _TemplateOrderChanged({List<ListTemplate> userTemplates}) =
-      _$_TemplateOrderChanged;
+  const factory _TemplateOrderChanged(
+      {final List<ListTemplate> userTemplates}) = _$_TemplateOrderChanged;
 
-  List<ListTemplate> get userTemplates => throw _privateConstructorUsedError;
+  List<ListTemplate> get userTemplates;
   @JsonKey(ignore: true)
-  _$TemplateOrderChangedCopyWith<_TemplateOrderChanged> get copyWith =>
+  _$$_TemplateOrderChangedCopyWith<_$_TemplateOrderChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({Failure failure});
 
   $FailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$$_ErrorCopyWithImpl<$Res>
+    extends _$TemplateStateCopyWithImpl<$Res, _$_Error>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, _then);
 
-  @override
-  _Error get _value => super._value as _Error;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
-    return _then(_Error(
-      failure: failure == freezed
+    return _then(_$_Error(
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure,
@@ -1804,6 +2073,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get failure {
     return $FailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -1816,8 +2086,8 @@ class __$ErrorCopyWithImpl<$Res> extends _$TemplateStateCopyWithImpl<$Res>
 class _$_Error implements _Error {
   const _$_Error({this.failure = const Failure.serviceAccessFailed()});
 
-  @JsonKey(defaultValue: const Failure.serviceAccessFailed())
   @override
+  @JsonKey()
   final Failure failure;
 
   @override
@@ -1828,19 +2098,19 @@ class _$_Error implements _Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Error &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Error &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1853,6 +2123,18 @@ class _$_Error implements _Error {
     required TResult Function(Failure failure) error,
   }) {
     return error(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ListTemplate> userTemplates)? loaded,
+    TResult? Function(List<ListTemplate> userTemplates)? templateOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return error?.call(failure);
   }
 
   @override
@@ -1885,6 +2167,18 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_TemplateOrderChanged value)? templateOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -1901,9 +2195,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements TemplateState {
-  const factory _Error({Failure failure}) = _$_Error;
+  const factory _Error({final Failure failure}) = _$_Error;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      throw _privateConstructorUsedError;
 }

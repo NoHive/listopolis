@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'connectivity_bloc.dart';
 
@@ -10,27 +12,7 @@ part of 'connectivity_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ConnectivityEventTearOff {
-  const _$ConnectivityEventTearOff();
-
-  _Started started() {
-    return const _Started();
-  }
-
-  _GoOnline goOnline() {
-    return const _GoOnline();
-  }
-
-  _GoOffline goOffline() {
-    return const _GoOffline();
-  }
-}
-
-/// @nodoc
-const $ConnectivityEvent = _$ConnectivityEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ConnectivityEvent {
@@ -39,6 +21,13 @@ mixin _$ConnectivityEvent {
     required TResult Function() started,
     required TResult Function() goOnline,
     required TResult Function() goOffline,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? goOnline,
+    TResult? Function()? goOffline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +46,13 @@ mixin _$ConnectivityEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GoOnline value)? goOnline,
+    TResult? Function(_GoOffline value)? goOffline,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GoOnline value)? goOnline,
@@ -70,33 +66,33 @@ mixin _$ConnectivityEvent {
 abstract class $ConnectivityEventCopyWith<$Res> {
   factory $ConnectivityEventCopyWith(
           ConnectivityEvent value, $Res Function(ConnectivityEvent) then) =
-      _$ConnectivityEventCopyWithImpl<$Res>;
+      _$ConnectivityEventCopyWithImpl<$Res, ConnectivityEvent>;
 }
 
 /// @nodoc
-class _$ConnectivityEventCopyWithImpl<$Res>
+class _$ConnectivityEventCopyWithImpl<$Res, $Val extends ConnectivityEvent>
     implements $ConnectivityEventCopyWith<$Res> {
   _$ConnectivityEventCopyWithImpl(this._value, this._then);
 
-  final ConnectivityEvent _value;
   // ignore: unused_field
-  final $Res Function(ConnectivityEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$$_StartedCopyWith<$Res> {
+  factory _$$_StartedCopyWith(
+          _$_Started value, $Res Function(_$_Started) then) =
+      __$$_StartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$ConnectivityEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
-
-  @override
-  _Started get _value => super._value as _Started;
+class __$$_StartedCopyWithImpl<$Res>
+    extends _$ConnectivityEventCopyWithImpl<$Res, _$_Started>
+    implements _$$_StartedCopyWith<$Res> {
+  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -111,7 +107,8 @@ class _$_Started implements _Started {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Started);
   }
 
   @override
@@ -125,6 +122,16 @@ class _$_Started implements _Started {
     required TResult Function() goOffline,
   }) {
     return started();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? goOnline,
+    TResult? Function()? goOffline,
+  }) {
+    return started?.call();
   }
 
   @override
@@ -153,6 +160,16 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GoOnline value)? goOnline,
+    TResult? Function(_GoOffline value)? goOffline,
+  }) {
+    return started?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GoOnline value)? goOnline,
@@ -171,20 +188,19 @@ abstract class _Started implements ConnectivityEvent {
 }
 
 /// @nodoc
-abstract class _$GoOnlineCopyWith<$Res> {
-  factory _$GoOnlineCopyWith(_GoOnline value, $Res Function(_GoOnline) then) =
-      __$GoOnlineCopyWithImpl<$Res>;
+abstract class _$$_GoOnlineCopyWith<$Res> {
+  factory _$$_GoOnlineCopyWith(
+          _$_GoOnline value, $Res Function(_$_GoOnline) then) =
+      __$$_GoOnlineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GoOnlineCopyWithImpl<$Res>
-    extends _$ConnectivityEventCopyWithImpl<$Res>
-    implements _$GoOnlineCopyWith<$Res> {
-  __$GoOnlineCopyWithImpl(_GoOnline _value, $Res Function(_GoOnline) _then)
-      : super(_value, (v) => _then(v as _GoOnline));
-
-  @override
-  _GoOnline get _value => super._value as _GoOnline;
+class __$$_GoOnlineCopyWithImpl<$Res>
+    extends _$ConnectivityEventCopyWithImpl<$Res, _$_GoOnline>
+    implements _$$_GoOnlineCopyWith<$Res> {
+  __$$_GoOnlineCopyWithImpl(
+      _$_GoOnline _value, $Res Function(_$_GoOnline) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -199,7 +215,8 @@ class _$_GoOnline implements _GoOnline {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GoOnline);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GoOnline);
   }
 
   @override
@@ -213,6 +230,16 @@ class _$_GoOnline implements _GoOnline {
     required TResult Function() goOffline,
   }) {
     return goOnline();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? goOnline,
+    TResult? Function()? goOffline,
+  }) {
+    return goOnline?.call();
   }
 
   @override
@@ -241,6 +268,16 @@ class _$_GoOnline implements _GoOnline {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GoOnline value)? goOnline,
+    TResult? Function(_GoOffline value)? goOffline,
+  }) {
+    return goOnline?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GoOnline value)? goOnline,
@@ -259,21 +296,19 @@ abstract class _GoOnline implements ConnectivityEvent {
 }
 
 /// @nodoc
-abstract class _$GoOfflineCopyWith<$Res> {
-  factory _$GoOfflineCopyWith(
-          _GoOffline value, $Res Function(_GoOffline) then) =
-      __$GoOfflineCopyWithImpl<$Res>;
+abstract class _$$_GoOfflineCopyWith<$Res> {
+  factory _$$_GoOfflineCopyWith(
+          _$_GoOffline value, $Res Function(_$_GoOffline) then) =
+      __$$_GoOfflineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GoOfflineCopyWithImpl<$Res>
-    extends _$ConnectivityEventCopyWithImpl<$Res>
-    implements _$GoOfflineCopyWith<$Res> {
-  __$GoOfflineCopyWithImpl(_GoOffline _value, $Res Function(_GoOffline) _then)
-      : super(_value, (v) => _then(v as _GoOffline));
-
-  @override
-  _GoOffline get _value => super._value as _GoOffline;
+class __$$_GoOfflineCopyWithImpl<$Res>
+    extends _$ConnectivityEventCopyWithImpl<$Res, _$_GoOffline>
+    implements _$$_GoOfflineCopyWith<$Res> {
+  __$$_GoOfflineCopyWithImpl(
+      _$_GoOffline _value, $Res Function(_$_GoOffline) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -288,7 +323,8 @@ class _$_GoOffline implements _GoOffline {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _GoOffline);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GoOffline);
   }
 
   @override
@@ -302,6 +338,16 @@ class _$_GoOffline implements _GoOffline {
     required TResult Function() goOffline,
   }) {
     return goOffline();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? goOnline,
+    TResult? Function()? goOffline,
+  }) {
+    return goOffline?.call();
   }
 
   @override
@@ -330,6 +376,16 @@ class _$_GoOffline implements _GoOffline {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GoOnline value)? goOnline,
+    TResult? Function(_GoOffline value)? goOffline,
+  }) {
+    return goOffline?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_GoOnline value)? goOnline,
@@ -348,32 +404,19 @@ abstract class _GoOffline implements ConnectivityEvent {
 }
 
 /// @nodoc
-class _$ConnectivityStateTearOff {
-  const _$ConnectivityStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Online online() {
-    return const _Online();
-  }
-
-  _Offline offline() {
-    return const _Offline();
-  }
-}
-
-/// @nodoc
-const $ConnectivityState = _$ConnectivityStateTearOff();
-
-/// @nodoc
 mixin _$ConnectivityState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() online,
     required TResult Function() offline,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? online,
+    TResult? Function()? offline,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -392,6 +435,13 @@ mixin _$ConnectivityState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Online value)? online,
+    TResult? Function(_Offline value)? offline,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Online value)? online,
@@ -405,33 +455,33 @@ mixin _$ConnectivityState {
 abstract class $ConnectivityStateCopyWith<$Res> {
   factory $ConnectivityStateCopyWith(
           ConnectivityState value, $Res Function(ConnectivityState) then) =
-      _$ConnectivityStateCopyWithImpl<$Res>;
+      _$ConnectivityStateCopyWithImpl<$Res, ConnectivityState>;
 }
 
 /// @nodoc
-class _$ConnectivityStateCopyWithImpl<$Res>
+class _$ConnectivityStateCopyWithImpl<$Res, $Val extends ConnectivityState>
     implements $ConnectivityStateCopyWith<$Res> {
   _$ConnectivityStateCopyWithImpl(this._value, this._then);
 
-  final ConnectivityState _value;
   // ignore: unused_field
-  final $Res Function(ConnectivityState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ConnectivityStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$ConnectivityStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -446,7 +496,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -460,6 +511,16 @@ class _$_Initial implements _Initial {
     required TResult Function() offline,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? online,
+    TResult? Function()? offline,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -488,6 +549,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Online value)? online,
+    TResult? Function(_Offline value)? offline,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Online value)? online,
@@ -506,19 +577,17 @@ abstract class _Initial implements ConnectivityState {
 }
 
 /// @nodoc
-abstract class _$OnlineCopyWith<$Res> {
-  factory _$OnlineCopyWith(_Online value, $Res Function(_Online) then) =
-      __$OnlineCopyWithImpl<$Res>;
+abstract class _$$_OnlineCopyWith<$Res> {
+  factory _$$_OnlineCopyWith(_$_Online value, $Res Function(_$_Online) then) =
+      __$$_OnlineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OnlineCopyWithImpl<$Res> extends _$ConnectivityStateCopyWithImpl<$Res>
-    implements _$OnlineCopyWith<$Res> {
-  __$OnlineCopyWithImpl(_Online _value, $Res Function(_Online) _then)
-      : super(_value, (v) => _then(v as _Online));
-
-  @override
-  _Online get _value => super._value as _Online;
+class __$$_OnlineCopyWithImpl<$Res>
+    extends _$ConnectivityStateCopyWithImpl<$Res, _$_Online>
+    implements _$$_OnlineCopyWith<$Res> {
+  __$$_OnlineCopyWithImpl(_$_Online _value, $Res Function(_$_Online) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -533,7 +602,8 @@ class _$_Online implements _Online {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Online);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Online);
   }
 
   @override
@@ -547,6 +617,16 @@ class _$_Online implements _Online {
     required TResult Function() offline,
   }) {
     return online();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? online,
+    TResult? Function()? offline,
+  }) {
+    return online?.call();
   }
 
   @override
@@ -575,6 +655,16 @@ class _$_Online implements _Online {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Online value)? online,
+    TResult? Function(_Offline value)? offline,
+  }) {
+    return online?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Online value)? online,
@@ -593,19 +683,18 @@ abstract class _Online implements ConnectivityState {
 }
 
 /// @nodoc
-abstract class _$OfflineCopyWith<$Res> {
-  factory _$OfflineCopyWith(_Offline value, $Res Function(_Offline) then) =
-      __$OfflineCopyWithImpl<$Res>;
+abstract class _$$_OfflineCopyWith<$Res> {
+  factory _$$_OfflineCopyWith(
+          _$_Offline value, $Res Function(_$_Offline) then) =
+      __$$_OfflineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OfflineCopyWithImpl<$Res> extends _$ConnectivityStateCopyWithImpl<$Res>
-    implements _$OfflineCopyWith<$Res> {
-  __$OfflineCopyWithImpl(_Offline _value, $Res Function(_Offline) _then)
-      : super(_value, (v) => _then(v as _Offline));
-
-  @override
-  _Offline get _value => super._value as _Offline;
+class __$$_OfflineCopyWithImpl<$Res>
+    extends _$ConnectivityStateCopyWithImpl<$Res, _$_Offline>
+    implements _$$_OfflineCopyWith<$Res> {
+  __$$_OfflineCopyWithImpl(_$_Offline _value, $Res Function(_$_Offline) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -620,7 +709,8 @@ class _$_Offline implements _Offline {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Offline);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Offline);
   }
 
   @override
@@ -634,6 +724,16 @@ class _$_Offline implements _Offline {
     required TResult Function() offline,
   }) {
     return offline();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? online,
+    TResult? Function()? offline,
+  }) {
+    return offline?.call();
   }
 
   @override
@@ -658,6 +758,16 @@ class _$_Offline implements _Offline {
     required TResult Function(_Offline value) offline,
   }) {
     return offline(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Online value)? online,
+    TResult? Function(_Offline value)? offline,
+  }) {
+    return offline?.call(this);
   }
 
   @override

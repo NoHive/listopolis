@@ -1,7 +1,7 @@
 part of 'template_bloc.dart';
 
 @freezed
-abstract class TemplateEvent with _$TemplateEvent {
+class TemplateEvent with _$TemplateEvent {
   const factory TemplateEvent.load() = _LoadTemplates;
   const factory TemplateEvent.loadTemplatesForReorder() = _LoadTemplatesForReorder;
   const factory TemplateEvent.insertNewTemplate({required CreateListParameter listParameter}) = _InsertNewTemplate;

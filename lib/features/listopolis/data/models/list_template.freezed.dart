@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'list_template.dart';
 
@@ -10,39 +12,11 @@ part of 'list_template.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ListTemplate _$ListTemplateFromJson(Map<String, dynamic> json) {
   return _ListTemplate.fromJson(json);
 }
-
-/// @nodoc
-class _$ListTemplateTearOff {
-  const _$ListTemplateTearOff();
-
-  _ListTemplate call(
-      {String id = '0815',
-      String name = 'a template',
-      int position = 1,
-      @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-          ListType type = const ListType.todo(),
-      List<ListTemplatePosition> templatePositions = const []}) {
-    return _ListTemplate(
-      id: id,
-      name: name,
-      position: position,
-      type: type,
-      templatePositions: templatePositions,
-    );
-  }
-
-  ListTemplate fromJson(Map<String, Object> json) {
-    return ListTemplate.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ListTemplate = _$ListTemplateTearOff();
 
 /// @nodoc
 mixin _$ListTemplate {
@@ -64,7 +38,8 @@ mixin _$ListTemplate {
 abstract class $ListTemplateCopyWith<$Res> {
   factory $ListTemplateCopyWith(
           ListTemplate value, $Res Function(ListTemplate) then) =
-      _$ListTemplateCopyWithImpl<$Res>;
+      _$ListTemplateCopyWithImpl<$Res, ListTemplate>;
+  @useResult
   $Res call(
       {String id,
       String name,
@@ -77,60 +52,65 @@ abstract class $ListTemplateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ListTemplateCopyWithImpl<$Res> implements $ListTemplateCopyWith<$Res> {
+class _$ListTemplateCopyWithImpl<$Res, $Val extends ListTemplate>
+    implements $ListTemplateCopyWith<$Res> {
   _$ListTemplateCopyWithImpl(this._value, this._then);
 
-  final ListTemplate _value;
   // ignore: unused_field
-  final $Res Function(ListTemplate) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? position = freezed,
-    Object? type = freezed,
-    Object? templatePositions = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? position = null,
+    Object? type = null,
+    Object? templatePositions = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ListType,
-      templatePositions: templatePositions == freezed
+      templatePositions: null == templatePositions
           ? _value.templatePositions
           : templatePositions // ignore: cast_nullable_to_non_nullable
               as List<ListTemplatePosition>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTypeCopyWith<$Res> get type {
     return $ListTypeCopyWith<$Res>(_value.type, (value) {
-      return _then(_value.copyWith(type: value));
+      return _then(_value.copyWith(type: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$ListTemplateCopyWith<$Res>
+abstract class _$$_ListTemplateCopyWith<$Res>
     implements $ListTemplateCopyWith<$Res> {
-  factory _$ListTemplateCopyWith(
-          _ListTemplate value, $Res Function(_ListTemplate) then) =
-      __$ListTemplateCopyWithImpl<$Res>;
+  factory _$$_ListTemplateCopyWith(
+          _$_ListTemplate value, $Res Function(_$_ListTemplate) then) =
+      __$$_ListTemplateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       String name,
@@ -144,42 +124,41 @@ abstract class _$ListTemplateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ListTemplateCopyWithImpl<$Res> extends _$ListTemplateCopyWithImpl<$Res>
-    implements _$ListTemplateCopyWith<$Res> {
-  __$ListTemplateCopyWithImpl(
-      _ListTemplate _value, $Res Function(_ListTemplate) _then)
-      : super(_value, (v) => _then(v as _ListTemplate));
+class __$$_ListTemplateCopyWithImpl<$Res>
+    extends _$ListTemplateCopyWithImpl<$Res, _$_ListTemplate>
+    implements _$$_ListTemplateCopyWith<$Res> {
+  __$$_ListTemplateCopyWithImpl(
+      _$_ListTemplate _value, $Res Function(_$_ListTemplate) _then)
+      : super(_value, _then);
 
-  @override
-  _ListTemplate get _value => super._value as _ListTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? position = freezed,
-    Object? type = freezed,
-    Object? templatePositions = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? position = null,
+    Object? type = null,
+    Object? templatePositions = null,
   }) {
-    return _then(_ListTemplate(
-      id: id == freezed
+    return _then(_$_ListTemplate(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as ListType,
-      templatePositions: templatePositions == freezed
-          ? _value.templatePositions
+      templatePositions: null == templatePositions
+          ? _value._templatePositions
           : templatePositions // ignore: cast_nullable_to_non_nullable
               as List<ListTemplatePosition>,
     ));
@@ -195,27 +174,32 @@ class _$_ListTemplate extends _ListTemplate {
       this.position = 1,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
           this.type = const ListType.todo(),
-      this.templatePositions = const []})
-      : super._();
+      final List<ListTemplatePosition> templatePositions = const []})
+      : _templatePositions = templatePositions,
+        super._();
 
   factory _$_ListTemplate.fromJson(Map<String, dynamic> json) =>
-      _$_$_ListTemplateFromJson(json);
+      _$$_ListTemplateFromJson(json);
 
-  @JsonKey(defaultValue: '0815')
   @override
+  @JsonKey()
   final String id;
-  @JsonKey(defaultValue: 'a template')
   @override
+  @JsonKey()
   final String name;
-  @JsonKey(defaultValue: 1)
   @override
+  @JsonKey()
   final int position;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
   final ListType type;
-  @JsonKey(defaultValue: const [])
+  final List<ListTemplatePosition> _templatePositions;
   @override
-  final List<ListTemplatePosition> templatePositions;
+  @JsonKey()
+  List<ListTemplatePosition> get templatePositions {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_templatePositions);
+  }
 
   @override
   String toString() {
@@ -225,96 +209,69 @@ class _$_ListTemplate extends _ListTemplate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ListTemplate &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ListTemplate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)) &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.templatePositions, templatePositions) ||
-                const DeepCollectionEquality()
-                    .equals(other.templatePositions, templatePositions)));
+                other.position == position) &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality()
+                .equals(other._templatePositions, _templatePositions));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(position) ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(templatePositions);
 
   @JsonKey(ignore: true)
   @override
-  _$ListTemplateCopyWith<_ListTemplate> get copyWith =>
-      __$ListTemplateCopyWithImpl<_ListTemplate>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, id, name, position, type,
+      const DeepCollectionEquality().hash(_templatePositions));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ListTemplateCopyWith<_$_ListTemplate> get copyWith =>
+      __$$_ListTemplateCopyWithImpl<_$_ListTemplate>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ListTemplateToJson(this);
+    return _$$_ListTemplateToJson(
+      this,
+    );
   }
 }
 
 abstract class _ListTemplate extends ListTemplate {
   const factory _ListTemplate(
-      {String id,
-      String name,
-      int position,
+      {final String id,
+      final String name,
+      final int position,
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-          ListType type,
-      List<ListTemplatePosition> templatePositions}) = _$_ListTemplate;
+          final ListType type,
+      final List<ListTemplatePosition> templatePositions}) = _$_ListTemplate;
   const _ListTemplate._() : super._();
 
   factory _ListTemplate.fromJson(Map<String, dynamic> json) =
       _$_ListTemplate.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  int get position => throw _privateConstructorUsedError;
+  int get position;
   @override
   @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
-  ListType get type => throw _privateConstructorUsedError;
+  ListType get type;
   @override
-  List<ListTemplatePosition> get templatePositions =>
-      throw _privateConstructorUsedError;
+  List<ListTemplatePosition> get templatePositions;
   @override
   @JsonKey(ignore: true)
-  _$ListTemplateCopyWith<_ListTemplate> get copyWith =>
+  _$$_ListTemplateCopyWith<_$_ListTemplate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 ListTemplatePosition _$ListTemplatePositionFromJson(Map<String, dynamic> json) {
   return _ListTemplatePosition.fromJson(json);
 }
-
-/// @nodoc
-class _$ListTemplatePositionTearOff {
-  const _$ListTemplatePositionTearOff();
-
-  _ListTemplatePosition call(
-      {String name = 'a Name', String id = '0815', int position = 1}) {
-    return _ListTemplatePosition(
-      name: name,
-      id: id,
-      position: position,
-    );
-  }
-
-  ListTemplatePosition fromJson(Map<String, Object> json) {
-    return ListTemplatePosition.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $ListTemplatePosition = _$ListTemplatePositionTearOff();
 
 /// @nodoc
 mixin _$ListTemplatePosition {
@@ -332,79 +289,82 @@ mixin _$ListTemplatePosition {
 abstract class $ListTemplatePositionCopyWith<$Res> {
   factory $ListTemplatePositionCopyWith(ListTemplatePosition value,
           $Res Function(ListTemplatePosition) then) =
-      _$ListTemplatePositionCopyWithImpl<$Res>;
+      _$ListTemplatePositionCopyWithImpl<$Res, ListTemplatePosition>;
+  @useResult
   $Res call({String name, String id, int position});
 }
 
 /// @nodoc
-class _$ListTemplatePositionCopyWithImpl<$Res>
+class _$ListTemplatePositionCopyWithImpl<$Res,
+        $Val extends ListTemplatePosition>
     implements $ListTemplatePositionCopyWith<$Res> {
   _$ListTemplatePositionCopyWithImpl(this._value, this._then);
 
-  final ListTemplatePosition _value;
   // ignore: unused_field
-  final $Res Function(ListTemplatePosition) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? name = null,
+    Object? id = null,
+    Object? position = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ListTemplatePositionCopyWith<$Res>
+abstract class _$$_ListTemplatePositionCopyWith<$Res>
     implements $ListTemplatePositionCopyWith<$Res> {
-  factory _$ListTemplatePositionCopyWith(_ListTemplatePosition value,
-          $Res Function(_ListTemplatePosition) then) =
-      __$ListTemplatePositionCopyWithImpl<$Res>;
+  factory _$$_ListTemplatePositionCopyWith(_$_ListTemplatePosition value,
+          $Res Function(_$_ListTemplatePosition) then) =
+      __$$_ListTemplatePositionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String name, String id, int position});
 }
 
 /// @nodoc
-class __$ListTemplatePositionCopyWithImpl<$Res>
-    extends _$ListTemplatePositionCopyWithImpl<$Res>
-    implements _$ListTemplatePositionCopyWith<$Res> {
-  __$ListTemplatePositionCopyWithImpl(
-      _ListTemplatePosition _value, $Res Function(_ListTemplatePosition) _then)
-      : super(_value, (v) => _then(v as _ListTemplatePosition));
+class __$$_ListTemplatePositionCopyWithImpl<$Res>
+    extends _$ListTemplatePositionCopyWithImpl<$Res, _$_ListTemplatePosition>
+    implements _$$_ListTemplatePositionCopyWith<$Res> {
+  __$$_ListTemplatePositionCopyWithImpl(_$_ListTemplatePosition _value,
+      $Res Function(_$_ListTemplatePosition) _then)
+      : super(_value, _then);
 
-  @override
-  _ListTemplatePosition get _value => super._value as _ListTemplatePosition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? id = freezed,
-    Object? position = freezed,
+    Object? name = null,
+    Object? id = null,
+    Object? position = null,
   }) {
-    return _then(_ListTemplatePosition(
-      name: name == freezed
+    return _then(_$_ListTemplatePosition(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as int,
@@ -420,16 +380,16 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
       : super._();
 
   factory _$_ListTemplatePosition.fromJson(Map<String, dynamic> json) =>
-      _$_$_ListTemplatePositionFromJson(json);
+      _$$_ListTemplatePositionFromJson(json);
 
-  @JsonKey(defaultValue: 'a Name')
   @override
+  @JsonKey()
   final String name;
-  @JsonKey(defaultValue: '0815')
   @override
+  @JsonKey()
   final String id;
-  @JsonKey(defaultValue: 1)
   @override
+  @JsonKey()
   final int position;
 
   @override
@@ -440,51 +400,51 @@ class _$_ListTemplatePosition extends _ListTemplatePosition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ListTemplatePosition &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ListTemplatePosition &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(position);
 
   @JsonKey(ignore: true)
   @override
-  _$ListTemplatePositionCopyWith<_ListTemplatePosition> get copyWith =>
-      __$ListTemplatePositionCopyWithImpl<_ListTemplatePosition>(
+  int get hashCode => Object.hash(runtimeType, name, id, position);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ListTemplatePositionCopyWith<_$_ListTemplatePosition> get copyWith =>
+      __$$_ListTemplatePositionCopyWithImpl<_$_ListTemplatePosition>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ListTemplatePositionToJson(this);
+    return _$$_ListTemplatePositionToJson(
+      this,
+    );
   }
 }
 
 abstract class _ListTemplatePosition extends ListTemplatePosition {
-  const factory _ListTemplatePosition({String name, String id, int position}) =
-      _$_ListTemplatePosition;
+  const factory _ListTemplatePosition(
+      {final String name,
+      final String id,
+      final int position}) = _$_ListTemplatePosition;
   const _ListTemplatePosition._() : super._();
 
   factory _ListTemplatePosition.fromJson(Map<String, dynamic> json) =
       _$_ListTemplatePosition.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  int get position => throw _privateConstructorUsedError;
+  int get position;
   @override
   @JsonKey(ignore: true)
-  _$ListTemplatePositionCopyWith<_ListTemplatePosition> get copyWith =>
+  _$$_ListTemplatePositionCopyWith<_$_ListTemplatePosition> get copyWith =>
       throw _privateConstructorUsedError;
 }

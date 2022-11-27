@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 part 'list.freezed.dart';
@@ -9,18 +8,21 @@ part 'list.g.dart';
 
 @freezed
 abstract class ActiveList implements _$ActiveList{
-  
-  @JsonSerializable()
+   @JsonSerializable()
   const ActiveList._();
   const factory ActiveList(
     {
       @Default('0815') String id, 
       @Default('list name') String name,
+      // ignore: invalid_annotation_target
       @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
       @Default(ListType.todo()) ListType type,
       @Default(1) int position,
       @Default(false) bool done,
       @Default(false) bool opened,
+      @Default(false) bool repeat,
+      @Default("nodate") String repeateSince,
+      @Default("nochannel") String reminderChannel,
       @Default([]) List<ActiveListPosition> listItems
     }
   ) = _ActiveList;

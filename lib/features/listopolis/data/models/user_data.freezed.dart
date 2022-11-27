@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_data.dart';
 
@@ -10,36 +12,11 @@ part of 'user_data.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 UserData _$UserDataFromJson(Map<String, dynamic> json) {
   return _UserData.fromJson(json);
 }
-
-/// @nodoc
-class _$UserDataTearOff {
-  const _$UserDataTearOff();
-
-  _UserData call(
-      {String id = '0815',
-      String name = 'some User',
-      List<ListTemplate> templates = const [],
-      List<ActiveList> activeLists = const []}) {
-    return _UserData(
-      id: id,
-      name: name,
-      templates: templates,
-      activeLists: activeLists,
-    );
-  }
-
-  UserData fromJson(Map<String, Object> json) {
-    return UserData.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $UserData = _$UserDataTearOff();
 
 /// @nodoc
 mixin _$UserData {
@@ -57,7 +34,8 @@ mixin _$UserData {
 /// @nodoc
 abstract class $UserDataCopyWith<$Res> {
   factory $UserDataCopyWith(UserData value, $Res Function(UserData) then) =
-      _$UserDataCopyWithImpl<$Res>;
+      _$UserDataCopyWithImpl<$Res, UserData>;
+  @useResult
   $Res call(
       {String id,
       String name,
@@ -66,46 +44,51 @@ abstract class $UserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserDataCopyWithImpl<$Res> implements $UserDataCopyWith<$Res> {
+class _$UserDataCopyWithImpl<$Res, $Val extends UserData>
+    implements $UserDataCopyWith<$Res> {
   _$UserDataCopyWithImpl(this._value, this._then);
 
-  final UserData _value;
   // ignore: unused_field
-  final $Res Function(UserData) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? templates = freezed,
-    Object? activeLists = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? templates = null,
+    Object? activeLists = null,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      templates: templates == freezed
+      templates: null == templates
           ? _value.templates
           : templates // ignore: cast_nullable_to_non_nullable
               as List<ListTemplate>,
-      activeLists: activeLists == freezed
+      activeLists: null == activeLists
           ? _value.activeLists
           : activeLists // ignore: cast_nullable_to_non_nullable
               as List<ActiveList>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
-  factory _$UserDataCopyWith(_UserData value, $Res Function(_UserData) then) =
-      __$UserDataCopyWithImpl<$Res>;
+abstract class _$$_UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
+  factory _$$_UserDataCopyWith(
+          _$_UserData value, $Res Function(_$_UserData) then) =
+      __$$_UserDataCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String id,
       String name,
@@ -114,36 +97,36 @@ abstract class _$UserDataCopyWith<$Res> implements $UserDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserDataCopyWithImpl<$Res> extends _$UserDataCopyWithImpl<$Res>
-    implements _$UserDataCopyWith<$Res> {
-  __$UserDataCopyWithImpl(_UserData _value, $Res Function(_UserData) _then)
-      : super(_value, (v) => _then(v as _UserData));
+class __$$_UserDataCopyWithImpl<$Res>
+    extends _$UserDataCopyWithImpl<$Res, _$_UserData>
+    implements _$$_UserDataCopyWith<$Res> {
+  __$$_UserDataCopyWithImpl(
+      _$_UserData _value, $Res Function(_$_UserData) _then)
+      : super(_value, _then);
 
-  @override
-  _UserData get _value => super._value as _UserData;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? templates = freezed,
-    Object? activeLists = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? templates = null,
+    Object? activeLists = null,
   }) {
-    return _then(_UserData(
-      id: id == freezed
+    return _then(_$_UserData(
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      templates: templates == freezed
-          ? _value.templates
+      templates: null == templates
+          ? _value._templates
           : templates // ignore: cast_nullable_to_non_nullable
               as List<ListTemplate>,
-      activeLists: activeLists == freezed
-          ? _value.activeLists
+      activeLists: null == activeLists
+          ? _value._activeLists
           : activeLists // ignore: cast_nullable_to_non_nullable
               as List<ActiveList>,
     ));
@@ -156,25 +139,36 @@ class _$_UserData extends _UserData {
   const _$_UserData(
       {this.id = '0815',
       this.name = 'some User',
-      this.templates = const [],
-      this.activeLists = const []})
-      : super._();
+      final List<ListTemplate> templates = const [],
+      final List<ActiveList> activeLists = const []})
+      : _templates = templates,
+        _activeLists = activeLists,
+        super._();
 
   factory _$_UserData.fromJson(Map<String, dynamic> json) =>
-      _$_$_UserDataFromJson(json);
+      _$$_UserDataFromJson(json);
 
-  @JsonKey(defaultValue: '0815')
   @override
+  @JsonKey()
   final String id;
-  @JsonKey(defaultValue: 'some User')
   @override
+  @JsonKey()
   final String name;
-  @JsonKey(defaultValue: const [])
+  final List<ListTemplate> _templates;
   @override
-  final List<ListTemplate> templates;
-  @JsonKey(defaultValue: const [])
+  @JsonKey()
+  List<ListTemplate> get templates {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_templates);
+  }
+
+  final List<ActiveList> _activeLists;
   @override
-  final List<ActiveList> activeLists;
+  @JsonKey()
+  List<ActiveList> get activeLists {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_activeLists);
+  }
 
   @override
   String toString() {
@@ -184,58 +178,59 @@ class _$_UserData extends _UserData {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserData &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.templates, templates) ||
-                const DeepCollectionEquality()
-                    .equals(other.templates, templates)) &&
-            (identical(other.activeLists, activeLists) ||
-                const DeepCollectionEquality()
-                    .equals(other.activeLists, activeLists)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UserData &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other._templates, _templates) &&
+            const DeepCollectionEquality()
+                .equals(other._activeLists, _activeLists));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(templates) ^
-      const DeepCollectionEquality().hash(activeLists);
 
   @JsonKey(ignore: true)
   @override
-  _$UserDataCopyWith<_UserData> get copyWith =>
-      __$UserDataCopyWithImpl<_UserData>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(_templates),
+      const DeepCollectionEquality().hash(_activeLists));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_UserDataCopyWith<_$_UserData> get copyWith =>
+      __$$_UserDataCopyWithImpl<_$_UserData>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_UserDataToJson(this);
+    return _$$_UserDataToJson(
+      this,
+    );
   }
 }
 
 abstract class _UserData extends UserData {
   const factory _UserData(
-      {String id,
-      String name,
-      List<ListTemplate> templates,
-      List<ActiveList> activeLists}) = _$_UserData;
+      {final String id,
+      final String name,
+      final List<ListTemplate> templates,
+      final List<ActiveList> activeLists}) = _$_UserData;
   const _UserData._() : super._();
 
   factory _UserData.fromJson(Map<String, dynamic> json) = _$_UserData.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String get name;
   @override
-  List<ListTemplate> get templates => throw _privateConstructorUsedError;
+  List<ListTemplate> get templates;
   @override
-  List<ActiveList> get activeLists => throw _privateConstructorUsedError;
+  List<ActiveList> get activeLists;
   @override
   @JsonKey(ignore: true)
-  _$UserDataCopyWith<_UserData> get copyWith =>
+  _$$_UserDataCopyWith<_$_UserData> get copyWith =>
       throw _privateConstructorUsedError;
 }

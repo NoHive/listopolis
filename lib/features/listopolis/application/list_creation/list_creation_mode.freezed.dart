@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'list_creation_mode.dart';
 
@@ -10,39 +12,7 @@ part of 'list_creation_mode.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ListEditModeTearOff {
-  const _$ListEditModeTearOff();
-
-  _EditListCreation listCreation() {
-    return const _EditListCreation();
-  }
-
-  _EditListEditing listEditing() {
-    return const _EditListEditing();
-  }
-
-  _OnlineListEditing onlinelistEditing() {
-    return const _OnlineListEditing();
-  }
-
-  _EditTemplateCreation templateCreation() {
-    return const _EditTemplateCreation();
-  }
-
-  _EditTemplateEditing templateEditing() {
-    return const _EditTemplateEditing();
-  }
-
-  _EditTransferTemplateToList transferTemplateToList() {
-    return const _EditTransferTemplateToList();
-  }
-}
-
-/// @nodoc
-const $ListEditMode = _$ListEditModeTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ListEditMode {
@@ -54,6 +24,16 @@ mixin _$ListEditMode {
     required TResult Function() templateCreation,
     required TResult Function() templateEditing,
     required TResult Function() transferTemplateToList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -79,6 +59,17 @@ mixin _$ListEditMode {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
@@ -95,35 +86,34 @@ mixin _$ListEditMode {
 abstract class $ListEditModeCopyWith<$Res> {
   factory $ListEditModeCopyWith(
           ListEditMode value, $Res Function(ListEditMode) then) =
-      _$ListEditModeCopyWithImpl<$Res>;
+      _$ListEditModeCopyWithImpl<$Res, ListEditMode>;
 }
 
 /// @nodoc
-class _$ListEditModeCopyWithImpl<$Res> implements $ListEditModeCopyWith<$Res> {
+class _$ListEditModeCopyWithImpl<$Res, $Val extends ListEditMode>
+    implements $ListEditModeCopyWith<$Res> {
   _$ListEditModeCopyWithImpl(this._value, this._then);
 
-  final ListEditMode _value;
   // ignore: unused_field
-  final $Res Function(ListEditMode) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$EditListCreationCopyWith<$Res> {
-  factory _$EditListCreationCopyWith(
-          _EditListCreation value, $Res Function(_EditListCreation) then) =
-      __$EditListCreationCopyWithImpl<$Res>;
+abstract class _$$_EditListCreationCopyWith<$Res> {
+  factory _$$_EditListCreationCopyWith(
+          _$_EditListCreation value, $Res Function(_$_EditListCreation) then) =
+      __$$_EditListCreationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EditListCreationCopyWithImpl<$Res>
-    extends _$ListEditModeCopyWithImpl<$Res>
-    implements _$EditListCreationCopyWith<$Res> {
-  __$EditListCreationCopyWithImpl(
-      _EditListCreation _value, $Res Function(_EditListCreation) _then)
-      : super(_value, (v) => _then(v as _EditListCreation));
-
-  @override
-  _EditListCreation get _value => super._value as _EditListCreation;
+class __$$_EditListCreationCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res, _$_EditListCreation>
+    implements _$$_EditListCreationCopyWith<$Res> {
+  __$$_EditListCreationCopyWithImpl(
+      _$_EditListCreation _value, $Res Function(_$_EditListCreation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -138,7 +128,8 @@ class _$_EditListCreation implements _EditListCreation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EditListCreation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_EditListCreation);
   }
 
   @override
@@ -155,6 +146,19 @@ class _$_EditListCreation implements _EditListCreation {
     required TResult Function() transferTemplateToList,
   }) {
     return listCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
+  }) {
+    return listCreation?.call();
   }
 
   @override
@@ -190,6 +194,20 @@ class _$_EditListCreation implements _EditListCreation {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) {
+    return listCreation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
@@ -211,22 +229,19 @@ abstract class _EditListCreation implements ListEditMode {
 }
 
 /// @nodoc
-abstract class _$EditListEditingCopyWith<$Res> {
-  factory _$EditListEditingCopyWith(
-          _EditListEditing value, $Res Function(_EditListEditing) then) =
-      __$EditListEditingCopyWithImpl<$Res>;
+abstract class _$$_EditListEditingCopyWith<$Res> {
+  factory _$$_EditListEditingCopyWith(
+          _$_EditListEditing value, $Res Function(_$_EditListEditing) then) =
+      __$$_EditListEditingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EditListEditingCopyWithImpl<$Res>
-    extends _$ListEditModeCopyWithImpl<$Res>
-    implements _$EditListEditingCopyWith<$Res> {
-  __$EditListEditingCopyWithImpl(
-      _EditListEditing _value, $Res Function(_EditListEditing) _then)
-      : super(_value, (v) => _then(v as _EditListEditing));
-
-  @override
-  _EditListEditing get _value => super._value as _EditListEditing;
+class __$$_EditListEditingCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res, _$_EditListEditing>
+    implements _$$_EditListEditingCopyWith<$Res> {
+  __$$_EditListEditingCopyWithImpl(
+      _$_EditListEditing _value, $Res Function(_$_EditListEditing) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -241,7 +256,8 @@ class _$_EditListEditing implements _EditListEditing {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EditListEditing);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_EditListEditing);
   }
 
   @override
@@ -258,6 +274,19 @@ class _$_EditListEditing implements _EditListEditing {
     required TResult Function() transferTemplateToList,
   }) {
     return listEditing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
+  }) {
+    return listEditing?.call();
   }
 
   @override
@@ -293,6 +322,20 @@ class _$_EditListEditing implements _EditListEditing {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) {
+    return listEditing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
@@ -314,22 +357,19 @@ abstract class _EditListEditing implements ListEditMode {
 }
 
 /// @nodoc
-abstract class _$OnlineListEditingCopyWith<$Res> {
-  factory _$OnlineListEditingCopyWith(
-          _OnlineListEditing value, $Res Function(_OnlineListEditing) then) =
-      __$OnlineListEditingCopyWithImpl<$Res>;
+abstract class _$$_OnlineListEditingCopyWith<$Res> {
+  factory _$$_OnlineListEditingCopyWith(_$_OnlineListEditing value,
+          $Res Function(_$_OnlineListEditing) then) =
+      __$$_OnlineListEditingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OnlineListEditingCopyWithImpl<$Res>
-    extends _$ListEditModeCopyWithImpl<$Res>
-    implements _$OnlineListEditingCopyWith<$Res> {
-  __$OnlineListEditingCopyWithImpl(
-      _OnlineListEditing _value, $Res Function(_OnlineListEditing) _then)
-      : super(_value, (v) => _then(v as _OnlineListEditing));
-
-  @override
-  _OnlineListEditing get _value => super._value as _OnlineListEditing;
+class __$$_OnlineListEditingCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res, _$_OnlineListEditing>
+    implements _$$_OnlineListEditingCopyWith<$Res> {
+  __$$_OnlineListEditingCopyWithImpl(
+      _$_OnlineListEditing _value, $Res Function(_$_OnlineListEditing) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -344,7 +384,8 @@ class _$_OnlineListEditing implements _OnlineListEditing {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _OnlineListEditing);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_OnlineListEditing);
   }
 
   @override
@@ -361,6 +402,19 @@ class _$_OnlineListEditing implements _OnlineListEditing {
     required TResult Function() transferTemplateToList,
   }) {
     return onlinelistEditing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
+  }) {
+    return onlinelistEditing?.call();
   }
 
   @override
@@ -396,6 +450,20 @@ class _$_OnlineListEditing implements _OnlineListEditing {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) {
+    return onlinelistEditing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
@@ -417,22 +485,19 @@ abstract class _OnlineListEditing implements ListEditMode {
 }
 
 /// @nodoc
-abstract class _$EditTemplateCreationCopyWith<$Res> {
-  factory _$EditTemplateCreationCopyWith(_EditTemplateCreation value,
-          $Res Function(_EditTemplateCreation) then) =
-      __$EditTemplateCreationCopyWithImpl<$Res>;
+abstract class _$$_EditTemplateCreationCopyWith<$Res> {
+  factory _$$_EditTemplateCreationCopyWith(_$_EditTemplateCreation value,
+          $Res Function(_$_EditTemplateCreation) then) =
+      __$$_EditTemplateCreationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EditTemplateCreationCopyWithImpl<$Res>
-    extends _$ListEditModeCopyWithImpl<$Res>
-    implements _$EditTemplateCreationCopyWith<$Res> {
-  __$EditTemplateCreationCopyWithImpl(
-      _EditTemplateCreation _value, $Res Function(_EditTemplateCreation) _then)
-      : super(_value, (v) => _then(v as _EditTemplateCreation));
-
-  @override
-  _EditTemplateCreation get _value => super._value as _EditTemplateCreation;
+class __$$_EditTemplateCreationCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res, _$_EditTemplateCreation>
+    implements _$$_EditTemplateCreationCopyWith<$Res> {
+  __$$_EditTemplateCreationCopyWithImpl(_$_EditTemplateCreation _value,
+      $Res Function(_$_EditTemplateCreation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -447,7 +512,8 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EditTemplateCreation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_EditTemplateCreation);
   }
 
   @override
@@ -464,6 +530,19 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
     required TResult Function() transferTemplateToList,
   }) {
     return templateCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
+  }) {
+    return templateCreation?.call();
   }
 
   @override
@@ -499,6 +578,20 @@ class _$_EditTemplateCreation implements _EditTemplateCreation {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) {
+    return templateCreation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
@@ -520,22 +613,19 @@ abstract class _EditTemplateCreation implements ListEditMode {
 }
 
 /// @nodoc
-abstract class _$EditTemplateEditingCopyWith<$Res> {
-  factory _$EditTemplateEditingCopyWith(_EditTemplateEditing value,
-          $Res Function(_EditTemplateEditing) then) =
-      __$EditTemplateEditingCopyWithImpl<$Res>;
+abstract class _$$_EditTemplateEditingCopyWith<$Res> {
+  factory _$$_EditTemplateEditingCopyWith(_$_EditTemplateEditing value,
+          $Res Function(_$_EditTemplateEditing) then) =
+      __$$_EditTemplateEditingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EditTemplateEditingCopyWithImpl<$Res>
-    extends _$ListEditModeCopyWithImpl<$Res>
-    implements _$EditTemplateEditingCopyWith<$Res> {
-  __$EditTemplateEditingCopyWithImpl(
-      _EditTemplateEditing _value, $Res Function(_EditTemplateEditing) _then)
-      : super(_value, (v) => _then(v as _EditTemplateEditing));
-
-  @override
-  _EditTemplateEditing get _value => super._value as _EditTemplateEditing;
+class __$$_EditTemplateEditingCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res, _$_EditTemplateEditing>
+    implements _$$_EditTemplateEditingCopyWith<$Res> {
+  __$$_EditTemplateEditingCopyWithImpl(_$_EditTemplateEditing _value,
+      $Res Function(_$_EditTemplateEditing) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -550,7 +640,8 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EditTemplateEditing);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_EditTemplateEditing);
   }
 
   @override
@@ -567,6 +658,19 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
     required TResult Function() transferTemplateToList,
   }) {
     return templateEditing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
+  }) {
+    return templateEditing?.call();
   }
 
   @override
@@ -602,6 +706,20 @@ class _$_EditTemplateEditing implements _EditTemplateEditing {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) {
+    return templateEditing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_EditListCreation value)? listCreation,
     TResult Function(_EditListEditing value)? listEditing,
@@ -623,24 +741,21 @@ abstract class _EditTemplateEditing implements ListEditMode {
 }
 
 /// @nodoc
-abstract class _$EditTransferTemplateToListCopyWith<$Res> {
-  factory _$EditTransferTemplateToListCopyWith(
-          _EditTransferTemplateToList value,
-          $Res Function(_EditTransferTemplateToList) then) =
-      __$EditTransferTemplateToListCopyWithImpl<$Res>;
+abstract class _$$_EditTransferTemplateToListCopyWith<$Res> {
+  factory _$$_EditTransferTemplateToListCopyWith(
+          _$_EditTransferTemplateToList value,
+          $Res Function(_$_EditTransferTemplateToList) then) =
+      __$$_EditTransferTemplateToListCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EditTransferTemplateToListCopyWithImpl<$Res>
-    extends _$ListEditModeCopyWithImpl<$Res>
-    implements _$EditTransferTemplateToListCopyWith<$Res> {
-  __$EditTransferTemplateToListCopyWithImpl(_EditTransferTemplateToList _value,
-      $Res Function(_EditTransferTemplateToList) _then)
-      : super(_value, (v) => _then(v as _EditTransferTemplateToList));
-
-  @override
-  _EditTransferTemplateToList get _value =>
-      super._value as _EditTransferTemplateToList;
+class __$$_EditTransferTemplateToListCopyWithImpl<$Res>
+    extends _$ListEditModeCopyWithImpl<$Res, _$_EditTransferTemplateToList>
+    implements _$$_EditTransferTemplateToListCopyWith<$Res> {
+  __$$_EditTransferTemplateToListCopyWithImpl(
+      _$_EditTransferTemplateToList _value,
+      $Res Function(_$_EditTransferTemplateToList) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -655,7 +770,9 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _EditTransferTemplateToList);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_EditTransferTemplateToList);
   }
 
   @override
@@ -672,6 +789,19 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
     required TResult Function() transferTemplateToList,
   }) {
     return transferTemplateToList();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? listCreation,
+    TResult? Function()? listEditing,
+    TResult? Function()? onlinelistEditing,
+    TResult? Function()? templateCreation,
+    TResult? Function()? templateEditing,
+    TResult? Function()? transferTemplateToList,
+  }) {
+    return transferTemplateToList?.call();
   }
 
   @override
@@ -703,6 +833,20 @@ class _$_EditTransferTemplateToList implements _EditTransferTemplateToList {
         transferTemplateToList,
   }) {
     return transferTemplateToList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_EditListCreation value)? listCreation,
+    TResult? Function(_EditListEditing value)? listEditing,
+    TResult? Function(_OnlineListEditing value)? onlinelistEditing,
+    TResult? Function(_EditTemplateCreation value)? templateCreation,
+    TResult? Function(_EditTemplateEditing value)? templateEditing,
+    TResult? Function(_EditTransferTemplateToList value)?
+        transferTemplateToList,
+  }) {
+    return transferTemplateToList?.call(this);
   }
 
   @override

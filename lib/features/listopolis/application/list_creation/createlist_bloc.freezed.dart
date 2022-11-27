@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'createlist_bloc.dart';
 
@@ -10,98 +12,7 @@ part of 'createlist_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CreatelistEventTearOff {
-  const _$CreatelistEventTearOff();
-
-  _Started started() {
-    return const _Started();
-  }
-
-  _StartListCreation startListCreation() {
-    return const _StartListCreation();
-  }
-
-  _StartTemplateCreation startTemplateCreation() {
-    return const _StartTemplateCreation();
-  }
-
-  _ChangeList changeList({required CreateListParameter listParam}) {
-    return _ChangeList(
-      listParam: listParam,
-    );
-  }
-
-  _SwitchToCreation switchViewToCreation(
-      {required CreateListParameter listParam}) {
-    return _SwitchToCreation(
-      listParam: listParam,
-    );
-  }
-
-  _SwitchToReorder switchViewToReorder(
-      {required CreateListParameter listParam}) {
-    return _SwitchToReorder(
-      listParam: listParam,
-    );
-  }
-
-  _AddListPositionAfter addListPositionAfter(
-      {required CreateListParameter listParam, int index = 1}) {
-    return _AddListPositionAfter(
-      listParam: listParam,
-      index: index,
-    );
-  }
-
-  _RemoveListPosition removeListPosition(
-      {required CreateListParameter listParam, int index = 1}) {
-    return _RemoveListPosition(
-      listParam: listParam,
-      index: index,
-    );
-  }
-
-  _ChangeItemOrder changeListItemOrder(
-      {required CreateListParameter listParam,
-      int oldIndex = 1,
-      int newIndex = 1}) {
-    return _ChangeItemOrder(
-      listParam: listParam,
-      oldIndex: oldIndex,
-      newIndex: newIndex,
-    );
-  }
-
-  _EditActiveList editActiveList({required ActiveList list}) {
-    return _EditActiveList(
-      list: list,
-    );
-  }
-
-  _EditOnlineList editOnlineList({required ActiveList list}) {
-    return _EditOnlineList(
-      list: list,
-    );
-  }
-
-  _EditTemplate editTemplate({required ListTemplate template}) {
-    return _EditTemplate(
-      template: template,
-    );
-  }
-
-  _UseTemplateAsList useTemplateAsList({required ListTemplate template}) {
-    return _UseTemplateAsList(
-      template: template,
-    );
-  }
-}
-
-/// @nodoc
-const $CreatelistEvent = _$CreatelistEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CreatelistEvent {
@@ -126,6 +37,27 @@ mixin _$CreatelistEvent {
     required TResult Function(ActiveList list) editOnlineList,
     required TResult Function(ListTemplate template) editTemplate,
     required TResult Function(ListTemplate template) useTemplateAsList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -168,6 +100,23 @@ mixin _$CreatelistEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -191,33 +140,33 @@ mixin _$CreatelistEvent {
 abstract class $CreatelistEventCopyWith<$Res> {
   factory $CreatelistEventCopyWith(
           CreatelistEvent value, $Res Function(CreatelistEvent) then) =
-      _$CreatelistEventCopyWithImpl<$Res>;
+      _$CreatelistEventCopyWithImpl<$Res, CreatelistEvent>;
 }
 
 /// @nodoc
-class _$CreatelistEventCopyWithImpl<$Res>
+class _$CreatelistEventCopyWithImpl<$Res, $Val extends CreatelistEvent>
     implements $CreatelistEventCopyWith<$Res> {
   _$CreatelistEventCopyWithImpl(this._value, this._then);
 
-  final CreatelistEvent _value;
   // ignore: unused_field
-  final $Res Function(CreatelistEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$$_StartedCopyWith<$Res> {
+  factory _$$_StartedCopyWith(
+          _$_Started value, $Res Function(_$_Started) then) =
+      __$$_StartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
-
-  @override
-  _Started get _value => super._value as _Started;
+class __$$_StartedCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_Started>
+    implements _$$_StartedCopyWith<$Res> {
+  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -232,7 +181,8 @@ class _$_Started implements _Started {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Started);
   }
 
   @override
@@ -262,6 +212,30 @@ class _$_Started implements _Started {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return started();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return started?.call();
   }
 
   @override
@@ -314,6 +288,26 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return started?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -342,22 +336,19 @@ abstract class _Started implements CreatelistEvent {
 }
 
 /// @nodoc
-abstract class _$StartListCreationCopyWith<$Res> {
-  factory _$StartListCreationCopyWith(
-          _StartListCreation value, $Res Function(_StartListCreation) then) =
-      __$StartListCreationCopyWithImpl<$Res>;
+abstract class _$$_StartListCreationCopyWith<$Res> {
+  factory _$$_StartListCreationCopyWith(_$_StartListCreation value,
+          $Res Function(_$_StartListCreation) then) =
+      __$$_StartListCreationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartListCreationCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$StartListCreationCopyWith<$Res> {
-  __$StartListCreationCopyWithImpl(
-      _StartListCreation _value, $Res Function(_StartListCreation) _then)
-      : super(_value, (v) => _then(v as _StartListCreation));
-
-  @override
-  _StartListCreation get _value => super._value as _StartListCreation;
+class __$$_StartListCreationCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_StartListCreation>
+    implements _$$_StartListCreationCopyWith<$Res> {
+  __$$_StartListCreationCopyWithImpl(
+      _$_StartListCreation _value, $Res Function(_$_StartListCreation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -372,7 +363,8 @@ class _$_StartListCreation implements _StartListCreation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _StartListCreation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_StartListCreation);
   }
 
   @override
@@ -402,6 +394,30 @@ class _$_StartListCreation implements _StartListCreation {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return startListCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return startListCreation?.call();
   }
 
   @override
@@ -454,6 +470,26 @@ class _$_StartListCreation implements _StartListCreation {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return startListCreation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -482,22 +518,19 @@ abstract class _StartListCreation implements CreatelistEvent {
 }
 
 /// @nodoc
-abstract class _$StartTemplateCreationCopyWith<$Res> {
-  factory _$StartTemplateCreationCopyWith(_StartTemplateCreation value,
-          $Res Function(_StartTemplateCreation) then) =
-      __$StartTemplateCreationCopyWithImpl<$Res>;
+abstract class _$$_StartTemplateCreationCopyWith<$Res> {
+  factory _$$_StartTemplateCreationCopyWith(_$_StartTemplateCreation value,
+          $Res Function(_$_StartTemplateCreation) then) =
+      __$$_StartTemplateCreationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartTemplateCreationCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$StartTemplateCreationCopyWith<$Res> {
-  __$StartTemplateCreationCopyWithImpl(_StartTemplateCreation _value,
-      $Res Function(_StartTemplateCreation) _then)
-      : super(_value, (v) => _then(v as _StartTemplateCreation));
-
-  @override
-  _StartTemplateCreation get _value => super._value as _StartTemplateCreation;
+class __$$_StartTemplateCreationCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_StartTemplateCreation>
+    implements _$$_StartTemplateCreationCopyWith<$Res> {
+  __$$_StartTemplateCreationCopyWithImpl(_$_StartTemplateCreation _value,
+      $Res Function(_$_StartTemplateCreation) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -512,7 +545,8 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _StartTemplateCreation);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_StartTemplateCreation);
   }
 
   @override
@@ -542,6 +576,30 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return startTemplateCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return startTemplateCreation?.call();
   }
 
   @override
@@ -594,6 +652,26 @@ class _$_StartTemplateCreation implements _StartTemplateCreation {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return startTemplateCreation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -622,30 +700,29 @@ abstract class _StartTemplateCreation implements CreatelistEvent {
 }
 
 /// @nodoc
-abstract class _$ChangeListCopyWith<$Res> {
-  factory _$ChangeListCopyWith(
-          _ChangeList value, $Res Function(_ChangeList) then) =
-      __$ChangeListCopyWithImpl<$Res>;
+abstract class _$$_ChangeListCopyWith<$Res> {
+  factory _$$_ChangeListCopyWith(
+          _$_ChangeList value, $Res Function(_$_ChangeList) then) =
+      __$$_ChangeListCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParam});
 }
 
 /// @nodoc
-class __$ChangeListCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$ChangeListCopyWith<$Res> {
-  __$ChangeListCopyWithImpl(
-      _ChangeList _value, $Res Function(_ChangeList) _then)
-      : super(_value, (v) => _then(v as _ChangeList));
+class __$$_ChangeListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_ChangeList>
+    implements _$$_ChangeListCopyWith<$Res> {
+  __$$_ChangeListCopyWithImpl(
+      _$_ChangeList _value, $Res Function(_$_ChangeList) _then)
+      : super(_value, _then);
 
-  @override
-  _ChangeList get _value => super._value as _ChangeList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParam = freezed,
+    Object? listParam = null,
   }) {
-    return _then(_ChangeList(
-      listParam: listParam == freezed
+    return _then(_$_ChangeList(
+      listParam: null == listParam
           ? _value.listParam
           : listParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -669,20 +746,20 @@ class _$_ChangeList implements _ChangeList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeList &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeList &&
             (identical(other.listParam, listParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParam, listParam)));
+                other.listParam == listParam));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParam);
+  int get hashCode => Object.hash(runtimeType, listParam);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeListCopyWith<_ChangeList> get copyWith =>
-      __$ChangeListCopyWithImpl<_ChangeList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ChangeListCopyWith<_$_ChangeList> get copyWith =>
+      __$$_ChangeListCopyWithImpl<_$_ChangeList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -708,6 +785,30 @@ class _$_ChangeList implements _ChangeList {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return changeList(listParam);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return changeList?.call(listParam);
   }
 
   @override
@@ -760,6 +861,26 @@ class _$_ChangeList implements _ChangeList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return changeList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -784,40 +905,39 @@ class _$_ChangeList implements _ChangeList {
 }
 
 abstract class _ChangeList implements CreatelistEvent {
-  const factory _ChangeList({required CreateListParameter listParam}) =
+  const factory _ChangeList({required final CreateListParameter listParam}) =
       _$_ChangeList;
 
-  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  CreateListParameter get listParam;
   @JsonKey(ignore: true)
-  _$ChangeListCopyWith<_ChangeList> get copyWith =>
+  _$$_ChangeListCopyWith<_$_ChangeList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SwitchToCreationCopyWith<$Res> {
-  factory _$SwitchToCreationCopyWith(
-          _SwitchToCreation value, $Res Function(_SwitchToCreation) then) =
-      __$SwitchToCreationCopyWithImpl<$Res>;
+abstract class _$$_SwitchToCreationCopyWith<$Res> {
+  factory _$$_SwitchToCreationCopyWith(
+          _$_SwitchToCreation value, $Res Function(_$_SwitchToCreation) then) =
+      __$$_SwitchToCreationCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParam});
 }
 
 /// @nodoc
-class __$SwitchToCreationCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$SwitchToCreationCopyWith<$Res> {
-  __$SwitchToCreationCopyWithImpl(
-      _SwitchToCreation _value, $Res Function(_SwitchToCreation) _then)
-      : super(_value, (v) => _then(v as _SwitchToCreation));
+class __$$_SwitchToCreationCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_SwitchToCreation>
+    implements _$$_SwitchToCreationCopyWith<$Res> {
+  __$$_SwitchToCreationCopyWithImpl(
+      _$_SwitchToCreation _value, $Res Function(_$_SwitchToCreation) _then)
+      : super(_value, _then);
 
-  @override
-  _SwitchToCreation get _value => super._value as _SwitchToCreation;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParam = freezed,
+    Object? listParam = null,
   }) {
-    return _then(_SwitchToCreation(
-      listParam: listParam == freezed
+    return _then(_$_SwitchToCreation(
+      listParam: null == listParam
           ? _value.listParam
           : listParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -841,20 +961,20 @@ class _$_SwitchToCreation implements _SwitchToCreation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SwitchToCreation &&
+        (other.runtimeType == runtimeType &&
+            other is _$_SwitchToCreation &&
             (identical(other.listParam, listParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParam, listParam)));
+                other.listParam == listParam));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParam);
+  int get hashCode => Object.hash(runtimeType, listParam);
 
   @JsonKey(ignore: true)
   @override
-  _$SwitchToCreationCopyWith<_SwitchToCreation> get copyWith =>
-      __$SwitchToCreationCopyWithImpl<_SwitchToCreation>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SwitchToCreationCopyWith<_$_SwitchToCreation> get copyWith =>
+      __$$_SwitchToCreationCopyWithImpl<_$_SwitchToCreation>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -880,6 +1000,30 @@ class _$_SwitchToCreation implements _SwitchToCreation {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return switchViewToCreation(listParam);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return switchViewToCreation?.call(listParam);
   }
 
   @override
@@ -932,6 +1076,26 @@ class _$_SwitchToCreation implements _SwitchToCreation {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return switchViewToCreation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -956,40 +1120,39 @@ class _$_SwitchToCreation implements _SwitchToCreation {
 }
 
 abstract class _SwitchToCreation implements CreatelistEvent {
-  const factory _SwitchToCreation({required CreateListParameter listParam}) =
-      _$_SwitchToCreation;
+  const factory _SwitchToCreation(
+      {required final CreateListParameter listParam}) = _$_SwitchToCreation;
 
-  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  CreateListParameter get listParam;
   @JsonKey(ignore: true)
-  _$SwitchToCreationCopyWith<_SwitchToCreation> get copyWith =>
+  _$$_SwitchToCreationCopyWith<_$_SwitchToCreation> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SwitchToReorderCopyWith<$Res> {
-  factory _$SwitchToReorderCopyWith(
-          _SwitchToReorder value, $Res Function(_SwitchToReorder) then) =
-      __$SwitchToReorderCopyWithImpl<$Res>;
+abstract class _$$_SwitchToReorderCopyWith<$Res> {
+  factory _$$_SwitchToReorderCopyWith(
+          _$_SwitchToReorder value, $Res Function(_$_SwitchToReorder) then) =
+      __$$_SwitchToReorderCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParam});
 }
 
 /// @nodoc
-class __$SwitchToReorderCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$SwitchToReorderCopyWith<$Res> {
-  __$SwitchToReorderCopyWithImpl(
-      _SwitchToReorder _value, $Res Function(_SwitchToReorder) _then)
-      : super(_value, (v) => _then(v as _SwitchToReorder));
+class __$$_SwitchToReorderCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_SwitchToReorder>
+    implements _$$_SwitchToReorderCopyWith<$Res> {
+  __$$_SwitchToReorderCopyWithImpl(
+      _$_SwitchToReorder _value, $Res Function(_$_SwitchToReorder) _then)
+      : super(_value, _then);
 
-  @override
-  _SwitchToReorder get _value => super._value as _SwitchToReorder;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParam = freezed,
+    Object? listParam = null,
   }) {
-    return _then(_SwitchToReorder(
-      listParam: listParam == freezed
+    return _then(_$_SwitchToReorder(
+      listParam: null == listParam
           ? _value.listParam
           : listParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -1013,20 +1176,20 @@ class _$_SwitchToReorder implements _SwitchToReorder {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SwitchToReorder &&
+        (other.runtimeType == runtimeType &&
+            other is _$_SwitchToReorder &&
             (identical(other.listParam, listParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParam, listParam)));
+                other.listParam == listParam));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParam);
+  int get hashCode => Object.hash(runtimeType, listParam);
 
   @JsonKey(ignore: true)
   @override
-  _$SwitchToReorderCopyWith<_SwitchToReorder> get copyWith =>
-      __$SwitchToReorderCopyWithImpl<_SwitchToReorder>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SwitchToReorderCopyWith<_$_SwitchToReorder> get copyWith =>
+      __$$_SwitchToReorderCopyWithImpl<_$_SwitchToReorder>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1052,6 +1215,30 @@ class _$_SwitchToReorder implements _SwitchToReorder {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return switchViewToReorder(listParam);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return switchViewToReorder?.call(listParam);
   }
 
   @override
@@ -1104,6 +1291,26 @@ class _$_SwitchToReorder implements _SwitchToReorder {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return switchViewToReorder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -1128,45 +1335,44 @@ class _$_SwitchToReorder implements _SwitchToReorder {
 }
 
 abstract class _SwitchToReorder implements CreatelistEvent {
-  const factory _SwitchToReorder({required CreateListParameter listParam}) =
-      _$_SwitchToReorder;
+  const factory _SwitchToReorder(
+      {required final CreateListParameter listParam}) = _$_SwitchToReorder;
 
-  CreateListParameter get listParam => throw _privateConstructorUsedError;
+  CreateListParameter get listParam;
   @JsonKey(ignore: true)
-  _$SwitchToReorderCopyWith<_SwitchToReorder> get copyWith =>
+  _$$_SwitchToReorderCopyWith<_$_SwitchToReorder> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$AddListPositionAfterCopyWith<$Res> {
-  factory _$AddListPositionAfterCopyWith(_AddListPositionAfter value,
-          $Res Function(_AddListPositionAfter) then) =
-      __$AddListPositionAfterCopyWithImpl<$Res>;
+abstract class _$$_AddListPositionAfterCopyWith<$Res> {
+  factory _$$_AddListPositionAfterCopyWith(_$_AddListPositionAfter value,
+          $Res Function(_$_AddListPositionAfter) then) =
+      __$$_AddListPositionAfterCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParam, int index});
 }
 
 /// @nodoc
-class __$AddListPositionAfterCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$AddListPositionAfterCopyWith<$Res> {
-  __$AddListPositionAfterCopyWithImpl(
-      _AddListPositionAfter _value, $Res Function(_AddListPositionAfter) _then)
-      : super(_value, (v) => _then(v as _AddListPositionAfter));
+class __$$_AddListPositionAfterCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_AddListPositionAfter>
+    implements _$$_AddListPositionAfterCopyWith<$Res> {
+  __$$_AddListPositionAfterCopyWithImpl(_$_AddListPositionAfter _value,
+      $Res Function(_$_AddListPositionAfter) _then)
+      : super(_value, _then);
 
-  @override
-  _AddListPositionAfter get _value => super._value as _AddListPositionAfter;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParam = freezed,
-    Object? index = freezed,
+    Object? listParam = null,
+    Object? index = null,
   }) {
-    return _then(_AddListPositionAfter(
-      listParam: listParam == freezed
+    return _then(_$_AddListPositionAfter(
+      listParam: null == listParam
           ? _value.listParam
           : listParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1181,8 +1387,8 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
 
   @override
   final CreateListParameter listParam;
-  @JsonKey(defaultValue: 1)
   @override
+  @JsonKey()
   final int index;
 
   @override
@@ -1193,24 +1399,21 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AddListPositionAfter &&
+        (other.runtimeType == runtimeType &&
+            other is _$_AddListPositionAfter &&
             (identical(other.listParam, listParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParam, listParam)) &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
+                other.listParam == listParam) &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(listParam) ^
-      const DeepCollectionEquality().hash(index);
+  int get hashCode => Object.hash(runtimeType, listParam, index);
 
   @JsonKey(ignore: true)
   @override
-  _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith =>
-      __$AddListPositionAfterCopyWithImpl<_AddListPositionAfter>(
+  @pragma('vm:prefer-inline')
+  _$$_AddListPositionAfterCopyWith<_$_AddListPositionAfter> get copyWith =>
+      __$$_AddListPositionAfterCopyWithImpl<_$_AddListPositionAfter>(
           this, _$identity);
 
   @override
@@ -1237,6 +1440,30 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return addListPositionAfter(listParam, index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return addListPositionAfter?.call(listParam, index);
   }
 
   @override
@@ -1289,6 +1516,26 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return addListPositionAfter?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -1314,46 +1561,45 @@ class _$_AddListPositionAfter implements _AddListPositionAfter {
 
 abstract class _AddListPositionAfter implements CreatelistEvent {
   const factory _AddListPositionAfter(
-      {required CreateListParameter listParam,
-      int index}) = _$_AddListPositionAfter;
+      {required final CreateListParameter listParam,
+      final int index}) = _$_AddListPositionAfter;
 
-  CreateListParameter get listParam => throw _privateConstructorUsedError;
-  int get index => throw _privateConstructorUsedError;
+  CreateListParameter get listParam;
+  int get index;
   @JsonKey(ignore: true)
-  _$AddListPositionAfterCopyWith<_AddListPositionAfter> get copyWith =>
+  _$$_AddListPositionAfterCopyWith<_$_AddListPositionAfter> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$RemoveListPositionCopyWith<$Res> {
-  factory _$RemoveListPositionCopyWith(
-          _RemoveListPosition value, $Res Function(_RemoveListPosition) then) =
-      __$RemoveListPositionCopyWithImpl<$Res>;
+abstract class _$$_RemoveListPositionCopyWith<$Res> {
+  factory _$$_RemoveListPositionCopyWith(_$_RemoveListPosition value,
+          $Res Function(_$_RemoveListPosition) then) =
+      __$$_RemoveListPositionCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParam, int index});
 }
 
 /// @nodoc
-class __$RemoveListPositionCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$RemoveListPositionCopyWith<$Res> {
-  __$RemoveListPositionCopyWithImpl(
-      _RemoveListPosition _value, $Res Function(_RemoveListPosition) _then)
-      : super(_value, (v) => _then(v as _RemoveListPosition));
+class __$$_RemoveListPositionCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_RemoveListPosition>
+    implements _$$_RemoveListPositionCopyWith<$Res> {
+  __$$_RemoveListPositionCopyWithImpl(
+      _$_RemoveListPosition _value, $Res Function(_$_RemoveListPosition) _then)
+      : super(_value, _then);
 
-  @override
-  _RemoveListPosition get _value => super._value as _RemoveListPosition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParam = freezed,
-    Object? index = freezed,
+    Object? listParam = null,
+    Object? index = null,
   }) {
-    return _then(_RemoveListPosition(
-      listParam: listParam == freezed
+    return _then(_$_RemoveListPosition(
+      listParam: null == listParam
           ? _value.listParam
           : listParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
-      index: index == freezed
+      index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1368,8 +1614,8 @@ class _$_RemoveListPosition implements _RemoveListPosition {
 
   @override
   final CreateListParameter listParam;
-  @JsonKey(defaultValue: 1)
   @override
+  @JsonKey()
   final int index;
 
   @override
@@ -1380,24 +1626,22 @@ class _$_RemoveListPosition implements _RemoveListPosition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _RemoveListPosition &&
+        (other.runtimeType == runtimeType &&
+            other is _$_RemoveListPosition &&
             (identical(other.listParam, listParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParam, listParam)) &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
+                other.listParam == listParam) &&
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(listParam) ^
-      const DeepCollectionEquality().hash(index);
+  int get hashCode => Object.hash(runtimeType, listParam, index);
 
   @JsonKey(ignore: true)
   @override
-  _$RemoveListPositionCopyWith<_RemoveListPosition> get copyWith =>
-      __$RemoveListPositionCopyWithImpl<_RemoveListPosition>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_RemoveListPositionCopyWith<_$_RemoveListPosition> get copyWith =>
+      __$$_RemoveListPositionCopyWithImpl<_$_RemoveListPosition>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1423,6 +1667,30 @@ class _$_RemoveListPosition implements _RemoveListPosition {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return removeListPosition(listParam, index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return removeListPosition?.call(listParam, index);
   }
 
   @override
@@ -1475,6 +1743,26 @@ class _$_RemoveListPosition implements _RemoveListPosition {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return removeListPosition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -1500,51 +1788,50 @@ class _$_RemoveListPosition implements _RemoveListPosition {
 
 abstract class _RemoveListPosition implements CreatelistEvent {
   const factory _RemoveListPosition(
-      {required CreateListParameter listParam,
-      int index}) = _$_RemoveListPosition;
+      {required final CreateListParameter listParam,
+      final int index}) = _$_RemoveListPosition;
 
-  CreateListParameter get listParam => throw _privateConstructorUsedError;
-  int get index => throw _privateConstructorUsedError;
+  CreateListParameter get listParam;
+  int get index;
   @JsonKey(ignore: true)
-  _$RemoveListPositionCopyWith<_RemoveListPosition> get copyWith =>
+  _$$_RemoveListPositionCopyWith<_$_RemoveListPosition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeItemOrderCopyWith<$Res> {
-  factory _$ChangeItemOrderCopyWith(
-          _ChangeItemOrder value, $Res Function(_ChangeItemOrder) then) =
-      __$ChangeItemOrderCopyWithImpl<$Res>;
+abstract class _$$_ChangeItemOrderCopyWith<$Res> {
+  factory _$$_ChangeItemOrderCopyWith(
+          _$_ChangeItemOrder value, $Res Function(_$_ChangeItemOrder) then) =
+      __$$_ChangeItemOrderCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParam, int oldIndex, int newIndex});
 }
 
 /// @nodoc
-class __$ChangeItemOrderCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$ChangeItemOrderCopyWith<$Res> {
-  __$ChangeItemOrderCopyWithImpl(
-      _ChangeItemOrder _value, $Res Function(_ChangeItemOrder) _then)
-      : super(_value, (v) => _then(v as _ChangeItemOrder));
+class __$$_ChangeItemOrderCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_ChangeItemOrder>
+    implements _$$_ChangeItemOrderCopyWith<$Res> {
+  __$$_ChangeItemOrderCopyWithImpl(
+      _$_ChangeItemOrder _value, $Res Function(_$_ChangeItemOrder) _then)
+      : super(_value, _then);
 
-  @override
-  _ChangeItemOrder get _value => super._value as _ChangeItemOrder;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParam = freezed,
-    Object? oldIndex = freezed,
-    Object? newIndex = freezed,
+    Object? listParam = null,
+    Object? oldIndex = null,
+    Object? newIndex = null,
   }) {
-    return _then(_ChangeItemOrder(
-      listParam: listParam == freezed
+    return _then(_$_ChangeItemOrder(
+      listParam: null == listParam
           ? _value.listParam
           : listParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
-      oldIndex: oldIndex == freezed
+      oldIndex: null == oldIndex
           ? _value.oldIndex
           : oldIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      newIndex: newIndex == freezed
+      newIndex: null == newIndex
           ? _value.newIndex
           : newIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1560,11 +1847,11 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
 
   @override
   final CreateListParameter listParam;
-  @JsonKey(defaultValue: 1)
   @override
+  @JsonKey()
   final int oldIndex;
-  @JsonKey(defaultValue: 1)
   @override
+  @JsonKey()
   final int newIndex;
 
   @override
@@ -1575,29 +1862,24 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeItemOrder &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeItemOrder &&
             (identical(other.listParam, listParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParam, listParam)) &&
+                other.listParam == listParam) &&
             (identical(other.oldIndex, oldIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.oldIndex, oldIndex)) &&
+                other.oldIndex == oldIndex) &&
             (identical(other.newIndex, newIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.newIndex, newIndex)));
+                other.newIndex == newIndex));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(listParam) ^
-      const DeepCollectionEquality().hash(oldIndex) ^
-      const DeepCollectionEquality().hash(newIndex);
+  int get hashCode => Object.hash(runtimeType, listParam, oldIndex, newIndex);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith =>
-      __$ChangeItemOrderCopyWithImpl<_ChangeItemOrder>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ChangeItemOrderCopyWith<_$_ChangeItemOrder> get copyWith =>
+      __$$_ChangeItemOrderCopyWithImpl<_$_ChangeItemOrder>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1623,6 +1905,30 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return changeListItemOrder(listParam, oldIndex, newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return changeListItemOrder?.call(listParam, oldIndex, newIndex);
   }
 
   @override
@@ -1675,6 +1981,26 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return changeListItemOrder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -1700,45 +2026,44 @@ class _$_ChangeItemOrder implements _ChangeItemOrder {
 
 abstract class _ChangeItemOrder implements CreatelistEvent {
   const factory _ChangeItemOrder(
-      {required CreateListParameter listParam,
-      int oldIndex,
-      int newIndex}) = _$_ChangeItemOrder;
+      {required final CreateListParameter listParam,
+      final int oldIndex,
+      final int newIndex}) = _$_ChangeItemOrder;
 
-  CreateListParameter get listParam => throw _privateConstructorUsedError;
-  int get oldIndex => throw _privateConstructorUsedError;
-  int get newIndex => throw _privateConstructorUsedError;
+  CreateListParameter get listParam;
+  int get oldIndex;
+  int get newIndex;
   @JsonKey(ignore: true)
-  _$ChangeItemOrderCopyWith<_ChangeItemOrder> get copyWith =>
+  _$$_ChangeItemOrderCopyWith<_$_ChangeItemOrder> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$EditActiveListCopyWith<$Res> {
-  factory _$EditActiveListCopyWith(
-          _EditActiveList value, $Res Function(_EditActiveList) then) =
-      __$EditActiveListCopyWithImpl<$Res>;
+abstract class _$$_EditActiveListCopyWith<$Res> {
+  factory _$$_EditActiveListCopyWith(
+          _$_EditActiveList value, $Res Function(_$_EditActiveList) then) =
+      __$$_EditActiveListCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$EditActiveListCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$EditActiveListCopyWith<$Res> {
-  __$EditActiveListCopyWithImpl(
-      _EditActiveList _value, $Res Function(_EditActiveList) _then)
-      : super(_value, (v) => _then(v as _EditActiveList));
+class __$$_EditActiveListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_EditActiveList>
+    implements _$$_EditActiveListCopyWith<$Res> {
+  __$$_EditActiveListCopyWithImpl(
+      _$_EditActiveList _value, $Res Function(_$_EditActiveList) _then)
+      : super(_value, _then);
 
-  @override
-  _EditActiveList get _value => super._value as _EditActiveList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_EditActiveList(
-      list: list == freezed
+    return _then(_$_EditActiveList(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1746,6 +2071,7 @@ class __$EditActiveListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1769,19 +2095,19 @@ class _$_EditActiveList implements _EditActiveList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EditActiveList &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_EditActiveList &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$EditActiveListCopyWith<_EditActiveList> get copyWith =>
-      __$EditActiveListCopyWithImpl<_EditActiveList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_EditActiveListCopyWith<_$_EditActiveList> get copyWith =>
+      __$$_EditActiveListCopyWithImpl<_$_EditActiveList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1807,6 +2133,30 @@ class _$_EditActiveList implements _EditActiveList {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return editActiveList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return editActiveList?.call(list);
   }
 
   @override
@@ -1859,6 +2209,26 @@ class _$_EditActiveList implements _EditActiveList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return editActiveList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -1883,41 +2253,41 @@ class _$_EditActiveList implements _EditActiveList {
 }
 
 abstract class _EditActiveList implements CreatelistEvent {
-  const factory _EditActiveList({required ActiveList list}) = _$_EditActiveList;
+  const factory _EditActiveList({required final ActiveList list}) =
+      _$_EditActiveList;
 
-  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$EditActiveListCopyWith<_EditActiveList> get copyWith =>
+  _$$_EditActiveListCopyWith<_$_EditActiveList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$EditOnlineListCopyWith<$Res> {
-  factory _$EditOnlineListCopyWith(
-          _EditOnlineList value, $Res Function(_EditOnlineList) then) =
-      __$EditOnlineListCopyWithImpl<$Res>;
+abstract class _$$_EditOnlineListCopyWith<$Res> {
+  factory _$$_EditOnlineListCopyWith(
+          _$_EditOnlineList value, $Res Function(_$_EditOnlineList) then) =
+      __$$_EditOnlineListCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$EditOnlineListCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$EditOnlineListCopyWith<$Res> {
-  __$EditOnlineListCopyWithImpl(
-      _EditOnlineList _value, $Res Function(_EditOnlineList) _then)
-      : super(_value, (v) => _then(v as _EditOnlineList));
+class __$$_EditOnlineListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_EditOnlineList>
+    implements _$$_EditOnlineListCopyWith<$Res> {
+  __$$_EditOnlineListCopyWithImpl(
+      _$_EditOnlineList _value, $Res Function(_$_EditOnlineList) _then)
+      : super(_value, _then);
 
-  @override
-  _EditOnlineList get _value => super._value as _EditOnlineList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_EditOnlineList(
-      list: list == freezed
+    return _then(_$_EditOnlineList(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1925,6 +2295,7 @@ class __$EditOnlineListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1948,19 +2319,19 @@ class _$_EditOnlineList implements _EditOnlineList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EditOnlineList &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_EditOnlineList &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$EditOnlineListCopyWith<_EditOnlineList> get copyWith =>
-      __$EditOnlineListCopyWithImpl<_EditOnlineList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_EditOnlineListCopyWith<_$_EditOnlineList> get copyWith =>
+      __$$_EditOnlineListCopyWithImpl<_$_EditOnlineList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1986,6 +2357,30 @@ class _$_EditOnlineList implements _EditOnlineList {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return editOnlineList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return editOnlineList?.call(list);
   }
 
   @override
@@ -2038,6 +2433,26 @@ class _$_EditOnlineList implements _EditOnlineList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return editOnlineList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -2062,41 +2477,41 @@ class _$_EditOnlineList implements _EditOnlineList {
 }
 
 abstract class _EditOnlineList implements CreatelistEvent {
-  const factory _EditOnlineList({required ActiveList list}) = _$_EditOnlineList;
+  const factory _EditOnlineList({required final ActiveList list}) =
+      _$_EditOnlineList;
 
-  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$EditOnlineListCopyWith<_EditOnlineList> get copyWith =>
+  _$$_EditOnlineListCopyWith<_$_EditOnlineList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$EditTemplateCopyWith<$Res> {
-  factory _$EditTemplateCopyWith(
-          _EditTemplate value, $Res Function(_EditTemplate) then) =
-      __$EditTemplateCopyWithImpl<$Res>;
+abstract class _$$_EditTemplateCopyWith<$Res> {
+  factory _$$_EditTemplateCopyWith(
+          _$_EditTemplate value, $Res Function(_$_EditTemplate) then) =
+      __$$_EditTemplateCopyWithImpl<$Res>;
+  @useResult
   $Res call({ListTemplate template});
 
   $ListTemplateCopyWith<$Res> get template;
 }
 
 /// @nodoc
-class __$EditTemplateCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$EditTemplateCopyWith<$Res> {
-  __$EditTemplateCopyWithImpl(
-      _EditTemplate _value, $Res Function(_EditTemplate) _then)
-      : super(_value, (v) => _then(v as _EditTemplate));
+class __$$_EditTemplateCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_EditTemplate>
+    implements _$$_EditTemplateCopyWith<$Res> {
+  __$$_EditTemplateCopyWithImpl(
+      _$_EditTemplate _value, $Res Function(_$_EditTemplate) _then)
+      : super(_value, _then);
 
-  @override
-  _EditTemplate get _value => super._value as _EditTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? template = freezed,
+    Object? template = null,
   }) {
-    return _then(_EditTemplate(
-      template: template == freezed
+    return _then(_$_EditTemplate(
+      template: null == template
           ? _value.template
           : template // ignore: cast_nullable_to_non_nullable
               as ListTemplate,
@@ -2104,6 +2519,7 @@ class __$EditTemplateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplateCopyWith<$Res> get template {
     return $ListTemplateCopyWith<$Res>(_value.template, (value) {
       return _then(_value.copyWith(template: value));
@@ -2127,20 +2543,20 @@ class _$_EditTemplate implements _EditTemplate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _EditTemplate &&
+        (other.runtimeType == runtimeType &&
+            other is _$_EditTemplate &&
             (identical(other.template, template) ||
-                const DeepCollectionEquality()
-                    .equals(other.template, template)));
+                other.template == template));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(template);
+  int get hashCode => Object.hash(runtimeType, template);
 
   @JsonKey(ignore: true)
   @override
-  _$EditTemplateCopyWith<_EditTemplate> get copyWith =>
-      __$EditTemplateCopyWithImpl<_EditTemplate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_EditTemplateCopyWith<_$_EditTemplate> get copyWith =>
+      __$$_EditTemplateCopyWithImpl<_$_EditTemplate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2166,6 +2582,30 @@ class _$_EditTemplate implements _EditTemplate {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return editTemplate(template);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return editTemplate?.call(template);
   }
 
   @override
@@ -2218,6 +2658,26 @@ class _$_EditTemplate implements _EditTemplate {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return editTemplate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -2242,42 +2702,41 @@ class _$_EditTemplate implements _EditTemplate {
 }
 
 abstract class _EditTemplate implements CreatelistEvent {
-  const factory _EditTemplate({required ListTemplate template}) =
+  const factory _EditTemplate({required final ListTemplate template}) =
       _$_EditTemplate;
 
-  ListTemplate get template => throw _privateConstructorUsedError;
+  ListTemplate get template;
   @JsonKey(ignore: true)
-  _$EditTemplateCopyWith<_EditTemplate> get copyWith =>
+  _$$_EditTemplateCopyWith<_$_EditTemplate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UseTemplateAsListCopyWith<$Res> {
-  factory _$UseTemplateAsListCopyWith(
-          _UseTemplateAsList value, $Res Function(_UseTemplateAsList) then) =
-      __$UseTemplateAsListCopyWithImpl<$Res>;
+abstract class _$$_UseTemplateAsListCopyWith<$Res> {
+  factory _$$_UseTemplateAsListCopyWith(_$_UseTemplateAsList value,
+          $Res Function(_$_UseTemplateAsList) then) =
+      __$$_UseTemplateAsListCopyWithImpl<$Res>;
+  @useResult
   $Res call({ListTemplate template});
 
   $ListTemplateCopyWith<$Res> get template;
 }
 
 /// @nodoc
-class __$UseTemplateAsListCopyWithImpl<$Res>
-    extends _$CreatelistEventCopyWithImpl<$Res>
-    implements _$UseTemplateAsListCopyWith<$Res> {
-  __$UseTemplateAsListCopyWithImpl(
-      _UseTemplateAsList _value, $Res Function(_UseTemplateAsList) _then)
-      : super(_value, (v) => _then(v as _UseTemplateAsList));
+class __$$_UseTemplateAsListCopyWithImpl<$Res>
+    extends _$CreatelistEventCopyWithImpl<$Res, _$_UseTemplateAsList>
+    implements _$$_UseTemplateAsListCopyWith<$Res> {
+  __$$_UseTemplateAsListCopyWithImpl(
+      _$_UseTemplateAsList _value, $Res Function(_$_UseTemplateAsList) _then)
+      : super(_value, _then);
 
-  @override
-  _UseTemplateAsList get _value => super._value as _UseTemplateAsList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? template = freezed,
+    Object? template = null,
   }) {
-    return _then(_UseTemplateAsList(
-      template: template == freezed
+    return _then(_$_UseTemplateAsList(
+      template: null == template
           ? _value.template
           : template // ignore: cast_nullable_to_non_nullable
               as ListTemplate,
@@ -2285,6 +2744,7 @@ class __$UseTemplateAsListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ListTemplateCopyWith<$Res> get template {
     return $ListTemplateCopyWith<$Res>(_value.template, (value) {
       return _then(_value.copyWith(template: value));
@@ -2308,20 +2768,21 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UseTemplateAsList &&
+        (other.runtimeType == runtimeType &&
+            other is _$_UseTemplateAsList &&
             (identical(other.template, template) ||
-                const DeepCollectionEquality()
-                    .equals(other.template, template)));
+                other.template == template));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(template);
+  int get hashCode => Object.hash(runtimeType, template);
 
   @JsonKey(ignore: true)
   @override
-  _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith =>
-      __$UseTemplateAsListCopyWithImpl<_UseTemplateAsList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UseTemplateAsListCopyWith<_$_UseTemplateAsList> get copyWith =>
+      __$$_UseTemplateAsListCopyWithImpl<_$_UseTemplateAsList>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2347,6 +2808,30 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
     required TResult Function(ListTemplate template) useTemplateAsList,
   }) {
     return useTemplateAsList(template);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? startListCreation,
+    TResult? Function()? startTemplateCreation,
+    TResult? Function(CreateListParameter listParam)? changeList,
+    TResult? Function(CreateListParameter listParam)? switchViewToCreation,
+    TResult? Function(CreateListParameter listParam)? switchViewToReorder,
+    TResult? Function(CreateListParameter listParam, int index)?
+        addListPositionAfter,
+    TResult? Function(CreateListParameter listParam, int index)?
+        removeListPosition,
+    TResult? Function(
+            CreateListParameter listParam, int oldIndex, int newIndex)?
+        changeListItemOrder,
+    TResult? Function(ActiveList list)? editActiveList,
+    TResult? Function(ActiveList list)? editOnlineList,
+    TResult? Function(ListTemplate template)? editTemplate,
+    TResult? Function(ListTemplate template)? useTemplateAsList,
+  }) {
+    return useTemplateAsList?.call(template);
   }
 
   @override
@@ -2399,6 +2884,26 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_StartListCreation value)? startListCreation,
+    TResult? Function(_StartTemplateCreation value)? startTemplateCreation,
+    TResult? Function(_ChangeList value)? changeList,
+    TResult? Function(_SwitchToCreation value)? switchViewToCreation,
+    TResult? Function(_SwitchToReorder value)? switchViewToReorder,
+    TResult? Function(_AddListPositionAfter value)? addListPositionAfter,
+    TResult? Function(_RemoveListPosition value)? removeListPosition,
+    TResult? Function(_ChangeItemOrder value)? changeListItemOrder,
+    TResult? Function(_EditActiveList value)? editActiveList,
+    TResult? Function(_EditOnlineList value)? editOnlineList,
+    TResult? Function(_EditTemplate value)? editTemplate,
+    TResult? Function(_UseTemplateAsList value)? useTemplateAsList,
+  }) {
+    return useTemplateAsList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(_StartListCreation value)? startListCreation,
@@ -2423,46 +2928,14 @@ class _$_UseTemplateAsList implements _UseTemplateAsList {
 }
 
 abstract class _UseTemplateAsList implements CreatelistEvent {
-  const factory _UseTemplateAsList({required ListTemplate template}) =
+  const factory _UseTemplateAsList({required final ListTemplate template}) =
       _$_UseTemplateAsList;
 
-  ListTemplate get template => throw _privateConstructorUsedError;
+  ListTemplate get template;
   @JsonKey(ignore: true)
-  _$UseTemplateAsListCopyWith<_UseTemplateAsList> get copyWith =>
+  _$$_UseTemplateAsListCopyWith<_$_UseTemplateAsList> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$CreatelistStateTearOff {
-  const _$CreatelistStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _ListChanged listChanged({required CreateListParameter creationParam}) {
-    return _ListChanged(
-      creationParam: creationParam,
-    );
-  }
-
-  _SwitchedToCreate switchedToCreate(
-      {required CreateListParameter creationParam}) {
-    return _SwitchedToCreate(
-      creationParam: creationParam,
-    );
-  }
-
-  _SwitchedToReorder switchedToReorder(
-      {required CreateListParameter creationParam}) {
-    return _SwitchedToReorder(
-      creationParam: creationParam,
-    );
-  }
-}
-
-/// @nodoc
-const $CreatelistState = _$CreatelistStateTearOff();
 
 /// @nodoc
 mixin _$CreatelistState {
@@ -2474,6 +2947,14 @@ mixin _$CreatelistState {
         switchedToCreate,
     required TResult Function(CreateListParameter creationParam)
         switchedToReorder,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(CreateListParameter creationParam)? listChanged,
+    TResult? Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult? Function(CreateListParameter creationParam)? switchedToReorder,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2494,6 +2975,14 @@ mixin _$CreatelistState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ListChanged value)? listChanged,
+    TResult? Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult? Function(_SwitchedToReorder value)? switchedToReorder,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ListChanged value)? listChanged,
@@ -2508,33 +2997,33 @@ mixin _$CreatelistState {
 abstract class $CreatelistStateCopyWith<$Res> {
   factory $CreatelistStateCopyWith(
           CreatelistState value, $Res Function(CreatelistState) then) =
-      _$CreatelistStateCopyWithImpl<$Res>;
+      _$CreatelistStateCopyWithImpl<$Res, CreatelistState>;
 }
 
 /// @nodoc
-class _$CreatelistStateCopyWithImpl<$Res>
+class _$CreatelistStateCopyWithImpl<$Res, $Val extends CreatelistState>
     implements $CreatelistStateCopyWith<$Res> {
   _$CreatelistStateCopyWithImpl(this._value, this._then);
 
-  final CreatelistState _value;
   // ignore: unused_field
-  final $Res Function(CreatelistState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$CreatelistStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$CreatelistStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2549,7 +3038,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -2566,6 +3056,17 @@ class _$_Initial implements _Initial {
         switchedToReorder,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(CreateListParameter creationParam)? listChanged,
+    TResult? Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult? Function(CreateListParameter creationParam)? switchedToReorder,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -2596,6 +3097,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ListChanged value)? listChanged,
+    TResult? Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult? Function(_SwitchedToReorder value)? switchedToReorder,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ListChanged value)? listChanged,
@@ -2615,30 +3127,29 @@ abstract class _Initial implements CreatelistState {
 }
 
 /// @nodoc
-abstract class _$ListChangedCopyWith<$Res> {
-  factory _$ListChangedCopyWith(
-          _ListChanged value, $Res Function(_ListChanged) then) =
-      __$ListChangedCopyWithImpl<$Res>;
+abstract class _$$_ListChangedCopyWith<$Res> {
+  factory _$$_ListChangedCopyWith(
+          _$_ListChanged value, $Res Function(_$_ListChanged) then) =
+      __$$_ListChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter creationParam});
 }
 
 /// @nodoc
-class __$ListChangedCopyWithImpl<$Res>
-    extends _$CreatelistStateCopyWithImpl<$Res>
-    implements _$ListChangedCopyWith<$Res> {
-  __$ListChangedCopyWithImpl(
-      _ListChanged _value, $Res Function(_ListChanged) _then)
-      : super(_value, (v) => _then(v as _ListChanged));
+class __$$_ListChangedCopyWithImpl<$Res>
+    extends _$CreatelistStateCopyWithImpl<$Res, _$_ListChanged>
+    implements _$$_ListChangedCopyWith<$Res> {
+  __$$_ListChangedCopyWithImpl(
+      _$_ListChanged _value, $Res Function(_$_ListChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _ListChanged get _value => super._value as _ListChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creationParam = freezed,
+    Object? creationParam = null,
   }) {
-    return _then(_ListChanged(
-      creationParam: creationParam == freezed
+    return _then(_$_ListChanged(
+      creationParam: null == creationParam
           ? _value.creationParam
           : creationParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -2662,20 +3173,20 @@ class _$_ListChanged implements _ListChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ListChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ListChanged &&
             (identical(other.creationParam, creationParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationParam, creationParam)));
+                other.creationParam == creationParam));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(creationParam);
+  int get hashCode => Object.hash(runtimeType, creationParam);
 
   @JsonKey(ignore: true)
   @override
-  _$ListChangedCopyWith<_ListChanged> get copyWith =>
-      __$ListChangedCopyWithImpl<_ListChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ListChangedCopyWith<_$_ListChanged> get copyWith =>
+      __$$_ListChangedCopyWithImpl<_$_ListChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2688,6 +3199,17 @@ class _$_ListChanged implements _ListChanged {
         switchedToReorder,
   }) {
     return listChanged(creationParam);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(CreateListParameter creationParam)? listChanged,
+    TResult? Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult? Function(CreateListParameter creationParam)? switchedToReorder,
+  }) {
+    return listChanged?.call(creationParam);
   }
 
   @override
@@ -2718,6 +3240,17 @@ class _$_ListChanged implements _ListChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ListChanged value)? listChanged,
+    TResult? Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult? Function(_SwitchedToReorder value)? switchedToReorder,
+  }) {
+    return listChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ListChanged value)? listChanged,
@@ -2733,40 +3266,39 @@ class _$_ListChanged implements _ListChanged {
 }
 
 abstract class _ListChanged implements CreatelistState {
-  const factory _ListChanged({required CreateListParameter creationParam}) =
-      _$_ListChanged;
+  const factory _ListChanged(
+      {required final CreateListParameter creationParam}) = _$_ListChanged;
 
-  CreateListParameter get creationParam => throw _privateConstructorUsedError;
+  CreateListParameter get creationParam;
   @JsonKey(ignore: true)
-  _$ListChangedCopyWith<_ListChanged> get copyWith =>
+  _$$_ListChangedCopyWith<_$_ListChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SwitchedToCreateCopyWith<$Res> {
-  factory _$SwitchedToCreateCopyWith(
-          _SwitchedToCreate value, $Res Function(_SwitchedToCreate) then) =
-      __$SwitchedToCreateCopyWithImpl<$Res>;
+abstract class _$$_SwitchedToCreateCopyWith<$Res> {
+  factory _$$_SwitchedToCreateCopyWith(
+          _$_SwitchedToCreate value, $Res Function(_$_SwitchedToCreate) then) =
+      __$$_SwitchedToCreateCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter creationParam});
 }
 
 /// @nodoc
-class __$SwitchedToCreateCopyWithImpl<$Res>
-    extends _$CreatelistStateCopyWithImpl<$Res>
-    implements _$SwitchedToCreateCopyWith<$Res> {
-  __$SwitchedToCreateCopyWithImpl(
-      _SwitchedToCreate _value, $Res Function(_SwitchedToCreate) _then)
-      : super(_value, (v) => _then(v as _SwitchedToCreate));
+class __$$_SwitchedToCreateCopyWithImpl<$Res>
+    extends _$CreatelistStateCopyWithImpl<$Res, _$_SwitchedToCreate>
+    implements _$$_SwitchedToCreateCopyWith<$Res> {
+  __$$_SwitchedToCreateCopyWithImpl(
+      _$_SwitchedToCreate _value, $Res Function(_$_SwitchedToCreate) _then)
+      : super(_value, _then);
 
-  @override
-  _SwitchedToCreate get _value => super._value as _SwitchedToCreate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creationParam = freezed,
+    Object? creationParam = null,
   }) {
-    return _then(_SwitchedToCreate(
-      creationParam: creationParam == freezed
+    return _then(_$_SwitchedToCreate(
+      creationParam: null == creationParam
           ? _value.creationParam
           : creationParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -2790,20 +3322,20 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SwitchedToCreate &&
+        (other.runtimeType == runtimeType &&
+            other is _$_SwitchedToCreate &&
             (identical(other.creationParam, creationParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationParam, creationParam)));
+                other.creationParam == creationParam));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(creationParam);
+  int get hashCode => Object.hash(runtimeType, creationParam);
 
   @JsonKey(ignore: true)
   @override
-  _$SwitchedToCreateCopyWith<_SwitchedToCreate> get copyWith =>
-      __$SwitchedToCreateCopyWithImpl<_SwitchedToCreate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SwitchedToCreateCopyWith<_$_SwitchedToCreate> get copyWith =>
+      __$$_SwitchedToCreateCopyWithImpl<_$_SwitchedToCreate>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2816,6 +3348,17 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
         switchedToReorder,
   }) {
     return switchedToCreate(creationParam);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(CreateListParameter creationParam)? listChanged,
+    TResult? Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult? Function(CreateListParameter creationParam)? switchedToReorder,
+  }) {
+    return switchedToCreate?.call(creationParam);
   }
 
   @override
@@ -2846,6 +3389,17 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ListChanged value)? listChanged,
+    TResult? Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult? Function(_SwitchedToReorder value)? switchedToReorder,
+  }) {
+    return switchedToCreate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ListChanged value)? listChanged,
@@ -2862,39 +3416,38 @@ class _$_SwitchedToCreate implements _SwitchedToCreate {
 
 abstract class _SwitchedToCreate implements CreatelistState {
   const factory _SwitchedToCreate(
-      {required CreateListParameter creationParam}) = _$_SwitchedToCreate;
+      {required final CreateListParameter creationParam}) = _$_SwitchedToCreate;
 
-  CreateListParameter get creationParam => throw _privateConstructorUsedError;
+  CreateListParameter get creationParam;
   @JsonKey(ignore: true)
-  _$SwitchedToCreateCopyWith<_SwitchedToCreate> get copyWith =>
+  _$$_SwitchedToCreateCopyWith<_$_SwitchedToCreate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SwitchedToReorderCopyWith<$Res> {
-  factory _$SwitchedToReorderCopyWith(
-          _SwitchedToReorder value, $Res Function(_SwitchedToReorder) then) =
-      __$SwitchedToReorderCopyWithImpl<$Res>;
+abstract class _$$_SwitchedToReorderCopyWith<$Res> {
+  factory _$$_SwitchedToReorderCopyWith(_$_SwitchedToReorder value,
+          $Res Function(_$_SwitchedToReorder) then) =
+      __$$_SwitchedToReorderCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter creationParam});
 }
 
 /// @nodoc
-class __$SwitchedToReorderCopyWithImpl<$Res>
-    extends _$CreatelistStateCopyWithImpl<$Res>
-    implements _$SwitchedToReorderCopyWith<$Res> {
-  __$SwitchedToReorderCopyWithImpl(
-      _SwitchedToReorder _value, $Res Function(_SwitchedToReorder) _then)
-      : super(_value, (v) => _then(v as _SwitchedToReorder));
+class __$$_SwitchedToReorderCopyWithImpl<$Res>
+    extends _$CreatelistStateCopyWithImpl<$Res, _$_SwitchedToReorder>
+    implements _$$_SwitchedToReorderCopyWith<$Res> {
+  __$$_SwitchedToReorderCopyWithImpl(
+      _$_SwitchedToReorder _value, $Res Function(_$_SwitchedToReorder) _then)
+      : super(_value, _then);
 
-  @override
-  _SwitchedToReorder get _value => super._value as _SwitchedToReorder;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creationParam = freezed,
+    Object? creationParam = null,
   }) {
-    return _then(_SwitchedToReorder(
-      creationParam: creationParam == freezed
+    return _then(_$_SwitchedToReorder(
+      creationParam: null == creationParam
           ? _value.creationParam
           : creationParam // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -2918,20 +3471,21 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SwitchedToReorder &&
+        (other.runtimeType == runtimeType &&
+            other is _$_SwitchedToReorder &&
             (identical(other.creationParam, creationParam) ||
-                const DeepCollectionEquality()
-                    .equals(other.creationParam, creationParam)));
+                other.creationParam == creationParam));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(creationParam);
+  int get hashCode => Object.hash(runtimeType, creationParam);
 
   @JsonKey(ignore: true)
   @override
-  _$SwitchedToReorderCopyWith<_SwitchedToReorder> get copyWith =>
-      __$SwitchedToReorderCopyWithImpl<_SwitchedToReorder>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SwitchedToReorderCopyWith<_$_SwitchedToReorder> get copyWith =>
+      __$$_SwitchedToReorderCopyWithImpl<_$_SwitchedToReorder>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2944,6 +3498,17 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
         switchedToReorder,
   }) {
     return switchedToReorder(creationParam);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(CreateListParameter creationParam)? listChanged,
+    TResult? Function(CreateListParameter creationParam)? switchedToCreate,
+    TResult? Function(CreateListParameter creationParam)? switchedToReorder,
+  }) {
+    return switchedToReorder?.call(creationParam);
   }
 
   @override
@@ -2974,6 +3539,17 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_ListChanged value)? listChanged,
+    TResult? Function(_SwitchedToCreate value)? switchedToCreate,
+    TResult? Function(_SwitchedToReorder value)? switchedToReorder,
+  }) {
+    return switchedToReorder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_ListChanged value)? listChanged,
@@ -2990,10 +3566,11 @@ class _$_SwitchedToReorder implements _SwitchedToReorder {
 
 abstract class _SwitchedToReorder implements CreatelistState {
   const factory _SwitchedToReorder(
-      {required CreateListParameter creationParam}) = _$_SwitchedToReorder;
+          {required final CreateListParameter creationParam}) =
+      _$_SwitchedToReorder;
 
-  CreateListParameter get creationParam => throw _privateConstructorUsedError;
+  CreateListParameter get creationParam;
   @JsonKey(ignore: true)
-  _$SwitchedToReorderCopyWith<_SwitchedToReorder> get copyWith =>
+  _$$_SwitchedToReorderCopyWith<_$_SwitchedToReorder> get copyWith =>
       throw _privateConstructorUsedError;
 }

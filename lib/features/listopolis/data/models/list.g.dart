@@ -6,22 +6,27 @@ part of 'list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ActiveList _$_$_ActiveListFromJson(Map<String, dynamic> json) {
-  return _$_ActiveList(
-    id: json['id'] as String? ?? '0815',
-    name: json['name'] as String? ?? 'list name',
-    type: listTypeFromJson(json['type'] as String),
-    position: json['position'] as int? ?? 1,
-    done: json['done'] as bool? ?? false,
-    opened: json['opened'] as bool? ?? false,
-    listItems: (json['listItems'] as List<dynamic>?)
-            ?.map((e) => ActiveListPosition.fromJson(e as Map<String, dynamic>))
-            .toList() ??
-        [],
-  );
-}
+_$_ActiveList _$$_ActiveListFromJson(Map<String, dynamic> json) =>
+    _$_ActiveList(
+      id: json['id'] as String? ?? '0815',
+      name: json['name'] as String? ?? 'list name',
+      type: json['type'] == null
+          ? const ListType.todo()
+          : listTypeFromJson(json['type'] as String),
+      position: json['position'] as int? ?? 1,
+      done: json['done'] as bool? ?? false,
+      opened: json['opened'] as bool? ?? false,
+      repeat: json['repeat'] as bool? ?? false,
+      repeateSince: json['repeateSince'] as String? ?? "nodate",
+      reminderChannel: json['reminderChannel'] as String? ?? "nochannel",
+      listItems: (json['listItems'] as List<dynamic>?)
+              ?.map(
+                  (e) => ActiveListPosition.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
 
-Map<String, dynamic> _$_$_ActiveListToJson(_$_ActiveList instance) =>
+Map<String, dynamic> _$$_ActiveListToJson(_$_ActiveList instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -29,20 +34,22 @@ Map<String, dynamic> _$_$_ActiveListToJson(_$_ActiveList instance) =>
       'position': instance.position,
       'done': instance.done,
       'opened': instance.opened,
+      'repeat': instance.repeat,
+      'repeateSince': instance.repeateSince,
+      'reminderChannel': instance.reminderChannel,
       'listItems': instance.listItems,
     };
 
-_$_ActiveListPosition _$_$_ActiveListPositionFromJson(
-    Map<String, dynamic> json) {
-  return _$_ActiveListPosition(
-    id: json['id'] as String? ?? '0815',
-    name: json['name'] as String? ?? 'new Position',
-    position: json['position'] as int? ?? 1,
-    done: json['done'] as bool? ?? false,
-  );
-}
+_$_ActiveListPosition _$$_ActiveListPositionFromJson(
+        Map<String, dynamic> json) =>
+    _$_ActiveListPosition(
+      id: json['id'] as String? ?? '0815',
+      name: json['name'] as String? ?? 'new Position',
+      position: json['position'] as int? ?? 1,
+      done: json['done'] as bool? ?? false,
+    );
 
-Map<String, dynamic> _$_$_ActiveListPositionToJson(
+Map<String, dynamic> _$$_ActiveListPositionToJson(
         _$_ActiveListPosition instance) =>
     <String, dynamic>{
       'id': instance.id,

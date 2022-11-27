@@ -1,7 +1,7 @@
 part of 'createlist_bloc.dart';
 
 @freezed
-abstract class CreatelistEvent with _$CreatelistEvent {
+class CreatelistEvent with _$CreatelistEvent {
   const factory CreatelistEvent.started() = _Started;
   const factory CreatelistEvent.startListCreation() = _StartListCreation;
   const factory CreatelistEvent.startTemplateCreation() = _StartTemplateCreation;

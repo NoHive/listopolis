@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'onlinelists_bloc.dart';
 
@@ -10,87 +12,7 @@ part of 'onlinelists_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OnlinelistsEventTearOff {
-  const _$OnlinelistsEventTearOff();
-
-  _Started started() {
-    return const _Started();
-  }
-
-  ListViewRequested listViewRequested() {
-    return const ListViewRequested();
-  }
-
-  ListViewReceived listViewReceived(
-      {required Either<Failure, List<ActiveList>> serverListContend}) {
-    return ListViewReceived(
-      serverListContend: serverListContend,
-    );
-  }
-
-  _InsertNewList insertNewList({required CreateListParameter aNewList}) {
-    return _InsertNewList(
-      aNewList: aNewList,
-    );
-  }
-
-  _InsertNewListIntoExisting insertNewListIntoExisting(
-      {required Either<Failure, List<ActiveList>> serverListContend,
-      required CreateListParameter aNewList}) {
-    return _InsertNewListIntoExisting(
-      serverListContend: serverListContend,
-      aNewList: aNewList,
-    );
-  }
-
-  _DeleteListItem deleteListItem(
-      {required ActiveList list, required ActiveListPosition listItem}) {
-    return _DeleteListItem(
-      list: list,
-      listItem: listItem,
-    );
-  }
-
-  _DeleteListItemFromExisting deleteListItemFromExisting(
-      {required Either<Failure, List<ActiveList>> serverListContend,
-      required ActiveList list,
-      required ActiveListPosition listItem}) {
-    return _DeleteListItemFromExisting(
-      serverListContend: serverListContend,
-      list: list,
-      listItem: listItem,
-    );
-  }
-
-  _DeleteList deleteList({required ActiveList list}) {
-    return _DeleteList(
-      list: list,
-    );
-  }
-
-  _OverwriteList overwriteList(
-      {required ActiveList list, required CreateListParameter changedList}) {
-    return _OverwriteList(
-      list: list,
-      changedList: changedList,
-    );
-  }
-
-  _DeleteListFromExisting deleteListFromExisting(
-      {required Either<Failure, List<ActiveList>> serverListContend,
-      required ActiveList list}) {
-    return _DeleteListFromExisting(
-      serverListContend: serverListContend,
-      list: list,
-    );
-  }
-}
-
-/// @nodoc
-const $OnlinelistsEvent = _$OnlinelistsEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OnlinelistsEvent {
@@ -119,6 +41,29 @@ mixin _$OnlinelistsEvent {
     required TResult Function(
             Either<Failure, List<ActiveList>> serverListContend,
             ActiveList list)
+        deleteListFromExisting,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
         deleteListFromExisting,
   }) =>
       throw _privateConstructorUsedError;
@@ -164,6 +109,22 @@ mixin _$OnlinelistsEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -186,33 +147,33 @@ mixin _$OnlinelistsEvent {
 abstract class $OnlinelistsEventCopyWith<$Res> {
   factory $OnlinelistsEventCopyWith(
           OnlinelistsEvent value, $Res Function(OnlinelistsEvent) then) =
-      _$OnlinelistsEventCopyWithImpl<$Res>;
+      _$OnlinelistsEventCopyWithImpl<$Res, OnlinelistsEvent>;
 }
 
 /// @nodoc
-class _$OnlinelistsEventCopyWithImpl<$Res>
+class _$OnlinelistsEventCopyWithImpl<$Res, $Val extends OnlinelistsEvent>
     implements $OnlinelistsEventCopyWith<$Res> {
   _$OnlinelistsEventCopyWithImpl(this._value, this._then);
 
-  final OnlinelistsEvent _value;
   // ignore: unused_field
-  final $Res Function(OnlinelistsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$StartedCopyWith<$Res> {
-  factory _$StartedCopyWith(_Started value, $Res Function(_Started) then) =
-      __$StartedCopyWithImpl<$Res>;
+abstract class _$$_StartedCopyWith<$Res> {
+  factory _$$_StartedCopyWith(
+          _$_Started value, $Res Function(_$_Started) then) =
+      __$$_StartedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StartedCopyWithImpl<$Res> extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$StartedCopyWith<$Res> {
-  __$StartedCopyWithImpl(_Started _value, $Res Function(_Started) _then)
-      : super(_value, (v) => _then(v as _Started));
-
-  @override
-  _Started get _value => super._value as _Started;
+class __$$_StartedCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_Started>
+    implements _$$_StartedCopyWith<$Res> {
+  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -227,7 +188,8 @@ class _$_Started implements _Started {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Started);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Started);
   }
 
   @override
@@ -262,6 +224,32 @@ class _$_Started implements _Started {
         deleteListFromExisting,
   }) {
     return started();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return started?.call();
   }
 
   @override
@@ -316,6 +304,25 @@ class _$_Started implements _Started {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return started?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -343,22 +350,19 @@ abstract class _Started implements OnlinelistsEvent {
 }
 
 /// @nodoc
-abstract class $ListViewRequestedCopyWith<$Res> {
-  factory $ListViewRequestedCopyWith(
-          ListViewRequested value, $Res Function(ListViewRequested) then) =
-      _$ListViewRequestedCopyWithImpl<$Res>;
+abstract class _$$ListViewRequestedCopyWith<$Res> {
+  factory _$$ListViewRequestedCopyWith(
+          _$ListViewRequested value, $Res Function(_$ListViewRequested) then) =
+      __$$ListViewRequestedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ListViewRequestedCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements $ListViewRequestedCopyWith<$Res> {
-  _$ListViewRequestedCopyWithImpl(
-      ListViewRequested _value, $Res Function(ListViewRequested) _then)
-      : super(_value, (v) => _then(v as ListViewRequested));
-
-  @override
-  ListViewRequested get _value => super._value as ListViewRequested;
+class __$$ListViewRequestedCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$ListViewRequested>
+    implements _$$ListViewRequestedCopyWith<$Res> {
+  __$$ListViewRequestedCopyWithImpl(
+      _$ListViewRequested _value, $Res Function(_$ListViewRequested) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -373,7 +377,8 @@ class _$ListViewRequested implements ListViewRequested {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ListViewRequested);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ListViewRequested);
   }
 
   @override
@@ -408,6 +413,32 @@ class _$ListViewRequested implements ListViewRequested {
         deleteListFromExisting,
   }) {
     return listViewRequested();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return listViewRequested?.call();
   }
 
   @override
@@ -462,6 +493,25 @@ class _$ListViewRequested implements ListViewRequested {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return listViewRequested?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -489,30 +539,29 @@ abstract class ListViewRequested implements OnlinelistsEvent {
 }
 
 /// @nodoc
-abstract class $ListViewReceivedCopyWith<$Res> {
-  factory $ListViewReceivedCopyWith(
-          ListViewReceived value, $Res Function(ListViewReceived) then) =
-      _$ListViewReceivedCopyWithImpl<$Res>;
+abstract class _$$ListViewReceivedCopyWith<$Res> {
+  factory _$$ListViewReceivedCopyWith(
+          _$ListViewReceived value, $Res Function(_$ListViewReceived) then) =
+      __$$ListViewReceivedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Either<Failure, List<ActiveList>> serverListContend});
 }
 
 /// @nodoc
-class _$ListViewReceivedCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements $ListViewReceivedCopyWith<$Res> {
-  _$ListViewReceivedCopyWithImpl(
-      ListViewReceived _value, $Res Function(ListViewReceived) _then)
-      : super(_value, (v) => _then(v as ListViewReceived));
+class __$$ListViewReceivedCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$ListViewReceived>
+    implements _$$ListViewReceivedCopyWith<$Res> {
+  __$$ListViewReceivedCopyWithImpl(
+      _$ListViewReceived _value, $Res Function(_$ListViewReceived) _then)
+      : super(_value, _then);
 
-  @override
-  ListViewReceived get _value => super._value as ListViewReceived;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? serverListContend = freezed,
+    Object? serverListContend = null,
   }) {
-    return _then(ListViewReceived(
-      serverListContend: serverListContend == freezed
+    return _then(_$ListViewReceived(
+      serverListContend: null == serverListContend
           ? _value.serverListContend
           : serverListContend // ignore: cast_nullable_to_non_nullable
               as Either<Failure, List<ActiveList>>,
@@ -536,21 +585,20 @@ class _$ListViewReceived implements ListViewReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ListViewReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _$ListViewReceived &&
             (identical(other.serverListContend, serverListContend) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverListContend, serverListContend)));
+                other.serverListContend == serverListContend));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(serverListContend);
+  int get hashCode => Object.hash(runtimeType, serverListContend);
 
   @JsonKey(ignore: true)
   @override
-  $ListViewReceivedCopyWith<ListViewReceived> get copyWith =>
-      _$ListViewReceivedCopyWithImpl<ListViewReceived>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ListViewReceivedCopyWith<_$ListViewReceived> get copyWith =>
+      __$$ListViewReceivedCopyWithImpl<_$ListViewReceived>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -581,6 +629,32 @@ class _$ListViewReceived implements ListViewReceived {
         deleteListFromExisting,
   }) {
     return listViewReceived(serverListContend);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return listViewReceived?.call(serverListContend);
   }
 
   @override
@@ -635,6 +709,25 @@ class _$ListViewReceived implements ListViewReceived {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return listViewReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -659,41 +752,39 @@ class _$ListViewReceived implements ListViewReceived {
 
 abstract class ListViewReceived implements OnlinelistsEvent {
   const factory ListViewReceived(
-          {required Either<Failure, List<ActiveList>> serverListContend}) =
-      _$ListViewReceived;
+      {required final Either<Failure, List<ActiveList>>
+          serverListContend}) = _$ListViewReceived;
 
-  Either<Failure, List<ActiveList>> get serverListContend =>
-      throw _privateConstructorUsedError;
+  Either<Failure, List<ActiveList>> get serverListContend;
   @JsonKey(ignore: true)
-  $ListViewReceivedCopyWith<ListViewReceived> get copyWith =>
+  _$$ListViewReceivedCopyWith<_$ListViewReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InsertNewListCopyWith<$Res> {
-  factory _$InsertNewListCopyWith(
-          _InsertNewList value, $Res Function(_InsertNewList) then) =
-      __$InsertNewListCopyWithImpl<$Res>;
+abstract class _$$_InsertNewListCopyWith<$Res> {
+  factory _$$_InsertNewListCopyWith(
+          _$_InsertNewList value, $Res Function(_$_InsertNewList) then) =
+      __$$_InsertNewListCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter aNewList});
 }
 
 /// @nodoc
-class __$InsertNewListCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$InsertNewListCopyWith<$Res> {
-  __$InsertNewListCopyWithImpl(
-      _InsertNewList _value, $Res Function(_InsertNewList) _then)
-      : super(_value, (v) => _then(v as _InsertNewList));
+class __$$_InsertNewListCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_InsertNewList>
+    implements _$$_InsertNewListCopyWith<$Res> {
+  __$$_InsertNewListCopyWithImpl(
+      _$_InsertNewList _value, $Res Function(_$_InsertNewList) _then)
+      : super(_value, _then);
 
-  @override
-  _InsertNewList get _value => super._value as _InsertNewList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? aNewList = freezed,
+    Object? aNewList = null,
   }) {
-    return _then(_InsertNewList(
-      aNewList: aNewList == freezed
+    return _then(_$_InsertNewList(
+      aNewList: null == aNewList
           ? _value.aNewList
           : aNewList // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -717,20 +808,20 @@ class _$_InsertNewList implements _InsertNewList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InsertNewList &&
+        (other.runtimeType == runtimeType &&
+            other is _$_InsertNewList &&
             (identical(other.aNewList, aNewList) ||
-                const DeepCollectionEquality()
-                    .equals(other.aNewList, aNewList)));
+                other.aNewList == aNewList));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(aNewList);
+  int get hashCode => Object.hash(runtimeType, aNewList);
 
   @JsonKey(ignore: true)
   @override
-  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
-      __$InsertNewListCopyWithImpl<_InsertNewList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InsertNewListCopyWith<_$_InsertNewList> get copyWith =>
+      __$$_InsertNewListCopyWithImpl<_$_InsertNewList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -761,6 +852,32 @@ class _$_InsertNewList implements _InsertNewList {
         deleteListFromExisting,
   }) {
     return insertNewList(aNewList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return insertNewList?.call(aNewList);
   }
 
   @override
@@ -815,6 +932,25 @@ class _$_InsertNewList implements _InsertNewList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return insertNewList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -838,48 +974,48 @@ class _$_InsertNewList implements _InsertNewList {
 }
 
 abstract class _InsertNewList implements OnlinelistsEvent {
-  const factory _InsertNewList({required CreateListParameter aNewList}) =
+  const factory _InsertNewList({required final CreateListParameter aNewList}) =
       _$_InsertNewList;
 
-  CreateListParameter get aNewList => throw _privateConstructorUsedError;
+  CreateListParameter get aNewList;
   @JsonKey(ignore: true)
-  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
+  _$$_InsertNewListCopyWith<_$_InsertNewList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InsertNewListIntoExistingCopyWith<$Res> {
-  factory _$InsertNewListIntoExistingCopyWith(_InsertNewListIntoExisting value,
-          $Res Function(_InsertNewListIntoExisting) then) =
-      __$InsertNewListIntoExistingCopyWithImpl<$Res>;
+abstract class _$$_InsertNewListIntoExistingCopyWith<$Res> {
+  factory _$$_InsertNewListIntoExistingCopyWith(
+          _$_InsertNewListIntoExisting value,
+          $Res Function(_$_InsertNewListIntoExisting) then) =
+      __$$_InsertNewListIntoExistingCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {Either<Failure, List<ActiveList>> serverListContend,
       CreateListParameter aNewList});
 }
 
 /// @nodoc
-class __$InsertNewListIntoExistingCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$InsertNewListIntoExistingCopyWith<$Res> {
-  __$InsertNewListIntoExistingCopyWithImpl(_InsertNewListIntoExisting _value,
-      $Res Function(_InsertNewListIntoExisting) _then)
-      : super(_value, (v) => _then(v as _InsertNewListIntoExisting));
+class __$$_InsertNewListIntoExistingCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_InsertNewListIntoExisting>
+    implements _$$_InsertNewListIntoExistingCopyWith<$Res> {
+  __$$_InsertNewListIntoExistingCopyWithImpl(
+      _$_InsertNewListIntoExisting _value,
+      $Res Function(_$_InsertNewListIntoExisting) _then)
+      : super(_value, _then);
 
-  @override
-  _InsertNewListIntoExisting get _value =>
-      super._value as _InsertNewListIntoExisting;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? serverListContend = freezed,
-    Object? aNewList = freezed,
+    Object? serverListContend = null,
+    Object? aNewList = null,
   }) {
-    return _then(_InsertNewListIntoExisting(
-      serverListContend: serverListContend == freezed
+    return _then(_$_InsertNewListIntoExisting(
+      serverListContend: null == serverListContend
           ? _value.serverListContend
           : serverListContend // ignore: cast_nullable_to_non_nullable
               as Either<Failure, List<ActiveList>>,
-      aNewList: aNewList == freezed
+      aNewList: null == aNewList
           ? _value.aNewList
           : aNewList // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -906,27 +1042,23 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InsertNewListIntoExisting &&
+        (other.runtimeType == runtimeType &&
+            other is _$_InsertNewListIntoExisting &&
             (identical(other.serverListContend, serverListContend) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverListContend, serverListContend)) &&
+                other.serverListContend == serverListContend) &&
             (identical(other.aNewList, aNewList) ||
-                const DeepCollectionEquality()
-                    .equals(other.aNewList, aNewList)));
+                other.aNewList == aNewList));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(serverListContend) ^
-      const DeepCollectionEquality().hash(aNewList);
+  int get hashCode => Object.hash(runtimeType, serverListContend, aNewList);
 
   @JsonKey(ignore: true)
   @override
-  _$InsertNewListIntoExistingCopyWith<_InsertNewListIntoExisting>
-      get copyWith =>
-          __$InsertNewListIntoExistingCopyWithImpl<_InsertNewListIntoExisting>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InsertNewListIntoExistingCopyWith<_$_InsertNewListIntoExisting>
+      get copyWith => __$$_InsertNewListIntoExistingCopyWithImpl<
+          _$_InsertNewListIntoExisting>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -957,6 +1089,32 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
         deleteListFromExisting,
   }) {
     return insertNewListIntoExisting(serverListContend, aNewList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return insertNewListIntoExisting?.call(serverListContend, aNewList);
   }
 
   @override
@@ -1011,6 +1169,25 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return insertNewListIntoExisting?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -1035,22 +1212,23 @@ class _$_InsertNewListIntoExisting implements _InsertNewListIntoExisting {
 
 abstract class _InsertNewListIntoExisting implements OnlinelistsEvent {
   const factory _InsertNewListIntoExisting(
-      {required Either<Failure, List<ActiveList>> serverListContend,
-      required CreateListParameter aNewList}) = _$_InsertNewListIntoExisting;
+          {required final Either<Failure, List<ActiveList>> serverListContend,
+          required final CreateListParameter aNewList}) =
+      _$_InsertNewListIntoExisting;
 
-  Either<Failure, List<ActiveList>> get serverListContend =>
-      throw _privateConstructorUsedError;
-  CreateListParameter get aNewList => throw _privateConstructorUsedError;
+  Either<Failure, List<ActiveList>> get serverListContend;
+  CreateListParameter get aNewList;
   @JsonKey(ignore: true)
-  _$InsertNewListIntoExistingCopyWith<_InsertNewListIntoExisting>
+  _$$_InsertNewListIntoExistingCopyWith<_$_InsertNewListIntoExisting>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteListItemCopyWith<$Res> {
-  factory _$DeleteListItemCopyWith(
-          _DeleteListItem value, $Res Function(_DeleteListItem) then) =
-      __$DeleteListItemCopyWithImpl<$Res>;
+abstract class _$$_DeleteListItemCopyWith<$Res> {
+  factory _$$_DeleteListItemCopyWith(
+          _$_DeleteListItem value, $Res Function(_$_DeleteListItem) then) =
+      __$$_DeleteListItemCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list, ActiveListPosition listItem});
 
   $ActiveListCopyWith<$Res> get list;
@@ -1058,27 +1236,25 @@ abstract class _$DeleteListItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeleteListItemCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$DeleteListItemCopyWith<$Res> {
-  __$DeleteListItemCopyWithImpl(
-      _DeleteListItem _value, $Res Function(_DeleteListItem) _then)
-      : super(_value, (v) => _then(v as _DeleteListItem));
+class __$$_DeleteListItemCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_DeleteListItem>
+    implements _$$_DeleteListItemCopyWith<$Res> {
+  __$$_DeleteListItemCopyWithImpl(
+      _$_DeleteListItem _value, $Res Function(_$_DeleteListItem) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteListItem get _value => super._value as _DeleteListItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
-    Object? listItem = freezed,
+    Object? list = null,
+    Object? listItem = null,
   }) {
-    return _then(_DeleteListItem(
-      list: list == freezed
+    return _then(_$_DeleteListItem(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
-      listItem: listItem == freezed
+      listItem: null == listItem
           ? _value.listItem
           : listItem // ignore: cast_nullable_to_non_nullable
               as ActiveListPosition,
@@ -1086,6 +1262,7 @@ class __$DeleteListItemCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1093,6 +1270,7 @@ class __$DeleteListItemCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListPositionCopyWith<$Res> get listItem {
     return $ActiveListPositionCopyWith<$Res>(_value.listItem, (value) {
       return _then(_value.copyWith(listItem: value));
@@ -1118,24 +1296,21 @@ class _$_DeleteListItem implements _DeleteListItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteListItem &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteListItem &&
+            (identical(other.list, list) || other.list == list) &&
             (identical(other.listItem, listItem) ||
-                const DeepCollectionEquality()
-                    .equals(other.listItem, listItem)));
+                other.listItem == listItem));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(listItem);
+  int get hashCode => Object.hash(runtimeType, list, listItem);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteListItemCopyWith<_DeleteListItem> get copyWith =>
-      __$DeleteListItemCopyWithImpl<_DeleteListItem>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteListItemCopyWith<_$_DeleteListItem> get copyWith =>
+      __$$_DeleteListItemCopyWithImpl<_$_DeleteListItem>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1166,6 +1341,32 @@ class _$_DeleteListItem implements _DeleteListItem {
         deleteListFromExisting,
   }) {
     return deleteListItem(list, listItem);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return deleteListItem?.call(list, listItem);
   }
 
   @override
@@ -1220,6 +1421,25 @@ class _$_DeleteListItem implements _DeleteListItem {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return deleteListItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -1244,22 +1464,23 @@ class _$_DeleteListItem implements _DeleteListItem {
 
 abstract class _DeleteListItem implements OnlinelistsEvent {
   const factory _DeleteListItem(
-      {required ActiveList list,
-      required ActiveListPosition listItem}) = _$_DeleteListItem;
+      {required final ActiveList list,
+      required final ActiveListPosition listItem}) = _$_DeleteListItem;
 
-  ActiveList get list => throw _privateConstructorUsedError;
-  ActiveListPosition get listItem => throw _privateConstructorUsedError;
+  ActiveList get list;
+  ActiveListPosition get listItem;
   @JsonKey(ignore: true)
-  _$DeleteListItemCopyWith<_DeleteListItem> get copyWith =>
+  _$$_DeleteListItemCopyWith<_$_DeleteListItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteListItemFromExistingCopyWith<$Res> {
-  factory _$DeleteListItemFromExistingCopyWith(
-          _DeleteListItemFromExisting value,
-          $Res Function(_DeleteListItemFromExisting) then) =
-      __$DeleteListItemFromExistingCopyWithImpl<$Res>;
+abstract class _$$_DeleteListItemFromExistingCopyWith<$Res> {
+  factory _$$_DeleteListItemFromExistingCopyWith(
+          _$_DeleteListItemFromExisting value,
+          $Res Function(_$_DeleteListItemFromExisting) then) =
+      __$$_DeleteListItemFromExistingCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {Either<Failure, List<ActiveList>> serverListContend,
       ActiveList list,
@@ -1270,33 +1491,31 @@ abstract class _$DeleteListItemFromExistingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeleteListItemFromExistingCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$DeleteListItemFromExistingCopyWith<$Res> {
-  __$DeleteListItemFromExistingCopyWithImpl(_DeleteListItemFromExisting _value,
-      $Res Function(_DeleteListItemFromExisting) _then)
-      : super(_value, (v) => _then(v as _DeleteListItemFromExisting));
+class __$$_DeleteListItemFromExistingCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_DeleteListItemFromExisting>
+    implements _$$_DeleteListItemFromExistingCopyWith<$Res> {
+  __$$_DeleteListItemFromExistingCopyWithImpl(
+      _$_DeleteListItemFromExisting _value,
+      $Res Function(_$_DeleteListItemFromExisting) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteListItemFromExisting get _value =>
-      super._value as _DeleteListItemFromExisting;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? serverListContend = freezed,
-    Object? list = freezed,
-    Object? listItem = freezed,
+    Object? serverListContend = null,
+    Object? list = null,
+    Object? listItem = null,
   }) {
-    return _then(_DeleteListItemFromExisting(
-      serverListContend: serverListContend == freezed
+    return _then(_$_DeleteListItemFromExisting(
+      serverListContend: null == serverListContend
           ? _value.serverListContend
           : serverListContend // ignore: cast_nullable_to_non_nullable
               as Either<Failure, List<ActiveList>>,
-      list: list == freezed
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
-      listItem: listItem == freezed
+      listItem: null == listItem
           ? _value.listItem
           : listItem // ignore: cast_nullable_to_non_nullable
               as ActiveListPosition,
@@ -1304,6 +1523,7 @@ class __$DeleteListItemFromExistingCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1311,6 +1531,7 @@ class __$DeleteListItemFromExistingCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListPositionCopyWith<$Res> get listItem {
     return $ActiveListPositionCopyWith<$Res>(_value.listItem, (value) {
       return _then(_value.copyWith(listItem: value));
@@ -1341,29 +1562,25 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteListItemFromExisting &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteListItemFromExisting &&
             (identical(other.serverListContend, serverListContend) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverListContend, serverListContend)) &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)) &&
+                other.serverListContend == serverListContend) &&
+            (identical(other.list, list) || other.list == list) &&
             (identical(other.listItem, listItem) ||
-                const DeepCollectionEquality()
-                    .equals(other.listItem, listItem)));
+                other.listItem == listItem));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(serverListContend) ^
-      const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(listItem);
+      Object.hash(runtimeType, serverListContend, list, listItem);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteListItemFromExistingCopyWith<_DeleteListItemFromExisting>
-      get copyWith => __$DeleteListItemFromExistingCopyWithImpl<
-          _DeleteListItemFromExisting>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteListItemFromExistingCopyWith<_$_DeleteListItemFromExisting>
+      get copyWith => __$$_DeleteListItemFromExistingCopyWithImpl<
+          _$_DeleteListItemFromExisting>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1394,6 +1611,32 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
         deleteListFromExisting,
   }) {
     return deleteListItemFromExisting(serverListContend, list, listItem);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return deleteListItemFromExisting?.call(serverListContend, list, listItem);
   }
 
   @override
@@ -1448,6 +1691,25 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return deleteListItemFromExisting?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -1472,46 +1734,45 @@ class _$_DeleteListItemFromExisting implements _DeleteListItemFromExisting {
 
 abstract class _DeleteListItemFromExisting implements OnlinelistsEvent {
   const factory _DeleteListItemFromExisting(
-      {required Either<Failure, List<ActiveList>> serverListContend,
-      required ActiveList list,
-      required ActiveListPosition listItem}) = _$_DeleteListItemFromExisting;
+          {required final Either<Failure, List<ActiveList>> serverListContend,
+          required final ActiveList list,
+          required final ActiveListPosition listItem}) =
+      _$_DeleteListItemFromExisting;
 
-  Either<Failure, List<ActiveList>> get serverListContend =>
-      throw _privateConstructorUsedError;
-  ActiveList get list => throw _privateConstructorUsedError;
-  ActiveListPosition get listItem => throw _privateConstructorUsedError;
+  Either<Failure, List<ActiveList>> get serverListContend;
+  ActiveList get list;
+  ActiveListPosition get listItem;
   @JsonKey(ignore: true)
-  _$DeleteListItemFromExistingCopyWith<_DeleteListItemFromExisting>
+  _$$_DeleteListItemFromExistingCopyWith<_$_DeleteListItemFromExisting>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteListCopyWith<$Res> {
-  factory _$DeleteListCopyWith(
-          _DeleteList value, $Res Function(_DeleteList) then) =
-      __$DeleteListCopyWithImpl<$Res>;
+abstract class _$$_DeleteListCopyWith<$Res> {
+  factory _$$_DeleteListCopyWith(
+          _$_DeleteList value, $Res Function(_$_DeleteList) then) =
+      __$$_DeleteListCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$DeleteListCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$DeleteListCopyWith<$Res> {
-  __$DeleteListCopyWithImpl(
-      _DeleteList _value, $Res Function(_DeleteList) _then)
-      : super(_value, (v) => _then(v as _DeleteList));
+class __$$_DeleteListCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_DeleteList>
+    implements _$$_DeleteListCopyWith<$Res> {
+  __$$_DeleteListCopyWithImpl(
+      _$_DeleteList _value, $Res Function(_$_DeleteList) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteList get _value => super._value as _DeleteList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_DeleteList(
-      list: list == freezed
+    return _then(_$_DeleteList(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1519,6 +1780,7 @@ class __$DeleteListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1542,19 +1804,19 @@ class _$_DeleteList implements _DeleteList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteList &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteList &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteListCopyWith<_DeleteList> get copyWith =>
-      __$DeleteListCopyWithImpl<_DeleteList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteListCopyWith<_$_DeleteList> get copyWith =>
+      __$$_DeleteListCopyWithImpl<_$_DeleteList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1585,6 +1847,32 @@ class _$_DeleteList implements _DeleteList {
         deleteListFromExisting,
   }) {
     return deleteList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return deleteList?.call(list);
   }
 
   @override
@@ -1639,6 +1927,25 @@ class _$_DeleteList implements _DeleteList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return deleteList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -1662,46 +1969,45 @@ class _$_DeleteList implements _DeleteList {
 }
 
 abstract class _DeleteList implements OnlinelistsEvent {
-  const factory _DeleteList({required ActiveList list}) = _$_DeleteList;
+  const factory _DeleteList({required final ActiveList list}) = _$_DeleteList;
 
-  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$DeleteListCopyWith<_DeleteList> get copyWith =>
+  _$$_DeleteListCopyWith<_$_DeleteList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$OverwriteListCopyWith<$Res> {
-  factory _$OverwriteListCopyWith(
-          _OverwriteList value, $Res Function(_OverwriteList) then) =
-      __$OverwriteListCopyWithImpl<$Res>;
+abstract class _$$_OverwriteListCopyWith<$Res> {
+  factory _$$_OverwriteListCopyWith(
+          _$_OverwriteList value, $Res Function(_$_OverwriteList) then) =
+      __$$_OverwriteListCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list, CreateListParameter changedList});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$OverwriteListCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$OverwriteListCopyWith<$Res> {
-  __$OverwriteListCopyWithImpl(
-      _OverwriteList _value, $Res Function(_OverwriteList) _then)
-      : super(_value, (v) => _then(v as _OverwriteList));
+class __$$_OverwriteListCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_OverwriteList>
+    implements _$$_OverwriteListCopyWith<$Res> {
+  __$$_OverwriteListCopyWithImpl(
+      _$_OverwriteList _value, $Res Function(_$_OverwriteList) _then)
+      : super(_value, _then);
 
-  @override
-  _OverwriteList get _value => super._value as _OverwriteList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
-    Object? changedList = freezed,
+    Object? list = null,
+    Object? changedList = null,
   }) {
-    return _then(_OverwriteList(
-      list: list == freezed
+    return _then(_$_OverwriteList(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
-      changedList: changedList == freezed
+      changedList: null == changedList
           ? _value.changedList
           : changedList // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -1709,6 +2015,7 @@ class __$OverwriteListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1734,24 +2041,21 @@ class _$_OverwriteList implements _OverwriteList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _OverwriteList &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_OverwriteList &&
+            (identical(other.list, list) || other.list == list) &&
             (identical(other.changedList, changedList) ||
-                const DeepCollectionEquality()
-                    .equals(other.changedList, changedList)));
+                other.changedList == changedList));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(changedList);
+  int get hashCode => Object.hash(runtimeType, list, changedList);
 
   @JsonKey(ignore: true)
   @override
-  _$OverwriteListCopyWith<_OverwriteList> get copyWith =>
-      __$OverwriteListCopyWithImpl<_OverwriteList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_OverwriteListCopyWith<_$_OverwriteList> get copyWith =>
+      __$$_OverwriteListCopyWithImpl<_$_OverwriteList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1782,6 +2086,32 @@ class _$_OverwriteList implements _OverwriteList {
         deleteListFromExisting,
   }) {
     return overwriteList(list, changedList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return overwriteList?.call(list, changedList);
   }
 
   @override
@@ -1836,6 +2166,25 @@ class _$_OverwriteList implements _OverwriteList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return overwriteList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -1860,21 +2209,22 @@ class _$_OverwriteList implements _OverwriteList {
 
 abstract class _OverwriteList implements OnlinelistsEvent {
   const factory _OverwriteList(
-      {required ActiveList list,
-      required CreateListParameter changedList}) = _$_OverwriteList;
+      {required final ActiveList list,
+      required final CreateListParameter changedList}) = _$_OverwriteList;
 
-  ActiveList get list => throw _privateConstructorUsedError;
-  CreateListParameter get changedList => throw _privateConstructorUsedError;
+  ActiveList get list;
+  CreateListParameter get changedList;
   @JsonKey(ignore: true)
-  _$OverwriteListCopyWith<_OverwriteList> get copyWith =>
+  _$$_OverwriteListCopyWith<_$_OverwriteList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteListFromExistingCopyWith<$Res> {
-  factory _$DeleteListFromExistingCopyWith(_DeleteListFromExisting value,
-          $Res Function(_DeleteListFromExisting) then) =
-      __$DeleteListFromExistingCopyWithImpl<$Res>;
+abstract class _$$_DeleteListFromExistingCopyWith<$Res> {
+  factory _$$_DeleteListFromExistingCopyWith(_$_DeleteListFromExisting value,
+          $Res Function(_$_DeleteListFromExisting) then) =
+      __$$_DeleteListFromExistingCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {Either<Failure, List<ActiveList>> serverListContend, ActiveList list});
 
@@ -1882,27 +2232,25 @@ abstract class _$DeleteListFromExistingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeleteListFromExistingCopyWithImpl<$Res>
-    extends _$OnlinelistsEventCopyWithImpl<$Res>
-    implements _$DeleteListFromExistingCopyWith<$Res> {
-  __$DeleteListFromExistingCopyWithImpl(_DeleteListFromExisting _value,
-      $Res Function(_DeleteListFromExisting) _then)
-      : super(_value, (v) => _then(v as _DeleteListFromExisting));
+class __$$_DeleteListFromExistingCopyWithImpl<$Res>
+    extends _$OnlinelistsEventCopyWithImpl<$Res, _$_DeleteListFromExisting>
+    implements _$$_DeleteListFromExistingCopyWith<$Res> {
+  __$$_DeleteListFromExistingCopyWithImpl(_$_DeleteListFromExisting _value,
+      $Res Function(_$_DeleteListFromExisting) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteListFromExisting get _value => super._value as _DeleteListFromExisting;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? serverListContend = freezed,
-    Object? list = freezed,
+    Object? serverListContend = null,
+    Object? list = null,
   }) {
-    return _then(_DeleteListFromExisting(
-      serverListContend: serverListContend == freezed
+    return _then(_$_DeleteListFromExisting(
+      serverListContend: null == serverListContend
           ? _value.serverListContend
           : serverListContend // ignore: cast_nullable_to_non_nullable
               as Either<Failure, List<ActiveList>>,
-      list: list == freezed
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1910,6 +2258,7 @@ class __$DeleteListFromExistingCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1936,24 +2285,21 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteListFromExisting &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteListFromExisting &&
             (identical(other.serverListContend, serverListContend) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverListContend, serverListContend)) &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+                other.serverListContend == serverListContend) &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(serverListContend) ^
-      const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, serverListContend, list);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteListFromExistingCopyWith<_DeleteListFromExisting> get copyWith =>
-      __$DeleteListFromExistingCopyWithImpl<_DeleteListFromExisting>(
+  @pragma('vm:prefer-inline')
+  _$$_DeleteListFromExistingCopyWith<_$_DeleteListFromExisting> get copyWith =>
+      __$$_DeleteListFromExistingCopyWithImpl<_$_DeleteListFromExisting>(
           this, _$identity);
 
   @override
@@ -1985,6 +2331,32 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
         deleteListFromExisting,
   }) {
     return deleteListFromExisting(serverListContend, list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? listViewRequested,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend)?
+        listViewReceived,
+    TResult? Function(CreateListParameter aNewList)? insertNewList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            CreateListParameter aNewList)?
+        insertNewListIntoExisting,
+    TResult? Function(ActiveList list, ActiveListPosition listItem)?
+        deleteListItem,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list, ActiveListPosition listItem)?
+        deleteListItemFromExisting,
+    TResult? Function(ActiveList list)? deleteList,
+    TResult? Function(ActiveList list, CreateListParameter changedList)?
+        overwriteList,
+    TResult? Function(Either<Failure, List<ActiveList>> serverListContend,
+            ActiveList list)?
+        deleteListFromExisting,
+  }) {
+    return deleteListFromExisting?.call(serverListContend, list);
   }
 
   @override
@@ -2039,6 +2411,25 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(ListViewRequested value)? listViewRequested,
+    TResult? Function(ListViewReceived value)? listViewReceived,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_InsertNewListIntoExisting value)?
+        insertNewListIntoExisting,
+    TResult? Function(_DeleteListItem value)? deleteListItem,
+    TResult? Function(_DeleteListItemFromExisting value)?
+        deleteListItemFromExisting,
+    TResult? Function(_DeleteList value)? deleteList,
+    TResult? Function(_OverwriteList value)? overwriteList,
+    TResult? Function(_DeleteListFromExisting value)? deleteListFromExisting,
+  }) {
+    return deleteListFromExisting?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
     TResult Function(ListViewRequested value)? listViewRequested,
@@ -2063,44 +2454,15 @@ class _$_DeleteListFromExisting implements _DeleteListFromExisting {
 
 abstract class _DeleteListFromExisting implements OnlinelistsEvent {
   const factory _DeleteListFromExisting(
-      {required Either<Failure, List<ActiveList>> serverListContend,
-      required ActiveList list}) = _$_DeleteListFromExisting;
+      {required final Either<Failure, List<ActiveList>> serverListContend,
+      required final ActiveList list}) = _$_DeleteListFromExisting;
 
-  Either<Failure, List<ActiveList>> get serverListContend =>
-      throw _privateConstructorUsedError;
-  ActiveList get list => throw _privateConstructorUsedError;
+  Either<Failure, List<ActiveList>> get serverListContend;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$DeleteListFromExistingCopyWith<_DeleteListFromExisting> get copyWith =>
+  _$$_DeleteListFromExistingCopyWith<_$_DeleteListFromExisting> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$OnlinelistsStateTearOff {
-  const _$OnlinelistsStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  Loading loading() {
-    return const Loading();
-  }
-
-  Loaded loaded({required List<ActiveList> onlineLists}) {
-    return Loaded(
-      onlineLists: onlineLists,
-    );
-  }
-
-  Error error({required Failure failure}) {
-    return Error(
-      failure: failure,
-    );
-  }
-}
-
-/// @nodoc
-const $OnlinelistsState = _$OnlinelistsStateTearOff();
 
 /// @nodoc
 mixin _$OnlinelistsState {
@@ -2110,6 +2472,14 @@ mixin _$OnlinelistsState {
     required TResult Function() loading,
     required TResult Function(List<ActiveList> onlineLists) loaded,
     required TResult Function(Failure failure) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> onlineLists)? loaded,
+    TResult? Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2130,6 +2500,14 @@ mixin _$OnlinelistsState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -2144,33 +2522,33 @@ mixin _$OnlinelistsState {
 abstract class $OnlinelistsStateCopyWith<$Res> {
   factory $OnlinelistsStateCopyWith(
           OnlinelistsState value, $Res Function(OnlinelistsState) then) =
-      _$OnlinelistsStateCopyWithImpl<$Res>;
+      _$OnlinelistsStateCopyWithImpl<$Res, OnlinelistsState>;
 }
 
 /// @nodoc
-class _$OnlinelistsStateCopyWithImpl<$Res>
+class _$OnlinelistsStateCopyWithImpl<$Res, $Val extends OnlinelistsState>
     implements $OnlinelistsStateCopyWith<$Res> {
   _$OnlinelistsStateCopyWithImpl(this._value, this._then);
 
-  final OnlinelistsState _value;
   // ignore: unused_field
-  final $Res Function(OnlinelistsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$OnlinelistsStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2185,7 +2563,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -2200,6 +2579,17 @@ class _$_Initial implements _Initial {
     required TResult Function(Failure failure) error,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> onlineLists)? loaded,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -2230,6 +2620,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -2249,19 +2650,17 @@ abstract class _Initial implements OnlinelistsState {
 }
 
 /// @nodoc
-abstract class $LoadingCopyWith<$Res> {
-  factory $LoadingCopyWith(Loading value, $Res Function(Loading) then) =
-      _$LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingCopyWith<$Res> {
+  factory _$$LoadingCopyWith(_$Loading value, $Res Function(_$Loading) then) =
+      __$$LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LoadingCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
-    implements $LoadingCopyWith<$Res> {
-  _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
-      : super(_value, (v) => _then(v as Loading));
-
-  @override
-  Loading get _value => super._value as Loading;
+class __$$LoadingCopyWithImpl<$Res>
+    extends _$OnlinelistsStateCopyWithImpl<$Res, _$Loading>
+    implements _$$LoadingCopyWith<$Res> {
+  __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2276,7 +2675,8 @@ class _$Loading implements Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Loading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$Loading);
   }
 
   @override
@@ -2291,6 +2691,17 @@ class _$Loading implements Loading {
     required TResult Function(Failure failure) error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> onlineLists)? loaded,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -2321,6 +2732,17 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -2340,28 +2762,28 @@ abstract class Loading implements OnlinelistsState {
 }
 
 /// @nodoc
-abstract class $LoadedCopyWith<$Res> {
-  factory $LoadedCopyWith(Loaded value, $Res Function(Loaded) then) =
-      _$LoadedCopyWithImpl<$Res>;
+abstract class _$$LoadedCopyWith<$Res> {
+  factory _$$LoadedCopyWith(_$Loaded value, $Res Function(_$Loaded) then) =
+      __$$LoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ActiveList> onlineLists});
 }
 
 /// @nodoc
-class _$LoadedCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
-    implements $LoadedCopyWith<$Res> {
-  _$LoadedCopyWithImpl(Loaded _value, $Res Function(Loaded) _then)
-      : super(_value, (v) => _then(v as Loaded));
+class __$$LoadedCopyWithImpl<$Res>
+    extends _$OnlinelistsStateCopyWithImpl<$Res, _$Loaded>
+    implements _$$LoadedCopyWith<$Res> {
+  __$$LoadedCopyWithImpl(_$Loaded _value, $Res Function(_$Loaded) _then)
+      : super(_value, _then);
 
-  @override
-  Loaded get _value => super._value as Loaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? onlineLists = freezed,
+    Object? onlineLists = null,
   }) {
-    return _then(Loaded(
-      onlineLists: onlineLists == freezed
-          ? _value.onlineLists
+    return _then(_$Loaded(
+      onlineLists: null == onlineLists
+          ? _value._onlineLists
           : onlineLists // ignore: cast_nullable_to_non_nullable
               as List<ActiveList>,
     ));
@@ -2371,10 +2793,15 @@ class _$LoadedCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$Loaded implements Loaded {
-  const _$Loaded({required this.onlineLists});
+  const _$Loaded({required final List<ActiveList> onlineLists})
+      : _onlineLists = onlineLists;
 
+  final List<ActiveList> _onlineLists;
   @override
-  final List<ActiveList> onlineLists;
+  List<ActiveList> get onlineLists {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_onlineLists);
+  }
 
   @override
   String toString() {
@@ -2384,20 +2811,21 @@ class _$Loaded implements Loaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Loaded &&
-            (identical(other.onlineLists, onlineLists) ||
-                const DeepCollectionEquality()
-                    .equals(other.onlineLists, onlineLists)));
+        (other.runtimeType == runtimeType &&
+            other is _$Loaded &&
+            const DeepCollectionEquality()
+                .equals(other._onlineLists, _onlineLists));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(onlineLists);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_onlineLists));
 
   @JsonKey(ignore: true)
   @override
-  $LoadedCopyWith<Loaded> get copyWith =>
-      _$LoadedCopyWithImpl<Loaded>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LoadedCopyWith<_$Loaded> get copyWith =>
+      __$$LoadedCopyWithImpl<_$Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2408,6 +2836,17 @@ class _$Loaded implements Loaded {
     required TResult Function(Failure failure) error,
   }) {
     return loaded(onlineLists);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> onlineLists)? loaded,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loaded?.call(onlineLists);
   }
 
   @override
@@ -2438,6 +2877,17 @@ class _$Loaded implements Loaded {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -2453,37 +2903,39 @@ class _$Loaded implements Loaded {
 }
 
 abstract class Loaded implements OnlinelistsState {
-  const factory Loaded({required List<ActiveList> onlineLists}) = _$Loaded;
+  const factory Loaded({required final List<ActiveList> onlineLists}) =
+      _$Loaded;
 
-  List<ActiveList> get onlineLists => throw _privateConstructorUsedError;
+  List<ActiveList> get onlineLists;
   @JsonKey(ignore: true)
-  $LoadedCopyWith<Loaded> get copyWith => throw _privateConstructorUsedError;
+  _$$LoadedCopyWith<_$Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ErrorCopyWith<$Res> {
-  factory $ErrorCopyWith(Error value, $Res Function(Error) then) =
-      _$ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorCopyWith<$Res> {
+  factory _$$ErrorCopyWith(_$Error value, $Res Function(_$Error) then) =
+      __$$ErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({Failure failure});
 
   $FailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
-    implements $ErrorCopyWith<$Res> {
-  _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
-      : super(_value, (v) => _then(v as Error));
+class __$$ErrorCopyWithImpl<$Res>
+    extends _$OnlinelistsStateCopyWithImpl<$Res, _$Error>
+    implements _$$ErrorCopyWith<$Res> {
+  __$$ErrorCopyWithImpl(_$Error _value, $Res Function(_$Error) _then)
+      : super(_value, _then);
 
-  @override
-  Error get _value => super._value as Error;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
-    return _then(Error(
-      failure: failure == freezed
+    return _then(_$Error(
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure,
@@ -2491,6 +2943,7 @@ class _$ErrorCopyWithImpl<$Res> extends _$OnlinelistsStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get failure {
     return $FailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -2514,19 +2967,19 @@ class _$Error implements Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Error &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _$Error &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  $ErrorCopyWith<Error> get copyWith =>
-      _$ErrorCopyWithImpl<Error>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ErrorCopyWith<_$Error> get copyWith =>
+      __$$ErrorCopyWithImpl<_$Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2537,6 +2990,17 @@ class _$Error implements Error {
     required TResult Function(Failure failure) error,
   }) {
     return error(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> onlineLists)? loaded,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return error?.call(failure);
   }
 
   @override
@@ -2567,6 +3031,17 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(Loading value)? loading,
+    TResult? Function(Loaded value)? loaded,
+    TResult? Function(Error value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(Loading value)? loading,
@@ -2582,9 +3057,9 @@ class _$Error implements Error {
 }
 
 abstract class Error implements OnlinelistsState {
-  const factory Error({required Failure failure}) = _$Error;
+  const factory Error({required final Failure failure}) = _$Error;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
-  $ErrorCopyWith<Error> get copyWith => throw _privateConstructorUsedError;
+  _$$ErrorCopyWith<_$Error> get copyWith => throw _privateConstructorUsedError;
 }

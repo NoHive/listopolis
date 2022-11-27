@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'activelist_bloc.dart';
 
@@ -10,86 +12,7 @@ part of 'activelist_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ActivelistEventTearOff {
-  const _$ActivelistEventTearOff();
-
-  _LoadLists load() {
-    return const _LoadLists();
-  }
-
-  _LoadForReorder loadForReorder() {
-    return const _LoadForReorder();
-  }
-
-  _InsertNewList insertNewList({required CreateListParameter listParameter}) {
-    return _InsertNewList(
-      listParameter: listParameter,
-    );
-  }
-
-  _DeleteActiveListPosition deleteActiveListPosition(
-      {required ActiveList list, required ActiveListPosition position}) {
-    return _DeleteActiveListPosition(
-      list: list,
-      position: position,
-    );
-  }
-
-  _DeleteActiveList deleteActiveList({required ActiveList list}) {
-    return _DeleteActiveList(
-      list: list,
-    );
-  }
-
-  _ReplaceActiveList replaceActiveList(
-      {required CreateListParameter listParameter, required ActiveList list}) {
-    return _ReplaceActiveList(
-      listParameter: listParameter,
-      list: list,
-    );
-  }
-
-  _BackupData backupData() {
-    return const _BackupData();
-  }
-
-  _LoadDataFromBackup loadDataFromBackup() {
-    return const _LoadDataFromBackup();
-  }
-
-  _UseListAsTemplate useListAsTemplate({required ActiveList list}) {
-    return _UseListAsTemplate(
-      list: list,
-    );
-  }
-
-  _ChangeListPosition changeListPosition(
-      {required ActiveList list,
-      required int oldIndex,
-      required int newIndex}) {
-    return _ChangeListPosition(
-      list: list,
-      oldIndex: oldIndex,
-      newIndex: newIndex,
-    );
-  }
-
-  _CopyListToClipBoard copyListToClipBoard({required ActiveList list}) {
-    return _CopyListToClipBoard(
-      list: list,
-    );
-  }
-
-  _CreateListFromClipBoard createListFromClipBoard() {
-    return const _CreateListFromClipBoard();
-  }
-}
-
-/// @nodoc
-const $ActivelistEvent = _$ActivelistEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ActivelistEvent {
@@ -111,6 +34,25 @@ mixin _$ActivelistEvent {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -152,6 +94,23 @@ mixin _$ActivelistEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -174,34 +133,34 @@ mixin _$ActivelistEvent {
 abstract class $ActivelistEventCopyWith<$Res> {
   factory $ActivelistEventCopyWith(
           ActivelistEvent value, $Res Function(ActivelistEvent) then) =
-      _$ActivelistEventCopyWithImpl<$Res>;
+      _$ActivelistEventCopyWithImpl<$Res, ActivelistEvent>;
 }
 
 /// @nodoc
-class _$ActivelistEventCopyWithImpl<$Res>
+class _$ActivelistEventCopyWithImpl<$Res, $Val extends ActivelistEvent>
     implements $ActivelistEventCopyWith<$Res> {
   _$ActivelistEventCopyWithImpl(this._value, this._then);
 
-  final ActivelistEvent _value;
   // ignore: unused_field
-  final $Res Function(ActivelistEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$LoadListsCopyWith<$Res> {
-  factory _$LoadListsCopyWith(
-          _LoadLists value, $Res Function(_LoadLists) then) =
-      __$LoadListsCopyWithImpl<$Res>;
+abstract class _$$_LoadListsCopyWith<$Res> {
+  factory _$$_LoadListsCopyWith(
+          _$_LoadLists value, $Res Function(_$_LoadLists) then) =
+      __$$_LoadListsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadListsCopyWithImpl<$Res> extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$LoadListsCopyWith<$Res> {
-  __$LoadListsCopyWithImpl(_LoadLists _value, $Res Function(_LoadLists) _then)
-      : super(_value, (v) => _then(v as _LoadLists));
-
-  @override
-  _LoadLists get _value => super._value as _LoadLists;
+class __$$_LoadListsCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_LoadLists>
+    implements _$$_LoadListsCopyWith<$Res> {
+  __$$_LoadListsCopyWithImpl(
+      _$_LoadLists _value, $Res Function(_$_LoadLists) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -216,7 +175,8 @@ class _$_LoadLists implements _LoadLists {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadLists);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadLists);
   }
 
   @override
@@ -243,6 +203,28 @@ class _$_LoadLists implements _LoadLists {
     required TResult Function() createListFromClipBoard,
   }) {
     return load();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return load?.call();
   }
 
   @override
@@ -294,6 +276,26 @@ class _$_LoadLists implements _LoadLists {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return load?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -321,22 +323,19 @@ abstract class _LoadLists implements ActivelistEvent {
 }
 
 /// @nodoc
-abstract class _$LoadForReorderCopyWith<$Res> {
-  factory _$LoadForReorderCopyWith(
-          _LoadForReorder value, $Res Function(_LoadForReorder) then) =
-      __$LoadForReorderCopyWithImpl<$Res>;
+abstract class _$$_LoadForReorderCopyWith<$Res> {
+  factory _$$_LoadForReorderCopyWith(
+          _$_LoadForReorder value, $Res Function(_$_LoadForReorder) then) =
+      __$$_LoadForReorderCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadForReorderCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$LoadForReorderCopyWith<$Res> {
-  __$LoadForReorderCopyWithImpl(
-      _LoadForReorder _value, $Res Function(_LoadForReorder) _then)
-      : super(_value, (v) => _then(v as _LoadForReorder));
-
-  @override
-  _LoadForReorder get _value => super._value as _LoadForReorder;
+class __$$_LoadForReorderCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_LoadForReorder>
+    implements _$$_LoadForReorderCopyWith<$Res> {
+  __$$_LoadForReorderCopyWithImpl(
+      _$_LoadForReorder _value, $Res Function(_$_LoadForReorder) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -351,7 +350,8 @@ class _$_LoadForReorder implements _LoadForReorder {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadForReorder);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadForReorder);
   }
 
   @override
@@ -378,6 +378,28 @@ class _$_LoadForReorder implements _LoadForReorder {
     required TResult Function() createListFromClipBoard,
   }) {
     return loadForReorder();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return loadForReorder?.call();
   }
 
   @override
@@ -429,6 +451,26 @@ class _$_LoadForReorder implements _LoadForReorder {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return loadForReorder?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -456,30 +498,29 @@ abstract class _LoadForReorder implements ActivelistEvent {
 }
 
 /// @nodoc
-abstract class _$InsertNewListCopyWith<$Res> {
-  factory _$InsertNewListCopyWith(
-          _InsertNewList value, $Res Function(_InsertNewList) then) =
-      __$InsertNewListCopyWithImpl<$Res>;
+abstract class _$$_InsertNewListCopyWith<$Res> {
+  factory _$$_InsertNewListCopyWith(
+          _$_InsertNewList value, $Res Function(_$_InsertNewList) then) =
+      __$$_InsertNewListCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParameter});
 }
 
 /// @nodoc
-class __$InsertNewListCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$InsertNewListCopyWith<$Res> {
-  __$InsertNewListCopyWithImpl(
-      _InsertNewList _value, $Res Function(_InsertNewList) _then)
-      : super(_value, (v) => _then(v as _InsertNewList));
+class __$$_InsertNewListCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_InsertNewList>
+    implements _$$_InsertNewListCopyWith<$Res> {
+  __$$_InsertNewListCopyWithImpl(
+      _$_InsertNewList _value, $Res Function(_$_InsertNewList) _then)
+      : super(_value, _then);
 
-  @override
-  _InsertNewList get _value => super._value as _InsertNewList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParameter = freezed,
+    Object? listParameter = null,
   }) {
-    return _then(_InsertNewList(
-      listParameter: listParameter == freezed
+    return _then(_$_InsertNewList(
+      listParameter: null == listParameter
           ? _value.listParameter
           : listParameter // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
@@ -503,20 +544,20 @@ class _$_InsertNewList implements _InsertNewList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _InsertNewList &&
+        (other.runtimeType == runtimeType &&
+            other is _$_InsertNewList &&
             (identical(other.listParameter, listParameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParameter, listParameter)));
+                other.listParameter == listParameter));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(listParameter);
+  int get hashCode => Object.hash(runtimeType, listParameter);
 
   @JsonKey(ignore: true)
   @override
-  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
-      __$InsertNewListCopyWithImpl<_InsertNewList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InsertNewListCopyWith<_$_InsertNewList> get copyWith =>
+      __$$_InsertNewListCopyWithImpl<_$_InsertNewList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -539,6 +580,28 @@ class _$_InsertNewList implements _InsertNewList {
     required TResult Function() createListFromClipBoard,
   }) {
     return insertNewList(listParameter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return insertNewList?.call(listParameter);
   }
 
   @override
@@ -590,6 +653,26 @@ class _$_InsertNewList implements _InsertNewList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return insertNewList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -613,20 +696,22 @@ class _$_InsertNewList implements _InsertNewList {
 }
 
 abstract class _InsertNewList implements ActivelistEvent {
-  const factory _InsertNewList({required CreateListParameter listParameter}) =
-      _$_InsertNewList;
+  const factory _InsertNewList(
+      {required final CreateListParameter listParameter}) = _$_InsertNewList;
 
-  CreateListParameter get listParameter => throw _privateConstructorUsedError;
+  CreateListParameter get listParameter;
   @JsonKey(ignore: true)
-  _$InsertNewListCopyWith<_InsertNewList> get copyWith =>
+  _$$_InsertNewListCopyWith<_$_InsertNewList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteActiveListPositionCopyWith<$Res> {
-  factory _$DeleteActiveListPositionCopyWith(_DeleteActiveListPosition value,
-          $Res Function(_DeleteActiveListPosition) then) =
-      __$DeleteActiveListPositionCopyWithImpl<$Res>;
+abstract class _$$_DeleteActiveListPositionCopyWith<$Res> {
+  factory _$$_DeleteActiveListPositionCopyWith(
+          _$_DeleteActiveListPosition value,
+          $Res Function(_$_DeleteActiveListPosition) then) =
+      __$$_DeleteActiveListPositionCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list, ActiveListPosition position});
 
   $ActiveListCopyWith<$Res> get list;
@@ -634,28 +719,25 @@ abstract class _$DeleteActiveListPositionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DeleteActiveListPositionCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$DeleteActiveListPositionCopyWith<$Res> {
-  __$DeleteActiveListPositionCopyWithImpl(_DeleteActiveListPosition _value,
-      $Res Function(_DeleteActiveListPosition) _then)
-      : super(_value, (v) => _then(v as _DeleteActiveListPosition));
+class __$$_DeleteActiveListPositionCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_DeleteActiveListPosition>
+    implements _$$_DeleteActiveListPositionCopyWith<$Res> {
+  __$$_DeleteActiveListPositionCopyWithImpl(_$_DeleteActiveListPosition _value,
+      $Res Function(_$_DeleteActiveListPosition) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteActiveListPosition get _value =>
-      super._value as _DeleteActiveListPosition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
-    Object? position = freezed,
+    Object? list = null,
+    Object? position = null,
   }) {
-    return _then(_DeleteActiveListPosition(
-      list: list == freezed
+    return _then(_$_DeleteActiveListPosition(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
-      position: position == freezed
+      position: null == position
           ? _value.position
           : position // ignore: cast_nullable_to_non_nullable
               as ActiveListPosition,
@@ -663,6 +745,7 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -670,6 +753,7 @@ class __$DeleteActiveListPositionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListPositionCopyWith<$Res> get position {
     return $ActiveListPositionCopyWith<$Res>(_value.position, (value) {
       return _then(_value.copyWith(position: value));
@@ -696,25 +780,22 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteActiveListPosition &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteActiveListPosition &&
+            (identical(other.list, list) || other.list == list) &&
             (identical(other.position, position) ||
-                const DeepCollectionEquality()
-                    .equals(other.position, position)));
+                other.position == position));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(position);
+  int get hashCode => Object.hash(runtimeType, list, position);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith =>
-      __$DeleteActiveListPositionCopyWithImpl<_DeleteActiveListPosition>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteActiveListPositionCopyWith<_$_DeleteActiveListPosition>
+      get copyWith => __$$_DeleteActiveListPositionCopyWithImpl<
+          _$_DeleteActiveListPosition>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -737,6 +818,28 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     required TResult Function() createListFromClipBoard,
   }) {
     return deleteActiveListPosition(list, position);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return deleteActiveListPosition?.call(list, position);
   }
 
   @override
@@ -788,6 +891,26 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return deleteActiveListPosition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -812,43 +935,43 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
 
 abstract class _DeleteActiveListPosition implements ActivelistEvent {
   const factory _DeleteActiveListPosition(
-      {required ActiveList list,
-      required ActiveListPosition position}) = _$_DeleteActiveListPosition;
+          {required final ActiveList list,
+          required final ActiveListPosition position}) =
+      _$_DeleteActiveListPosition;
 
-  ActiveList get list => throw _privateConstructorUsedError;
-  ActiveListPosition get position => throw _privateConstructorUsedError;
+  ActiveList get list;
+  ActiveListPosition get position;
   @JsonKey(ignore: true)
-  _$DeleteActiveListPositionCopyWith<_DeleteActiveListPosition> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_DeleteActiveListPositionCopyWith<_$_DeleteActiveListPosition>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$DeleteActiveListCopyWith<$Res> {
-  factory _$DeleteActiveListCopyWith(
-          _DeleteActiveList value, $Res Function(_DeleteActiveList) then) =
-      __$DeleteActiveListCopyWithImpl<$Res>;
+abstract class _$$_DeleteActiveListCopyWith<$Res> {
+  factory _$$_DeleteActiveListCopyWith(
+          _$_DeleteActiveList value, $Res Function(_$_DeleteActiveList) then) =
+      __$$_DeleteActiveListCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$DeleteActiveListCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$DeleteActiveListCopyWith<$Res> {
-  __$DeleteActiveListCopyWithImpl(
-      _DeleteActiveList _value, $Res Function(_DeleteActiveList) _then)
-      : super(_value, (v) => _then(v as _DeleteActiveList));
+class __$$_DeleteActiveListCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_DeleteActiveList>
+    implements _$$_DeleteActiveListCopyWith<$Res> {
+  __$$_DeleteActiveListCopyWithImpl(
+      _$_DeleteActiveList _value, $Res Function(_$_DeleteActiveList) _then)
+      : super(_value, _then);
 
-  @override
-  _DeleteActiveList get _value => super._value as _DeleteActiveList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_DeleteActiveList(
-      list: list == freezed
+    return _then(_$_DeleteActiveList(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -856,6 +979,7 @@ class __$DeleteActiveListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -879,19 +1003,19 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DeleteActiveList &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_DeleteActiveList &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$DeleteActiveListCopyWith<_DeleteActiveList> get copyWith =>
-      __$DeleteActiveListCopyWithImpl<_DeleteActiveList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DeleteActiveListCopyWith<_$_DeleteActiveList> get copyWith =>
+      __$$_DeleteActiveListCopyWithImpl<_$_DeleteActiveList>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -914,6 +1038,28 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     required TResult Function() createListFromClipBoard,
   }) {
     return deleteActiveList(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return deleteActiveList?.call(list);
   }
 
   @override
@@ -965,6 +1111,26 @@ class _$_DeleteActiveList implements _DeleteActiveList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return deleteActiveList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -988,47 +1154,46 @@ class _$_DeleteActiveList implements _DeleteActiveList {
 }
 
 abstract class _DeleteActiveList implements ActivelistEvent {
-  const factory _DeleteActiveList({required ActiveList list}) =
+  const factory _DeleteActiveList({required final ActiveList list}) =
       _$_DeleteActiveList;
 
-  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$DeleteActiveListCopyWith<_DeleteActiveList> get copyWith =>
+  _$$_DeleteActiveListCopyWith<_$_DeleteActiveList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ReplaceActiveListCopyWith<$Res> {
-  factory _$ReplaceActiveListCopyWith(
-          _ReplaceActiveList value, $Res Function(_ReplaceActiveList) then) =
-      __$ReplaceActiveListCopyWithImpl<$Res>;
+abstract class _$$_ReplaceActiveListCopyWith<$Res> {
+  factory _$$_ReplaceActiveListCopyWith(_$_ReplaceActiveList value,
+          $Res Function(_$_ReplaceActiveList) then) =
+      __$$_ReplaceActiveListCopyWithImpl<$Res>;
+  @useResult
   $Res call({CreateListParameter listParameter, ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$ReplaceActiveListCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$ReplaceActiveListCopyWith<$Res> {
-  __$ReplaceActiveListCopyWithImpl(
-      _ReplaceActiveList _value, $Res Function(_ReplaceActiveList) _then)
-      : super(_value, (v) => _then(v as _ReplaceActiveList));
+class __$$_ReplaceActiveListCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_ReplaceActiveList>
+    implements _$$_ReplaceActiveListCopyWith<$Res> {
+  __$$_ReplaceActiveListCopyWithImpl(
+      _$_ReplaceActiveList _value, $Res Function(_$_ReplaceActiveList) _then)
+      : super(_value, _then);
 
-  @override
-  _ReplaceActiveList get _value => super._value as _ReplaceActiveList;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? listParameter = freezed,
-    Object? list = freezed,
+    Object? listParameter = null,
+    Object? list = null,
   }) {
-    return _then(_ReplaceActiveList(
-      listParameter: listParameter == freezed
+    return _then(_$_ReplaceActiveList(
+      listParameter: null == listParameter
           ? _value.listParameter
           : listParameter // ignore: cast_nullable_to_non_nullable
               as CreateListParameter,
-      list: list == freezed
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1036,6 +1201,7 @@ class __$ReplaceActiveListCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1061,24 +1227,22 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ReplaceActiveList &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ReplaceActiveList &&
             (identical(other.listParameter, listParameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.listParameter, listParameter)) &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+                other.listParameter == listParameter) &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(listParameter) ^
-      const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, listParameter, list);
 
   @JsonKey(ignore: true)
   @override
-  _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith =>
-      __$ReplaceActiveListCopyWithImpl<_ReplaceActiveList>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ReplaceActiveListCopyWith<_$_ReplaceActiveList> get copyWith =>
+      __$$_ReplaceActiveListCopyWithImpl<_$_ReplaceActiveList>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1101,6 +1265,28 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     required TResult Function() createListFromClipBoard,
   }) {
     return replaceActiveList(listParameter, list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return replaceActiveList?.call(listParameter, list);
   }
 
   @override
@@ -1152,6 +1338,26 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return replaceActiveList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -1176,33 +1382,30 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
 
 abstract class _ReplaceActiveList implements ActivelistEvent {
   const factory _ReplaceActiveList(
-      {required CreateListParameter listParameter,
-      required ActiveList list}) = _$_ReplaceActiveList;
+      {required final CreateListParameter listParameter,
+      required final ActiveList list}) = _$_ReplaceActiveList;
 
-  CreateListParameter get listParameter => throw _privateConstructorUsedError;
-  ActiveList get list => throw _privateConstructorUsedError;
+  CreateListParameter get listParameter;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$ReplaceActiveListCopyWith<_ReplaceActiveList> get copyWith =>
+  _$$_ReplaceActiveListCopyWith<_$_ReplaceActiveList> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$BackupDataCopyWith<$Res> {
-  factory _$BackupDataCopyWith(
-          _BackupData value, $Res Function(_BackupData) then) =
-      __$BackupDataCopyWithImpl<$Res>;
+abstract class _$$_BackupDataCopyWith<$Res> {
+  factory _$$_BackupDataCopyWith(
+          _$_BackupData value, $Res Function(_$_BackupData) then) =
+      __$$_BackupDataCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$BackupDataCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$BackupDataCopyWith<$Res> {
-  __$BackupDataCopyWithImpl(
-      _BackupData _value, $Res Function(_BackupData) _then)
-      : super(_value, (v) => _then(v as _BackupData));
-
-  @override
-  _BackupData get _value => super._value as _BackupData;
+class __$$_BackupDataCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_BackupData>
+    implements _$$_BackupDataCopyWith<$Res> {
+  __$$_BackupDataCopyWithImpl(
+      _$_BackupData _value, $Res Function(_$_BackupData) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1217,7 +1420,8 @@ class _$_BackupData implements _BackupData {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BackupData);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_BackupData);
   }
 
   @override
@@ -1244,6 +1448,28 @@ class _$_BackupData implements _BackupData {
     required TResult Function() createListFromClipBoard,
   }) {
     return backupData();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return backupData?.call();
   }
 
   @override
@@ -1295,6 +1521,26 @@ class _$_BackupData implements _BackupData {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return backupData?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -1322,22 +1568,19 @@ abstract class _BackupData implements ActivelistEvent {
 }
 
 /// @nodoc
-abstract class _$LoadDataFromBackupCopyWith<$Res> {
-  factory _$LoadDataFromBackupCopyWith(
-          _LoadDataFromBackup value, $Res Function(_LoadDataFromBackup) then) =
-      __$LoadDataFromBackupCopyWithImpl<$Res>;
+abstract class _$$_LoadDataFromBackupCopyWith<$Res> {
+  factory _$$_LoadDataFromBackupCopyWith(_$_LoadDataFromBackup value,
+          $Res Function(_$_LoadDataFromBackup) then) =
+      __$$_LoadDataFromBackupCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadDataFromBackupCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$LoadDataFromBackupCopyWith<$Res> {
-  __$LoadDataFromBackupCopyWithImpl(
-      _LoadDataFromBackup _value, $Res Function(_LoadDataFromBackup) _then)
-      : super(_value, (v) => _then(v as _LoadDataFromBackup));
-
-  @override
-  _LoadDataFromBackup get _value => super._value as _LoadDataFromBackup;
+class __$$_LoadDataFromBackupCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_LoadDataFromBackup>
+    implements _$$_LoadDataFromBackupCopyWith<$Res> {
+  __$$_LoadDataFromBackupCopyWithImpl(
+      _$_LoadDataFromBackup _value, $Res Function(_$_LoadDataFromBackup) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1352,7 +1595,8 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadDataFromBackup);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadDataFromBackup);
   }
 
   @override
@@ -1379,6 +1623,28 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     required TResult Function() createListFromClipBoard,
   }) {
     return loadDataFromBackup();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return loadDataFromBackup?.call();
   }
 
   @override
@@ -1430,6 +1696,26 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return loadDataFromBackup?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -1457,32 +1743,31 @@ abstract class _LoadDataFromBackup implements ActivelistEvent {
 }
 
 /// @nodoc
-abstract class _$UseListAsTemplateCopyWith<$Res> {
-  factory _$UseListAsTemplateCopyWith(
-          _UseListAsTemplate value, $Res Function(_UseListAsTemplate) then) =
-      __$UseListAsTemplateCopyWithImpl<$Res>;
+abstract class _$$_UseListAsTemplateCopyWith<$Res> {
+  factory _$$_UseListAsTemplateCopyWith(_$_UseListAsTemplate value,
+          $Res Function(_$_UseListAsTemplate) then) =
+      __$$_UseListAsTemplateCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$UseListAsTemplateCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$UseListAsTemplateCopyWith<$Res> {
-  __$UseListAsTemplateCopyWithImpl(
-      _UseListAsTemplate _value, $Res Function(_UseListAsTemplate) _then)
-      : super(_value, (v) => _then(v as _UseListAsTemplate));
+class __$$_UseListAsTemplateCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_UseListAsTemplate>
+    implements _$$_UseListAsTemplateCopyWith<$Res> {
+  __$$_UseListAsTemplateCopyWithImpl(
+      _$_UseListAsTemplate _value, $Res Function(_$_UseListAsTemplate) _then)
+      : super(_value, _then);
 
-  @override
-  _UseListAsTemplate get _value => super._value as _UseListAsTemplate;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_UseListAsTemplate(
-      list: list == freezed
+    return _then(_$_UseListAsTemplate(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1490,6 +1775,7 @@ class __$UseListAsTemplateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1513,19 +1799,20 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UseListAsTemplate &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_UseListAsTemplate &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$UseListAsTemplateCopyWith<_UseListAsTemplate> get copyWith =>
-      __$UseListAsTemplateCopyWithImpl<_UseListAsTemplate>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_UseListAsTemplateCopyWith<_$_UseListAsTemplate> get copyWith =>
+      __$$_UseListAsTemplateCopyWithImpl<_$_UseListAsTemplate>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1548,6 +1835,28 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     required TResult Function() createListFromClipBoard,
   }) {
     return useListAsTemplate(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return useListAsTemplate?.call(list);
   }
 
   @override
@@ -1599,6 +1908,26 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return useListAsTemplate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -1622,52 +1951,51 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
 }
 
 abstract class _UseListAsTemplate implements ActivelistEvent {
-  const factory _UseListAsTemplate({required ActiveList list}) =
+  const factory _UseListAsTemplate({required final ActiveList list}) =
       _$_UseListAsTemplate;
 
-  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$UseListAsTemplateCopyWith<_UseListAsTemplate> get copyWith =>
+  _$$_UseListAsTemplateCopyWith<_$_UseListAsTemplate> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ChangeListPositionCopyWith<$Res> {
-  factory _$ChangeListPositionCopyWith(
-          _ChangeListPosition value, $Res Function(_ChangeListPosition) then) =
-      __$ChangeListPositionCopyWithImpl<$Res>;
+abstract class _$$_ChangeListPositionCopyWith<$Res> {
+  factory _$$_ChangeListPositionCopyWith(_$_ChangeListPosition value,
+          $Res Function(_$_ChangeListPosition) then) =
+      __$$_ChangeListPositionCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list, int oldIndex, int newIndex});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$ChangeListPositionCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$ChangeListPositionCopyWith<$Res> {
-  __$ChangeListPositionCopyWithImpl(
-      _ChangeListPosition _value, $Res Function(_ChangeListPosition) _then)
-      : super(_value, (v) => _then(v as _ChangeListPosition));
+class __$$_ChangeListPositionCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_ChangeListPosition>
+    implements _$$_ChangeListPositionCopyWith<$Res> {
+  __$$_ChangeListPositionCopyWithImpl(
+      _$_ChangeListPosition _value, $Res Function(_$_ChangeListPosition) _then)
+      : super(_value, _then);
 
-  @override
-  _ChangeListPosition get _value => super._value as _ChangeListPosition;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
-    Object? oldIndex = freezed,
-    Object? newIndex = freezed,
+    Object? list = null,
+    Object? oldIndex = null,
+    Object? newIndex = null,
   }) {
-    return _then(_ChangeListPosition(
-      list: list == freezed
+    return _then(_$_ChangeListPosition(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
-      oldIndex: oldIndex == freezed
+      oldIndex: null == oldIndex
           ? _value.oldIndex
           : oldIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      newIndex: newIndex == freezed
+      newIndex: null == newIndex
           ? _value.newIndex
           : newIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -1675,6 +2003,7 @@ class __$ChangeListPositionCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1703,28 +2032,24 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ChangeListPosition &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_ChangeListPosition &&
+            (identical(other.list, list) || other.list == list) &&
             (identical(other.oldIndex, oldIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.oldIndex, oldIndex)) &&
+                other.oldIndex == oldIndex) &&
             (identical(other.newIndex, newIndex) ||
-                const DeepCollectionEquality()
-                    .equals(other.newIndex, newIndex)));
+                other.newIndex == newIndex));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(list) ^
-      const DeepCollectionEquality().hash(oldIndex) ^
-      const DeepCollectionEquality().hash(newIndex);
+  int get hashCode => Object.hash(runtimeType, list, oldIndex, newIndex);
 
   @JsonKey(ignore: true)
   @override
-  _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith =>
-      __$ChangeListPositionCopyWithImpl<_ChangeListPosition>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ChangeListPositionCopyWith<_$_ChangeListPosition> get copyWith =>
+      __$$_ChangeListPositionCopyWithImpl<_$_ChangeListPosition>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1747,6 +2072,28 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     required TResult Function() createListFromClipBoard,
   }) {
     return changeListPosition(list, oldIndex, newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return changeListPosition?.call(list, oldIndex, newIndex);
   }
 
   @override
@@ -1798,6 +2145,26 @@ class _$_ChangeListPosition implements _ChangeListPosition {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return changeListPosition?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -1822,45 +2189,44 @@ class _$_ChangeListPosition implements _ChangeListPosition {
 
 abstract class _ChangeListPosition implements ActivelistEvent {
   const factory _ChangeListPosition(
-      {required ActiveList list,
-      required int oldIndex,
-      required int newIndex}) = _$_ChangeListPosition;
+      {required final ActiveList list,
+      required final int oldIndex,
+      required final int newIndex}) = _$_ChangeListPosition;
 
-  ActiveList get list => throw _privateConstructorUsedError;
-  int get oldIndex => throw _privateConstructorUsedError;
-  int get newIndex => throw _privateConstructorUsedError;
+  ActiveList get list;
+  int get oldIndex;
+  int get newIndex;
   @JsonKey(ignore: true)
-  _$ChangeListPositionCopyWith<_ChangeListPosition> get copyWith =>
+  _$$_ChangeListPositionCopyWith<_$_ChangeListPosition> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CopyListToClipBoardCopyWith<$Res> {
-  factory _$CopyListToClipBoardCopyWith(_CopyListToClipBoard value,
-          $Res Function(_CopyListToClipBoard) then) =
-      __$CopyListToClipBoardCopyWithImpl<$Res>;
+abstract class _$$_CopyListToClipBoardCopyWith<$Res> {
+  factory _$$_CopyListToClipBoardCopyWith(_$_CopyListToClipBoard value,
+          $Res Function(_$_CopyListToClipBoard) then) =
+      __$$_CopyListToClipBoardCopyWithImpl<$Res>;
+  @useResult
   $Res call({ActiveList list});
 
   $ActiveListCopyWith<$Res> get list;
 }
 
 /// @nodoc
-class __$CopyListToClipBoardCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$CopyListToClipBoardCopyWith<$Res> {
-  __$CopyListToClipBoardCopyWithImpl(
-      _CopyListToClipBoard _value, $Res Function(_CopyListToClipBoard) _then)
-      : super(_value, (v) => _then(v as _CopyListToClipBoard));
+class __$$_CopyListToClipBoardCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_CopyListToClipBoard>
+    implements _$$_CopyListToClipBoardCopyWith<$Res> {
+  __$$_CopyListToClipBoardCopyWithImpl(_$_CopyListToClipBoard _value,
+      $Res Function(_$_CopyListToClipBoard) _then)
+      : super(_value, _then);
 
-  @override
-  _CopyListToClipBoard get _value => super._value as _CopyListToClipBoard;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? list = freezed,
+    Object? list = null,
   }) {
-    return _then(_CopyListToClipBoard(
-      list: list == freezed
+    return _then(_$_CopyListToClipBoard(
+      list: null == list
           ? _value.list
           : list // ignore: cast_nullable_to_non_nullable
               as ActiveList,
@@ -1868,6 +2234,7 @@ class __$CopyListToClipBoardCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ActiveListCopyWith<$Res> get list {
     return $ActiveListCopyWith<$Res>(_value.list, (value) {
       return _then(_value.copyWith(list: value));
@@ -1891,19 +2258,19 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CopyListToClipBoard &&
-            (identical(other.list, list) ||
-                const DeepCollectionEquality().equals(other.list, list)));
+        (other.runtimeType == runtimeType &&
+            other is _$_CopyListToClipBoard &&
+            (identical(other.list, list) || other.list == list));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(list);
+  int get hashCode => Object.hash(runtimeType, list);
 
   @JsonKey(ignore: true)
   @override
-  _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith =>
-      __$CopyListToClipBoardCopyWithImpl<_CopyListToClipBoard>(
+  @pragma('vm:prefer-inline')
+  _$$_CopyListToClipBoardCopyWith<_$_CopyListToClipBoard> get copyWith =>
+      __$$_CopyListToClipBoardCopyWithImpl<_$_CopyListToClipBoard>(
           this, _$identity);
 
   @override
@@ -1927,6 +2294,28 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
     required TResult Function() createListFromClipBoard,
   }) {
     return copyListToClipBoard(list);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return copyListToClipBoard?.call(list);
   }
 
   @override
@@ -1978,6 +2367,26 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return copyListToClipBoard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -2001,33 +2410,29 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
 }
 
 abstract class _CopyListToClipBoard implements ActivelistEvent {
-  const factory _CopyListToClipBoard({required ActiveList list}) =
+  const factory _CopyListToClipBoard({required final ActiveList list}) =
       _$_CopyListToClipBoard;
 
-  ActiveList get list => throw _privateConstructorUsedError;
+  ActiveList get list;
   @JsonKey(ignore: true)
-  _$CopyListToClipBoardCopyWith<_CopyListToClipBoard> get copyWith =>
+  _$$_CopyListToClipBoardCopyWith<_$_CopyListToClipBoard> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CreateListFromClipBoardCopyWith<$Res> {
-  factory _$CreateListFromClipBoardCopyWith(_CreateListFromClipBoard value,
-          $Res Function(_CreateListFromClipBoard) then) =
-      __$CreateListFromClipBoardCopyWithImpl<$Res>;
+abstract class _$$_CreateListFromClipBoardCopyWith<$Res> {
+  factory _$$_CreateListFromClipBoardCopyWith(_$_CreateListFromClipBoard value,
+          $Res Function(_$_CreateListFromClipBoard) then) =
+      __$$_CreateListFromClipBoardCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CreateListFromClipBoardCopyWithImpl<$Res>
-    extends _$ActivelistEventCopyWithImpl<$Res>
-    implements _$CreateListFromClipBoardCopyWith<$Res> {
-  __$CreateListFromClipBoardCopyWithImpl(_CreateListFromClipBoard _value,
-      $Res Function(_CreateListFromClipBoard) _then)
-      : super(_value, (v) => _then(v as _CreateListFromClipBoard));
-
-  @override
-  _CreateListFromClipBoard get _value =>
-      super._value as _CreateListFromClipBoard;
+class __$$_CreateListFromClipBoardCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_CreateListFromClipBoard>
+    implements _$$_CreateListFromClipBoardCopyWith<$Res> {
+  __$$_CreateListFromClipBoardCopyWithImpl(_$_CreateListFromClipBoard _value,
+      $Res Function(_$_CreateListFromClipBoard) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2042,7 +2447,9 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateListFromClipBoard);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CreateListFromClipBoard);
   }
 
   @override
@@ -2069,6 +2476,28 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
     required TResult Function() createListFromClipBoard,
   }) {
     return createListFromClipBoard();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+  }) {
+    return createListFromClipBoard?.call();
   }
 
   @override
@@ -2120,6 +2549,26 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+  }) {
+    return createListFromClipBoard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
     TResult Function(_LoadForReorder value)? loadForReorder,
@@ -2147,40 +2596,6 @@ abstract class _CreateListFromClipBoard implements ActivelistEvent {
 }
 
 /// @nodoc
-class _$ActivelistStateTearOff {
-  const _$ActivelistStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Loading loading() {
-    return const _Loading();
-  }
-
-  _Loaded loaded({List<ActiveList> userLists = const []}) {
-    return _Loaded(
-      userLists: userLists,
-    );
-  }
-
-  _ListOrderChanged listOrderChanged({List<ActiveList> userLists = const []}) {
-    return _ListOrderChanged(
-      userLists: userLists,
-    );
-  }
-
-  _Error error({required Failure failure}) {
-    return _Error(
-      failure: failure,
-    );
-  }
-}
-
-/// @nodoc
-const $ActivelistState = _$ActivelistStateTearOff();
-
-/// @nodoc
 mixin _$ActivelistState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -2189,6 +2604,15 @@ mixin _$ActivelistState {
     required TResult Function(List<ActiveList> userLists) loaded,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2211,6 +2635,15 @@ mixin _$ActivelistState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -2226,33 +2659,33 @@ mixin _$ActivelistState {
 abstract class $ActivelistStateCopyWith<$Res> {
   factory $ActivelistStateCopyWith(
           ActivelistState value, $Res Function(ActivelistState) then) =
-      _$ActivelistStateCopyWithImpl<$Res>;
+      _$ActivelistStateCopyWithImpl<$Res, ActivelistState>;
 }
 
 /// @nodoc
-class _$ActivelistStateCopyWithImpl<$Res>
+class _$ActivelistStateCopyWithImpl<$Res, $Val extends ActivelistState>
     implements $ActivelistStateCopyWith<$Res> {
   _$ActivelistStateCopyWithImpl(this._value, this._then);
 
-  final ActivelistState _value;
   // ignore: unused_field
-  final $Res Function(ActivelistState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2267,7 +2700,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -2283,6 +2717,18 @@ class _$_Initial implements _Initial {
     required TResult Function(Failure failure) error,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -2315,6 +2761,18 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -2335,19 +2793,18 @@ abstract class _Initial implements ActivelistState {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$$_LoadingCopyWith<$Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading value, $Res Function(_$_Loading) then) =
+      __$$_LoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
-
-  @override
-  _Loading get _value => super._value as _Loading;
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res, _$_Loading>
+    implements _$$_LoadingCopyWith<$Res> {
+  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -2362,7 +2819,8 @@ class _$_Loading implements _Loading {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Loading);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Loading);
   }
 
   @override
@@ -2378,6 +2836,18 @@ class _$_Loading implements _Loading {
     required TResult Function(Failure failure) error,
   }) {
     return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loading?.call();
   }
 
   @override
@@ -2410,6 +2880,18 @@ class _$_Loading implements _Loading {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -2430,28 +2912,28 @@ abstract class _Loading implements ActivelistState {
 }
 
 /// @nodoc
-abstract class _$LoadedCopyWith<$Res> {
-  factory _$LoadedCopyWith(_Loaded value, $Res Function(_Loaded) then) =
-      __$LoadedCopyWithImpl<$Res>;
+abstract class _$$_LoadedCopyWith<$Res> {
+  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
+      __$$_LoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ActiveList> userLists});
 }
 
 /// @nodoc
-class __$LoadedCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
-    implements _$LoadedCopyWith<$Res> {
-  __$LoadedCopyWithImpl(_Loaded _value, $Res Function(_Loaded) _then)
-      : super(_value, (v) => _then(v as _Loaded));
+class __$$_LoadedCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res, _$_Loaded>
+    implements _$$_LoadedCopyWith<$Res> {
+  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+      : super(_value, _then);
 
-  @override
-  _Loaded get _value => super._value as _Loaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userLists = freezed,
+    Object? userLists = null,
   }) {
-    return _then(_Loaded(
-      userLists: userLists == freezed
-          ? _value.userLists
+    return _then(_$_Loaded(
+      userLists: null == userLists
+          ? _value._userLists
           : userLists // ignore: cast_nullable_to_non_nullable
               as List<ActiveList>,
     ));
@@ -2461,11 +2943,16 @@ class __$LoadedCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded({this.userLists = const []});
+  const _$_Loaded({final List<ActiveList> userLists = const []})
+      : _userLists = userLists;
 
-  @JsonKey(defaultValue: const [])
+  final List<ActiveList> _userLists;
   @override
-  final List<ActiveList> userLists;
+  @JsonKey()
+  List<ActiveList> get userLists {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userLists);
+  }
 
   @override
   String toString() {
@@ -2475,20 +2962,21 @@ class _$_Loaded implements _Loaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Loaded &&
-            (identical(other.userLists, userLists) ||
-                const DeepCollectionEquality()
-                    .equals(other.userLists, userLists)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Loaded &&
+            const DeepCollectionEquality()
+                .equals(other._userLists, _userLists));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userLists);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_userLists));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadedCopyWith<_Loaded> get copyWith =>
-      __$LoadedCopyWithImpl<_Loaded>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2500,6 +2988,18 @@ class _$_Loaded implements _Loaded {
     required TResult Function(Failure failure) error,
   }) {
     return loaded(userLists);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loaded?.call(userLists);
   }
 
   @override
@@ -2532,6 +3032,18 @@ class _$_Loaded implements _Loaded {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return loaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -2548,39 +3060,39 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements ActivelistState {
-  const factory _Loaded({List<ActiveList> userLists}) = _$_Loaded;
+  const factory _Loaded({final List<ActiveList> userLists}) = _$_Loaded;
 
-  List<ActiveList> get userLists => throw _privateConstructorUsedError;
+  List<ActiveList> get userLists;
   @JsonKey(ignore: true)
-  _$LoadedCopyWith<_Loaded> get copyWith => throw _privateConstructorUsedError;
+  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ListOrderChangedCopyWith<$Res> {
-  factory _$ListOrderChangedCopyWith(
-          _ListOrderChanged value, $Res Function(_ListOrderChanged) then) =
-      __$ListOrderChangedCopyWithImpl<$Res>;
+abstract class _$$_ListOrderChangedCopyWith<$Res> {
+  factory _$$_ListOrderChangedCopyWith(
+          _$_ListOrderChanged value, $Res Function(_$_ListOrderChanged) then) =
+      __$$_ListOrderChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<ActiveList> userLists});
 }
 
 /// @nodoc
-class __$ListOrderChangedCopyWithImpl<$Res>
-    extends _$ActivelistStateCopyWithImpl<$Res>
-    implements _$ListOrderChangedCopyWith<$Res> {
-  __$ListOrderChangedCopyWithImpl(
-      _ListOrderChanged _value, $Res Function(_ListOrderChanged) _then)
-      : super(_value, (v) => _then(v as _ListOrderChanged));
+class __$$_ListOrderChangedCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res, _$_ListOrderChanged>
+    implements _$$_ListOrderChangedCopyWith<$Res> {
+  __$$_ListOrderChangedCopyWithImpl(
+      _$_ListOrderChanged _value, $Res Function(_$_ListOrderChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _ListOrderChanged get _value => super._value as _ListOrderChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userLists = freezed,
+    Object? userLists = null,
   }) {
-    return _then(_ListOrderChanged(
-      userLists: userLists == freezed
-          ? _value.userLists
+    return _then(_$_ListOrderChanged(
+      userLists: null == userLists
+          ? _value._userLists
           : userLists // ignore: cast_nullable_to_non_nullable
               as List<ActiveList>,
     ));
@@ -2590,11 +3102,16 @@ class __$ListOrderChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ListOrderChanged implements _ListOrderChanged {
-  const _$_ListOrderChanged({this.userLists = const []});
+  const _$_ListOrderChanged({final List<ActiveList> userLists = const []})
+      : _userLists = userLists;
 
-  @JsonKey(defaultValue: const [])
+  final List<ActiveList> _userLists;
   @override
-  final List<ActiveList> userLists;
+  @JsonKey()
+  List<ActiveList> get userLists {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userLists);
+  }
 
   @override
   String toString() {
@@ -2604,20 +3121,21 @@ class _$_ListOrderChanged implements _ListOrderChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ListOrderChanged &&
-            (identical(other.userLists, userLists) ||
-                const DeepCollectionEquality()
-                    .equals(other.userLists, userLists)));
+        (other.runtimeType == runtimeType &&
+            other is _$_ListOrderChanged &&
+            const DeepCollectionEquality()
+                .equals(other._userLists, _userLists));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userLists);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_userLists));
 
   @JsonKey(ignore: true)
   @override
-  _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith =>
-      __$ListOrderChangedCopyWithImpl<_ListOrderChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ListOrderChangedCopyWith<_$_ListOrderChanged> get copyWith =>
+      __$$_ListOrderChangedCopyWithImpl<_$_ListOrderChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2629,6 +3147,18 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     required TResult Function(Failure failure) error,
   }) {
     return listOrderChanged(userLists);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return listOrderChanged?.call(userLists);
   }
 
   @override
@@ -2661,6 +3191,18 @@ class _$_ListOrderChanged implements _ListOrderChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return listOrderChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -2677,39 +3219,39 @@ class _$_ListOrderChanged implements _ListOrderChanged {
 }
 
 abstract class _ListOrderChanged implements ActivelistState {
-  const factory _ListOrderChanged({List<ActiveList> userLists}) =
+  const factory _ListOrderChanged({final List<ActiveList> userLists}) =
       _$_ListOrderChanged;
 
-  List<ActiveList> get userLists => throw _privateConstructorUsedError;
+  List<ActiveList> get userLists;
   @JsonKey(ignore: true)
-  _$ListOrderChangedCopyWith<_ListOrderChanged> get copyWith =>
+  _$$_ListOrderChangedCopyWith<_$_ListOrderChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({Failure failure});
 
   $FailureCopyWith<$Res> get failure;
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$$_ErrorCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res, _$_Error>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, _then);
 
-  @override
-  _Error get _value => super._value as _Error;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failure = freezed,
+    Object? failure = null,
   }) {
-    return _then(_Error(
-      failure: failure == freezed
+    return _then(_$_Error(
+      failure: null == failure
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as Failure,
@@ -2717,6 +3259,7 @@ class __$ErrorCopyWithImpl<$Res> extends _$ActivelistStateCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $FailureCopyWith<$Res> get failure {
     return $FailureCopyWith<$Res>(_value.failure, (value) {
       return _then(_value.copyWith(failure: value));
@@ -2740,19 +3283,19 @@ class _$_Error implements _Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Error &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _$_Error &&
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+  int get hashCode => Object.hash(runtimeType, failure);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2764,6 +3307,18 @@ class _$_Error implements _Error {
     required TResult Function(Failure failure) error,
   }) {
     return error(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return error?.call(failure);
   }
 
   @override
@@ -2796,6 +3351,18 @@ class _$_Error implements _Error {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
@@ -2812,9 +3379,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements ActivelistState {
-  const factory _Error({required Failure failure}) = _$_Error;
+  const factory _Error({required final Failure failure}) = _$_Error;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+      throw _privateConstructorUsedError;
 }

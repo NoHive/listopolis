@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'failures.dart';
 
@@ -10,31 +12,7 @@ part of 'failures.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$FailureTearOff {
-  const _$FailureTearOff();
-
-  DeviceOffline deviceOffline() {
-    return const DeviceOffline();
-  }
-
-  ServerConnectFailed serverConnectFailed() {
-    return const ServerConnectFailed();
-  }
-
-  ServerAccessFailed serviceAccessFailed() {
-    return const ServerAccessFailed();
-  }
-
-  UserAuthentificationFailed userAuthentificationFailed() {
-    return const UserAuthentificationFailed();
-  }
-}
-
-/// @nodoc
-const $Failure = _$FailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Failure {
@@ -44,6 +22,14 @@ mixin _$Failure {
     required TResult Function() serverConnectFailed,
     required TResult Function() serviceAccessFailed,
     required TResult Function() userAuthentificationFailed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? deviceOffline,
+    TResult? Function()? serverConnectFailed,
+    TResult? Function()? serviceAccessFailed,
+    TResult? Function()? userAuthentificationFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +51,15 @@ mixin _$Failure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeviceOffline value)? deviceOffline,
+    TResult? Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult? Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult? Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
@@ -79,34 +74,34 @@ mixin _$Failure {
 /// @nodoc
 abstract class $FailureCopyWith<$Res> {
   factory $FailureCopyWith(Failure value, $Res Function(Failure) then) =
-      _$FailureCopyWithImpl<$Res>;
+      _$FailureCopyWithImpl<$Res, Failure>;
 }
 
 /// @nodoc
-class _$FailureCopyWithImpl<$Res> implements $FailureCopyWith<$Res> {
+class _$FailureCopyWithImpl<$Res, $Val extends Failure>
+    implements $FailureCopyWith<$Res> {
   _$FailureCopyWithImpl(this._value, this._then);
 
-  final Failure _value;
   // ignore: unused_field
-  final $Res Function(Failure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $DeviceOfflineCopyWith<$Res> {
-  factory $DeviceOfflineCopyWith(
-          DeviceOffline value, $Res Function(DeviceOffline) then) =
-      _$DeviceOfflineCopyWithImpl<$Res>;
+abstract class _$$DeviceOfflineCopyWith<$Res> {
+  factory _$$DeviceOfflineCopyWith(
+          _$DeviceOffline value, $Res Function(_$DeviceOffline) then) =
+      __$$DeviceOfflineCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeviceOfflineCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
-    implements $DeviceOfflineCopyWith<$Res> {
-  _$DeviceOfflineCopyWithImpl(
-      DeviceOffline _value, $Res Function(DeviceOffline) _then)
-      : super(_value, (v) => _then(v as DeviceOffline));
-
-  @override
-  DeviceOffline get _value => super._value as DeviceOffline;
+class __$$DeviceOfflineCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$DeviceOffline>
+    implements _$$DeviceOfflineCopyWith<$Res> {
+  __$$DeviceOfflineCopyWithImpl(
+      _$DeviceOffline _value, $Res Function(_$DeviceOffline) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -121,7 +116,8 @@ class _$DeviceOffline implements DeviceOffline {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeviceOffline);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeviceOffline);
   }
 
   @override
@@ -136,6 +132,17 @@ class _$DeviceOffline implements DeviceOffline {
     required TResult Function() userAuthentificationFailed,
   }) {
     return deviceOffline();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? deviceOffline,
+    TResult? Function()? serverConnectFailed,
+    TResult? Function()? serviceAccessFailed,
+    TResult? Function()? userAuthentificationFailed,
+  }) {
+    return deviceOffline?.call();
   }
 
   @override
@@ -167,6 +174,18 @@ class _$DeviceOffline implements DeviceOffline {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeviceOffline value)? deviceOffline,
+    TResult? Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult? Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult? Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
+  }) {
+    return deviceOffline?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
@@ -187,22 +206,19 @@ abstract class DeviceOffline implements Failure {
 }
 
 /// @nodoc
-abstract class $ServerConnectFailedCopyWith<$Res> {
-  factory $ServerConnectFailedCopyWith(
-          ServerConnectFailed value, $Res Function(ServerConnectFailed) then) =
-      _$ServerConnectFailedCopyWithImpl<$Res>;
+abstract class _$$ServerConnectFailedCopyWith<$Res> {
+  factory _$$ServerConnectFailedCopyWith(_$ServerConnectFailed value,
+          $Res Function(_$ServerConnectFailed) then) =
+      __$$ServerConnectFailedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerConnectFailedCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
-    implements $ServerConnectFailedCopyWith<$Res> {
-  _$ServerConnectFailedCopyWithImpl(
-      ServerConnectFailed _value, $Res Function(ServerConnectFailed) _then)
-      : super(_value, (v) => _then(v as ServerConnectFailed));
-
-  @override
-  ServerConnectFailed get _value => super._value as ServerConnectFailed;
+class __$$ServerConnectFailedCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$ServerConnectFailed>
+    implements _$$ServerConnectFailedCopyWith<$Res> {
+  __$$ServerConnectFailedCopyWithImpl(
+      _$ServerConnectFailed _value, $Res Function(_$ServerConnectFailed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -217,7 +233,8 @@ class _$ServerConnectFailed implements ServerConnectFailed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerConnectFailed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ServerConnectFailed);
   }
 
   @override
@@ -232,6 +249,17 @@ class _$ServerConnectFailed implements ServerConnectFailed {
     required TResult Function() userAuthentificationFailed,
   }) {
     return serverConnectFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? deviceOffline,
+    TResult? Function()? serverConnectFailed,
+    TResult? Function()? serviceAccessFailed,
+    TResult? Function()? userAuthentificationFailed,
+  }) {
+    return serverConnectFailed?.call();
   }
 
   @override
@@ -263,6 +291,18 @@ class _$ServerConnectFailed implements ServerConnectFailed {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeviceOffline value)? deviceOffline,
+    TResult? Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult? Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult? Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
+  }) {
+    return serverConnectFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
@@ -283,21 +323,19 @@ abstract class ServerConnectFailed implements Failure {
 }
 
 /// @nodoc
-abstract class $ServerAccessFailedCopyWith<$Res> {
-  factory $ServerAccessFailedCopyWith(
-          ServerAccessFailed value, $Res Function(ServerAccessFailed) then) =
-      _$ServerAccessFailedCopyWithImpl<$Res>;
+abstract class _$$ServerAccessFailedCopyWith<$Res> {
+  factory _$$ServerAccessFailedCopyWith(_$ServerAccessFailed value,
+          $Res Function(_$ServerAccessFailed) then) =
+      __$$ServerAccessFailedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerAccessFailedCopyWithImpl<$Res> extends _$FailureCopyWithImpl<$Res>
-    implements $ServerAccessFailedCopyWith<$Res> {
-  _$ServerAccessFailedCopyWithImpl(
-      ServerAccessFailed _value, $Res Function(ServerAccessFailed) _then)
-      : super(_value, (v) => _then(v as ServerAccessFailed));
-
-  @override
-  ServerAccessFailed get _value => super._value as ServerAccessFailed;
+class __$$ServerAccessFailedCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$ServerAccessFailed>
+    implements _$$ServerAccessFailedCopyWith<$Res> {
+  __$$ServerAccessFailedCopyWithImpl(
+      _$ServerAccessFailed _value, $Res Function(_$ServerAccessFailed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -312,7 +350,8 @@ class _$ServerAccessFailed implements ServerAccessFailed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerAccessFailed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ServerAccessFailed);
   }
 
   @override
@@ -327,6 +366,17 @@ class _$ServerAccessFailed implements ServerAccessFailed {
     required TResult Function() userAuthentificationFailed,
   }) {
     return serviceAccessFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? deviceOffline,
+    TResult? Function()? serverConnectFailed,
+    TResult? Function()? serviceAccessFailed,
+    TResult? Function()? userAuthentificationFailed,
+  }) {
+    return serviceAccessFailed?.call();
   }
 
   @override
@@ -358,6 +408,18 @@ class _$ServerAccessFailed implements ServerAccessFailed {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeviceOffline value)? deviceOffline,
+    TResult? Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult? Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult? Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
+  }) {
+    return serviceAccessFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(DeviceOffline value)? deviceOffline,
     TResult Function(ServerConnectFailed value)? serverConnectFailed,
@@ -378,23 +440,21 @@ abstract class ServerAccessFailed implements Failure {
 }
 
 /// @nodoc
-abstract class $UserAuthentificationFailedCopyWith<$Res> {
-  factory $UserAuthentificationFailedCopyWith(UserAuthentificationFailed value,
-          $Res Function(UserAuthentificationFailed) then) =
-      _$UserAuthentificationFailedCopyWithImpl<$Res>;
+abstract class _$$UserAuthentificationFailedCopyWith<$Res> {
+  factory _$$UserAuthentificationFailedCopyWith(
+          _$UserAuthentificationFailed value,
+          $Res Function(_$UserAuthentificationFailed) then) =
+      __$$UserAuthentificationFailedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserAuthentificationFailedCopyWithImpl<$Res>
-    extends _$FailureCopyWithImpl<$Res>
-    implements $UserAuthentificationFailedCopyWith<$Res> {
-  _$UserAuthentificationFailedCopyWithImpl(UserAuthentificationFailed _value,
-      $Res Function(UserAuthentificationFailed) _then)
-      : super(_value, (v) => _then(v as UserAuthentificationFailed));
-
-  @override
-  UserAuthentificationFailed get _value =>
-      super._value as UserAuthentificationFailed;
+class __$$UserAuthentificationFailedCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$UserAuthentificationFailed>
+    implements _$$UserAuthentificationFailedCopyWith<$Res> {
+  __$$UserAuthentificationFailedCopyWithImpl(
+      _$UserAuthentificationFailed _value,
+      $Res Function(_$UserAuthentificationFailed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -409,7 +469,9 @@ class _$UserAuthentificationFailed implements UserAuthentificationFailed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserAuthentificationFailed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserAuthentificationFailed);
   }
 
   @override
@@ -424,6 +486,17 @@ class _$UserAuthentificationFailed implements UserAuthentificationFailed {
     required TResult Function() userAuthentificationFailed,
   }) {
     return userAuthentificationFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? deviceOffline,
+    TResult? Function()? serverConnectFailed,
+    TResult? Function()? serviceAccessFailed,
+    TResult? Function()? userAuthentificationFailed,
+  }) {
+    return userAuthentificationFailed?.call();
   }
 
   @override
@@ -451,6 +524,18 @@ class _$UserAuthentificationFailed implements UserAuthentificationFailed {
         userAuthentificationFailed,
   }) {
     return userAuthentificationFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(DeviceOffline value)? deviceOffline,
+    TResult? Function(ServerConnectFailed value)? serverConnectFailed,
+    TResult? Function(ServerAccessFailed value)? serviceAccessFailed,
+    TResult? Function(UserAuthentificationFailed value)?
+        userAuthentificationFailed,
+  }) {
+    return userAuthentificationFailed?.call(this);
   }
 
   @override
