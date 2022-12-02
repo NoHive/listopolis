@@ -420,7 +420,8 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           _buildListType(context, list),
-          _buildAppendType(context, list)
+          _buildAppendType(context, list),
+          _buildRepeatOption(context, list)
         ],
       ) ,
     );
@@ -600,6 +601,14 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
      },
     );
  }
+ 
+  Widget _buildRepeatOption(BuildContext context, CreateListParameter list) {
+    return Switch(value: list.repeat, onChanged: (value) {
+      list.repeat = value;
+      _commitListChanges(context, list);
+    },);
+
+  }
 
 }
 

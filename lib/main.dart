@@ -25,7 +25,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // SharedPreferences prefs = await init();
   //runApp(ListopolisRoot(prefs));
-  await configureInjection("std");
+  await configureDependencies();
   runApp(ListopolisRoot());
 }
 

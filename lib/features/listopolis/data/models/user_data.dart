@@ -14,6 +14,7 @@ part 'user_data.freezed.dart';
 part 'user_data.g.dart'; 
 
 @freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 abstract class UserData implements _$UserData {
   @JsonSerializable()  
   const UserData._();
@@ -27,7 +28,7 @@ abstract class UserData implements _$UserData {
   ) = _UserData;
 
   factory UserData.addListFromTemplate(UserData data, ListTemplate template){
-      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
       List<ActiveList> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null){
@@ -53,7 +54,7 @@ abstract class UserData implements _$UserData {
   
 
    factory UserData.addListFromCreatedList(UserData data, CreateListParameter creationParameter){
-      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
       List<ActiveList> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
@@ -93,7 +94,7 @@ abstract class UserData implements _$UserData {
   }
 
     factory UserData.addTemplateFromCreatedList(UserData data, CreateListParameter creationParameter){
-      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> existingActiveLists = data.templates.toList();
       List<ListTemplate> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
@@ -137,7 +138,7 @@ abstract class UserData implements _$UserData {
   }
 
    factory UserData.addTemplateFromActiveList(UserData data, ActiveList creationParameter){
-      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> existingActiveLists = data.templates.toList();
       List<ListTemplate> aNewList = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
@@ -180,7 +181,7 @@ abstract class UserData implements _$UserData {
 
        
      
-      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
       List<ActiveList> aNewActiveLists = [];
       int aNewPosition = 1;
       if(existingActiveLists != null && existingActiveLists.length > 0){
@@ -253,7 +254,7 @@ abstract class UserData implements _$UserData {
   }
 
   factory UserData.replaceListFromCreatedList(UserData data, ActiveList list, CreateListParameter creationParameter){
-      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
       
       
       if( existingActiveLists.length > 0){
@@ -288,7 +289,7 @@ abstract class UserData implements _$UserData {
       
 }
 factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list, CreateListParameter creationParameter){
-      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> existingActiveLists = data.templates.toList();
       
       
       if(existingActiveLists.length > 0){
@@ -321,7 +322,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       
 }
   factory UserData.fromRemovedActiveListPosition(UserData data, ActiveList list, ActiveListPosition position){
-      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
       List<ActiveList> aNewList =[];
       
       if(existingActiveLists != null){
@@ -361,7 +362,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       return data.copyWith(activeLists:aNewList);
   }
     factory UserData.fromRemovedTemplatePosition(UserData data, ListTemplate list, ListTemplatePosition position){
-      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> existingActiveLists = data.templates.toList();
       List<ListTemplate> aNewList = [];
       
       if(existingActiveLists != null){
@@ -406,7 +407,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       
   }
   factory UserData.fromRemovedActiveList(UserData data, ActiveList list){
-      List<ActiveList> existingActiveLists = data.activeLists;
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
       List<ActiveList> aNewActiveList = [];
       
       if(existingActiveLists != null){
@@ -432,7 +433,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       return data.copyWith(activeLists:aNewActiveList);
   }
    factory UserData.fromRemovedTemplate(UserData data, ListTemplate list){
-      List<ListTemplate> existingActiveLists = data.templates;
+      List<ListTemplate> existingActiveLists = data.templates.toList();
       List<ListTemplate> aNewActiveList =[];
       
       if(existingActiveLists != null){

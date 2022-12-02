@@ -163,7 +163,8 @@ Widget appBarToggles(BuildContext context){
               },
           ));
  }
- List<Widget> _buildReorderListItems(List<ListTemplate> listitems, BuildContext context){
+ List<Widget> _buildReorderListItems(List<ListTemplate> listitemsParam, BuildContext context){
+  List<ListTemplate> listitems = listitemsParam.toList();
    listitems.sort((l1, l2) => l1.position.compareTo(l2.position));
     List<Widget> erg = [];
     for(ListTemplate lItem in listitems){
@@ -255,7 +256,8 @@ Widget appBarToggles(BuildContext context){
       }
   }
 
-  Widget buildLoadedLists(BuildContext context, List<ListTemplate> lists){
+  Widget buildLoadedLists(BuildContext context, List<ListTemplate> listsParam){
+    List<ListTemplate> lists = listsParam.toList();
     lists.sort((l1, l2) => l1.position.compareTo(l2.position));
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){

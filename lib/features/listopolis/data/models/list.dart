@@ -7,6 +7,7 @@ part 'list.freezed.dart';
 part 'list.g.dart'; 
 
 @freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 abstract class ActiveList implements _$ActiveList{
    @JsonSerializable()
   const ActiveList._();

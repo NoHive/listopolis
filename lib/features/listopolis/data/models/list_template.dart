@@ -9,6 +9,7 @@ part 'list_template.freezed.dart';
 part 'list_template.g.dart'; 
 
 @freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 abstract class ListTemplate implements _$ListTemplate{
   @JsonSerializable()
   const ListTemplate._();

@@ -51,7 +51,8 @@ _returnToHomeScreen(BuildContext context){
 
 
 
-Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
+Widget buildLoadedLists(BuildContext context, List<ActiveList> listsParam){
+    List<ActiveList> lists = listsParam.toList();
     lists.sort((l1, l2) => l1.position.compareTo(l2.position));
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){
@@ -178,7 +179,8 @@ Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
     );
   }
 
-  Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItems){
+  Widget _buildSubElements(BuildContext ontext, ActiveList list, List<ActiveListPosition> listItemsPara){
+    List<ActiveListPosition> listItems = listItemsPara.toList();
     final int listCount = listItems.length;
     
     listItems.sort((lp1, lp2) => lp1.position.compareTo(lp2.position));

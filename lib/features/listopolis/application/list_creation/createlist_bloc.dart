@@ -74,6 +74,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
                                     listName:  ""
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
+                                  , repeat: false
       );
       
         alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
@@ -95,6 +96,7 @@ class CreatelistBloc extends Bloc<CreatelistEvent, CreatelistState> {
                                     listName:  ""
                                   , type: ListType.remember()
                                   , positioning: PositionType.start
+                                  , repeat: false
       );
       alistCreation.listitems.add(CreateListItemParameter(name: "", position: 1));
       listCreation = alistCreation;

@@ -217,7 +217,9 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
 
   
 
-  Widget buildLoadedLists(BuildContext context, List<ActiveList> lists){
+  Widget buildLoadedLists(BuildContext context, List<ActiveList> listParam){
+    List<ActiveList> lists = listParam.toList();
+
     lists.sort((l1, l2) => l1.position.compareTo(l2.position));
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){

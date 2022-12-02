@@ -19,19 +19,24 @@ String buildPositionTypeLocalString(PositionType pType, String locale){
 
 class CreateListParameter{
   String listName;
+  bool repeat=false;
   ListType type;
   PositionType positioning;
   late String id;
 
   late List<CreateListItemParameter> listitems=[];
 
-  CreateListParameter({required this.listName, required this.type, required this.positioning}){
+  CreateListParameter({required this.listName, required this.type, required this.positioning, required this.repeat}){
     listitems = [];
     id = Uuid().v1();
   }
    
   factory CreateListParameter.asCopy(CreateListParameter input){
-    CreateListParameter newList = CreateListParameter(listName: input.listName, positioning: input.positioning, type: input.type);
+    CreateListParameter newList = CreateListParameter(listName: input.listName, 
+                                                      positioning: input.positioning, 
+                                                      type: input.type,
+                                                      repeat: input.repeat
+                                                      );
     for(CreateListItemParameter item in input.listitems){
       newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
     }
@@ -40,7 +45,11 @@ class CreateListParameter{
 
 
   factory CreateListParameter.asEditFromList(ActiveList input){
-    CreateListParameter newList = CreateListParameter(listName: input.name, positioning: PositionType.end, type: input.type);
+    CreateListParameter newList = CreateListParameter(listName: input.name, 
+                                                      positioning: PositionType.end, 
+                                                      type: input.type,
+                                                      repeat: input.repeat
+                                                      );
 
     for(ActiveListPosition item in input.listItems){
       newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
@@ -48,7 +57,12 @@ class CreateListParameter{
     return newList;
   }
   factory CreateListParameter.asCloneFromList(ActiveList input){
-    CreateListParameter newList = CreateListParameter(listName: input.name, positioning: PositionType.end, type: input.type);
+    CreateListParameter newList = CreateListParameter(
+                                      listName: input.name, 
+                                      positioning: PositionType.end, 
+                                      type: input.type,
+                                      repeat: input.repeat
+                                      );
     newList.id = input.id;
     for(ActiveListPosition item in input.listItems){
       CreateListItemParameter listItemParameter = CreateListItemParameter(position: item.position, name: item.name);
@@ -58,7 +72,7 @@ class CreateListParameter{
     return newList;
   }
   factory CreateListParameter.asEditFromTemplate(ListTemplate input){
-    CreateListParameter newList = CreateListParameter(listName: input.name, positioning: PositionType.end, type: input.type);
+    CreateListParameter newList = CreateListParameter(listName: input.name, positioning: PositionType.end, type: input.type, repeat: false);
 
     for(ListTemplatePosition item in input.templatePositions){
       newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
