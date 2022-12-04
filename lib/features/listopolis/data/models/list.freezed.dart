@@ -29,8 +29,7 @@ mixin _$ActiveList {
   bool get done => throw _privateConstructorUsedError;
   bool get opened => throw _privateConstructorUsedError;
   bool get repeat => throw _privateConstructorUsedError;
-  String get repeateSince => throw _privateConstructorUsedError;
-  String get reminderChannel => throw _privateConstructorUsedError;
+  RepetitionConfig? get repetitionConfig => throw _privateConstructorUsedError;
   List<ActiveListPosition> get listItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -54,11 +53,11 @@ abstract class $ActiveListCopyWith<$Res> {
       bool done,
       bool opened,
       bool repeat,
-      String repeateSince,
-      String reminderChannel,
+      RepetitionConfig? repetitionConfig,
       List<ActiveListPosition> listItems});
 
   $ListTypeCopyWith<$Res> get type;
+  $RepetitionConfigCopyWith<$Res>? get repetitionConfig;
 }
 
 /// @nodoc
@@ -81,8 +80,7 @@ class _$ActiveListCopyWithImpl<$Res, $Val extends ActiveList>
     Object? done = null,
     Object? opened = null,
     Object? repeat = null,
-    Object? repeateSince = null,
-    Object? reminderChannel = null,
+    Object? repetitionConfig = freezed,
     Object? listItems = null,
   }) {
     return _then(_value.copyWith(
@@ -114,14 +112,10 @@ class _$ActiveListCopyWithImpl<$Res, $Val extends ActiveList>
           ? _value.repeat
           : repeat // ignore: cast_nullable_to_non_nullable
               as bool,
-      repeateSince: null == repeateSince
-          ? _value.repeateSince
-          : repeateSince // ignore: cast_nullable_to_non_nullable
-              as String,
-      reminderChannel: null == reminderChannel
-          ? _value.reminderChannel
-          : reminderChannel // ignore: cast_nullable_to_non_nullable
-              as String,
+      repetitionConfig: freezed == repetitionConfig
+          ? _value.repetitionConfig
+          : repetitionConfig // ignore: cast_nullable_to_non_nullable
+              as RepetitionConfig?,
       listItems: null == listItems
           ? _value.listItems
           : listItems // ignore: cast_nullable_to_non_nullable
@@ -134,6 +128,18 @@ class _$ActiveListCopyWithImpl<$Res, $Val extends ActiveList>
   $ListTypeCopyWith<$Res> get type {
     return $ListTypeCopyWith<$Res>(_value.type, (value) {
       return _then(_value.copyWith(type: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RepetitionConfigCopyWith<$Res>? get repetitionConfig {
+    if (_value.repetitionConfig == null) {
+      return null;
+    }
+
+    return $RepetitionConfigCopyWith<$Res>(_value.repetitionConfig!, (value) {
+      return _then(_value.copyWith(repetitionConfig: value) as $Val);
     });
   }
 }
@@ -155,12 +161,13 @@ abstract class _$$_ActiveListCopyWith<$Res>
       bool done,
       bool opened,
       bool repeat,
-      String repeateSince,
-      String reminderChannel,
+      RepetitionConfig? repetitionConfig,
       List<ActiveListPosition> listItems});
 
   @override
   $ListTypeCopyWith<$Res> get type;
+  @override
+  $RepetitionConfigCopyWith<$Res>? get repetitionConfig;
 }
 
 /// @nodoc
@@ -181,8 +188,7 @@ class __$$_ActiveListCopyWithImpl<$Res>
     Object? done = null,
     Object? opened = null,
     Object? repeat = null,
-    Object? repeateSince = null,
-    Object? reminderChannel = null,
+    Object? repetitionConfig = freezed,
     Object? listItems = null,
   }) {
     return _then(_$_ActiveList(
@@ -214,14 +220,10 @@ class __$$_ActiveListCopyWithImpl<$Res>
           ? _value.repeat
           : repeat // ignore: cast_nullable_to_non_nullable
               as bool,
-      repeateSince: null == repeateSince
-          ? _value.repeateSince
-          : repeateSince // ignore: cast_nullable_to_non_nullable
-              as String,
-      reminderChannel: null == reminderChannel
-          ? _value.reminderChannel
-          : reminderChannel // ignore: cast_nullable_to_non_nullable
-              as String,
+      repetitionConfig: freezed == repetitionConfig
+          ? _value.repetitionConfig
+          : repetitionConfig // ignore: cast_nullable_to_non_nullable
+              as RepetitionConfig?,
       listItems: null == listItems
           ? _value._listItems
           : listItems // ignore: cast_nullable_to_non_nullable
@@ -242,8 +244,7 @@ class _$_ActiveList extends _ActiveList {
       this.done = false,
       this.opened = false,
       this.repeat = false,
-      this.repeateSince = "nodate",
-      this.reminderChannel = "nochannel",
+      this.repetitionConfig,
       final List<ActiveListPosition> listItems = const []})
       : _listItems = listItems,
         super._();
@@ -274,11 +275,7 @@ class _$_ActiveList extends _ActiveList {
   @JsonKey()
   final bool repeat;
   @override
-  @JsonKey()
-  final String repeateSince;
-  @override
-  @JsonKey()
-  final String reminderChannel;
+  final RepetitionConfig? repetitionConfig;
   final List<ActiveListPosition> _listItems;
   @override
   @JsonKey()
@@ -290,7 +287,7 @@ class _$_ActiveList extends _ActiveList {
 
   @override
   String toString() {
-    return 'ActiveList(id: $id, name: $name, type: $type, position: $position, done: $done, opened: $opened, repeat: $repeat, repeateSince: $repeateSince, reminderChannel: $reminderChannel, listItems: $listItems)';
+    return 'ActiveList(id: $id, name: $name, type: $type, position: $position, done: $done, opened: $opened, repeat: $repeat, repetitionConfig: $repetitionConfig, listItems: $listItems)';
   }
 
   @override
@@ -306,10 +303,8 @@ class _$_ActiveList extends _ActiveList {
             (identical(other.done, done) || other.done == done) &&
             (identical(other.opened, opened) || other.opened == opened) &&
             (identical(other.repeat, repeat) || other.repeat == repeat) &&
-            (identical(other.repeateSince, repeateSince) ||
-                other.repeateSince == repeateSince) &&
-            (identical(other.reminderChannel, reminderChannel) ||
-                other.reminderChannel == reminderChannel) &&
+            (identical(other.repetitionConfig, repetitionConfig) ||
+                other.repetitionConfig == repetitionConfig) &&
             const DeepCollectionEquality()
                 .equals(other._listItems, _listItems));
   }
@@ -325,8 +320,7 @@ class _$_ActiveList extends _ActiveList {
       done,
       opened,
       repeat,
-      repeateSince,
-      reminderChannel,
+      repetitionConfig,
       const DeepCollectionEquality().hash(_listItems));
 
   @JsonKey(ignore: true)
@@ -353,8 +347,7 @@ abstract class _ActiveList extends ActiveList {
       final bool done,
       final bool opened,
       final bool repeat,
-      final String repeateSince,
-      final String reminderChannel,
+      final RepetitionConfig? repetitionConfig,
       final List<ActiveListPosition> listItems}) = _$_ActiveList;
   const _ActiveList._() : super._();
 
@@ -377,9 +370,7 @@ abstract class _ActiveList extends ActiveList {
   @override
   bool get repeat;
   @override
-  String get repeateSince;
-  @override
-  String get reminderChannel;
+  RepetitionConfig? get repetitionConfig;
   @override
   List<ActiveListPosition> get listItems;
   @override

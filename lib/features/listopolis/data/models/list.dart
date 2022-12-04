@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
+import 'package:listopolis/features/listopolis/data/models/repetition_config.dart';
 import 'package:uuid/uuid.dart';
 
 part 'list.freezed.dart';
@@ -22,8 +23,7 @@ abstract class ActiveList implements _$ActiveList{
       @Default(false) bool done,
       @Default(false) bool opened,
       @Default(false) bool repeat,
-      @Default("nodate") String repeateSince,
-      @Default("nochannel") String reminderChannel,
+      RepetitionConfig? repetitionConfig,
       @Default([]) List<ActiveListPosition> listItems
     }
   ) = _ActiveList;

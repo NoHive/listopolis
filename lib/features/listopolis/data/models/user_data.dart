@@ -79,6 +79,7 @@ abstract class UserData implements _$UserData {
       ActiveList aNewListItem = ActiveList( id: Uuid().v1(), 
                                             name: creationParameter.listName, 
                                             type: creationParameter.type, 
+                                            repeat: creationParameter.repeat,
                                             position: aNewPosition, 
                                             done: false,
                                             opened: false,
@@ -275,6 +276,7 @@ abstract class UserData implements _$UserData {
                                             name: creationParameter.listName, 
                                             type: creationParameter.type, 
                                             position: list.position, 
+                                            repeat: creationParameter.repeat,
                                             done: false,
                                             opened: false,
                                             listItems: newListPositions

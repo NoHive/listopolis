@@ -603,10 +603,22 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
  }
  
   Widget _buildRepeatOption(BuildContext context, CreateListParameter list) {
-    return Switch(value: list.repeat, onChanged: (value) {
-      list.repeat = value;
-      _commitListChanges(context, list);
-    },);
+    return Padding(padding: EdgeInsets.only(top:10, left:20),
+            child: Stack(
+              children: [
+                Text("Wiederholen", style: TextStyle(fontSize: 10, color: ListColors.TEXT),),
+                Switch(value: list.repeat, onChanged: (value) {
+                        list.repeat = value;
+                        _commitListChanges(context, list);
+                        },
+                      )
+              ],
+            )
+    );
+    // return Switch(value: list.repeat, onChanged: (value) {
+    //   list.repeat = value;
+    //   _commitListChanges(context, list);
+    // },);
 
   }
 

@@ -225,7 +225,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
                                                 margin: EdgeInsets.only(top:1),
-                                                decoration: BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT),
+                                                decoration: _buildDecoration(lists[i]),
                                                 child: ExpansionTile( 
                                                           leading: _buildMainItemExpandableTrailing(lists[i], context),
                                                           title: _buildMainItemExpandableTitle(lists[i], context),
@@ -238,6 +238,14 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                            shrinkWrap: false,
                            );
   }
+  
+  Decoration _buildDecoration(ActiveList list){
+    if(list.repeat){
+      return BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT, border: Border(left:BorderSide(color: Colors.orange, width:1)));
+    }
+    return BoxDecoration(gradient: ListColors.LIST_ITEM_GRADIENT);
+  }
+
 
   Widget _buildMainItemExpandableIcon(ActiveList list, BuildContext context){
     Icon leadingIcon;
