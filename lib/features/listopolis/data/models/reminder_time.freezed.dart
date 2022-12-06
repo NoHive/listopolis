@@ -22,6 +22,7 @@ ReminderTime _$ReminderTimeFromJson(Map<String, dynamic> json) {
 mixin _$ReminderTime {
   String get timeOfDay => throw _privateConstructorUsedError;
   String get reminderChannel => throw _privateConstructorUsedError;
+  int get channelId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $ReminderTimeCopyWith<$Res> {
           ReminderTime value, $Res Function(ReminderTime) then) =
       _$ReminderTimeCopyWithImpl<$Res, ReminderTime>;
   @useResult
-  $Res call({String timeOfDay, String reminderChannel});
+  $Res call({String timeOfDay, String reminderChannel, int channelId});
 }
 
 /// @nodoc
@@ -53,6 +54,7 @@ class _$ReminderTimeCopyWithImpl<$Res, $Val extends ReminderTime>
   $Res call({
     Object? timeOfDay = null,
     Object? reminderChannel = null,
+    Object? channelId = null,
   }) {
     return _then(_value.copyWith(
       timeOfDay: null == timeOfDay
@@ -63,6 +65,10 @@ class _$ReminderTimeCopyWithImpl<$Res, $Val extends ReminderTime>
           ? _value.reminderChannel
           : reminderChannel // ignore: cast_nullable_to_non_nullable
               as String,
+      channelId: null == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -75,7 +81,7 @@ abstract class _$$_ReminderTimeCopyWith<$Res>
       __$$_ReminderTimeCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String timeOfDay, String reminderChannel});
+  $Res call({String timeOfDay, String reminderChannel, int channelId});
 }
 
 /// @nodoc
@@ -91,6 +97,7 @@ class __$$_ReminderTimeCopyWithImpl<$Res>
   $Res call({
     Object? timeOfDay = null,
     Object? reminderChannel = null,
+    Object? channelId = null,
   }) {
     return _then(_$_ReminderTime(
       null == timeOfDay
@@ -101,6 +108,10 @@ class __$$_ReminderTimeCopyWithImpl<$Res>
           ? _value.reminderChannel
           : reminderChannel // ignore: cast_nullable_to_non_nullable
               as String,
+      null == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -108,7 +119,8 @@ class __$$_ReminderTimeCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ReminderTime extends _ReminderTime {
-  const _$_ReminderTime(this.timeOfDay, this.reminderChannel) : super._();
+  const _$_ReminderTime(this.timeOfDay, this.reminderChannel, this.channelId)
+      : super._();
 
   factory _$_ReminderTime.fromJson(Map<String, dynamic> json) =>
       _$$_ReminderTimeFromJson(json);
@@ -117,10 +129,12 @@ class _$_ReminderTime extends _ReminderTime {
   final String timeOfDay;
   @override
   final String reminderChannel;
+  @override
+  final int channelId;
 
   @override
   String toString() {
-    return 'ReminderTime(timeOfDay: $timeOfDay, reminderChannel: $reminderChannel)';
+    return 'ReminderTime(timeOfDay: $timeOfDay, reminderChannel: $reminderChannel, channelId: $channelId)';
   }
 
   @override
@@ -131,12 +145,15 @@ class _$_ReminderTime extends _ReminderTime {
             (identical(other.timeOfDay, timeOfDay) ||
                 other.timeOfDay == timeOfDay) &&
             (identical(other.reminderChannel, reminderChannel) ||
-                other.reminderChannel == reminderChannel));
+                other.reminderChannel == reminderChannel) &&
+            (identical(other.channelId, channelId) ||
+                other.channelId == channelId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, timeOfDay, reminderChannel);
+  int get hashCode =>
+      Object.hash(runtimeType, timeOfDay, reminderChannel, channelId);
 
   @JsonKey(ignore: true)
   @override
@@ -153,8 +170,8 @@ class _$_ReminderTime extends _ReminderTime {
 }
 
 abstract class _ReminderTime extends ReminderTime {
-  const factory _ReminderTime(
-      final String timeOfDay, final String reminderChannel) = _$_ReminderTime;
+  const factory _ReminderTime(final String timeOfDay,
+      final String reminderChannel, final int channelId) = _$_ReminderTime;
   const _ReminderTime._() : super._();
 
   factory _ReminderTime.fromJson(Map<String, dynamic> json) =
@@ -164,6 +181,8 @@ abstract class _ReminderTime extends ReminderTime {
   String get timeOfDay;
   @override
   String get reminderChannel;
+  @override
+  int get channelId;
   @override
   @JsonKey(ignore: true)
   _$$_ReminderTimeCopyWith<_$_ReminderTime> get copyWith =>

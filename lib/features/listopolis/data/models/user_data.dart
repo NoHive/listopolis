@@ -5,9 +5,11 @@ import 'dart:convert';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:listopolis/core/list/list_tools.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
+import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:listopolis/features/listopolis/data/models/repetition_config.dart';
 import 'package:uuid/uuid.dart';
 
 part 'user_data.freezed.dart';
@@ -83,7 +85,8 @@ abstract class UserData implements _$UserData {
                                             position: aNewPosition, 
                                             done: false,
                                             opened: false,
-                                            listItems: newListPositions
+                                            listItems: newListPositions,
+                                            repetitionConfig: creationParameter.repetitionConfig
                                             );
       
        

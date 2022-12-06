@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
+import 'package:listopolis/features/listopolis/data/models/repetition_config.dart';
 import 'package:uuid/uuid.dart';
 
 enum PositionType{start, end}
@@ -23,7 +24,8 @@ class CreateListParameter{
   ListType type;
   PositionType positioning;
   late String id;
-
+  RepetitionConfig? repetitionConfig;
+  
   late List<CreateListItemParameter> listitems=[];
 
   CreateListParameter({required this.listName, required this.type, required this.positioning, required this.repeat}){

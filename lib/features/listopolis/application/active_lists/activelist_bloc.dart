@@ -8,7 +8,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/core/error/failures.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
+import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
+import 'package:listopolis/features/listopolis/data/models/repetition_config.dart';
 import 'package:listopolis/features/listopolis/domain/repositories/repositories.dart';
 
 part 'activelist_event.dart';
@@ -50,6 +52,12 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   }
   _emit_InsertNewList(_InsertNewList e, Emitter<ActivelistState> emit) async{
       emit(ActivelistState.loading());
+      RepetitionConfig? sampleConfig = null;
+      if(e.listParameter.repeat){
+        sampleConfig = RepetitionUtil.createRepetitionOnSecond("42", DateTime.now(), RepetitionUtil.CHANNEL_KEY);
+        await RepetitionUtil.createNotificationsFromConfig(sampleConfig, e.listParameter.listName);
+        e.listParameter.repetitionConfig = sampleConfig;
+      }
       Either<Failure, List<ActiveList>> activeListsResult = await repository.insertActiveList(e.listParameter);
       
       emit( activeListsResult.fold(
@@ -58,6 +66,12 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   }
   _emit_DeleteActiveListPosition(_DeleteActiveListPosition e, Emitter<ActivelistState> emit) async{
      // yield ActivelistState.loading();
+      ActiveList list = e.list;
+
+      if(list.repeat){
+        if(list.listItems != null && list.listItems.length == 1 && list.repetitionConfig != null)
+            await RepetitionUtil.stopNotifications(list.repetitionConfig!);
+      }
       Either<Failure, List<ActiveList>> activeListsResult = await repository.deleteActiveListPosition(e.list, e.position);
       
       emit( activeListsResult.fold(

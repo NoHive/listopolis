@@ -9,7 +9,8 @@ abstract class ReminderTime with _$ReminderTime{
   const ReminderTime._();
   const factory ReminderTime(
     String timeOfDay,
-    String reminderChannel
+    String reminderChannel,
+    int channelId
   ) = _ReminderTime;
 
   factory ReminderTime.fromJson(Map<String, dynamic> json) => _$ReminderTimeFromJson(json);

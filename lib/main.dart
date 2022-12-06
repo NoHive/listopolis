@@ -1,3 +1,4 @@
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,6 +10,7 @@ import 'package:listopolis/features/listopolis/application/connectivity/connecti
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
+import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
 import 'package:listopolis/features/listopolis/data/datasources/local_storage.dart';
 import 'package:listopolis/features/listopolis/data/repositories/repository_implementations.dart';
@@ -25,6 +27,22 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // SharedPreferences prefs = await init();
   //runApp(ListopolisRoot(prefs));
+  AwesomeNotifications().initialize( 
+    null,
+    [ NotificationChannel(
+                      channelKey: RepetitionUtil.CHANNEL_KEY, 
+                      channelName: RepetitionUtil.CHANNEL_NAME,
+                      channelDescription: RepetitionUtil.CHANNEL_DESCRIPTION,
+                      channelGroupKey: RepetitionUtil.CHANNEL_GROUP,
+                      defaultColor: Color.fromARGB(255, 11, 81, 99),
+                      playSound: true,
+                      enableLights: true,
+                      channelShowBadge: true,
+                      
+                      )
+   ]
+  );
+
   await configureDependencies();
   runApp(ListopolisRoot());
 }
