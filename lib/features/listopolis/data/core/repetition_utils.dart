@@ -33,7 +33,7 @@ class RepetitionUtil{
         content: NotificationContent(
                     id: reminder.channelId, 
                     channelKey: reminder.reminderChannel,
-                    body: "Hey, du ${Emojis.animals_honeybee} musst die Liste$listNameContent abarbeiten!",
+                    body: "${Emojis.animals_owl}, bitte $listNameContent erledigen!",
                     title: "offene Aufgaben!!!",
                     displayOnBackground: true,
                     displayOnForeground: true

@@ -28,7 +28,7 @@ void main() async {
   // SharedPreferences prefs = await init();
   //runApp(ListopolisRoot(prefs));
   AwesomeNotifications().initialize( 
-    null,
+    'resource://drawable/listopolis_icon_128',
     [ NotificationChannel(
                       channelKey: RepetitionUtil.CHANNEL_KEY, 
                       channelName: RepetitionUtil.CHANNEL_NAME,
