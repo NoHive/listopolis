@@ -17,11 +17,17 @@ _$_ActiveList _$$_ActiveListFromJson(Map<String, dynamic> json) =>
       done: json['done'] as bool? ?? false,
       opened: json['opened'] as bool? ?? false,
       repeat: json['repeat'] as bool? ?? false,
+      needReminders: json['needReminders'] as bool? ?? false,
       repetitionConfig: json['repetitionConfig'] == null
           ? null
           : RepetitionConfig.fromJson(
               json['repetitionConfig'] as Map<String, dynamic>),
       listItems: (json['listItems'] as List<dynamic>?)
+              ?.map(
+                  (e) => ActiveListPosition.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      repetitionItems: (json['repetitionItems'] as List<dynamic>?)
               ?.map(
                   (e) => ActiveListPosition.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -37,8 +43,10 @@ Map<String, dynamic> _$$_ActiveListToJson(_$_ActiveList instance) =>
       'done': instance.done,
       'opened': instance.opened,
       'repeat': instance.repeat,
+      'needReminders': instance.needReminders,
       'repetitionConfig': instance.repetitionConfig,
       'listItems': instance.listItems,
+      'repetitionItems': instance.repetitionItems,
     };
 
 _$_ActiveListPosition _$$_ActiveListPositionFromJson(

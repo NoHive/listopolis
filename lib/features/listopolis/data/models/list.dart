@@ -23,8 +23,10 @@ abstract class ActiveList implements _$ActiveList{
       @Default(false) bool done,
       @Default(false) bool opened,
       @Default(false) bool repeat,
+      @Default(false) bool needReminders,
       RepetitionConfig? repetitionConfig,
-      @Default([]) List<ActiveListPosition> listItems
+      @Default([]) List<ActiveListPosition> listItems,
+      @Default([]) List<ActiveListPosition> repetitionItems
     }
   ) = _ActiveList;
   factory ActiveList.fromJson(Map<String, dynamic> json) => _$ActiveListFromJson(json);
@@ -34,10 +36,12 @@ abstract class ActiveList implements _$ActiveList{
     existingPositions.sort((a,b) => a.position.compareTo(b.position));
     ActiveListPosition newPosition = aPosition.copyWith(position:1);
     List<ActiveListPosition> newListPositons = [];
+    List<ActiveListPosition> newRepetitionPositons = [];
     newListPositons.add(newPosition);
     existingPositions.forEach((element) {newListPositons.add(element.copyWith(position:element.position+1)); });
+    newListPositons.forEach((element) { newRepetitionPositons.add(element.copyWith(position:element.position));});
 
-    return list.copyWith(listItems:newListPositons);
+    return list.copyWith(listItems:newListPositons, repetitionItems: newRepetitionPositons);
   }
   factory ActiveList.addListItemAtEnd({required ActiveList list, required ActiveListPosition aPosition}){
     List<ActiveListPosition> existingPositions = list.listItems;
@@ -45,9 +49,10 @@ abstract class ActiveList implements _$ActiveList{
     ActiveListPosition lastPosition = existingPositions.last; 
     ActiveListPosition newPosition = aPosition.copyWith(position:lastPosition.position+1);
     existingPositions.add(newPosition);
-   
+    List<ActiveListPosition> newRepetitionPositons = [];
+    existingPositions.forEach((element) { newRepetitionPositons.add(element.copyWith(position:element.position));});
 
-    return list.copyWith(listItems:existingPositions);
+    return list.copyWith(listItems:existingPositions, repetitionItems: newRepetitionPositons);
   }
  
 }

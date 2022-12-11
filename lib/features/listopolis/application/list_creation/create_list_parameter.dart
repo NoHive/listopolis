@@ -28,7 +28,7 @@ class CreateListParameter{
   
   late List<CreateListItemParameter> listitems=[];
 
-  CreateListParameter({required this.listName, required this.type, required this.positioning, required this.repeat}){
+  CreateListParameter({required this.listName, required this.type, required this.positioning, required this.repeat, this.repetitionConfig}){
     listitems = [];
     id = Uuid().v1();
   }
@@ -37,7 +37,8 @@ class CreateListParameter{
     CreateListParameter newList = CreateListParameter(listName: input.listName, 
                                                       positioning: input.positioning, 
                                                       type: input.type,
-                                                      repeat: input.repeat
+                                                      repeat: input.repeat,
+                                                      repetitionConfig: input.repetitionConfig
                                                       );
     for(CreateListItemParameter item in input.listitems){
       newList.listitems.add(CreateListItemParameter(position: item.position, name: item.name));
@@ -50,7 +51,8 @@ class CreateListParameter{
     CreateListParameter newList = CreateListParameter(listName: input.name, 
                                                       positioning: PositionType.end, 
                                                       type: input.type,
-                                                      repeat: input.repeat
+                                                      repeat: input.repeat,
+                                                      repetitionConfig: input.repetitionConfig
                                                       );
 
     for(ActiveListPosition item in input.listItems){
@@ -63,7 +65,8 @@ class CreateListParameter{
                                       listName: input.name, 
                                       positioning: PositionType.end, 
                                       type: input.type,
-                                      repeat: input.repeat
+                                      repeat: input.repeat,
+                                      repetitionConfig: input.repetitionConfig
                                       );
     newList.id = input.id;
     for(ActiveListPosition item in input.listItems){

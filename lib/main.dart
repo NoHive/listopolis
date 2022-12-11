@@ -38,6 +38,7 @@ void main() async {
                       playSound: true,
                       enableLights: true,
                       channelShowBadge: true,
+                      importance: NotificationImportance.High
                       
                       )
    ]

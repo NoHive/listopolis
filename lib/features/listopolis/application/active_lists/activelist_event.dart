@@ -3,6 +3,7 @@ part of 'activelist_bloc.dart';
 @freezed
 class ActivelistEvent with _$ActivelistEvent {
   const factory ActivelistEvent.load() = _LoadLists;
+  const factory ActivelistEvent.loadAll() = _LoadAll;
   const factory ActivelistEvent.loadForReorder() = _LoadForReorder;
   const factory ActivelistEvent.insertNewList({required CreateListParameter listParameter}) = _InsertNewList;
   const factory ActivelistEvent.deleteActiveListPosition({ required ActiveList list, required ActiveListPosition position }) = _DeleteActiveListPosition;
@@ -14,4 +15,5 @@ class ActivelistEvent with _$ActivelistEvent {
   const factory ActivelistEvent.changeListPosition({ required ActiveList list, required int oldIndex, required int newIndex}) = _ChangeListPosition;
   const factory ActivelistEvent.copyListToClipBoard({ required ActiveList list}) = _CopyListToClipBoard;
   const factory ActivelistEvent.createListFromClipBoard() = _CreateListFromClipBoard;
+  const factory ActivelistEvent.reminderDisplayed() = _ReminderDisplayed;
 }

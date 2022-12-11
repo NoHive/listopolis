@@ -73,9 +73,11 @@ abstract class UserData implements _$UserData {
       
 
       List<ActiveListPosition> newListPositions = [];
+      List<ActiveListPosition> newListRepetitionPositions = [];
 
       for(CreateListItemParameter listItemParam in creationParameter.listitems){
         newListPositions.add(ActiveListPosition.fromCreateListItemParameter(listItemParam));
+        newListRepetitionPositions.add(ActiveListPosition.fromCreateListItemParameter(listItemParam));
       }
 
       ActiveList aNewListItem = ActiveList( id: Uuid().v1(), 
@@ -86,7 +88,8 @@ abstract class UserData implements _$UserData {
                                             done: false,
                                             opened: false,
                                             listItems: newListPositions,
-                                            repetitionConfig: creationParameter.repetitionConfig
+                                            repetitionConfig: creationParameter.repetitionConfig,
+                                            repetitionItems: newListRepetitionPositions
                                             );
       
        
@@ -257,6 +260,27 @@ abstract class UserData implements _$UserData {
       
   }
 
+  factory UserData.updateRepetitionSatus(UserData data, ActiveList list){
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
+      
+      ActiveList copyWithoutRepetition = list.copyWith(needReminders: false);
+      if( existingActiveLists.length > 0){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+          
+      }else{
+        return data;
+      }
+
+      existingActiveLists.replaceRange(list.position-1, list.position, [copyWithoutRepetition]);
+
+
+  
+
+      return data.copyWith(activeLists:existingActiveLists);
+
+      
+  }
+
   factory UserData.replaceListFromCreatedList(UserData data, ActiveList list, CreateListParameter creationParameter){
       List<ActiveList> existingActiveLists = data.activeLists.toList();
       
@@ -336,9 +360,13 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
 
       final int positionOfDeleteList = list.position;
       final int positionOfDeleteListPos = position.position;
-
+      ActiveList? repeatedList;
       // if so delete whole list
       if(list.listItems.length <= 1){
+
+        if(list.repeat)
+            repeatedList = _getListCopyForRepetition(list);
+
         for(ActiveList aList in existingActiveLists){
             if(aList.position < positionOfDeleteList)
               aNewList.add(aList.copyWith());
@@ -363,6 +391,21 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
               aNewList.add(aList);
         }
       }
+      if(repeatedList != null && aNewList != null){
+        aNewList.sort((e1, e2) => e1.position.compareTo(e2.position));
+        int listPos = 1;
+        if(aNewList.length > 0){
+          ActiveList? lastList = aNewList.last;
+          
+          if(lastList != null)
+              listPos = lastList.position+1;
+        }
+        
+        aNewList.add(repeatedList.copyWith(position: listPos));
+      }
+
+      
+
 
       return data.copyWith(activeLists:aNewList);
   }
@@ -423,6 +466,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
 
       final int positionOfDeleteList = list.position;
       
+      ActiveList repeatList = list.copyWith(listItems: list.repetitionItems);
 
       // if so delete whole list
       if(existingActiveLists.length > 1){  
@@ -463,5 +507,50 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       }
       return data.copyWith(templates:aNewActiveList);
   }
+   factory UserData.fromUpdatedDailyReminders(UserData data, List<ActiveList> reminderUpdatedLists){
+      List<ActiveList> existingActiveLists = data.activeLists.toList();
+      List<ActiveList> copiedLists = [];
+      
+      if(existingActiveLists != null){
+        existingActiveLists.sort((e1, e2) => e1.position.compareTo(e2.position));
+      }else{
+        return data;
+      }
+
+      for(ActiveList reminderList in reminderUpdatedLists){
+        RepetitionConfig repCopy = reminderList.repetitionConfig!.copyWith(isDaily: true);
+        ActiveList listCopy = reminderList.copyWith(repetitionConfig: repCopy);
+        existingActiveLists.replaceRange(reminderList.position-1, reminderList.position, [listCopy]);
+      }
+
+      
+      return data.copyWith(activeLists:existingActiveLists);
+  }
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);
+  
+
+  static List<ActiveList> getListsThatNeedDailyReminders(UserData userData){
+      List<ActiveList> result = [];
+      result = userData.activeLists.where((list) => neddDailyRemindersToday(list)).toList();
+
+      return result;
+  }
+
+  static bool neddDailyRemindersToday(ActiveList list){
+    if(list.repetitionConfig != null)
+        return RepetitionUtil.needDailyReminders(list.repetitionConfig!);
+    
+    return false;
+  }
+
+  
 }
+ActiveList _getListCopyForRepetition(ActiveList list) {
+    
+    return list.copyWith( done: false,
+                          id: Uuid().v1(),
+                          needReminders: true, 
+                          listItems: list.repetitionItems, 
+                          repetitionConfig: RepetitionUtil.getConfigForNextPeriod(list.repetitionConfig!)
+                        );
+  }

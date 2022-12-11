@@ -1,5 +1,6 @@
 
 
+import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:listopolis/core/localization/localization.dart';
@@ -9,6 +10,7 @@ import 'package:listopolis/features/listopolis/application/connectivity/connecti
 import 'package:listopolis/features/listopolis/application/list_creation/createlist_bloc.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
+import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
 import 'package:listopolis/features/listopolis/presentation/active_lists/create_active_list_screen.dart';
@@ -35,6 +37,24 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
     BlocProvider.of<AuthenticationBloc>(context)
       ..add(AuthenticationEvent.requestedSignInStatus());
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    AwesomeNotifications().setListeners(onActionReceivedMethod: (receivedAction) async{
+      
+    },
+    onNotificationDisplayedMethod: (receivedNotification) async{
+      
+      BlocProvider.of<ActivelistBloc>(context)
+      ..add(ActivelistEvent.reminderDisplayed());
+    },
+    );
+  }
+
+  
+
    @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,9 +69,10 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
             return state.map(
               initial: (s) => showInitial(), 
               loading: (s) => showLoadingIndicator(), 
-              loaded: (s) => buildLoadedLists(context, s.userLists), 
+              loaded: (s) => buildLoadedLists(context, s.userLists, true), 
               listOrderChanged: (s) => buildReorderList(context, s.userLists),
               error: (s) => showAppError(mapFailureToLocalizedString(s.failure)),
+              loadedAll: (s) => buildLoadedLists(context, s.userLists, false), 
              // initCreateList: (s) => showLoadingIndicator()
             );
           },
@@ -87,6 +108,7 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
                 loaded: (s) => buildToggleButtons([false, true], context),
                 listOrderChanged:  (s) => buildToggleButtons([true, false], context),
                 error: (s) => buildToggleButtons([false, true], context),
+                loadedAll: (s) => buildToggleButtons([false, true], context),
               );
             }
             );
@@ -210,17 +232,25 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
         }
       }else if(choice == ActiveListPageMenueStrings.SIGN_IN){
         navigateToAuthenticationScreen(context);
-      }else{
+      }else if(choice == ActiveListPageMenueStrings.SHOW_ALL_LISTS){
+        BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadAll());
+      }
+      else{
         print("not supported");
       }
   }
 
   
 
-  Widget buildLoadedLists(BuildContext context, List<ActiveList> listParam){
+  Widget buildLoadedLists(BuildContext context, List<ActiveList> listParam, bool filter){
     List<ActiveList> lists = listParam.toList();
-
+    if(filter){
+      lists = lists.where((list) {
+        return !list.repeat || RepetitionUtil.shouldShowToday(list);
+      }).toList();
+    }
     lists.sort((l1, l2) => l1.position.compareTo(l2.position));
+
     final int listCount = lists.length;
     return ListView.builder(itemBuilder: ( context, i){
                               return  Container(alignment: Alignment.center, 
@@ -379,7 +409,11 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
               },
           ));
  }
- List<Widget> _buildReorderListItems(List<ActiveList> listitems, BuildContext context){
+ List<Widget> _buildReorderListItems(List<ActiveList> listitemsPara, BuildContext context){
+    List<ActiveList> listitems = listitemsPara.toList();
+   listitems = listitems.where((list) {
+      return !list.repeat || RepetitionUtil.shouldShowToday(list);
+    }).toList();
    listitems.sort((l1, l2) => l1.position.compareTo(l2.position));
     List<Widget> erg = [];
     for(ActiveList lItem in listitems){
@@ -498,9 +532,10 @@ class ActiveListPageMenueStrings{
   static const String SIGN_IN = "Anmelden";
   static const String SAVE_CURRENT_USER_DATA = "Daten sichern";
   static const String LOAD_EXTERN_DATA = "Daten aus Sicherung einlesen";
+  static const String SHOW_ALL_LISTS = "Auch zukünftige Listen zeigen";
   
 
-  static const List<String> choises = [CREATE_NEW_LIST,CREATE_LIST_CLIPBOARD,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA, SIGN_IN, ONLINE_LISTS];
+  static const List<String> choises = [CREATE_NEW_LIST,CREATE_LIST_CLIPBOARD,EDIT_TEMPlATES, SAVE_CURRENT_USER_DATA, LOAD_EXTERN_DATA, SIGN_IN, ONLINE_LISTS, SHOW_ALL_LISTS];
 }
 class MainListItemMenueStr{
   static const String EDIT = "edit";

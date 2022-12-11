@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:listopolis/features/listopolis/application/list_creation/create_list_parameter.dart';
+import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/datasources/data_source.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
@@ -125,11 +126,12 @@ class RepositoryImpl implements IRepository{
   }
 
   @override
-  Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list) {
+  Future<Either<Failure, List<ActiveList>>> deleteActiveList(ActiveList list) async{
     
     uDataCache.fold(
         () {}, 
         (currentUserData) {
+          
           uDataCache = Some(UserData.fromRemovedActiveList(currentUserData, list));
           sendData();
         }
@@ -268,6 +270,41 @@ class RepositoryImpl implements IRepository{
         sendData();
      }
     ); 
+    return getActiveLists();
+  }
+  
+  @override
+  Future<void> upateListAfterRepetitionPlanning(ActiveList list) async{
+     uDataCache.fold(
+     (){}, 
+     (currentUserData){
+        uDataCache = Some(UserData.updateRepetitionSatus(currentUserData, list));
+        sendData();
+     }
+    );
+  }
+  
+  @override
+  Future<Either<Failure, List<ActiveList>>> getListsWithoutDailyReminders() async{
+     List<ActiveList> results =
+     uDataCache.fold(
+     (){return <ActiveList>[];}, 
+     (currentUserData){
+         return UserData.getListsThatNeedDailyReminders(currentUserData);
+     }
+    ); 
+    return Future.value(right(results));
+  }
+  
+  @override
+  Future<Either<Failure, List<ActiveList>>> updateListsWithoutDailyReminders(List<ActiveList> lists) {
+    uDataCache.fold(
+     (){}, 
+     (currentUserData){
+        uDataCache = Some(UserData.fromUpdatedDailyReminders(currentUserData, lists));
+        sendData();
+     }
+    );
     return getActiveLists();
   }
 

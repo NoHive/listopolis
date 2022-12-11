@@ -19,6 +19,7 @@ mixin _$ActivelistEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -34,11 +35,13 @@ mixin _$ActivelistEvent {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -53,11 +56,13 @@ mixin _$ActivelistEvent {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -72,12 +77,14 @@ mixin _$ActivelistEvent {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -91,11 +98,13 @@ mixin _$ActivelistEvent {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -108,11 +117,13 @@ mixin _$ActivelistEvent {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -124,6 +135,7 @@ mixin _$ActivelistEvent {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -186,6 +198,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -201,6 +214,7 @@ class _$_LoadLists implements _LoadLists {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return load();
   }
@@ -209,6 +223,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -223,6 +238,7 @@ class _$_LoadLists implements _LoadLists {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return load?.call();
   }
@@ -231,6 +247,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -245,6 +262,7 @@ class _$_LoadLists implements _LoadLists {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -257,6 +275,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -270,6 +289,7 @@ class _$_LoadLists implements _LoadLists {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return load(this);
   }
@@ -278,6 +298,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -290,6 +311,7 @@ class _$_LoadLists implements _LoadLists {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return load?.call(this);
   }
@@ -298,6 +320,7 @@ class _$_LoadLists implements _LoadLists {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -309,6 +332,7 @@ class _$_LoadLists implements _LoadLists {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -320,6 +344,192 @@ class _$_LoadLists implements _LoadLists {
 
 abstract class _LoadLists implements ActivelistEvent {
   const factory _LoadLists() = _$_LoadLists;
+}
+
+/// @nodoc
+abstract class _$$_LoadAllCopyWith<$Res> {
+  factory _$$_LoadAllCopyWith(
+          _$_LoadAll value, $Res Function(_$_LoadAll) then) =
+      __$$_LoadAllCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_LoadAllCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_LoadAll>
+    implements _$$_LoadAllCopyWith<$Res> {
+  __$$_LoadAllCopyWithImpl(_$_LoadAll _value, $Res Function(_$_LoadAll) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_LoadAll implements _LoadAll {
+  const _$_LoadAll();
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.loadAll()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadAll);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadAll,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
+  }) {
+    return loadAll();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadAll,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
+  }) {
+    return loadAll?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadAll,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
+    required TResult orElse(),
+  }) {
+    if (loadAll != null) {
+      return loadAll();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
+  }) {
+    return loadAll(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
+  }) {
+    return loadAll?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
+    required TResult orElse(),
+  }) {
+    if (loadAll != null) {
+      return loadAll(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadAll implements ActivelistEvent {
+  const factory _LoadAll() = _$_LoadAll;
 }
 
 /// @nodoc
@@ -361,6 +571,7 @@ class _$_LoadForReorder implements _LoadForReorder {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -376,6 +587,7 @@ class _$_LoadForReorder implements _LoadForReorder {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return loadForReorder();
   }
@@ -384,6 +596,7 @@ class _$_LoadForReorder implements _LoadForReorder {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -398,6 +611,7 @@ class _$_LoadForReorder implements _LoadForReorder {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return loadForReorder?.call();
   }
@@ -406,6 +620,7 @@ class _$_LoadForReorder implements _LoadForReorder {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -420,6 +635,7 @@ class _$_LoadForReorder implements _LoadForReorder {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (loadForReorder != null) {
@@ -432,6 +648,7 @@ class _$_LoadForReorder implements _LoadForReorder {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -445,6 +662,7 @@ class _$_LoadForReorder implements _LoadForReorder {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return loadForReorder(this);
   }
@@ -453,6 +671,7 @@ class _$_LoadForReorder implements _LoadForReorder {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -465,6 +684,7 @@ class _$_LoadForReorder implements _LoadForReorder {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return loadForReorder?.call(this);
   }
@@ -473,6 +693,7 @@ class _$_LoadForReorder implements _LoadForReorder {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -484,6 +705,7 @@ class _$_LoadForReorder implements _LoadForReorder {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (loadForReorder != null) {
@@ -563,6 +785,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -578,6 +801,7 @@ class _$_InsertNewList implements _InsertNewList {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return insertNewList(listParameter);
   }
@@ -586,6 +810,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -600,6 +825,7 @@ class _$_InsertNewList implements _InsertNewList {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return insertNewList?.call(listParameter);
   }
@@ -608,6 +834,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -622,6 +849,7 @@ class _$_InsertNewList implements _InsertNewList {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (insertNewList != null) {
@@ -634,6 +862,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -647,6 +876,7 @@ class _$_InsertNewList implements _InsertNewList {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return insertNewList(this);
   }
@@ -655,6 +885,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -667,6 +898,7 @@ class _$_InsertNewList implements _InsertNewList {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return insertNewList?.call(this);
   }
@@ -675,6 +907,7 @@ class _$_InsertNewList implements _InsertNewList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -686,6 +919,7 @@ class _$_InsertNewList implements _InsertNewList {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (insertNewList != null) {
@@ -801,6 +1035,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -816,6 +1051,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return deleteActiveListPosition(list, position);
   }
@@ -824,6 +1060,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -838,6 +1075,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return deleteActiveListPosition?.call(list, position);
   }
@@ -846,6 +1084,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -860,6 +1099,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (deleteActiveListPosition != null) {
@@ -872,6 +1112,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -885,6 +1126,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return deleteActiveListPosition(this);
   }
@@ -893,6 +1135,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -905,6 +1148,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return deleteActiveListPosition?.call(this);
   }
@@ -913,6 +1157,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -924,6 +1169,7 @@ class _$_DeleteActiveListPosition implements _DeleteActiveListPosition {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (deleteActiveListPosition != null) {
@@ -1021,6 +1267,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -1036,6 +1283,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return deleteActiveList(list);
   }
@@ -1044,6 +1292,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -1058,6 +1307,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return deleteActiveList?.call(list);
   }
@@ -1066,6 +1316,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -1080,6 +1331,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (deleteActiveList != null) {
@@ -1092,6 +1344,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -1105,6 +1358,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return deleteActiveList(this);
   }
@@ -1113,6 +1367,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -1125,6 +1380,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return deleteActiveList?.call(this);
   }
@@ -1133,6 +1389,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -1144,6 +1401,7 @@ class _$_DeleteActiveList implements _DeleteActiveList {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (deleteActiveList != null) {
@@ -1248,6 +1506,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -1263,6 +1522,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return replaceActiveList(listParameter, list);
   }
@@ -1271,6 +1531,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -1285,6 +1546,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return replaceActiveList?.call(listParameter, list);
   }
@@ -1293,6 +1555,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -1307,6 +1570,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (replaceActiveList != null) {
@@ -1319,6 +1583,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -1332,6 +1597,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return replaceActiveList(this);
   }
@@ -1340,6 +1606,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -1352,6 +1619,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return replaceActiveList?.call(this);
   }
@@ -1360,6 +1628,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -1371,6 +1640,7 @@ class _$_ReplaceActiveList implements _ReplaceActiveList {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (replaceActiveList != null) {
@@ -1431,6 +1701,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -1446,6 +1717,7 @@ class _$_BackupData implements _BackupData {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return backupData();
   }
@@ -1454,6 +1726,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -1468,6 +1741,7 @@ class _$_BackupData implements _BackupData {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return backupData?.call();
   }
@@ -1476,6 +1750,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -1490,6 +1765,7 @@ class _$_BackupData implements _BackupData {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (backupData != null) {
@@ -1502,6 +1778,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -1515,6 +1792,7 @@ class _$_BackupData implements _BackupData {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return backupData(this);
   }
@@ -1523,6 +1801,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -1535,6 +1814,7 @@ class _$_BackupData implements _BackupData {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return backupData?.call(this);
   }
@@ -1543,6 +1823,7 @@ class _$_BackupData implements _BackupData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -1554,6 +1835,7 @@ class _$_BackupData implements _BackupData {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (backupData != null) {
@@ -1606,6 +1888,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -1621,6 +1904,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return loadDataFromBackup();
   }
@@ -1629,6 +1913,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -1643,6 +1928,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return loadDataFromBackup?.call();
   }
@@ -1651,6 +1937,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -1665,6 +1952,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (loadDataFromBackup != null) {
@@ -1677,6 +1965,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -1690,6 +1979,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return loadDataFromBackup(this);
   }
@@ -1698,6 +1988,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -1710,6 +2001,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return loadDataFromBackup?.call(this);
   }
@@ -1718,6 +2010,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -1729,6 +2022,7 @@ class _$_LoadDataFromBackup implements _LoadDataFromBackup {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (loadDataFromBackup != null) {
@@ -1818,6 +2112,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -1833,6 +2128,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return useListAsTemplate(list);
   }
@@ -1841,6 +2137,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -1855,6 +2152,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return useListAsTemplate?.call(list);
   }
@@ -1863,6 +2161,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -1877,6 +2176,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (useListAsTemplate != null) {
@@ -1889,6 +2189,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -1902,6 +2203,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return useListAsTemplate(this);
   }
@@ -1910,6 +2212,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -1922,6 +2225,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return useListAsTemplate?.call(this);
   }
@@ -1930,6 +2234,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -1941,6 +2246,7 @@ class _$_UseListAsTemplate implements _UseListAsTemplate {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (useListAsTemplate != null) {
@@ -2055,6 +2361,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -2070,6 +2377,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return changeListPosition(list, oldIndex, newIndex);
   }
@@ -2078,6 +2386,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -2092,6 +2401,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return changeListPosition?.call(list, oldIndex, newIndex);
   }
@@ -2100,6 +2410,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -2114,6 +2425,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (changeListPosition != null) {
@@ -2126,6 +2438,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -2139,6 +2452,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return changeListPosition(this);
   }
@@ -2147,6 +2461,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -2159,6 +2474,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return changeListPosition?.call(this);
   }
@@ -2167,6 +2483,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -2178,6 +2495,7 @@ class _$_ChangeListPosition implements _ChangeListPosition {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (changeListPosition != null) {
@@ -2277,6 +2595,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -2292,6 +2611,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return copyListToClipBoard(list);
   }
@@ -2300,6 +2620,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -2314,6 +2635,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return copyListToClipBoard?.call(list);
   }
@@ -2322,6 +2644,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -2336,6 +2659,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (copyListToClipBoard != null) {
@@ -2348,6 +2672,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -2361,6 +2686,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return copyListToClipBoard(this);
   }
@@ -2369,6 +2695,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -2381,6 +2708,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return copyListToClipBoard?.call(this);
   }
@@ -2389,6 +2717,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -2400,6 +2729,7 @@ class _$_CopyListToClipBoard implements _CopyListToClipBoard {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (copyListToClipBoard != null) {
@@ -2459,6 +2789,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
+    required TResult Function() loadAll,
     required TResult Function() loadForReorder,
     required TResult Function(CreateListParameter listParameter) insertNewList,
     required TResult Function(ActiveList list, ActiveListPosition position)
@@ -2474,6 +2805,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
         changeListPosition,
     required TResult Function(ActiveList list) copyListToClipBoard,
     required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
   }) {
     return createListFromClipBoard();
   }
@@ -2482,6 +2814,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
+    TResult? Function()? loadAll,
     TResult? Function()? loadForReorder,
     TResult? Function(CreateListParameter listParameter)? insertNewList,
     TResult? Function(ActiveList list, ActiveListPosition position)?
@@ -2496,6 +2829,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
         changeListPosition,
     TResult? Function(ActiveList list)? copyListToClipBoard,
     TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
   }) {
     return createListFromClipBoard?.call();
   }
@@ -2504,6 +2838,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
+    TResult Function()? loadAll,
     TResult Function()? loadForReorder,
     TResult Function(CreateListParameter listParameter)? insertNewList,
     TResult Function(ActiveList list, ActiveListPosition position)?
@@ -2518,6 +2853,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
         changeListPosition,
     TResult Function(ActiveList list)? copyListToClipBoard,
     TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (createListFromClipBoard != null) {
@@ -2530,6 +2866,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
     required TResult Function(_LoadForReorder value) loadForReorder,
     required TResult Function(_InsertNewList value) insertNewList,
     required TResult Function(_DeleteActiveListPosition value)
@@ -2543,6 +2880,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
     required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
     required TResult Function(_CreateListFromClipBoard value)
         createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
   }) {
     return createListFromClipBoard(this);
   }
@@ -2551,6 +2889,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
     TResult? Function(_LoadForReorder value)? loadForReorder,
     TResult? Function(_InsertNewList value)? insertNewList,
     TResult? Function(_DeleteActiveListPosition value)?
@@ -2563,6 +2902,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
     TResult? Function(_ChangeListPosition value)? changeListPosition,
     TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
   }) {
     return createListFromClipBoard?.call(this);
   }
@@ -2571,6 +2911,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
     TResult Function(_LoadForReorder value)? loadForReorder,
     TResult Function(_InsertNewList value)? insertNewList,
     TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
@@ -2582,6 +2923,7 @@ class _$_CreateListFromClipBoard implements _CreateListFromClipBoard {
     TResult Function(_ChangeListPosition value)? changeListPosition,
     TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
     TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
     required TResult orElse(),
   }) {
     if (createListFromClipBoard != null) {
@@ -2596,12 +2938,200 @@ abstract class _CreateListFromClipBoard implements ActivelistEvent {
 }
 
 /// @nodoc
+abstract class _$$_ReminderDisplayedCopyWith<$Res> {
+  factory _$$_ReminderDisplayedCopyWith(_$_ReminderDisplayed value,
+          $Res Function(_$_ReminderDisplayed) then) =
+      __$$_ReminderDisplayedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ReminderDisplayedCopyWithImpl<$Res>
+    extends _$ActivelistEventCopyWithImpl<$Res, _$_ReminderDisplayed>
+    implements _$$_ReminderDisplayedCopyWith<$Res> {
+  __$$_ReminderDisplayedCopyWithImpl(
+      _$_ReminderDisplayed _value, $Res Function(_$_ReminderDisplayed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ReminderDisplayed implements _ReminderDisplayed {
+  const _$_ReminderDisplayed();
+
+  @override
+  String toString() {
+    return 'ActivelistEvent.reminderDisplayed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ReminderDisplayed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function() loadAll,
+    required TResult Function() loadForReorder,
+    required TResult Function(CreateListParameter listParameter) insertNewList,
+    required TResult Function(ActiveList list, ActiveListPosition position)
+        deleteActiveListPosition,
+    required TResult Function(ActiveList list) deleteActiveList,
+    required TResult Function(
+            CreateListParameter listParameter, ActiveList list)
+        replaceActiveList,
+    required TResult Function() backupData,
+    required TResult Function() loadDataFromBackup,
+    required TResult Function(ActiveList list) useListAsTemplate,
+    required TResult Function(ActiveList list, int oldIndex, int newIndex)
+        changeListPosition,
+    required TResult Function(ActiveList list) copyListToClipBoard,
+    required TResult Function() createListFromClipBoard,
+    required TResult Function() reminderDisplayed,
+  }) {
+    return reminderDisplayed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function()? loadAll,
+    TResult? Function()? loadForReorder,
+    TResult? Function(CreateListParameter listParameter)? insertNewList,
+    TResult? Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult? Function(ActiveList list)? deleteActiveList,
+    TResult? Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult? Function()? backupData,
+    TResult? Function()? loadDataFromBackup,
+    TResult? Function(ActiveList list)? useListAsTemplate,
+    TResult? Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult? Function(ActiveList list)? copyListToClipBoard,
+    TResult? Function()? createListFromClipBoard,
+    TResult? Function()? reminderDisplayed,
+  }) {
+    return reminderDisplayed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function()? loadAll,
+    TResult Function()? loadForReorder,
+    TResult Function(CreateListParameter listParameter)? insertNewList,
+    TResult Function(ActiveList list, ActiveListPosition position)?
+        deleteActiveListPosition,
+    TResult Function(ActiveList list)? deleteActiveList,
+    TResult Function(CreateListParameter listParameter, ActiveList list)?
+        replaceActiveList,
+    TResult Function()? backupData,
+    TResult Function()? loadDataFromBackup,
+    TResult Function(ActiveList list)? useListAsTemplate,
+    TResult Function(ActiveList list, int oldIndex, int newIndex)?
+        changeListPosition,
+    TResult Function(ActiveList list)? copyListToClipBoard,
+    TResult Function()? createListFromClipBoard,
+    TResult Function()? reminderDisplayed,
+    required TResult orElse(),
+  }) {
+    if (reminderDisplayed != null) {
+      return reminderDisplayed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_LoadLists value) load,
+    required TResult Function(_LoadAll value) loadAll,
+    required TResult Function(_LoadForReorder value) loadForReorder,
+    required TResult Function(_InsertNewList value) insertNewList,
+    required TResult Function(_DeleteActiveListPosition value)
+        deleteActiveListPosition,
+    required TResult Function(_DeleteActiveList value) deleteActiveList,
+    required TResult Function(_ReplaceActiveList value) replaceActiveList,
+    required TResult Function(_BackupData value) backupData,
+    required TResult Function(_LoadDataFromBackup value) loadDataFromBackup,
+    required TResult Function(_UseListAsTemplate value) useListAsTemplate,
+    required TResult Function(_ChangeListPosition value) changeListPosition,
+    required TResult Function(_CopyListToClipBoard value) copyListToClipBoard,
+    required TResult Function(_CreateListFromClipBoard value)
+        createListFromClipBoard,
+    required TResult Function(_ReminderDisplayed value) reminderDisplayed,
+  }) {
+    return reminderDisplayed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_LoadLists value)? load,
+    TResult? Function(_LoadAll value)? loadAll,
+    TResult? Function(_LoadForReorder value)? loadForReorder,
+    TResult? Function(_InsertNewList value)? insertNewList,
+    TResult? Function(_DeleteActiveListPosition value)?
+        deleteActiveListPosition,
+    TResult? Function(_DeleteActiveList value)? deleteActiveList,
+    TResult? Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult? Function(_BackupData value)? backupData,
+    TResult? Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult? Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult? Function(_ChangeListPosition value)? changeListPosition,
+    TResult? Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult? Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult? Function(_ReminderDisplayed value)? reminderDisplayed,
+  }) {
+    return reminderDisplayed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_LoadLists value)? load,
+    TResult Function(_LoadAll value)? loadAll,
+    TResult Function(_LoadForReorder value)? loadForReorder,
+    TResult Function(_InsertNewList value)? insertNewList,
+    TResult Function(_DeleteActiveListPosition value)? deleteActiveListPosition,
+    TResult Function(_DeleteActiveList value)? deleteActiveList,
+    TResult Function(_ReplaceActiveList value)? replaceActiveList,
+    TResult Function(_BackupData value)? backupData,
+    TResult Function(_LoadDataFromBackup value)? loadDataFromBackup,
+    TResult Function(_UseListAsTemplate value)? useListAsTemplate,
+    TResult Function(_ChangeListPosition value)? changeListPosition,
+    TResult Function(_CopyListToClipBoard value)? copyListToClipBoard,
+    TResult Function(_CreateListFromClipBoard value)? createListFromClipBoard,
+    TResult Function(_ReminderDisplayed value)? reminderDisplayed,
+    required TResult orElse(),
+  }) {
+    if (reminderDisplayed != null) {
+      return reminderDisplayed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ReminderDisplayed implements ActivelistEvent {
+  const factory _ReminderDisplayed() = _$_ReminderDisplayed;
+}
+
+/// @nodoc
 mixin _$ActivelistState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
   }) =>
@@ -2611,6 +3141,7 @@ mixin _$ActivelistState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
     TResult? Function(List<ActiveList> userLists)? listOrderChanged,
     TResult? Function(Failure failure)? error,
   }) =>
@@ -2620,6 +3151,7 @@ mixin _$ActivelistState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
     TResult Function(List<ActiveList> userLists)? listOrderChanged,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -2630,6 +3162,7 @@ mixin _$ActivelistState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_ListOrderChanged value) listOrderChanged,
     required TResult Function(_Error value) error,
   }) =>
@@ -2639,6 +3172,7 @@ mixin _$ActivelistState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_ListOrderChanged value)? listOrderChanged,
     TResult? Function(_Error value)? error,
   }) =>
@@ -2648,6 +3182,7 @@ mixin _$ActivelistState {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_ListOrderChanged value)? listOrderChanged,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -2713,6 +3248,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
   }) {
@@ -2725,6 +3261,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
     TResult? Function(List<ActiveList> userLists)? listOrderChanged,
     TResult? Function(Failure failure)? error,
   }) {
@@ -2737,6 +3274,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
     TResult Function(List<ActiveList> userLists)? listOrderChanged,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -2753,6 +3291,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_ListOrderChanged value) listOrderChanged,
     required TResult Function(_Error value) error,
   }) {
@@ -2765,6 +3304,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_ListOrderChanged value)? listOrderChanged,
     TResult? Function(_Error value)? error,
   }) {
@@ -2777,6 +3317,7 @@ class _$_Initial implements _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_ListOrderChanged value)? listOrderChanged,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -2832,6 +3373,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
   }) {
@@ -2844,6 +3386,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
     TResult? Function(List<ActiveList> userLists)? listOrderChanged,
     TResult? Function(Failure failure)? error,
   }) {
@@ -2856,6 +3399,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
     TResult Function(List<ActiveList> userLists)? listOrderChanged,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -2872,6 +3416,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_ListOrderChanged value) listOrderChanged,
     required TResult Function(_Error value) error,
   }) {
@@ -2884,6 +3429,7 @@ class _$_Loading implements _Loading {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_ListOrderChanged value)? listOrderChanged,
     TResult? Function(_Error value)? error,
   }) {
@@ -2896,6 +3442,7 @@ class _$_Loading implements _Loading {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_ListOrderChanged value)? listOrderChanged,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -2985,6 +3532,7 @@ class _$_Loaded implements _Loaded {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
   }) {
@@ -2997,6 +3545,7 @@ class _$_Loaded implements _Loaded {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
     TResult? Function(List<ActiveList> userLists)? listOrderChanged,
     TResult? Function(Failure failure)? error,
   }) {
@@ -3009,6 +3558,7 @@ class _$_Loaded implements _Loaded {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
     TResult Function(List<ActiveList> userLists)? listOrderChanged,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -3025,6 +3575,7 @@ class _$_Loaded implements _Loaded {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_ListOrderChanged value) listOrderChanged,
     required TResult Function(_Error value) error,
   }) {
@@ -3037,6 +3588,7 @@ class _$_Loaded implements _Loaded {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_ListOrderChanged value)? listOrderChanged,
     TResult? Function(_Error value)? error,
   }) {
@@ -3049,6 +3601,7 @@ class _$_Loaded implements _Loaded {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_ListOrderChanged value)? listOrderChanged,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -3066,6 +3619,172 @@ abstract class _Loaded implements ActivelistState {
   List<ActiveList> get userLists;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_LoadedAllCopyWith<$Res> {
+  factory _$$_LoadedAllCopyWith(
+          _$_LoadedAll value, $Res Function(_$_LoadedAll) then) =
+      __$$_LoadedAllCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<ActiveList> userLists});
+}
+
+/// @nodoc
+class __$$_LoadedAllCopyWithImpl<$Res>
+    extends _$ActivelistStateCopyWithImpl<$Res, _$_LoadedAll>
+    implements _$$_LoadedAllCopyWith<$Res> {
+  __$$_LoadedAllCopyWithImpl(
+      _$_LoadedAll _value, $Res Function(_$_LoadedAll) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userLists = null,
+  }) {
+    return _then(_$_LoadedAll(
+      userLists: null == userLists
+          ? _value._userLists
+          : userLists // ignore: cast_nullable_to_non_nullable
+              as List<ActiveList>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_LoadedAll implements _LoadedAll {
+  const _$_LoadedAll({final List<ActiveList> userLists = const []})
+      : _userLists = userLists;
+
+  final List<ActiveList> _userLists;
+  @override
+  @JsonKey()
+  List<ActiveList> get userLists {
+    if (_userLists is EqualUnmodifiableListView) return _userLists;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_userLists);
+  }
+
+  @override
+  String toString() {
+    return 'ActivelistState.loadedAll(userLists: $userLists)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadedAll &&
+            const DeepCollectionEquality()
+                .equals(other._userLists, _userLists));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_userLists));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LoadedAllCopyWith<_$_LoadedAll> get copyWith =>
+      __$$_LoadedAllCopyWithImpl<_$_LoadedAll>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
+    required TResult Function(List<ActiveList> userLists) listOrderChanged,
+    required TResult Function(Failure failure) error,
+  }) {
+    return loadedAll(userLists);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
+    TResult? Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult? Function(Failure failure)? error,
+  }) {
+    return loadedAll?.call(userLists);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
+    TResult Function(List<ActiveList> userLists)? listOrderChanged,
+    TResult Function(Failure failure)? error,
+    required TResult orElse(),
+  }) {
+    if (loadedAll != null) {
+      return loadedAll(userLists);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
+    required TResult Function(_ListOrderChanged value) listOrderChanged,
+    required TResult Function(_Error value) error,
+  }) {
+    return loadedAll(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
+    TResult? Function(_ListOrderChanged value)? listOrderChanged,
+    TResult? Function(_Error value)? error,
+  }) {
+    return loadedAll?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
+    TResult Function(_ListOrderChanged value)? listOrderChanged,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (loadedAll != null) {
+      return loadedAll(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadedAll implements ActivelistState {
+  const factory _LoadedAll({final List<ActiveList> userLists}) = _$_LoadedAll;
+
+  List<ActiveList> get userLists;
+  @JsonKey(ignore: true)
+  _$$_LoadedAllCopyWith<_$_LoadedAll> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3145,6 +3864,7 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
   }) {
@@ -3157,6 +3877,7 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
     TResult? Function(List<ActiveList> userLists)? listOrderChanged,
     TResult? Function(Failure failure)? error,
   }) {
@@ -3169,6 +3890,7 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
     TResult Function(List<ActiveList> userLists)? listOrderChanged,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -3185,6 +3907,7 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_ListOrderChanged value) listOrderChanged,
     required TResult Function(_Error value) error,
   }) {
@@ -3197,6 +3920,7 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_ListOrderChanged value)? listOrderChanged,
     TResult? Function(_Error value)? error,
   }) {
@@ -3209,6 +3933,7 @@ class _$_ListOrderChanged implements _ListOrderChanged {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_ListOrderChanged value)? listOrderChanged,
     TResult Function(_Error value)? error,
     required TResult orElse(),
@@ -3305,6 +4030,7 @@ class _$_Error implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(List<ActiveList> userLists) loaded,
+    required TResult Function(List<ActiveList> userLists) loadedAll,
     required TResult Function(List<ActiveList> userLists) listOrderChanged,
     required TResult Function(Failure failure) error,
   }) {
@@ -3317,6 +4043,7 @@ class _$_Error implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(List<ActiveList> userLists)? loaded,
+    TResult? Function(List<ActiveList> userLists)? loadedAll,
     TResult? Function(List<ActiveList> userLists)? listOrderChanged,
     TResult? Function(Failure failure)? error,
   }) {
@@ -3329,6 +4056,7 @@ class _$_Error implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(List<ActiveList> userLists)? loaded,
+    TResult Function(List<ActiveList> userLists)? loadedAll,
     TResult Function(List<ActiveList> userLists)? listOrderChanged,
     TResult Function(Failure failure)? error,
     required TResult orElse(),
@@ -3345,6 +4073,7 @@ class _$_Error implements _Error {
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
+    required TResult Function(_LoadedAll value) loadedAll,
     required TResult Function(_ListOrderChanged value) listOrderChanged,
     required TResult Function(_Error value) error,
   }) {
@@ -3357,6 +4086,7 @@ class _$_Error implements _Error {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_LoadedAll value)? loadedAll,
     TResult? Function(_ListOrderChanged value)? listOrderChanged,
     TResult? Function(_Error value)? error,
   }) {
@@ -3369,6 +4099,7 @@ class _$_Error implements _Error {
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
+    TResult Function(_LoadedAll value)? loadedAll,
     TResult Function(_ListOrderChanged value)? listOrderChanged,
     TResult Function(_Error value)? error,
     required TResult orElse(),

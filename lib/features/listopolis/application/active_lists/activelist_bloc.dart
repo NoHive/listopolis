@@ -22,6 +22,7 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   final IRepository repository;
   ActivelistBloc({required this.repository} ) : super(_Initial()){
     on<_LoadLists>((event, emit) => _emit_LoadList(event, emit));
+    on<_LoadAll>((event, emit) => _emit_LoadAll(event, emit));
     on<_LoadForReorder>((event, emit) => _emit_LoadForReorder(event, emit));
     on<_InsertNewList>((event, emit) => _emit_InsertNewList(event, emit));
     on<_DeleteActiveListPosition>((event, emit) => _emit_DeleteActiveListPosition(event, emit));
@@ -33,6 +34,7 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
     on<_ChangeListPosition>((event, emit) => _emit_ChangeListPosition(event, emit));
     on<_CopyListToClipBoard>((event, emit) => _emit_CopyListToClipBoard(event, emit));
     on<_CreateListFromClipBoard>((event, emit) => _emit_CreateListFromClipBoard(event, emit));
+    on<_ReminderDisplayed>((event, emit) => _emit_ReminderDisplayed(event, emit));
   }
   _emit_LoadList(_LoadLists e, Emitter<ActivelistState> emit) async{
      emit(ActivelistState.loading());
@@ -52,11 +54,11 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   }
   _emit_InsertNewList(_InsertNewList e, Emitter<ActivelistState> emit) async{
       emit(ActivelistState.loading());
-      RepetitionConfig? sampleConfig = null;
-      if(e.listParameter.repeat){
-        sampleConfig = RepetitionUtil.createRepetitionOnSecond("42", DateTime.now(), RepetitionUtil.CHANNEL_KEY);
-        await RepetitionUtil.createNotificationsFromConfig(sampleConfig, e.listParameter.listName);
-        e.listParameter.repetitionConfig = sampleConfig;
+      
+      if(e.listParameter.repeat && e.listParameter.repetitionConfig != null){
+        
+        await RepetitionUtil.createNotificationsFromConfig(e.listParameter.repetitionConfig!, e.listParameter.listName, true);
+        
       }
       Either<Failure, List<ActiveList>> activeListsResult = await repository.insertActiveList(e.listParameter);
       
@@ -67,19 +69,39 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   _emit_DeleteActiveListPosition(_DeleteActiveListPosition e, Emitter<ActivelistState> emit) async{
      // yield ActivelistState.loading();
       ActiveList list = e.list;
-
+      bool  needNewRepetition = false;
       if(list.repeat){
-        if(list.listItems != null && list.listItems.length == 1 && list.repetitionConfig != null)
+        if(list.listItems != null && list.listItems.length == 1 && list.repetitionConfig != null){
             await RepetitionUtil.stopNotifications(list.repetitionConfig!);
+            needNewRepetition = true;
+        }
       }
       Either<Failure, List<ActiveList>> activeListsResult = await repository.deleteActiveListPosition(e.list, e.position);
       
+      if(needNewRepetition){
+        activeListsResult.fold(
+          (l) => ActivelistState.error(failure: l), 
+          (r) async { _updateRepetition(r);});
+      }
+
       emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r)));
   }
+  _updateRepetition( List<ActiveList> activeLists) async{
+      activeLists.forEach((list) async {
+        if(list.needReminders){
+          await RepetitionUtil.createNotificationsFromConfig(list.repetitionConfig!, list.name, true);
+          await repository.upateListAfterRepetitionPlanning(list);
+        }
+      });
+  }
+
   _emit_DeleteActiveList(_DeleteActiveList e, Emitter<ActivelistState> emit) async{
      emit( ActivelistState.loading());
+      if(e.list.repetitionConfig != null)
+        await RepetitionUtil.stopNotifications(e.list.repetitionConfig!);
+
       Either<Failure, List<ActiveList>> activeListsResult = await repository.deleteActiveList(e.list);
       
       emit( activeListsResult.fold(
@@ -145,6 +167,24 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
 
       await FlutterClipboard.copy(" ");
 
+      emit( activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loaded(userLists: r)));
+  }
+  
+  _emit_LoadAll(_LoadAll event, Emitter<ActivelistState> emit) async {
+      emit(ActivelistState.loading());
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
+      
+      emit( activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) => ActivelistState.loadedAll(userLists: r)));
+  }
+  
+  _emit_ReminderDisplayed(_ReminderDisplayed event, Emitter<ActivelistState> emit) async{
+     emit(ActivelistState.loading());
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
+      
       emit( activeListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r)));

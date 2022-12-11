@@ -9,6 +9,7 @@ import 'package:listopolis/features/listopolis/application/list_creation/createl
 import 'package:listopolis/features/listopolis/application/list_creation/list_creation_mode.dart';
 import 'package:listopolis/features/listopolis/application/online_lists/onlinelists_bloc.dart';
 import 'package:listopolis/features/listopolis/application/templates/template_bloc.dart';
+import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:listopolis/features/listopolis/data/models/list_type.dart';
@@ -608,8 +609,11 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               children: [
                 Text("Wiederholen", style: TextStyle(fontSize: 10, color: ListColors.TEXT),),
                 Switch(value: list.repeat, onChanged: (value) {
-                        list.repeat = value;
-                        _commitListChanges(context, list);
+                        // list.repeat = value;
+                        // if(value)
+                           _chooseRepeatOptions(context, list, value);
+
+                        
                         },
                       )
               ],
@@ -619,6 +623,36 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
     //   list.repeat = value;
     //   _commitListChanges(context, list);
     // },);
+
+  }
+  
+  void _chooseRepeatOptions(BuildContext context, CreateListParameter list, bool repeat) async {
+    list.repeat = repeat;
+    if(repeat){
+      List<TimeOfDay> reminders = [];
+      
+      DateTime? selectedDate = await showDatePicker(   context: context, 
+                                                        initialDate: DateTime.now(), 
+                                                        firstDate: DateTime.now(), 
+                                                        lastDate: DateTime(2050),
+                                                        helpText: "Ab wann soll erinnert werden?"
+                                                        );
+        TimeOfDay? reminder = TimeOfDay.now();
+        int counter = 1;
+        while(reminder != null){
+          reminder = await showTimePicker(context: context, 
+                                          initialTime: reminder,
+                                          helpText: "Wähle die Erinnerung $counter !");
+          if(reminder != null)
+              reminders.add(reminder);
+          
+          counter++;
+        }
+        if(selectedDate != null && reminders.length > 0)
+          list.repetitionConfig = RepetitionUtil.createDailyRepetition(selectedDate, reminders);
+    }
+    
+    _commitListChanges(context, list);
 
   }
 

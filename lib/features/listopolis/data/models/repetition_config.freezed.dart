@@ -22,7 +22,9 @@ RepetitionConfig _$RepetitionConfigFromJson(Map<String, dynamic> json) {
 mixin _$RepetitionConfig {
   @JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
   RepetitionType get repetitionType => throw _privateConstructorUsedError;
+  int get amount => throw _privateConstructorUsedError;
   String get startDate => throw _privateConstructorUsedError;
+  bool get isDaily => throw _privateConstructorUsedError;
   List<ReminderTime> get reminders => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,7 +42,9 @@ abstract class $RepetitionConfigCopyWith<$Res> {
   $Res call(
       {@JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
           RepetitionType repetitionType,
+      int amount,
       String startDate,
+      bool isDaily,
       List<ReminderTime> reminders});
 
   $RepetitionTypeCopyWith<$Res> get repetitionType;
@@ -60,7 +64,9 @@ class _$RepetitionConfigCopyWithImpl<$Res, $Val extends RepetitionConfig>
   @override
   $Res call({
     Object? repetitionType = null,
+    Object? amount = null,
     Object? startDate = null,
+    Object? isDaily = null,
     Object? reminders = null,
   }) {
     return _then(_value.copyWith(
@@ -68,10 +74,18 @@ class _$RepetitionConfigCopyWithImpl<$Res, $Val extends RepetitionConfig>
           ? _value.repetitionType
           : repetitionType // ignore: cast_nullable_to_non_nullable
               as RepetitionType,
+      amount: null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
               as String,
+      isDaily: null == isDaily
+          ? _value.isDaily
+          : isDaily // ignore: cast_nullable_to_non_nullable
+              as bool,
       reminders: null == reminders
           ? _value.reminders
           : reminders // ignore: cast_nullable_to_non_nullable
@@ -99,7 +113,9 @@ abstract class _$$_RepetitionConfigCopyWith<$Res>
   $Res call(
       {@JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
           RepetitionType repetitionType,
+      int amount,
       String startDate,
+      bool isDaily,
       List<ReminderTime> reminders});
 
   @override
@@ -118,7 +134,9 @@ class __$$_RepetitionConfigCopyWithImpl<$Res>
   @override
   $Res call({
     Object? repetitionType = null,
+    Object? amount = null,
     Object? startDate = null,
+    Object? isDaily = null,
     Object? reminders = null,
   }) {
     return _then(_$_RepetitionConfig(
@@ -126,10 +144,18 @@ class __$$_RepetitionConfigCopyWithImpl<$Res>
           ? _value.repetitionType
           : repetitionType // ignore: cast_nullable_to_non_nullable
               as RepetitionType,
+      null == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
       null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
               as String,
+      null == isDaily
+          ? _value.isDaily
+          : isDaily // ignore: cast_nullable_to_non_nullable
+              as bool,
       null == reminders
           ? _value._reminders
           : reminders // ignore: cast_nullable_to_non_nullable
@@ -144,7 +170,9 @@ class _$_RepetitionConfig extends _RepetitionConfig {
   const _$_RepetitionConfig(
       @JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
           this.repetitionType,
+      this.amount,
       this.startDate,
+      this.isDaily,
       final List<ReminderTime> reminders)
       : _reminders = reminders,
         super._();
@@ -156,7 +184,11 @@ class _$_RepetitionConfig extends _RepetitionConfig {
   @JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
   final RepetitionType repetitionType;
   @override
+  final int amount;
+  @override
   final String startDate;
+  @override
+  final bool isDaily;
   final List<ReminderTime> _reminders;
   @override
   List<ReminderTime> get reminders {
@@ -167,7 +199,7 @@ class _$_RepetitionConfig extends _RepetitionConfig {
 
   @override
   String toString() {
-    return 'RepetitionConfig(repetitionType: $repetitionType, startDate: $startDate, reminders: $reminders)';
+    return 'RepetitionConfig(repetitionType: $repetitionType, amount: $amount, startDate: $startDate, isDaily: $isDaily, reminders: $reminders)';
   }
 
   @override
@@ -177,16 +209,18 @@ class _$_RepetitionConfig extends _RepetitionConfig {
             other is _$_RepetitionConfig &&
             (identical(other.repetitionType, repetitionType) ||
                 other.repetitionType == repetitionType) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
+            (identical(other.isDaily, isDaily) || other.isDaily == isDaily) &&
             const DeepCollectionEquality()
                 .equals(other._reminders, _reminders));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, repetitionType, startDate,
-      const DeepCollectionEquality().hash(_reminders));
+  int get hashCode => Object.hash(runtimeType, repetitionType, amount,
+      startDate, isDaily, const DeepCollectionEquality().hash(_reminders));
 
   @JsonKey(ignore: true)
   @override
@@ -206,7 +240,9 @@ abstract class _RepetitionConfig extends RepetitionConfig {
   const factory _RepetitionConfig(
       @JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
           final RepetitionType repetitionType,
+      final int amount,
       final String startDate,
+      final bool isDaily,
       final List<ReminderTime> reminders) = _$_RepetitionConfig;
   const _RepetitionConfig._() : super._();
 
@@ -217,7 +253,11 @@ abstract class _RepetitionConfig extends RepetitionConfig {
   @JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
   RepetitionType get repetitionType;
   @override
+  int get amount;
+  @override
   String get startDate;
+  @override
+  bool get isDaily;
   @override
   List<ReminderTime> get reminders;
   @override

@@ -9,6 +9,8 @@ import 'package:listopolis/features/listopolis/data/models/user_data.dart';
 
 abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> getActiveLists();
+  Future<Either<Failure, List<ActiveList>>> getListsWithoutDailyReminders();
+  Future<Either<Failure, List<ActiveList>>> updateListsWithoutDailyReminders(List<ActiveList> lists);
   Future<Either<Failure, List<ActiveList>>> backupUserData();
   Future<Either<Failure, List<ActiveList>>> loadUserDataFromBackup();
   Future<Either<Failure, List<ActiveList>>> deleteActiveListPosition(ActiveList list, ActiveListPosition position);
@@ -17,6 +19,7 @@ abstract class IRepository{
   Future<Either<Failure, List<ActiveList>>> insertActiveList(CreateListParameter listParameter);
   Future<Either<Failure, List<ActiveList>>> replaceActiveList(ActiveList list, CreateListParameter listParameter);
   Future<Either<Failure, List<ActiveList>>> changeListPosition(ActiveList list, int oldPosition, int newPosition);
+  Future<void> upateListAfterRepetitionPlanning(ActiveList list);
   Future<Either<Failure, List<ActiveList>>> createListFromExternalJson(String jsonString);
   
   Future<Either<Failure, List<ListTemplate>>> changeTemplatePosition(ListTemplate template, int oldPosition, int newPosition);

@@ -1,5 +1,8 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
+import 'package:flutter/material.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:listopolis/features/listopolis/data/core/date_time_utils.dart';
+import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/reminder_time.dart';
 import 'package:listopolis/features/listopolis/data/models/repetition_config.dart';
 import 'package:listopolis/features/listopolis/data/models/repetition_type.dart';
@@ -13,7 +16,16 @@ class RepetitionUtil{
   static RepetitionConfig createRepetitionOnSecond(String second, DateTime dateTime, String channelKey){
     ReminderTime repTime = ReminderTime("00:00:$second", channelKey, getChannelID());
     RepetitionType repType = RepetitionType.secondOfMinute();
-    RepetitionConfig config = RepetitionConfig(repType, DateTimeUtil.getDate(dateTime), [repTime]);
+    RepetitionConfig config = RepetitionConfig(repType, 1, DateTimeUtil.getDate(dateTime), true, [repTime]);
+    return config;
+  }
+  static RepetitionConfig createDailyRepetition(DateTime startDate, List<TimeOfDay> reminders){
+    List<ReminderTime> reminderTimes = [];
+    for(TimeOfDay reminderTime in reminders){
+       reminderTimes.add( ReminderTime("${reminderTime.hour}:${reminderTime.minute}:00",  CHANNEL_KEY, getChannelID()));
+    }
+  
+    RepetitionConfig config = RepetitionConfig(RepetitionType.daily(), 1, DateTimeUtil.getDate(startDate), false ,reminderTimes);
     return config;
   }
 
@@ -22,12 +34,13 @@ class RepetitionUtil{
     return aktTime.year+aktTime.month+aktTime.day+aktTime.hour+aktTime.minute+aktTime.second;
   }
 
-  static Future<void> createNotificationsFromConfig(RepetitionConfig config, String? listName) async{
+  static Future<void> createNotificationsFromConfig(RepetitionConfig config, String? listName, bool initial) async{
     
     List<ReminderTime> reminders = config.reminders;
     String timeZone = await AwesomeNotifications().getLocalTimeZoneIdentifier();
       for(ReminderTime reminder in reminders){
-        ReminderSchedule schedule = ReminderSchedule.fromDateString(reminder.timeOfDay, true);
+        String? dateStr = initial ? config.startDate : null;
+        ReminderSchedule schedule = ReminderSchedule.fromDateString(timeStr: reminder.timeOfDay, treatZeroAsNull:true, dateStr:dateStr);
         String listNameContent = listName != null ? " >> " +listName+" <<" : "";
         await AwesomeNotifications().createNotification(
         content: NotificationContent(
@@ -50,4 +63,55 @@ class RepetitionUtil{
         await AwesomeNotifications().cancel(reminder.channelId);
       }
   }
+  static RepetitionConfig getConfigForNextPeriod(RepetitionConfig repetitionConfig){
+    
+      DateTime startDate =  DateTimeUtil.getDateFromStr(repetitionConfig.startDate);
+      Jiffy currentDate = Jiffy(DateTime.now());
+
+      Jiffy calendar = Jiffy(startDate);
+      if(repetitionConfig.repetitionType is Daily){
+         calendar.add(duration: Duration(days: repetitionConfig.amount));
+      }else if(repetitionConfig.repetitionType is Monthly){
+        calendar.add(months: repetitionConfig.amount);
+      }else if(repetitionConfig.repetitionType is Yearly){
+        calendar.add(years: repetitionConfig.amount);
+      }else if(repetitionConfig.repetitionType is Weekly){
+        calendar.add(weeks: repetitionConfig.amount);
+      }
+
+      if(currentDate.isSameOrAfter(calendar, Units.DAY)){
+        currentDate.add(days: 1);
+        calendar = currentDate;
+      }
+        
+
+      List<ReminderTime> dailyReminders = [];
+      for(ReminderTime reminder in repetitionConfig.reminders){
+        dailyReminders.add( reminder.copyWith(channelId: getChannelID()));
+      }
+
+      return repetitionConfig.copyWith( startDate: DateTimeUtil.getStringFromJiffy(calendar), 
+                                        reminders: dailyReminders);
+  }
+
+  static bool shouldShowToday(ActiveList list) {
+    RepetitionConfig? config = list.repetitionConfig;
+    if(config != null){
+      Jiffy currentDate = Jiffy(DateTime.now());
+      Jiffy startDate = Jiffy(DateTimeUtil.getDateFromStr(config.startDate));
+      if(! currentDate.isSameOrAfter(startDate, Units.DAY))
+         return false;
+
+    }
+    return true;
+  }
+
+  static bool needDailyReminders(RepetitionConfig repetitionConfig) {
+    Jiffy currentDate = Jiffy(DateTime.now());
+    Jiffy startDate = Jiffy(DateTimeUtil.getDateFromStr(repetitionConfig.startDate));
+    return  currentDate.isSameOrAfter(startDate, Units.DAY) && (!repetitionConfig.isDaily);
+
+  }
+
+  
 }

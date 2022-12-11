@@ -12,7 +12,9 @@ abstract class RepetitionConfig with _$RepetitionConfig{
   const factory RepetitionConfig(
     @JsonKey(fromJson: repetitionTypeFromJson, toJson: repetitionTypeToJson)
     RepetitionType repetitionType,
+    int amount,
     String startDate,
+    bool isDaily,
     List<ReminderTime> reminders
 
   ) = _RepetitionConfig;
