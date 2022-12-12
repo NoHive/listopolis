@@ -42,16 +42,27 @@ class RepetitionUtil{
         String? dateStr = initial ? config.startDate : null;
         ReminderSchedule schedule = ReminderSchedule.fromDateString(timeStr: reminder.timeOfDay, treatZeroAsNull:true, dateStr:dateStr);
         String listNameContent = listName != null ? " >> " +listName+" <<" : "";
+        
+        
+        NotificationCalendar calendar =  NotificationCalendar(      year: schedule.year, 
+                                                                    month: schedule.month, 
+                                                                    day: schedule.day, 
+                                                                    hour: schedule.hour, 
+                                                                    minute: schedule.minute, 
+                                                                    second:0, 
+                                                                    millisecond: 0, 
+                                                                    timeZone: timeZone, 
+                                                                    repeats: true);
         await AwesomeNotifications().createNotification(
         content: NotificationContent(
-                    id: reminder.channelId, 
+                    id: getChannelID(), 
                     channelKey: reminder.reminderChannel,
                     body: "${Emojis.animals_owl}, bitte $listNameContent erledigen!",
                     title: "offene Aufgaben!!!",
                     displayOnBackground: true,
                     displayOnForeground: true
                   ),
-        schedule: NotificationCalendar( hour: schedule.hour, minute: schedule.minute, second:schedule.second, millisecond: 0, timeZone: timeZone, repeats: true)
+        schedule: calendar
       );
     }
   }
@@ -110,6 +121,11 @@ class RepetitionUtil{
     Jiffy currentDate = Jiffy(DateTime.now());
     Jiffy startDate = Jiffy(DateTimeUtil.getDateFromStr(repetitionConfig.startDate));
     return  currentDate.isSameOrAfter(startDate, Units.DAY) && (!repetitionConfig.isDaily);
+
+  }
+
+  static Future<void> convertToDailyRepetitions(RepetitionConfig repetitionConfig) async {
+   
 
   }
 

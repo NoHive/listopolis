@@ -183,11 +183,29 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
   
   _emit_ReminderDisplayed(_ReminderDisplayed event, Emitter<ActivelistState> emit) async{
      emit(ActivelistState.loading());
-      Either<Failure, List<ActiveList>> activeListsResult = await repository.getActiveLists();
+      Either<Failure, List<ActiveList>> activeListsResult = await repository.getListsWithoutDailyReminders();
       
-      emit( activeListsResult.fold(
+      activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) async { await  _stopNotificationsAndCreateDaily(r); });
+      
+        activeListsResult.fold(
+        (l) => ActivelistState.error(failure: l), 
+        (r) async { await  repository.updateListsWithoutDailyReminders(r); });
+
+       Either<Failure, List<ActiveList>> newActiveListsResult = await repository.getActiveLists();
+      
+      emit( newActiveListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r)));
+  }
+
+  _stopNotificationsAndCreateDaily(List<ActiveList> lists) async{
+    for(ActiveList list in lists){
+      
+      await RepetitionUtil.stopNotifications(list.repetitionConfig!);
+      await RepetitionUtil.createNotificationsFromConfig(list.repetitionConfig!, list.name, false);
+    }
   }
 
   
