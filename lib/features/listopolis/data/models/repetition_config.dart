@@ -20,4 +20,6 @@ abstract class RepetitionConfig with _$RepetitionConfig{
   ) = _RepetitionConfig;
 
   factory RepetitionConfig.fromJson(Map<String, dynamic> json) => _$RepetitionConfigFromJson(json);
+
+
 }

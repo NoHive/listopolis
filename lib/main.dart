@@ -51,6 +51,7 @@ void main() async {
 class ListopolisRoot extends StatelessWidget {
   // final SharedPreferences preferences;
   const ListopolisRoot({Key? key}) : super(key: key);
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   Widget build(BuildContext context) {
@@ -80,6 +81,7 @@ class ListopolisRoot extends StatelessWidget {
           title: "Listopolis",
           color: ListColors.APP_BAR_COLOR,
           home: ActiveListMainPage(),
+          navigatorKey: ListopolisRoot.navigatorKey,
           ),
     );
   }

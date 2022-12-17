@@ -19,6 +19,7 @@ import 'package:listopolis/features/listopolis/presentation/color_constants.dart
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 import 'package:listopolis/features/listopolis/presentation/online_lists/online_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/templates/template_main_page.dart';
+import 'package:listopolis/main.dart';
 
 class ActiveListMainPage extends StatefulWidget {
   ActiveListMainPage({Key? key}) : super(key: key);
@@ -42,14 +43,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   void initState() {
     // TODO: implement initState
     super.initState();
-    AwesomeNotifications().setListeners(onActionReceivedMethod: (receivedAction) async{
-      
-    },
-    onNotificationDisplayedMethod: (receivedNotification) async{
-      
-      BlocProvider.of<ActivelistBloc>(context)
-      ..add(ActivelistEvent.reminderDisplayed());
-    },
+      AwesomeNotifications().setListeners(onActionReceivedMethod: (receivedAction) =>  NotificationController.onActionReceivedMethod(receivedAction),
+      onNotificationDisplayedMethod:(receivedNotification) =>  NotificationController.onNotificationDisplayedMethod(receivedNotification, context)
     );
   }
 
@@ -560,5 +555,29 @@ class MainListItemMenueStr{
     }
     
 
+  }
+}
+
+class NotificationController {
+
+
+  /// Use this method to detect every time that a new notification is displayed
+  @pragma("vm:entry-point")
+  static Future <void> onNotificationDisplayedMethod(ReceivedNotification receivedNotification, BuildContext ctx) async {
+    // Your code goes here
+    if(ListopolisRoot.navigatorKey.currentContext != null)
+    BlocProvider.of<ActivelistBloc>(ListopolisRoot.navigatorKey.currentContext!)
+      ..add(ActivelistEvent.reminderDisplayed());
+  }
+
+
+
+  /// Use this method to detect when the user taps on a notification or action button
+  @pragma("vm:entry-point")
+  static Future <void> onActionReceivedMethod(ReceivedAction receivedAction) async {
+    // Your code goes here
+
+    // Navigate into pages, avoiding to open the notification details page over another details page already opened
+    
   }
 }

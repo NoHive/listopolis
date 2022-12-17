@@ -185,26 +185,38 @@ class ActivelistBloc extends Bloc<ActivelistEvent, ActivelistState> {
      emit(ActivelistState.loading());
       Either<Failure, List<ActiveList>> activeListsResult = await repository.getListsWithoutDailyReminders();
       
-      activeListsResult.fold(
-        (l) => ActivelistState.error(failure: l), 
-        (r) async { await  _stopNotificationsAndCreateDaily(r); });
+      List<ActiveList> oldNonDaily = activeListsResult.fold(
+        (l) => [], 
+        (r) => r);
       
-        activeListsResult.fold(
-        (l) => ActivelistState.error(failure: l), 
-        (r) async { await  repository.updateListsWithoutDailyReminders(r); });
+      await  _stopNotifications(oldNonDaily);
+      await  repository.updateListsWithoutDailyReminders(oldNonDaily);
+        
 
-       Either<Failure, List<ActiveList>> newActiveListsResult = await repository.getActiveLists();
+      Either<Failure, List<ActiveList>> newActiveListsResult = await repository.getActiveLists();
+
+       List<ActiveList> newDailyLists = newActiveListsResult.fold(
+        (l) => [], 
+        (r) => r);
+
+      await _createDailyNotifications(newDailyLists, oldNonDaily);
       
       emit( newActiveListsResult.fold(
         (l) => ActivelistState.error(failure: l), 
         (r) => ActivelistState.loaded(userLists: r)));
   }
 
-  _stopNotificationsAndCreateDaily(List<ActiveList> lists) async{
+  
+  _stopNotifications(List<ActiveList> lists) async{
     for(ActiveList list in lists){
-      
       await RepetitionUtil.stopNotifications(list.repetitionConfig!);
-      await RepetitionUtil.createNotificationsFromConfig(list.repetitionConfig!, list.name, false);
+    }
+  }
+  _createDailyNotifications(List<ActiveList> dailyLists, List<ActiveList> oldNonDaily) async{
+    for(ActiveList nonDailyList in oldNonDaily){
+      List<ActiveList> foundDailyLists = dailyLists.where((element) => element.position == nonDailyList.position).toList();
+      foundDailyLists.forEach((list) async {await RepetitionUtil.createNotificationsFromConfig(list.repetitionConfig!, list.name, false);});
+      //await RepetitionUtil.createNotificationsFromConfig(list.repetitionConfig!, list.name, false);
     }
   }
 

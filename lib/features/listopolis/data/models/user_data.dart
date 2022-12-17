@@ -9,6 +9,7 @@ import 'package:listopolis/features/listopolis/data/core/repetition_utils.dart';
 import 'package:listopolis/features/listopolis/data/models/list.dart';
 import 'package:listopolis/features/listopolis/data/models/list_template.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:listopolis/features/listopolis/data/models/reminder_time.dart';
 import 'package:listopolis/features/listopolis/data/models/repetition_config.dart';
 import 'package:uuid/uuid.dart';
 
@@ -518,7 +519,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
       }
 
       for(ActiveList reminderList in reminderUpdatedLists){
-        RepetitionConfig repCopy = reminderList.repetitionConfig!.copyWith(isDaily: true);
+        RepetitionConfig repCopy = RepetitionUtil.copyForDailyRepetition(reminderList.repetitionConfig!);
         ActiveList listCopy = reminderList.copyWith(repetitionConfig: repCopy);
         existingActiveLists.replaceRange(reminderList.position-1, reminderList.position, [listCopy]);
       }

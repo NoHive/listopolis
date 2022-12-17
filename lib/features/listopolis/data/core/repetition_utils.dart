@@ -29,9 +29,23 @@ class RepetitionUtil{
     return config;
   }
 
+  static RepetitionConfig copyForDailyRepetition(RepetitionConfig oldConfig){
+    
+    List<ReminderTime> oldReminders = oldConfig.reminders;
+    List<ReminderTime> newReminders = [];
+    for(ReminderTime oldReminder in oldReminders){
+      newReminders.add(oldReminder.copyWith(channelId: RepetitionUtil.getChannelID()));
+    }
+    return oldConfig.copyWith(isDaily: true, reminders: newReminders);
+  }
+
+  static int counterGlobal = 0;
+
   static int getChannelID(){
     DateTime aktTime = DateTime.now();
-    return aktTime.year+aktTime.month+aktTime.day+aktTime.hour+aktTime.minute+aktTime.second;
+    counterGlobal++;
+    return aktTime.year+aktTime.month+aktTime.day+aktTime.hour+aktTime.minute+aktTime.second+counterGlobal;
+
   }
 
   static Future<void> createNotificationsFromConfig(RepetitionConfig config, String? listName, bool initial) async{
@@ -55,7 +69,7 @@ class RepetitionUtil{
                                                                     repeats: true);
         await AwesomeNotifications().createNotification(
         content: NotificationContent(
-                    id: getChannelID(), 
+                    id: reminder.channelId, 
                     channelKey: reminder.reminderChannel,
                     body: "${Emojis.animals_owl}, bitte $listNameContent erledigen!",
                     title: "offene Aufgaben!!!",
