@@ -520,7 +520,8 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
 
       for(ActiveList reminderList in reminderUpdatedLists){
         RepetitionConfig repCopy = RepetitionUtil.copyForDailyRepetition(reminderList.repetitionConfig!);
-        ActiveList listCopy = reminderList.copyWith(repetitionConfig: repCopy);
+        String currentName = reminderList.name;
+        ActiveList listCopy = reminderList.copyWith(repetitionConfig: repCopy, name: "$currentName*");
         existingActiveLists.replaceRange(reminderList.position-1, reminderList.position, [listCopy]);
       }
 
@@ -538,7 +539,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
   }
 
   static bool neddDailyRemindersToday(ActiveList list){
-    if(list.repetitionConfig != null)
+    if(list.repetitionConfig != null && list.repeat)
         return RepetitionUtil.needDailyReminders(list.repetitionConfig!);
     
     return false;

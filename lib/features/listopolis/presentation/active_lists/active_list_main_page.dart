@@ -42,10 +42,11 @@ class _ActiveListMainPageState extends State<ActiveListMainPage> with CommonPage
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
-      AwesomeNotifications().setListeners(onActionReceivedMethod: (receivedAction) =>  NotificationController.onActionReceivedMethod(receivedAction),
-      onNotificationDisplayedMethod:(receivedNotification) =>  NotificationController.onNotificationDisplayedMethod(receivedNotification, context)
+    AwesomeNotifications().setListeners(onActionReceivedMethod: NotificationController.onActionReceivedMethod,
+      onNotificationDisplayedMethod:NotificationController.onNotificationDisplayedMethod
     );
+    super.initState();
+    
   }
 
   
@@ -563,7 +564,7 @@ class NotificationController {
 
   /// Use this method to detect every time that a new notification is displayed
   @pragma("vm:entry-point")
-  static Future <void> onNotificationDisplayedMethod(ReceivedNotification receivedNotification, BuildContext ctx) async {
+  static Future <void> onNotificationDisplayedMethod(ReceivedNotification receivedNotification) async {
     // Your code goes here
     if(ListopolisRoot.navigatorKey.currentContext != null)
     BlocProvider.of<ActivelistBloc>(ListopolisRoot.navigatorKey.currentContext!)
