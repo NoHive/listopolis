@@ -74,7 +74,9 @@ class RepetitionUtil{
                     body: "${Emojis.animals_owl}, bitte $listNameContent erledigen!",
                     title: "offene Aufgaben!!!",
                     displayOnBackground: true,
-                    displayOnForeground: true
+                    displayOnForeground: true,
+                    wakeUpScreen: true,
+                    category: NotificationCategory.Alarm
                   ),
         schedule: calendar
       );
@@ -116,7 +118,8 @@ class RepetitionUtil{
       }
 
       return repetitionConfig.copyWith( startDate: DateTimeUtil.getStringFromJiffy(calendar), 
-                                        reminders: dailyReminders);
+                                        reminders: dailyReminders,
+                                        isDaily: false);
   }
 
   static bool shouldShowToday(ActiveList list) {
@@ -138,10 +141,6 @@ class RepetitionUtil{
 
   }
 
-  static Future<void> convertToDailyRepetitions(RepetitionConfig repetitionConfig) async {
-   
-
-  }
 
   
 }
