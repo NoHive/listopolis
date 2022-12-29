@@ -604,6 +604,8 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
  }
  
   Widget _buildRepeatOption(BuildContext context, CreateListParameter list) {
+    CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
+    if(createListBloc.isListCreation()){
     return Padding(padding: EdgeInsets.only(top:10, left:20),
             child: Stack(
               children: [
@@ -619,6 +621,9 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
               ],
             )
     );
+    }else{
+      return Container();
+    }
     // return Switch(value: list.repeat, onChanged: (value) {
     //   list.repeat = value;
     //   _commitListChanges(context, list);

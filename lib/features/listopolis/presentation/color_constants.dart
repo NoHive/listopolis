@@ -10,13 +10,14 @@ class ListColors{
 
   static const Color TEXT = TEXTCOLOR_ON_DARK_BG;
   static const Color BACKGROUND = Color(MIDDLE_BG_COLOR_BLUEGREY);
-  static const Color BACKGROUND_DARKER = Color(START_BG_COLOR_GREY);
+  static const Color BACKGROUND_DARKER = Color(MIDDLE_BG_COLOR_BLUEGREY_DARK);
   static const Color LIST_BACKGROUND = Color(0xFF101010);
 
   static const int MAIN_PAGE_BUTTON_ALPHA = 190;
   static const int START_BG_COLOR_GREY = 0xFF292A2E;
-  static const int END_BG_COLOR_BLUEGREY = 0xFF454545;
-  static const int MIDDLE_BG_COLOR_BLUEGREY = 0xFF373737;
+  static const int END_BG_COLOR_BLUEGREY = 0xFF005E86;
+  static const int MIDDLE_BG_COLOR_BLUEGREY = 0xFF0B4577;
+  static const int MIDDLE_BG_COLOR_BLUEGREY_DARK = 0xFF183051;
   static const int YELLOW_TEXT = 0xFFffc410;
 
   static const Color APP_BAR_COLOR = Color(MIDDLE_BG_COLOR_BLUEGREY);

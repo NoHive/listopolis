@@ -75,8 +75,6 @@ class RepetitionUtil{
                     title: "offene Aufgaben!!!",
                     displayOnBackground: true,
                     displayOnForeground: true,
-                    wakeUpScreen: true,
-                    category: NotificationCategory.Alarm
                   ),
         schedule: calendar
       );

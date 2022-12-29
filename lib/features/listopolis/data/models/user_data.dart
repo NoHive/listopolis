@@ -300,14 +300,28 @@ abstract class UserData implements _$UserData {
         newListPositions.add(ActiveListPosition.fromCreateListItemParameter(listItemParam));
       }
 
+      // @JsonKey(fromJson: listTypeFromJson, toJson: listTypeToJson)
+      // @Default(ListType.todo()) ListType type,
+      // @Default(1) int position,
+      // @Default(false) bool done,
+      // @Default(false) bool opened,
+      // @Default(false) bool repeat,
+      // @Default(false) bool needReminders,
+      // RepetitionConfig? repetitionConfig,
+      // @Default([]) List<ActiveListPosition> listItems,
+      // @Default([]) List<ActiveListPosition> repetitionItems
+
       ActiveList aNewListItem = ActiveList( id: Uuid().v1(), 
                                             name: creationParameter.listName, 
                                             type: creationParameter.type, 
                                             position: list.position, 
+                                            needReminders: list.needReminders,
+                                            repetitionItems: newListPositions,
                                             repeat: creationParameter.repeat,
                                             done: false,
                                             opened: false,
-                                            listItems: newListPositions
+                                            listItems: newListPositions,
+                                            repetitionConfig: creationParameter.repetitionConfig
                                             );
       
        
@@ -520,8 +534,7 @@ factory UserData.replaceTemplateFromCreatedList(UserData data, ListTemplate list
 
       for(ActiveList reminderList in reminderUpdatedLists){
         RepetitionConfig repCopy = RepetitionUtil.copyForDailyRepetition(reminderList.repetitionConfig!);
-        String currentName = reminderList.name;
-        ActiveList listCopy = reminderList.copyWith(repetitionConfig: repCopy, name: "$currentName*");
+        ActiveList listCopy = reminderList.copyWith(repetitionConfig: repCopy);
         existingActiveLists.replaceRange(reminderList.position-1, reminderList.position, [listCopy]);
       }
 
