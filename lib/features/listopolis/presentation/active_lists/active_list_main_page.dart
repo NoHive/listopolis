@@ -577,6 +577,11 @@ class NotificationController {
   @pragma("vm:entry-point")
   static Future <void> onActionReceivedMethod(ReceivedAction receivedAction) async {
     // Your code goes here
+    if(RepetitionUtil.CHANNEL_KEY == receivedAction.channelKey ){
+      AwesomeNotifications().getGlobalBadgeCounter().then(
+        (value) => AwesomeNotifications().setGlobalBadgeCounter(value > 0 ? value - 1: 0)
+      );
+    }
 
     // Navigate into pages, avoiding to open the notification details page over another details page already opened
     
