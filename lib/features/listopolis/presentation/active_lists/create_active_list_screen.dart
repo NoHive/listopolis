@@ -605,7 +605,7 @@ class _CreateListPageState extends State<CreateListPage> with WidgetsBindingObse
  
   Widget _buildRepeatOption(BuildContext context, CreateListParameter list) {
     CreatelistBloc createListBloc = BlocProvider.of<CreatelistBloc>(context);
-    if(createListBloc.isListCreation()){
+    if(createListBloc.isListCreation() || createListBloc.isListTransfer()){
     return Padding(padding: EdgeInsets.only(top:10, left:20),
             child: Stack(
               children: [
