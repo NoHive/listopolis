@@ -37,7 +37,6 @@ void main() async {
                       defaultColor: Color.fromARGB(255, 11, 81, 99),
                       playSound: true,
                       enableLights: true,
-                      channelShowBadge: true,
                       importance: NotificationImportance.High
                       
                       )
