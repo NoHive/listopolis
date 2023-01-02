@@ -42,9 +42,12 @@ class _ActiveListMainPageState extends State<ActiveListMainPage>
     // TODO: implement initState
     _requestNotificationPermissions(context);
     AwesomeNotifications().setListeners(
-        onActionReceivedMethod: NotificationController.onActionReceivedMethod,
-        onNotificationDisplayedMethod:
-            NotificationController.onNotificationDisplayedMethod);
+      onActionReceivedMethod: NotificationController.onActionReceivedMethod,
+      onNotificationDisplayedMethod: (receivedNotification) async {
+        NotificationController.onNotificationDisplayedMethod(
+            receivedNotification);
+      },
+    );
     super.initState();
   }
 
@@ -681,9 +684,9 @@ class NotificationController {
       ReceivedAction receivedAction) async {
     // Your code goes here
     if (RepetitionUtil.CHANNEL_KEY == receivedAction.channelKey) {
-      AwesomeNotifications().getGlobalBadgeCounter().then((value) =>
-          AwesomeNotifications()
-              .setGlobalBadgeCounter(value > 0 ? value - 1 : 0));
+      AwesomeNotifications()
+          .getGlobalBadgeCounter()
+          .then((value) => AwesomeNotifications().setGlobalBadgeCounter(0));
     }
 
     // Navigate into pages, avoiding to open the notification details page over another details page already opened
