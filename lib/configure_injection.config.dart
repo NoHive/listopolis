@@ -6,7 +6,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:cloud_firestore/cloud_firestore.dart' as _i5;
-import 'package:connectivity/connectivity.dart' as _i3;
+import 'package:connectivity_plus/connectivity_plus.dart' as _i3;
 import 'package:firebase_auth/firebase_auth.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i6;
