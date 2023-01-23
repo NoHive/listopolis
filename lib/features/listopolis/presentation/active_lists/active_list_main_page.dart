@@ -17,6 +17,7 @@ import 'package:listopolis/features/listopolis/presentation/color_constants.dart
 import 'package:listopolis/features/listopolis/presentation/common_page_functions.dart';
 import 'package:listopolis/features/listopolis/presentation/online_lists/online_list_screen.dart';
 import 'package:listopolis/features/listopolis/presentation/templates/template_main_page.dart';
+import 'package:clipboard/clipboard.dart';
 import 'package:listopolis/main.dart';
 
 class ActiveListMainPage extends StatefulWidget {
@@ -284,6 +285,8 @@ class _ActiveListMainPageState extends State<ActiveListMainPage>
       navigateToAuthenticationScreen(context);
     } else if (choice == ActiveListPageMenueStrings.SHOW_ALL_LISTS) {
       BlocProvider.of<ActivelistBloc>(context).add(ActivelistEvent.loadAll());
+    }else if (choice == ActiveListPageMenueStrings.EXPORT_ALL_NOTIFICATIONS) {
+      _copyNotificationsToClipboard();
     } else {
       print("not supported");
     }
@@ -588,6 +591,20 @@ class _ActiveListMainPageState extends State<ActiveListMainPage>
       return _buildListItemElement(listPosition);
     }
   }
+  
+  void _copyNotificationsToClipboard() async{
+    String notificationStr = await _createNotificationString();
+    await FlutterClipboard.copy(notificationStr);
+  }
+
+  Future<String> _createNotificationString() async{
+    StringBuffer strbuffer = StringBuffer();
+    List<NotificationModel> notificationEntries =await  AwesomeNotifications().listScheduledNotifications();
+    for(NotificationModel entry in notificationEntries){
+      strbuffer.write(entry.toString());
+    }
+    return Future.value(strbuffer.toString());
+  }
 }
 
 Widget _buildListItemElement(ActiveListPosition listPosition) {
@@ -629,6 +646,7 @@ class ActiveListPageMenueStrings {
   static const String SAVE_CURRENT_USER_DATA = "Daten sichern";
   static const String LOAD_EXTERN_DATA = "Daten aus Sicherung einlesen";
   static const String SHOW_ALL_LISTS = "Auch zukünftige Listen zeigen";
+  static const String EXPORT_ALL_NOTIFICATIONS = "Erinnerungen exportieren";
 
   static const List<String> choises = [
     CREATE_NEW_LIST,
@@ -638,7 +656,8 @@ class ActiveListPageMenueStrings {
     LOAD_EXTERN_DATA,
     SIGN_IN,
     ONLINE_LISTS,
-    SHOW_ALL_LISTS
+    SHOW_ALL_LISTS,
+    EXPORT_ALL_NOTIFICATIONS
   ];
 }
 
@@ -672,10 +691,10 @@ class NotificationController {
   static Future<void> onNotificationDisplayedMethod(
       ReceivedNotification receivedNotification) async {
     // Your code goes here
-    if (ListopolisRoot.navigatorKey.currentContext != null)
-      BlocProvider.of<ActivelistBloc>(
-          ListopolisRoot.navigatorKey.currentContext!)
-        ..add(ActivelistEvent.reminderDisplayed());
+    // if (ListopolisRoot.navigatorKey.currentContext != null)
+    //   BlocProvider.of<ActivelistBloc>(
+    //       ListopolisRoot.navigatorKey.currentContext!)
+    //     ..add(ActivelistEvent.reminderDisplayed());
   }
 
   /// Use this method to detect when the user taps on a notification or action button

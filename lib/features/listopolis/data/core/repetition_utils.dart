@@ -44,8 +44,18 @@ class RepetitionUtil{
   static int getChannelID(){
     DateTime aktTime = DateTime.now();
     counterGlobal++;
-    return aktTime.year+aktTime.month+aktTime.day+aktTime.hour+aktTime.minute+aktTime.second+counterGlobal;
+    return   times(1999999, aktTime.year)
+            +times(276525312, aktTime.month)
+            +times(8641416, aktTime.day)
+            +times(360059, aktTime.hour+1)
+            +times(6001,aktTime.minute+1)
+            +times(100, aktTime.second+1)
+            +counterGlobal;
 
+  }
+
+  static int times(int power, int count ){
+    return 1 * power + count;
   }
 
   static Future<void> createNotificationsFromConfig(RepetitionConfig config, String? listName, bool initial) async{
@@ -78,6 +88,17 @@ class RepetitionUtil{
                   ),
         schedule: calendar
       );
+      
+    }
+    List<NotificationModel> notificationEntries =await  AwesomeNotifications().listScheduledNotifications();
+    print("Notifications created current are: ");
+    for(NotificationModel entry in notificationEntries){
+      NotificationSchedule? schedule = entry.schedule;
+      if(schedule != null){
+        print("Schedule: " + schedule.toString());
+        
+      }
+      print(entry);
     }
   }
 
@@ -86,6 +107,11 @@ class RepetitionUtil{
       List<ReminderTime> reminders = repetitionConfig.reminders;
       for(ReminderTime reminder in reminders){
         await AwesomeNotifications().cancel(reminder.channelId);
+      }
+      List<NotificationModel> notificationEntries =await  AwesomeNotifications().listScheduledNotifications();
+      print("Notifications deleted current are: ");
+      for(NotificationModel entry in notificationEntries){
+        print(entry);
       }
   }
   static RepetitionConfig getConfigForNextPeriod(RepetitionConfig repetitionConfig){
